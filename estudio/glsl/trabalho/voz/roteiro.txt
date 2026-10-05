@@ -1,0 +1,1 @@
+Isso não foi filmado. E também não foi modelado. É uma fórmula. O código calcula a luz, a sombra e o reflexo, pixel por pixel. A mesma matemática vira textura, transição, e acabamento de cinema. Agora, o nosso motor fala GLSL.

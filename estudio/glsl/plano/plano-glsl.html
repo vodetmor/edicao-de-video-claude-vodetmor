@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Plano · Vídeo GLSL</title>
+<style>
+@font-face{font-family:Inter;font-weight:400;src:url(fontes/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:500;src:url(fontes/inter-latin-500-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(fontes/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:700;src:url(fontes/inter-latin-700-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:400;src:url(fontes/jetbrains-mono-latin-400-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:500;src:url(fontes/jetbrains-mono-latin-500-normal.woff2)}
+@page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+:root { --ink:#1d1d1f; --sub:#6e6e73; --line:#d2d2d7; --blue:#0071e3; --paper:#f5f5f7; }
+* { box-sizing: border-box; }
+body { font-family: Inter, system-ui, sans-serif; color: var(--ink); font-size: 10.2pt; line-height: 1.5; margin: 0; }
+h1 { font-size: 26pt; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 6pt; font-weight: 700; }
+h2 { font-size: 15pt; letter-spacing: -0.01em; margin: 22pt 0 6pt; font-weight: 700; break-after: avoid; }
+h3 { font-size: 11pt; margin: 14pt 0 4pt; font-weight: 600; break-after: avoid; }
+p { margin: 0 0 7pt; }
+.sub { color: var(--sub); }
+.capa { padding: 40mm 0 10mm; border-bottom: 1px solid var(--line); margin-bottom: 14pt; }
+.capa .tag { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--blue); letter-spacing: .04em; margin-bottom: 14pt; }
+.resumo { background: var(--paper); border-radius: 10pt; padding: 12pt 14pt; margin: 10pt 0; }
+.resumo b { color: var(--ink); }
+code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 8.6pt; }
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 10pt; font-size: 8.9pt; break-inside: auto; }
+th { text-align: left; font-weight: 600; border-bottom: 1.2px solid var(--ink); padding: 4pt 5pt; }
+td { border-bottom: 1px solid var(--line); padding: 4pt 5pt; vertical-align: top; }
+tr { break-inside: avoid; }
+.n { font-family: 'JetBrains Mono', monospace; font-size: 8.3pt; white-space: nowrap; color: var(--sub); }
+.azul { color: var(--blue); font-weight: 600; }
+ul { margin: 0 0 8pt; padding-left: 14pt; } li { margin-bottom: 3pt; }
+.fluxo { display: flex; gap: 6pt; align-items: stretch; margin: 8pt 0 12pt; }
+.fluxo div { flex: 1; border: 1px solid var(--line); border-radius: 8pt; padding: 7pt 8pt; font-size: 8.6pt; }
+.fluxo div b { display: block; font-size: 9.2pt; margin-bottom: 2pt; }
+.fluxo .hl { border-color: var(--blue); }
+.camadas { border: 1px solid var(--line); border-radius: 10pt; padding: 8pt; margin: 8pt 0 12pt; }
+.camada { border-radius: 6pt; padding: 6pt 9pt; margin: 4pt 0; font-size: 8.8pt; display: flex; justify-content: space-between; gap: 10pt; }
+.camada span:last-child { color: var(--sub); text-align: right; }
+.c1 { background: #e8f1fc; } .c2 { background: #f0f0f2; } .c3 { background: #e8f1fc; } .c4 { background: #f0f0f2; }
+.quebra { break-before: page; }
+.nota { font-size: 8.5pt; color: var(--sub); }
+img.prova { width: 100%; border-radius: 8pt; border: 1px solid var(--line); margin: 6pt 0; }
+.duas { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+</style></head><body>
+
+<div class="capa">
+  <div class="tag">ESTÚDIO · PLANO ARQUITETADO · 02/10/2026</div>
+  <h1>GLSL no nosso motor:<br>o que aprendemos e como vamos construir o vídeo</h1>
+  <p class="sub">Estudo do vídeo "Claude criou esse vídeo sobre o fim do mundo" (canal O Programador), pesquisa de como trazer shaders e 3D por cálculo para o Remotion, e o plano completo do vídeo-vitrine.</p>
+</div>
+
+<div class="resumo">
+<p><b>Em uma frase:</b> o vídeo de referência não foi editado, foi <b>programado</b>: cada quadro é uma função do tempo da música, desenhada por shaders GLSL rodando na placa de vídeo, com tipografia sincronizada palavra por palavra. Nós já fazíamos a metade "função do tempo + palavra" no Remotion; faltava a camada GLSL. Ela agora existe e foi testada na nuvem.</p>
+<p style="margin:0"><b>O que vai sair daqui:</b> uma camada <span class="mono">Shader</span> no motor, uma biblioteca GLSL nossa, quatro blocos novos (objeto 3D calculado, campo de textura, transição por shader, acabamento de filme) e um vídeo-vitrine de 28 s, 1920×1080, que mostra tudo isso no nosso estilo.</p>
+</div>
+
+<h2>1. O que o vídeo de referência fez</h2>
+<p>O código do clipe é público (<span class="mono">github.com/oprogramadorreal/pdoom-video</span>, cópia do original de Giacomo Magnanini, licença MIT). Li o código, a documentação do motor e o "style bible" deles. Isso vale mais do que assistir: dá para ver exatamente como cada efeito foi feito.</p>
+
+<table>
+<tr><th style="width:26%">Técnica</th><th>Como eles fizeram</th><th style="width:28%">O que levamos</th></tr>
+<tr><td><b>Quadro = função do tempo</b></td><td>Nada de timer: dado o segundo exato, o programa calcula a imagem, sempre igual. Preview e render final são idênticos.</td><td>O Remotion já funciona assim. Mantemos a regra também dentro dos shaders.</td></tr>
+<tr><td><b>Tudo preso à voz</b></td><td>Alinhamento forçado palavra por palavra (Whisper + CTC) e análise da música (BPM, batidas, bumbo, caixa). Cortes no tempo forte; palavra acende no início exato dela.</td><td>Nossa spec já ancora em palavras. Vamos ancorar também <b>uniforms do shader</b> (luz, câmera, varredura) nas palavras.</td></tr>
+<tr><td><b>3D sem modelo</b> (raymarching)</td><td>O monstro, os clipes de papel e a sala são fórmulas de distância (SDF). O shader "anda" pelo raio até tocar a superfície e calcula luz, sombra suave, oclusão e reflexo.</td><td>Bloco <span class="mono">Objeto3D</span>. Testado: objeto 3D com sombra e reflexo em 1080p.</td></tr>
+<tr><td><b>Estilo de gravura</b></td><td>As sombras viram hachuras de gravura (linhas que engrossam no escuro), em vez de degradê. É o que tira a cara de "3D de computador".</td><td>Função <span class="mono">hachura()</span> na biblioteca, para quando um vídeo pedir esse registro.</td></tr>
+<tr><td><b>Pós-produção em shader</b></td><td>Bloom, halação, aberração cromática nas bordas, curva de tom, grão de filme em duas escalas, vinheta, flash, tremida e zoom de impacto: uma cadeia fixa aplicada ao quadro inteiro.</td><td>Bloco <span class="mono">Acabamento</span> (grão + vinheta + halação suave), por cima de tudo.</td></tr>
+<tr><td><b>Motion blur de verdade</b></td><td>Cada quadro é a média de 4 a 324 subquadros, escolhidos automaticamente: parado usa poucos, chicote usa muitos.</td><td><span class="mono">CameraMotionBlur</span> do Remotion só nos trechos rápidos (é caro na nuvem).</td></tr>
+<tr><td><b>Disciplina visual</b></td><td>Uma paleta curta (preto, osso, um laranja de sinal, um acento raro), 3 famílias de fonte com papéis fixos, "nada de neon, cérebro brilhante, chuva de Matrix". Cada cena tem uma ideia visual, nunca ilustração literal da letra.</td><td>Igual ao nosso DESIGN-SYSTEM. Confirma o caminho: <b>restrição</b> é o que deixa sofisticado.</td></tr>
+<tr><td><b>Processo</b></td><td>Tratamento escrito cena a cena antes do código; um "líder" e vários agentes, um por cena; cada um confere seu trabalho por stills e folhas de contato antes do vídeo.</td><td>É o nosso fluxo referência, SPEC, plano, stills, render, crítica.</td></tr>
+</table>
+
+<h3>A grande lição</h3>
+<p>O "uau" do vídeo não vem do GLSL em si. Vem de três coisas juntas: <b>(1)</b> uma ideia visual diferente para cada frase, <b>(2)</b> tudo cravado no tempo exato da voz, e <b>(3)</b> o GLSL para fazer o que o HTML não faz: luz calculada, 3D sem modelo, textura viva e acabamento de filme. Sem (1) e (2), shader vira só fundo bonito. Por isso o plano abaixo começa pelo roteiro, não pelo efeito.</p>
+
+<h2>2. Você perguntou: dá para fazer 3D "falso" com esse nível?</h2>
+<p>Sim. O nome técnico é <b>raymarching com campos de distância (SDF)</b>. Em vez de desenhar um modelo com triângulos (Blender), eu escrevo uma fórmula que diz, para qualquer ponto do espaço, a que distância ele está do objeto. Juntando fórmulas simples (esfera, caixa arredondada, toro) com "união suave", sai qualquer forma orgânica. Para cada pixel, o shader:</p>
+<ul>
+<li>dispara um raio da câmera e avança até encostar na superfície;</li>
+<li>calcula a direção da superfície (normal) e quanto da luz bate ali;</li>
+<li>dispara um segundo raio até a luz para saber se está na sombra, com borda suave;</li>
+<li>mede o quanto o ponto está "apertado" entre superfícies (oclusão de ambiente, aquele escurecido nos cantos);</li>
+<li>reflete o raio e lê o ambiente (um softbox de estúdio), com mais reflexo de lado do que de frente (Fresnel).</li>
+</ul>
+<p>Vantagens sobre o Blender para o nosso caso: é texto (eu escrevo e ajusto sozinho, sem você abrir programa), cada parâmetro pode ser preso a uma palavra da locução, a forma pode se transformar em outra de modo contínuo, e é infinitamente nítido. Limites honestos: personagem realista, roupa e rosto continuam sendo trabalho de modelo 3D ou de vídeo de IA; e na nuvem não há placa de vídeo, então cenas 3D pesadas renderizam a ~1,5 quadro/s (seu PC com placa de vídeo seria muito mais rápido, se um dia precisarmos).</p>
+<img class="prova" src="../testes/teste-3d-raymarching.png">
+<p class="nota">Teste cru de hoje, renderizado na nuvem pelo nosso motor: dois toros entrelaçados só de fórmula, com sombra suave no chão, oclusão e reflexo do softbox. 30 quadros em 19 s. O enquadramento será refeito no vídeo.</p>
+
+<h2 class="quebra">3. Pesquisa: qual o melhor jeito de pôr GLSL no Remotion</h2>
+<table>
+<tr><th style="width:22%">Caminho</th><th>Prós</th><th>Contras</th><th style="width:15%">Decisão</th></tr>
+<tr><td><b>A. Canvas WebGL2 próprio</b> (componente <span class="mono">Shader</span>)</td><td>Zero dependência, controle total, determinístico, rápido; recompila uma vez e só troca números a cada quadro. Fica transparente: dá para empilhar com React por cima e por baixo.</td><td>Sem cena 3D pronta (malhas, câmera): para isso existe o caminho B.</td><td class="azul">Padrão</td></tr>
+<tr><td><b>B. three.js via @remotion/three</b></td><td>Malhas, modelos .glb, materiais, pós-processamento pronto. É o que o vídeo de referência usou (sem Remotion).</td><td>Mais peso e mais um jeito de pensar; para 2D e raymarching não acrescenta nada.</td><td>Quando houver modelo 3D importado</td></tr>
+<tr><td><b>C. Duas passadas</b> (React vira vídeo, o vídeo vira textura do shader)</td><td>Permite deformar a própria tipografia e as telas React com shader (ondulação, vidro quebrado, dissolução do quadro inteiro).</td><td>Render dobrado. Só se o efeito pedir.</td><td>Plano B, sob demanda</td></tr>
+<tr><td>D. Biblioteca de transições GLSL prontas (gl-transitions)</td><td>Dezenas de transições prontas.</td><td>Muitas têm cara de "efeito de editor" (proibição P11 do nosso padrão).</td><td>Só como estudo</td></tr>
+</table>
+
+<h3>Provas técnicas feitas hoje</h3>
+<ul>
+<li>WebGL2 funciona no Chromium do render da nuvem com a opção <span class="mono">--gl=angle</span> (sem placa de vídeo, a GPU é emulada pela CPU).</li>
+<li>Campo de ruído animado em 1080p: 60 quadros em 16 s. Objeto 3D com sombra e reflexo: 30 quadros em 19 s. O vídeo inteiro (~850 quadros) deve renderizar em 10 a 15 min.</li>
+<li>O shader e o React convivem no mesmo quadro: texto Inter por cima do canvas GLSL, sem perder nitidez.</li>
+</ul>
+
+<h3>Regras para todo shader do motor (viram lição)</h3>
+<ul>
+<li><b>Função pura do tempo:</b> o shader só lê <span class="mono">t</span> e os uniforms. Nada de aleatório sem semente, nada de estado entre quadros.</li>
+<li><b>Uniforms presos a palavras:</b> luz, câmera, varredura e transições recebem valores por âncora ("luz", "sombra", "pixel#2"), com as nossas curvas (approach, expressiva).</li>
+<li><b>Cor em linear, saída em sRGB:</b> calcular a luz em espaço linear e converter no fim; senão as sombras ficam sujas.</li>
+<li><b>Antisserrilhado:</b> bordas desenhadas com <span class="mono">fwidth</span> (fio fino sempre limpo); objetos 3D com 2×2 amostras por pixel nos planos parados.</li>
+<li><b>Orçamento:</b> até ~0,6 s por quadro na nuvem. Acima disso, simplificar o shader, nunca a ideia.</li>
+<li><b>Proibições continuam valendo:</b> nada de nebulosa de partículas, neon, glow de fundo, roxo-azul genérico. Shader é ferramenta, não estética.</li>
+</ul>
+
+<h2>4. Arquitetura</h2>
+<div class="fluxo">
+  <div><b>Roteiro</b>frases curtas, uma ideia visual por frase</div>
+  <div><b>Locução</b>voz neural grátis (Thalita) + tempo de cada palavra</div>
+  <div class="hl"><b>Spec JSON</b>eventos e uniforms presos às palavras</div>
+  <div class="hl"><b>Motor</b>Remotion: blocos React + blocos GLSL</div>
+  <div><b>Áudio</b>cama + efeitos nos quadros das ações, ducking</div>
+  <div><b>Render</b>angle, 1080p30, -14 LUFS</div>
+</div>
+
+<p>Cada quadro é uma pilha de camadas, de baixo para cima:</p>
+<div class="camadas">
+  <div class="camada c1"><span><b>1. Cena GLSL</b> · objeto 3D calculado ou campo de textura</span><span>Objeto3D, Campo</span></div>
+  <div class="camada c2"><span><b>2. Tipografia e HUD em React</b> · palavras, rótulos, fórmula, timecode</span><span>Batida, Slam, Rotulo, Hud</span></div>
+  <div class="camada c3"><span><b>3. Transição GLSL</b> · dissolução por ruído com fio azul na borda</span><span>Dissolve</span></div>
+  <div class="camada c4"><span><b>4. Acabamento GLSL</b> · grão de filme, vinheta, halação</span><span>Acabamento</span></div>
+</div>
+
+<h3>Peças novas no motor</h3>
+<table>
+<tr><th style="width:24%">Arquivo</th><th>Papel</th></tr>
+<tr><td class="mono">src/glsl/Shader.tsx</td><td>Canvas WebGL2: compila o shader uma vez, passa <span class="mono">t</span>, resolução e uniforms a cada quadro. Pronto e testado.</td></tr>
+<tr><td class="mono">src/glsl/comum.ts</td><td>Nossa biblioteca GLSL: ruído simplex e fbm, formas (SDF), união suave, sombra suave, oclusão, Fresnel, ambiente de estúdio, hachura, sRGB, paleta do design system. Partes adaptadas do código MIT da referência, com crédito.</td></tr>
+<tr><td class="mono">src/motor/chaves.ts</td><td>Animação de números presa a palavras: <span class="mono">[["luz", 1.2, "approach"], ["sombra", 2.4, "expressiva"]]</span>. Serve para qualquer bloco, não só GLSL.</td></tr>
+<tr><td class="mono">blocos/Objeto3D.tsx</td><td>Cena 3D por raymarching: forma, câmera, luz, varredura "raio X", pixelização, derretimento. Tudo por uniforms.</td></tr>
+<tr><td class="mono">blocos/Campo.tsx</td><td>Textura viva 2D (fbm com distorção de domínio): tinta azul fluindo sobre papel.</td></tr>
+<tr><td class="mono">blocos/Dissolve.tsx</td><td>Transição: o papel "come" a cena por um limiar de ruído, com um fio azul fino na frente.</td></tr>
+<tr><td class="mono">blocos/Acabamento.tsx</td><td>Pós: grão em duas escalas, vinheta, halação. Transparente, por cima de tudo.</td></tr>
+<tr><td class="mono">blocos/Hud.tsx, Rotulo.tsx</td><td>Timecode e número do quadro (o fio que costura as cenas); rótulo mono com linha-guia apontando para uma região.</td></tr>
+</table>
+
+<h2 class="quebra">5. O vídeo: "Isso não foi filmado"</h2>
+<p><b>Objetivo:</b> uma vitrine de 28 s que prove, para você e para clientes, que o motor agora faz luz, 3D e textura calculados, no nosso estilo. <b>Formato:</b> 1920×1080, 30 fps (vertical depois, se você quiser). <b>Estilo:</b> fundo claro de estúdio, um azul só, Inter + uma mono para a "voz da máquina", movimento com mola, um foco por quadro.</p>
+
+<h3>Roteiro e plano a plano (tempos reais da locução gravada)</h3>
+<table>
+<tr><th style="width:9%">Tempo</th><th style="width:21%">Fala</th><th>Imagem e movimento</th><th style="width:18%">Técnica</th><th style="width:13%">Som</th></tr>
+<tr><td class="n">0,0–2,5</td><td>"Isso não foi filmado."</td><td>Quadro 1 já pronto: dois anéis azuis entrelaçados num estúdio claro, girando devagar, câmera aproximando. "filmado" sobe da máscara e um traço o risca no fim da palavra. HUD no canto: <span class="mono">t = 0,000 s · quadro 0001</span>.</td><td>Objeto3D, Batida, Hud</td><td>cama entra; tique no risco</td></tr>
+<tr><td class="n">2,5–5,2</td><td>"E também não foi modelado."</td><td>Câmera dá meia volta rápida no objeto (chicote com motion blur) em "modelado"; a palavra é riscada igual.</td><td>Objeto3D (câmera), CameraMotionBlur</td><td>whoosh no pico do giro</td></tr>
+<tr><td class="n">5,2–8,0</td><td>"É uma fórmula."</td><td><b>Vitrine 1.</b> Uma faixa de varredura atravessa a tela; atrás dela o objeto vira a sua matemática: curvas de nível do campo de distância em fio azul sobre papel. A fórmula é digitada em mono ao lado: <span class="mono">d = min(toro(p), toro(q)) - 0.2</span>. "fórmula" pousa em Inter 700.</td><td>Objeto3D (modo raio X), Rotulo</td><td>varredura (swish longo), teclas</td></tr>
+<tr><td class="n">8,0–12,0</td><td>"O código calcula a luz, a sombra, e o reflexo."</td><td>Em "luz" a luz gira e o sombreado acompanha; em "sombra" a sombra varre o chão; em "reflexo" o brilho do softbox desliza pela superfície. Cada palavra ganha um rótulo mono com linha-guia apontando para o que mudou.</td><td>uniforms presos a palavras, Rotulo</td><td>3 pops suaves, um por rótulo</td></tr>
+<tr><td class="n">12,0–14,9</td><td>"Pixel por pixel."</td><td><b>Vitrine 2.</b> No primeiro "pixel" a imagem vira blocos grandes de 1 cor; um bloco acende e mostra o seu valor <span class="mono">rgb(0, 113, 227)</span>. No segundo "pixel" tudo volta à nitidez num estalo.</td><td>Objeto3D (pixelização)</td><td>tique em cada estalo</td></tr>
+<tr><td class="n">14,9–17,7</td><td>"A mesma matemática vira textura,"</td><td>O objeto derrete no chão (união suave) e o chão vira tinta azul fluindo sobre papel, ocupando o quadro. "textura" entra em Inter.</td><td>Objeto3D, depois Campo</td><td>riser curto</td></tr>
+<tr><td class="n">17,7–19,3</td><td>"transição,"</td><td>O papel come a textura por um limiar de ruído, com um fio azul fino na frente da borda.</td><td>Dissolve</td><td>swish</td></tr>
+<tr><td class="n">19,3–22,2</td><td>"e acabamento de cinema."</td><td><b>Vitrine 3.</b> Tela dividida por uma linha que corre: à esquerda o quadro "cru", à direita o mesmo quadro com grão, vinheta e halação. Rótulos <span class="mono">sem</span> / <span class="mono">com</span>.</td><td>Acabamento (com máscara)</td><td>cama abre no respiro</td></tr>
+<tr><td class="n">22,2–28,4</td><td>"Agora, o nosso motor fala GLSL."</td><td>O objeto volta pequeno ao centro. Cartão final: "Estúdio" e, abaixo, as letras G · L · S · L batendo cada uma no instante em que a voz diz a letra. Segura, câmera em push-in lento, fade do som.</td><td>Objeto3D, Slam por letra, Acabamento</td><td>impacto leve na última letra</td></tr>
+</table>
+
+<h3>Parâmetros fixos</h3>
+<div class="duas"><div>
+<table>
+<tr><th>Item</th><th>Valor</th></tr>
+<tr><td>Fundo de estúdio</td><td class="mono">#F5F5F7</td></tr>
+<tr><td>Texto</td><td class="mono">#1D1D1F</td></tr>
+<tr><td>Cor única de destaque</td><td class="mono">#0071E3</td></tr>
+<tr><td>Fontes</td><td>Inter 500/700 (fala), JetBrains Mono 400 (máquina)</td></tr>
+<tr><td>Palavra grande</td><td>Inter 700, 120–150 px, tracking -0,02 em</td></tr>
+<tr><td>Rótulos</td><td>mono 24 px, tracking +0,02 em</td></tr>
+<tr><td>Legenda contínua</td><td>Inter 500, 50 px, base em 87% da altura</td></tr>
+</table></div><div>
+<table>
+<tr><th>Item</th><th>Valor</th></tr>
+<tr><td>Entradas</td><td>approach k = 0,15; nunca de escala 0</td></tr>
+<tr><td>Durações</td><td>rótulo 9–12 q; palavra grande 15–23 q; câmera 30–45 q</td></tr>
+<tr><td>Motion blur</td><td>só no chicote de câmera, 8 subquadros</td></tr>
+<tr><td>Objeto 3D</td><td>até 120 passos, sombra 48, 2×2 amostras parado</td></tr>
+<tr><td>Grão</td><td>amplitude 0,035, duas escalas, mais nos meios-tons</td></tr>
+<tr><td>Voz / cama</td><td>voz -16 LUFS; cama 18–22 LU abaixo, sobe nos respiros</td></tr>
+<tr><td>Master</td><td>-14 LUFS, pico -1 dBTP</td></tr>
+</table></div></div>
+
+<h2>6. Ordem de construção</h2>
+<table>
+<tr><th style="width:5%">#</th><th>Etapa</th><th style="width:34%">Como confiro</th></tr>
+<tr><td>1</td><td>Biblioteca <span class="mono">comum.ts</span> + <span class="mono">chaves.ts</span></td><td>compila; still de cada função</td></tr>
+<tr><td>2</td><td>Objeto3D com os modos (normal, raio X, pixel, derreter) e enquadramento final</td><td>5 stills por modo, com zoom</td></tr>
+<tr><td>3</td><td>Campo, Dissolve, Acabamento</td><td>folha de contato a cada 0,2 s</td></tr>
+<tr><td>4</td><td>Spec do vídeo + tipografia, rótulos, HUD, legenda</td><td>5 stills-chave (abertura, fórmula, pixel, acabamento, final)</td></tr>
+<tr><td>5</td><td>Áudio: cama, efeitos nos quadros, ducking, -14 LUFS</td><td>medição de loudness e margem de voz</td></tr>
+<tr><td>6</td><td>Render completo + crítica por uma sessão nova, contra este plano e o DESIGN-SYSTEM</td><td>nota 8/10 ou mais antes de entregar</td></tr>
+<tr><td>7</td><td>Lições na motion-base e ESTADO.md com comandos para refazer</td><td>arquivo salvo na pasta do projeto</td></tr>
+</table>
+
+<h2>7. Riscos e como lidamos</h2>
+<ul>
+<li><b>Render lento na nuvem</b> (sem placa de vídeo): shaders enxutos e motion blur só onde importa. Se um dia precisarmos de cena muito pesada, o seu PC renderiza.</li>
+<li><b>3D com cara de "computação gráfica"</b>: luz de estúdio suave, sombra de borda macia, materiais sem brilho exagerado, uma cor só. Se ficar plástico, o caminho é o estilo gravura da referência.</li>
+<li><b>Efeito pelo efeito</b>: cada vitrine está presa a uma palavra e mostra uma coisa só.</li>
+<li><b>Pronúncia de "GLSL"</b> pela voz neural: gravado letra por letra ("G L S L") para sair soletrado.</li>
+</ul>
+
+<p class="nota" style="margin-top:16pt">Arquivos: plano em <span class="mono">/estudio/glsl/plano/</span>, trabalho em <span class="mono">/estudio/glsl/trabalho/</span> (ESTADO.md), código no motor <span class="mono">/estudio/motor/src/glsl/</span>. Referência: github.com/oprogramadorreal/pdoom-video (MIT), vídeo youtube.com/watch?v=CLD-GSpl5Q0.</p>
+</body></html>
