@@ -1,0 +1,54 @@
+âncora inspired
+âncora deliberate
+âncora wallpaper
+0 608 sb-a-dragon-s-lullaby-2023-remaster {'aula': 0.4384, 'fala': 0.3561, 'gancho': 0.2895, 'final': 0.5086, 'leve': 0.245}
+20 608 sb-castles-in-the-sky {'aula': 0.5011, 'fala': 0.439, 'gancho': 0.2609, 'final': 0.4278, 'leve': 0.3067}
+40 608 sb-fate-and-fortune {'aula': 0.1131, 'fala': 0.0502, 'gancho': 0.2698, 'final': 0.3598, 'leve': -0.0054}
+60 608 sb-in-dreams {'aula': 0.3764, 'fala': 0.2644, 'gancho': 0.3998, 'final': 0.5157, 'leve': 0.2005}
+80 608 sb-machina {'aula': 0.2912, 'fala': 0.277, 'gancho': 0.3921, 'final': 0.3695, 'leve': 0.001}
+100 608 sb-precipice {'aula': 0.2475, 'fala': 0.1633, 'gancho': 0.3079, 'final': 0.4917, 'leve': 0.0819}
+120 608 sb-starfire {'aula': 0.3554, 'fala': 0.25, 'gancho': 0.365, 'final': 0.5082, 'leve': 0.1772}
+140 608 sb-monomyth-the-things-that-keep-us-here {'aula': 0.4562, 'fala': 0.3727, 'gancho': 0.3088, 'final': 0.4289, 'leve': 0.2255}
+160 608 ccm-37792 {'aula': 0.5168, 'fala': 0.4142, 'gancho': 0.2105, 'final': 0.217, 'leve': 0.4047}
+180 608 ccm-64741 {'aula': 0.6148, 'fala': 0.5425, 'gancho': 0.2953, 'final': 0.2457, 'leve': 0.4378}
+200 608 ccm-18171 {'aula': 0.1556, 'fala': 0.204, 'gancho': 0.0099, 'final': 0.1006, 'leve': 0.0918}
+220 608 ccm-19388 {'aula': 0.2558, 'fala': 0.3223, 'gancho': 0.0064, 'final': 0.1247, 'leve': 0.2678}
+/mnt/attach/project-files/motion-base/musica/fonte/analise.py:37: UserWarning: PySoundFile failed. Trying audioread instead.
+  y, _ = librosa.load(str(f), sr=SR, mono=True)
+/usr/local/lib/python3.11/dist-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+240 608 ccm-30169 {'aula': 0.0298, 'fala': 0.0643, 'gancho': 0.1213, 'final': -0.0557, 'leve': 0.0086}
+/mnt/attach/project-files/motion-base/musica/fonte/analise.py:37: UserWarning: PySoundFile failed. Trying audioread instead.
+  y, _ = librosa.load(str(f), sr=SR, mono=True)
+/usr/local/lib/python3.11/dist-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+/mnt/attach/project-files/motion-base/musica/fonte/analise.py:37: UserWarning: PySoundFile failed. Trying audioread instead.
+  y, _ = librosa.load(str(f), sr=SR, mono=True)
+/usr/local/lib/python3.11/dist-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+260 608 ccm-27187 {'aula': 0.356, 'fala': 0.2797, 'gancho': 0.0959, 'final': 0.0528, 'leve': 0.4342}
+280 608 ccm-24456 {'aula': 0.5259, 'fala': 0.4307, 'gancho': 0.3756, 'final': 0.4317, 'leve': 0.2888}
+[src/libmpg123/id3.c:process_comment():587] error: No comment text / valid description?
+300 608 ccm-4066 {'aula': 0.16, 'fala': 0.1869, 'gancho': 0.2729, 'final': 0.1914, 'leve': -0.0066}
+320 608 jam-1319541 {'aula': 0.1312, 'fala': 0.2208, 'gancho': 0.0293, 'final': 0.0882, 'leve': 0.091}
+340 608 fs-411746 {'aula': 0.148, 'fala': 0.17, 'gancho': 0.349, 'final': 0.1455, 'leve': -0.1364}
+360 608 fs-709132 {'aula': 0.4641, 'fala': 0.2922, 'gancho': 0.2361, 'final': 0.375, 'leve': 0.2212}
+380 608 fs-674936 {'aula': 0.5043, 'fala': 0.4147, 'gancho': 0.2653, 'final': 0.1248, 'leve': 0.424}
+400 608 fs-620918 {'aula': 0.2619, 'fala': 0.2397, 'gancho': 0.0669, 'final': 0.0136, 'leve': 0.3534}
+420 608 fs-851246 {'aula': 0.5065, 'fala': 0.4265, 'gancho': 0.3992, 'final': 0.2777, 'leve': 0.3218}
+440 608 fs-772679 {'aula': 0.3479, 'fala': 0.2145, 'gancho': 0.1426, 'final': 0.2652, 'leve': 0.3846}
+460 608 fs-742890 {'aula': 0.5632, 'fala': 0.4771, 'gancho': 0.291, 'final': 0.2575, 'leve': 0.3504}
+480 608 fs-653487 {'aula': 0.3673, 'fala': 0.2651, 'gancho': 0.1935, 'final': 0.1886, 'leve': 0.3416}
+500 608 fs-532828 {'aula': 0.4902, 'fala': 0.2712, 'gancho': 0.0961, 'final': 0.1319, 'leve': 0.5257}
+520 608 fs-678019 {'aula': 0.4137, 'fala': 0.4035, 'gancho': 0.2033, 'final': 0.1701, 'leve': 0.3211}
+540 608 fs-608398 {'aula': 0.1619, 'fala': 0.0231, 'gancho': 0.1179, 'final': 0.0918, 'leve': 0.1564}
+560 608 fs-624858 {'aula': 0.3821, 'fala': 0.2799, 'gancho': 0.3999, 'final': 0.4563, 'leve': 0.1514}
+580 608 fs-608811 {'aula': 0.4216, 'fala': 0.2883, 'gancho': 0.303, 'final': 0.4845, 'leve': 0.2681}
+600 608 fs-747075 {'aula': 0.5471, 'fala': 0.3949, 'gancho': 0.2012, 'final': 0.204, 'leve': 0.5674}
+ok 602
