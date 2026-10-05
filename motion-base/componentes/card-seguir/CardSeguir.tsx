@@ -1,4 +1,4 @@
-// Card final opcional "Seguir" no TikTok (logo, foto, @, clique no botão). Copiado de pessoal-vitor/bastidores.
+// Card final opcional "Seguir" (foto, @, clique no botão), SEM logo do TikTok (Vítor pediu). LogoTikTok fica disponível se um dia quiser.
 // Depende de: kit (spring, clamp, lerp, E, prog, Cursor), Fonts (DISPLAY, TEXT), lib (T.fim, PAPEL, TINTA), public/img/tiktok.svg e avatar.jpg.
 // perfil do TikTok: logo com o efeito ciano/vermelho, foto, @ e o botão Seguir
 const HANDLE = '@vitormach._'; // igual no TikTok e no Instagram
@@ -15,11 +15,9 @@ const Final: React.FC = () => {
   const clique = 30;
   const segue = f >= clique + 3;
   const press = f >= clique && f < clique + 8 ? Math.sin(((f - clique) / 8) * Math.PI) : 0;
-  const cx = lerp(980, 640, E.expr(prog(f, 10, 18))), cy = lerp(1500, 1220, E.expr(prog(f, 10, 18)));
+  const cx = lerp(980, 600, E.expr(prog(f, 10, 18))), cy = lerp(1500, 1170, E.expr(prog(f, 10, 18)));
   return (
     <AbsoluteFill style={{background: PAPEL, alignItems: 'center', justifyContent: 'center', opacity: clamp(s * 1.5), fontFamily: TEXT}}>
-      <div style={{display: 'flex', alignItems: 'center', gap: 16, marginBottom: 60, opacity: spring(f, 4, 0.5, 0.8)}}><LogoTikTok s={64} />
-        <span style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 56, color: TINTA, letterSpacing: -1}}>TikTok</span></div>
       <div style={{width: 320, height: 320, borderRadius: 160, overflow: 'hidden', transform: `scale(${0.7 + 0.3 * s})`, boxShadow: '0 20px 60px rgba(0,0,0,0.18)'}}>
         <Img src={staticFile('img/avatar.jpg')} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </div>
