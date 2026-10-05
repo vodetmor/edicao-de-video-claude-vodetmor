@@ -1,0 +1,16 @@
+# Estado do anúncio VSL Play (atualizado a cada etapa)
+
+- v5 (48 s, sem locução): entregue em 29/09 18:40 UTC. Crítica 8/10. Arquivos na raiz de `anuncio-vslplay/`.
+- v6 (voz provisória, 81 s) entregue 23:04. v7 (voz Ana Dias gerada pelo Vítor, animação presa nas palavras, música e efeitos no tempo normal) entregue 23:49 UTC como anuncio-vslplay-locucao.mp4 (98,8 s, -14,1 LUFS, pico -1,9 dBTP).
+  - Texto: `locucao/roteiro.json` (cada fala presa a um quadro do corte original). Para gerar no site: `locucao/ROTEIRO-ELEVENLABS.md`.
+  - Voz provisória: Eric (voz padrão). Prévia entregue: anuncio-vslplay-locucao-provisoria.mp4 (81 s, -14.1 LUFS, pico -1.8). Voz final: Ana Dias - Engaging (feminina), gerada pelo Vítor no site; aguardando os MP3.
+  - Como funciona o reajuste: `fonte/warp.py` lê a duração de cada fala e estica o tempo por trechos (abertura 0-172 e final 1304-1440 ficam na velocidade original; transições quase intactas). Gera `src/warp.ts` e `out/audio/warp.json`; `audio/make_audio.py` segue o mesmo mapa, então cada efeito continua no quadro certo.
+  - Mix: música abaixa 10 dB sob a voz (entra em 120 ms, volta em 700 ms nas pausas), efeitos 5 dB; voz cerca de 11 dB acima da trilha.
+  - Refazer tudo depois de trocar as falas: `python3 locucao/gera.py` (ou colocar os MP3 em `locucao/clips/`), `python3 warp.py`, `python3 audio/make_audio.py`, render do "Anuncio" e mux (README).
+- A chave do ElevenLabs está em `trabalho/.env` (não copiar para outro lugar; o Vítor vai revogar).
+- Feito (23:30 UTC): comparação de preço na tela agora é mensal: concorrente R$ 597 -> R$ 680, VSLPLAY R$ 48,50 "no plano anual" (rodapé: plano Pro anual, R$ 582 à vista).
+- 30/09 00:08 UTC, Vítor: nota 10/10. Pedidos: acelerar 1,2x, a cena de integrações só depois de ela terminar "...pixel", e versão vertical.
+  - Feito: `SPEED=1.2` em `fonte/warp.py` (voz atempo 1,2; imagem segue as palavras; música no tempo normal). Chaves: mais pixel->1148, integr "o"->1164. Corte horizontal v8: 83,4 s (`renders/anuncio-vslplay-locucao-v8.mp4`).
+  - Vertical: `src/Vertical.tsx` (composição "Vertical", 1080x1920, mesmo áudio `out/audio/mix.wav`). Painéis por plano (quadro de origem); `LAYOUT.vertical` em `kit.tsx` muda preço e integrações. Stills de teste: `node stills.mjs pasta 300,850 0.5 VerticalSrc` (quadros de origem). Render: igual ao horizontal trocando `Anuncio` por `Vertical`.
+- 30/09 00:36 UTC: horizontal v8 ENTREGUE em `anuncio-vslplay/anuncio-vslplay-locucao.mp4` (83,4 s, -14,1 LUFS). Vertical: renderizando. Se a sessão cair, para retomar: copiar `trabalho/fonte/` para uma pasta, `npm i`, criar link `locucao` -> `trabalho/locucao`, copiar `trabalho/audio/mix-v8.wav` para `out/audio/mix.wav`, rodar `bash render_vert.sh` (ajustar o caminho do `cd` no início). Saída: `renders/anuncio-vslplay-locucao-vertical-v1.mp4`; entregar como `anuncio-vslplay/anuncio-vslplay-locucao-vertical.mp4`. Nota: a render da vertical precisa de `--timeout=300000` (o vídeo do apresentador demora no primeiro quadro).
+- 30/09 ~02:00 UTC: vertical ENTREGUE em `anuncio-vslplay/anuncio-vslplay-locucao-vertical.mp4` (1080x1920, 83,4 s, -14,1 LUFS). Render em partes: `fonte/render_vert_chunks.sh` (retoma sozinho, pula partes prontas). Zip da fonte atualizado.

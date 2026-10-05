@@ -1,0 +1,79 @@
+[
+ {
+  "id": "abre",
+  "at": 124,
+  "text": "VSL Play. O player com banda e cliques ilimitados."
+ },
+ {
+  "id": "smart",
+  "at": 256,
+  "text": "Primeiro, prenda a atenção. O Smart AutoPlay faz o vídeo parecer já ter começado. No clique, ele volta do início."
+ },
+ {
+  "id": "thumbs",
+  "at": 366,
+  "text": "Pausou? Uma thumbnail persuasiva aparece na hora."
+ },
+ {
+  "id": "continue",
+  "at": 436,
+  "text": "Com o Continue Assistindo, quem volta ao vídeo escolhe continuar de onde parou ou começar de novo."
+ },
+ {
+  "id": "barra",
+  "at": 508,
+  "text": "Na retenção, a Barra Fictícia faz o vídeo parecer mais curto, e o público fica até o final."
+ },
+ {
+  "id": "grafico",
+  "at": 592,
+  "text": "Com o Gráfico de Retenção, você vê o ponto exato em que a audiência cai e corrige esse trecho."
+ },
+ {
+  "id": "delay",
+  "at": 732,
+  "text": "Na conversão, o Botão com Delay aparece no minuto exato que você escolher."
+ },
+ {
+  "id": "controles",
+  "at": 828,
+  "text": "Com os Controles, você escolhe o que aparece no seu player."
+ },
+ {
+  "id": "aparencia",
+  "at": 898,
+  "text": "E na Aparência, você personaliza cor, bordas e formato do jeito da sua marca."
+ },
+ {
+  "id": "preco_a",
+  "at": 976,
+  "text": "Imagine cem mil plays por ano. Somando assinatura e plays extras, o concorrente cobra quase setecentos reais por mês.",
+  "from": "preco.mp3 (cortado na pausa antes de \"Já\")"
+ },
+ {
+  "id": "preco_b",
+  "at": 1011,
+  "text": "Já no VSL Play, o plano anual sai por menos de cinquenta reais por mês, sem cobrança por plays ou banda.",
+  "from": "preco.mp3"
+ },
+ {
+  "id": "mais",
+  "at": 1082,
+  "text": "E muito mais: Teste A B de vídeo e de headline, Análise de Pitch, Simulador de Views ao Vivo, Filtro de Tráfego e Pixel."
+ },
+ {
+  "id": "integr",
+  "at": 1166,
+  "text": "O VSL Play aceita links do YouTube e arquivos MP4, e se integra às plataformas que você já usa."
+ },
+ {
+  "id": "usuarios",
+  "at": 1262,
+  "text": "Mais de dois mil usuários satisfeitos já usam o VSL Play."
+ },
+ {
+  "id": "cta",
+  "at": 1362,
+  "text": "Teste por sete dias grátis."
+ }
+]

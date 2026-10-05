@@ -1,0 +1,149 @@
+{
+ "_doc": "Palavra da fala -> quadro do corte original (48 s) em que a animação correspondente acontece. A palavra é achada pelo começo (sem acento, minúsculas); 'n' escolhe a n-ésima ocorrência.",
+ "abre": [
+  [
+   "vsl",
+   128
+  ]
+ ],
+ "smart": [
+  [
+   "primeiro",
+   256
+  ],
+  [
+   "smart",
+   296
+  ],
+  [
+   "clica",
+   336
+  ]
+ ],
+ "thumbs": [
+  [
+   "pausou",
+   366
+  ],
+  [
+   "thumbnail",
+   392
+  ]
+ ],
+ "continue": [
+  [
+   "continue",
+   436
+  ],
+  [
+   "escolhe",
+   462
+  ]
+ ],
+ "barra": [
+  [
+   "retencao",
+   508
+  ],
+  [
+   "barra",
+   534
+  ]
+ ],
+ "grafico": [
+  [
+   "grafico",
+   590
+  ],
+  [
+   "cai",
+   630
+  ]
+ ],
+ "delay": [
+  [
+   "conversao",
+   732
+  ],
+  [
+   "botao",
+   758
+  ],
+  [
+   "aparece",
+   798
+  ]
+ ],
+ "controles": [
+  [
+   "controles",
+   828
+  ]
+ ],
+ "aparencia": [
+  [
+   "aparencia",
+   898
+  ],
+  [
+   "formato",
+   930
+  ]
+ ],
+ "preco_a": [
+  [
+   "imagine",
+   978
+  ],
+  [
+   "mes",
+   1004
+  ]
+ ],
+ "preco_b": [
+  [
+   "ja",
+   1013
+  ]
+ ],
+ "mais": [
+  [
+   "muito",
+   1080
+  ],
+  [
+   "pixel",
+   1148
+  ]
+ ],
+ "integr": [
+  [
+   "o",
+   1164
+  ],
+  [
+   "youtube",
+   1206
+  ],
+  [
+   "usa",
+   1252
+  ]
+ ],
+ "usuarios": [
+  [
+   "mais",
+   1262
+  ],
+  [
+   "mil",
+   1280
+  ]
+ ],
+ "cta": [
+  [
+   "teste",
+   1376
+  ]
+ ]
+}
