@@ -1,0 +1,58 @@
+[   0.00 -    6.28] Essa é a questão mais difícil do Elendium 2.25, mas o próprio desenho já dá a resposta.
+[   6.66 -    7.62] Vamos resolver juntos?
+[   8.28 -   13.14] A questão diz o seguinte, um copo é enchido com vasão constante, a mesma quantidade de
+[  13.14 -   19.00] joca por minuto, D é a altura da água, T é o tempo, e a altura segue essa função
+[  19.00 -   19.98] da tangente.
+[  20.40 -   23.90] A pergunta que fica é, quanto vale K, P e M?
+[  24.62 -   26.40] Primeiro, vamos entender esse desenho.
+[  26.40 -   31.84] Para não ficar muito difícil interpretar esse recipiente de formato estranho, vamos
+[  31.84 -   33.62] pensar em um cubo.
+[  33.70 -   38.90] Em um cubo, toda a camada é igual, então a altura sobe sempre no mesmo ritmo.
+[  39.06 -   43.52] Vamos pensar o seguinte, esse cubo está sendo jorrado, a água é uma vasão constante,
+[  44.20 -   49.26] então a água vai subir sempre nesse mesmo nível, vai sempre uma vasão constante
+[  49.26 -   55.06] no mesmo ritmo, então o gráfico é uma reta, a medida que sobe vai indo no mesmo
+[  55.06 -   55.56] ritmo.
+[  55.56 -   61.84] Só que esse copo, perceba que ele é estreito, largo e estreito, então onde é estreito
+[  61.84 -   67.58] a água sobe bastante, bem rápido, onde é largo a água sobe devagar, então a ordem
+[  67.58 -   74.58] fica rápido, devagar e rápido, e no meio, onde a curva quase deita, é o ponto 2,5 e
+[  74.58 -   75.04] 30.
+[  75.58 -   76.14] Beleza.
+[  76.40 -   77.94] Mas por que isso é uma tangente?
+[  78.94 -   81.34] Vamos pensar o seguinte, o que é uma tangente?
+[  81.34 -   86.36] Pensa numa rampa, a tangente de um ângulo diz quanto essa rampa sobe para cada um passo
+[  86.36 -   93.70] que você anda para frente, uma rampa deitada, ângulo 0, não sobe nada, então uma tangente
+[  93.70 -  103.08] de 0 é 0, uma rampa de 45 anda 1, sobe 1, tangente de 45 é 1, levanta mais, a
+[ 103.08 -  109.58] tangente de 60 sobe quase 2, a de 80 sobe quase 6 e a de 90, a de 90 a rampa
+[ 109.70 -  113.94] vira uma parede, não tem como você andar para frente, então a tangente não existe
+[ 113.94 -  120.20] ali, ela dispara para o infinito e essa parede é a cítata, e se a rampa descer,
+[ 120.40 -  126.36] a tangente fica negativa, agora joga tudo num gráfico, embaixo do ângulo, em cima
+[ 126.36 -  131.98] da tangente, olha a curva, passa pelo 0, dispara perto das paredes e de uma
+[ 131.98 -  138.40] parede até outra são 180 graus, e 180 graus é pi, depois disso a rampa volta
+[ 138.40 -  144.76] na mesma posição, e o desenho se repete, rápido, devagar e rápido, é o formato do copo
+[ 144.76 -  152.40] guarda essas três coisas da tangente, o centro está no 0, na altura 0, e a largura é pi
+[ 153.18 -  157.70] só que o gráfico do copo não está no 0, ele foi movido, e para mover o gráfico
+[ 157.70 -  168.38] só existe três movimentos, cada letra da fórmula faz um, primeiro somar um
+[ 168.38 -  173.72] o gráfico inteiro sobe como elevador, então é como se você somasse 30 sobre 30
+[ 173.72 -  178.96] segundo, somar dentro dos parênteses, aí meu amigo o gráfico anda para o lado
+[ 178.96 -  184.86] mas ao contrário do sinal, por que? o centro acontece quando está dentro da 0
+[ 184.86 -  192.62] em tangente de t menos 2, isso acontece em t igual a 2, o centro andou 2 para a direita
+[ 192.62 -  198.96] menos dentro, direita, mais dentro, esquerda
+[ 198.96 -  205.66] terceiro, multiplicar dentro, isso muda a velocidade, com p igual a 2, tudo acontece
+[ 205.66 -  211.80] duas vezes mais rápido, o gráfico se espreme, a largura cai pela metade, com o gráfico
+[ 211.80 -  217.62] de p igual a 1 meio, tudo acontece duas vezes mais devagar, ela se estica e a largura
+[ 217.84 -  226.04] a regra é, largura é igual pi sobre p, pronto, agora você tem tudo que você precisa
+[ 226.04 -  231.32] é só comparar o gráfico do copo com a tangente original, o k é o elevador
+[ 231.32 -  236.74] o centro estava na altura 0 e o copo está na altura 30, então k igual a 30
+[ 237.38 -  244.24] o m é a esteira, o centro estava em 0 e foi para 2,5, andou para a direita
+[ 244.24 -  251.04] lá dentro do parênteses, então vai ser menos, m é igual menos 2,5
+[ 251.04 -  257.08] portanto, é a mesma coisa que dizer que é menos 5 sobre 2, e dá para conferir
+[ 257.08 -  264.36] 2,5 fica exatamente no meio das assíntotas da figura, some as duas e divide por 2
+[ 264.36 -  272.68] os dois pi se cancelam e dá 2,5, o p, a sanfona, que mede a largura
+[ 272.68 -  278.86] pensa, a largura original era pi, no copo a largura é a distância entre as assíntotas
+[ 278.86 -  284.62] os 5 se cancelam e sobra 2 pi, a largura dobrou, então o gráfico se esticou
+[ 284.62 -  291.32] d é igual a 1 meio, então juntando os 3, d é igual a 30 mais tangente de 1 meio
+[ 291.32 -  296.58] vezes t menos 5 meios, portanto a alternativa é, e o atalho para a prova
+[ 296.58 -  301.22] é sempre pensar o seguinte, o k é a altura do centro, só com 30 você já vai
+[ 301.22 -  308.22] eliminar a, b e c, e o centro tem 2,5, elimina d, o copo desenhou o gráfico
+[ 308.22 -  312.58] e o gráfico deu a resposta, então é isso, resolvemos mais uma questãozinha do nosso
+[ 313.20 -  315.42] Enem de 2025, valeu!

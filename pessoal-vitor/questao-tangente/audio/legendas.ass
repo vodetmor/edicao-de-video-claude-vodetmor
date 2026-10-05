@@ -1,0 +1,183 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: L,Inter SemiBold,54,&H001F1D1D,&H00888888,&H00F7F5F5,&H00000000,0,0,0,0,100,100,0,0,1,6,0,2,80,80,42,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.32,L,,0,0,0,,Essa é a questão mais difícil
+Dialogue: 0,0:00:02.32,0:00:03.52,L,,0,0,0,,do ENEM 2025
+Dialogue: 0,0:00:03.52,0:00:05.66,L,,0,0,0,,mas o próprio desenho já dá
+Dialogue: 0,0:00:05.66,0:00:06.53,L,,0,0,0,,a resposta.
+Dialogue: 0,0:00:06.66,0:00:07.87,L,,0,0,0,,Vamos resolver juntos?
+Dialogue: 0,0:00:09.28,0:00:10.65,L,,0,0,0,,A questão diz o seguinte
+Dialogue: 0,0:00:10.76,0:00:12.26,L,,0,0,0,,um copo é enchido com vazão
+Dialogue: 0,0:00:12.26,0:00:14.14,L,,0,0,0,,constante, a mesma quantidade de
+Dialogue: 0,0:00:14.14,0:00:15.36,L,,0,0,0,,água por minuto
+Dialogue: 0,0:00:15.36,0:00:17.15,L,,0,0,0,,D é a altura da água
+Dialogue: 0,0:00:17.28,0:00:18.78,L,,0,0,0,,T é o tempo
+Dialogue: 0,0:00:18.78,0:00:20.00,L,,0,0,0,,e a altura segue essa função
+Dialogue: 0,0:00:20.00,0:00:21.23,L,,0,0,0,,da tangente.
+Dialogue: 0,0:00:21.40,0:00:22.68,L,,0,0,0,,A pergunta que fica é
+Dialogue: 0,0:00:22.68,0:00:25.15,L,,0,0,0,,quanto vale k, p e m?
+Dialogue: 0,0:00:26.82,0:00:27.96,L,,0,0,0,,Primeiro, vamos entender esse
+Dialogue: 0,0:00:27.96,0:00:28.60,L,,0,0,0,,desenho.
+Dialogue: 0,0:00:28.60,0:00:30.46,L,,0,0,0,,Para não ficar muito difícil
+Dialogue: 0,0:00:30.46,0:00:32.46,L,,0,0,0,,interpretar esse recipiente de
+Dialogue: 0,0:00:32.46,0:00:33.74,L,,0,0,0,,formato estranho
+Dialogue: 0,0:00:33.74,0:00:35.90,L,,0,0,0,,vamos pensar em um cubo.
+Dialogue: 0,0:00:35.90,0:00:36.93,L,,0,0,0,,Em um cubo
+Dialogue: 0,0:00:36.96,0:00:38.41,L,,0,0,0,,toda a camada é igual
+Dialogue: 0,0:00:38.48,0:00:40.06,L,,0,0,0,,então a altura sobe sempre no
+Dialogue: 0,0:00:40.06,0:00:41.35,L,,0,0,0,,mesmo ritmo.
+Dialogue: 0,0:00:41.36,0:00:42.82,L,,0,0,0,,então o gráfico é uma reta
+Dialogue: 0,0:00:42.82,0:00:43.92,L,,0,0,0,,Só que esse copo
+Dialogue: 0,0:00:43.92,0:00:45.92,L,,0,0,0,,perceba que ele é estreito
+Dialogue: 0,0:00:45.92,0:00:47.55,L,,0,0,0,,largo e estreito
+Dialogue: 0,0:00:47.58,0:00:49.42,L,,0,0,0,,então onde é estreito a água
+Dialogue: 0,0:00:49.42,0:00:51.37,L,,0,0,0,,sobe bastante, bem rápido
+Dialogue: 0,0:00:51.42,0:00:52.80,L,,0,0,0,,onde é largo a água sobe
+Dialogue: 0,0:00:52.80,0:00:54.96,L,,0,0,0,,devagar, então a ordem fica
+Dialogue: 0,0:00:54.96,0:00:56.91,L,,0,0,0,,rápido, devagar e rápido
+Dialogue: 0,0:00:56.92,0:00:57.95,L,,0,0,0,,e no meio
+Dialogue: 0,0:00:58.00,0:00:59.89,L,,0,0,0,,onde a curva quase deita
+Dialogue: 0,0:01:00.00,0:01:02.37,L,,0,0,0,,é o ponto 2,5 e 30.
+Dialogue: 0,0:01:02.66,0:01:03.47,L,,0,0,0,,Beleza.
+Dialogue: 0,0:01:03.48,0:01:04.58,L,,0,0,0,,Mas por que isso é uma
+Dialogue: 0,0:01:04.58,0:01:05.27,L,,0,0,0,,tangente?
+Dialogue: 0,0:01:07.22,0:01:08.45,L,,0,0,0,,Vamos pensar o seguinte
+Dialogue: 0,0:01:08.50,0:01:09.62,L,,0,0,0,,o que é uma tangente?
+Dialogue: 0,0:01:09.62,0:01:11.42,L,,0,0,0,,Pensa numa rampa
+Dialogue: 0,0:01:11.42,0:01:12.68,L,,0,0,0,,a tangente de um ângulo diz
+Dialogue: 0,0:01:12.68,0:01:14.18,L,,0,0,0,,quanto essa rampa sobe para cada
+Dialogue: 0,0:01:14.18,0:01:15.48,L,,0,0,0,,um passo que você anda para
+Dialogue: 0,0:01:15.48,0:01:17.68,L,,0,0,0,,frente, uma rampa deitada
+Dialogue: 0,0:01:17.68,0:01:19.51,L,,0,0,0,,ângulo 0, não sobe nada
+Dialogue: 0,0:01:19.88,0:01:22.86,L,,0,0,0,,então uma tangente de 0 é
+Dialogue: 0,0:01:22.86,0:01:25.44,L,,0,0,0,,0, uma rampa de 45 anda
+Dialogue: 0,0:01:25.44,0:01:27.42,L,,0,0,0,,1, sobe 1
+Dialogue: 0,0:01:27.42,0:01:29.36,L,,0,0,0,,tangente de 45 é 1
+Dialogue: 0,0:01:29.36,0:01:30.41,L,,0,0,0,,levanta mais
+Dialogue: 0,0:01:31.24,0:01:32.66,L,,0,0,0,,a tangente de 60 sobe quase
+Dialogue: 0,0:01:32.66,0:01:34.24,L,,0,0,0,,2, a de 80 sobe quase
+Dialogue: 0,0:01:34.24,0:01:36.47,L,,0,0,0,,6 a de 90 a rampa
+Dialogue: 0,0:01:36.47,0:01:37.39,L,,0,0,0,,vira uma parede
+Dialogue: 0,0:01:37.39,0:01:38.45,L,,0,0,0,,não tem como você andar para
+Dialogue: 0,0:01:38.45,0:01:40.51,L,,0,0,0,,frente, então a tangente não
+Dialogue: 0,0:01:40.51,0:01:41.32,L,,0,0,0,,existe ali
+Dialogue: 0,0:01:41.39,0:01:43.29,L,,0,0,0,,ela dispara para o infinito e
+Dialogue: 0,0:01:43.29,0:01:44.66,L,,0,0,0,,essa parede é a
+Dialogue: 0,0:01:45.22,0:01:45.72,L,,0,0,0,,assíntota.
+Dialogue: 0,0:01:45.95,0:01:47.17,L,,0,0,0,,e se a rampa descer
+Dialogue: 0,0:01:47.17,0:01:48.98,L,,0,0,0,,a tangente fica negativa
+Dialogue: 0,0:01:49.03,0:01:50.75,L,,0,0,0,,agora joga tudo num gráfico
+Dialogue: 0,0:01:50.75,0:01:51.46,L,,0,0,0,,embaixo o
+Dialogue: 0,0:01:52.26,0:01:54.22,L,,0,0,0,,ângulo, em cima a tangente
+Dialogue: 0,0:01:54.27,0:01:55.27,L,,0,0,0,,olha a curva
+Dialogue: 0,0:01:55.27,0:01:56.48,L,,0,0,0,,passa pelo 0
+Dialogue: 0,0:01:56.61,0:01:58.61,L,,0,0,0,,dispara perto das paredes e de
+Dialogue: 0,0:01:58.61,0:02:00.53,L,,0,0,0,,uma parede até outra são 180
+Dialogue: 0,0:02:00.53,0:02:03.16,L,,0,0,0,,graus, e 180 graus é π
+Dialogue: 0,0:02:03.65,0:02:05.17,L,,0,0,0,,depois disso a rampa volta na
+Dialogue: 0,0:02:05.17,0:02:06.46,L,,0,0,0,,mesma posição
+Dialogue: 0,0:02:06.77,0:02:08.05,L,,0,0,0,,e o desenho se repete
+Dialogue: 0,0:02:08.05,0:02:10.10,L,,0,0,0,,rápido, devagar e rápido
+Dialogue: 0,0:02:10.17,0:02:12.03,L,,0,0,0,,e o formato do copo guarda
+Dialogue: 0,0:02:12.03,0:02:13.74,L,,0,0,0,,essas três coisas da tangente
+Dialogue: 0,0:02:13.77,0:02:15.75,L,,0,0,0,,o centro está no 0
+Dialogue: 0,0:02:15.75,0:02:17.24,L,,0,0,0,,na altura 0
+Dialogue: 0,0:02:18.10,0:02:19.59,L,,0,0,0,,e a largura é π
+Dialogue: 0,0:02:21.15,0:02:22.59,L,,0,0,0,,só que o gráfico do copo
+Dialogue: 0,0:02:22.59,0:02:23.57,L,,0,0,0,,não está no 0
+Dialogue: 0,0:02:23.57,0:02:24.69,L,,0,0,0,,ele foi movido
+Dialogue: 0,0:02:24.69,0:02:25.83,L,,0,0,0,,e para mover o gráfico só
+Dialogue: 0,0:02:25.83,0:02:27.30,L,,0,0,0,,existe três movimentos
+Dialogue: 0,0:02:27.49,0:02:29.23,L,,0,0,0,,cada letra da fórmula faz um
+Dialogue: 0,0:02:29.23,0:02:31.90,L,,0,0,0,,primeiro, somar um número de fora:
+Dialogue: 0,0:02:31.90,0:02:33.23,L,,0,0,0,,k mais tangente.
+Dialogue: 0,0:02:33.23,0:02:35.90,L,,0,0,0,,Isso soma k em todos os
+Dialogue: 0,0:02:35.90,0:02:37.17,L,,0,0,0,,pontos, o gráfico inteiro sobe
+Dialogue: 0,0:02:37.17,0:02:38.17,L,,0,0,0,,como elevador
+Dialogue: 0,0:02:38.17,0:02:39.97,L,,0,0,0,,então é como se você somasse
+Dialogue: 0,0:02:39.97,0:02:41.69,L,,0,0,0,,30, sobe 30.
+Dialogue: 0,0:02:41.69,0:02:43.49,L,,0,0,0,,segundo, somar dentro dos
+Dialogue: 0,0:02:43.49,0:02:46.07,L,,0,0,0,,parênteses, aí meu amigo o gráfico
+Dialogue: 0,0:02:46.07,0:02:47.61,L,,0,0,0,,anda para o lado mas ao
+Dialogue: 0,0:02:47.61,0:02:49.99,L,,0,0,0,,contrário do sinal, por que?
+Dialogue: 0,0:02:49.99,0:02:52.14,L,,0,0,0,,o centro acontece quando o de
+Dialogue: 0,0:02:52.14,0:02:53.16,L,,0,0,0,,dentro dá 0.
+Dialogue: 0,0:02:53.16,0:02:55.44,L,,0,0,0,,Em tangente de T menos 2
+Dialogue: 0,0:02:55.51,0:02:57.27,L,,0,0,0,,isso acontece em T igual a
+Dialogue: 0,0:02:57.27,0:02:59.51,L,,0,0,0,,2, o centro andou 2 para
+Dialogue: 0,0:02:59.51,0:03:00.59,L,,0,0,0,,a direita.
+Dialogue: 0,0:03:00.59,0:03:02.26,L,,0,0,0,,Menos dentro
+Dialogue: 0,0:03:03.60,0:03:04.10,L,,0,0,0,,direita;
+Dialogue: 0,0:03:04.17,0:03:05.32,L,,0,0,0,,mais dentro
+Dialogue: 0,0:03:06.07,0:03:06.93,L,,0,0,0,,esquerda.
+Dialogue: 0,0:03:06.93,0:03:09.46,L,,0,0,0,,terceiro, multiplicar dentro
+Dialogue: 0,0:03:09.75,0:03:11.18,L,,0,0,0,,isso muda a velocidade
+Dialogue: 0,0:03:11.27,0:03:12.88,L,,0,0,0,,com p igual a 2
+Dialogue: 0,0:03:12.97,0:03:14.47,L,,0,0,0,,tudo acontece duas vezes mais
+Dialogue: 0,0:03:14.47,0:03:16.98,L,,0,0,0,,rápido, o gráfico se espreme
+Dialogue: 0,0:03:16.99,0:03:19.05,L,,0,0,0,,a largura cai pela metade
+Dialogue: 0,0:03:19.05,0:03:21.09,L,,0,0,0,,com o gráfico de p igual
+Dialogue: 0,0:03:21.09,0:03:21.98,L,,0,0,0,,a 1 meio
+Dialogue: 0,0:03:21.99,0:03:23.57,L,,0,0,0,,tudo acontece duas vezes mais
+Dialogue: 0,0:03:23.57,0:03:25.49,L,,0,0,0,,devagar, ela se estica e a
+Dialogue: 0,0:03:25.49,0:03:26.50,L,,0,0,0,,largura a
+Dialogue: 0,0:03:27.22,0:03:27.72,L,,0,0,0,,regra
+Dialogue: 0,0:03:28.76,0:03:30.65,L,,0,0,0,,é, largura é igual π sobre
+Dialogue: 0,0:03:30.65,0:03:31.92,L,,0,0,0,,p, pronto
+Dialogue: 0,0:03:32.07,0:03:33.73,L,,0,0,0,,agora você tem tudo que você
+Dialogue: 0,0:03:33.73,0:03:35.47,L,,0,0,0,,precisa é só comparar o gráfico
+Dialogue: 0,0:03:35.47,0:03:37.22,L,,0,0,0,,do copo com a tangente original
+Dialogue: 0,0:03:38.92,0:03:40.49,L,,0,0,0,,o k é o elevador:
+Dialogue: 0,0:03:40.49,0:03:42.27,L,,0,0,0,,o centro estava na altura 0
+Dialogue: 0,0:03:42.27,0:03:43.53,L,,0,0,0,,e o copo está na altura
+Dialogue: 0,0:03:43.53,0:03:46.16,L,,0,0,0,,30, então k igual a 30
+Dialogue: 0,0:03:46.55,0:03:48.67,L,,0,0,0,,o m é a esteira
+Dialogue: 0,0:03:48.67,0:03:50.11,L,,0,0,0,,o centro estava em 0 e
+Dialogue: 0,0:03:50.11,0:03:52.26,L,,0,0,0,,foi para 2,5, andou para a
+Dialogue: 0,0:03:53.16,0:03:55.49,L,,0,0,0,,direita lá dentro do parênteses
+Dialogue: 0,0:03:55.49,0:03:57.06,L,,0,0,0,,então vai ser menos
+Dialogue: 0,0:03:57.23,0:03:59.16,L,,0,0,0,,m é igual menos
+Dialogue: 0,0:03:59.96,0:04:01.31,L,,0,0,0,,2,5 portanto
+Dialogue: 0,0:04:01.31,0:04:02.27,L,,0,0,0,,é a mesma coisa que dizer
+Dialogue: 0,0:04:02.27,0:04:04.92,L,,0,0,0,,que é menos 5 sobre 2
+Dialogue: 0,0:04:05.05,0:04:07.27,L,,0,0,0,,e dá para conferir 2,5 fica
+Dialogue: 0,0:04:07.27,0:04:08.68,L,,0,0,0,,exatamente no meio das
+Dialogue: 0,0:04:09.20,0:04:09.70,L,,0,0,0,,assíntotas
+Dialogue: 0,0:04:10.58,0:04:11.05,L,,0,0,0,,da figura
+Dialogue: 0,0:04:11.05,0:04:12.87,L,,0,0,0,,some as duas e divide por
+Dialogue: 0,0:04:12.87,0:04:15.43,L,,0,0,0,,2 os dois π se cancelam
+Dialogue: 0,0:04:15.43,0:04:16.02,L,,0,0,0,,e dá
+Dialogue: 0,0:04:16.76,0:04:19.18,L,,0,0,0,,2,5, o p, a sanfona
+Dialogue: 0,0:04:20.27,0:04:21.06,L,,0,0,0,,que mede a
+Dialogue: 0,0:04:21.60,0:04:22.73,L,,0,0,0,,largura pensa
+Dialogue: 0,0:04:22.73,0:04:24.38,L,,0,0,0,,a largura original era π
+Dialogue: 0,0:04:24.39,0:04:25.83,L,,0,0,0,,no copo a largura é a
+Dialogue: 0,0:04:25.83,0:04:26.66,L,,0,0,0,,distância entre as
+Dialogue: 0,0:04:27.78,0:04:29.97,L,,0,0,0,,assíntotas os 5 se cancelam e
+Dialogue: 0,0:04:29.97,0:04:30.99,L,,0,0,0,,sobra 2 π
+Dialogue: 0,0:04:30.99,0:04:32.41,L,,0,0,0,,a largura dobrou
+Dialogue: 0,0:04:32.41,0:04:33.57,L,,0,0,0,,então o gráfico se esticou:
+Dialogue: 0,0:04:33.57,0:04:35.58,L,,0,0,0,,p é igual a ½.
+Dialogue: 0,0:04:36.59,0:04:38.08,L,,0,0,0,,então juntando os 3
+Dialogue: 0,0:04:38.65,0:04:40.78,L,,0,0,0,,D é igual a 30 mais
+Dialogue: 0,0:04:40.78,0:04:43.13,L,,0,0,0,,tangente de ½ vezes T menos
+Dialogue: 0,0:04:43.13,0:04:43.96,L,,0,0,0,,5/2.
+Dialogue: 0,0:04:43.99,0:04:45.52,L,,0,0,0,,portanto a alternativa é E.
+Dialogue: 0,0:04:45.79,0:04:46.75,L,,0,0,0,,e o atalho para a prova
+Dialogue: 0,0:04:46.75,0:04:48.40,L,,0,0,0,,é sempre pensar o seguinte
+Dialogue: 0,0:04:48.45,0:04:49.47,L,,0,0,0,,o k é a altura do
+Dialogue: 0,0:04:49.47,0:04:51.19,L,,0,0,0,,centro, só com 30 você já
+Dialogue: 0,0:04:51.19,0:04:53.38,L,,0,0,0,,vai eliminar A, B e C
+Dialogue: 0,0:04:53.73,0:04:55.73,L,,0,0,0,,e o centro tem 2,5
+Dialogue: 0,0:04:55.73,0:04:56.60,L,,0,0,0,,elimina D.
+Dialogue: 0,0:04:56.93,0:04:58.59,L,,0,0,0,,o copo desenhou o gráfico e
+Dialogue: 0,0:04:58.59,0:05:00.14,L,,0,0,0,,o gráfico deu a resposta
