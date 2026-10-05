@@ -33,6 +33,8 @@ Direitos autorais automáticos (Content ID): Scott Buckley e Kevin MacLeod não 
 
 ## Como escolher a trilha de um vídeo novo
 
+**Aula de conteúdo (física, matemática, questão do ENEM): usar "Inspired" (Kevin MacLeod), o padrão da ótica e do lançamento oblíquo** (regra do Vítor, 05/10/2026). O banco só entra na aula se ele pedir outra trilha. Para os outros vídeos:
+
 1. Defina o clima de cada trecho no plano (quase sempre: `gancho` curto na abertura, `aula` ou `fala` no corpo, `final` no fechamento; um vídeo curto pode ter uma faixa só).
 2. Abra `CATALOGO.md` no clima certo e veja `usos.csv`: **não repita a faixa dos 3 últimos vídeos do perfil** e não use o mesmo artista duas vezes seguidas, salvo pedido do Vítor.
 3. Ouça a prévia e meça contra a voz: a trilha tem que ser ouvida (~8 LU abaixo da voz), subir nas pausas e descer rápido antes da fala (regras em `LICOES-MOTION.md`).

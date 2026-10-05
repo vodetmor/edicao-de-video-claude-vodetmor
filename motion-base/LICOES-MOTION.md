@@ -308,8 +308,8 @@ Código: `anuncio-vslplay/trabalho/fonte` (`src/FoldIcon.tsx`, `src/scenes/Openi
 - DESCRIÇÃO DE POST (Vítor, 2026-10-05): longa e didática (gancho, passos numerados, dica, pergunta para comentar), crédito da música, e no máximo 5 hashtags de uma palavra, cada uma de uma categoria (tecnologia, vestibular, matéria, habilidade, formato). Exemplo: pessoal-vitor/bastidores/descricao-post.txt.
 
 ## Banco de músicas e variedade (Vítor, 2026-10-05)
-- REGRA (Vítor): mais variedade de música, não só Kevin MacLeod; cada vídeo novo do perfil ganha trilha nova. A escolha sai do banco `motion-base/musica/` (CATALOGO.md por clima: aula, fala, gancho, final, leve), nunca de memória.
-- Não repetir a faixa dos 3 últimos vídeos do perfil nem o mesmo artista duas vezes seguidas (conferir e anotar em `musica/usos.csv`, com a reação do Vítor). Exceção: ele pedir a mesma.
+- REGRA DAS AULAS (Vítor, 2026-10-05 21:26, vale mais que a regra de variedade abaixo): aula de conteúdo (física, matemática, questão do ENEM) mantém o padrão de música da ótica e do lançamento oblíquo, "Inspired" de Kevin MacLeod. Não trocar por faixa do banco sem ele pedir.
+- O banco `motion-base/musica/` (CATALOGO.md por clima: aula, fala, gancho, final, leve) serve para o resto: bastidores, vídeos leves, escola, clientes, ou quando ele pedir outra trilha na aula. Nesses vídeos, não repetir a faixa dos 3 últimos nem o mesmo artista duas vezes seguidas (conferir e anotar em `musica/usos.csv`, com a reação do Vítor).
 - Clima certo pelo conteúdo: aula = calma, curiosa, com pulso leve (âncora "Inspired", que ele chamou de perfeita); fala/bastidores = quente e discreta (âncora "Deliberate Thought"); faixa animada ou brincalhona só no clima `leve`, nunca em aula ("Wallpaper" soou de piada).
 - Só licença livre para rede social: CC0 ou CC BY (crédito obrigatório na descrição, linha pronta no catálogo). NC, ND e SA ficam fora. Em anúncio pago, só CC0 ou CC BY com crédito visível no próprio anúncio.
 - Ampliar o banco: `musica/fonte/coleta.py` -> `analise.py` (IA de áudio CLAP compara cada faixa com o texto do clima e com as trilhas aprovadas) -> `seleciona.py`. Faixa que o Vítor aprovar vira âncora nova. Usar o CLAP `laion/larger_clap_music_and_speech` com transformers 4.46: com transformers 5 ou o `larger_clap_music` as notas saem todas perto de zero.
@@ -319,3 +319,13 @@ Código: `anuncio-vslplay/trabalho/fonte` (`src/FoldIcon.tsx`, `src/scenes/Openi
 - Na ótica isso faltou: o roteiro foi de conceito em conceito e só o selo "CAI NA PROVA" marcava a mudança. O selo na tela não substitui a frase falada.
 - Esqueleto: gancho → "primeiro, a regra" → conceito → "agora, as questões que mais caem sobre isso" → questões → "e o segredo que pouca gente sabe" → segredo → fechamento que volta ao gancho.
 - A pausa depois da transição entra em PAUSAS (tempo.py) e a música sobe nela; a imagem também marca a virada (troca de estação, título do ato).
+- Fala gravada à parte (ex.: chamada para seguir) entra pelo tempo.py com INSERE = {palavra: (arquivo, fim útil, respiro)}: abre espaço depois da pausa daquela palavra, empurra o relógio das palavras seguintes e grava "insercoes" no relogio.json (pílula, legenda e ducking leem dali). Só os blocos dali para frente precisam re-renderizar.
+
+## Questão da tangente (Manim, 2026-10-05)
+- Manim 3D: `frame_center` também desloca os objetos fixed-in-frame. Para enquadrar o objeto 3D num ponto da tela, desloque o objeto (offset no mundo calculado com a matriz de rotação da câmera), não a câmera.
+- `always_redraw` que devolve VGroup com número variável de filhos não fica fixed-in-frame em ThreeDScene: usar vários always_redraw de um VMobject só.
+- `Indicate` (ou qualquer Transform) junto com outro Transform no mesmo objeto/família na mesma `play` desfaz o outro no fim (volta ao estado inicial). Encadeie com `Succession`.
+- `FadeIn` de grupo com always_redraw cujo filho muda de tipo dá erro de zip: adicione o grupo e tire um véu da cor do fundo por cima.
+- Texto que cresce em etapas: monte a caixa já com todas as linhas e revele linha por linha (FadeIn); Transform entre Text diferentes embaralha as letras no meio.
+- Voz de WhatsApp: resemble-enhance (CPU ~27 min para 5 min de voz) dá brilho mas troca sílabas. Melhor híbrido: original abaixo de 7 kHz + restaurada acima. Conferir sempre re-transcrevendo os trechos.
+- Loop: comparar o último quadro com o quadro 0 por PSNR (>40 dB = idêntico) depois de re-renderizar as duas cenas.
