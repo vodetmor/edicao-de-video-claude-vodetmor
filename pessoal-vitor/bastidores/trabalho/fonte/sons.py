@@ -52,7 +52,7 @@ hop = 480; env = np.sqrt(np.convolve(voz ** 2, np.ones(hop) / hop, "same"))[::ho
 ativo = (env > 0.02).astype(float)
 # mantém "ativo" nas micro pausas (< 0,45 s) para a música não ficar bombeando entre palavras
 k = int(0.45 * SR / hop); act = np.convolve(ativo, np.ones(k), "same") > 0
-alvo = np.where(act, 10 ** (-24 / 20), 10 ** (-13 / 20))
+alvo = np.where(act, 10 ** (-17 / 20), 10 ** (-8 / 20))  # música mais presente (Vítor achou baixa)
 g = np.zeros_like(alvo); cur = alvo[0]
 for i, t in enumerate(alvo):
     c = 0.25 if t < cur else 0.03
@@ -60,8 +60,8 @@ for i, t in enumerate(alvo):
 gain = np.interp(np.arange(N), np.arange(len(g)) * hop, g)
 # abre a música na pausa 3D e no cartão final, e fecha no fim
 t = np.arange(N) / SR
-gain = np.where((t > GAP_AT) & (t < GAP_AT + GAP), np.maximum(gain, 10 ** (-9 / 20)), gain)
-gain = np.where(t > END, np.maximum(gain, 10 ** (-9 / 20)), gain)
+gain = np.where((t > GAP_AT) & (t < GAP_AT + GAP), np.maximum(gain, 10 ** (-5 / 20)), gain)
+gain = np.where(t > END, np.maximum(gain, 10 ** (-5 / 20)), gain)
 # na vitrine a música do vídeo some (a aula já tem a dela) e volta logo depois
 vit = np.clip(np.minimum((t - SHOW_AT + 0.25) / 0.25, (SHOW_AT + SHOW - t) / 0.4), 0, 1)
 gain = gain * (1 - vit) + 10 ** (-40 / 20) * vit
