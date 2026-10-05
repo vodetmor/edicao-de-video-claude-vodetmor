@@ -1,0 +1,9 @@
+Luz branca entra no vidro... e sai assim. Em cores. Elas já estavam escondidas dentro da luz. Como o vidro faz isso?
+
+A regra é uma só: quando troca de meio, a luz muda de velocidade. No ar, trezentos mil quilômetros por segundo. Na água, só duzentos e vinte e cinco mil. E esse freio entorta o caminho. Índice de refração: ene igual a cê sobre vê. E a direção vem da lei de Snell: ene um, seno de téta um, igual a ene dois, seno de téta dois. Pegadinha: o ângulo é medido da normal, não da superfície.
+
+Pergunta que cai: luz do ar, índice um, pra água, índice quatro terços, a cinquenta e três graus. Seno de cinquenta e três: zero vírgula oito. Um vezes zero vírgula oito, igual a quatro terços vezes seno de téta dois. Seno de téta dois dá zero vírgula seis: trinta e sete graus. Chegou mais perto da normal.
+
+Agora o contrário: da água pro ar, ela se afasta da normal. Até sair rente à superfície. Esse é o ângulo limite: seno de L igual a ene menor sobre ene maior. Zero vírgula setenta e cinco. L, quase quarenta e nove graus. Passou disso, a luz não sai: reflete inteira. Reflexão total. E o segredo: só acontece indo do meio mais refringente pro menos refringente. É assim que a fibra óptica prende a luz.
+
+E as cores? O índice muda com a cor. No vidro comum, o vermelho tem um vírgula cinquenta e um. O violeta, um vírgula cinquenta e três. O violeta freia mais, então desvia mais, e a luz branca se abre. Isso é dispersão. Cada gota de chuva faz isso com o sol: é o arco-íris.

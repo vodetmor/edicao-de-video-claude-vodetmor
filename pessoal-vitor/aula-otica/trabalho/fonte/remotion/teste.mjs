@@ -1,0 +1,10 @@
+import {bundle} from '@remotion/bundler';
+import {renderStill, selectComposition} from '@remotion/renderer';
+import path from 'node:path';
+const props = JSON.parse(process.argv[3] || '{}');
+const browserExecutable = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
+const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts'), publicDir: path.resolve('public')});
+const comp = await selectComposition({serveUrl, id: 'Teste', browserExecutable, chromiumOptions: {gl: 'angle'}, inputProps: props});
+const t0 = Date.now();
+await renderStill({serveUrl, composition: comp, frame: 0, output: process.argv[2], browserExecutable, chromiumOptions: {gl: 'angle'}, inputProps: props, timeoutInMilliseconds: 240000});
+console.log('ms', Date.now() - t0);
