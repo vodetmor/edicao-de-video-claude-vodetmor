@@ -1,0 +1,256 @@
+[
+ {
+  "file": "01-gubindmitry-sad-atmospheric-ambient-piano.wav",
+  "original_mp3": "01-gubindmitry-sad-atmospheric-ambient-piano.mp3",
+  "title": "Sad Atmospheric Ambient Piano",
+  "artist": "GubinDmitry",
+  "source_url": "https://www.jamendo.com/track/1900751",
+  "license": "CC BY-NC-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "duration": 173,
+  "jamendo_id": 1900751,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -18.8,
+  "lra": 3.7,
+  "true_peak_dbfs": "-4.2",
+  "tags": {
+   "genres": [
+    "ambient"
+   ],
+   "instruments": [
+    "piano",
+    "strings"
+   ],
+   "vartags": [
+    "documentary",
+    "dark",
+    "sad"
+   ]
+  },
+  "rank": 1,
+  "notes": "TOP 1 - cama principal (a). Piano + cordas, ~80 bpm lento, energia muito estavel (LRA 3.7, RMS -18/-19 dB o tempo todo), centroide ~500 Hz: deixa espaco para a voz. Leve subida ~2:10."
+ },
+ {
+  "file": "04-jesse-keller-bass-movement.wav",
+  "original_mp3": "04-jesse-keller-bass-movement.mp3",
+  "title": "Bass Movement",
+  "artist": "Jesse Keller",
+  "source_url": "https://www.jamendo.com/track/1540832",
+  "license": "CC BY 3.0",
+  "license_url": "http://creativecommons.org/licenses/by/3.0/",
+  "duration": 270,
+  "jamendo_id": 1540832,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -16.8,
+  "lra": 7.6,
+  "true_peak_dbfs": "0.0",
+  "tags": {
+   "genres": [
+    "drone",
+    "filmscore",
+    "ambient"
+   ],
+   "instruments": [
+    "synthesizer",
+    "orchestra"
+   ],
+   "vartags": [
+    "dark",
+    "cinematic",
+    "acoustic",
+    "orchestral"
+   ]
+  },
+  "rank": 2,
+  "notes": "TOP 2 - intro de drone (b). Drone grave (97% da energia < 250 Hz), comeca em -24.5 dB RMS e cresce ate ~0:40; depois crescendo lento continuo ate o pico em ~3:10-3:40 e fade final. Pulso lento ~60 bpm. Licenca mais aberta (CC BY)."
+ },
+ {
+  "file": "02-beardmusicstock-sad-instrumental.wav",
+  "original_mp3": "02-beardmusicstock-sad-instrumental.mp3",
+  "title": "Sad Instrumental",
+  "artist": "BeardMusicStock",
+  "source_url": "https://www.jamendo.com/track/1918040",
+  "license": "CC BY-NC-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "duration": 150,
+  "jamendo_id": 1918040,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -17.6,
+  "lra": 16.7,
+  "true_peak_dbfs": "-0.1",
+  "tags": {
+   "genres": [
+    "filmscore"
+   ],
+   "instruments": [
+    "piano",
+    "strings"
+   ],
+   "vartags": [
+    "sad",
+    "drama",
+    "acoustic"
+   ]
+  },
+  "rank": 3,
+  "notes": "Alternativa para (a): piano muito esparso e baixo nos primeiros ~80 s (RMS ~-26 dB), depois cordas crescem 1:20-2:00 (+12 dB) - daria para cair a abolicao 1888 no crescendo. LRA 16.7: cuidado com a subida sob a voz. Mais triste que sombrio."
+ },
+ {
+  "file": "03-eracilon-cellofan.wav",
+  "original_mp3": "03-eracilon-cellofan.mp3",
+  "title": "Cellofan",
+  "artist": "Eracilon",
+  "source_url": "https://www.jamendo.com/track/1221301",
+  "license": "CC BY-NC-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "duration": 230,
+  "jamendo_id": 1221301,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -21.5,
+  "lra": 4.6,
+  "true_peak_dbfs": "-5.6",
+  "tags": {
+   "genres": [
+    "filmscore"
+   ],
+   "instruments": [
+    "cello",
+    "strings"
+   ],
+   "vartags": [
+    "cinematic",
+    "acoustic",
+    "instrumental",
+    "suspense",
+    "neutral"
+   ]
+  },
+  "rank": 4,
+  "notes": "Violoncelo/cordas, suspense, ~48 bpm, muito estavel (LRA 4.6), baixo (-21.5 LUFS); leve inchaco nos primeiros 20 s. Boa cama de tensao."
+ },
+ {
+  "file": "05-serge-quadrado-dark-ambient-texture.wav",
+  "original_mp3": "05-serge-quadrado-dark-ambient-texture.mp3",
+  "title": "Dark Ambient Texture",
+  "artist": "Serge Quadrado",
+  "source_url": "https://www.jamendo.com/track/1374250",
+  "license": "CC BY-NC 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-nc/3.0/",
+  "duration": 456,
+  "jamendo_id": 1374250,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -23.2,
+  "lra": 5.1,
+  "true_peak_dbfs": "-5.8",
+  "tags": {
+   "genres": [
+    "darkambient",
+    "drone",
+    "filmscore"
+   ],
+   "instruments": [],
+   "vartags": [
+    "dark",
+    "cinematic",
+    "acoustic",
+    "design"
+   ]
+  },
+  "rank": 5,
+  "notes": "Textura de dark ambient/drone pura, fade-in de -35 dB ate ~0:25, depois plana por 7 min. Otima para abertura ou sob revelacoes."
+ },
+ {
+  "file": "06-celestial-aeon-project-dark-secrets.wav",
+  "original_mp3": "06-celestial-aeon-project-dark-secrets.mp3",
+  "title": "Dark Secrets",
+  "artist": "Celestial Aeon Project",
+  "source_url": "https://www.jamendo.com/track/26438",
+  "license": "CC BY-NC-SA 2.5",
+  "license_url": "http://creativecommons.org/licenses/by-nc-sa/2.5/",
+  "duration": 115,
+  "jamendo_id": 26438,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -18.7,
+  "lra": 10.7,
+  "true_peak_dbfs": "-1.0",
+  "tags": {
+   "genres": [
+    "filmscore"
+   ],
+   "instruments": [
+    "piano",
+    "strings"
+   ],
+   "vartags": [
+    "dark",
+    "crime",
+    "cinematic"
+   ]
+  },
+  "rank": 6,
+  "notes": "Piano + cordas sombrio (tag crime), cresce 0:40-1:00 e recua; curta (1:55)."
+ },
+ {
+  "file": "07-jesse-keller-coming-from-above.wav",
+  "original_mp3": "07-jesse-keller-coming-from-above.mp3",
+  "title": "Coming From Above",
+  "artist": "Jesse Keller",
+  "source_url": "https://www.jamendo.com/track/1540834",
+  "license": "CC BY 3.0",
+  "license_url": "http://creativecommons.org/licenses/by/3.0/",
+  "duration": 332,
+  "jamendo_id": 1540834,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -15.9,
+  "lra": 12.7,
+  "true_peak_dbfs": "0.0",
+  "tags": {
+   "genres": [
+    "drone",
+    "filmscore",
+    "ambient"
+   ],
+   "instruments": [
+    "synthesizer"
+   ],
+   "vartags": [
+    "horror",
+    "dark",
+    "cinematic",
+    "orchestral"
+   ]
+  },
+  "rank": 7,
+  "notes": "Drone escuro, discreto ate ~3:20, climax forte 3:30-4:30 (+10 dB) - para revelacao/final."
+ },
+ {
+  "file": "08-beardmusicstock-i-m-feeling-sad.wav",
+  "original_mp3": "08-beardmusicstock-i-m-feeling-sad.mp3",
+  "title": "I'm Feeling Sad",
+  "artist": "BeardMusicStock",
+  "source_url": "https://www.jamendo.com/track/1981723",
+  "license": "CC BY-NC-SA 3.0",
+  "license_url": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "duration": 171,
+  "jamendo_id": 1981723,
+  "vocal": "instrumental (Jamendo musicinfo)",
+  "integrated_lufs": -13.8,
+  "lra": 4.5,
+  "true_peak_dbfs": "-0.4",
+  "tags": {
+   "genres": [
+    "filmscore"
+   ],
+   "instruments": [
+    "strings"
+   ],
+   "vartags": [
+    "sad",
+    "drama",
+    "acoustic"
+   ]
+  },
+  "rank": 8,
+  "notes": "So cordas, muito lento, mais alto (-13.8 LUFS); subida 1:50-2:20."
+ }
+]

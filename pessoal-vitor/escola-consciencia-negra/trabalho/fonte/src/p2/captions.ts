@@ -1,0 +1,26 @@
+// Gerado por gen/legendas.py a partir de public/p2/words.json. Não editar à mão.
+import type {Cue} from '../captions';
+export const CUES: Cue[] = [
+  {s: 3.65, e: 5.77, t: "E o que sobrou foram as encostas,"},
+  {s: 5.77, e: 8.19, t: "as beiras de rio, as áreas que alagam,"},
+  {s: 8.19, e: 10.55, t: "a periferia distante do centro."},
+  {s: 10.81, e: 12.27, t: "Oi, eu sou a Maria Eduarda"},
+  {s: 12.27, e: 15.33, t: "e vim explicar um pouco mais\nsobre o termo racismo ambiental."},
+  {s: 17.37, e: 22.83, t: "Em 1897, no Rio de Janeiro,\ncomeça a ocupação do Morro da Providência,"},
+  {s: 22.83, e: 24.97, t: "considerada a primeira favela do país."},
+  {s: 24.97, e: 28.11, t: "Poucos anos depois,\nem nome da modernização,"},
+  {s: 28.11, e: 31.23, t: "os cortiços do centro são derrubados."},
+  {s: 31.23, e: 33.55, t: "A população pobre negra é empurrada,"},
+  {s: 33.55, e: 35.99, t: "mais uma vez, para as margens."},
+  {s: 36.77, e: 39.27, t: "Quase um século depois,\nnos Estados Unidos,"},
+  {s: 39.31, e: 41.31, t: "esse padrão ganha um nome."},
+  {s: 42.01, e: 43.59, t: "Em 1982,"},
+  {s: 44.59, e: 47.85, t: "Warren County, Carolina do Norte,"},
+  {s: 47.85, e: 50.65, t: "uma comunidade da maioria negra,"},
+  {s: 50.65, e: 54.23, t: "se levanta contra\num depósito de lixo tóxico."},
+  {s: 54.57, e: 56.85, t: "instalado ao lado de suas casas."},
+  {s: 56.85, e: 63.97, t: "É nesse contexto que o reverendo Benjamin\nChavis cria a expressão racismo ambiental."},
+  {s: 63.97, e: 66.19, t: "Em 2021,"},
+  {s: 66.49, e: 70.29, t: "o Canal Preto lança Racismo\nAmbiental Entenda Essa Luta."},
+  {s: 70.29, e: 74.07, t: "A obra mostra que essa\nhistória não ficou no passado."},
+];

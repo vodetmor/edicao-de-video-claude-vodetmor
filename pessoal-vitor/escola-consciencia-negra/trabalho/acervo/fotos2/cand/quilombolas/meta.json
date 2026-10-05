@@ -1,0 +1,84 @@
+[
+ {
+  "file": "00.jpg",
+  "title": "Pexels: A woman walks with her dog in a colorful Brazilian neighborhood street.",
+  "page": "https://www.pexels.com/photo/daily-life-in-santo-amaro-do-maranhao-street-28470661/",
+  "author": "Renata  Meneses",
+  "license": "Licença Pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "query": "afro brazilian rural community",
+  "width": 1880,
+  "height": 1253
+ },
+ {
+  "file": "01.jpg",
+  "title": "Pexels: A vibrant crowd walking on a dusty road through the forest during a festival in Barbalha, Brazil.",
+  "page": "https://www.pexels.com/photo/crowd-on-dirt-road-in-forest-15790001/",
+  "author": "Luiz  Valber",
+  "license": "Licença Pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "query": "afro brazilian rural community",
+  "width": 1880,
+  "height": 1253
+ },
+ {
+  "file": "02.jpg",
+  "title": "Pexels: A peaceful neighborhood street in Peruíbe, Brazil, lined with trees and parked cars in daytime.",
+  "page": "https://www.pexels.com/photo/quiet-street-scene-in-peruibe-sao-paulo-39864963/",
+  "author": "Juan Pablo Daniel",
+  "license": "Licença Pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "query": "afro brazilian rural community",
+  "width": 1880,
+  "height": 1253
+ },
+ {
+  "file": "03.jpg",
+  "title": "Pexels: A picturesque view of traditional Brazilian beach houses under a clear sky.",
+  "page": "https://www.pexels.com/photo/charming-brazilian-beach-village-scene-34669732/",
+  "author": "sofia comasetto",
+  "license": "Licença Pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "query": "afro brazilian rural community",
+  "width": 1880,
+  "height": 1253
+ },
+ {
+  "file": "04.jpg",
+  "title": "Pexels: Old rural building on a dirt road in Espírito Santo do Pinhal, São Paulo, Brazil.",
+  "page": "https://www.pexels.com/photo/rural-building-in-espirito-santo-do-pinhal-brazil-30459813/",
+  "author": "Elizabeth Ferreira",
+  "license": "Licença Pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "query": "afro brazilian rural community",
+  "width": 1880,
+  "height": 1253
+ },
+ {
+  "file": "05.jpg",
+  "title": "Pexels: A kid rides a bike through Santo Amaro village in Maranhão, Brazil, capturing rural life.",
+  "page": "https://www.pexels.com/photo/child-cycling-through-santo-amaro-village-street-29117106/",
+  "author": "Renata  Meneses",
+  "license": "Licença Pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "query": "afro brazilian rural community",
+  "width": 1880,
+  "height": 1253
+ },
+ {
+  "title": "File:Serra da Barriga - Por Mirla Dâmaso (2).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Serra_da_Barriga_-_Por_Mirla_D%C3%A2maso_(2).jpg",
+  "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Serra_da_Barriga_-_Por_Mirla_D%C3%A2maso_%282%29.jpg/3840px-Serra_da_Barriga_-_Por_Mirla_D%C3%A2maso_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "w": 5184,
+  "h": 3456,
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Mirla Dâmaso",
+  "desc": "Serra da Barriga em dia de muita chuva",
+  "date": "2017-05-06 06:15:37",
+  "query": "Serra da Barriga",
+  "file": "06.jpg",
+  "width": 2560,
+  "height": 1707
+ }
+]
