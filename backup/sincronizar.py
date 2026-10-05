@@ -154,6 +154,10 @@ def main():
         for k, v in sorted(por.items(), key=lambda x: -x[1])[:25]: print(f"{v/1e6:8.1f} MB  {k}")
         return
     mud = aplica(itens)
+    # o que o .gitignore do repositório recusa fica fora (ex.: renders intermediários)
+    ign = subprocess.run(["git", "-C", str(R), "check-ignore", "--stdin"], input="\n".join(mud),
+                         capture_output=True, text=True).stdout.split("\n")
+    mud = [d for d in mud if d not in set(ign)]
     ruins = checa_segredos(mud)
     if ruins:
         git("reset", "--hard", "origin/main")
