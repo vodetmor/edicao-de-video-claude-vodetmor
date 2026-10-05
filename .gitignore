@@ -1,0 +1,13 @@
+# segredos
+.env
+*.env
+!.env.exemplo
+chaves.env
+# caches reinstaláveis
+node_modules/
+__pycache__/
+.cache/
+out/
+# mídia pesada (guardar no Drive, não no Git)
+*.mov
+renders/
