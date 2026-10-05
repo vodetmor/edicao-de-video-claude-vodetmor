@@ -1,0 +1,64 @@
+{
+  "id": "gancho-c2",
+  "descricao": "Teste do motor: gancho do criativo 2 (voz do cliente) em 3 variações presas às palavras.",
+  "fps": 30,
+  "palavras": "src/data/words_c2.json",
+  "duracao": "oferta:fim+22",
+  "audio": {"voz": "audio/voz_gancho.wav", "cama": "audio/cama_gancho.wav", "camaVol": 0.55},
+  "variantes": [
+    {
+      "id": "A",
+      "nome": "Tipográfico (React)",
+      "formato": "9x16",
+      "fundo": "paper",
+      "eventos": [
+        {"de": "@0", "ate": "aparece", "bloco": "Batida", "props": {"linhas": ["Seu botão", "de compra"], "em": ["Seu", "de"], "cores": ["ink", "coral"], "tam": 190, "y": 0.4}},
+        {"de": "@0", "som": "sfx_swish", "vol": 0.35},
+        {"de": "aparece-1", "ate": "VSL-2", "bloco": "Batida", "props": {"linhas": ["aparece"], "tam": 150, "y": 0.2}},
+        {"de": "aparece", "ate": "fim", "bloco": "Botao", "props": {"texto": "Comprar agora", "y": 0.42, "alerta": "antes+2", "move": {"em": "VSL-4", "y": 0.2, "escala": 0.72}}},
+        {"de": "aparece", "som": "sfx_pop", "vol": 0.55},
+        {"de": "antes-1", "ate": "VSL-2", "bloco": "Slam", "props": {"texto": "antes", "cor": "coral", "tam": 250, "y": 0.6}},
+        {"de": "antes", "som": "sfx_thud", "vol": 0.7},
+        {"de": "VSL", "ate": "fim", "bloco": "Trilha", "props": {"y": 0.52, "cabeca": {"de": "apresentar", "ate": "oferta-3", "seg0": 7, "seg1": 760}, "marcas": [{"seg": 7, "rotulo": "Botão", "cor": "coral", "em": "VSL+4"}, {"seg": 760, "rotulo": "Oferta", "cor": "cyan", "em": "oferta-3"}], "vao": {"de": 0, "ate": 1, "rotulo": "12 min cedo demais", "em": "oferta+3"}}},
+        {"de": "VSL-6", "som": "sfx_whoosh", "vol": 0.35},
+        {"de": "VSL+4", "som": "sfx_tick", "vol": 0.5},
+        {"de": "oferta-3", "som": "sfx_pop", "vol": 0.45},
+        {"de": "oferta+3", "som": "sfx_swish", "vol": 0.35},
+        {"de": "Seu", "ate": "fim", "bloco": "Legenda", "props": {"ultima": "oferta", "cor": "ink"}}
+      ]
+    },
+    {
+      "id": "B",
+      "nome": "Player escuro (HTML/GSAP estilo HyperFrames)",
+      "formato": "9x16",
+      "fundo": "black",
+      "eventos": [
+        {"de": "@0", "ate": "fim", "bloco": "HtmlGsap", "props": {"arquivo": "player-cedo.html", "marcas": {"aparece": "aparece", "antes": "antes", "vsl": "VSL", "oferta": "oferta"}}},
+        {"de": "aparece", "som": "sfx_pop", "vol": 0.55},
+        {"de": "antes", "som": "sfx_thud", "vol": 0.6},
+        {"de": "VSL-3", "som": "sfx_whoosh", "vol": 0.35},
+        {"de": "oferta-3", "som": "sfx_pop", "vol": 0.45},
+        {"de": "oferta+8", "som": "sfx_impact", "vol": 0.35},
+        {"de": "Seu", "ate": "fim", "bloco": "Legenda", "props": {"ultima": "oferta", "cor": "paper"}}
+      ]
+    },
+    {
+      "id": "C",
+      "nome": "Feed 4:5, outra copy e outra cor (mesma voz)",
+      "formato": "4x5",
+      "fundo": "paper",
+      "eventos": [
+        {"de": "@0", "ate": "aparece", "bloco": "Batida", "props": {"linhas": ["Seu CTA", "chega cedo"], "em": ["Seu", "de"], "cores": ["ink", "violet"], "tam": 170, "y": 0.42}},
+        {"de": "@0", "som": "sfx_swish", "vol": 0.35},
+        {"de": "aparece", "ate": "fim", "bloco": "Botao", "props": {"texto": "Comprar agora", "cor": "violet", "y": 0.36, "alerta": "antes+2", "move": {"em": "VSL-4", "y": 0.17, "escala": 0.7}}},
+        {"de": "aparece", "som": "sfx_pop", "vol": 0.55},
+        {"de": "antes-1", "ate": "VSL-2", "bloco": "Slam", "props": {"texto": "cedo demais", "cor": "violet", "tam": 170, "y": 0.62}},
+        {"de": "antes", "som": "sfx_thud", "vol": 0.7},
+        {"de": "VSL", "ate": "fim", "bloco": "Trilha", "props": {"y": 0.5, "cabeca": {"de": "apresentar", "ate": "oferta-3", "seg0": 7, "seg1": 760}, "marcas": [{"seg": 7, "rotulo": "Botão", "cor": "violet", "em": "VSL+4"}, {"seg": 760, "rotulo": "Oferta", "cor": "cyan", "em": "oferta-3"}], "vao": {"de": 0, "ate": 1, "rotulo": "12 min de diferença", "em": "oferta+3", "cor": "violet"}}},
+        {"de": "VSL-6", "som": "sfx_whoosh", "vol": 0.35},
+        {"de": "oferta-3", "som": "sfx_pop", "vol": 0.45},
+        {"de": "Seu", "ate": "fim", "bloco": "Legenda", "props": {"ultima": "oferta", "cor": "ink", "base": 0.9, "tam": 46}}
+      ]
+    }
+  ]
+}
