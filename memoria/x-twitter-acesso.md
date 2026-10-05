@@ -1,0 +1,15 @@
+---
+name: x-twitter-acesso
+description: How to research X/Twitter from cloud (2026-10-02): WebSearch site:x.com + xler.py/fxtwitter works now; twitter-cli needs secondary-account cookies
+metadata:
+  type: reference
+---
+Tested 2026-10-02. Guide: /mnt/project-files/motion-base/fontes/x/LEIA-ME.md; findings ACHADOS-2026-10-02.md; videos/ and artigos/ there.
+- Works without login: WebSearch `site:x.com <topic>` to find posts, then `python3 motion-base/fontes/x/xler.py <ids> --baixar` (api.fxtwitter.com: text, likes, views, mp4). X Articles also come in full via fxtwitter (`tweet.article`). No replies/threads, no native search.
+- x.com GraphQL reachable from cloud (403 = no auth, not network). twitter-cli (pip, jackwener) gives native search + replies with TWITTER_AUTH_TOKEN/TWITTER_CT0 of a SECONDARY account (ban risk from datacenter IP). 2026-10-02 login test FAILED: cloud IP rejected (401 code 32); on his PC twitter-cli 0.8.5 breaks (ClientTransaction init -> 404) and auto mode blocks cookie tools and installs from GitHub. Cookies deleted; default = no-login path. Advised Vítor to end other X sessions (token was pasted in chat). Don't retry cookie path unless a fixed tool exists and Vítor asks.
+- WORKS (2026-10-02 rodada 2): native X search via Remote Control on his PC using BrowserABI with his logged-in Chrome (profile vitor743, @srreicapivara), read-only, no cookie handling (Claude in Chrome was disconnected). X only loads more on scroll when the tab is in foreground. Best combo: Chrome finds posts/replies, cloud xler.py downloads text+videos. Results: fontes/x/PROMPTS-2026-10-02.md.
+- Supersedes the X part of [[agent-reach-avaliacao]] and [[rede-acessos-2026-09-29]].
+- Fix found 2026-10-02 (untested): twitter-cli 404 = XClientTransaction can't find ondemand.s on logged-out x.com (issues public-clis/twitter-cli#88, XClientTransaction#47); fetching x.com/home WITH auth cookies restores it. Patch script for Vítor to run on his PC: motion-base/fontes/x/conserto/consertar_twitter_cli.py. Vítor prefers terminal over his Chrome (token cost).
+- WORKING 2026-10-02 (rodada 3): on Vítor's Windows, fork c4nc/twitter-cli@4cd4407 (PR #93) + env cookies → native search returns JSON. Vítor wants TERMINAL, not his Chrome (token cost). Flow: he/PC runs `twitter -c search ...`, cloud xler.py fetches full text + videos. Cloud IP still rejected.
+- 2026-10-02 final: Vítor saved cookies with `setx TWITTER_AUTH_TOKEN/TWITTER_CT0` on his Windows; Claude via Remote Control ("Maquina de Editar") now runs `twitter -c search ...` itself without seeing tokens. Use this for X research; then fetch text/videos in cloud with xler.py (official copy in cloud motion-base). Token may need refresh (relogin + F12 + setx) on login errors.
+- Old leaked token revoked 2026-10-02 (Vítor relogged; new setx login confirmed working). Vítor plans a separate "novidades" project (AI news radar from X, later economy/politics); portable guide for it: /mnt/project-files/organizacao/KIT-X-NOVIDADES.md. Suggested: 1x/day, low volume (account risk), PC must be on.
