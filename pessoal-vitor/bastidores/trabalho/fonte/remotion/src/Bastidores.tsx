@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'remotion';
-import {F, FE, GAP_F, GAP_LEN, END_F, TOTAL, UI, PAPEL, TINTA, FPS} from './lib';
+import {F, FE, GAP_F, GAP_LEN, SHOW_F, SHOW_LEN, SHOW_DE, SEGS, END_F, TOTAL, UI, PAPEL, TINTA, FPS} from './lib';
 import {useFonts, DISPLAY, TEXT, MONO} from './Fonts';
 import {spring, clamp, lerp, tween, E, prog, Cursor} from './kit';
 import {Legenda} from './Legenda';
@@ -15,15 +15,15 @@ const T = {
   voz: F(205), vozNome: F(226), simples: F(237), ideia: F(261), coord: F(280), coordSep: F(289), coordSub: F(292), cta: F(297), bast: F(321), valeu: F(328), fim: END_F,
 };
 type Modo = 'split' | 'face' | 'full';
-const MODOS: [number, Modo][] = [[0, 'split'], [T.faceA, 'face'], [T.ui1, 'split'], [T.dica, 'face'], [T.manim, 'split'], [T.gap, 'full'],
-  [T.gap + GAP_LEN, 'split'], [T.simples, 'face'], [T.coord, 'split'], [T.cta, 'face'], [T.fim, 'full']];
+const MODOS: [number, Modo][] = [[0, 'split'], [SHOW_F, 'full'], [SHOW_F + SHOW_LEN - 6, 'face'], [T.faceA, 'face'], [T.ui1, 'split'], [T.manim, 'split'], [T.gap, 'full'],
+  [T.gap + GAP_LEN, 'split'], [T.simples, 'face'], [T.coord, 'split'], [T.cta, 'split'], [T.valeu, 'face'], [T.fim, 'full']];
 const modoEm = (f: number) => { let m: [number, Modo] = MODOS[0], p = MODOS[0]; for (const x of MODOS) { if (f >= x[0]) { p = m; m = x; } } return {m: m[1], desde: m[0], antes: p[1]}; };
 
 // enquadramento do rosto em cada modo: retângulo na tela + escala e ponto da fonte que fica no centro
 type Q = {x: number; y: number; w: number; h: number; r: number; k: number; cx: number; cy: number; o: number};
 const Q_FACE: Q = {x: 0, y: 0, w: 1080, h: 1920, r: 0, k: 1, cx: 540, cy: 960, o: 1};
-const Q_SPLIT: Q = {x: 0, y: 1100, w: 1080, h: 820, r: 0, k: 1.0, cx: 540, cy: 760, o: 1};
-const Q_FULL: Q = {x: 0, y: 1100, w: 1080, h: 820, r: 0, k: 1.0, cx: 540, cy: 760, o: 0};
+const Q_SPLIT: Q = {x: 0, y: 1100, w: 1080, h: 820, r: 0, k: 1.1, cx: 530, cy: 840, o: 1};
+const Q_FULL: Q = {x: 0, y: 1100, w: 1080, h: 820, r: 0, k: 1.1, cx: 530, cy: 840, o: 0};
 const qDe = (m: Modo) => (m === 'face' ? Q_FACE : m === 'split' ? Q_SPLIT : Q_FULL);
 const mixQ = (a: Q, b: Q, t: number): Q => ({x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t), w: lerp(a.w, b.w, t), h: lerp(a.h, b.h, t), r: lerp(a.r, b.r, t),
   k: lerp(a.k, b.k, t), cx: lerp(a.cx, b.cx, t), cy: lerp(a.cy, b.cy, t), o: lerp(a.o, b.o, t)});
@@ -39,17 +39,21 @@ const Rosto: React.FC = () => {
   const q = mixQ(qDe(antes), qDe(m), t);
   if (q.o <= 0.001) return null;
   const k = q.k * (m === 'face' ? zoomEm(f) : 1);
-  const fonte = (src: number, de: number, ate: number) => (
-    <Sequence from={de} durationInFrames={ate - de} layout="none">
-      <OffthreadVideo src={staticFile('video/face.mp4')} startFrom={src} muted
-        style={{position: 'absolute', width: 1080, height: 1920, left: q.w / 2 - q.cx * k, top: q.h / 2 - q.cy * k, transform: `scale(${k})`, transformOrigin: '0 0',
-          filter: 'contrast(1.09) saturate(1.14) brightness(1.04)'}} />
-    </Sequence>
-  );
+  // um trecho por pedaço de fala mantido; a cada corte o enquadramento alterna um leve zoom (corte seco disfarçado)
+  const trechos = SEGS.map(([s0, s1, t0], i) => {
+    const de = Math.round(t0 * FPS), dur = Math.round((s1 - s0) * FPS);
+    const kk = k * (i % 2 ? 1.06 : 1);
+    return (
+      <Sequence key={i} from={de} durationInFrames={dur} layout="none">
+        <OffthreadVideo src={staticFile('video/face.mp4')} startFrom={Math.round(s0 * FPS)} muted
+          style={{position: 'absolute', width: 1080, height: 1920, left: q.w / 2 - q.cx * kk, top: q.h / 2 - q.cy * kk, transform: `scale(${kk})`, transformOrigin: '0 0',
+            filter: 'contrast(1.09) saturate(1.14) brightness(1.04)'}} />
+      </Sequence>
+    );
+  });
   return (
     <div style={{position: 'absolute', left: q.x, top: q.y, width: q.w, height: q.h, overflow: 'hidden', borderRadius: q.r, opacity: q.o, background: '#000'}}>
-      {fonte(0, 0, T.gap)}
-      {fonte(T.gap, T.gap + GAP_LEN, T.fim)}
+      {trechos}
       <div style={{position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.38) 100%)'}} />
       <div style={{position: 'absolute', inset: 0, background: 'rgba(255,170,100,0.06)', mixBlendMode: 'soft-light'}} />
       <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 520, background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.45))'}} />
@@ -101,6 +105,7 @@ const Topo: React.FC = () => {
   const AREA = {w: 1080, h: 1100, cx: 540, cy: 600};
   // fundo e conteúdo de acordo com o trecho
   if (f < T.faceA) return <Gancho f={f} />;
+  if (naTelaDeCima(f)) return <AbsoluteFill style={{background: '#0B0B0B'}}><SobreConteudo f={f} /></AbsoluteFill>;
   if (f >= T.ui1 && f < T.dica) {
     const ent = spring(f, T.ui1, 0.35, 0.85);
     if (f < T.projetos) {
@@ -116,7 +121,7 @@ const Topo: React.FC = () => {
               return <div key={a} style={{width: 260, height: 300, borderRadius: 36, background: i === 0 ? '#1C1A18' : '#161616', border: `1.5px solid ${i === 0 && f >= T.claude - 4 ? UI.coral : '#2A2A2A'}`,
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 26, opacity: s * (i > 0 && f >= T.claude - 4 ? 1 - 0.75 * sl : 1),
                 transform: `scale(${(0.7 + 0.3 * s) * esc})`, fontFamily: TEXT, fontSize: 32, fontWeight: 600, color: '#fff'}}>
-                {i === 0 ? <LogoClaude s={120} /> : <div style={{width: 110, height: 110, borderRadius: 55, background: '#2A2A2A'}} />}{a}</div>;
+                {i === 0 ? <LogoClaude s={120} /> : <Img src={staticFile(i === 1 ? 'img/lobehub-openai.svg' : 'img/lobehub-gemini-color.svg')} style={{width: 112, height: 112, filter: i === 1 ? 'invert(1)' : 'none'}} />}{a}</div>;
             })}
           </div>
         </AbsoluteFill>
@@ -251,16 +256,35 @@ const Gancho: React.FC<{f: number}> = ({f}) => {
   const zoom = 1 + 0.06 * (f / T.faceA);
   return (
     <AbsoluteFill style={{background: PAPEL}}>
-      <div style={{position: 'absolute', left: -60, top: 300, transform: `scale(${zoom})`, transformOrigin: '50% 50%'}}>
+      <div style={{position: 'absolute', left: -60, top: 230, transform: `scale(${zoom})`, transformOrigin: '50% 50%'}}>
         <ClipeAula de={247.4} inicio={0} w={1200} raio={0} style={{boxShadow: 'none'}} />
       </div>
       <div style={{position: 'absolute', top: 120, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 16}}>
         {it.map(([t, a], i) => <Chip key={i} s={spring(f, a - 2, 0.55, 0.55)} tam={50} fundo={TINTA}>{t}</Chip>)}
       </div>
-      <div style={{position: 'absolute', top: 980, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 20, alignItems: 'center'}}>
+      <div style={{position: 'absolute', top: 880, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 20, alignItems: 'center'}}>
         <Chip s={ia} tam={62}>uma IA montou</Chip>
         <Chip s={hora} tam={62} fundo={TINTA} style={{transform: `scale(${0.6 + 0.4 * hora}) rotate(${-4 + (1 - hora) * -8}deg)`}}>&lt; 1 hora</Chip>
       </div>
+    </AbsoluteFill>
+  );
+};
+
+// ---------------- vitrine: a aula de verdade, com o som dela ----------------
+const Vitrine: React.FC<{f: number}> = ({f}) => {
+  const s = spring(f, 0, 0.4, 0.8);
+  const t = spring(f, 4, 0.5, 0.6);
+  const out = 1 - prog(f, SHOW_LEN - 6, 6);
+  return (
+    <AbsoluteFill style={{background: PAPEL, alignItems: 'center', justifyContent: 'center', opacity: out}}>
+      <div style={{transform: `scale(${(1.18 + 0.05 * (f / SHOW_LEN)) * (0.94 + 0.06 * s)})`, opacity: clamp(s * 1.4)}}>
+        <ClipeAula de={SHOW_DE} inicio={SHOW_F} w={1080} raio={0} style={{boxShadow: 'none'}} />
+      </div>
+      <div style={{position: 'absolute', top: 330, display: 'flex', gap: 16, alignItems: 'center'}}>
+        <Chip s={t} tam={60} fundo={TINTA}>▶ olha a aula</Chip>
+      </div>
+      <div style={{position: 'absolute', bottom: 380, display: 'flex', alignItems: 'center', gap: 14, fontFamily: TEXT, fontWeight: 600, fontSize: 34, color: '#6E6E73',
+        opacity: spring(f, 14, 0.4, 0.9)}}><LogoClaude s={44} />tudo feito pelo Claude: imagem, voz e música</div>
     </AbsoluteFill>
   );
 };
@@ -345,14 +369,20 @@ const Voz: React.FC<{f: number}> = ({f}) => {
 };
 
 // ---------------- sobreposições no rosto ----------------
+// dica e comentários agora ficam na tela de cima (nada por cima do rosto); "boa ideia" fica acima da cabeça
+const naTelaDeCima = (f: number) => (f >= T.dica && f < T.manim) || (f >= T.cta && f < T.valeu);
 const Sobre: React.FC = () => {
   const f = useCurrentFrame();
+  if (naTelaDeCima(f)) return null;
+  return <SobreConteudo f={f} />;
+};
+const SobreConteudo: React.FC<{f: number}> = ({f}) => {
   // dica
   if (f >= T.dica && f < T.manim) {
     const s = spring(f, T.dica + 2, 0.45, 0.7) * (1 - prog(f, T.manim - 8, 8));
     const ls = [['Manim', 'fórmulas'], ['GLSL', '3D'], ['Remotion', 'vídeo']];
     return (
-      <div style={{position: 'absolute', left: 60, right: 60, top: 180, opacity: s, transform: `translateY(${(1 - s) * -40}px)`}}>
+      <div style={{position: 'absolute', left: 60, right: 60, top: 330, opacity: s, transform: `translateY(${(1 - s) * -40}px)`}}>
         <div style={{borderRadius: 30, background: 'rgba(16,16,16,0.82)', border: '1px solid rgba(255,255,255,0.14)', padding: '30px 34px', backdropFilter: 'blur(14px)'}}>
           <div style={{display: 'flex', alignItems: 'center', gap: 14}}><Chip s={s} tam={36}>DICA</Chip>
             <span style={{fontFamily: TEXT, fontWeight: 700, fontSize: 36, color: '#fff'}}>uma linguagem certa pra cada tarefa</span></div>
@@ -434,17 +464,24 @@ const Final: React.FC = () => {
   );
 };
 
+// a legenda nunca cobre o rosto: na emenda (1100) com a tela em cima; mais abaixo, no peito, quando o rosto ocupa a tela toda
+const legendaY = (f: number) => {
+  const {m, desde, antes} = modoEm(f);
+  const y = (x: Modo) => (x === 'face' ? 1330 : 1100);
+  return lerp(y(antes), y(m), E.expr(prog(f, desde, 9)));
+};
+
 export const Bastidores: React.FC = () => {
   useFonts();
   const f = useCurrentFrame();
   return (
     <AbsoluteFill style={{background: '#000'}}>
       <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1100, overflow: 'hidden'}}><Topo /></div>
+      {f >= SHOW_F && f < SHOW_F + SHOW_LEN && <Vitrine f={f - SHOW_F} />}
       {f >= T.gap && f < T.gap + GAP_LEN && <Resultado3D f={f - T.gap} />}
       <Rosto />
       <Sobre />
-      <Passos />
-      <Legenda y={1545} hide={(fr) => fr >= T.fim} />
+      <Legenda y={legendaY(f)} hide={(fr) => fr >= T.fim} />
       <Final />
     </AbsoluteFill>
   );

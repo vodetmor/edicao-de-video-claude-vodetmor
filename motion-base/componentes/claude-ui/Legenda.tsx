@@ -14,22 +14,26 @@ export const Legenda: React.FC<{y?: number; hide?: (f: number) => boolean}> = ({
   if (!pg) return null;
   const f0 = Math.round(pg.s * FPS);
   const sIn = spring(f, f0 - 1, 0.55, 0.62);
+  const letras = pg.w.reduce((n: number, w: any) => n + w.t.length + 1, -1);
+  const fit = Math.min(1, 17 / Math.max(1, letras));
   return (
-    <div style={{position: 'absolute', left: 60, right: 60, top: y, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0 26px',
-      transform: `translateY(${(1 - sIn) * 26}px) scale(${0.9 + 0.1 * sIn})`, opacity: clamp(sIn * 1.6)}}>
+    // sempre uma linha, mesmo tamanho e mesma posição (centro em y, na emenda entre os dois quadros), sobre uma pílula escura
+    <div style={{position: 'absolute', left: 0, right: 0, top: y, height: 0, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <div style={{display: 'flex', whiteSpace: 'nowrap', gap: '0 24px', padding: '14px 34px 18px', borderRadius: 30, background: 'rgba(12,12,12,0.86)',
+      boxShadow: '0 12px 40px rgba(0,0,0,0.35)', transform: `translateY(${(1 - sIn) * 20}px) scale(${(0.9 + 0.1 * sIn) * fit})`, opacity: clamp(sIn * 1.6)}}>
       {pg.w.map((w: any, i: number) => {
         const on = t >= w.s - 0.03;
         const fw = Math.round(w.s * FPS);
         const pop = spring(f, fw - 1, 0.7, 0.5);
         const cor = w.k ? UI.coral : '#FFFFFF';
         return (
-          <span key={i} style={{fontFamily: DISPLAY, fontWeight: 900, fontStretch: '100%', fontSize: 84, lineHeight: 1.08, letterSpacing: -1,
-            color: on ? cor : 'rgba(255,255,255,0.55)', display: 'inline-block',
+          <span key={i} style={{fontFamily: DISPLAY, fontWeight: 900, fontStretch: '100%', fontSize: 80, lineHeight: 1.08, letterSpacing: -1,
+            color: on ? cor : 'rgba(255,255,255,0.45)', display: 'inline-block',
             transform: `scale(${on ? 1 + 0.12 * Math.max(0, 1 - pop) + 0.02 * (w.k ? 1 : 0) : 1})`,
-            textShadow: '0 4px 0 rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.55), 0 0 4px rgba(0,0,0,0.9)',
-            WebkitTextStroke: '2px rgba(0,0,0,0.35)'}}>{w.t}</span>
+            }}>{w.t}</span>
         );
       })}
+    </div>
     </div>
   );
 };

@@ -276,3 +276,28 @@ Código: `anuncio-vslplay/trabalho/fonte` (`src/FoldIcon.tsx`, `src/scenes/Openi
 - Voz de celular sem microfone (05/10/2026): DeepFilterNet3 (aberto, CPU, ~10 s para 2 min) tira chiado e eco mantendo o mesmo número de amostras, então a boca continua sincronizada. Depois: passa-alta 80 Hz, -2,5 dB em 250 Hz, +3 dB em 3,2 kHz, de-esser, compressor 3:1, loudnorm -16 na voz. O download automático do modelo falha (GitHub 403 no Python): baixar o zip por raw.githubusercontent.com com curl e descompactar em ~/.cache/DeepFilterNet (cópia em ferramentas/modelos/). SAM Audio da Meta exige pedir acesso aos pesos + GPU.
 - Fala embolada sem regravar (05/10/2026): cobrir o trecho com o visual do que ele quis dizer (código real + resultado) e uma pausa inserida só com imagem e som; a legenda corrige palavras mal ditas (Cloud -> Claude) e corta repetições ("boa boa").
 - OffthreadVideo fora de <Sequence> toca relativo ao quadro 0: trecho que entra no meio do vídeo precisa de <Sequence from=inicio>.
+
+## Aula de ótica: prisma 3D + loop (05/10/2026)
+- Luz no escuro: aula de ótica em estúdio escuro + lousa escura (feixes e arco-íris só brilham no escuro). Legenda branca com halo da cor do fundo (HALO em estilo.ts). Código: pessoal-vitor/aula-otica/trabalho/fonte/remotion/src/aula.
+- Dispersão calculada de verdade sem raymarch: o caminho de cada uma das 16 cores (Snell + Cauchy) é calculado no TS e vira constantes do shader; o feixe é brilho analítico (distância raio × segmento). A soma das 16 cores (CIE 1931 por Wyman) normalizada dá branco exato. Confirmado em render.
+- Desempenho no SwiftShader (4 CPUs): o custo é o número de segmentos por pixel. Longe do leque, trocar as 16 cores pelo halo branco do raio do meio (a soma das cores é branca); dentro do vidro, 1 traço branco. Prisma 1080p sem AA ≈ 10 s/quadro; com 2×2 ≈ 45 s (inviável). Fibra (cilindro analítico) ≈ 1,5 s.
+- 3D → 2D sem corte: câmera de cima com dolly zoom (dist 30, foc 10,6 → quase ortográfica); a lousa 2D usa s = foc·1080/dist e o mesmo centro. Para casar com outra estação 2D, desloca o alvo da câmera (não a lousa).
+- Loop do TikTok (pedido do Vítor): último quadro = estado logo antes do quadro 0. Aqui: a luz "apaga" (cauda do feixe atravessa o prisma) e a câmera volta à posição do quadro 0; o quadro 0 tem a frente do feixe logo fora da borda. Confirmado comparando q0000 × q3682.
+- Texto nunca sobre linha (checado em folha de contato): máscara horizontal no esquema 2D para a superfície da água não passar por baixo do painel de fórmulas; rótulo longo do ângulo (L ≈ 49°) vai para fora do leque de raios; atenção ao atan2 em -180° (arco virava círculo).
+- Bug de JSX: tex="n = \\tfrac{4}{3}" em atributo string NÃO processa escape (vira "\\"). Usar tex={'...'}.
+- edge-tts atrás do proxy da nuvem: trocar edge_tts.communicate._SSL_CTX pelo CA do proxy (/root/.ccr/ca-bundle.crt).
+- Som que ensina (ótica): cada cor = uma nota (vermelho grave → violeta agudo, como a frequência da luz); o leque abrindo é um arpejo; cada quique na fibra é uma nota alternando esquerda/direita. Aguardando opinião do Vítor.
+
+### Voz do ElevenLabs na aula de ótica (05/10/2026)
+- Roteiro para o ElevenLabs: escrever "téta" (não "teta"), senão a voz fala "têta". Vale para todo roteiro com θ.
+- A voz do Vítor no ElevenLabs é mais lenta que a provisória: respeitar o ritmo dele (só encolher silêncio acima de 1,2 s) e abrir pausas mais longas nos momentos visuais; a música sobe devagar nas pausas (rampa ~700 ms) e desce rápido antes da voz (~150 ms).
+- Whisper: NÃO passar o roteiro como initial_prompt; com ele o modelo pulou o primeiro trecho inteiro. Usar só um prompt de vocabulário e expandir dígitos ("0 ,8", "N1", "225") por extenso antes de alinhar (alinha.py da aula de ótica).
+
+## Bastidores rodada 2 (Vítor, 2026-10-05)
+- Em vídeo com tela em cima e rosto embaixo: legenda na EMENDA entre os quadros, nunca em cima do rosto. Uma linha só, mesmo tamanho e lugar o vídeo inteiro (pílula escura garante leitura em fundo claro ou escuro).
+- Rosto centralizado no painel dele (olhos/boca no meio), com um leve zoom.
+- Quando citar apps reais (ChatGPT, Gemini), usar as logos reais (motion-base/logos), nunca círculo genérico.
+- Making-of sempre mostra o vídeo final de verdade, com o som dele, logo depois do gancho (vitrine de ~6 s).
+- REGRA (Vítor): legenda NUNCA cobre o rosto. Com tela dividida, fica na emenda; com rosto em tela cheia, no peito (y≈1330).
+- REGRA (Vítor): no máximo 3 pontos de atenção ao mesmo tempo: tela de cima, a fala (rosto) e a legenda. Nada de barra de passos extra nem cartões sobre o rosto; dicas e comentários vão para a tela de cima.
+- Cortar silêncios, respiradas e hesitações da fala: trechos quietos da voz limpa (>= 0,22 s, limiar p95-24 dB) saem, sobrando 0,08 s de cada lado; cada corte alterna zoom 1.0/1.06 no rosto para disfarçar o corte seco (bastidores/trabalho/fonte/prepara.py).

@@ -23,3 +23,16 @@ ffmpeg -i out/video.mp4 -i trabalho/audio/mix.wav -c:v copy -c:a aac -b:a 256k -
 ```
 ## Próximo
 - Esperar opinião do Vítor; ajustar só o que ele citar.
+
+## 2026-10-05 06:40 UTC: ENTREGUE
+- Final: ../bastidores-final.mp4 (114.93 s, 1080x1920, -14 LUFS). Entregue no thread.
+- Código salvo no GitHub vodetmor/edicao-de-video-claude-vodetmor (main), mesma estrutura de pastas de /mnt/project-files (só fonte, sem vídeos/áudios).
+- Crédito: Música "Wallpaper" de Kevin MacLeod (incompetech.com), CC BY 4.0.
+
+## 2026-10-05 15:45 UTC: rodada 2 (feedback do Vítor)
+- Legenda: sempre 1 linha, pílula escura, centro em y=1100 (emenda entre os quadros).
+- Rosto no split: k 1.1, cy 840 (rosto no meio do painel de baixo).
+- Logos reais ChatGPT/Gemini (motion-base/logos/lobehub-*).
+- Vitrine: 6,4 s da aula (com o som dela) depois do gancho (prepara.py SHOW_AT=7.6). tempo.json ganhou showAt/show/gapOut/endOut; sons.py usa.
+- Rebuild: OUT=/root/bast/src/data python3 fonte/prepara.py; /opt/va/bin/python fonte/sons.py /root/bast/src/data/tempo.json; render Remotion; mux; versão celular (crf 23, maxrate 6M).
+- Rodada 3: cortes de silêncio (23 cortes, -5,9 s) em prepara.py -> tempo.json "segs"; sons.py monta a voz pelos segs; rosto por segs com zoom alternado; legenda y 1100 (split) / 1330 (rosto); barra de passos removida; dica e comentários na tela de cima.
