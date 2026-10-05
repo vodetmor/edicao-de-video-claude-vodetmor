@@ -60,7 +60,7 @@ export const TelaCoordenador: React.FC<{f: number; tIn: number; tSep: number; tS
   const itens = [['Roteiro da aula', 'Texto pronto pra voz'], ['Voz e sincronia', '534 palavras com tempo'], ['Fórmulas no Manim', '10 cenas'],
     ['3D em GLSL', 'Abertura e replay'], ['Montagem, legenda e som', 'Remotion']];
   return (
-    <div style={{position: 'absolute', inset: 0, fontFamily: TEXT, padding: '60px 56px'}}>
+    <div style={{position: 'absolute', inset: 0, fontFamily: TEXT, padding: '60px 56px', color: UI.text}}>
       <div style={{fontSize: 26, color: UI.mute, display: 'flex', alignItems: 'center', gap: 14}}>{I.chat}Conversas <span style={{background: UI.blue, color: '#fff', borderRadius: 8, padding: '1px 10px', fontSize: 20}}>5</span></div>
       <div style={{marginTop: 34, display: 'flex', alignItems: 'center', gap: 26, padding: '28px 30px', borderRadius: 20, background: UI.card, border: `1.5px solid ${UI.coral}`,
         opacity: s0, transform: `scale(${0.9 + 0.1 * s0})`, transformOrigin: 'left center'}}>

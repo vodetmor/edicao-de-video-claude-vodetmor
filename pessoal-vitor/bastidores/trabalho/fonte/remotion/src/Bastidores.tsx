@@ -22,8 +22,8 @@ const modoEm = (f: number) => { let m: [number, Modo] = MODOS[0], p = MODOS[0]; 
 // enquadramento do rosto em cada modo: retângulo na tela + escala e ponto da fonte que fica no centro
 type Q = {x: number; y: number; w: number; h: number; r: number; k: number; cx: number; cy: number; o: number};
 const Q_FACE: Q = {x: 0, y: 0, w: 1080, h: 1920, r: 0, k: 1, cx: 540, cy: 960, o: 1};
-const Q_SPLIT: Q = {x: 0, y: 1100, w: 1080, h: 820, r: 0, k: 1.1, cx: 530, cy: 840, o: 1};
-const Q_FULL: Q = {x: 0, y: 1100, w: 1080, h: 820, r: 0, k: 1.1, cx: 530, cy: 840, o: 0};
+const Q_SPLIT: Q = {x: 0, y: 960, w: 1080, h: 960, r: 0, k: 1.0, cx: 530, cy: 820, o: 1};
+const Q_FULL: Q = {x: 0, y: 960, w: 1080, h: 960, r: 0, k: 1.0, cx: 530, cy: 820, o: 0};
 const qDe = (m: Modo) => (m === 'face' ? Q_FACE : m === 'split' ? Q_SPLIT : Q_FULL);
 const mixQ = (a: Q, b: Q, t: number): Q => ({x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t), w: lerp(a.w, b.w, t), h: lerp(a.h, b.h, t), r: lerp(a.r, b.r, t),
   k: lerp(a.k, b.k, t), cx: lerp(a.cx, b.cx, t), cy: lerp(a.cy, b.cy, t), o: lerp(a.o, b.o, t)});
@@ -43,10 +43,12 @@ const Rosto: React.FC = () => {
   const trechos = SEGS.map(([s0, s1, t0], i) => {
     const de = Math.round(t0 * FPS), dur = Math.round((s1 - s0) * FPS);
     const kk = k * (i % 2 ? 1.06 : 1);
+    // no primeiro take (gancho) ele está mais perto e mais baixo na câmera: enquadra mais embaixo pra caber o rosto inteiro
+    const cy = i === 0 ? q.cy + 140 : q.cy;
     return (
       <Sequence key={i} from={de} durationInFrames={dur} layout="none">
         <OffthreadVideo src={staticFile('video/face.mp4')} startFrom={Math.round(s0 * FPS)} muted
-          style={{position: 'absolute', width: 1080, height: 1920, left: q.w / 2 - q.cx * kk, top: q.h / 2 - q.cy * kk, transform: `scale(${kk})`, transformOrigin: '0 0',
+          style={{position: 'absolute', width: 1080, height: 1920, left: q.w / 2 - q.cx * kk, top: q.h / 2 - cy * kk, transform: `scale(${kk})`, transformOrigin: '0 0',
             filter: 'contrast(1.09) saturate(1.14) brightness(1.04)'}} />
       </Sequence>
     );
@@ -231,7 +233,7 @@ const Topo: React.FC = () => {
     const ent = spring(f, T.coord, 0.4, 0.85);
     return (
       <AbsoluteFill style={{background: '#0B0B0B'}}>
-        <div style={{position: 'absolute', left: 40, top: 150, width: 1440, height: 1150, transform: `scale(${0.69 * (0.95 + 0.05 * ent)})`, transformOrigin: '0 0', opacity: ent,
+        <div style={{position: 'absolute', left: 21, top: 110, width: 1440, height: 1150, transform: `scale(${0.725 * (0.95 + 0.05 * ent)})`, transformOrigin: '0 0', opacity: ent,
           background: UI.bg, borderRadius: 30, border: '1px solid #2A2A2A', overflow: 'hidden'}}>
           <TelaCoordenador f={f} tIn={T.coord + 2} tSep={Math.min(T.coordSep, T.coord + 24)} tSub={Math.min(T.coordSub + 10, T.coord + 60)} />
         </div>
@@ -438,6 +440,14 @@ const SobreConteudo: React.FC<{f: number}> = ({f}) => {
 };
 
 // ---------------- cartão final ----------------
+// perfil do TikTok: logo com o efeito ciano/vermelho, foto, @ e o botão Seguir
+const HANDLE = '@vitormach._'; // igual no TikTok e no Instagram
+const LogoTikTok: React.FC<{s: number}> = ({s}) => {
+  const m = (cor: string, dx: number, dy: number) => (
+    <div style={{position: 'absolute', left: dx, top: dy, width: s, height: s, background: cor, WebkitMaskImage: `url(${staticFile('img/tiktok.svg')})`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat'}} />
+  );
+  return <div style={{position: 'relative', width: s, height: s}}>{m('#25F4EE', -s * 0.04, -s * 0.04)}{m('#FE2C55', s * 0.04, s * 0.04)}{m('#111', 0, 0)}</div>;
+};
 const Final: React.FC = () => {
   const f = useCurrentFrame() - T.fim;
   if (f < 0) return null;
@@ -445,29 +455,35 @@ const Final: React.FC = () => {
   const clique = 30;
   const segue = f >= clique + 3;
   const press = f >= clique && f < clique + 8 ? Math.sin(((f - clique) / 8) * Math.PI) : 0;
-  const cx = lerp(980, 640, E.expr(prog(f, 10, 18))), cy = lerp(1500, 1105, E.expr(prog(f, 10, 18)));
+  const cx = lerp(980, 640, E.expr(prog(f, 10, 18))), cy = lerp(1500, 1220, E.expr(prog(f, 10, 18)));
   return (
     <AbsoluteFill style={{background: PAPEL, alignItems: 'center', justifyContent: 'center', opacity: clamp(s * 1.5), fontFamily: TEXT}}>
-      <div style={{width: 300, height: 300, borderRadius: 150, overflow: 'hidden', border: `8px solid ${UI.coral}`, transform: `scale(${0.7 + 0.3 * s})`}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: 16, marginBottom: 60, opacity: spring(f, 4, 0.5, 0.8)}}><LogoTikTok s={64} />
+        <span style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 56, color: TINTA, letterSpacing: -1}}>TikTok</span></div>
+      <div style={{width: 320, height: 320, borderRadius: 160, overflow: 'hidden', transform: `scale(${0.7 + 0.3 * s})`, boxShadow: '0 20px 60px rgba(0,0,0,0.18)'}}>
         <Img src={staticFile('img/avatar.jpg')} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </div>
-      <div style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 88, color: TINTA, marginTop: 34, letterSpacing: -2}}>Vítor</div>
-      <div style={{fontSize: 36, color: '#6E6E73', marginTop: 6}}>testando o limite da IA</div>
-      <div style={{marginTop: 50, width: 440, height: 110, borderRadius: 55, background: segue ? '#E3E3E6' : UI.coral, color: segue ? TINTA : '#fff', display: 'flex', alignItems: 'center',
+      <div style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 64, color: TINTA, marginTop: 36, letterSpacing: -1}}>{HANDLE}</div>
+      <div style={{fontSize: 34, color: '#6E6E73', marginTop: 8}}>aulas feitas com IA</div>
+      <div style={{marginTop: 50, width: 440, height: 110, borderRadius: 14, background: segue ? '#E3E3E6' : '#FE2C55', color: segue ? TINTA : '#fff', display: 'flex', alignItems: 'center',
         justifyContent: 'center', gap: 14, fontSize: 46, fontWeight: 800, transform: `scale(${1 - 0.07 * press + (segue ? 0.04 * spring(f, clique + 3, 0.6, 0.4) * Math.exp(-(f - clique - 3) / 8) : 0)})`}}>
-        {segue ? <>Seguindo <span style={{color: '#2FBF8F'}}>✓</span></> : '+ Seguir'}
+        {segue ? <>Seguindo <span style={{color: '#2FBF8F'}}>✓</span></> : 'Seguir'}
       </div>
       <div style={{fontSize: 34, color: TINTA, marginTop: 50, opacity: spring(f, 44, 0.4, 0.9), fontWeight: 600}}>Próxima aula: você escolhe nos comentários</div>
-      <div style={{position: 'absolute', bottom: 120, display: 'flex', alignItems: 'center', gap: 14, fontSize: 26, color: '#8A8A8E'}}><LogoClaude s={40} />editado pelo Claude</div>
       {f > 8 && <div style={{position: 'absolute', left: cx, top: cy}}><Cursor x={0} y={0} press={press} scale={1.7} /></div>}
     </AbsoluteFill>
   );
 };
 
+const topoFundo = (f: number) => {
+  const claro = f < T.faceA || (f >= T.manimClip - 2 && f < T.glsl) || (f >= T.comp && f < T.voz);
+  return claro ? PAPEL : '#0B0B0B';
+};
+
 // a legenda nunca cobre o rosto: na emenda (1100) com a tela em cima; mais abaixo, no peito, quando o rosto ocupa a tela toda
 const legendaY = (f: number) => {
   const {m, desde, antes} = modoEm(f);
-  const y = (x: Modo) => (x === 'face' ? 1330 : 1100);
+  const y = (x: Modo) => (x === 'face' ? 1330 : 960);
   return lerp(y(antes), y(m), E.expr(prog(f, desde, 9)));
 };
 
@@ -476,7 +492,10 @@ export const Bastidores: React.FC = () => {
   const f = useCurrentFrame();
   return (
     <AbsoluteFill style={{background: '#000'}}>
-      <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1100, overflow: 'hidden'}}><Topo /></div>
+      {/* metade e metade: a tela de cima (desenhada em 1080x1100) cabe em 960 de altura; as laterais recebem a cor de fundo da cena */}
+      <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 960, overflow: 'hidden', background: topoFundo(f)}}>
+        <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1100, overflow: 'hidden', transform: `scale(${960 / 1100})`, transformOrigin: '50% 0'}}><Topo /></div>
+      </div>
       {f >= SHOW_F && f < SHOW_F + SHOW_LEN && <Vitrine f={f - SHOW_F} />}
       {f >= T.gap && f < T.gap + GAP_LEN && <Resultado3D f={f - T.gap} />}
       <Rosto />
