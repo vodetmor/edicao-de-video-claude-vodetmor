@@ -39,10 +39,14 @@ ta = np.arange(len(aula)) / SR
 aula *= (np.clip(ta / 0.12, 0, 1) * np.clip((6.05 - ta) / 0.2, 0, 1))[:, None]
 aulaN = np.zeros((N, 2), np.float32); i0 = int(SHOW_AT * SR); aulaN[i0: i0 + len(aula)] = aula * 10 ** (-1 / 20)
 # ---- música
-mp = f"{B}/audio/musica/Wallpaper.wav"
+# trilha: "Deliberate Thought" (Kevin MacLeod), calma e pensativa; o Vítor achou "Wallpaper" divertida demais para explicação
+MUS = os.environ.get("MUSICA", "Deliberate_Thought")
+mp = f"{B}/audio/musica/{MUS}.wav"
 if not os.path.exists(mp):
-    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{B}/audio/musica/Wallpaper.mp3", "-ac", "2", "-ar", str(SR), mp], check=True)
-m, _ = sf.read(mp, dtype="float32"); m = m[:N] if len(m) >= N else np.pad(m, ((0, N - len(m)), (0, 0)))
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{B}/audio/musica/{MUS}.mp3", "-ac", "2", "-ar", str(SR), mp], check=True)
+m, _ = sf.read(mp, dtype="float32")
+# mesmo nível médio da trilha anterior, para o ducking continuar igual
+m *= 10 ** ((-12.0 - 20 * np.log10(np.sqrt(np.mean(m[SR: SR * 60] ** 2)) + 1e-9)) / 20); m = m[:N] if len(m) >= N else np.pad(m, ((0, N - len(m)), (0, 0)))
 # envelope da voz -> ducking (ataque rápido, volta lenta)
 hop = 480; env = np.sqrt(np.convolve(voz ** 2, np.ones(hop) / hop, "same"))[::hop]
 ativo = (env > 0.02).astype(float)

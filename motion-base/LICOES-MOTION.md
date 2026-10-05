@@ -301,3 +301,4 @@ Código: `anuncio-vslplay/trabalho/fonte` (`src/FoldIcon.tsx`, `src/scenes/Openi
 - REGRA (Vítor): legenda NUNCA cobre o rosto. Com tela dividida, fica na emenda; com rosto em tela cheia, no peito (y≈1330).
 - REGRA (Vítor): no máximo 3 pontos de atenção ao mesmo tempo: tela de cima, a fala (rosto) e a legenda. Nada de barra de passos extra nem cartões sobre o rosto; dicas e comentários vão para a tela de cima.
 - Cortar silêncios, respiradas e hesitações da fala: trechos quietos da voz limpa (>= 0,22 s, limiar p95-24 dB) saem, sobrando 0,08 s de cada lado; cada corte alterna zoom 1.0/1.06 no rosto para disfarçar o corte seco (bastidores/trabalho/fonte/prepara.py).
+- MÚSICA (Vítor, 2026-10-05): para explicação/didático, trilha calma e pensativa (ex.: Kevin MacLeod "Deliberate Thought"). "Wallpaper" é divertida demais para aula; guardar trilhas animadas para vídeos leves.
