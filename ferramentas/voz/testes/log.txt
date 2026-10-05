@@ -1,0 +1,11 @@
+Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 13 files:   8%|▊         | 1/13 [00:00<00:01,  6.22it/s]Fetching 13 files:  15%|█▌        | 2/13 [00:00<00:01,  6.36it/s]Fetching 13 files:  23%|██▎       | 3/13 [00:00<00:01,  6.51it/s]Fetching 13 files:  69%|██████▉   | 9/13 [00:00<00:00, 21.66it/s]Fetching 13 files:  92%|█████████▏| 12/13 [00:06<00:00,  1.43it/s]Fetching 13 files: 100%|██████████| 13/13 [00:17<00:00,  1.36s/it]
+Loading weights:   0%|          | 0/313 [00:00<?, ?it/s]Loading weights: 100%|██████████| 313/313 [00:00<00:00, 3838.09it/s]
+Loading weights:   0%|          | 0/527 [00:00<?, ?it/s]Loading weights:  42%|████▏     | 222/527 [00:00<00:00, 2218.74it/s]Loading weights: 100%|██████████| 527/527 [00:00<00:00, 3906.91it/s]
+modelo carregado em 20.0 s
+omnivoice-design-masc-anuncio: 12.0 s de audio em 128.6 s
+omnivoice-design-masc-ref: 5.6 s de audio em 23.5 s
+omnivoice-design-fem-anuncio: 12.2 s de audio em 51.6 s
+omnivoice-design-fem-ref: 5.6 s de audio em 23.8 s
+omnivoice-clone-sintetico-anuncio: 12.0 s de audio em 85.9 s
+omnivoice-auto-anuncio: 12.2 s de audio em 51.4 s
