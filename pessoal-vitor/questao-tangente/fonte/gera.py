@@ -6,63 +6,72 @@ AQUI = pathlib.Path(__file__).resolve().parent
 SAIDA = AQUI.parent
 
 BLOCOS = [
-    ("0 · Gancho", "0:00 – 0:10", [
-        ("Essa é a questão mais difícil do ENEM 2025. Mas o próprio desenho já entrega a resposta. Olha.",
+    ("0 · Gancho", "0:00 – 0:12", [
+        ("Essa é a questão mais difícil do ENEM 2025. Um copo enchendo de água... e uma função tangente. Até o fim desse vídeo, você vai resolver ela sozinho. Mesmo que nunca tenha entendido tangente.",
          "Primeiro quadro = último quadro (loop). Figura do INEP recriada em Manim: copo à esquerda, gráfico à direita. A água sobe e um ponto corre pela curva, ligados por tracejado azul. Texto no topo: \"A questão mais difícil do ENEM 2025\"."),
     ]),
-    ("1 · Lendo a questão", "0:10 – 0:55", [
-        ("Primeiro, vamos ler. \"Um recipiente tem um formato que faz com que, ao ser enchido de água com uma vazão constante...\" Vazão constante: a mesma quantidade de água entra a cada minuto.",
-         "Enunciado do INEP na tela, em texto limpo. Um marca-texto (fundo colorido, nunca linha sobre o texto) acompanha a leitura. \"vazão constante\" ganha cor; ao lado, uma torneira pequena com fluxo fixo."),
-        ("\"...a distância D da lâmina de água ao tampo da mesa, em centímetro, aumente em relação ao tempo T, em minuto...\" Ou seja: D é a altura da água, e T é o tempo.",
-         "\"D\" e \"T\" ganham cor. Setas curtas levam D até o nível da água no copo e até o eixo vertical; T até o eixo horizontal."),
-        ("\"...de acordo com uma função do tipo D = k + tg[p(T + m)], sendo os parâmetros k, p e m números reais...\" É uma tangente com 3 números escondidos: k, p e m. Achar eles é a questão inteira.",
-         "A fórmula sai do texto e cresce no centro, com k, p e m nas três cores fixas do vídeo e um \"?\" sobre cada um."),
-        ("\"...para T variando entre 0 e 4 minutos, conforme ilustrado na figura, na qual estão apresentadas assíntotas verticais da função tangente.\" Assíntotas são essas retas verdes pontilhadas. Guarda elas, já já explico.",
-         "A figura do INEP entra. O trecho de 0 a 4 do eixo T acende. As duas retas verdes piscam, com os valores (5 − 2π)/2 e (5 + 2π)/2 em destaque."),
-        ("E o comando: \"A expressão algébrica que representa a relação entre D e T é...\" Repara nas alternativas: todas têm a mesma cara. O que muda são só os 3 números. Então bora descobrir k, p e m.",
-         "As 5 alternativas aparecem empilhadas; em cada uma, só k, p e m ficam coloridos, o resto fica cinza. Volta a fórmula com os três \"?\"."),
+    ("1 · O que a questão pede", "0:12 – 0:32", [
+        ("A questão diz: um copo é enchido com vazão constante, a mesma quantidade de água por minuto. D é a altura da água, T é o tempo, e a altura segue D = k + tg[p(T + m)]. A pergunta: quanto valem k, p e m?",
+         "Enunciado resumido na tela; marca-texto (fundo colorido, nunca linha sobre o texto) em \"vazão constante\", \"D\" e \"T\". A fórmula cresce com k, p e m em três cores fixas. Nascem três caixinhas com \"?\" no rodapé: a trilha do vídeo, preenchida no fim."),
     ]),
-    ("2 · O copo desenha o gráfico", "0:55 – 1:25", [
-        ("Agora, o desenho. Como a vazão é constante, a altura sobe conforme a largura do copo. Num cubo, sobe sempre igual: o gráfico é uma reta.",
-         "Torneira com \"vazão constante\". Cubo pequeno enchendo em camadas iguais; ao lado, a reta se desenha. Rápido, uns 5 s."),
-        ("Onde o copo é estreito, sobe rápido. Onde é largo, sobe devagar. Esse copo é estreito, largo, estreito. Então o gráfico é rápido, devagar, rápido.",
-         "O vaso do INEP enchendo em fatias de mesmo volume: finas embaixo e em cima, grossas no meio. \"rápido / devagar / rápido\" aparece ao lado de cada trecho da curva, sem cruzar linhas."),
-        ("E o ponto mais deitado é a parte mais larga: o ponto (2,5 ; 30).",
-         "Faixa ligando a parte mais larga do copo ao ponto (2,5 ; 30), que pulsa e fica marcado até o fim."),
+    ("2 · O copo desenha o gráfico", "0:32 – 1:00", [
+        ("Primeiro, o desenho. Num cubo, toda camada é igual, então a altura sobe sempre no mesmo ritmo: o gráfico é uma reta. Mas esse copo é estreito, largo, estreito. Onde é estreito, pouca água já sobe bastante: rápido. Onde é largo, sobe devagar.",
+         "Cubo pequeno enchendo em camadas iguais com a reta ao lado (3 s). Depois o vaso do INEP enchendo em fatias de mesmo volume: finas embaixo e em cima, grossas no meio; cada fatia aparece também no gráfico. \"rápido / devagar / rápido\" ao lado da curva."),
+        ("Rápido, devagar, rápido. E o meio, onde a curva quase deita, é o ponto (2,5 ; 30). Guarda ele. Mas por que isso é uma tangente?",
+         "Ponto (2,5 ; 30) pulsa e fica marcado. A pergunta \"por que tangente?\" aparece na tela e a câmera entra num plano limpo."),
     ]),
-    ("3 · Isso é uma tangente", "1:25 – 1:50", [
-        ("E esse formato é o da tangente. Ela passa pelo zero, sobe pro infinito, vem do menos infinito, e nunca encosta nas assíntotas, aquelas retas verdes. E se repete a cada π.",
-         "Círculo unitário rápido: o segmento tg téta cresce na reta x = 1 e é transportado para o gráfico y = tg x. Assíntotas pontilhadas em verde (estilo INEP). Chave \"período = π\". Um ramo faz morph e encaixa na curva do vaso."),
+    ("3 · O que é tangente (do zero)", "1:00 – 2:00", [
+        ("Esquece a fórmula. Pensa numa rampa. A tangente de um ângulo diz quanto a rampa sobe pra cada 1 passo que você anda pra frente.",
+         "Uma rampa (segmento grosso) presa na origem, com um bonequinho/bolinha em cima. Régua mostrando \"anda 1\" na horizontal e \"sobe ?\" na vertical. Ângulo téta marcado."),
+        ("Rampa deitada, ângulo 0: não sobe nada. Tangente de 0 é 0. Rampa a 45°: anda 1, sobe 1. Tangente de 45° é 1. Levanta mais. 60°: sobe quase 2. 80°: sobe quase 6.",
+         "A rampa vai girando; ao lado, um contador grande: tg téta = 0 → 1 → 1,7 → 5,7. O degrau \"sobe\" cresce e sai do quadro."),
+        ("E em 90°? A rampa virou uma parede. Não tem como andar pra frente. A tangente não existe ali: ela dispara pro infinito. Essa parede é a assíntota. E se a rampa descer, a tangente fica negativa.",
+         "A rampa encosta na vertical; a parede vira uma reta verde pontilhada (o mesmo estilo das assíntotas do INEP). Pausa curta, a música sobe. Depois a rampa gira para baixo e o contador fica negativo."),
+        ("Agora joga tudo num gráfico: embaixo o ângulo, em cima a tangente. Olha a curva: passa pelo 0, dispara perto das paredes, e de uma parede até a outra são 180°, que é π. Depois disso a rampa volta à mesma posição, e o desenho se repete.",
+         "Cada posição da rampa deixa um ponto no gráfico ao lado, que vai formando y = tg téta. Assíntotas verdes em −π/2 e π/2. Chave \"largura = π (180°)\". Mais dois ramos aparecem repetidos."),
+        ("Rápido, devagar, rápido. É o formato do copo. Guarda 3 coisas dessa tangente: o centro está no 0, na altura 0, e a largura é π.",
+         "Um ramo faz morph sobre a curva do vaso e encaixa. Aparece a \"ficha da tangente original\": centro em 0 · altura 0 · largura π."),
     ]),
-    ("4 · Os três números", "1:50 – 2:20", [
-        ("A questão mexe nela com três números. O k sobe o gráfico: é a altura do centro.",
-         "Fórmula D = k + tg[p(T + m)] no topo, k, p e m em três cores fixas. Controle de k: o gráfico sobe, o centro acompanha."),
-        ("O m arrasta pro lado: o centro fica onde o parêntese zera, em T = −m.",
-         "Controle de m: o gráfico desliza; aparece T + m = 0 → T = −m."),
-        ("E o p estica: o período vira π/p.",
-         "Controle de p: as assíntotas se afastam, a chave do período mostra π/p."),
+    ("4 · Como mexer num gráfico", "2:00 – 3:05", [
+        ("Só que o gráfico do copo não está no 0. Ele foi movido. E pra mover um gráfico, existem só 3 movimentos. Cada letra da fórmula faz um.",
+         "A tangente original (cinza) e a curva do copo lado a lado. As três caixinhas do rodapé acendem: k, m, p."),
+        ("Primeiro: somar um número fora. k + tg. Isso soma k em todos os pontos: o gráfico inteiro sobe, como um elevador. Com +30, sobe 30.",
+         "Ícone de elevador ao lado de k. Controle deslizante: k de 0 a 30, o gráfico sobe inteiro; o centro acompanha com a etiqueta \"altura = k\"."),
+        ("Segundo: somar dentro do parêntese. Aí o gráfico anda pro lado, mas ao contrário do sinal. Por quê? O centro acontece quando o que está dentro dá 0. Em tg(T − 2), isso só acontece em T = 2. O centro andou 2 pra direita. Menos dentro: direita. Mais dentro: esquerda.",
+         "Ícone de esteira ao lado de m. Escrito: T − 2 = 0 → T = 2. O gráfico desliza 2 para a direita; o centro deixa um rastro de 0 até 2. Depois tg(T + 2) desliza para a esquerda."),
+        ("Terceiro: multiplicar dentro. Isso muda a velocidade. Com p = 2, tudo acontece 2 vezes mais rápido: o gráfico espreme, a largura cai pela metade. Com p = ½, tudo acontece 2 vezes mais devagar: estica, a largura dobra. A regra é: largura = π/p.",
+         "Ícone de sanfona ao lado de p. Controle de p: em p = 2 as assíntotas se aproximam (largura π/2); em p = ½ se afastam (largura 2π). A chave da largura atualiza ao vivo; aparece \"largura = π/p\"."),
+        ("Pronto. Agora você sabe tudo que precisa. É só comparar o gráfico do copo com a tangente original.",
+         "Os três ícones (elevador, esteira, sanfona) se alinham no rodapé, nas caixinhas. Volta a figura do INEP."),
     ]),
-    ("5 · Resolvendo", "2:20 – 2:55", [
-        ("Agora lê o desenho. O centro é o meio das assíntotas: os 2π se cancelam, e dá 2,5. Altura 30. Então k = 30, e m = −5/2.",
-         "Gráfico do INEP de volta. [(5 − 2π)/2 + (5 + 2π)/2] ÷ 2: os 2π acendem e somem juntos, fica 2,5. O ponto (2,5 ; 30) pulsa. k = 30 e m = −5/2 voam para dentro da fórmula."),
-        ("A distância entre as assíntotas é 2π. π/p = 2π: p = ½. Alternativa E.",
-         "Chave entre as assíntotas: 4π/2 = 2π. π/p = 2π → p = ½. Fórmula final D = 30 + tg[½(T − 5/2)]; as alternativas aparecem e a E acende."),
+    ("5 · Resolvendo: k, m e p", "3:05 – 4:15", [
+        ("O k, o elevador. O centro estava na altura 0, e no copo está na altura 30. Subiu 30: k = 30.",
+         "Fantasma da tangente original sobre a figura. Seta vertical do centro até a altura 30. A caixinha k vira \"30\" com check."),
+        ("O m, a esteira. O centro estava em 0 e foi pra 2,5. Andou pra direita, então dentro do parêntese é menos: T − 2,5. m = −5/2.",
+         "Seta horizontal de 0 até 2,5. Escrito: T + m = 0 → 2,5 + m = 0 → m = −5/2. A caixinha m vira \"−5/2\" com check."),
+        ("E dá pra conferir: 2,5 fica exatamente no meio das duas assíntotas da figura. Some as duas e divida por 2: os 2π se cancelam e dá 2,5.",
+         "As duas assíntotas verdes piscam com (5 − 2π)/2 e (5 + 2π)/2. Conta: os ±2π acendem e somem juntos (sem risco), fica 5 ÷ 2 = 2,5."),
+        ("O p, a sanfona. A largura original era π. No copo, a largura é a distância entre as assíntotas: (5 + 2π)/2 − (5 − 2π)/2. Os 5 se cancelam e sobra 2π. A largura dobrou: o gráfico esticou, então p = ½.",
+         "Chave entre as assíntotas: 4π/2 = 2π. Comparação lado a lado: largura π (fantasma) × 2π (copo). π/p = 2π → p = ½. A caixinha p vira \"½\" com check."),
     ]),
-    ("6 · Segredo e loop", "2:55 – 3:15", [
-        ("E o segredo: nem precisava da conta. Centro na altura 30? Sobram D e E. Na D, o centro cai em T = 5. Não é. Resposta E.",
-         "Alternativas na tela. \"k = 30\": A, B e C ficam cinzas e saem (sem riscar o texto). Em D, o parêntese (T − 5) acende e marca T = 5 no eixo, longe do 2,5; D sai. Sobra E."),
-        ("O formato do copo desenhou o gráfico... e o gráfico entregou a resposta.",
+    ("6 · Resposta e loop", "4:15 – 4:45", [
+        ("Juntando os três: D = 30 + tg[½(T − 5/2)]. Alternativa E.",
+         "As três caixinhas voam para dentro da fórmula. As cinco alternativas aparecem; a E acende."),
+        ("E o atalho pra prova: o k é sempre a altura do centro. Só com o 30 você já elimina A, B e C. E o centro em 2,5 elimina a D.",
+         "A, B e C ficam cinzas e saem (sem riscar o texto). Em D, (T − 5) acende e marca T = 5 no eixo, longe do 2,5; D sai."),
+        ("O copo desenhou o gráfico. E o gráfico deu a resposta.",
          "O copo esvazia e a câmera volta ao enquadramento do primeiro quadro. Último quadro = primeiro quadro."),
     ]),
 ]
 
 NOTAS = [
-    "<b>Leitura:</b> o texto entre aspas é o enunciado oficial do INEP, palavra por palavra; o que vem depois das aspas é o seu comentário. Leia o enunciado num tom e comente noutro, como professor.",
-    "<b>Resposta conferida: alternativa E</b>, D = 30 + tg[½(T − 5/2)]. Assíntotas em ½(T − 5/2) = ±π/2, ou seja T = (5 ± 2π)/2, exatamente as do enunciado. A alternativa D tem o centro em T = 5, por isso cai.",
-    "<b>A figura do INEP não está em escala.</b> Com a resposta E, D(0) ≈ 27 cm e D(4) ≈ 30,9 cm: na vida real a curva entre 0 e 4 minutos é quase plana. Nas cenas da questão a animação usa o desenho esquemático do INEP; só nos blocos 2 e 3 (a tangente pura) o gráfico é em escala. Isso não entra na fala para não confundir (pode virar um comentário fixado: \"repararam que o desenho não está em escala?\").",
-    "<b>Duração:</b> cerca de 400 palavras, uns 3:00 a 3:15 no seu ritmo. As pausas marcadas na animação são onde a música sobe.",
+    "<b>O caminho do vídeo:</b> a questão (o que pede) → o copo (por que a curva tem esse formato) → a tangente do zero, pela ideia da rampa → os 3 movimentos de um gráfico (elevador, esteira, sanfona) → aplicar os 3 na questão → resposta e atalho. Cada parte termina com uma pergunta ou um \"guarda isso\" que puxa a próxima.",
+    "<b>Para prender até o fim:</b> a promessa no gancho (\"você vai resolver sozinho\"), as 3 caixinhas no rodapé que só se completam no fim, um ícone fixo para cada letra (elevador, esteira, sanfona) e a volta ao primeiro quadro (loop).",
+    "<b>Resposta conferida: alternativa E</b>, D = 30 + tg[½(T − 5/2)]. Assíntotas em ½(T − 5/2) = ±π/2, ou seja T = (5 ± 2π)/2, exatamente as do enunciado. A alternativa D tem o centro em T = 5, por isso cai. Valores da rampa: tg 60° ≈ 1,7 e tg 80° ≈ 5,7.",
+    "<b>A figura do INEP não está em escala.</b> Com a resposta E, D(0) ≈ 27 cm e D(4) ≈ 30,9 cm: a curva real entre 0 e 4 minutos é quase plana. As cenas da questão usam o desenho esquemático do INEP; só os blocos 3 e 4 usam gráfico em escala. Fica fora da fala (pode virar comentário fixado).",
+    "<b>Duração:</b> cerca de 660 palavras, uns 4:45 no seu ritmo. As pausas marcadas são onde a música sobe.",
     "<b>Como gravar no WhatsApp:</b> um áudio por bloco (7 áudios). Se errar uma frase, respira e repete a frase inteira no mesmo áudio; eu corto. Lugar silencioso, celular a um palmo da boca. Eu converto o ogg, limpo o ruído e nivelo o volume.",
-    "<b>Números:</b> em algarismos e fórmulas, como você pediu. Leia do seu jeito.",
+    "<b>Números:</b> em algarismos e fórmulas. Leia do seu jeito; \"téta\" é o ângulo.",
 ]
 
 def html_doc():
@@ -93,7 +102,7 @@ tr.bloco {{ break-after:avoid; page-break-after:avoid; }}
 .notas li {{ margin:4px 0; }}
 </style></head><body>
 <h1>Questão da tangente · ENEM 2025</h1>
-<p class="sub">Roteiro de narração (sua voz, sem rosto) · animação em Manim · versão 3 (com a leitura da questão) · cerca de 3:15</p>
+<p class="sub">Roteiro de narração (sua voz, sem rosto) · animação em Manim · versão 5 (do zero, com tangente e transformações) · cerca de 4:45</p>
 <table><tr><th>Você fala</th><th>A animação mostra</th></tr>
 {''.join(linhas)}</table>
 <div class="notas"><b>Notas</b><ul>{notas}</ul></div>

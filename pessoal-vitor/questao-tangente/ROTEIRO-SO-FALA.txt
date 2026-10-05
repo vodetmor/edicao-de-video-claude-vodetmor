@@ -1,20 +1,20 @@
-[0 · Gancho]  (0:00 – 0:10)
-Essa é a questão mais difícil do ENEM 2025. Mas o próprio desenho já entrega a resposta. Olha.
+[0 · Gancho]  (0:00 – 0:12)
+Essa é a questão mais difícil do ENEM 2025. Um copo enchendo de água... e uma função tangente. Até o fim desse vídeo, você vai resolver ela sozinho. Mesmo que nunca tenha entendido tangente.
 
-[1 · Lendo a questão]  (0:10 – 0:55)
-Primeiro, vamos ler. "Um recipiente tem um formato que faz com que, ao ser enchido de água com uma vazão constante..." Vazão constante: a mesma quantidade de água entra a cada minuto. "...a distância D da lâmina de água ao tampo da mesa, em centímetro, aumente em relação ao tempo T, em minuto..." Ou seja: D é a altura da água, e T é o tempo. "...de acordo com uma função do tipo D = k + tg[p(T + m)], sendo os parâmetros k, p e m números reais..." É uma tangente com 3 números escondidos: k, p e m. Achar eles é a questão inteira. "...para T variando entre 0 e 4 minutos, conforme ilustrado na figura, na qual estão apresentadas assíntotas verticais da função tangente." Assíntotas são essas retas verdes pontilhadas. Guarda elas, já já explico. E o comando: "A expressão algébrica que representa a relação entre D e T é..." Repara nas alternativas: todas têm a mesma cara. O que muda são só os 3 números. Então bora descobrir k, p e m.
+[1 · O que a questão pede]  (0:12 – 0:32)
+A questão diz: um copo é enchido com vazão constante, a mesma quantidade de água por minuto. D é a altura da água, T é o tempo, e a altura segue D = k + tg[p(T + m)]. A pergunta: quanto valem k, p e m?
 
-[2 · O copo desenha o gráfico]  (0:55 – 1:25)
-Agora, o desenho. Como a vazão é constante, a altura sobe conforme a largura do copo. Num cubo, sobe sempre igual: o gráfico é uma reta. Onde o copo é estreito, sobe rápido. Onde é largo, sobe devagar. Esse copo é estreito, largo, estreito. Então o gráfico é rápido, devagar, rápido. E o ponto mais deitado é a parte mais larga: o ponto (2,5 ; 30).
+[2 · O copo desenha o gráfico]  (0:32 – 1:00)
+Primeiro, o desenho. Num cubo, toda camada é igual, então a altura sobe sempre no mesmo ritmo: o gráfico é uma reta. Mas esse copo é estreito, largo, estreito. Onde é estreito, pouca água já sobe bastante: rápido. Onde é largo, sobe devagar. Rápido, devagar, rápido. E o meio, onde a curva quase deita, é o ponto (2,5 ; 30). Guarda ele. Mas por que isso é uma tangente?
 
-[3 · Isso é uma tangente]  (1:25 – 1:50)
-E esse formato é o da tangente. Ela passa pelo zero, sobe pro infinito, vem do menos infinito, e nunca encosta nas assíntotas, aquelas retas verdes. E se repete a cada π.
+[3 · O que é tangente (do zero)]  (1:00 – 2:00)
+Esquece a fórmula. Pensa numa rampa. A tangente de um ângulo diz quanto a rampa sobe pra cada 1 passo que você anda pra frente. Rampa deitada, ângulo 0: não sobe nada. Tangente de 0 é 0. Rampa a 45°: anda 1, sobe 1. Tangente de 45° é 1. Levanta mais. 60°: sobe quase 2. 80°: sobe quase 6. E em 90°? A rampa virou uma parede. Não tem como andar pra frente. A tangente não existe ali: ela dispara pro infinito. Essa parede é a assíntota. E se a rampa descer, a tangente fica negativa. Agora joga tudo num gráfico: embaixo o ângulo, em cima a tangente. Olha a curva: passa pelo 0, dispara perto das paredes, e de uma parede até a outra são 180°, que é π. Depois disso a rampa volta à mesma posição, e o desenho se repete. Rápido, devagar, rápido. É o formato do copo. Guarda 3 coisas dessa tangente: o centro está no 0, na altura 0, e a largura é π.
 
-[4 · Os três números]  (1:50 – 2:20)
-A questão mexe nela com três números. O k sobe o gráfico: é a altura do centro. O m arrasta pro lado: o centro fica onde o parêntese zera, em T = −m. E o p estica: o período vira π/p.
+[4 · Como mexer num gráfico]  (2:00 – 3:05)
+Só que o gráfico do copo não está no 0. Ele foi movido. E pra mover um gráfico, existem só 3 movimentos. Cada letra da fórmula faz um. Primeiro: somar um número fora. k + tg. Isso soma k em todos os pontos: o gráfico inteiro sobe, como um elevador. Com +30, sobe 30. Segundo: somar dentro do parêntese. Aí o gráfico anda pro lado, mas ao contrário do sinal. Por quê? O centro acontece quando o que está dentro dá 0. Em tg(T − 2), isso só acontece em T = 2. O centro andou 2 pra direita. Menos dentro: direita. Mais dentro: esquerda. Terceiro: multiplicar dentro. Isso muda a velocidade. Com p = 2, tudo acontece 2 vezes mais rápido: o gráfico espreme, a largura cai pela metade. Com p = ½, tudo acontece 2 vezes mais devagar: estica, a largura dobra. A regra é: largura = π/p. Pronto. Agora você sabe tudo que precisa. É só comparar o gráfico do copo com a tangente original.
 
-[5 · Resolvendo]  (2:20 – 2:55)
-Agora lê o desenho. O centro é o meio das assíntotas: os 2π se cancelam, e dá 2,5. Altura 30. Então k = 30, e m = −5/2. A distância entre as assíntotas é 2π. π/p = 2π: p = ½. Alternativa E.
+[5 · Resolvendo: k, m e p]  (3:05 – 4:15)
+O k, o elevador. O centro estava na altura 0, e no copo está na altura 30. Subiu 30: k = 30. O m, a esteira. O centro estava em 0 e foi pra 2,5. Andou pra direita, então dentro do parêntese é menos: T − 2,5. m = −5/2. E dá pra conferir: 2,5 fica exatamente no meio das duas assíntotas da figura. Some as duas e divida por 2: os 2π se cancelam e dá 2,5. O p, a sanfona. A largura original era π. No copo, a largura é a distância entre as assíntotas: (5 + 2π)/2 − (5 − 2π)/2. Os 5 se cancelam e sobra 2π. A largura dobrou: o gráfico esticou, então p = ½.
 
-[6 · Segredo e loop]  (2:55 – 3:15)
-E o segredo: nem precisava da conta. Centro na altura 30? Sobram D e E. Na D, o centro cai em T = 5. Não é. Resposta E. O formato do copo desenhou o gráfico... e o gráfico entregou a resposta.
+[6 · Resposta e loop]  (4:15 – 4:45)
+Juntando os três: D = 30 + tg[½(T − 5/2)]. Alternativa E. E o atalho pra prova: o k é sempre a altura do centro. Só com o 30 você já elimina A, B e C. E o centro em 2,5 elimina a D. O copo desenhou o gráfico. E o gráfico deu a resposta.
