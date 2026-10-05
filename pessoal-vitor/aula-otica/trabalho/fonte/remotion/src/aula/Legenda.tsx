@@ -4,7 +4,7 @@ import React, {useMemo} from 'react';
 import {useCurrentFrame} from 'remotion';
 import katex from 'katex';
 import {CUES} from './legendas';
-import {P, PE, prog, produtiva} from './tempo';
+import {FALA_SEGUIR, P, PE, prog, produtiva} from './tempo';
 import {C, HALO, INTER} from './estilo';
 
 
@@ -17,7 +17,7 @@ export const Legenda: React.FC<{some?: (f: number) => number}> = ({some}) => {
     const prox = i + 1 < CUES.length ? P(CUES[i + 1][0]) : 1e9;
     const fim = Math.min(Math.max(PE(b) + 10, ini + 20), prox - 2, ini + 210);
     return {ini, fim, h: html(t), esq: false};
-  }), []);
+  }).concat([{ini: FALA_SEGUIR.f, fim: FALA_SEGUIR.fe + 8, h: html('Acertou essa? Me segue,\nque a próxima cai mais ainda!'), esq: false}]), []);
   const c = janelas.find((j) => f >= j.ini && f < j.fim);
   if (!c) return null;
   const ent = prog(f, c.ini, 6, produtiva);

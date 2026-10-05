@@ -1,0 +1,18 @@
+Como uma IA montou uma aula inteira de física, com 3D, voz e música, sem eu abrir nenhum programa de edição 👇
+
+Eu não sou editor. Só expliquei o que eu queria, como numa conversa, e o Claude fez o resto em 4 passos:
+
+1️⃣ Projeto: criei um projeto e coloquei tudo que a IA podia usar (biblioteca de animações, músicas livres, ferramentas).
+2️⃣ Pedido: pedi um vídeo sobre lançamento oblíquo explicado com fórmulas.
+3️⃣ Código: a IA escreveu o código de cada parte. Manim pras fórmulas (a mesma ferramenta do canal 3Blue1Brown), GLSL pro 3D (a bola, a luz e a sombra saem de matemática pura) e Remotion pra montar o vídeo.
+4️⃣ Voz: o roteiro virou narração com voz de IA no ElevenLabs.
+
+Um coordenador dividiu o trabalho entre vários agentes, e cada um cuidou de uma parte: roteiro, voz, fórmulas, 3D e montagem.
+
+A dica que vale pra qualquer área: uma boa ideia + a ferramenta certa = a IA executa.
+
+Qual matéria você quer na próxima aula? Comenta aqui 👇
+
+Música: "Deliberate Thought", de Kevin MacLeod (incompetech.com), licença CC BY 4.0.
+
+#IA #ENEM #física #programação #bastidores

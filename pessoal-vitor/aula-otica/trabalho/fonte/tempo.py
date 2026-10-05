@@ -17,6 +17,8 @@ PAUSAS = {
 }
 # narração do Vítor (05/10): pausas mais longas para a música respirar nelas
 PAUSAS = {k: (v + 0.5, m) for k, (v, m) in PAUSAS.items()}
+# fala extra gravada à parte (ElevenLabs) inserida depois da pausa da palavra k: (arquivo, fim útil em s, respiro depois em s)
+INSERE = {150: (f"{D}/audio/elevenlabs/fala-seguir.mp3", 4.37, 0.55)}  # "Acertou essa? Me segue, que a próxima cai mais ainda!"
 MAX_SIL, ALVO_SIL = 1.2, 0.9    # voz do ElevenLabs: respeita o ritmo dele; só silêncio acima de 1,2 s encolhe para 0,9 s
 CAUDA = 3.4                      # depois da última palavra: luz apaga e a câmera volta ao quadro 0 (loop)
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{D}/audio/locucao.mp3", "-ar", str(SR), "-ac", "1", "-f", "f32le", "/tmp/voz.raw"], check=True)
@@ -42,6 +44,7 @@ for k in range(len(W) - 1):
     if sl > MAX_SIL: d -= sl - ALVO_SIL
     if k in PAUSAS or abs(d) > 1e-3: ajustes.append((k, c, d))
 partes, t0 = [], 0.0
+ins_t, ins_d = {}, {}
 for k, c, d in ajustes:
     fim = c - (-d / 2 if d < 0 else 0); ini = c + (-d / 2 if d < 0 else 0)
     tr = x[int(t0 * SR):int(fim * SR)].copy(); n = int(0.008 * SR)
@@ -50,13 +53,20 @@ for k, c, d in ajustes:
         if t0 > 0: tr[:n] *= np.linspace(0, 1, n)
     partes.append(tr)
     if d > 0: partes.append(np.zeros(int(d * SR), np.float32))
+    if k in INSERE:
+        arq, util, resp = INSERE[k]
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", arq, "-ar", str(SR), "-ac", "1", "-f", "f32le", "/tmp/ins.raw"], check=True)
+        cl = np.fromfile("/tmp/ins.raw", dtype=np.float32)[:int(util * SR)].copy(); n = int(0.02 * SR); cl[-n:] *= np.linspace(1, 0, n)
+        ins_t[k] = sum(len(q) for q in partes) / SR
+        partes.append(cl); partes.append(np.zeros(int(resp * SR), np.float32))
+        ins_d[k] = (len(cl) + int(resp * SR)) / SR
     t0 = ini
 partes.append(x[int(t0 * SR):]); partes.append(np.zeros(int(CAUDA * SR), np.float32))
 y = np.concatenate(partes)
 with wave.open(f"{D}/audio/voz_final.wav", "wb") as f:
     f.setnchannels(1); f.setsampwidth(2); f.setframerate(SR)
     f.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
-desl = lambda i: sum(d for (k, c, d) in ajustes if k < i)
+desl = lambda i: sum(d for (k, c, d) in ajustes if k < i) + sum(v for k, v in ins_d.items() if k < i)
 corte = {k: (c, d) for (k, c, d) in ajustes}
 out = []
 for w in W:
@@ -68,9 +78,10 @@ for w in W:
 dur = len(y) / SR
 pausas = []
 for k, (seg, m) in PAUSAS.items():
-    ate = out[k + 1]["s"] - 0.12
+    ate = ins_t[k] if k in ins_t else out[k + 1]["s"] - 0.12
     pausas.append({"i": k, "apos": W[k]["w"], "de": round(ate - seg, 3), "ate": round(ate, 3), "motivo": m})
 os.makedirs(f"{D}/fonte/remotion/src/data", exist_ok=True)
-json.dump({"fps": FPS, "duracao": round(dur, 3), "quadros": int(np.ceil(dur * FPS)), "palavras": out, "pausas": pausas},
+json.dump({"fps": FPS, "duracao": round(dur, 3), "quadros": int(np.ceil(dur * FPS)), "palavras": out, "pausas": pausas,
+           "insercoes": [{"apos": k, "s": round(ins_t[k], 3), "f": round(ins_t[k] * FPS), "fe": round((ins_t[k] + INSERE[k][1]) * FPS)} for k in ins_t]},
           open(f"{D}/fonte/remotion/src/data/relogio.json", "w"), ensure_ascii=False, indent=0)
 print(f"duração final {dur:.2f} s ({int(dur // 60)}:{dur % 60:04.1f}), {int(np.ceil(dur * FPS))} quadros; {sum(1 for a in ajustes if a[2] < 0)} silêncios apertados")
