@@ -1,0 +1,26 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+   0.00  Você chuta uma bola. Ela sobe, faz uma curva perfeita, e cai lá na frente. Essa curva tem nome, tem fórmula, e dá pra prever cada centímetro dela. Isso é lançamento oblíquo. Bora entender, passo a passo. vídeór, a regra do jogo. Vamos desprezar a resistência do ar. Sobra só uma força agindo na bola. O peso. E o peso puxa pra baixo. Só pra baixo.
+  27.94  A bola sai com uma velocidade inicial, vê zero, inclinada de um ângulo teta em relação ao chão. E o segredo inteiro do lançamento oblíquo é este, quebrar essa velocidade em duas.
+  40.82  Na horizontal, vê zero xis, igual a vê zero vezes cosseno de teta. Na vertical, vê zero ípsilon, igual a vê zero vezes seno de teta. E agora vem a mágica.
+  53.34  Esses dois movimentos são independentes. Um não interfere no outro. Na horizontal, não existe nenhuma força, então a velocidade nunca muda. É um movimento uniforme.
+  65.44  X, igual a vê zero xis, vezes t. Na vertical, a gravidade freia a bola na subida, e acelera na descida. É um movimento uniformemente variado.
+  76.82  Y, igual a vê zero yis, vezes t, menos gt ao quadrado sobre 2.
+  82.18  E a velocidade vertical? Vy, igual a vê zero y menos gt. Junta os dois movimentos e a bola desenha uma parábola.
+  92.66  Agora, as três perguntas que caem em toda a prova.
+  96.78  1. Quanto tempo ela leva pra subir? No ponto mais alto, a velocidade vertical zera. Então, zero igual a vê zero y menos gt.
+ 107.64  Isolando o tempo. Tempo de subida, igual a vê zero seno de teta.
+ 112.18  E se ela cai na mesma altura de onde saiu, a descida leva exatamente o mesmo tempo. Tempo total, 2 vezes vê zero seno de teta sobre g.
+ 123.58  Repara num detalhe. Lá no topo, a bola não para. A velocidade vertical zerou, mas a horizontal continua ali. No ponto mais alto, a velocidade é só vê zero xis.
+ 136.04  2. Qual a altura máxima? Usando Torricelli na vertical, zero igual a vê zero xis.
+ 142.16  H igual a vê zero y ao quadrado menos 2gh. Então, altura máxima, h igual a vê zero ao quadrado vezes seno ao quadrado de teta sobre 2g.
+ 153.46  3. Até onde ela vai? O alcance é a velocidade horizontal vezes o tempo total. Vê zero cosseno de teta vezes 2 vê zero seno de teta sobre g.
+ 165.28  E como 2 seno de teta cosseno de teta é o seno de 2 teta, chegamos na fórmula mais bonita.
+ 173.16  Alcance igual a vê zero ao quadrado vezes seno de 2 teta sobre g. E essa fórmula esconde dois segredos.
+ 181.46  O primeiro. O seno de 2 teta chega no máximo quando vale 1, ou seja, quando 2 teta é 90 graus. Teta igual a 45.
+ 191.54  45 graus é o ângulo do alcance máximo.
+ 194.90  O segundo. Ângulos complementares, tipo 30 e 60 graus, dão exatamente o mesmo alcance.
+ 202.16  Um voa baixo e rápido. O outro sobe alto e demora mais. Mas os dois caem no mesmo lugar.
+ 210.00  quebra a velocidade em duas. Na horizontal, movimento uniforme. Na vertical, movimento variado.
+ 217.24  Tempo de subida, altura máxima e alcance. Três fórmulas. Uma parábola.
+ 223.12  Agora, quando alguém chutar uma bola, você já sabe onde ela vai cair.
+536 palavras
