@@ -1,13 +1,14 @@
 ---
 name: backup-portatil
-description: Portable backup of the project core (2026-10-02) in /mnt/project-files/backup: generator gerar_backup.py, kit with CLAUDE.md + 3 project skills, 3 zips; Vítor may lose this account
+description: Continuous backup to Vítor's GitHub vodetmor/edicao-de-video-claude-vodetmor via /mnt/project-files/backup/sincronizar.py; run after every delivery; layout pessoal/clientes/outros
 metadata:
   type: project
 ---
-Vítor (2026-10-02) expects to lose this claude.ai account (possibly employer-linked, contract/firing) and wants the project core reusable in another account / Claude Code.
-- /mnt/project-files/backup/: `python3 gerar_backup.py` regenerates everything (~1 min). Source of the "brain": kit/CLAUDE.md, kit/LEIA-ME.md (restore guide), kit/skills/{metodo-edicao,motor-estudio,pesquisa-referencias}, kit/memoria/ (copy of team memory: refresh with `cp /tmp/claude/memory/team/silo/*.md kit/memoria/` before running), kit/historico/ (redacted chat exports via exportar_historico.py; raw exports hold cookies/keys, never store them in project files).
-- Outputs: maquina-de-editar-nucleo-DATE.zip (~56 MB: motion-base minus X videos, estudio, ferramentas, organizacao, skills in .claude/skills, memory, school project code), maquina-de-editar-referencias-x-DATE.zip (~214 MB X reference videos), trabalhos-vslplay-DATE.zip (client/employer VSL Play source + docs, kept separate on purpose; Vítor decides if it is his to keep).
-- Generator aborts on anything that looks like a key; secrets (.env, chaves.env, Apify/X tokens) are never included.
-- PC side (done 2026-10-02): code of C:\flow-automation and C:\image-automation zipped (no profiles, contas.json, node_modules, outputs) into C:\Users\vitor\OneDrive\Desktop\Maquina de Editar\Backup-Maquina-de-Editar. That OneDrive is PERSONAL (his own Microsoft account), so it is already an off-account copy. image-automation has no package.json (needs playwright-core). Weekly routine trig_01JAe8uB1ebp6hHqUGJizi8x (Sun 21:48 BRT) refreshes the backup.
-- Durable home proposed: private GitHub repo on his PERSONAL account (heavy media in Drive). Pending his answer.
-**How to apply:** when the core changes a lot (new lessons, engine blocks, skills), refresh kit/memoria and rerun the generator; if CLAUDE.md rules change, edit kit/CLAUDE.md. Related: [[pesquisa-pipeline-2026-09-28]], [[estudio-motor]].
+Vítor (2026-10-02, reaffirmed 2026-10-04) expects to lose this claude.ai account and wants EVERY artifact saved continuously to GitHub + his PC, "sem nenhuma perda".
+- Repo: github.com/vodetmor/edicao-de-video-claude-vodetmor (private, his personal account, in Project settings). Other threads may also commit there directly.
+- Sync: `python3 /mnt/project-files/backup/sincronizar.py` (`--seco` = dry run). Mirrors project files into the repo (never deletes), commits per folder, pushes commit by commit, rebases with project-wins. Aborts on anything that looks like a key. Big deliverables > 90 MB go in .parte-NNN chunks (rejoin: backup/juntar_partes.py). Raw heavy media (trabalho/acervo/renders/stems/media/audio/public > 2 MB, zips) stays out of Git.
+- Repo layout: core at top (CLAUDE.md, .claude/skills, memoria, historico, motion-base, estudio, ferramentas, organizacao, pesquisa, pc, backup); `pessoal-vitor/` = his own content as Vitor Machado Neves (TikTok/Instagram, aulas, bastidores, escola); `clientes/<cliente>/` (VSL Play = clientes/vslplay); `outros/` (e.g. church vinheta-life); `laboratorio/`.
+- New work: create it in project files under pessoal-vitor/<obra>, clientes/<cliente>/<obra> or outros/<obra> (old folders anuncio-vslplay, criativos-vslplay, escola-consciencia-negra, vinheta-life are remapped by the script).
+- Brain source: backup/kit/ (CLAUDE.md lean index, LEIA-ME.md, skills metodo-edicao/motor-estudio/pesquisa-referencias, memoria copy auto-refreshed by the script, historico redacted via exportar_historico.py).
+- PC: C:\Users\vitor\OneDrive\Desktop\Maquina de Editar\Backup-Maquina-de-Editar (personal OneDrive) holds flow/image automation code + claude-config-pc.zip (no credentials). His old PC project memories contain plaintext keys: never back them up; advised rotating.
+**How to apply:** after any delivery or milestone, run sincronizar.py and mention nothing unless it fails. A daily routine also runs it. Related: [[estudio-motor]].
