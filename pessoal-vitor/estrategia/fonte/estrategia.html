@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>O rumo do seu perfil</title>
+<style>
+@font-face{font-family:Inter;font-weight:400;src:url(fontes/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:500;src:url(fontes/inter-latin-500-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(fontes/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:700;src:url(fontes/inter-latin-700-normal.woff2)}
+:root{--ink:#1d1d1f;--sub:#6e6e73;--line:#e5e5ea;--soft:#f5f5f7;--blue:#0071e3;--blue-soft:#e8f2fd}
+@page{size:A4;margin:18mm 17mm 18mm 17mm}
+*{box-sizing:border-box}
+body{font-family:Inter,sans-serif;color:var(--ink);font-size:10.4pt;line-height:1.55;margin:0;background:#fff}
+h1{font-size:30pt;line-height:1.08;letter-spacing:-.02em;margin:0 0 10px;font-weight:700}
+h2{font-size:18pt;letter-spacing:-.015em;margin:0 0 4px;font-weight:700}
+h3{font-size:11.5pt;margin:18px 0 6px;font-weight:600}
+p{margin:0 0 9px}
+.kicker{color:var(--blue);font-weight:600;font-size:9pt;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.lead{font-size:12pt;color:#333;margin-bottom:16px}
+.sub{color:var(--sub)}
+.page{page-break-after:always}
+.page:last-child{page-break-after:auto}
+section{margin-bottom:6px}
+.card{background:var(--soft);border-radius:14px;padding:14px 16px;margin:10px 0;break-inside:avoid}
+.card.blue{background:var(--blue-soft)}
+.card h3{margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.big{font-size:22pt;font-weight:700;letter-spacing:-.02em;color:var(--blue);line-height:1.1}
+table{width:100%;border-collapse:collapse;font-size:9.2pt;margin:8px 0 12px;break-inside:auto}
+th{text-align:left;font-weight:600;color:var(--sub);font-size:8.3pt;text-transform:uppercase;letter-spacing:.04em;border-bottom:1.5px solid var(--ink);padding:5px 6px}
+td{border-bottom:1px solid var(--line);padding:6px 6px;vertical-align:top}
+tr{break-inside:avoid}
+td.n{color:var(--sub);width:22px}
+.tag{display:inline-block;font-size:7.8pt;font-weight:600;border-radius:20px;padding:1px 8px;background:var(--soft);color:var(--ink);white-space:nowrap}
+.tag.a{background:#0071e3;color:#fff}.tag.b{background:#1d1d1f;color:#fff}.tag.c{background:#e5e5ea}.tag.d{background:#fff;border:1px solid var(--ink)}
+.hook{font-weight:600}
+ul{margin:4px 0 10px;padding-left:18px}li{margin-bottom:4px}
+.cover{height:257mm;display:flex;flex-direction:column;justify-content:space-between}
+.cover img{width:100%;border-radius:18px;border:1px solid var(--line)}
+.who{font-size:10pt;color:var(--sub)}
+.phone{width:200px;height:410px;border:9px solid var(--ink);border-radius:34px;position:relative;overflow:hidden;background:#000;flex:none}
+.phone .vid{position:absolute;left:0;right:0;top:132px;height:118px;background:url(img/q150.jpg) center/cover}
+.phone .ov{position:absolute;left:14px;right:40px;top:58px;background:#fff;color:#000;font-weight:700;font-size:10.5px;line-height:1.25;padding:5px 7px;border-radius:6px}
+.phone .cap{position:absolute;left:10px;right:44px;bottom:16px;color:#fff;font-size:8.6px;line-height:1.35}
+.phone .rail{position:absolute;right:8px;bottom:60px;display:flex;flex-direction:column;gap:13px}
+.phone .rail i{width:22px;height:22px;border-radius:50%;background:#ffffff40;display:block}
+.num{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font-size:9pt;font-weight:700;align-items:center;justify-content:center;margin-right:8px;flex:none}
+.step{display:flex;align-items:flex-start;margin-bottom:10px}
+.week td:first-child{white-space:nowrap;font-weight:600}
+.quote{border-left:3px solid var(--blue);padding:2px 0 2px 12px;margin:10px 0;font-size:11pt}
+.foot{font-size:8pt;color:var(--sub);margin-top:14px}
+.ladder .card{margin:6px 0}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="page cover">
+  <div>
+    <div class="kicker">Perfil pessoal · Vitor Machado Neves</div>
+    <h1>O rumo do seu perfil:<br>estudar pro ENEM com um estúdio de IA no bolso</h1>
+    <p class="lead">Posicionamento, os 3 primeiros segundos, o que postar até o PAS, o banco de roteiros e como isso vira dinheiro depois.</p>
+  </div>
+  <img src="img/q252.jpg" alt="">
+  <div class="who">Preparado em 5 de outubro de 2026 · para ler em 15 minutos · decisões que preciso de você estão na última página</div>
+</div>
+
+<!-- 1. RESPOSTA CURTA -->
+<div class="page">
+  <div class="kicker">1 · A resposta em uma página</div>
+  <h2>Você não é professor nem guru de IA. Você é o aluno que tem a melhor ferramenta da sala.</h2>
+  <p class="lead">Esse é o seu lugar. O público que chegou (gente do 3º ano, do fundamental, fazendo ENEM) não te segue porque você ensina melhor que um professor. Te segue porque você é um deles e chegou com uma aula que nenhum colega consegue fazer.</p>
+
+  <div class="grid3">
+    <div class="card"><div class="big">27 mil</div><p class="sub">views no primeiro dia, no primeiro post da conta. Quem veio foi estudante, não empreendedor.</p></div>
+    <div class="card"><div class="big">6,5×</div><p class="sub">mais views em vídeos sobre ENEM no TikTok Brasil em 2025 (3,8 bilhões de jan a out, dado do próprio TikTok).</p></div>
+    <div class="card"><div class="big">34 dias</div><p class="sub">até o 1º dia do ENEM (8/11). O 2º dia é 15/11 e o PAS 3 é 29/11. O pico de busca é agora.</p></div>
+  </div>
+
+  <h3>O que eu proponho, em cinco linhas</h3>
+  <div class="step"><span class="num">1</span><div><b>Posição:</b> "estudo pro ENEM e pro PAS usando IA e te mostro como". Tecnologia na educação de forma ampla, com IA como a estrela, não como o único assunto. Isso protege o perfil quando a palavra "IA" cansar.</div></div>
+  <div class="step"><span class="num">2</span><div><b>Três séries fixas:</b> <span class="tag a">A IA explica</span> (aulas animadas, o formato que deu 27 mil), <span class="tag b">Testei pra você</span> (ferramentas de estudo, com honestidade) e <span class="tag c">Diário até a UnB</span> (sua jornada real). O bastidores entra uma única vez e fica fixado no perfil.</div></div>
+  <div class="step"><span class="num">3</span><div><b>Ritmo que cabe na sua semana de prova:</b> 2 posts por semana até o PAS, gravados numa única sessão de 20 a 30 minutos no domingo. O resto (roteiro, animação, voz, legenda, descrição) é comigo. Isso respeita o plano que fizemos: ENEM e PAS primeiro.</div></div>
+  <div class="step"><span class="num">4</span><div><b>Gancho:</b> o que você fez por instinto (texto em cima, aula no centro, "leia a descrição") é uma fórmula de três camadas. Transformei em regra e em 12 modelos de frase (página 4).</div></div>
+  <div class="step"><span class="num">5</span><div><b>Dinheiro só depois de 29/11.</b> E a conexão que muda o jogo: quem assiste é estudante, mas quem paga por aula animada é professor e cursinho. A sua máquina de edição vende para eles (página 9).</div></div>
+
+  <div class="card blue"><b>Bio sugerida</b> (no seu formato "emoji | texto"):<br>
+  🎓 | Vitor · 3º ano, rumo à UnB<br>
+  🤖 | aulas pro ENEM e PAS feitas com IA<br>
+  🧪 | testo ferramentas de estudo pra você</div>
+</div>
+
+<!-- 2. POR QUE ESSE RUMO -->
+<div class="page">
+  <div class="kicker">2 · Por que esse rumo é o certo</div>
+  <h2>Quatro motivos que você ainda não juntou</h2>
+
+  <h3>O público escolheu você, e ele está num mercado em explosão</h3>
+  <p>O TikTok está investindo de propósito em educação no Brasil: criou o programa de aceleração #AprendaNoTikTok (mais de 7 bilhões de views na hashtag) e faz aulões de ENEM em cinema. Em 2025 as publicações sobre ENEM cresceram 5,7× e as views 6,5×. As matérias mais buscadas são redação, português e matemática. Quando a plataforma quer um tipo de conteúdo, ela distribui esse conteúdo. Você caiu do lado certo da onda sem planejar.</p>
+
+  <h3>Sua vantagem injusta é ser par, não professor</h3>
+  <p>Professor no TikTok tem autoridade, mas tem cara de aula. Você tem a mesma idade e a mesma prova do seu público, e uma produção que nenhum professor solo consegue fazer (Manim, 3D, som desenhado). Essa combinação é rara. E você tem uma prova social que quase ninguém mostra: <b>9,7 e 9,9 nas redações do PAS</b>. Isso, dito por um colega, vale mais que qualquer diploma. Proponho usar com moderação, como prova num vídeo de redação, não como bordão.</p>
+
+  <h3>O PAS é um nicho que ninguém ocupa direito</h3>
+  <p>ENEM tem milhares de criadores. O PAS da UnB só existe no DF, tem dezenas de milhares de inscritos por etapa e pouca gente fazendo conteúdo bom para ele. Você está dentro dele, faz a etapa 3 em 29/11 e sabe o que cai. Dominar um nicho pequeno é muito mais fácil do que disputar o grande, e o algoritmo também distribui por região. Os conteúdos campeões do PAS 3 são concentrados: geometria analítica (47% da matemática), pós-modernismo (71% da filosofia), funções orgânicas (29% da química). Três aulas animadas sobre isso viram referência em Brasília.</p>
+
+  <h3>"Tecnologia na educação" é maior e mais durável que "IA"</h3>
+  <p>Você mesmo puxou isso: simulador do PhET, GeoGebra, repetição espaçada, NotebookLM, modo estudo do ChatGPT. Tudo é tecnologia que ajuda a passar. Isso também abre a porta para os pais (quem paga cursinho e celular), com vídeos como "seu filho usa IA para colar ou para aprender?". Pais compartilham para os filhos, e isso é alcance grátis.</p>
+
+  <div class="card"><b>O que fica de fora, de propósito:</b> empreendedorismo e "como ganhar dinheiro com IA". O público que chegou não veio por isso, e misturar confunde o algoritmo sobre para quem mostrar seus vídeos. Isso volta lá na frente, como produto, não como série (página 9).</div>
+
+  <h3>O risco número um</h3>
+  <p>Um erro de conteúdo numa aula "feita por IA" vira comentário fixado de alguém corrigindo, e mata a credibilidade justamente do que te diferencia. Regra: toda aula que eu fizer passa por duas fontes confiáveis antes de animar, e você dá uma olhada de 1 minuto antes de postar. O selo de conteúdo gerado por IA fica sempre ligado.</p>
+</div>
+
+<!-- 3. GANCHO -->
+<div class="page">
+  <div class="kicker">3 · Os 3 primeiros segundos</div>
+  <h2>Por que o seu primeiro vídeo prendeu</h2>
+  <p class="lead">Você fez três coisas certas ao mesmo tempo, e cada uma prende um tipo diferente de atenção.</p>
+
+  <div style="display:flex;gap:22px;align-items:flex-start">
+    <div class="phone">
+      <div class="ov">Estudando pro ENEM? Essa aula foi feita 100% por uma IA. Leia a descrição 👇</div>
+      <div class="vid"></div>
+      <div class="rail"><i></i><i></i><i></i><i></i></div>
+      <div class="cap"><b>@vitor</b><br>Lançamento oblíquo em 4 min. Ninguém editou isso: uma IA escreveu, animou e sincronizou. Como foi feito 👇 …</div>
+    </div>
+    <div>
+      <div class="step"><span class="num">1</span><div><b>Texto em cima = quem é você e por que ficar.</b> "Estudando pro ENEM?" filtra o público (a pessoa se reconhece) e "feito por IA" cria a pergunta "como assim?". Isso se lê em 1 segundo, antes de qualquer áudio.</div></div>
+      <div class="step"><span class="num">2</span><div><b>Imagem no centro já em movimento.</b> Não teve logo, nem "oi gente", nem tela parada. O primeiro quadro já é a melhor coisa do vídeo. O olho fica porque tem algo acontecendo.</div></div>
+      <div class="step"><span class="num">3</span><div><b>A descrição como segunda recompensa.</b> "Leia a descrição" faz a pessoa abrir o texto enquanto o vídeo continua rodando. Cada segundo lendo é tempo de tela, e tempo de tela é o que o algoritmo mais mede.</div></div>
+      <div class="card blue" style="margin-top:4px">Em uma frase: <b>identifica o público, abre uma curiosidade e entrega movimento no quadro 1</b>. Essa é a fórmula de todos os próximos.</div>
+    </div>
+  </div>
+
+  <h3>As regras que eu vou aplicar em todo vídeo</h3>
+  <ul>
+    <li><b>Quadro 1 é o melhor momento</b>, não o começo. Na aula de ótica, por exemplo, abrimos com a luz já entortando no vidro, e só depois explicamos.</li>
+    <li><b>Texto e fala dizem a mesma coisa</b> nos primeiros 3 s. Metade das pessoas assiste sem som.</li>
+    <li><b>Corte a respiração.</b> Quando você aparecer, o vídeo começa na primeira palavra, sem "então", sem "é…".</li>
+    <li><b>Texto fora das zonas mortas:</b> nada nos 20% de baixo (descrição) nem na faixa da direita (botões). A faixa entre 10% e 30% da altura é a sua.</li>
+    <li><b>Final que volta pro começo.</b> A última frase puxa a primeira, e o vídeo roda duas vezes sem a pessoa perceber.</li>
+    <li><b>A descrição tem roteiro:</b> 1ª linha repete a promessa, 3 linhas de "como foi feito", uma pergunta para comentar, e "salva pra revisar". Em conteúdo de estudo, salvamento é o sinal mais forte que existe.</li>
+  </ul>
+</div>
+
+<!-- 4. MODELOS DE GANCHO -->
+<div class="page">
+  <div class="kicker">3 · Os 3 primeiros segundos</div>
+  <h2>12 modelos de gancho prontos</h2>
+  <p class="sub">Troque o que está entre colchetes. Os quatro primeiros são do tipo que funcionou com você.</p>
+  <table>
+    <tr><th></th><th>Modelo de texto na tela</th><th>Por que funciona</th><th>Série</th></tr>
+    <tr><td class="n">1</td><td class="hook">Estudando pro ENEM? Essa aula de [tema] foi feita 100% por IA</td><td>Filtro de público + curiosidade. Seu formato campeão.</td><td><span class="tag a">IA explica</span></td></tr>
+    <tr><td class="n">2</td><td class="hook">[X]% da [matéria] do ENEM é isso aqui</td><td>Número concreto dá urgência e utilidade.</td><td><span class="tag a">IA explica</span></td></tr>
+    <tr><td class="n">3</td><td class="hook">Se você só tiver 1 minuto pra estudar [tema], assiste isso</td><td>Promete economia de tempo, que é a dor da reta final.</td><td><span class="tag a">IA explica</span></td></tr>
+    <tr><td class="n">4</td><td class="hook">Nenhum humano editou esse vídeo</td><td>Choque que obriga a olhar de novo.</td><td><span class="tag a">IA explica</span></td></tr>
+    <tr><td class="n">5</td><td class="hook">Testei [ferramenta] pra estudar [matéria] e não era o que eu esperava</td><td>Quebra de expectativa e honestidade.</td><td><span class="tag b">Testei</span></td></tr>
+    <tr><td class="n">6</td><td class="hook">Para de usar o ChatGPT assim pra estudar</td><td>Corrige um erro que o público está cometendo.</td><td><span class="tag b">Testei</span></td></tr>
+    <tr><td class="n">7</td><td class="hook">Essa ferramenta grátis faz [resultado] em [tempo]</td><td>Grátis + resultado + tempo. Público jovem sem dinheiro.</td><td><span class="tag b">Testei</span></td></tr>
+    <tr><td class="n">8</td><td class="hook">Pedi pra IA corrigir minha redação nota 9,9. Ela me deu [nota]</td><td>Prova real + conflito entre IA e banca.</td><td><span class="tag b">Testei</span></td></tr>
+    <tr><td class="n">9</td><td class="hook">Faltam [N] dias pro ENEM e eu vou revisar só isso</td><td>Contagem regressiva cria série e volta.</td><td><span class="tag c">Diário</span></td></tr>
+    <tr><td class="n">10</td><td class="hook">Meu simulado: [nota]. O que eu mudei depois</td><td>Vulnerabilidade com dado real gera identificação.</td><td><span class="tag c">Diário</span></td></tr>
+    <tr><td class="n">11</td><td class="hook">Mora no DF? O PAS 3 cobra [tema] quase todo ano</td><td>Filtro regional, nicho sem concorrência.</td><td><span class="tag a">IA explica</span></td></tr>
+    <tr><td class="n">12</td><td class="hook">Pais: seu filho usa IA pra colar ou pra aprender?</td><td>Abre o público dos pais, que compartilham.</td><td><span class="tag d">Pais</span></td></tr>
+  </table>
+</div>
+
+<!-- 5. SERIES -->
+<div class="page">
+  <div class="kicker">4 · As séries</div>
+  <h2>Três séries, um especial, e quanto cada uma custa de você</h2>
+
+  <div class="card">
+    <h3><span class="tag a">A IA explica</span> &nbsp;A aula animada (carro-chefe, 1 por semana)</h3>
+    <p>Um assunto que mais cai, explicado em 1min10 a 2min30 com o padrão da aula de lançamento oblíquo: animação de verdade, fórmula montada na tela, som desenhado. Acima de 1 minuto de propósito, porque é o que conta para a monetização do TikTok mais tarde.</p>
+    <p><b>Duas versões:</b> (a) <i>a IA narra</i>, com voz da ElevenLabs, custo seu de zero a 2 minutos; (b) <i>eu explico, a IA anima</i>, você grava só o áudio no celular explicando um assunto que domina (redação, por exemplo) e eu animo em cima. A versão (b) é mais autêntica e cria a sua cara de autoridade.</p>
+    <p class="sub">Limite prático: o plano grátis da ElevenLabs dá uns 10 minutos de voz por mês, perto de 4 aulas. A partir da 5ª aula do mês, usamos a sua voz ou a voz grátis do edge-tts que já funciona aqui.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag b">Testei pra você</span> &nbsp;Ferramentas de estudo (1 por semana, alternando)</h3>
+    <p>Você na câmera + gravação de tela. Uma ferramenta, uma tarefa real do seu estudo, um veredito honesto, incluindo quando ela falha. O "falhou" gera mais comentário que o "funcionou". Eu preparo o roteiro em tópicos e os prompts; você grava a tela usando de verdade (10 minutos) e eu edito com zoom, legenda e marcações.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag c">Diário até a UnB</span> &nbsp;Sua jornada real (quando der, sem obrigação)</h3>
+    <p>Selfie de 30 a 60 s: nota do simulado, o que vai revisar, como foi a prova. É a série que cria vínculo, porque o público torce por você. Os momentos fortes já estão marcados no calendário: véspera do ENEM, saída de cada dia de prova, véspera do PAS e o resultado. Custo: 2 minutos.</p>
+  </div>
+
+  <div class="card blue">
+    <h3>Especial único: o bastidores</h3>
+    <p>Como você decidiu: um vídeo só, mostrando como a aula foi feita, e fixado no topo do perfil. Ele responde de uma vez a pergunta que todo novo seguidor vai fazer ("como você faz isso?") e você nunca mais precisa repetir. As próximas aulas só dizem "como foi feito: vídeo fixado".</p>
+  </div>
+
+  <h3>A multiplicação que não custa seu tempo</h3>
+  <p>Cada aula animada rende <b>quatro peças</b>: o vídeo principal, dois cortes de 20 a 30 s com o melhor momento (para semanas apertadas), e um carrossel do Instagram feito dos quadros-chave. Por isso dá para postar com constância mesmo em semana de prova.</p>
+</div>
+
+<!-- 6. CALENDARIO -->
+<div class="page">
+  <div class="kicker">5 · Calendário até o PAS</div>
+  <h2>8 semanas, 2 posts por semana, 30 minutos seus</h2>
+  <p>Terça e quinta às 19h (faixa de 18h às 21h, quando o estudante abre o app depois da aula). A gravação de tudo da semana seguinte acontece num bloco só, domingo à tarde. Se uma semana apertar, entra um corte já pronto e nada para.</p>
+  <table class="week">
+    <tr><th>Semana</th><th>Terça 19h</th><th>Quinta 19h</th><th>Extra (opcional)</th></tr>
+    <tr><td>5 a 11/10<br><span class="sub">provas da escola</span></td><td><span class="tag a">IA explica</span> Ótica (segunda, 5/10, conforme você quer postar hoje)</td><td>Bastidores (vídeo único, fixar no perfil)</td><td>Dom 11: gravação da semana (20 min)</td></tr>
+    <tr><td>12 a 18/10</td><td><span class="tag b">Testei</span> NotebookLM transforma seu resumo em podcast e simulado</td><td><span class="tag a">IA explica</span> Eletrodinâmica, o assunto de Física que mais cai</td><td>Sáb: corte da aula de ótica</td></tr>
+    <tr><td>19 a 25/10</td><td><span class="tag b">Testei</span> IA corrigiu minha redação 9,9: comparação com a nota real</td><td><span class="tag a">IA explica</span> Ecologia: 26% da Biologia do ENEM</td><td><span class="tag c">Diário</span> meu último simulado</td></tr>
+    <tr><td>26/10 a 1/11</td><td><span class="tag b">Testei</span> Flashcards com IA + repetição espaçada (Anki)</td><td><span class="tag a">IA explica</span> Matemática básica: porcentagem e proporção em 90 s</td><td><span class="tag c">Diário</span> faltam 7 dias: o que eu vou revisar</td></tr>
+    <tr><td>2 a 8/11<br><span class="sub">ENEM dia 1</span></td><td><span class="tag a">IA explica</span> Revisão relâmpago: os 5 de Natureza (montagem das aulas já feitas)</td><td><span class="tag d">Pais</span> 5 coisas que ajudam seu filho na véspera</td><td>Sáb 7: <span class="tag c">Diário</span> véspera · Dom 8: saída da prova</td></tr>
+    <tr><td>9 a 15/11<br><span class="sub">ENEM dia 2</span></td><td><span class="tag a">IA explica</span> Termologia ou Estatística (para o dia 2)</td><td>Corte da aula de Eletrodinâmica</td><td>Dom 15: <span class="tag c">Diário</span> saída do dia 2</td></tr>
+    <tr><td>16 a 22/11<br><span class="sub">só PAS</span></td><td><span class="tag a">IA explica</span> PAS 3: geometria analítica (47% da matemática)</td><td><span class="tag a">IA explica</span> PAS 3: pós-modernismo em 2 min</td><td>Corte para Brasília</td></tr>
+    <tr><td>23 a 29/11<br><span class="sub">PAS dia 29</span></td><td><span class="tag a">IA explica</span> PAS 3: funções orgânicas</td><td><span class="tag c">Diário</span> véspera do PAS</td><td>Dom 29: saída do PAS</td></tr>
+  </table>
+  <div class="card"><b>Depois de 29/11:</b> sobe para 4 posts por semana, entra a temporada de gabarito, nota e SISU (o público continua procurando você em dezembro e janeiro), e começamos a preparar o dinheiro (página 9).</div>
+  <p class="foot">Datas oficiais: ENEM 8/11 e 15/11 (edital Inep nº 64/2026); PAS etapa 3 em 29/11 (edital UnB/Cebraspe). O dia exato do Diário depende de você; se não quiser gravar na saída da prova, eu publico um corte no lugar.</p>
+</div>
+
+<!-- 7. LINHA DE PRODUCAO -->
+<div class="page">
+  <div class="kicker">6 · Quem faz o quê</div>
+  <h2>A linha de produção da semana</h2>
+  <table>
+    <tr><th>Etapa</th><th>Você</th><th>Eu (Claude)</th></tr>
+    <tr><td>Escolher o tema</td><td>Escolhe do banco (ou aceita a sugestão da semana)</td><td>Proponho 2 opções toda sexta, com gancho pronto</td></tr>
+    <tr><td>Roteiro</td><td>Nada</td><td>Escrevo, confiro o conteúdo em duas fontes e sincronizo com a fala</td></tr>
+    <tr><td>Gravação (domingo, 20 a 30 min)</td><td>Ganchos de rosto (5 s cada), telas do "Testei", áudio do "eu explico" quando houver</td><td>Te mando a lista exata do que gravar, como fizemos no bastidores</td></tr>
+    <tr><td>Edição</td><td>Nada</td><td>Animação, voz, música, efeitos, legenda, texto em cima, cortes, carrossel</td></tr>
+    <tr><td>Aprovação</td><td>1 minuto: assistir e dizer ok ou ajuste</td><td>Quadros-chave antes do render só nas aulas grandes</td></tr>
+    <tr><td>Postagem</td><td>Postar com a descrição que eu escrevo e o selo de IA ligado</td><td>Descrição, hashtags, comentário fixado e crédito da música</td></tr>
+    <tr><td>Medir (5 min, domingo)</td><td>Me manda print das estatísticas dos posts da semana</td><td>Leio e ajusto o próximo calendário</td></tr>
+  </table>
+
+  <h3>Os três números que importam</h3>
+  <div class="grid3">
+    <div class="card"><b>Retenção em 3 s</b><p class="sub">Quantos passaram do gancho. Se cair, o problema é o quadro 1 ou o texto em cima.</p></div>
+    <div class="card"><b>Salvamentos</b><p class="sub">O sinal mais forte para conteúdo de estudo. Aula boa é aula salva para revisar.</p></div>
+    <div class="card"><b>Seguidores por vídeo</b><p class="sub">Mostra qual série constrói o perfil, e não só o que viraliza uma vez.</p></div>
+  </div>
+  <p>Regra de decisão: depois de 4 semanas, a série com mais salvamentos ganha mais espaço no calendário. Não decidimos por views, porque views sozinhas enganam.</p>
+</div>
+
+<!-- 8. BANCO -->
+<div class="page">
+  <div class="kicker">7 · Banco de roteiros</div>
+  <h2>24 vídeos prontos para escolher</h2>
+  <p class="sub">Percentuais: participação do assunto dentro da matéria nas provas do ENEM de 2016 a 2025 (levantamento Aprova Total) e do PAS 3 de 2021 a 2025 (levantamento COC). "Seu tempo" é o que custa de você.</p>
+  <table>
+    <tr><th></th><th>Tema</th><th>Gancho</th><th>Seu tempo</th></tr>
+    <tr><td colspan="4"><span class="tag a">A IA explica</span> &nbsp;ENEM, pelos assuntos que mais caem</td></tr>
+    <tr><td class="n">1</td><td>Eletrodinâmica (21% de Física)</td><td class="hook">O assunto de Física que mais cai no ENEM, em 2 minutos</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">2</td><td>Ecologia (26% de Biologia)</td><td class="hook">1 em cada 4 questões de Biologia é isso aqui</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">3</td><td>Matemática básica (37%)</td><td class="hook">Mais de um terço da prova de Matemática é conta de 7º ano</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">4</td><td>Estatística: média, moda, mediana</td><td class="hook">A questão de estatística que todo ano derruba gente</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">5</td><td>Termologia (16% de Física)</td><td class="hook">Por que a panela queima e o cabo não? Física do ENEM</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">6</td><td>Ondulatória (14% de Física)</td><td class="hook">Essa aula de ondas foi feita 100% por IA</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">7</td><td>Estequiometria</td><td class="hook">A regra de três que resolve metade da Química</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">8</td><td>Geometria espacial (11%)</td><td class="hook">Volume de cilindro que você nunca mais esquece</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">9</td><td>Filosofia antiga (28%)</td><td class="hook">Platão em 90 segundos, do jeito que o ENEM cobra</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">10</td><td>Brasil Colônia / Estado Novo</td><td class="hook">Vargas em 2 minutos: o que cai e o que é enfeite</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">11</td><td>Redação: estrutura nota alta</td><td class="hook">Tirei 9,9 na redação do PAS. Essa é a estrutura</td><td>5 min (sua voz)</td></tr>
+    <tr><td colspan="4"><span class="tag a">A IA explica</span> &nbsp;PAS 3, o nicho de Brasília</td></tr>
+    <tr><td class="n">12</td><td>Geometria analítica (47%)</td><td class="hook">Mora no DF? Quase metade da Matemática do PAS 3 é isso</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">13</td><td>Pós-modernismo (71% da Filosofia)</td><td class="hook">O tema que está em 7 de cada 10 questões de Filosofia do PAS 3</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">14</td><td>Funções orgânicas (29%)</td><td class="hook">Química do PAS 3: decora isso e ganha ponto</td><td>0 a 2 min</td></tr>
+    <tr><td class="n">15</td><td>Genética (líder em Biologia)</td><td class="hook">Cruzamento genético desenhado na tela, passo a passo</td><td>0 a 2 min</td></tr>
+  </table>
+</div>
+
+<div class="page">
+  <div class="kicker">7 · Banco de roteiros</div>
+  <table>
+    <tr><th></th><th>Tema</th><th>Gancho</th><th>Seu tempo</th></tr>
+    <tr><td colspan="4"><span class="tag b">Testei pra você</span> &nbsp;tecnologia que ajuda a passar</td></tr>
+    <tr><td class="n">16</td><td>NotebookLM (Google, grátis)</td><td class="hook">Joguei meu resumo de Biologia aqui e virou um podcast</td><td>10 min</td></tr>
+    <tr><td class="n">17</td><td>IA corrigindo redação</td><td class="hook">Pedi pra IA corrigir minha redação 9,9. Olha a nota que ela deu</td><td>10 min</td></tr>
+    <tr><td class="n">18</td><td>Modo estudo do ChatGPT vs resposta pronta</td><td class="hook">Para de pedir a resposta pra IA. Faz isso no lugar</td><td>10 min</td></tr>
+    <tr><td class="n">19</td><td>Anki + flashcards gerados por IA</td><td class="hook">200 flashcards em 5 minutos, e o app decide quando revisar</td><td>10 min</td></tr>
+    <tr><td class="n">20</td><td>PhET (simuladores grátis da Univ. do Colorado)</td><td class="hook">O site grátis que deixa você brincar com a Física do ENEM</td><td>10 min</td></tr>
+    <tr><td class="n">21</td><td>GeoGebra / Desmos</td><td class="hook">Vê a função mudando enquanto você mexe: isso devia ser obrigatório</td><td>10 min</td></tr>
+    <tr><td class="n">22</td><td>Google Lens / fotografar questão</td><td class="hook">Fotografar a questão te ajuda ou te atrapalha? Testei</td><td>10 min</td></tr>
+    <tr><td colspan="4"><span class="tag c">Diário</span> e <span class="tag d">Pais</span></td></tr>
+    <tr><td class="n">23</td><td>Meu plano de estudo da reta final</td><td class="hook">Matemática 40%, Natureza 35%: como eu divido minha semana</td><td>2 min</td></tr>
+    <tr><td class="n">24</td><td>Pais e IA</td><td class="hook">Pais: seu filho usa IA pra colar ou pra aprender? Como saber</td><td>5 min</td></tr>
+  </table>
+
+  <h3>Três roteiros já desenhados (o que eu faria primeiro)</h3><div style="font-size:9.3pt;line-height:1.45">
+  <div class="card"><b>#1 Eletrodinâmica, 1min50.</b> Quadro 1: um circuito com lâmpadas acendendo em série e em paralelo, uma delas apagando. Texto em cima: "O assunto de Física que mais cai no ENEM". Corpo: corrente como água num cano, a lei de Ohm montada na tela, série contra paralelo com o brilho das lâmpadas, uma questão real do ENEM resolvida em 20 s. Final: "e é por isso que sua casa não apaga inteira quando uma lâmpada queima", que volta ao quadro 1.</div>
+  <div class="card"><b>#17 Redação 9,9 contra a IA, 1min30.</b> Quadro 1: sua redação na tela com a nota da IA aparecendo em vermelho. Texto: "Pedi pra IA corrigir minha redação 9,9". Corpo: você na câmera reagindo, três críticas da IA (uma boa, uma errada, uma exagerada), veredito: "use pra revisar, não pra decidir". Pergunta na descrição: "quer que eu teste com a sua?" (gera comentário e ideia de vídeo).</div>
+  <div class="card"><b>#16 NotebookLM, 1min20.</b> Quadro 1: o áudio do podcast gerado tocando sobre a sua página de resumo. Texto: "Joguei meu resumo aqui e virou um podcast". Corpo: os 3 passos na tela, o simulado que ele gera, a limitação honesta (inventa quando o resumo é ruim). Final: "salva pra fazer hoje à noite".</div></div>
+</div>
+
+<!-- 9. DINHEIRO -->
+<div class="page ladder">
+  <div class="kicker">8 · Dinheiro, depois do PAS</div>
+  <h2>Uma escada, não um salto</h2>
+  <p class="lead">Até 29/11 o único objetivo é audiência e confiança. Vender antes disso troca seguidores por trocados e rouba seu tempo de estudo. Depois, a escada é esta:</p>
+
+  <div class="card"><b>Degrau 1 · Recompensas da plataforma (dezembro em diante)</b><p>O Programa de Recompensas para Criadores do TikTok paga por vídeos acima de 1 minuto e exige 10 mil seguidores, 100 mil views nos últimos 30 dias e 18 anos completos. As aulas já nascem acima de 1 minuto por isso. É dinheiro pequeno, mas é o sinal de que o perfil está de pé.</p></div>
+  <div class="card"><b>Degrau 2 · Parcerias e afiliados (com 10 a 20 mil seguidores)</b><p>Edtechs, cursinhos e apps de estudo pagam por publi com quem fala com estudante. O TikTok também tem o programa de aceleração #AprendaNoTikTok para criadores de educação. Regra de ouro: só divulga o que você testaria no "Testei pra você", com a mesma honestidade, senão a série perde valor.</p></div>
+  <div class="card blue"><b>Degrau 3 · A virada: vender a sua máquina para quem ensina</b><p>Aqui está a conexão principal deste documento. <b>Quem assiste é estudante, mas quem paga por uma aula animada é professor e cursinho.</b> Professor que cria conteúdo precisa de exatamente o que você já tem: aula animada com qualidade de estúdio em poucos dias. Cada vídeo seu é um portfólio público. Proposta concreta para dezembro: um pacote "aula animada pronta" por assunto, vendido para professores do TikTok e cursinhos do DF. Isso junta as duas trilhas do nosso projeto (a máquina de edição e o seu perfil) num negócio só.</p></div>
+  <div class="card"><b>Degrau 4 · Produto próprio para o seu público</b><p>Com audiência e dados de quais aulas são mais salvas: um pacote de revisão animada PAS/ENEM do próximo ciclo, ou um mini-curso "estudar com IA sem colar", lançado em pré-venda para validar antes de produzir. O curso de edição com IA continua uma boa ideia, mas para outro público (criadores); entra depois, como já combinamos.</p></div>
+
+  <h3>Cuidados</h3>
+  <ul>
+    <li>Boa parte do público é menor de idade. Nada de venda por DM para estudante; produto pago se comunica pensando nos pais.</li>
+    <li>Selo de IA sempre ligado e crédito da música na descrição (a da aula de lançamento oblíquo exige crédito: Kevin MacLeod, CC BY 4.0).</li>
+    <li>Nunca prometer aprovação. Prometer entendimento.</li>
+  </ul>
+</div>
+
+<!-- 10. DECISOES -->
+<div class="page">
+  <div class="kicker">9 · O que eu preciso de você</div>
+  <h2>Três decisões, e eu toco o resto</h2>
+  <div class="step"><span class="num">1</span><div><b>Posicionamento e bio.</b> Aprova "o aluno que estuda pro ENEM e PAS com IA" e a bio da página 2, ou me diz o que mudar.</div></div>
+  <div class="step"><span class="num">2</span><div><b>As duas próximas aulas.</b> Minha recomendação: <b>#1 Eletrodinâmica</b> (assunto que mais cai em Física, conversa direto com a aula de ótica) e <b>#16 NotebookLM</b> (ferramenta grátis, fácil de gravar). Se preferir outros, é só mandar os números do banco.</div></div>
+  <div class="step"><span class="num">3</span><div><b>Gravação de domingo (11/10).</b> 20 a 30 minutos. Eu mando na sexta a lista exata do que gravar.</div></div>
+
+  <div class="quote">O que você descobriu sozinho no primeiro post (público certo, gancho em três camadas, descrição como segunda tela) já é a estratégia inteira. Este documento só transforma isso em rotina, para caber na sua semana de prova sem você perder nenhum ponto no ENEM.</div>
+
+  <h3>Fontes</h3>
+  <p class="foot" style="margin-top:0">
+  Datas do ENEM 2026: Inep, edital nº 64/2026, via memorizevestibular.com.br/blog/artigos/quando-e-o-enem-2026 e otempo.com.br.<br>
+  PAS etapa 3 em 29/11/2026: Correio Braziliense (correiobraziliense.com.br, editais PAS 2026) e blogdovestibular.com.<br>
+  Assuntos que mais caem no ENEM (2016-2025): aprovatotal.com.br/assuntos-mais-cobrados-no-enem.<br>
+  Assuntos campeões do PAS 3 (2021-2025, levantamento COC): Correio Braziliense, "O que cai no PAS da UnB".<br>
+  Crescimento de conteúdo de ENEM e #AprendaNoTikTok: newsroom.tiktok.com (programa de aceleração), meioemensagem.com.br, acessa.com (março de 2026).<br>
+  Visualizações do primeiro post: relato do Vitor no projeto.</p>
+</div>
+
+</body>
+</html>
