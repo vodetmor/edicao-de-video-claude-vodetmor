@@ -160,22 +160,31 @@ def main():
         raise SystemExit("PAREI: possível chave/senha em:\n  " + "\n  ".join(ruins))
     if not mud:
         print("Nada novo para salvar."); return
-    # commit e push em lotes (por pasta de topo), para não estourar o limite de envio
+    # 1º: um commit por pasta de topo (lotes menores de envio)
     grupos = {}
     for d in mud: grupos.setdefault(d.split("/")[0], []).append(d)
     carimbo = AGORA.strftime("%Y-%m-%d %H:%M")
+    feitos = 0
     for g, lista in grupos.items():
         for i in range(0, len(lista), 400):
             git("add", "--", *lista[i:i + 400])
         if not git("diff", "--cached", "--quiet", check=False).returncode: continue
-        git("commit", "-q", "-m", f"Backup automático {carimbo}: {g} ({len(lista)} arquivos)")
-        for tentativa in range(3):
-            r = git("push", "-q", "origin", "HEAD:main", check=False)
-            if not r.returncode: break
-            git("fetch", "--depth", "50", "origin", "main"); git("rebase", "origin/main", check=False)
-        else:
-            raise SystemExit(f"push falhou em {g}:\n{r.stderr[-1500:]}")
-        print(f"salvo: {g} ({len(lista)} arquivos)")
+        git("commit", "-q", "-m", f"Backup automático {carimbo}: {g} ({len(lista)} arquivos)"); feitos += 1
+    # 2º: envia commit a commit; se outra conversa salvou no meio, junta (o projeto vence) e segue
+    for _ in range(5):
+        git("fetch", "--depth", "50", "origin", "main")
+        if git("rebase", "-X", "theirs", "origin/main", check=False).returncode:
+            git("rebase", "--abort", check=False); raise SystemExit("não consegui juntar com o GitHub")
+        pend = git("rev-list", "--reverse", "origin/main..HEAD", saida=True).split()
+        ok = True
+        for c in pend:
+            r = git("push", "-q", "origin", f"{c}:refs/heads/main", check=False)
+            if r.returncode:
+                ok = False; break
+        if ok: break
+    else:
+        raise SystemExit(f"push falhou:\n{r.stderr[-1500:]}")
+    print(f"salvo no GitHub: {feitos} lotes, {len(mud)} arquivos")
     (B / "ULTIMO-SALVAMENTO.txt").write_text(f"{carimbo} · {len(mud)} arquivos enviados ao GitHub\n")
 
 main()
