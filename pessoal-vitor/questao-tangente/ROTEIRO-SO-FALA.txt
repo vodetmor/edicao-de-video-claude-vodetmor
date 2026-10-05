@@ -1,0 +1,20 @@
+[0 · Gancho]  (0:00 – 0:10)
+Essa é a questão mais difícil do ENEM 2025. Mas o próprio desenho já entrega a resposta. Olha.
+
+[1 · Lendo a questão]  (0:10 – 0:55)
+Primeiro, vamos ler. "Um recipiente tem um formato que faz com que, ao ser enchido de água com uma vazão constante..." Vazão constante: a mesma quantidade de água entra a cada minuto. "...a distância D da lâmina de água ao tampo da mesa, em centímetro, aumente em relação ao tempo T, em minuto..." Ou seja: D é a altura da água, e T é o tempo. "...de acordo com uma função do tipo D = k + tg[p(T + m)], sendo os parâmetros k, p e m números reais..." É uma tangente com 3 números escondidos: k, p e m. Achar eles é a questão inteira. "...para T variando entre 0 e 4 minutos, conforme ilustrado na figura, na qual estão apresentadas assíntotas verticais da função tangente." Assíntotas são essas retas verdes pontilhadas. Guarda elas, já já explico. E o comando: "A expressão algébrica que representa a relação entre D e T é..." Repara nas alternativas: todas têm a mesma cara. O que muda são só os 3 números. Então bora descobrir k, p e m.
+
+[2 · O copo desenha o gráfico]  (0:55 – 1:25)
+Agora, o desenho. Como a vazão é constante, a altura sobe conforme a largura do copo. Num cubo, sobe sempre igual: o gráfico é uma reta. Onde o copo é estreito, sobe rápido. Onde é largo, sobe devagar. Esse copo é estreito, largo, estreito. Então o gráfico é rápido, devagar, rápido. E o ponto mais deitado é a parte mais larga: o ponto (2,5 ; 30).
+
+[3 · Isso é uma tangente]  (1:25 – 1:50)
+E esse formato é o da tangente. Ela passa pelo zero, sobe pro infinito, vem do menos infinito, e nunca encosta nas assíntotas, aquelas retas verdes. E se repete a cada π.
+
+[4 · Os três números]  (1:50 – 2:20)
+A questão mexe nela com três números. O k sobe o gráfico: é a altura do centro. O m arrasta pro lado: o centro fica onde o parêntese zera, em T = −m. E o p estica: o período vira π/p.
+
+[5 · Resolvendo]  (2:20 – 2:55)
+Agora lê o desenho. O centro é o meio das assíntotas: os 2π se cancelam, e dá 2,5. Altura 30. Então k = 30, e m = −5/2. A distância entre as assíntotas é 2π. π/p = 2π: p = ½. Alternativa E.
+
+[6 · Segredo e loop]  (2:55 – 3:15)
+E o segredo: nem precisava da conta. Centro na altura 30? Sobram D e E. Na D, o centro cai em T = 5. Não é. Resposta E. O formato do copo desenhou o gráfico... e o gráfico entregou a resposta.

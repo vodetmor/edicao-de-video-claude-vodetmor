@@ -1,0 +1,20 @@
+[0 · Gancho]  (0:00 – 0:15)
+Essa é considerada uma das questões mais difíceis do ENEM 2025. Um copo enchendo de água... e uma função tangente. Parece impossível. Mas no final eu vou te mostrar como resolver ela em trinta segundos.
+
+[1 · O formato do copo desenha o gráfico]  (0:15 – 1:10)
+Antes de qualquer conta, entende o desenho. A torneira joga sempre a mesma quantidade de água por minuto. Isso é vazão constante. Mas a altura da água não sobe sempre no mesmo ritmo. Depende do formato do recipiente. Num cubo, cada minuto enche uma camada igualzinha. A altura sobe sempre no mesmo ritmo, e o gráfico é uma reta. Num funil com a boca pra cima, o fundo é estreito: pouca água já sobe muito. Depois ele alarga, e a altura vai freando. O gráfico sobe rápido e vai deitando, parecido com um logaritmo. Agora, o copo da questão. Embaixo ele é estreito: sobe rápido. No meio é largo: sobe devagar. Em cima estreita de novo: volta a acelerar. Rápido, devagar, rápido. Exatamente o formato dessa curva. E repara: o ponto onde a curva está mais deitada é justamente onde o copo é mais largo. Aos dois minutos e meio, com trinta centímetros. Guarda esse ponto.
+
+[2 · O que é a tangente]  (1:10 – 2:10)
+Agora, a tangente. Desenha o círculo trigonométrico, de raio um, e pega um ângulo téta. A tangente de téta é seno sobre cosseno. E dá pra enxergar ela: é a altura onde o raio, prolongado, bate nessa reta vertical encostada no círculo. Ângulo zero: tangente zero. Aumenta o ângulo, e ela cresce. Chegando em noventa graus, o cosseno vai pra zero... e a tangente explode pro infinito. Ela nunca chega lá. Essa parede invisível é a assíntota vertical. Passando isso pra um gráfico: a tangente passa pela origem, sobe pro infinito perto de pi sobre dois, vem do menos infinito perto de menos pi sobre dois... e esse pedaço se repete a cada pi. Esse é o período da tangente: pi. E olha o formato de cada pedaço: rápido, devagar, rápido. É o nosso copo.
+
+[3 · Mexendo na tangente]  (2:10 – 3:10)
+A questão pega essa tangente e mexe nela com três números: D igual a k, mais tangente de p, vezes T mais m. Cada um faz uma coisa só. O k é o elevador. Soma k, e o gráfico inteiro sobe k. O centro, que estava no zero, vai pra altura k. O m empurra pro lado. E aqui mora a pegadinha: T mais m não anda pra direita, anda pra esquerda. O centro vai parar onde o parêntese dá zero: T igual a menos m. Então, se o centro está à direita, o m é negativo. E o p estica ou espreme. O período vira pi sobre p. Se p é um meio, o período vira dois pi: a tangente fica duas vezes mais larga.
+
+[4 · Resolvendo]  (3:10 – 4:05)
+Agora é só ler o desenho. Primeiro, o centro. Ele fica bem no meio das duas assíntotas. Soma as duas e divide por dois. Os dois pi se cancelam, a soma dá cinco, e dividindo por dois: dois e meio. É o ponto dois e meio, trinta, que a gente marcou lá no copo. Então k é trinta. E T igual a menos m dá dois e meio: m é menos cinco sobre dois. Depois, o período: a distância entre as assíntotas. A da direita menos a da esquerda. Os cincos somem, e sobra quatro pi sobre dois: dois pi. Então pi sobre p igual a dois pi, e p é um meio. Monta tudo: D igual a trinta, mais tangente de um meio, vezes T menos cinco sobre dois. Alternativa E.
+
+[5 · O segredo]  (4:05 – 4:30)
+E o segredo pra fazer em trinta segundos. O centro, o meio entre as assíntotas, é sempre onde a tangente vale zero. Então ali, D é igual a k. A altura do centro é trinta: isso já elimina A, B e C. Sobram D e E. Na D, o parêntese zera em T igual a cinco. Mas o centro está em dois e meio. Sobrou a E. Sem nem calcular o período.
+
+[6 · Fechamento (loop)]  (4:30 – 4:45)
+Então guarda isso: o formato do copo desenha o gráfico. E o gráfico entrega a resposta. Volta e vê o copo enchendo de novo... agora vai fazer sentido.
