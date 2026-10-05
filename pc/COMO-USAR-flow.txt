@@ -1,0 +1,62 @@
+AUTOMAÇÃO DO GOOGLE FLOW — como usar
+Pasta: C:\flow-automation    (abra o PowerShell aqui)
+
+1) PRIMEIRA VEZ: entrar nas contas (só uma vez)
+   node gerar-videos.js --setup
+   Abre uma janela do Chrome só do script. Entre na 1ª conta Google e depois
+   adicione as outras (foto do perfil > "Adicionar outra conta").
+   A ordem em que você entra vira /u/0, /u/1, /u/2...
+   Depois rode:
+   node gerar-videos.js --contas-ver
+   Ele mostra qual e-mail ficou em cada posição e grava o contas.json sozinho.
+
+   Também uma vez por conta: no Flow, quando aparecer o aviso "Direitos de uso deste
+   vídeo", clique em "Concordo, não mostrar essa mensagem de novo". O script não
+   aceita termos por você: se o aviso aparecer no meio do lote, ele pausa e te avisa
+   no Telegram.
+
+2) RODAR UM LOTE
+   node gerar-videos.js --prompts meus-prompts.json
+   Clipes saem em  saida\meus-prompts\001_....mp4
+   Parou no meio? Rode o mesmo comando: ele pula o que já baixou.
+   Conta sem crédito: pula pra próxima e só volta a usar no dia seguinte.
+
+3) OPÇÕES (valem pro lote todo)
+   --modelo "Omni 1.1 Flash"    (padrão) | "Veo 3.1 - Lite" | "Veo 3.1 - Fast" | "Veo 3.1 - Quality"
+   --duracao 4 | 6 | 8 | 10      (padrão 8; só no Omni. Veo é sempre 8s)
+   --resolucao 360p | 720p       (padrão 720p; só no Omni)
+   --formato 16:9 | 9:16         (padrão 16:9)
+
+4) CADA PROMPT PODE TER AJUSTES PRÓPRIOS (no .json)
+   [
+     { "prompt": "texto simples, usa as opções do lote" },
+     { "prompt": "...", "duracao": 10, "formato": "9:16", "modelo": "Veo 3.1 - Fast" },
+     { "prompt": "anima esta foto", "inicio": "foto.jpg" },
+     { "prompt": "vai da foto A até a foto B", "inicio": "a.jpg", "fim": "b.jpg" },
+     { "prompt": "use este personagem", "refs": ["personagem.png"] },
+     { "prompt": "continue a cena: ...", "continuar": true },
+     { "prompt": "o que acontece na cena", "inicio_prompt": "descrição da imagem inicial" }
+   ]
+   - "inicio"/"fim": imagem do primeiro e do último frame.
+   - "refs": imagens (ou vídeos) de referência de personagem, objeto, estilo.
+   - "continuar": true usa o clipe anterior do lote como base (cena contínua).
+     Também aceita o número de outro prompt: "continuar": 3
+     Atenção: a continuação sai com a MESMA duração do clipe anterior (regra do Flow).
+     Quer continuação de 10s? Faça o clipe anterior com 10s.
+   - "inicio_prompt": cria a imagem inicial pela sua automação de imagens
+     (C:\image-automation, ChatGPT/Gemini) e depois anima ela no Flow.
+   Caminhos de arquivo podem ser relativos à pasta do .json.
+   Também aceita .txt com um prompt por linha (sem ajustes por prompt).
+
+5) CUSTO EM CRÉDITOS (por clipe, conta gratuita = 50 créditos/dia)
+   Omni 1.1 Flash 360p: 4s=4  6s=5  8s=6  10s=7     → ~8 clipes de 8s por conta/dia
+   Omni 1.1 Flash 720p: 4s=7  6s=10 8s=12 10s=15    → ~4 clipes de 8s por conta/dia
+   Veo 3.1 Lite = 10 · Veo 3.1 Fast = 20 · Veo 3.1 Quality = 100 (não cabe na conta grátis)
+   Com 5 contas: ~40 clipes de 8s em 360p por dia, ou ~20 em 720p.
+
+6) O QUE O FLOW TEM E O SCRIPT AINDA NÃO FAZ
+   - "Estender" na tela de edição: só aparece com Veo 3.1 Lite e não funcionou em clipe
+     feito com Omni. A continuação do script (item "continuar") cobre esse uso.
+   - Editar um vídeo por texto ("Descreva como editar este vídeo", com Omni).
+   - Personagens, Avatares, Vozes, Cenas e o modo Agente (chat).
+   Peça que eu adiciono quando precisar.
