@@ -163,6 +163,12 @@ poe(whoosh(1.4, 400, 1600, 0.6), FINAL_INI, -24)                             # v
 acorde(P(283), -18, 4.0); poe(boom(2.4), P(283), -16)                        # arco-íris
 APAGA = P(285) + 30
 arpejo(APAGA, 40, ganho=-26, sobe=False)                                     # a luz apaga e as cores saem
+# pílula "Seguir" (motion-base/componentes/pilula-seguir): entra, clique no botão, sino curto
+FALA = R["insercoes"][0]  # fala de seguir gravada à parte
+SEGUIR = FALA["f"] + round(1.62 * FPS) - 34
+poe(whoosh(0.35, 1200, 2800, 0.5), SEGUIR, -30, 0.5)
+poe(tick(2600, 0.035), SEGUIR + 34, -16, 0.5)
+poe(reverb(chime(1568.0, 0.9), 0.6, 0.25), SEGUIR + 37, -24, 0.5)
 # ------------------------------------------------------------------ voz
 os.makedirs(f"{D}/audio/stems", exist_ok=True)
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", f"{D}/audio/voz_final.wav", "-af",
@@ -178,6 +184,8 @@ n = len(sfx); mus = mus[:n] if len(mus) >= n else np.vstack([mus, np.zeros((n - 
 fala = np.zeros(n, bool)
 for w in W:
     a = int((w["s"] - 0.25) * SR); b = int((w["e"] + 0.40) * SR); fala[max(0, a):b] = True
+for x in R.get("insercoes", []):
+    fala[int((x["s"] - 0.25) * SR):int((x["fe"] / FPS + 0.40) * SR)] = True
 alvo_db = np.where(fala, -21.0, -8.0)
 # a música sobe devagar nas pausas (rampa de 700 ms) e desce rápido antes da voz (150 ms): suave, sem bombear
 def uniform_filter1d(a, k):

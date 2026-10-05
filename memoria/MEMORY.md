@@ -47,5 +47,8 @@
 - [[feedback-tiktok-loop]]: personal TikTok rules: loop first/last frame, no text over lines, audiovisual composition.
 - [[feedback-roteiro-voz]]: write "téta" not "teta" in ElevenLabs scripts; follow his slower pace, music swells in pauses.
 - [[feedback-hashtags]]: post descriptions: max 5 hashtags, one per category (no #enem + #enem2026); long didactic format.
-- [[questao-tangente]]: ENEM 2025 tangent question video, script delivered 2026-10-05, waiting his 7 ogg audios. pessoal-vitor/questao-tangente/
-- [[feedback-roteiro-questao]]: question-solving scripts read the statement aloud with comments first, then short explanation; concise; numerals OK when he narrates.
+- [[feedback-progressao-roteiro]]: lesson scripts (any subject): each act opens with a spoken transition + pause ("agora vamos para as perguntas que mais caem").
+- [[feedback-seguir-aulas]]: every content lesson gets the mid-video follow pill (componentes/pilula-seguir), loop intact.
+- [[questao-tangente]]: ENEM 2025 tangent question video; keyframes + voice sample sent 2026-10-05 20:40, waiting his OK before final render. pessoal-vitor/questao-tangente/
+- [[feedback-roteiro-questao]]: question scripts: summarized statement first, then step-by-step explanation with a guiding thread; not wordy, not too short; numerals OK.
+- [[perfil-estrategia-estudo]]: personal profile = ENEM/PAS visual lessons + solved questions, AI narrator, 60-90 s target (2026-10-05 metrics: oblique 40k views/1.3k saves, making-of flopped, behind-the-scenes paused). Ongoing chat in thread 'Rumo do seu perfil', not a fixed PDF.

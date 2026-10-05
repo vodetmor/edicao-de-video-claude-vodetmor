@@ -30,3 +30,17 @@ Próximo: quando Vítor mandar o mp3 do ElevenLabs, `bash fonte/troca-voz.sh <mp
 ## 05/10/2026 15:20 UTC: voz do ElevenLabs encaixada
 Narração em audio/elevenlabs/narracao-otica.mp3. Pausas +0,5 s, silêncios naturais preservados (até 1,2 s), música sobe suave nas pausas. Render completo em andamento (renders/blocos). A versão com voz provisória ficou em renders/aula-otica-voz-provisoria.mp4.
 alinha.py agora: sem roteiro no prompt do Whisper, expande dígitos; `--raw` reaproveita audio/whisper_raw.json.
+
+## 05/10/2026 17:42 UTC: ENTREGUE com a voz do ElevenLabs
+renders/aula-otica.mp4 (2:08, 25 MB, -14 LUFS, loop conferido). Descrição do post enviada no fio (5 hashtags: #enem #fisica #refracao #inteligenciaartificial #estudos).
+
+## 05/10/2026 18:00 UTC: pílula "Seguir" preparada (aguardando OK do Vítor)
+Fonte já tem a pílula (src/comp/PilulaSeguir.tsx, Aula.tsx SEGUIR_INI = PAUSA(150).de - 6) e audio/mix.wav já tem os sons dela (sem eles: audio/mix-sem-seguir.wav). Prévia: renders/previa-seguir.mp4.
+Se ele aprovar: apagar renders/blocos/b1800.mp4 e b1950.mp4 e rodar fonte/render-final.sh (refaz só esses 2 blocos + junta com o mix novo).
+O renders/aula-otica.mp4 entregue continua SEM a pílula.
+Fala de seguir entregue ao Vítor (motion-base/componentes/pilula-seguir/FALA-SEGUIR.txt, recomendada): "Acertou essa? Me segue, que a próxima cai mais ainda."
+Quando o mp3 chegar: inserir a fala em voz_final.wav na PAUSA(150) (abre ~2,5 s), deslocar relógio das palavras > 150, alinhar SEGUIR_INI para o clique cair em "segue", refazer sons.py e re-renderizar do bloco b1800 até o fim (o fim muda de quadro).
+
+## 05/10/2026 20:17 UTC: fala de seguir do Vítor encaixada
+audio/elevenlabs/fala-seguir.mp3 entra depois da pausa da palavra 150 (tempo.py INSERE; relogio.json "insercoes"). Vídeo 2:12,9 (3988 quadros). Pílula clica no "segue" (Aula.tsx SEGUIR_INI), legenda própria (Legenda.tsx), ducking da música inclui a fala (sons.py).
+Re-render dos blocos b1800 em diante. Versões antigas: renders/aula-otica-sem-seguir.mp4 (2:08, sem pílula), aula-otica-voz-provisoria.mp4.

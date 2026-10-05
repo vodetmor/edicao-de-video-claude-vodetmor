@@ -9,6 +9,9 @@ export const P = (i: number, d = 0) => W[i].f + d;
 export const PE = (i: number, d = 0) => W[i].fe + d;
 export const PALAVRAS = W;
 export const PAUSAS = R.pausas as {i: number; de: number; ate: number}[];
+// falas gravadas à parte e inseridas depois de uma palavra (ex.: chamada para seguir)
+export const INSERCOES = ((R as any).insercoes ?? []) as {apos: number; s: number; f: number; fe: number}[];
+export const FALA_SEGUIR = INSERCOES.find((x) => x.apos === 150)!;
 // fim da pausa aberta depois da palavra i (em quadros)
 export const PAUSA = (i: number) => {
   const p = PAUSAS.find((x) => x.i === i);

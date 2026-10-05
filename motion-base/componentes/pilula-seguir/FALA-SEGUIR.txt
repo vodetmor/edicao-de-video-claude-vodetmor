@@ -1,0 +1,13 @@
+Fala curta para pedir que sigam, dita junto com a pílula "Seguir" (gerar no ElevenLabs, mesma voz da aula).
+Cerca de 2,5 s. Entra numa pausa logo depois de uma resposta de questão; a pílula aparece na primeira palavra e o clique cai em "segue".
+
+RECOMENDADA
+Acertou essa? Me segue, que a próxima cai mais ainda.
+
+VARIAÇÕES (para não repetir a mesma frase em toda aula)
+Essa cai todo ano. Me segue pra não perder a próxima.
+Guarda essa e me segue: vem mais questão assim.
+Se isso te ajudou, me segue. Tem mais vindo.
+
+Regras: no máximo uma frase de chamada por aula; nunca no começo nem no fim (o loop fica intacto); a frase também serve de virada para o próximo ato (progressão de raciocínio).
+Nas próximas aulas ela já vai escrita dentro do roteiro do ElevenLabs, então sai na mesma geração da narração.
