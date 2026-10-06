@@ -12,3 +12,5 @@ Vítor (2026-10-02, reaffirmed 2026-10-04) expects to lose this claude.ai accoun
 - Brain source: backup/kit/ (CLAUDE.md lean index, LEIA-ME.md, skills metodo-edicao/motor-estudio/pesquisa-referencias, memoria copy auto-refreshed by the script, historico redacted via exportar_historico.py).
 - PC: C:\Users\vitor\OneDrive\Desktop\Maquina de Editar\Backup-Maquina-de-Editar (personal OneDrive) holds flow/image automation code + claude-config-pc.zip (no credentials). His old PC project memories contain plaintext keys: never back them up; advised rotating.
 **How to apply:** after any delivery or milestone, run sincronizar.py and mention nothing unless it fails. A daily routine also runs it. Related: [[estudio-motor]].
+
+PC auto-update ACTIVE (2026-10-05): Windows scheduled task "Backup Maquina de Editar" (daily 23:55 + at logon, user-level, hidden) runs Maquina de Editar\atualizar-backup-github.ps1 (git pull --ff-only + juntar_partes, never pushes), log atualizar-backup-github.log. sincronizar.py now skips paths the repo .gitignore ignores (e.g. trabalho/renders).
