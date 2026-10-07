@@ -6,6 +6,7 @@ Tudo o que o Claude aprendeu ali está nesta pasta: o método, as regras de gost
 a biblioteca de lições e a memória do projeto.
 
 ## Quem é o dono e como falar com ele
+Regras completas em `COMO-TRABALHAR-COM-O-VITOR.md` (leia antes da primeira resposta numa conta nova). Trocar de conta: `MIGRACAO.md`.
 - Vítor ("Rei da VSL"). Português do Brasil, fuso America/Sao_Paulo. Iniciante: ensinar de forma simples.
 - Dita mensagens longas por voz: espere erros de transcrição e corrija em silêncio ("Hype te" = Hypit, "OmniFlash" = Google Flow, "Lightmotion" = Alight Motion).
 - NÃO devolva as ideias dele em lista ("Suas ideias, organizadas"). Interprete, conecte o que ele não conectou e entregue a melhor resposta pensada; ao formalizar, uma proposta bem estruturada.
