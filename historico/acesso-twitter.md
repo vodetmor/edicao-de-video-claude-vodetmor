@@ -498,8 +498,96 @@ PS C:\Users\vitor> twitter -c search "motion design" -t top --min-likes 500
   {
     "id": "1982835693274509506",
     "author": "@Bryan_Spencer_",
-    "text": "Design + motion = impact Great design gives structure. Motion brings it to life. Y
-[… +2939 bytes truncated — re-fetch with full_bodies=true and a smaller limit to read in full]
+    "text": "Design + motion = impact Great design gives structure. Motion brings it to life. You need both working together. https://t.co/lAer8sypwA",
+    "likes": 661,
+    "rts": 36,
+    "time": "Oct 27 15:44"
+  },
+  {
+    "id": "1801219973236342910",
+    "author": "@alex_barashkov",
+    "text": "We charged $89,775 for this new @huly_io landing page.  Ask me anything.  Huly, an open-source platform, serves as an all-in-one replacem...",
+    "likes": 3521,
+    "rts": 184,
+    "time": "Jun 13 11:48"
+  },
+  {
+    "id": "2084611105528115415",
+    "author": "@arcads_ai",
+    "text": "We raised $16M to build Claude Code for Meta Ads  Introducing Mark: The only AI built for winning ads  10,000 of the best performance mar...",
+    "likes": 1237,
+    "rts": 59,
+    "time": "Aug 04 12:03"
+  },
+  {
+    "id": "2023774867729117297",
+    "author": "@HarunoWildan",
+    "text": "💥 KAKERA! – Free After Effects Script Automatically keyframe your text or objects with Position, Scale, and Rotation in seconds.  Perfect...",
+    "likes": 2312,
+    "rts": 482,
+    "time": "Feb 17 15:01"
+  },
+  {
+    "id": "1976187949403226315",
+    "author": "@pizzaboy",
+    "text": "Hot take but it’s the sound design that makes motion design like this so nice.  The actual motion is incredible of course, but the sound ...",
+    "likes": 1056,
+    "rts": 45,
+    "time": "Oct 09 07:28"
+  },
+  {
+    "id": "2055166020831301636",
+    "author": "@higgsfield",
+    "text": "Supercomputer is so good at motion design.  &gt; Surfaces top motion graphics and brand reels across the web &gt; Studies kinetic typogra...",
+    "likes": 2129,
+    "rts": 141,
+    "time": "May 15 05:58"
+  },
+  {
+    "id": "2066551490307907707",
+    "author": "@capcutapp",
+    "text": "Meet Dreamina Seedance 2.0 Mini: Built for quality and speed, at lower cost. - ~30% lower cost than Dreamina Seedance 2.0 - 2× faster tha...",
+    "likes": 1091,
+    "rts": 271,
+    "time": "Jun 15 16:00"
+  },
+  {
+    "id": "2104240559632384173",
+    "author": "@0xMovez",
+    "text": "Opus 5.5 is insane for motion design...  send this single prompt to Claude Opus 5.5 to turn it into a professional motion design studio. ...",
+    "likes": 2307,
+    "rts": 204,
+    "time": "Sep 27 16:03"
+  },
+  {
+    "id": "1918569396035067930",
+    "author": "@hasantoxr",
+    "text": "This AI tool literally creates motion design for videos in seconds with just one prompt. https://t.co/dZMB1ntOOY",
+    "likes": 1706,
+    "rts": 111,
+    "time": "May 03 07:32"
+  },
+  {
+    "id": "1899655834520457354",
+    "author": "@lucas__crespo",
+    "text": "even Anthropic’s motion design is friendly, warm and inviting https://t.co/Qpkv335hPs",
+    "likes": 3197,
+    "rts": 83,
+    "time": "Mar 12 02:56"
+  },
+  {
+    "id": "1472496459488628738",
+    "author": "@vponamariov",
+    "text": "Found a nice guide to Motion Design principles 😍 https://t.co/2Uvw9ZS8NR",
+    "likes": 2154,
+    "rts": 292,
+    "time": "Dec 19 09:18"
+  }
+]
+PS C:\Users\vitor>
+PS C:\Users\vitor>
+
+Nota: Parece que deu certo
 
 ## 2026-10-02T21:00:48Z · Claude
 
