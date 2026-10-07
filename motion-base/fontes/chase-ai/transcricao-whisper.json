@@ -1,0 +1,1697 @@
+[
+ {
+  "start": 0.0,
+  "end": 3.44,
+  "text": "You don't need remotion, you don't need After Effects."
+ },
+ {
+  "start": 3.44,
+  "end": 8.28,
+  "text": "All you need is cloud code in JavaScript to create videos like these."
+ },
+ {
+  "start": 8.28,
+  "end": 12.64,
+  "text": "Whether it's a visual explainer, a product demo, or just pure motion graphics,"
+ },
+ {
+  "start": 12.64,
+  "end": 15.12,
+  "text": "these types of videos are exploding right now."
+ },
+ {
+  "start": 15.12,
+  "end": 16.6,
+  "text": "And that's because it's free."
+ },
+ {
+  "start": 16.6,
+  "end": 18.68,
+  "text": "This isn't an AI video generator."
+ },
+ {
+  "start": 18.68,
+  "end": 21.2,
+  "text": "This is just cloud and JavaScript."
+ },
+ {
+  "start": 21.2,
+  "end": 25.24,
+  "text": "And so today I'm going to show you how to create these sorts of videos for yourself."
+ },
+ {
+  "start": 25.24,
+  "end": 29.4,
+  "text": "We're going to go over how to properly prompt it, how to bring in reference images,"
+ },
+ {
+  "start": 29.44,
+  "end": 32.68,
+  "text": "and then how to codify this entire thing into a skill"
+ },
+ {
+  "start": 32.68,
+  "end": 36.64,
+  "text": "so we can walk you through step zero all the way to a finished product."
+ },
+ {
+  "start": 36.64,
+  "end": 37.48,
+  "text": "So how does this all work?"
+ },
+ {
+  "start": 37.48,
+  "end": 42.56,
+  "text": "How is cloud able to create videos when it is not an AI video generation tool?"
+ },
+ {
+  "start": 42.56,
+  "end": 45.52,
+  "text": "Well, it uses JavaScript, which is a coding language,"
+ },
+ {
+  "start": 45.52,
+  "end": 48.0,
+  "text": "to essentially create still images."
+ },
+ {
+  "start": 48.0,
+  "end": 50.84,
+  "text": "It creates a bunch of still images, stitches those all together,"
+ },
+ {
+  "start": 50.84,
+  "end": 53.88,
+  "text": "exports it as an MP4, and you get what you see here."
+ },
+ {
+  "start": 53.88,
+  "end": 57.68,
+  "text": "In fact, I had it create a video explaining how this whole thing works."
+ },
+ {
+  "start": 57.72,
+  "end": 62.0,
+  "text": "So for this video, I told it to create it in the style of a three blue, one brown video."
+ },
+ {
+  "start": 62.0,
+  "end": 63.8,
+  "text": "And this was a one shot attempt."
+ },
+ {
+  "start": 64.64,
+  "end": 69.16,
+  "text": "This animation wasn't drawn by hand, and it isn't AI video."
+ },
+ {
+  "start": 69.16,
+  "end": 71.04,
+  "text": "Cloud wrote a function."
+ },
+ {
+  "start": 71.04,
+  "end": 74.36,
+  "text": "Give it a time, t, and it returns one picture."
+ },
+ {
+  "start": 74.36,
+  "end": 78.48,
+  "text": "Ask for 60 pictures every second, play them in order, and that's a video."
+ },
+ {
+  "start": 79.36,
+  "end": 82.36,
+  "text": "Same t, same picture every time."
+ },
+ {
+  "start": 82.36,
+  "end": 85.4,
+  "text": "So any frame can be redrawn or checked on its own."
+ },
+ {
+  "start": 86.36,
+  "end": 91.12,
+  "text": "A headless browser draws each frame, FFmpeg stitches them together,"
+ },
+ {
+  "start": 91.12,
+  "end": 93.68,
+  "text": "and the sound is a function of a t, too."
+ },
+ {
+  "start": 93.68,
+  "end": 97.76,
+  "text": "Cloud can't watch the video, but it can look at the frame,"
+ },
+ {
+  "start": 97.76,
+  "end": 102.11,
+  "text": "spot what's wrong, and fix the function."
+ },
+ {
+  "start": 102.11,
+  "end": 103.91,
+  "text": "So Cloud never made a video."
+ },
+ {
+  "start": 103.91,
+  "end": 107.15,
+  "text": "It wrote what the video is, a function of time."
+ },
+ {
+  "start": 108.95,
+  "end": 111.15,
+  "text": "So let's break that down just a little bit further."
+ },
+ {
+  "start": 111.15,
+  "end": 114.99,
+  "text": "So as explained in the video, every single frame of the video"
+ },
+ {
+  "start": 114.99,
+  "end": 118.67,
+  "text": "that's being created is generated via JavaScript."
+ },
+ {
+  "start": 118.67,
+  "end": 123.15,
+  "text": "So this frame you saw right here is a function of JavaScript code."
+ },
+ {
+  "start": 123.15,
+  "end": 125.03,
+  "text": "That is one single frame."
+ },
+ {
+  "start": 125.03,
+  "end": 130.43,
+  "text": "Every second, we create 60 versions of that frame, stitch them together."
+ },
+ {
+  "start": 130.43,
+  "end": 132.63,
+  "text": "You now have one second of video."
+ },
+ {
+  "start": 132.63,
+  "end": 136.47,
+  "text": "Now what's cool with this system is we can have Cloud Code check its own work."
+ },
+ {
+  "start": 136.47,
+  "end": 141.35,
+  "text": "So whether it's 60 frames or 240 frames, we essentially run the video"
+ },
+ {
+  "start": 141.35,
+  "end": 143.95,
+  "text": "in a headless browser using something like Playwright."
+ },
+ {
+  "start": 143.95,
+  "end": 147.59,
+  "text": "So it's like Cloud Code has its own version of Chrome that it's looking at."
+ },
+ {
+  "start": 147.59,
+  "end": 151.11,
+  "text": "It can then take a look at each frame, frame by frame, and then say,"
+ },
+ {
+  "start": 151.11,
+  "end": 155.39,
+  "text": "hmm, this works, this doesn't, let's fix this, let's fix that."
+ },
+ {
+  "start": 155.39,
+  "end": 158.71,
+  "text": "And then once it's happy, whether it gives the thumbs up or you give it"
+ },
+ {
+  "start": 158.71,
+  "end": 162.47,
+  "text": "the thumbs up, it stitches them all via a tool called FFmpeg,"
+ },
+ {
+  "start": 162.47,
+  "end": 165.15,
+  "text": "which is totally open source, and we get our video."
+ },
+ {
+  "start": 165.15,
+  "end": 167.47,
+  "text": "And on top of that, we can easily add sound."
+ },
+ {
+  "start": 167.47,
+  "end": 171.03,
+  "text": "The video you saw had the sound generated with 11 labs."
+ },
+ {
+  "start": 171.03,
+  "end": 174.51,
+  "text": "And first, they created the script, and then we had sort of the graphics"
+ },
+ {
+  "start": 174.51,
+  "end": 175.39,
+  "text": "go along with it."
+ },
+ {
+  "start": 175.39,
+  "end": 178.03,
+  "text": "And as you'll see as we move along, there's a lot of different ways"
+ },
+ {
+  "start": 178.03,
+  "end": 180.79,
+  "text": "we can approach this sort of video creation piece."
+ },
+ {
+  "start": 180.79,
+  "end": 183.71,
+  "text": "And again, what's cool about this, it's all code."
+ },
+ {
+  "start": 183.71,
+  "end": 184.99,
+  "text": "It's essentially free."
+ },
+ {
+  "start": 184.99,
+  "end": 187.71,
+  "text": "I'm not paying for any outside tools to do this."
+ },
+ {
+  "start": 187.71,
+  "end": 189.67,
+  "text": "Now I think the easiest way to explain all this"
+ },
+ {
+  "start": 189.67,
+  "end": 191.91,
+  "text": "is kind of break it down into four different levels."
+ },
+ {
+  "start": 191.91,
+  "end": 195.39,
+  "text": "The first level is how this works purely from prompting."
+ },
+ {
+  "start": 195.39,
+  "end": 198.35,
+  "text": "Second level is how we add sort of that looping element"
+ },
+ {
+  "start": 198.35,
+  "end": 200.95,
+  "text": "you saw in the video where it checked its own work."
+ },
+ {
+  "start": 200.95,
+  "end": 203.67,
+  "text": "Third, we'll talk about how do we bring in references to this,"
+ },
+ {
+  "start": 203.67,
+  "end": 207.03,
+  "text": "whether it's video references or just style references via images."
+ },
+ {
+  "start": 207.03,
+  "end": 209.23,
+  "text": "And then fourth, I'm going to talk about how do you codify"
+ },
+ {
+  "start": 209.23,
+  "end": 210.35,
+  "text": "this entire thing."
+ },
+ {
+  "start": 210.35,
+  "end": 212.47,
+  "text": "And by codify, I mean handing you this skill"
+ },
+ {
+  "start": 212.47,
+  "end": 215.39,
+  "text": "that I've created that sort of walks you through the entire process"
+ },
+ {
+  "start": 215.39,
+  "end": 217.03,
+  "text": "we're going to go over today."
+ },
+ {
+  "start": 217.03,
+  "end": 219.47,
+  "text": "But before we go through all four of these levels,"
+ },
+ {
+  "start": 219.47,
+  "end": 222.31,
+  "text": "a quick word from today's sponsor, me."
+ },
+ {
+  "start": 222.31,
+  "end": 224.47,
+  "text": "So inside of Chase AI+, I have just released"
+ },
+ {
+  "start": 224.47,
+  "end": 227.83,
+  "text": "an updated Claude code and Codex master class."
+ },
+ {
+  "start": 227.83,
+  "end": 230.99,
+  "text": "And it is the number one way to go from zero to AI dev,"
+ },
+ {
+  "start": 230.99,
+  "end": 234.35,
+  "text": "no matter your technical background or lack thereof."
+ },
+ {
+  "start": 234.35,
+  "end": 237.03,
+  "text": "You also get access to my custom AIOS,"
+ },
+ {
+  "start": 237.03,
+  "end": 240.27,
+  "text": "which runs not only on Codex, but Claude code as well."
+ },
+ {
+  "start": 240.27,
+  "end": 242.39,
+  "text": "So if you're someone who wants to get a little more serious"
+ },
+ {
+  "start": 242.39,
+  "end": 245.51,
+  "text": "about AI, Chase AI Plus is the place for you."
+ },
+ {
+  "start": 245.51,
+  "end": 247.67,
+  "text": "I'll put a link to it down in the pinned comment."
+ },
+ {
+  "start": 247.67,
+  "end": 250.19,
+  "text": "So let's begin with prompting and effort levels."
+ },
+ {
+  "start": 250.19,
+  "end": 253.31,
+  "text": "So right here, I gave Opus 5.5 a pretty simple prompt."
+ },
+ {
+  "start": 253.31,
+  "end": 256.95,
+  "text": "I said, make a dynamic 15 second motion graphics video"
+ },
+ {
+  "start": 256.95,
+  "end": 259.35,
+  "text": "that shows what an incredible motion designer you are."
+ },
+ {
+  "start": 259.35,
+  "end": 262.27,
+  "text": "Like it's a showreel for a resume, go all out,"
+ },
+ {
+  "start": 262.27,
+  "end": 264.27,
+  "text": "don't use any skills."
+ },
+ {
+  "start": 264.27,
+  "end": 267.83,
+  "text": "And I tested this on low, high and ultra code."
+ },
+ {
+  "start": 267.83,
+  "end": 270.63,
+  "text": "Low knocked it out in like 20 minutes or so,"
+ },
+ {
+  "start": 270.63,
+  "end": 274.11,
+  "text": "high took like 30 minutes, ultra code took eight hours."
+ },
+ {
+  "start": 274.11,
+  "end": 275.75,
+  "text": "And what I want you to pay attention to"
+ },
+ {
+  "start": 275.75,
+  "end": 278.43,
+  "text": "is the quality difference between all of these."
+ },
+ {
+  "start": 278.43,
+  "end": 281.95,
+  "text": "And spoiler alert, high and low did just fine."
+ },
+ {
+  "start": 281.95,
+  "end": 283.47,
+  "text": "Ultra code was definitely the best,"
+ },
+ {
+  "start": 283.47,
+  "end": 286.07,
+  "text": "but if you think your issue with these videos"
+ },
+ {
+  "start": 286.39,
+  "end": 288.63,
+  "text": "or your sort of creations is an effort problem,"
+ },
+ {
+  "start": 288.63,
+  "end": 290.75,
+  "text": "it's probably not, it's probably just your prompts."
+ },
+ {
+  "start": 290.75,
+  "end": 341.78,
+  "text": "So here's low, here's high and here's ultra."
+ },
+ {
+  "start": 341.78,
+  "end": 344.46,
+  "text": "Now, all of these were actually pretty solid"
+ },
+ {
+  "start": 344.46,
+  "end": 347.22,
+  "text": "and even low did a pretty good job."
+ },
+ {
+  "start": 347.22,
+  "end": 348.62,
+  "text": "And what I wanted you to get from that"
+ },
+ {
+  "start": 348.62,
+  "end": 351.74,
+  "text": "is that the baseline ability of cloud using JavaScript"
+ },
+ {
+  "start": 351.74,
+  "end": 353.42,
+  "text": "is actually really strong."
+ },
+ {
+  "start": 353.42,
+  "end": 356.3,
+  "text": "We don't have to be crazy with our prompts"
+ },
+ {
+  "start": 356.3,
+  "end": 358.74,
+  "text": "to get something that's actually quite legit."
+ },
+ {
+  "start": 358.74,
+  "end": 361.1,
+  "text": "But there is one thing we can specifically do"
+ },
+ {
+  "start": 361.1,
+  "end": 363.26,
+  "text": "that can make our outcomes way better."
+ },
+ {
+  "start": 363.26,
+  "end": 365.7,
+  "text": "And that is to ask for a storyboard."
+ },
+ {
+  "start": 365.7,
+  "end": 367.7,
+  "text": "This isn't something that should be wild"
+ },
+ {
+  "start": 367.7,
+  "end": 368.82,
+  "text": "if you're someone who's done any sort"
+ },
+ {
+  "start": 368.82,
+  "end": 370.06,
+  "text": "of AI video generation."
+ },
+ {
+  "start": 370.06,
+  "end": 371.7,
+  "text": "And the idea here is simple."
+ },
+ {
+  "start": 371.7,
+  "end": 373.58,
+  "text": "Before we tell cloud to go out there"
+ },
+ {
+  "start": 373.58,
+  "end": 378.06,
+  "text": "and create a 10, 15, 30, 60, five minute video"
+ },
+ {
+  "start": 378.06,
+  "end": 380.02,
+  "text": "from one prompt, why don't we have it"
+ },
+ {
+  "start": 380.02,
+  "end": 381.5,
+  "text": "actually storyboarded out for us?"
+ },
+ {
+  "start": 381.5,
+  "end": 383.9,
+  "text": "Have it create some individual frames"
+ },
+ {
+  "start": 383.9,
+  "end": 387.58,
+  "text": "which represent the different beats across the video"
+ },
+ {
+  "start": 387.58,
+  "end": 389.26,
+  "text": "so we can get sort of hands on"
+ },
+ {
+  "start": 389.26,
+  "end": 391.78,
+  "text": "on where we're gonna be going with this creation"
+ },
+ {
+  "start": 391.78,
+  "end": 393.58,
+  "text": "before we just have it go off in code."
+ },
+ {
+  "start": 393.58,
+  "end": 395.18,
+  "text": "Because one thing I will say"
+ },
+ {
+  "start": 395.18,
+  "end": 396.74,
+  "text": "about these JavaScript creations"
+ },
+ {
+  "start": 396.74,
+  "end": 398.66,
+  "text": "is they can take a long time,"
+ },
+ {
+  "start": 398.66,
+  "end": 400.86,
+  "text": "especially if you start adding the looping sequence"
+ },
+ {
+  "start": 400.86,
+  "end": 402.42,
+  "text": "like I'm going to introduce here in a second."
+ },
+ {
+  "start": 402.42,
+  "end": 404.98,
+  "text": "So if I simply ask it to give me a storyboard,"
+ },
+ {
+  "start": 404.98,
+  "end": 406.1,
+  "text": "it's gonna give me something like this."
+ },
+ {
+  "start": 406.1,
+  "end": 407.94,
+  "text": "It's gonna say, hey, here's sort of like"
+ },
+ {
+  "start": 407.94,
+  "end": 410.42,
+  "text": "the seven big scenes you're going to see."
+ },
+ {
+  "start": 410.42,
+  "end": 412.94,
+  "text": "I can actually see the actual frames themselves"
+ },
+ {
+  "start": 412.94,
+  "end": 414.38,
+  "text": "before it's created."
+ },
+ {
+  "start": 414.38,
+  "end": 416.66,
+  "text": "And so I can start changing things"
+ },
+ {
+  "start": 416.66,
+  "end": 419.1,
+  "text": "before anything has really been coded."
+ },
+ {
+  "start": 419.1,
+  "end": 420.9,
+  "text": "Because the worst thing and the worst scenario"
+ },
+ {
+  "start": 420.9,
+  "end": 423.66,
+  "text": "you can get in is you're creating an entire video,"
+ },
+ {
+  "start": 423.66,
+  "end": 425.3,
+  "text": "it takes 20 minutes, you get it back,"
+ },
+ {
+  "start": 425.3,
+  "end": 426.54,
+  "text": "you say, I don't like this or that."
+ },
+ {
+  "start": 426.54,
+  "end": 429.02,
+  "text": "And it tries again and you get into like this hour long,"
+ },
+ {
+  "start": 429.02,
+  "end": 430.94,
+  "text": "three hour long loop of just like"
+ },
+ {
+  "start": 430.94,
+  "end": 432.26,
+  "text": "generation after generation."
+ },
+ {
+  "start": 432.26,
+  "end": 435.22,
+  "text": "So simply asking for a storyboard"
+ },
+ {
+  "start": 435.22,
+  "end": 436.62,
+  "text": "before it creates the video"
+ },
+ {
+  "start": 436.62,
+  "end": 439.22,
+  "text": "is gonna save you so much time."
+ },
+ {
+  "start": 439.22,
+  "end": 440.58,
+  "text": "So now let's move into level two"
+ },
+ {
+  "start": 440.58,
+  "end": 443.22,
+  "text": "where we can dive deeper into the prompt structure"
+ },
+ {
+  "start": 443.22,
+  "end": 445.18,
+  "text": "as well as the outside dependencies"
+ },
+ {
+  "start": 445.18,
+  "end": 448.06,
+  "text": "we need to actually get this whole thing to work."
+ },
+ {
+  "start": 448.06,
+  "end": 450.26,
+  "text": "Now, first things first, when we do the prompt,"
+ },
+ {
+  "start": 450.26,
+  "end": 453.58,
+  "text": "hey, you just wanna mention what is gonna be the length"
+ },
+ {
+  "start": 453.58,
+  "end": 455.02,
+  "text": "and what type of video you wanna do."
+ },
+ {
+  "start": 455.02,
+  "end": 457.22,
+  "text": "So like a 30 second animated explainer"
+ },
+ {
+  "start": 457.22,
+  "end": 458.7,
+  "text": "about how whatever works."
+ },
+ {
+  "start": 458.7,
+  "end": 460.3,
+  "text": "You're also gonna wanna mention"
+ },
+ {
+  "start": 460.3,
+  "end": 462.42,
+  "text": "sort of the aspect ratio you want to do this in."
+ },
+ {
+  "start": 462.42,
+  "end": 463.74,
+  "text": "Is it gonna be a full screen video"
+ },
+ {
+  "start": 463.74,
+  "end": 464.82,
+  "text": "or we're doing something vertical"
+ },
+ {
+  "start": 464.82,
+  "end": 467.74,
+  "text": "that's for like short form social media."
+ },
+ {
+  "start": 467.74,
+  "end": 470.34,
+  "text": "Then we definitely wanna mention JavaScript,"
+ },
+ {
+  "start": 470.34,
+  "end": 471.5,
+  "text": "obvious enough."
+ },
+ {
+  "start": 471.5,
+  "end": 473.82,
+  "text": "Then we wanna talk about the soundtrack."
+ },
+ {
+  "start": 473.82,
+  "end": 475.22,
+  "text": "The soundtrack can be pure code."
+ },
+ {
+  "start": 475.22,
+  "end": 476.62,
+  "text": "And that's what a lot of these things are,"
+ },
+ {
+  "start": 476.62,
+  "end": 479.14,
+  "text": "but you can totally supply your own soundtrack"
+ },
+ {
+  "start": 479.14,
+  "end": 480.22,
+  "text": "to cloud code."
+ },
+ {
+  "start": 480.22,
+  "end": 482.1,
+  "text": "In fact, you can kind of work backwards."
+ },
+ {
+  "start": 482.1,
+  "end": 483.66,
+  "text": "When we were doing that video"
+ },
+ {
+  "start": 483.66,
+  "end": 485.22,
+  "text": "where I had to do the explainer for you,"
+ },
+ {
+  "start": 485.22,
+  "end": 487.94,
+  "text": "where we actually had an audio and narrator,"
+ },
+ {
+  "start": 487.94,
+  "end": 490.58,
+  "text": "I gave it the audio first of the narration"
+ },
+ {
+  "start": 490.58,
+  "end": 492.02,
+  "text": "and then it worked backwards from there"
+ },
+ {
+  "start": 492.02,
+  "end": 494.86,
+  "text": "and made sure the visuals match the audio."
+ },
+ {
+  "start": 494.86,
+  "end": 496.22,
+  "text": "So you have that option as well."
+ },
+ {
+  "start": 496.22,
+  "end": 497.3,
+  "text": "Third, we wanna say,"
+ },
+ {
+  "start": 497.3,
+  "end": 499.22,
+  "text": "make sure you render it to an MP4"
+ },
+ {
+  "start": 499.22,
+  "end": 501.26,
+  "text": "with Playwright and FFmpeg."
+ },
+ {
+  "start": 501.26,
+  "end": 503.5,
+  "text": "So we mentioned Playwright specifically"
+ },
+ {
+  "start": 503.5,
+  "end": 506.5,
+  "text": "because Playwright is what's going to allow"
+ },
+ {
+  "start": 507.38,
+  "end": 508.58,
+  "text": "cloud code to run that headless browser"
+ },
+ {
+  "start": 508.58,
+  "end": 509.42,
+  "text": "to check to see,"
+ },
+ {
+  "start": 509.42,
+  "end": 511.78,
+  "text": "hey, do all these frames make sense?"
+ },
+ {
+  "start": 511.78,
+  "end": 514.06,
+  "text": "And FFmpeg is what we are going to use"
+ },
+ {
+  "start": 514.06,
+  "end": 515.58,
+  "text": "to actually stitch everything together."
+ },
+ {
+  "start": 515.58,
+  "end": 517.94,
+  "text": "Now, after that, we can mention,"
+ },
+ {
+  "start": 517.94,
+  "end": 518.86,
+  "text": "like I said earlier,"
+ },
+ {
+  "start": 518.86,
+  "end": 521.14,
+  "text": "hey, here's the voice MP3,"
+ },
+ {
+  "start": 521.14,
+  "end": 522.94,
+  "text": "time the visuals to it."
+ },
+ {
+  "start": 522.94,
+  "end": 523.94,
+  "text": "And then at the end,"
+ },
+ {
+  "start": 523.94,
+  "end": 525.22,
+  "text": "what we wanna say is,"
+ },
+ {
+  "start": 525.22,
+  "end": 526.78,
+  "text": "before you call it done,"
+ },
+ {
+  "start": 526.78,
+  "end": 529.58,
+  "text": "use FFmpeg to pull a contact sheet,"
+ },
+ {
+  "start": 529.58,
+  "end": 530.98,
+  "text": "look at it, fix what's wrong,"
+ },
+ {
+  "start": 530.98,
+  "end": 532.34,
+  "text": "re-render and repeat."
+ },
+ {
+  "start": 532.34,
+  "end": 534.18,
+  "text": "You don't have to use this exact verbiage,"
+ },
+ {
+  "start": 534.18,
+  "end": 536.3,
+  "text": "but you need to mention something somewhere"
+ },
+ {
+  "start": 537.14,
+  "end": 537.98,
+  "text": "along the lines of,"
+ },
+ {
+  "start": 537.98,
+  "end": 539.22,
+  "text": "hey, before you're done,"
+ },
+ {
+  "start": 539.22,
+  "end": 542.02,
+  "text": "check your work with FFmpeg and Playwright"
+ },
+ {
+  "start": 542.02,
+  "end": 544.86,
+  "text": "and make sure everything aligns and makes sense."
+ },
+ {
+  "start": 544.86,
+  "end": 548.18,
+  "text": "Now, Opus 5.5 and Fable 5.1 are so good"
+ },
+ {
+  "start": 548.18,
+  "end": 549.7,
+  "text": "that if you don't even mention these things,"
+ },
+ {
+  "start": 549.7,
+  "end": 551.7,
+  "text": "it's probably going to do it,"
+ },
+ {
+  "start": 551.7,
+  "end": 554.7,
+  "text": "but you should understand how this all works"
+ },
+ {
+  "start": 554.7,
+  "end": 556.98,
+  "text": "so if it isn't doing what you want,"
+ },
+ {
+  "start": 556.98,
+  "end": 559.14,
+  "text": "you know how to actually articulate that."
+ },
+ {
+  "start": 559.14,
+  "end": 561.5,
+  "text": "So to recap, you need Playwright,"
+ },
+ {
+  "start": 561.5,
+  "end": 562.9,
+  "text": "you need FFmpeg,"
+ },
+ {
+  "start": 562.9,
+  "end": 564.58,
+  "text": "and you also need to figure out"
+ },
+ {
+  "start": 564.58,
+  "end": 566.18,
+  "text": "how do you want this actually created?"
+ },
+ {
+  "start": 567.02,
+  "end": 568.22,
+  "text": "Are you gonna do the visuals first"
+ },
+ {
+  "start": 568.22,
+  "end": 569.7,
+  "text": "and then audio afterwards?"
+ },
+ {
+  "start": 569.7,
+  "end": 571.82,
+  "text": "Or do you have audio with a soundtrack"
+ },
+ {
+  "start": 571.82,
+  "end": 573.34,
+  "text": "or maybe a narration"
+ },
+ {
+  "start": 573.34,
+  "end": 576.06,
+  "text": "and then I want the graphics to match that?"
+ },
+ {
+  "start": 576.06,
+  "end": 577.5,
+  "text": "Again, when you're talking about narration,"
+ },
+ {
+  "start": 577.5,
+  "end": 579.38,
+  "text": "we can use something like 11Labs,"
+ },
+ {
+  "start": 579.38,
+  "end": 581.62,
+  "text": "but there are a ton of open source resources"
+ },
+ {
+  "start": 581.62,
+  "end": 583.06,
+  "text": "to create that narration as well,"
+ },
+ {
+  "start": 583.06,
+  "end": 584.7,
+  "text": "although I will say 11Labs"
+ },
+ {
+  "start": 584.7,
+  "end": 586.46,
+  "text": "is probably the best thing out there,"
+ },
+ {
+  "start": 586.46,
+  "end": 587.74,
+  "text": "they just came out with their MCP,"
+ },
+ {
+  "start": 587.74,
+  "end": 589.9,
+  "text": "this isn't sponsored by 11Labs whatsoever,"
+ },
+ {
+  "start": 589.9,
+  "end": 592.1,
+  "text": "but I do like their product"
+ },
+ {
+  "start": 592.1,
+  "end": 594.74,
+  "text": "and I believe their subscription's like five bucks a month"
+ },
+ {
+  "start": 594.74,
+  "end": 596.7,
+  "text": "which is relatively cheap."
+ },
+ {
+  "start": 596.7,
+  "end": 599.26,
+  "text": "Now level three is where we go beyond simple prompts"
+ },
+ {
+  "start": 599.26,
+  "end": 601.3,
+  "text": "and we start adding references."
+ },
+ {
+  "start": 601.3,
+  "end": 602.82,
+  "text": "This can either be images"
+ },
+ {
+  "start": 602.82,
+  "end": 603.66,
+  "text": "and we can say,"
+ },
+ {
+  "start": 603.66,
+  "end": 605.38,
+  "text": "hey, I want you to insert this actual image"
+ },
+ {
+  "start": 605.38,
+  "end": 608.42,
+  "text": "or I want you to copy its sort of aesthetic style"
+ },
+ {
+  "start": 608.42,
+  "end": 611.66,
+  "text": "or we can give it actual video and say,"
+ },
+ {
+  "start": 611.66,
+  "end": 614.26,
+  "text": "can we use the composition of this video"
+ },
+ {
+  "start": 614.26,
+  "end": 616.5,
+  "text": "as inspiration for what we are trying to create"
+ },
+ {
+  "start": 616.5,
+  "end": 619.66,
+  "text": "and we're just going to insert our own unique content."
+ },
+ {
+  "start": 619.66,
+  "end": 620.82,
+  "text": "Now Claude's really good at this."
+ },
+ {
+  "start": 620.82,
+  "end": 623.18,
+  "text": "On the left, we have the reference video I fed it."
+ },
+ {
+  "start": 623.18,
+  "end": 625.9,
+  "text": "This was created with Obis 5.5 and Remotion"
+ },
+ {
+  "start": 625.9,
+  "end": 629.34,
+  "text": "and on the right is our JavaScript recreation."
+ },
+ {
+  "start": 629.34,
+  "end": 632.1,
+  "text": "So on left hand side, it was a video about currency"
+ },
+ {
+  "start": 632.1,
+  "end": 633.86,
+  "text": "and on the right hand side is about explaining"
+ },
+ {
+  "start": 633.86,
+  "end": 635.3,
+  "text": "sort of the history of electricity."
+ },
+ {
+  "start": 635.3,
+  "end": 637.14,
+  "text": "So we'll watch this for a couple seconds"
+ },
+ {
+  "start": 637.14,
+  "end": 651.99,
+  "text": "so you can see what a good job it does."
+ },
+ {
+  "start": 651.99,
+  "end": 652.83,
+  "text": "And so we'll stop it there"
+ },
+ {
+  "start": 652.83,
+  "end": 655.39,
+  "text": "but you can see in terms of the composition"
+ },
+ {
+  "start": 655.39,
+  "end": 659.59,
+  "text": "from the reference to our version, it's pretty close."
+ },
+ {
+  "start": 659.59,
+  "end": 662.67,
+  "text": "It looks like it's from the same family of design,"
+ },
+ {
+  "start": 662.67,
+  "end": 665.23,
+  "text": "yet the actual content is completely different."
+ },
+ {
+  "start": 665.27,
+  "end": 667.91,
+  "text": "Now as for where to find this sort of inspiration,"
+ },
+ {
+  "start": 667.91,
+  "end": 669.99,
+  "text": "there's obviously a million and one places."
+ },
+ {
+  "start": 669.99,
+  "end": 673.83,
+  "text": "One place I like is this website called skillery.dev,"
+ },
+ {
+  "start": 673.83,
+  "end": 677.11,
+  "text": "so skill, S-K-I-L-L-R-Y.dev."
+ },
+ {
+  "start": 677.11,
+  "end": 678.99,
+  "text": "They have a category for AI videos"
+ },
+ {
+  "start": 678.99,
+  "end": 682.03,
+  "text": "so you can browse different Obis 5.5 videos"
+ },
+ {
+  "start": 682.03,
+  "end": 684.27,
+  "text": "to sort of like start getting your mind turning"
+ },
+ {
+  "start": 684.27,
+  "end": 685.31,
+  "text": "as for what you want to do."
+ },
+ {
+  "start": 685.31,
+  "end": 687.63,
+  "text": "This is paid but on the free version"
+ },
+ {
+  "start": 687.63,
+  "end": 689.15,
+  "text": "you can still see quite a few."
+ },
+ {
+  "start": 689.15,
+  "end": 692.15,
+  "text": "Another really good place is Twitter"
+ },
+ {
+  "start": 692.15,
+  "end": 693.43,
+  "text": "and I think this guy, Kevin,"
+ },
+ {
+  "start": 693.43,
+  "end": 694.51,
+  "text": "is probably the best out there"
+ },
+ {
+  "start": 694.51,
+  "end": 696.03,
+  "text": "when it comes to creating these sort of videos"
+ },
+ {
+  "start": 696.03,
+  "end": 698.63,
+  "text": "so highly suggest taking a look at his profile"
+ },
+ {
+  "start": 698.63,
+  "end": 701.07,
+  "text": "and seeing like what the upper level"
+ },
+ {
+  "start": 701.07,
+  "end": 703.71,
+  "text": "of this sort of content creation really looks like."
+ },
+ {
+  "start": 703.71,
+  "end": 704.71,
+  "text": "And lastly at level four,"
+ },
+ {
+  "start": 704.71,
+  "end": 706.67,
+  "text": "we want to be able to codify this process."
+ },
+ {
+  "start": 706.67,
+  "end": 708.79,
+  "text": "We want to turn it into some sort of procedure"
+ },
+ {
+  "start": 708.79,
+  "end": 711.31,
+  "text": "that Claude can do over and over again."
+ },
+ {
+  "start": 711.31,
+  "end": 712.47,
+  "text": "And the best way to do this"
+ },
+ {
+  "start": 712.47,
+  "end": 714.51,
+  "text": "is by simply turning it into a skill,"
+ },
+ {
+  "start": 714.51,
+  "end": 715.51,
+  "text": "which is what I've done here"
+ },
+ {
+  "start": 715.51,
+  "end": 717.51,
+  "text": "and it's what I'm giving you today."
+ },
+ {
+  "start": 717.51,
+  "end": 720.43,
+  "text": "So this Claude code skill essentially uses"
+ },
+ {
+  "start": 720.43,
+  "end": 722.91,
+  "text": "the whole JavaScript format we've been talking about"
+ },
+ {
+  "start": 722.91,
+  "end": 724.47,
+  "text": "and it just walks you through it."
+ },
+ {
+  "start": 725.43,
+  "end": 728.51,
+  "text": "It comes with seven preloaded different styles,"
+ },
+ {
+  "start": 728.51,
+  "end": 732.23,
+  "text": "cut paper, crosshatch, Rizzo, sketchbook, isometric,"
+ },
+ {
+  "start": 732.23,
+  "end": 734.75,
+  "text": "but you have the ability to do custom styles"
+ },
+ {
+  "start": 734.75,
+  "end": 736.07,
+  "text": "just by doing what I said,"
+ },
+ {
+  "start": 736.07,
+  "end": 738.75,
+  "text": "handing it some sort of reference image or reference video."
+ },
+ {
+  "start": 738.75,
+  "end": 740.35,
+  "text": "Now the skill goes through a number of stages"
+ },
+ {
+  "start": 740.35,
+  "end": 741.87,
+  "text": "and the best part is it walks you through it."
+ },
+ {
+  "start": 741.87,
+  "end": 743.39,
+  "text": "So it starts with an intake"
+ },
+ {
+  "start": 743.39,
+  "end": 744.91,
+  "text": "where it's going to ask you a bunch of questions"
+ },
+ {
+  "start": 744.91,
+  "end": 745.99,
+  "text": "in terms of what's your subject,"
+ },
+ {
+  "start": 745.99,
+  "end": 747.39,
+  "text": "what do you want the format to be,"
+ },
+ {
+  "start": 747.39,
+  "end": 748.95,
+  "text": "what do you want to do with the audio, the voice,"
+ },
+ {
+  "start": 748.95,
+  "end": 751.51,
+  "text": "do you want sort of like some sort of hero character"
+ },
+ {
+  "start": 751.51,
+  "end": 753.87,
+  "text": "that gets seen from the first scene"
+ },
+ {
+  "start": 753.87,
+  "end": 755.83,
+  "text": "all the way till the end."
+ },
+ {
+  "start": 755.83,
+  "end": 757.79,
+  "text": "From there, we talk about what the story"
+ },
+ {
+  "start": 757.79,
+  "end": 759.07,
+  "text": "is going to look like."
+ },
+ {
+  "start": 759.07,
+  "end": 761.07,
+  "text": "We eventually push it all the way to a storyboard"
+ },
+ {
+  "start": 761.07,
+  "end": 762.11,
+  "text": "like we talked about earlier"
+ },
+ {
+  "start": 762.11,
+  "end": 764.39,
+  "text": "so we can actually get sort of like eyes on"
+ },
+ {
+  "start": 764.39,
+  "end": 765.43,
+  "text": "what each scene will look like"
+ },
+ {
+  "start": 765.43,
+  "end": 767.39,
+  "text": "before we actually create the whole thing."
+ },
+ {
+  "start": 767.39,
+  "end": 771.67,
+  "text": "And then finally we code it and deliver it to you."
+ },
+ {
+  "start": 771.67,
+  "end": 773.31,
+  "text": "And throughout this entire process,"
+ },
+ {
+  "start": 773.31,
+  "end": 776.07,
+  "text": "Claude will loop through the video it's created"
+ },
+ {
+  "start": 776.07,
+  "end": 778.07,
+  "text": "to make sure everything syncs up and makes sense."
+ },
+ {
+  "start": 778.07,
+  "end": 780.19,
+  "text": "That whole sort of loop we talked about earlier"
+ },
+ {
+  "start": 780.19,
+  "end": 781.99,
+  "text": "with Playwright and FFmpeg,"
+ },
+ {
+  "start": 782.03,
+  "end": 784.03,
+  "text": "it's going to do that all automatically."
+ },
+ {
+  "start": 784.03,
+  "end": 786.31,
+  "text": "You just need to answer the questions"
+ },
+ {
+  "start": 786.31,
+  "end": 787.75,
+  "text": "the skill prompts you for"
+ },
+ {
+  "start": 787.75,
+  "end": 789.75,
+  "text": "and provide whatever references you want."
+ },
+ {
+  "start": 789.75,
+  "end": 790.95,
+  "text": "Installing it is super easy."
+ },
+ {
+  "start": 790.95,
+  "end": 792.19,
+  "text": "You can do it as a plugin"
+ },
+ {
+  "start": 792.19,
+  "end": 795.39,
+  "text": "or you can just hand this URL to Claude code"
+ },
+ {
+  "start": 795.39,
+  "end": 797.35,
+  "text": "and it will do everything for you."
+ },
+ {
+  "start": 797.35,
+  "end": 799.59,
+  "text": "It will also make sure you have all the prerequisites"
+ },
+ {
+  "start": 799.59,
+  "end": 802.15,
+  "text": "and dependencies like Playwright, like FFmpeg,"
+ },
+ {
+  "start": 802.15,
+  "end": 803.83,
+  "text": "like things like Faster Whisper."
+ },
+ {
+  "start": 803.83,
+  "end": 805.39,
+  "text": "And it'll even ask you if you want to do something"
+ },
+ {
+  "start": 805.39,
+  "end": 806.79,
+  "text": "like the 11 Labs connector."
+ },
+ {
+  "start": 806.79,
+  "end": 808.27,
+  "text": "Now this thing is very much a work in progress."
+ },
+ {
+  "start": 808.27,
+  "end": 809.75,
+  "text": "I've been messing with it in time."
+ },
+ {
+  "start": 809.75,
+  "end": 811.47,
+  "text": "So if you decide to use this for yourself"
+ },
+ {
+  "start": 811.47,
+  "end": 814.31,
+  "text": "and you come up with your own sort of improvements,"
+ },
+ {
+  "start": 814.31,
+  "end": 817.87,
+  "text": "definitely open up a PR and let me add that"
+ },
+ {
+  "start": 817.87,
+  "end": 819.83,
+  "text": "to what everyone is using."
+ },
+ {
+  "start": 819.83,
+  "end": 821.27,
+  "text": "So that's where I'm going to leave you guys for today."
+ },
+ {
+  "start": 821.27,
+  "end": 822.27,
+  "text": "I hope you got something out of it."
+ },
+ {
+  "start": 822.27,
+  "end": 824.91,
+  "text": "I think these JavaScript videos are awesome"
+ },
+ {
+  "start": 824.91,
+  "end": 827.31,
+  "text": "because like I keep saying, they're pretty much free."
+ },
+ {
+  "start": 827.31,
+  "end": 828.59,
+  "text": "We just pay for it with usage."
+ },
+ {
+  "start": 828.59,
+  "end": 830.51,
+  "text": "There's no third party AI image generator"
+ },
+ {
+  "start": 830.51,
+  "end": 832.99,
+  "text": "or AI video generator we need to use"
+ },
+ {
+  "start": 832.99,
+  "end": 834.19,
+  "text": "to create these things."
+ },
+ {
+  "start": 834.19,
+  "end": 838.23,
+  "text": "And the level, the quality is really high."
+ },
+ {
+  "start": 838.23,
+  "end": 839.99,
+  "text": "We just need to know how to prompt it"
+ },
+ {
+  "start": 839.99,
+  "end": 841.23,
+  "text": "and how to give it references."
+ },
+ {
+  "start": 841.95,
+  "end": 843.67,
+  "text": "As always, let me know what you thought."
+ },
+ {
+  "start": 843.67,
+  "end": 845.19,
+  "text": "Make sure to check out Chase AI Plus"
+ },
+ {
+  "start": 845.19,
+  "end": 846.03,
+  "text": "if you want to get your hands"
+ },
+ {
+  "start": 846.03,
+  "end": 847.67,
+  "text": "on my Collogicon Masterclass."
+ },
+ {
+  "start": 847.67,
+  "end": 849.67,
+  "text": "And besides that, I'll see you around."
+ }
+]

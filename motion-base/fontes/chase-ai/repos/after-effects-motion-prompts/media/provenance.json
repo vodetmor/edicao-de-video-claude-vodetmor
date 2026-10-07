@@ -1,0 +1,68 @@
+[
+  {
+    "id": "chase",
+    "title": "Chase AI — Your idea. In motion.",
+    "preview": "media/videos/chase.mp4",
+    "poster": "media/posters/chase.jpg",
+    "duration_seconds": 10.0,
+    "preview_dimensions": [
+      1920,
+      1080
+    ],
+    "source_dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "has_audio": true,
+    "source_filename": "Chase-AI-Workflow-v1.mp4",
+    "source_sha256": "09f5f6beee0b4a8b59cf5ce1d3380c6581567b03778133fd6c508fecfe3478bd",
+    "preview_sha256": "83d008dccfe6996ecb7e22030c22513c6dbf2f554b88a64e15b3d8ba27b7d7e0",
+    "preview_bytes": 1557530,
+    "encoding": "H.264 CRF20, AAC192k when audio present; content/timing preserved, optimized web preview."
+  },
+  {
+    "id": "kite",
+    "title": "KITE — Pocket World",
+    "preview": "media/videos/kite.mp4",
+    "poster": "media/posters/kite.jpg",
+    "duration_seconds": 15.0,
+    "preview_dimensions": [
+      1920,
+      1080
+    ],
+    "source_dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "has_audio": true,
+    "source_filename": "Kite-Pocket-World-v4.mp4",
+    "source_sha256": "86b816d476855543d6dbbdc5db4fe04f39a12f956d7557faff31ff347e20e4a7",
+    "preview_sha256": "81e5dcb79265d5f47df2d2651b47031864b624872868e1eff66d0849f6f7a90b",
+    "preview_bytes": 4827140,
+    "encoding": "H.264 CRF20, AAC192k when audio present; content/timing preserved, optimized web preview."
+  },
+  {
+    "id": "whiteboard",
+    "title": "Whiteboard Loop",
+    "preview": "media/videos/whiteboard.mp4",
+    "poster": "media/posters/whiteboard.jpg",
+    "duration_seconds": 12.0,
+    "preview_dimensions": [
+      1920,
+      1080
+    ],
+    "source_dimensions": [
+      3840,
+      2160
+    ],
+    "fps": 30,
+    "has_audio": false,
+    "source_filename": "Whiteboard-Loop-v1.mp4",
+    "source_sha256": "9c41a89a4a4a0855632db34fa16f424bf76fdc5f9b9f8e423ebec3feaa534267",
+    "preview_sha256": "2ba8ca98668012bee3390c65a516139f2d8dc7530da43c976eb3aa1c1a16dc95",
+    "preview_bytes": 2674708,
+    "encoding": "H.264 CRF20, AAC192k when audio present; content/timing preserved, optimized web preview."
+  }
+]

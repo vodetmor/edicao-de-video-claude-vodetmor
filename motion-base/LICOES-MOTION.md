@@ -329,3 +329,18 @@ Código: `anuncio-vslplay/trabalho/fonte` (`src/FoldIcon.tsx`, `src/scenes/Openi
 - Texto que cresce em etapas: monte a caixa já com todas as linhas e revele linha por linha (FadeIn); Transform entre Text diferentes embaralha as letras no meio.
 - Voz de WhatsApp: resemble-enhance (CPU ~27 min para 5 min de voz) dá brilho mas troca sílabas. Melhor híbrido: original abaixo de 7 kHz + restaurada acima. Conferir sempre re-transcrevendo os trechos.
 - Loop: comparar o último quadro com o quadro 0 por PSNR (>40 dB = idêntico) depois de re-renderizar as duas cenas.
+
+## Chase AI: vídeo em JavaScript e desenho animado por código (07/10/2026)
+Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MIT da skill `animate` em fontes/chase-ai/repos/).
+- Vídeo = função do tempo; o mesmo t dá o mesmo quadro. Por isso o Claude confere qualquer quadro sozinho. Nunca `Math.random` nem relógio: aleatoriedade com semente.
+- Esforço não salva prompt ruim: no teste dele, low e high ficaram bons e ultracode (8 h) só um pouco melhor. O que mais rende é pedir storyboard antes de codar.
+- Toda encomenda de vídeo em código diz: duração e tipo, formato, a ordem (voz/trilha primeiro e visual casando, ou o contrário) e "antes de terminar, tire contact sheet, conserte, renderize e repita".
+- Cara de desenho animado: traço redesenhado com tremor diferente a cada 2 quadros ("ferve em 2s", 24 fps), câmera e movimentos também em 2s, textura do meio visível no celular (papel rasgado, hachura, retícula, grafite), herói pequeno com rosto do início ao fim, vida no fundo mesmo parado. Motion blur só em estilo liso; desenho em 2s fica nítido de propósito.
+- Transição "morph de forma": o mundo fecha numa janela no formato de um objeto, o objeto vira o equivalente do mundo novo e o mundo novo abre dele. 1,2 s cada; no máximo 3 em vídeo < 30 s; objeto ≥ 200 px na passagem; morph sobre o papel em branco, nunca mistura de duas cores de fundo.
+- Gramática: uma constante que o olho segura; uma cor = uma coisa; silêncio (0,5 a 4 s) antes da virada e a pancada mais alta nela; o trecho mais denso vem antes do silêncio; o fim é o começo mudado; um dispositivo que se diz numa frase, revelado em 80 a 95%.
+- Com voz, a voz é o relógio: batida começa ~0,3 s depois do fim da frase; pancada da virada na pausa antes da frase que a nomeia; ≤ 3,5 palavras/s.
+- Algo novo a cada 2 a 4 s; "rápido" é passo de um mesmo movimento, não muitos cortes. Grade 24 fps + 120 BPM (colcheia = 6 quadros).
+- Cadência (vinhetas AE dele): começar já em movimento; sobrepor passagens 6 a 10 quadros a 30 fps; uma ação dominante por vez; saída rápida e chegada suave; um fio de continuidade que muda de forma (cursor → borda → alças → agulha → sublinhado).
+- Storyboard bom tem em cada painel: tempo, título, o som daquela batida e a transição para a próxima. Aprovação em 3 degraus: história em tabela → 2 a 4 quadros de estilo → storyboard completo.
+- Revisão por medição, não por olho: texto cortado/sobreposto/fora da área segura (9:16: x 60 a 940, y 250 a 1500), trechos mortos, janela mais alta e silêncio antes, LUFS, tira de 1 quadro/s a 360 px para ver como no celular.
+- Confiança: regras lidas no código e no vídeo dele, ainda não testadas no nosso motor. Referência de nível: Kevin Ngo (X @kevin_t_ngo).
