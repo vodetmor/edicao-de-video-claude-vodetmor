@@ -37,7 +37,8 @@ MAPA = [
     ("vinheta-life", "outros/vinheta-life"),
     ("motion-demo", "laboratorio/motion-demo"),
     # o "cérebro" (mantido em backup/kit)
-    ("backup/kit/CLAUDE.md", "CLAUDE.md"), ("backup/kit/LEIA-ME.md", "LEIA-ME.md"),
+    ("backup/kit/CLAUDE.md", "CLAUDE.md"), ("backup/kit/LEIA-ME.md", "LEIA-ME.md"), ("backup/kit/MIGRACAO.md", "MIGRACAO.md"),
+    ("backup/kit/COMO-TRABALHAR-COM-O-VITOR.md", "COMO-TRABALHAR-COM-O-VITOR.md"),
     ("backup/kit/gitignore", ".gitignore"), ("backup/kit/skills", ".claude/skills"),
     ("backup/kit/memoria", "memoria"), ("backup/kit/historico", "historico"),
     ("backup/sincronizar.py", "backup/sincronizar.py"), ("backup/juntar_partes.py", "backup/juntar_partes.py"),
