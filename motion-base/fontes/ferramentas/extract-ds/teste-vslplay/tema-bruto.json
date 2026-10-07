@@ -1,0 +1,253 @@
+{
+  "titulo": "VSLPLAY - Player de VSL com cliques e banda ilimitados",
+  "fundos": [
+    {
+      "valor": "rgb(0, 12, 57)",
+      "peso": 2359395
+    },
+    {
+      "valor": "rgb(255, 255, 255)",
+      "peso": 1898010
+    },
+    {
+      "valor": "rgb(30, 41, 82)",
+      "peso": 533385
+    },
+    {
+      "valor": "rgb(25, 37, 84)",
+      "peso": 84500
+    },
+    {
+      "valor": "rgb(93, 108, 249)",
+      "peso": 77276
+    },
+    {
+      "valor": "rgb(239, 239, 239)",
+      "peso": 52460
+    },
+    {
+      "valor": "rgb(42, 54, 101)",
+      "peso": 40747
+    },
+    {
+      "valor": "rgb(224, 77, 242)",
+      "peso": 14282
+    }
+  ],
+  "textos": [
+    {
+      "valor": "rgb(42, 54, 101)",
+      "peso": 2101
+    },
+    {
+      "valor": "rgb(213, 213, 213)",
+      "peso": 1371
+    },
+    {
+      "valor": "rgb(255, 255, 255)",
+      "peso": 1217
+    },
+    {
+      "valor": "rgb(200, 212, 255)",
+      "peso": 724
+    },
+    {
+      "valor": "rgb(239, 239, 239)",
+      "peso": 582
+    },
+    {
+      "valor": "rgb(175, 175, 175)",
+      "peso": 155
+    },
+    {
+      "valor": "rgb(71, 89, 249)",
+      "peso": 91
+    },
+    {
+      "valor": "rgb(156, 169, 255)",
+      "peso": 75
+    }
+  ],
+  "bordas": [
+    {
+      "valor": "rgb(93, 108, 249)",
+      "peso": 5121
+    },
+    {
+      "valor": "rgb(175, 175, 175)",
+      "peso": 1440
+    },
+    {
+      "valor": "rgb(119, 80, 231)",
+      "peso": 1002
+    },
+    {
+      "valor": "rgba(255, 214, 138, 0.55)",
+      "peso": 828
+    },
+    {
+      "valor": "rgba(64, 90, 170, 0.8)",
+      "peso": 535
+    }
+  ],
+  "fontesTitulo": [
+    {
+      "valor": "Roboto 700",
+      "peso": 272
+    },
+    {
+      "valor": "Roboto 600",
+      "peso": 106
+    },
+    {
+      "valor": "Tahoma 900",
+      "peso": 14
+    }
+  ],
+  "fontesTexto": [
+    {
+      "valor": "Roboto 400",
+      "peso": 4058
+    },
+    {
+      "valor": "Tahoma 300",
+      "peso": 715
+    },
+    {
+      "valor": "Roboto 300",
+      "peso": 696
+    },
+    {
+      "valor": "Roboto 900",
+      "peso": 196
+    },
+    {
+      "valor": "Roboto 600",
+      "peso": 139
+    }
+  ],
+  "tamanhos": [
+    {
+      "valor": "18px",
+      "peso": 2694
+    },
+    {
+      "valor": "16px",
+      "peso": 2064
+    },
+    {
+      "valor": "14px",
+      "peso": 796
+    },
+    {
+      "valor": "12px",
+      "peso": 242
+    },
+    {
+      "valor": "51px",
+      "peso": 231
+    },
+    {
+      "valor": "11px",
+      "peso": 141
+    },
+    {
+      "valor": "15px",
+      "peso": 105
+    },
+    {
+      "valor": "22px",
+      "peso": 91
+    },
+    {
+      "valor": "23px",
+      "peso": 46
+    },
+    {
+      "valor": "48px",
+      "peso": 41
+    }
+  ],
+  "raios": [
+    {
+      "valor": "999px",
+      "peso": 52
+    },
+    {
+      "valor": "10px",
+      "peso": 37
+    },
+    {
+      "valor": "100px",
+      "peso": 11
+    },
+    {
+      "valor": "5px",
+      "peso": 7
+    },
+    {
+      "valor": "10%",
+      "peso": 3
+    },
+    {
+      "valor": "16px",
+      "peso": 2
+    }
+  ],
+  "sombras": [
+    {
+      "valor": "rgba(74, 222, 128, 0.3) 0px 0px 10px 0px",
+      "peso": 34
+    },
+    {
+      "valor": "rgba(255, 214, 138, 0.25) 0px 0px 0px 1px, rgba(0, 0, 0, 0.3) 0px 10px 22px 0px, rgba(255, 184, 77, 0.28) 0px 0px 26px 0px",
+      "peso": 9
+    },
+    {
+      "valor": "rgba(160, 175, 255, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0.22) 0px 10px 24px 0px, rgba(160, 175, 255, 0.1) 0px 0px 20px 0px",
+      "peso": 3
+    },
+    {
+      "valor": "rgba(0, 0, 0, 0.5) 0px 0px 10px 0px",
+      "peso": 1
+    }
+  ],
+  "botoes": [
+    {
+      "valor": "rgb(93, 108, 249) | texto rgb(255, 255, 255) | raio 10px | 900 16px",
+      "peso": 7
+    },
+    {
+      "valor": "rgb(239, 239, 239) | texto rgb(239, 239, 239) | raio 5px | 900 16px",
+      "peso": 5
+    },
+    {
+      "valor": "rgb(224, 77, 242) | texto rgb(239, 239, 239) | raio 10px | 900 16px",
+      "peso": 1
+    },
+    {
+      "valor": "rgb(37, 211, 102) | texto rgb(255, 255, 255) | raio 30px | 400 16px",
+      "peso": 1
+    }
+  ],
+  "variaveisCss": {
+    "--wp--preset--color--black": "#000000",
+    "--wp--preset--color--cyan-bluish-gray": "#abb8c3",
+    "--wp--preset--color--white": "#ffffff",
+    "--wp--preset--color--pale-pink": "#f78da7",
+    "--wp--preset--color--vivid-red": "#cf2e2e",
+    "--wp--preset--color--luminous-vivid-orange": "#ff6900",
+    "--wp--preset--color--luminous-vivid-amber": "#fcb900",
+    "--wp--preset--color--light-green-cyan": "#7bdcb5",
+    "--wp--preset--color--vivid-green-cyan": "#00d084",
+    "--wp--preset--color--pale-cyan-blue": "#8ed1fc",
+    "--wp--preset--color--vivid-cyan-blue": "#0693e3",
+    "--wp--preset--color--vivid-purple": "#9b51e0",
+    "--wp--preset--font-size--small": "13px",
+    "--wp--preset--font-size--medium": "20px",
+    "--wp--preset--font-size--large": "36px",
+    "--wp--preset--font-size--x-large": "42px"
+  },
+  "fonte": "https://www.vslplay.com/",
+  "medidoEm": "2026-10-07T22:16:31.770Z"
+}

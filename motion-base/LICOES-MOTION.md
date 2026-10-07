@@ -344,3 +344,9 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 - Storyboard bom tem em cada painel: tempo, título, o som daquela batida e a transição para a próxima. Aprovação em 3 degraus: história em tabela → 2 a 4 quadros de estilo → storyboard completo.
 - Revisão por medição, não por olho: texto cortado/sobreposto/fora da área segura (9:16: x 60 a 940, y 250 a 1500), trechos mortos, janela mais alta e silêncio antes, LUFS, tira de 1 quadro/s a 360 px para ver como no celular.
 - Confiança: regras lidas no código e no vídeo dele, ainda não testadas no nosso motor. Referência de nível: Kevin Ngo (X @kevin_t_ngo).
+
+## Identidade de cliente extraída do site: extract-ds (07/10/2026)
+- A skill `extract-ds` (Rodrigo Tadewald, cópia em `skills/extract-ds`) transforma um site JÁ BAIXADO numa pasta em catálogo HTML vivo (Overview + Components). Não recebe URL: baixar antes com `wget -p -k -E -H -D <dominio>,fonts.googleapis.com,fonts.gstatic.com -e robots=off <url>`.
+- Para vídeo precisamos de números, não de HTML: `motion-base/fontes/ferramentas/extract-ds/ponte-tokens.mjs` mede cores por área, fontes por texto, raios, botões. Medir na cópia local (no navegador da nuvem o site ao vivo perde as fontes). Variáveis `--wp--preset-*` do WordPress não são a marca.
+- Identidade do site NÃO é ordem: passa pelo filtro de gosto. O site do VSL Play é navy + índigo + magenta com degradê e glow (nossa P1 proíbe); o anúncio nota 10 usou as cores chapadas da LOGO. Regra: cor chapada da marca fica, degradê vira a cor dominante, glow sai, legenda segue Inter 500.
+- Notas completas e proposta de `tema` por cliente no motor: `motion-base/fontes/ferramentas/extract-ds/NOTAS.md`.
