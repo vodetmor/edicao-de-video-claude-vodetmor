@@ -1,6 +1,6 @@
 # Chase AI: vídeo em JavaScript com o Claude (estudo de 07/10/2026)
 
-Vídeo enviado pelo Vítor (TikTok @chase_ai_, 14 min). Transcrição: `transcricao-en.md` (original, com tempos) e `transcricao-pt.md` (tradução). Quadros que importam: `quadros/`. Código dele guardado em `repos/` (licença MIT nos três).
+Vídeo enviado pelo Vítor (TikTok @chase_ai_, 14 min). Transcrição: `transcricao-en.md` (original, com tempos) e `transcricao-pt.md` (tradução). Quadros que importam: `quadros/`. O vídeo original fica nos uploads do projeto (arquivo de 25 MB enviado em 07/10/2026). Código dele guardado em `repos/` (licença MIT nos três).
 
 ## Quem é
 - Chase ("Chase AI", Chase H). YouTube "Chase AI" (~163 mil), Instagram/TikTok chase.h.ai e @chase_ai_, X @chaseai__, site chaseai.io (blog com tutoriais de Claude Code). Vende curso (Chase AI+).
