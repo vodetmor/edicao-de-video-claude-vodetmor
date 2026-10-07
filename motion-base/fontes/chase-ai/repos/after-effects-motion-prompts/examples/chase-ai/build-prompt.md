@@ -1,0 +1,182 @@
+# Chase AI — build prompt
+
+The approved production prompt with its two attachment paths normalized for this repository. The cadence reference is linked to its original post; that creator video is not included. Attach `references/storyboard.png` and an accessible copy of the reference clip when available. The 10-second timing below supersedes the storyboard’s older printed timings.
+
+```text
+Create a polished, editable Chase AI workflow animation in Adobe After Effects using the installed Higgsfield After Effects integration.
+
+The film should demonstrate its own creation process:
+idea → storyboard → prepared pieces → animation → revision → finished result.
+
+FORMAT
+10 seconds exactly, 1920×1080, 30 fps.
+Build and render the animation locally in After Effects.
+
+REFERENCES
+Use:
+• https://x.com/madmadhere/status/2098498233035305427 — motion and cadence reference.
+• references/storyboard.png — visual direction.
+
+The reference video contains a whiteboard animation above software and chat panels. Study the animation itself. Do not reproduce the surrounding demonstration interface, Higgsfield branding, or original whiteboard content.
+
+Match its approximate rhythm: immediate activity, connected close-ups, brisk travel with smooth arrivals, overlapping reveals, a wider payoff, and a quick exit.
+
+The Chase AI storyboard shows an earlier 18-second plan. Ignore its timestamps. Follow the 10-second sequence below.
+
+CREATIVE DIRECTION
+Make this feel like one continuous graphic world being constructed and directed in front of the viewer.
+
+Use oversized condensed typography, confident compositions, shallow dimensional depth, crisp edges, and controlled shadows.
+
+Proposed palette:
+• Charcoal: #101116
+• Warm white: #F6F4EB
+• Electric lime: #CEFF42
+• Cobalt: #3257F4
+• Coral accent: #FF745E
+
+Use CHASE AI as a plain typographic wordmark. Do not invent a logo symbol.
+
+The recurring composition contains:
+• White “MAKE IT MOVE” typography.
+• A cobalt rectangle.
+• A lime arc.
+• A coral dot.
+
+Reuse these same elements throughout. Their identities should remain recognizable as they appear in storyboard poses, separate into editable parts, animate in a preview, and receive an edit.
+
+CONTINUITY DEVICE
+A lime cursor carries the sequence:
+typing caret → storyboard border → selection handles → timeline playhead → brand underline.
+
+Make each transformation visually understandable. The viewer should be able to follow how one action causes the next.
+
+MOTION LANGUAGE
+Prioritize the continuous energy of the whiteboard reference.
+
+Begin with motion already happening. Start the next action before the previous action has completely settled. Use overlapping text reveals, purposeful cursor movement, staggered object arrivals, and camera travel through the same workspace.
+
+Use fast departures and smooth deceleration into readable destinations. As a starting point, overlap major handoffs by approximately 6–10 frames, then tune through playback.
+
+Maintain one dominant action at a time. Let important words briefly settle while a related secondary action keeps the scene alive.
+
+Avoid long static pauses, six independent slide entrances, arbitrary wobble, constant camera drift, or every element moving simultaneously. Preserve sharp text at reading moments and use motion blur during fast travel.
+
+TIMED SEQUENCE
+
+0.0–1.0 SECONDS — THE IDEA
+Begin close to a prompt strip as “Make it move.” finishes typing.
+
+Large copy:
+“Think it.”
+
+The lime caret immediately stretches into the leading edge of a storyboard frame. Follow it with the camera. Do not finish the opening and then pause before moving on.
+
+1.0–2.5 SECONDS — SEE THE SEQUENCE
+The frame opens into a connected strip of three storyboard poses showing the same MAKE IT MOVE design.
+
+Large copy:
+“See it.”
+
+Reveal the tiles with a short stagger. Emphasize the center tile with the lime border while the neighboring tiles remain secondary.
+
+As the center tile becomes readable, its border begins changing into selection handles. The next transformation should already be starting before the surrounding tiles finish settling.
+
+2.5–4.5 SECONDS — PREPARE AND ASSEMBLE
+Follow the selected tile laterally as the typography, cobalt rectangle, lime arc, and coral dot separate into shallow layers.
+
+Show these as prepared, independently editable pieces. Use a brief assembly gesture to communicate reconstruction; do not imply that a flattened storyboard image automatically contains recoverable layers.
+
+The pieces retain their relationship and assemble into a preview composition. Selection handles descend into timeline tracks below it.
+
+Bend the camera movement downward to follow this transformation. The timeline should emerge from the pieces rather than arrive as an unrelated screen.
+
+Keep this beat primarily visual. Do not add explanatory paragraphs or another large headline.
+
+4.5–6.8 SECONDS — ANIMATE AND DIRECT
+The lime edge becomes a playhead and moves across a simplified timeline. Its movement drives the MAKE IT MOVE preview above it.
+
+Large copy:
+“Make it move.”
+
+Small contextual label:
+“AFTER EFFECTS”
+
+Show one clear animated action: the arc turns, the dot lands, and the typography arrives with a controlled settle.
+
+A coral direction tag appears:
+“Punchier.”
+
+The cursor selects a small group of keyframes and moves them closer together. MOVE increases in scale. Briefly reset the playhead and replay the same action with visibly tighter timing and a stronger, controlled overshoot.
+
+As the revision occurs, replace the large headline with:
+“Dial it in.”
+
+Keep the preview in the same focal area so the viewer understands that the existing animation has been edited.
+
+6.8–9.0 SECONDS — REVEAL THE WHOLE PROCESS
+Pull back to reveal the storyboard, prepared pieces, and timeline as connected parts of one workspace.
+
+The components guide attention toward the brand composition as they finish their actions and begin clearing.
+
+Resolve the wordmark by approximately 7.8 seconds:
+“CHASE AI”
+
+Reveal the supporting line by approximately 8.0 seconds:
+“Your idea. In motion.”
+
+The lime playhead becomes the underline. Its drawing motion and the remaining purposeful object exits keep the frame active while the brand copy is readable.
+
+Omit file-format tabs and additional instructional labels.
+
+9.0–10.0 SECONDS — FINISH WITH MOMENTUM
+The remaining shapes sweep away along the lime line.
+
+Keep the brand readable until approximately 9.5 seconds, then complete a short cursor-led wipe suitable for handing back to tutorial footage.
+
+Finish cleanly at 10 seconds. Do not append a frozen end card or extra black frames.
+
+SOUND
+Include clearly audible instrumental background music from the start: a brisk groove with warm bass, dry percussion, and restrained synth accents.
+
+Add selective synchronized effects for:
+• The typing/caret transformation.
+• Storyboard settling.
+• Pieces separating and tracks forming.
+• The “Punchier.” direction.
+• The revised movement.
+• The final underline and wipe.
+
+Use sound to emphasize the main actions. Avoid a whoosh on every movement. Let the music remain present, with brief dips for important foreground cues.
+
+No narration. Deliver separate music and effects stems. Use original synthesis or appropriately licensed available audio, and record its source.
+
+AFTER EFFECTS CONSTRUCTION
+Inspect the current project and preserve existing work. Save this as a separate Chase AI project.
+
+Build typography, graphic shapes, borders, selection handles, timeline tracks, keyframes, and cursor elements with native editable AE text and shapes.
+
+Reuse a shared MAKE IT MOVE composition wherever possible so the storyboard, preview, and revision remain consistent.
+
+Keep camera movement separate from local object animation. Use parented layers and controlled shallow perspective to maintain spatial continuity.
+
+Organize the project with clear composition and layer names. Keep copy and colors straightforward to change. Do not flatten the storyboard image into the finished video.
+
+VERIFICATION AND DELIVERY
+First render a complete 10-second motion pass with simple native shapes and live typography.
+
+Compare its pacing with the whiteboard reference at normal playback speed. Check the speed of travel, short reading settles, overlapping actions, connected framing, and final pullback.
+
+Fix dead pauses, crowded beats, unclear transformations, or unreadable copy before adding final surface and sound polish. Continue through the finished render.
+
+Inspect the complete final video, including transitions and the ending. Check for clipping, missing assets, expression errors, blank frames, and audio truncation.
+
+Deliver:
+• The editable After Effects project.
+• A 10-second MP4.
+• Any required assets.
+• Separate music and effects stems.
+• Brief editing notes.
+
+The success criterion is a clear workflow with the reference’s sense of momentum—not merely attractive individual frames.
+```

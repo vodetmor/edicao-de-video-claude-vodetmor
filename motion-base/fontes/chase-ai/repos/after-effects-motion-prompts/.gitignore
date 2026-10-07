@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.log
+*.aep
+*.aepx
+*.zip
+.env
+.env.*
