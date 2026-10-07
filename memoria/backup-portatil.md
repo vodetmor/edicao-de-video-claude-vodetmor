@@ -14,3 +14,5 @@ Vítor (2026-10-02, reaffirmed 2026-10-04) expects to lose this claude.ai accoun
 **How to apply:** after any delivery or milestone, run sincronizar.py and mention nothing unless it fails. A daily routine also runs it. Related: [[estudio-motor]].
 
 PC auto-update ACTIVE (2026-10-05): Windows scheduled task "Backup Maquina de Editar" (daily 23:55 + at logon, user-level, hidden) runs Maquina de Editar\atualizar-backup-github.ps1 (git pull --ff-only + juntar_partes, never pushes), log atualizar-backup-github.log. sincronizar.py now skips paths the repo .gitignore ignores (e.g. trabalho/renders).
+
+MIGRATION KIT (2026-10-07, Vítor fears account loss soon): repo root has MIGRACAO.md (step by step: new claude.ai project or Claude Code on PC, project-instructions text to paste, keys to recreate) and COMO-TRABALHAR-COM-O-VITOR.md (all his conversation/work rules in one file; keep it updated when a new feedback-* memory is written). historico/ has all 35 threads + timeline (INDICE.md); refresh by fetching threads to scratchpad and running backup/exportar_historico.py.
