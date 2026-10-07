@@ -33,9 +33,7 @@ def corpo(m):
             return b
         if d.get("kind") in ("status", "activity", "thread_session", "remote_control_session", "error"):
             return None  # ruído operacional
-        rasc = (d.get("input") or {}).get("body") if isinstance(d.get("input"), dict) else None
-        texto = d.get("text", b)
-        return f"{texto}\n\n{rasc}" if rasc else texto
+        return d.get("text", b)
     return b
 
 def main():
