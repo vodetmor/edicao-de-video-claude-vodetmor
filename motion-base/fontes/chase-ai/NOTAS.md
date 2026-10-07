@@ -1,6 +1,6 @@
 # Chase AI: vídeo em JavaScript com o Claude (estudo de 07/10/2026)
 
-Vídeo enviado pelo Vítor (TikTok @chase_ai_, 14 min). Transcrição: `transcricao-en.md` (original, com tempos) e `transcricao-pt.md` (tradução). Quadros que importam: `frames/`. Código dele guardado em `repos/` (licença MIT nos três).
+Vídeo enviado pelo Vítor (TikTok @chase_ai_, 14 min). Transcrição: `transcricao-en.md` (original, com tempos) e `transcricao-pt.md` (tradução). Quadros que importam: `quadros/`. Código dele guardado em `repos/` (licença MIT nos três).
 
 ## Quem é
 - Chase ("Chase AI", Chase H). YouTube "Chase AI" (~163 mil), Instagram/TikTok chase.h.ai e @chase_ai_, X @chaseai__, site chaseai.io (blog com tutoriais de Claude Code). Vende curso (Chase AI+).
@@ -18,16 +18,16 @@ Para nós isso não é novidade de motor: o Remotion já funciona assim, e o nos
 
 ## Os 4 níveis que ele ensina
 1. **Prompt.** Teste dele: o mesmo pedido de showreel em esforço low (~20 min), high (~30 min) e ultracode (8 h). Low e high ficaram bons; ultracode foi o melhor. Lição: se o vídeo está ruim, quase sempre é o prompt, não o esforço. O que mais melhora: **pedir storyboard antes de codar** (quadros de cada batida), para não cair no laço de horas refazendo vídeo inteiro.
-2. **O laço de conferência.** O prompt de 4 linhas (quadro `frames/prompt-nivel2-5-linhas.png`):
+2. **O laço de conferência.** O prompt de 4 linhas (quadro `quadros/prompt-nivel2-5-linhas.png`):
    > Make a 30-second animated explainer of how [TOPIC] works, 16:9. Build it in JavaScript on a canvas, with a soundtrack generated in code, and render it to an MP4 with Playwright and FFmpeg.
    > (opcional) Here's my voice-over: voice.mp3. Time the visuals to it: get word timestamps with Whisper and land each change on the words.
    > Before you call it done, use FFmpeg to pull a contact sheet, look at it, fix what's wrong, re-render, and repeat.
    Ordem a decidir sempre: visual primeiro e som depois, ou som (voz/trilha) primeiro e o visual casando com ele. No narrado ele deu a voz primeiro.
-3. **Referências.** Imagem ("insira esta" ou "copie a estética") ou vídeo ("use a composição deste, com o nosso conteúdo"). Exemplo: um vídeo de história da moeda (Opus 5.5 + Remotion) virou história da eletricidade em JavaScript, mesma família visual, conteúdo outro (`frames/referencia-vs-recriacao.png`).
+3. **Referências.** Imagem ("insira esta" ou "copie a estética") ou vídeo ("use a composição deste, com o nosso conteúdo"). Exemplo: um vídeo de história da moeda (Opus 5.5 + Remotion) virou história da eletricidade em JavaScript, mesma família visual, conteúdo outro (`quadros/referencia-vs-recriacao.png`).
 4. **Skill.** O processo virou a skill `animate`, que conduz tudo.
 
 ## A skill `animate` por dentro (o que vale copiar)
-Etapas com aprovação barata antes de gastar tempo animando (`frames/animate-fluxo-etapas.png`):
+Etapas com aprovação barata antes de gastar tempo animando (`quadros/animate-fluxo-etapas.png`):
 | etapa | o que mostra | quem decide |
 |---|---|---|
 | 0 Entrevista | perguntas (assunto, formatos, voz, visual, herói, música, produto) + galeria de estilos | respostas ou referências |
@@ -37,7 +37,7 @@ Etapas com aprovação barata antes de gastar tempo animando (`frames/animate-fl
 | 4 Construção | anima os painéis aprovados, renderiza, revisa | - |
 | 5 Entrega | vídeo + checagens medidas (cortes na grade, arco da história, loudness, herói ancorado, maior pancada depois do silêncio, ritmo da narração) | notas viram uma rodada |
 
-É o nosso portão de quadros-chave, só que mais fino: separa "história" (texto, barato), "visual" (2 a 4 quadros) e "storyboard" (todos). E o painel do storyboard dele traz 4 campos que o nosso PDF não tem sempre: **tempo, título, som daquela batida e a transição para a próxima** (`frames/storyboard-skill-animate.png`).
+É o nosso portão de quadros-chave, só que mais fino: separa "história" (texto, barato), "visual" (2 a 4 quadros) e "storyboard" (todos). E o painel do storyboard dele traz 4 campos que o nosso PDF não tem sempre: **tempo, título, som daquela batida e a transição para a próxima** (`quadros/storyboard-skill-animate.png`).
 
 ### Como sai o "desenho animado"
 - Tudo num `<canvas>` 2D, sem imagem nem vídeo externo, aleatoriedade com semente (nunca `Math.random`): o mesmo quadro sai sempre igual.
