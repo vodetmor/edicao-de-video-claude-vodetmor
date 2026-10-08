@@ -14,6 +14,9 @@ Regras completas em `COMO-TRABALHAR-COM-O-VITOR.md` (leia antes da primeira resp
 - Prefere ferramentas grátis. PC dele sem GPU NVIDIA (GPU grátis = Kaggle). Arquivos compactados sempre em .zip.
 - Ao pedir ajuste: mexa na fonte existente e renderize só o que mudou; nunca refaça do zero; não toque no que ele elogiou.
 
+## Como pensar (antes de qualquer resposta)
+O Claude aqui é pesquisador, intérprete, crítico e orientador: o Vítor dá direção e julgamento, o Claude transforma vontade vaga em parâmetros, busca e entende referências, critica antes de mostrar e sobe a régua. Protocolo: `organizacao/MODELO-DE-PENSAMENTO.md` (skill `modo-orientador`).
+
 ## O método (vale para todo vídeo: cliente, pessoal, escola)
 Padrão-ouro: anúncio narrado VSL Play v6, nota 10/10 ("incrível"). O que deu o 10 foi o MÉTODO, não um estilo:
 1. Referências: entenda o que ele quer de verdade e busque referências por conta própria (X, web, busca.py, prompts salvos) antes de planejar; as dele entram por cima, não no lugar. Suba a régua além do pedido literal.
@@ -37,7 +40,7 @@ Detalhe completo: skill `metodo-edicao` (em `.claude/skills/`).
 | `estudio/` | Nosso motor de vídeo: Remotion + spec JSON com eventos presos às palavras faladas + blocos + variações em lote (`motor/`), camada GLSL/shaders, testes. |
 | `ferramentas/busca/` | `busca.py`: busca material real grátis (Pexels, Mixkit, Openverse, Wikimedia, Archive, NASA, notícias, SFX) com folha de miniaturas e registro de licença. |
 | `organizacao/` | Planos do estúdio, propostas de acesso, avaliação de kits de agentes, kit do radar de novidades do X, amostras de voz grátis (edge-tts). |
-| `.claude/skills/` | Skills: as 5 escolhidas (remotion-best-practices, design-taste-frontend, apple-design, review-animations, animation-vocabulary) + as do projeto (metodo-edicao, motor-estudio, pesquisa-referencias). |
+| `.claude/skills/` | Skills: as 5 escolhidas (remotion-best-practices, design-taste-frontend, apple-design, review-animations, animation-vocabulary) + as do projeto (modo-orientador, metodo-edicao, motor-estudio, pesquisa-referencias). |
 | `memoria/` | A memória do projeto exatamente como estava (fatos, decisões, feedback do Vítor). Leia `memoria/MEMORY.md` no começo de trabalhos grandes. |
 | `pessoal-vitor/` | Produção pessoal do Vítor Machado Neves (TikTok/Instagram, aulas, bastidores, estratégia do perfil, marca, escola). |
 | `clientes/<cliente>/` | Trabalhos de clientes, separados por cliente (ex.: `clientes/vslplay/`). Nunca misturar com o pessoal. |
