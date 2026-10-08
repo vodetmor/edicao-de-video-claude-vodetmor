@@ -35,7 +35,10 @@ $FC export t.mp4 --project t.fcproj --settings '{"burnCaptions":true}'
 # MCP (Claude Code): claude mcp add effectcraft -- ~/craft/bin/effectcraft-cli mcp
 ```
 
-## Próximo passo
+## DECISÃO 08/10/2026 19:21 UTC
+Vítor achou o visual horrível: "remotion + javascript é muito melhor". Bloco `Craft` NÃO será feito. Pasta fica só como registro e utilitário (VectorCraft .ai→SVG, FilmCraft FCPXML).
+
+## Próximo passo (cancelado)
 - Esperar o Vítor decidir o uso. Proposta: bloco `Craft` no motor (spec aponta para um `.jsx`/`.ecproj` e o motor
   renderiza ProRes 4444 ou Lottie e encaixa na palavra falada) para o que o Remotion não faz bem: 3D com luz e
   sombra, partículas, Fractal Noise, tracking, keying/roto, expressões do AE vindas de tutoriais.
