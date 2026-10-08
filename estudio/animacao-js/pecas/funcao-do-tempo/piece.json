@@ -1,0 +1,8 @@
+{
+  "name": "funcao-do-tempo",
+  "title": "Um vídeo é uma função do tempo",
+  "format": { "width": 1080, "height": 1920, "fps": 24, "bpm": 120, "duration": 21.0, "frames": 504 },
+  "storyFormat": "morph chain (4 worlds, 2 shape morphs, 1 hard cut on the payoff)",
+  "style": "sketchbook",
+  "review": { "safe": { "top": 240, "bottom": 420, "right": 140 }, "refs": {} }
+}

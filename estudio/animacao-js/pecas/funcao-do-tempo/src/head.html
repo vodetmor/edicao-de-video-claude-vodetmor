@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Um vídeo é uma função do tempo</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1d1a17; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  UM VÍDEO É UMA FUNÇÃO DO TEMPO — 9:16, 21s @ 120 BPM, 24fps, estilo caderno.
+//  Tema e método do vídeo do Chase AI (07/10/2026): o Claude não filma, escreve f(t) -> um desenho;
+//  60 desenhos por segundo viram vídeo; ele confere cada quadro antes de entregar.
+//  Dispositivo numa frase: a bolinha (herói) é desenhada quadro a quadro e, no fim, ganha vida.
+//  Mundos: câmera riscada -> cronômetro f(t) -> folha de contato (confere) -> o vídeo vivo.
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = 21.0;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Caveat", "Kalam", cursive';
+const CX = 540;
+
+const ERA_LIST = [[0, 4.5, () => sceneCamera()], [4.5, 9.5, () => sceneRelogio()], [9.5, 15.5, () => sceneConfere()], [15.5, 21.0, () => sceneVivo()]];
+const SHOTS = [
+  ['camera', 0, 0.0, 4.5, 'uma câmera é desenhada e riscada: sem filmar nada'],
+  ['relogio', 1, 4.5, 9.5, 'um cronômetro marca t; cada tempo vira um cartão com um desenho'],
+  ['confere', 2, 9.5, 15.5, 'folha de contato: confere quadro a quadro, um errado é apagado e refeito; silêncio'],
+  ['vivo', 3, 15.5, 21.0, 'o herói ganha vida e pula pela página; filme passando atrás; volta ao início'],
+];
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'morph-chain',
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: [15.5],
+  morphs: [4.5, 9.5],
+  cues: {
+    camDraw: 0.5, camInk: 1.5, camFill: 1.9, cross: 2.5, wow: 3.0,
+    card0: 6.0, card1: 6.5, card2: 7.0, card3: 7.5,
+    grid: 9.75, checks: 11.25, wrong: 12.5, erase: 12.75, redraw: 13.5, fixed: 14.0, silence: 15.0,
+    payoff: 15.5, hops: 16.0, home: 19.5,
+  },
+  acts: [
+    { name: '1 Sem câmera', role: 'build', t0: 0.0, t1: 4.5 },
+    { name: '2 f(t)', role: 'journey', t0: 4.5, t1: 9.5 },
+    { name: '3 Confere', role: 'peak', t0: 9.5, t1: 15.0 },
+    { name: '4 Silêncio', role: 'silence', t0: 15.0, t1: 15.5 },
+    { name: '5 Vivo', role: 'gift', t0: 15.5, t1: 19.5 },
+    { name: '6 Volta', role: 'goodbye', t0: 19.5, t1: 21.0 },
+  ],
+  board: [
+    { t: 1.75, title: 'uma câmera é desenhada', sound: 'lápis raspando em semicolcheias', next: 'é riscada de vermelho' },
+    { t: 3.5, title: 'riscada: sem filmar nada', sound: 'baque no X, plim no "!"', next: 'a lente vira o cronômetro (morph)' },
+    { t: 7.75, title: 'f(t): cada t vira um desenho', sound: 'tique no tempo, uma nota a cada cartão', next: 'o 4º cartão vira a folha (morph)' },
+    { t: 11.75, title: 'confere quadro a quadro', sound: 'tiques rápidos, notas subindo', next: 'um quadro está errado' },
+    { t: 13.25, title: 'o errado é apagado', sound: 'zumbido baixo, borracha', next: 'refeito, conferido; silêncio' },
+    { t: 15.25, title: 'silêncio: tudo pronto', sound: 'nada (só o ar)', next: 'CORTE seco na batida mais forte' },
+    { t: 16.75, title: 'vira vídeo', sound: 'a pancada mais alta, depois acorde cheio', next: 'o herói pula pela página' },
+    { t: 20.5, title: 'volta ao começo, mudado', sound: 'acorde aberto que se apaga', next: 'loop' },
+  ],
+  narration: [],
+};
+window.TIMELINE = TIMELINE;
