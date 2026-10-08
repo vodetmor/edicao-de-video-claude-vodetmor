@@ -9,4 +9,5 @@ Vítor sent an X post (2026-10-06) claiming Adobe apps were recreated in Rust wi
 - FilmCraft (Premiere): JSONL edits, burned captions, exports FCPXML/Premiere XML/OTIO/EDL.
 - VectorCraft: .ai/.pdf/.eps -> SVG (client logos).
 - Install: estudio/craft/instalar.sh (release binaries + SHA256, 30 s; building takes 13 min). State: estudio/craft/ESTADO.md; notes motion-base/fontes/ferramentas/storytold/NOTAS.md.
-**How to apply:** use as a parts supplier for Remotion (3D, particles, tracking, keying, AE expressions), never as the main engine or final master; pin the app version per job. Awaiting Vítor's OK to build a `Craft` block in the motor. Related: [[estudio-motor]], [[motion-base-knowledge]].
+**Vítor's verdict 2026-10-08 19:21 UTC:** "horrível, remotion + javascript é muito melhor; só o remotion sola isso aí". EffectCraft REJECTED for motion; no Craft block in the motor.
+**How to apply:** motion stays pure Remotion + JS. Only utility uses remain if asked: VectorCraft .ai/.eps -> SVG for client logos, FilmCraft FCPXML export. Before pitching any new motion tool, show one frame side by side with ours instead of just saying it works. Related: [[estudio-motor]], [[motion-base-knowledge]].
