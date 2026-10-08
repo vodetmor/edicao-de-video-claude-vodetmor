@@ -353,7 +353,8 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 
 ## After Effects por código: EffectCraft/FilmCraft (storytold, 08/10/2026)
 - Existe um "After Effects" e um "Premiere" de código aberto em Rust que rodam sem tela na nuvem e aceitam script JS no modelo do AE (`comp.layers.addText`, `setValueAtTime`, expressões). Instalar: `bash estudio/craft/instalar.sh` (binário oficial + SHA256, 30 s). Notas: `motion-base/fontes/ferramentas/storytold/NOTAS.md`.
-- Papel: fornecedor de peças para o Remotion, nunca o motor principal. Usar quando o Remotion sofre: 3D com luz e sombra, partículas, Fractal Noise, tracking, keying/roto, receita de expressão do AE vinda de tutorial/X.
+- **Vítor (08/10, 19:21 UTC): "horrível, Remotion + JavaScript é muito melhor; só o Remotion sola isso aí". Não usar EffectCraft em motion. Lição: app que imita o After Effects não traz o gosto; o 10/10 vem do nosso método no Remotion. Antes de propor ferramenta nova de motion, mostrar UM quadro comparado lado a lado com o nosso, não só dizer que funciona.**
+- (Proposta anterior, descartada) Papel: fornecedor de peças para o Remotion, nunca o motor principal. Usar quando o Remotion sofre: 3D com luz e sombra, partículas, Fractal Noise, tracking, keying/roto, receita de expressão do AE vinda de tutorial/X.
 - Entrega da peça ao motor: ProRes 4444 com alfa (`render --format prores --prores 4444 --channels rgba`) em `<OffthreadVideo transparent>`, ou Lottie em `@remotion/lottie`. Os dois saíram idênticos no teste.
 - Lottie perde expressões: rodar `prop.convertExpressionToKeyframes` em cada propriedade com expressão (ex.: mola de overshoot) e exportar com `textAsShapes: true`.
 - FilmCraft exporta a timeline em FCPXML/XML do Premiere/OTIO/EDL: dá para entregar ao Vítor uma montagem editável além do MP4. Master de áudio/vídeo continua no ffmpeg.

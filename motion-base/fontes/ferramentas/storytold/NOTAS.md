@@ -3,6 +3,9 @@
 Origem: print de post do X enviado pelo Vítor (Kevin @KevinPicchi, 06/10/2026: "this guy re-created all the
 adobe apps with opus-5.5, ported them to rust, and opensourced them"). Thread "Apps Craft".
 
+## DECISÃO DO VÍTOR (08/10/2026 19:21 UTC)
+"horrivel kkk remotion + javascript é muito melhor. Só o remotion sozinho sola isso ai". Visual do EffectCraft REPROVADO: não entra no motor, não fazer o bloco `Craft`. Motion continua 100% Remotion + JS. Fica só como utilitário, se um dia precisar: VectorCraft para converter logo `.ai`/`.eps` de cliente em SVG real, FilmCraft para exportar timeline editável (FCPXML) se ele pedir.
+
 ## Veredito geral: é verdade, e não é vaporware
 - Os 7 repositórios existem e são públicos em github.com/storytold, da equipe ArtCraft (getartcraft.com,
   Brandon Thomas / storyteller.ai). Licença MIT ou Apache-2.0 (dupla). Rust puro, sem FFmpeg dentro.
