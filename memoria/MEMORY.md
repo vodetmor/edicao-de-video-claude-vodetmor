@@ -55,3 +55,4 @@
 - [[chase-ai-animate]]: Chase AI JS-canvas video method + MIT 'animate' skill (cartoon styles) studied 2026-10-07 in motion-base/fontes/chase-ai/; not yet run (needs Vítor OK).
 - STORAGE CAP (2026-10-07): project files hit 10 GB limit; new files/attachments refused until Vítor deletes (biggest: root Kafka YouTube mp4 340 MB). Asked him in thread Chase AI.
 - [[extract-ds-avaliacao]]: extract-ds skill evaluated 2026-10-07 on vslplay.com; proposed per-client theme in motor, awaiting OK.
+- [[storytold-craft-apps]]: storytold 'Craft' Adobe clones in Rust are real (2026-10-08); EffectCraft/FilmCraft/VectorCraft work headless, bridged to motor via Lottie/ProRes 4444; install estudio/craft/instalar.sh.
