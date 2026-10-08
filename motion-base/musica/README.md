@@ -57,3 +57,6 @@ python3 seleciona.py --n 10   # monta faixas/, previas/, catalogo.json e CATALOG
 A nota de cada clima soma: parecença com uma descrição em texto do clima + parecença com as trilhas que o Vítor já aprovou (âncoras) menos parecença com a que ele recusou, e tira faixas com voz cantada ou ruído. Para ensinar um gosto novo, ponha a faixa aprovada em `ANCORAS` (analise.py) e o peso dela em `nota()` (seleciona.py).
 
 Fontes que funcionam da nuvem: Scott Buckley (site), ccMixter (API, precisa do cabeçalho Referer para baixar), Jamendo e Freesound (chaves do Vítor), incompetech (Kevin MacLeod, `pieces.json` com 1.443 faixas). Bloqueadas da nuvem: Pixabay Music, Chosic, Uppbeat, Musopen, YouTube Audio Library.
+
+## Espaço (08/10/2026)
+Os áudios brutos de `trabalho/candidatas/` (608 faixas, ~3,5 GB) foram apagados para liberar a pasta do projeto, que bateu 10 GB. Nada se perdeu: as 50 escolhidas estão em `faixas/` e `previas/`, as notas em `trabalho/analise.json`, e cada candidata tem o link de download em `trabalho/candidatas.json`. Para ampliar o banco de novo, `python3 fonte/coleta.py` baixa tudo outra vez. Ficaram 33 faixas do Jamendo sem link salvo.
