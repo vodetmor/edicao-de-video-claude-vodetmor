@@ -158,7 +158,7 @@ function sceneConfere() {
   // o quadro errado: círculo vermelho e "!"
   if (TT >= cu.wrong && TT < cu.fixed + 0.25) {
     gline(loopPts(wx, wy, 150, 150, 0.12), { w: 7, col: SK.red, key: 'wr', part: ev(cu.wrong, 0.2), second: false, amp: 2, step: 10 });
-    handLetter('!', wx + 140, wy - 116, 110, { face: 'marker', col: SK.red, key: 'wbang', reveal: ev(cu.wrong + 0.1, 0.08) });
+    handLetter('!', wx + 40, wy - 168, 110, { face: 'marker', col: SK.red, key: 'wbang', reveal: ev(cu.wrong + 0.1, 0.08) });
   }
   // a borracha e o lápis
   if (TT >= cu.erase && TT < cu.redraw) eraserTool(wx + 60 * Math.sin(B * 1.9), wy + 20 + 30 * Math.cos(B * 1.3), -0.5, 0.75);
