@@ -53,7 +53,7 @@
 - [[feedback-roteiro-questao]]: question scripts: summarized statement first, then step-by-step explanation with a guiding thread; not wordy, not too short; numerals OK.
 - [[perfil-estrategia-estudo]]: personal profile = ENEM/PAS visual lessons + solved questions, AI narrator, 60-90 s target (2026-10-05 metrics: oblique 40k views/1.3k saves, making-of flopped, behind-the-scenes paused). Ongoing chat in thread 'Rumo do seu perfil', not a fixed PDF.
 - [[chase-ai-animate]]: Chase AI JS-canvas video method + MIT 'animate' skill (cartoon styles) studied 2026-10-07 in motion-base/fontes/chase-ai/; not yet run (needs Vítor OK).
-- STORAGE CAP (2026-10-07): project files hit 10 GB limit; new files/attachments refused until Vítor deletes (biggest: root Kafka YouTube mp4 340 MB). Asked him in thread Chase AI.
+- STORAGE (2026-10-08): project hit 10 GB; freed 3.7 GB by deleting re-downloadable music candidates (motion-base/musica/trabalho/candidatas; URLs in candidatas.json). Still heavy: escola-consciencia-negra 2.9 GB, root Kafka mp4 356 MB.
 - [[extract-ds-avaliacao]]: extract-ds skill evaluated 2026-10-07 on vslplay.com; proposed per-client theme in motor, awaiting OK.
 - [[storytold-craft-apps]]: storytold 'Craft' Adobe clones in Rust are real (2026-10-08); Vítor REJECTED EffectCraft visuals ("Remotion sozinho sola"); motion stays pure Remotion; only VectorCraft .ai->SVG kept as utility.
 - [[modelo-de-pensamento]]: Vítor wants Claude as researcher/interpreter/critic/advisor (2026-10-08); protocol organizacao/MODELO-DE-PENSAMENTO.md + skill modo-orientador; anti-pendulum rule.
