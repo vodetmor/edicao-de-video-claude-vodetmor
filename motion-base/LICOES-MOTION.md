@@ -359,3 +359,8 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 - Lottie perde expressões: rodar `prop.convertExpressionToKeyframes` em cada propriedade com expressão (ex.: mola de overshoot) e exportar com `textAsShapes: true`.
 - FilmCraft exporta a timeline em FCPXML/XML do Premiere/OTIO/EDL: dá para entregar ao Vítor uma montagem editável além do MP4. Master de áudio/vídeo continua no ffmpeg.
 - Fixar a versão do app no ESTADO.md da obra: o projeto muda todo dia.
+
+## Skill animate na prática (08/10/2026, ver também a seção Chase AI)
+- (primeira peça com a skill `animate`, estudio/animacao-js/) Roda na nuvem sem GPU: 504 quadros 1080x1920 em ~2,5 min. O kit só aceita fontes do sistema; na nuvem não há fonte de mão, então instalar Caveat/Kalam (.ttf em estudio/animacao-js/trabalho/fontes/) e apontar `cursive` para Kalam no fontconfig, senão a letra cai numa serifada feia.
+- O laço que deu certo: história em batidas no `head.html` (cues + board) → `storyboard.png` → `tile.mjs` atravessando cada morph e o corte → export → `review.mjs`. A revisão pegou o que o olho deixou passar: o pico (folha de contato) estava tão alto quanto a virada e o final não decaía; resolvido tirando energia do pad do pico e do final, não aumentando a virada.
+- Zoom de câmera dentro de uma cena empurra o desenho para cima da legenda (a legenda fica fixa na tela). Em 9:16 com legenda em y 1330, nada de zoom > 1,1 em cenas que ocupam até y 1200.
