@@ -1,0 +1,6 @@
+{"id":"file.newSequenceFromClip","params":{"items":[1,2]}}
+{"id":"captions.newTrack","params":{"format":"Subtitle"}}
+{"id":"captions.add","params":{"text":"Um cão correndo na praia","seconds":0.5,"durationSeconds":3}}
+{"id":"captions.setStyle","params":{"track":"C1","font":"Inter","size":50,"background":false}}
+{"id":"file.exportFcpxml","params":{"path":"/home/user/teste-craft/fc/t.fcpxml"}}
+{"id":"file.exportOtio","params":{"path":"/home/user/teste-craft/fc/t.otio"}}
