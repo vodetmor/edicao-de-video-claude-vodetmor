@@ -350,3 +350,11 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 - Para vídeo precisamos de números, não de HTML: `motion-base/fontes/ferramentas/extract-ds/ponte-tokens.mjs` mede cores por área, fontes por texto, raios, botões. Medir na cópia local (no navegador da nuvem o site ao vivo perde as fontes). Variáveis `--wp--preset-*` do WordPress não são a marca.
 - Identidade do site NÃO é ordem: passa pelo filtro de gosto. O site do VSL Play é navy + índigo + magenta com degradê e glow (nossa P1 proíbe); o anúncio nota 10 usou as cores chapadas da LOGO. Regra: cor chapada da marca fica, degradê vira a cor dominante, glow sai, legenda segue Inter 500.
 - Notas completas e proposta de `tema` por cliente no motor: `motion-base/fontes/ferramentas/extract-ds/NOTAS.md`.
+
+## After Effects por código: EffectCraft/FilmCraft (storytold, 08/10/2026)
+- Existe um "After Effects" e um "Premiere" de código aberto em Rust que rodam sem tela na nuvem e aceitam script JS no modelo do AE (`comp.layers.addText`, `setValueAtTime`, expressões). Instalar: `bash estudio/craft/instalar.sh` (binário oficial + SHA256, 30 s). Notas: `motion-base/fontes/ferramentas/storytold/NOTAS.md`.
+- Papel: fornecedor de peças para o Remotion, nunca o motor principal. Usar quando o Remotion sofre: 3D com luz e sombra, partículas, Fractal Noise, tracking, keying/roto, receita de expressão do AE vinda de tutorial/X.
+- Entrega da peça ao motor: ProRes 4444 com alfa (`render --format prores --prores 4444 --channels rgba`) em `<OffthreadVideo transparent>`, ou Lottie em `@remotion/lottie`. Os dois saíram idênticos no teste.
+- Lottie perde expressões: rodar `prop.convertExpressionToKeyframes` em cada propriedade com expressão (ex.: mola de overshoot) e exportar com `textAsShapes: true`.
+- FilmCraft exporta a timeline em FCPXML/XML do Premiere/OTIO/EDL: dá para entregar ao Vítor uma montagem editável além do MP4. Master de áudio/vídeo continua no ffmpeg.
+- Fixar a versão do app no ESTADO.md da obra: o projeto muda todo dia.
