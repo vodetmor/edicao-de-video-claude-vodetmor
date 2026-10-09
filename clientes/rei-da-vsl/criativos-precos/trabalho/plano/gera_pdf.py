@@ -104,6 +104,7 @@ P.append(f'''<div class="pg">
 <li><b>Copy + locução + edição demonstram a própria função:</b> o texto se escreve, a onda é a voz real deste anúncio, os clipes estalam na timeline. Mesmo bloco nos dois vídeos.</li>
 <li><b>Logo real só no final</b> (regra de criativo que já aprendemos: começa no meio da ação). A coroa aparece antes só como objeto da história.</li>
 <li><b>Tudo legível sem som:</b> cada frase vira tipografia grande na tela; não precisa de legenda separada competindo com o motion.</li></ul></div>
+<div class="box" style="margin-top:4mm;border-left:2mm solid {OURO}"><h3>Estilo de edição escolhido</h3><p>O mesmo dos trabalhos recentes para o VSL Play (anúncio nota 10 e criativos 2 e 3): motion em Remotion, cada animação presa à palavra exata da locução de IA. Como o Dhay pediu "bem dinâmico, pro cliente querer fechar", o ritmo dobra: em vez de uma troca visual a cada 2 a 3 s, uma a cada 1 a 1,3 s. O estilo desenhado em canvas (desenho animado em JavaScript, testado em 08/10) ficou de fora, porque tem cara de animação infantil e combina menos com uma marca premium de preto e ouro.</p></div>
 {rod(2)}</div>''')
 
 # 3 · referências
