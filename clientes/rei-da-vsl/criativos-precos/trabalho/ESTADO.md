@@ -22,11 +22,29 @@ Pedido 09/10/2026 12:30 BRT: 2 criativos em motion graphics para a marca Rei da 
 - PDF objetivo atualizado (5 páginas, jornada do lead por vídeo). Zip agora tem os quadros v2.
 - Biblioteca: motion-base/fontes/x/ESTILOS-MOTION.md (10 estilos + dicas do X), lição em LICOES-MOTION.
 
+## Produção (09/10 noite, após "Aprovado" do chefe)
+- Caixa do A05 refeita em 3D de verdade: `caixa3d/caixa.py` (Blender por código, Cycles CPU, caixa preta fosca, fita dourada, coroa e "10 CRIATIVOS"); `render_seq.sh` gera os 33 quadros (abas fechando + fita) em `fonte/public/caixa/`.
+- Motor próprio desta obra: `fonte/` (Remotion 4.0.529). `cues.py` -> `src/cues.json` (cortes e eventos presos às palavras de transcricao.json) é a fonte única de tempo para a animação e para o som.
+  - `src/ui.tsx` (Stage 540x960 escalado x2, HUD, hodômetro, etiqueta, celular, 10 estilos animados, onda real da voz, botão, mão, Burst, DotField, Nota), `src/parts.tsx` (HL títulos, digitação, carimbo, toggle, check), `src/Film.tsx` (cenas, entradas whip/punch/zoom, empurrão de câmera, tremor nos impactos), `src/CriativoA.tsx`, `src/CriativoB.tsx`.
+  - A13 novo: 10 vídeos chegam, ganham check em "prontos" e se organizam em 3 campanhas que ligam em "campanhas".
+  - B09+B10: o próprio vídeo encolhe e vira o 1º card de um carrossel do portfólio (um card a cada 1,33 s), sob logo, preço e botão. Criativo 02 agora tem 22,4 s. Lista de clipes em `src/portfolio.json`; clipes em `fonte/public/portfolio/` (00-vslplay.mp4 recortado do anúncio vertical).
+  - Portfólio de vídeo da Rei da VSL: reidavsl.com/portfolio-de-vsl (YouTube). Download bloqueado na nuvem; `brutos/portfolio/baixar.bat` baixa 4 no PC do Vítor. Lista completa em `brutos/portfolio/LISTA.md`.
+- Som: `fonte/audio/audio.py A|B` (synth.py do VSL Play v6): trilha original 128,57 BPM com a grade no quadro 7 (tempos fortes em 'Sim', 'incluso', botão; no 02 o preço bate e 'A gente' solta o refrão), efeitos em cada evento, música 19 dB abaixo da voz enquanto ela fala, volta em 0,7 s, master -14 LUFS / -1 dBTP -> `render/audio-A.wav`, `audio-B.wav`.
+- Projeto Remotion de trabalho em ~/rv (node_modules fora do /mnt): `src` e `public` são links para `fonte/`. Recriar: copiar package.json/tsconfig de estudio/motor, `npm i`, `ln -s .../fonte/src src`, `ln -s .../fonte/public public`, remotion.config.ts com `resolve.symlinks=false`.
+
+## Entregue (09/10 ~20:25 BRT)
+- `criativo-01-rei-da-vsl-39,90.mp4` (25,2 s) e `criativo-02-rei-da-vsl-49,90.mp4` (22,4 s), 1080x1920, -14 LUFS, na raiz da obra + `criativos-rei-da-vsl.zip`.
+- Crítica independente: rodada 1 = 7,2 / 6,8; rodada 2 = 7,8 / 8,0; os 4 itens restantes foram corrigidos antes do render final (preço trava nítido no A01, A/B sem sobreposição, UGC com pessoa real da Pexels em fonte/public/ugc, carrossel termina num card nítido).
+- Carrossel do 02: 3 vídeos do portfólio que o Vítor baixou (brutos/portfolio/0N-edicao-dopaminetica-*.mp4, 360x640) + VSL Play + motions nossos (src/portfolio.json).
+
 ## Próximo passo
-Esperar aprovação do Dhay/Vítor no PDF. Depois: spec JSON no motor (estudio/motor) com eventos nas palavras de transcricao.json, componentes Hodometro/MiniCriativo/Trio/Hud/Botao/Coroa, som (make_audio estilo v6), crítica independente ≥ 8/10, prévia 720p, final.
+Esperar retorno do Vítor/chefe. Ajuste = mexer em cues.py/CriativoX.tsx e renderizar só o criativo afetado. Opcional: versões 4:5.
 
 ## Refazer
 ```
+# vídeos: cd fonte && python3 cues.py && python3 audio/audio.py A && python3 audio/audio.py B
+# cd ~/rv && npx remotion render CriativoA ../out-A.mp4 && ffmpeg -i out-A.mp4 -i render/audio-A.wav -c:v copy -c:a aac -b:a 192k -shortest final-A.mp4
+# quadros-chave da aprovação:
 cd trabalho/storyboard && python3 gera.py
 # playwright num node_modules qualquer (ex.: scratch: npm i playwright@1); copiar render.mjs/pdf.mjs para lá
 CHROME=/opt/pw-browsers/chromium node render.mjs          # quadros (ajustar 'here' para esta pasta)

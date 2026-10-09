@@ -1,0 +1,10 @@
+COMO USAR: abra o PowerShell (tecla Windows, digite PowerShell, Enter), copie TUDO abaixo, cole e aperte Enter.
+Baixa os 3 vídeos do portfólio que você mandou, sem som, em 720p, na pasta Vídeos\portfolio-rei. No fim a pasta abre sozinha.
+
+python -m pip install -U yt-dlp
+New-Item -ItemType Directory -Force "$env:USERPROFILE\Videos\portfolio-rei" | Out-Null
+Set-Location "$env:USERPROFILE\Videos\portfolio-rei"
+python -m yt_dlp -f "bv*[height<=720][ext=mp4]/bv*[height<=720]" -o "01-edicao-dopaminetica-04.%(ext)s" https://www.youtube.com/watch?v=DAK1CXWuuWI
+python -m yt_dlp -f "bv*[height<=720][ext=mp4]/bv*[height<=720]" -o "02-edicao-dopaminetica-06.%(ext)s" https://www.youtube.com/watch?v=aqvTDb01RxQ
+python -m yt_dlp -f "bv*[height<=720][ext=mp4]/bv*[height<=720]" -o "03-edicao-dopaminetica-03.%(ext)s" https://www.youtube.com/watch?v=HNC9Lzyx12c
+explorer .
