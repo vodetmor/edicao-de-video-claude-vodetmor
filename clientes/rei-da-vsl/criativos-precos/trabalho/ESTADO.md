@@ -8,7 +8,7 @@ Pedido 09/10/2026 12:30 BRT: 2 criativos em motion graphics para a marca Rei da 
 - Paleta medida na coroa: ouro #DCB906 (claro #ECD119, escuro #B99100), preto #0B0B0B, branco #F7F5EF.
 - `trabalho/mede_ref.py`: ritmo das referências (troca visual, % parado, viradas claro/escuro). Tiras em `referencias/`.
 - Quadros-chave: `trabalho/storyboard/gera.py` (HTML) + `render.mjs` (Playwright) -> `trabalho/storyboard/quadros/A01..A10, B01..B08` (1080x1920). Zip na raiz da obra: `quadros-chave-1080x1920.zip`.
-- PDF: `trabalho/plano/gera_pdf.py` + `pdf.mjs` -> `plano-criativos-rei-da-vsl.pdf` (12 páginas, cópia na raiz da obra). Entregue 09/10 ~14:50 BRT.
+- PDF de aprovação (OBJETIVO, 5 páginas, regra do Vítor 09/10): `trabalho/plano/gera_pdf_curto.py` -> `aprovacao.html` -> `plano-criativos-rei-da-vsl.pdf` (cópia na raiz). Plano longo só interno: `gera_pdf.py` -> `plano-detalhado-interno.pdf`.
 
 ## Decisões propostas (aguardando OK)
 - 9:16 1080x1920 30 fps; depois 4:5 e 16:9 da mesma spec.
