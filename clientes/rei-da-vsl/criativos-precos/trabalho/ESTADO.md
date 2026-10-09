@@ -16,6 +16,12 @@ Pedido 09/10/2026 12:30 BRT: 2 criativos em motion graphics para a marca Rei da 
 - Criativo 02 (20,3 s): mesmo hodômetro com cores invertidas (ouro/preto) -> contorno do criativo -> trio -> 3 contratações -> fundem na coroa -> post patrocinado "PRONTO" -> virada meta (o vídeo dentro da timeline) -> logo + botão.
 - Trilha original sintetizada 128,6 BPM (como v6), ducking ~10 dB, master −14 LUFS / −1 dBTP. Sem legenda separada (frases são a tipografia). HUD de editor nos cantos.
 
+## Rodada 2 (09/10 15:34 BRT, crítica do Vítor)
+- Ele achou a rodada 1 "plana e chata, cenas parecidas", 49,90 demais no 02, coroa ouro sobre fundo ouro (B05), e pediu 10 estilos diferentes inspirados nos reels do X no A04, pensando no lead (conectar, interessar, variedade, marca, clique).
+- Feito: `storyboard/gera2.py` (importa helpers de gera.py) -> `quadros-v2/` A01-A15 e B01-B10 (B09 = B07 da rodada 1, a virada meta). Render: script render2.mjs (Playwright, executablePath /opt/pw-browsers/chromium). Cada frase virou metáfora literal (etiqueta, caixa, cupom, carimbo, caos de conversas, exportação 100%). 49,90 só em B01 e B10. Coroa ouro em squircle branco.
+- PDF objetivo atualizado (5 páginas, jornada do lead por vídeo). Zip agora tem os quadros v2.
+- Biblioteca: motion-base/fontes/x/ESTILOS-MOTION.md (10 estilos + dicas do X), lição em LICOES-MOTION.
+
 ## Próximo passo
 Esperar aprovação do Dhay/Vítor no PDF. Depois: spec JSON no motor (estudio/motor) com eventos nas palavras de transcricao.json, componentes Hodometro/MiniCriativo/Trio/Hud/Botao/Coroa, som (make_audio estilo v6), crítica independente ≥ 8/10, prévia 720p, final.
 
