@@ -57,5 +57,5 @@
 - [[extract-ds-avaliacao]]: extract-ds skill evaluated 2026-10-07 on vslplay.com; proposed per-client theme in motor, awaiting OK.
 - [[storytold-craft-apps]]: storytold 'Craft' Adobe clones in Rust are real (2026-10-08); Vítor REJECTED EffectCraft visuals ("Remotion sozinho sola"); motion stays pure Remotion; only VectorCraft .ai->SVG kept as utility.
 - [[modelo-de-pensamento]]: Vítor wants Claude as researcher/interpreter/critic/advisor (2026-10-08); protocol organizacao/MODELO-DE-PENSAMENTO.md + skill modo-orientador; anti-pendulum rule.
-- [[criativos-precos-rei-da-vsl]]: 2 price ads for Rei da VSL (Dhay, 2026-10-09); plan PDF + 18 keyframes in clientes/rei-da-vsl/criativos-precos, awaiting approval before render.
+- [[criativos-precos-rei-da-vsl]]: 2 price ads for Rei da VSL (Dhay); approved and DELIVERED 2026-10-09 20:25 BRT (clientes/rei-da-vsl/criativos-precos, engine in trabalho/fonte).
 - [[feedback-aprovacao-objetiva]]: APPROVAL PDFs must be SHORT and objective (Vítor 2026-10-09): keyframes + one-line idea per moment + sound page + checklist; keep design, cut explanations.
