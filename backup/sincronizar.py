@@ -35,6 +35,7 @@ MAPA = [
     ("anuncio-vslplay", "clientes/vslplay/anuncio-vslplay"),
     ("criativos-vslplay", "clientes/vslplay/criativos-vslplay"),
     ("vinheta-life", "outros/vinheta-life"),
+    ("clientes", "clientes"), ("outros", "outros"),
     ("motion-demo", "laboratorio/motion-demo"),
     # o "cérebro" (mantido em backup/kit)
     ("backup/kit/CLAUDE.md", "CLAUDE.md"), ("backup/kit/LEIA-ME.md", "LEIA-ME.md"), ("backup/kit/MIGRACAO.md", "MIGRACAO.md"),
