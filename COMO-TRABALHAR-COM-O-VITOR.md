@@ -25,6 +25,7 @@ O detalhe de cada regra (com data e motivo) está em `memoria/feedback-*.md`. Se
 - Áudio: voz na frente, música baixa sob a voz e subindo suave nas pausas; música e efeitos no tempo original.
 - Entregas: sempre uma versão para celular (< 30 MB) junto do master, porque ele confere e posta pelo celular. Pacotes sempre em .zip.
 - Ferramentas grátis. Sem assinatura paga de IA por enquanto: o Claude escreve os prompts e ele gera no Google Flow. PC dele sem GPU NVIDIA.
+- **Documento de aprovação = OBJETIVO (Vítor, 09/10/2026).** PDF que vai para ele ou cliente aprovar: capa, 1 página por vídeo com os quadros-chave e uma linha de ideia em cada, 1 página de som (música + efeitos) e a lista do que aprovar. Design bonito, pouca explicação; raciocínio, medições e SPEC ficam nos arquivos internos.
 
 ## Perfil pessoal (TikTok/Instagram)
 - Público: estudantes do ENEM (e mais novos), pais. Aulas visuais e questões resolvidas, 60–90 s, narrador por IA (ElevenLabs, que ele mesmo gera).
