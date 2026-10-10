@@ -18,17 +18,19 @@ const swing = (f: number, at: number, amp: number, rest: number, w = 0.32, z = 0
   return rest + amp * Math.exp(-z * w * t) * Math.cos(w * t);
 };
 
-// ------------------------------------------------------------------ A01 · gancho: o preço em 3D (Blender) gira e pousa junto com a voz
-// rodada 4: um só elemento na tela por 2,5 s, legível; '39' pousa em 'trinta e nove', ',90' em 'noventa'
+// ------------------------------------------------------------------ A01 · gancho + CAPA: o preço 3D (Blender) já completo no quadro 0
+// rodada 5 (Deidson): o 1º quadro é a capa da campanha, nada de tela vazia. Começa no quadro 64 do render (o ',90' acabou
+// de pousar) e toca o assentamento; no 'noventa' o preço dá um pulso.
 const A01: Shot['render'] = (f) => {
-  const q = Math.min(88, Math.max(0, f));
-  const u = arrive(f, ev.odo[1] + 2, 0.2);
+  const q = 64 + Math.min(24, Math.max(0, f));
+  const pu = f >= ev.odo[1] ? 1 + 0.06 * Math.exp(-(f - ev.odo[1]) * 0.25) * Math.cos((f - ev.odo[1]) * 0.6) : 1;
   return (
     <>
       <DotField f={f} cor={C.branco} op={0.05} />
-      <div style={abs({left: 40, top: 300, fontFamily: DISPLAY, fontWeight: 800, fontStretch: '70%', fontSize: 46, color: C.branco, opacity: arrive(f, 0, 0.3)})}>R$</div>
-      <Img src={staticFile(`preco/precoA_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 0, top: 210, width: 540, height: 540})} />
-      <div style={abs({left: 270 - 200 * u, top: 640, width: 400 * u, height: 4, borderRadius: 2, background: C.ouro})} />
+      <div style={abs({left: 40, top: 300, fontFamily: DISPLAY, fontWeight: 800, fontStretch: '70%', fontSize: 46, color: C.branco})}>R$</div>
+      <Img src={staticFile(`preco/precoA_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 0, top: 210, width: 540, height: 540, transform: `scale(${pu})`})} />
+      <div style={abs({left: 70, top: 640, width: 400, height: 4, borderRadius: 2, background: C.ouro})} />
+      <Burst f={f} at={ev.odo[1]} x={270} y={470} r={200} cor={C.ouro} />
     </>
   );
 };
@@ -374,7 +376,7 @@ const A15: Shot['render'] = (f) => {
 };
 
 const SHOTS: Shot[] = [
-  {n: 'A01', bg: C.preto, hud: C.branco, enter: 'cut', push: 0.0008, shake: [ev.odo[0], ev.odo[1]], render: A01},
+  {n: 'A01', bg: C.preto, hud: C.branco, enter: 'cut', push: 0.0008, shake: [ev.odo[1]], render: A01},
   {n: 'A03', bg: C.preto, hud: C.branco, enter: 'whipU', render: A03},
   {n: 'A04', bg: C.ouro, hud: C.preto, enter: 'punch', shake: [ev.isso + 3], render: A04},
   {n: 'A05', bg: C.branco, hud: C.preto, enter: 'whipL', shake: [ev.fita + 2], render: A05},

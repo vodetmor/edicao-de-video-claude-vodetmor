@@ -44,6 +44,11 @@ Crítica do Vítor: rápido demais, informação demais, gancho de 3 s não fisg
 - 3D (Blender, `caixa3d/`): abas fechando suaves em `fecha_00..36` (render_fecha.sh, Q em meio-passos, caixa aberta em V; rodada 4c); caixa entra aberta 1,3 s antes de "Fechando", fecha, fita, câmera orbita até "10 CRIATIVOS" (caixa.py q 0-80); preço 3D dos ganchos (`preco3d.py A|B`); coroa real em 3D por camadas do PNG (`coroa3d.py`, B06). Render: `bash caixa3d/render_tudo.sh <pasta_png>` + `python3 caixa3d/converter.py <pasta_png>/<sub>`. Imagens com sombra levam máscara de borda (linear-gradient intersect) para não mostrar o quadrado.
 - Entregue: `criativo-01-rei-da-vsl-39,90-v2.mp4`, `criativo-02-rei-da-vsl-49,90-v2.mp4` (sem zip, sem versão celular, a pedido). Próximo: retorno do Vítor/chefe.
 
+## Rodada 5 (10/10, Deidson): capa no quadro 0 + fala direta — entregue
+- Quadro 0 = capa: A01 começa no quadro 64 do preço 3D (39,90 completo), B01 no 50 (49,90 no chão); pulso no 'noventa'.
+- esticar.py agora ENCURTA silêncios naturais > 0,25 s para 0,18 s; pausa extra só em A 'incluso:' (+0,25) e B antes de 'esse que você tá vendo' (+0,3) e depois de 'exemplo' (+0,35). 01 = 24,9 s, 02 = 22,6 s. Carrossel STEP 34.
+- Regra da capa salva em DESIGN-SYSTEM §6, LICOES-MOTION, memória feedback-capa-criativo, COMO-TRABALHAR-COM-O-VITOR.
+
 ## Refazer
 ```
 # vídeos: cd fonte && python3 cues.py && python3 audio/audio.py A && python3 audio/audio.py B

@@ -13,15 +13,18 @@ const I = B.ini;
 const loc = (n: string, a: number) => a - I[n];
 const COD = 'Criativo 02';
 
-// ------------------------------------------------------------------ B01 · gancho: o preço em 3D (Blender) cai e quica no chão, com sombra real
-// rodada 4: um só elemento na tela, legível; '49' bate em 'quarenta e nove', ',90' em 'noventa'
+// ------------------------------------------------------------------ B01 · gancho + CAPA: o 49,90 3D (Blender) já no chão no quadro 0
+// rodada 5 (Deidson): 1º quadro = capa da campanha. Começa no impacto do ',90' (quadro 50 do render) e toca o quique;
+// no 'noventa' falado o preço dá um pulso.
 const B01: Shot['render'] = (f) => {
-  const q = Math.min(74, Math.max(0, f));
+  const q = 50 + Math.min(24, Math.max(0, f));
+  const pu = f >= ev.preco2 ? 1 + 0.06 * Math.exp(-(f - ev.preco2) * 0.25) * Math.cos((f - ev.preco2) * 0.6) : 1;
+  const m = 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 10%, #000 85%, transparent)';
   return (
     <>
       <DotField f={f} cor={C.preto} op={0.07} />
-      <div style={abs({left: 58, top: 270, fontFamily: DISPLAY, fontWeight: 800, fontStretch: '70%', fontSize: 46, color: C.preto, opacity: arrive(f, 0, 0.3)})}>POR R$</div>
-      <Img src={staticFile(`preco/precoB_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 0, top: 190, width: 540, height: 540, WebkitMaskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 10%, #000 85%, transparent)', maskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 10%, #000 85%, transparent)', WebkitMaskComposite: 'source-in', maskComposite: 'intersect'})} />
+      <div style={abs({left: 58, top: 270, fontFamily: DISPLAY, fontWeight: 800, fontStretch: '70%', fontSize: 46, color: C.preto})}>POR R$</div>
+      <Img src={staticFile(`preco/precoB_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 0, top: 190, width: 540, height: 540, transform: `scale(${pu})`, transformOrigin: '50% 70%', WebkitMaskImage: m, maskImage: m, WebkitMaskComposite: 'source-in', maskComposite: 'intersect'})} />
     </>
   );
 };
@@ -136,7 +139,7 @@ const B05: Shot['render'] = (f) => {
   return (
     <>
       {msgs.map(([nome, txt, x, y, r], k) => {
-        const at = k * 6;
+        const at = k * 4;
         const p = spring(f, at, 0.5, 0.55);
         if (f < at) return null;
         const jit = Math.sin((f - at) * 2.7 + k) * 2 * Math.exp(-(f - at) * 0.2);
@@ -286,7 +289,7 @@ const Final: React.FC<{F: number}> = ({F}) => {
   const cx = 270, cy = lerp(480, CT + CH / 2, pb);
   // carousel: holds each card ~1 s, then slides fast to the next; starts after "é um exemplo" has been read
   const S0 = exm + 24;
-  const STEP = 40;
+  const STEP = 34;
   const sv = (ff: number) => {
     const t = ff - S0;
     if (t <= 0) return 0;
@@ -339,7 +342,7 @@ const Final: React.FC<{F: number}> = ({F}) => {
 };
 
 const SHOTS: Shot[] = [
-  {n: 'B01', bg: C.branco, hud: C.preto, enter: 'cut', push: 0.0011, shake: [ev.preco, ev.preco2], render: B01},
+  {n: 'B01', bg: C.branco, hud: C.preto, enter: 'cut', push: 0.0011, shake: [ev.preco2], render: B01},
   {n: 'B02', bg: C.preto, hud: C.branco, enter: 'whipU', shake: [ev.completo + 2], render: B02},
   {n: 'B03', bg: '#000', hud: C.branco, enter: 'cut', push: 0, render: B03},
   {n: 'B04', bg: C.branco, hud: C.preto, enter: 'whipL', render: B04},

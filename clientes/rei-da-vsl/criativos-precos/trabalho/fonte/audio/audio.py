@@ -180,12 +180,11 @@ def digit_ticks(land, start):
 
 
 if QUAL == 'A':
-    # A01 3D price: each piece spins in (whoosh) and lands (tap + thud)
-    for k, L in enumerate(E['odo']):
-        sp = 26 if k == 0 else 16
-        place(sfx, whoosh(sp / FPS, 700, 3800, peak=0.8, bw=0.5, tail=0.15), max(0, L - sp), 0.16, pan=-0.3 + 0.6 * k)
-        place(sfx, tap(420 - 60 * k, weight=0.8), L, 0.42, send=0.08)
-        place(sfx, thud(0.5, 52 - 6 * k), L, 0.45)
+    # A01 cover: price already on screen at frame 0 (impact), pulse on 'noventa'
+    place(sfx, impact(1.6), 0, 0.4)
+    place(sfx, thud(0.5, 50), 0, 0.45)
+    place(sfx, tap(360, weight=0.8), E['odo'][1], 0.35, send=0.08)
+    place(sfx, swish(0.2, 800, 4000), E['odo'][1], 0.1)
     # A03 tag swing on phone
     place(sfx, swish(0.25, 1200, 500), INI['A03'] + 5, 0.07)
     # A04 SIM echo + stamp
@@ -252,13 +251,9 @@ if QUAL == 'A':
     place(sfx, button_press(), E['saiba'], 0.55)
     place(sfx, mouse_click(), E['saiba'], 0.3)
 else:
-    # B01 fall + slam
-    place(sfx, riser(0.25, 600, 4000, tone=False), 0, 0.25)
-    place(sfx, impact(2.0), E['preco'], 0.6)
-    place(sfx, thud(0.6, 46), E['preco'], 0.6)
-    place(sfx, swish(0.2, 800, 4000), E['preco'] + 1, 0.12)
-    place(sfx, riser(0.2, 700, 4500, tone=False), E['preco2'] - 6, 0.2)
-    place(sfx, thud(0.5, 52), E['preco2'], 0.5)
+    # B01 cover: 49,90 already on the floor at frame 0 (bounce), pulse on 'noventa'
+    place(sfx, impact(2.0), 0, 0.5)
+    place(sfx, thud(0.6, 46), 0, 0.55)
     place(sfx, tap(330, weight=0.9), E['preco2'], 0.35)
     place(sfx, swish(0.2, 800, 4000), E['preco2'] + 1, 0.1)
     # B02 pieces + snap together
@@ -282,8 +277,8 @@ else:
         place(sfx, flap_land(220 + 40 * k, 0.3, 0.6), E[x] + 1, 0.3)
     # B05 chat chaos
     for k in range(6):
-        place(sfx, blip(midi([79, 84, 81, 86, 83, 88][k]), 0.14, 0.05), INI['B05'] + k * 6, 0.22, pan=[-0.5, 0.5, -0.4, 0.4, -0.5, 0.5][k])
-        place(sfx, pop(1100, 0.12), INI['B05'] + k * 6 + 3, 0.08)
+        place(sfx, blip(midi([79, 84, 81, 86, 83, 88][k]), 0.14, 0.05), INI['B05'] + k * 4, 0.22, pan=[-0.5, 0.5, -0.4, 0.4, -0.5, 0.5][k])
+        place(sfx, pop(1100, 0.12), INI['B05'] + k * 4 + 3, 0.08)
     buzz = lp(np.sign(np.sin(2 * np.pi * 150 * T(0.5))) * 0.3, 800) * np.clip(1 - T(0.5) / 0.5, 0, 1)
     place(sfx, buzz, INI['B05'] + 6, 0.12)
     # B06 3D crown spins in and lands (frame 14), bells
@@ -304,7 +299,7 @@ else:
     place(sfx, whoosh(0.5, 4000, 500, peak=0.3, bw=0.7, tail=0.5), INI['B09'], 0.2)
     t0 = E['exemplo'] + 24
     for k in range(4):
-        fr = t0 + k * 40 + 28
+        fr = t0 + k * 34 + 24
         if fr < NFR - 6:
             place(sfx, swish(0.22, 900, 4200), fr - 2, 0.16, pan=-0.3)
             place(sfx, tap(midi(57 + 2 * k), 0), fr + 8, 0.1)

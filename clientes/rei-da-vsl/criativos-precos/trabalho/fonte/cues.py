@@ -15,7 +15,7 @@ k = 'texto-1'
 A = {
     'dur': round(T[k]['dur'] * FPS) + 40,  # voz + cauda do CTA
     'cenas': [  # [nome, início]  (rodada 4: A02 e A06 saíram; a caixa 3D segura 'fechando o pacote com dez criativos')
-        ['A01', 0], ['A03', w(k, 1)], ['A04', w(k, 3)], ['A05', w(k, 7, -0.7)],  # a caixa entra na pausa antes de 'Fechando'
+        ['A01', 0], ['A03', w(k, 1)], ['A04', w(k, 3)], ['A05', w(k, 7, -0.2)],  # rodada 5: sem pausa antes; a caixa entra com 'Fechando'
         ['A07', w(k, 13)], ['A08', w(k, 17)], ['A09', w(k, 22)], ['A10', w(k, 27)],  # rodada 4b: copy + locução + edição numa cena só (A11/A12 saíram)
         ['A13', w(k, 32)], ['A14', w(k, 42)], ['A15', w(k, 46)],
     ],
