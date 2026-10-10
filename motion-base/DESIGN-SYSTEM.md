@@ -176,6 +176,8 @@ Fade puro só em: legenda (§3.3), e para trocar algo de lugar quando o trajeto 
 | Silêncio como ferramenta | ≥ 1 buraco de silêncio de 0,3–0,6 s antes do maior impacto do vídeo |
 | Abertura | gancho nos primeiros 10 s; nada de logo ou vinheta longa antes do gancho |
 | Fechamento | fecha o círculo com um motivo da abertura (visual ou sonoro) |
+| **Capa (criativo de anúncio)** | **o quadro 0 já é a capa: a peça-chave (preço, oferta, título) completa e legível, nunca tela vazia ou elemento entrando. O canal de anúncios usa esse quadro como miniatura e é por ele que se identifica cada criativo na campanha. Cada criativo de uma série tem uma capa visualmente distinta (cor de fundo + número).** Regra do Deidson/Rei da VSL, 10/10/2026. Animação de entrada vira assentamento/pulso a partir da peça pronta. |
+| Fala de criativo narrado | direta, sem pausas inseridas; respiros naturais da locução encurtados para ~0,18 s. Pausa só onde o lead precisa olhar (exemplo mostrado, lista que se monta, "este vídeo é um exemplo"), 0,25–0,35 s. (Deidson, 10/10/2026) |
 
 ---
 
