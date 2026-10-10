@@ -59,3 +59,4 @@
 - [[modelo-de-pensamento]]: Vítor wants Claude as researcher/interpreter/critic/advisor (2026-10-08); protocol organizacao/MODELO-DE-PENSAMENTO.md + skill modo-orientador; anti-pendulum rule.
 - [[criativos-precos-rei-da-vsl]]: 2 price ads for Rei da VSL (Dhay); approved and DELIVERED 2026-10-09 20:25 BRT (clientes/rei-da-vsl/criativos-precos, engine in trabalho/fonte).
 - [[feedback-aprovacao-objetiva]]: APPROVAL PDFs must be SHORT and objective (Vítor 2026-10-09): keyframes + one-line idea per moment + sound page + checklist; keep design, cut explanations.
+- [[feedback-legibilidade-criativo]]: narrated ads: one idea per scene, readable text, 3 s hook = one strong 3D/legible object, hero 3D pieces 3+ s; up to 1 min OK (Vítor 2026-10-09).

@@ -1,6 +1,6 @@
 ---
 name: criativos-precos-rei-da-vsl
-description: Two price ad creatives for Rei da VSL (Dhay, 2026-10-09): approved, both videos rendered and delivered 2026-10-09 20:25 BRT
+description: Two price ad creatives for Rei da VSL (Dhay, 2026-10-09): v1 delivered 20:25 BRT, round 4 (slower, more 3D) delivered 23:30 BRT
 metadata:
   type: project
   modified: 2026-10-09T17:59:44.826Z
@@ -13,3 +13,4 @@ Asked 2026-10-09 12:30 BRT by Dhay (via Vítor) in thread "Criativos de preço R
 **How to apply:** on approval build in Remotion motor ([[estudio-motor]]) from transcricao.json word anchors; adjust only frames they flag. Related: [[criativos-vslplay]], [[feedback-processo-edicao]].
 
 - 2026-10-09 evening: boss approved; videos delivered (criativo-01/02 mp4 + zip at work root). Engine for this work in trabalho/fonte (cues.py single timing source, audio/audio.py synth score). Video portfolio of Rei da VSL = reidavsl.com/portfolio-de-vsl (all YouTube; cloud download blocked, Vítor downloads on his PC via brutos/portfolio/baixar.txt). Carousel in 02 = 3 portfolio clips + VSL Play + our motions. Critic rounds: 7.2/6.8 -> 7.8/8.0 -> fixes applied.
+- 2026-10-09 23:30 BRT round 4 delivered (v2 files): slower/readable, pauses only between sentences at real silence (esticar.py), 3D price hooks + longer orbiting box + 3D crown. Vítor said skip zip and phone version for this delivery. See [[feedback-legibilidade-criativo]].
