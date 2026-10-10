@@ -15,8 +15,9 @@ os.makedirs(OUT, exist_ok=True)
 # pausa extra (s) DEPOIS da palavra de índice i. Rodada 4b (Vítor: "pausas estranhas", "'pacote' cortou"): só entre
 # frases (ponto, dois-pontos, vírgula de oração), nunca dentro de lista ou de frase; o corte cai no ponto mais silencioso.
 PAUSAS = {
-    'texto-1': {2: 1.0, 6: 1.3, 16: 0.8, 21: 1.0, 26: 0.8, 31: 0.9, 45: 0.8},
-    'texto-2': {1: 0.8, 7: 1.0, 11: 0.9, 20: 1.0, 24: 0.5, 32: 0.9, 41: 0.8},
+    # rodada 4d (Vítor: 'aos 6-7 s e 11-12 s ficou sem falar e parado; cada fala pode ser minimamente encurtada'): ~metade
+    'texto-1': {2: 0.55, 6: 0.7, 16: 0.45, 21: 0.55, 26: 0.45, 31: 0.5, 45: 0.45},
+    'texto-2': {1: 0.5, 7: 0.6, 11: 0.5, 20: 0.55, 24: 0.3, 32: 0.5, 41: 0.45},
 }
 
 
