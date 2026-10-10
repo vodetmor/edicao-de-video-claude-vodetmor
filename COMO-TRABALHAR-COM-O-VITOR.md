@@ -27,6 +27,8 @@ O detalhe de cada regra (com data e motivo) está em `memoria/feedback-*.md`. Se
 - Ferramentas grátis. Sem assinatura paga de IA por enquanto: o Claude escreve os prompts e ele gera no Google Flow. PC dele sem GPU NVIDIA.
 - **Documento de aprovação = OBJETIVO (Vítor, 09/10/2026).** PDF que vai para ele ou cliente aprovar: capa, 1 página por vídeo com os quadros-chave e uma linha de ideia em cada, 1 página de som (música + efeitos) e a lista do que aprovar. Design bonito, pouca explicação; raciocínio, medições e SPEC ficam nos arquivos internos.
 
+- Legibilidade acima do ritmo: com voz e texto na tela, uma ideia por cena, texto fica tempo para ler duas vezes, gancho de 3 s é um objeto forte e legível (não três cortes), peças 3D ficam 3 s ou mais. Corte enfeites (HUD, notas, ecos).
+
 ## Perfil pessoal (TikTok/Instagram)
 - Público: estudantes do ENEM (e mais novos), pais. Aulas visuais e questões resolvidas, 60–90 s, narrador por IA (ElevenLabs, que ele mesmo gera).
 - Primeiro e último quadro iguais (loop). Texto nunca cruzado por linha nem sobre fundo da mesma cor. Som e imagem compostos juntos.
