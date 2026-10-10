@@ -37,8 +37,12 @@ Pedido 09/10/2026 12:30 BRT: 2 criativos em motion graphics para a marca Rei da 
 - Crítica independente: rodada 1 = 7,2 / 6,8; rodada 2 = 7,8 / 8,0; os 4 itens restantes foram corrigidos antes do render final (preço trava nítido no A01, A/B sem sobreposição, UGC com pessoa real da Pexels em fonte/public/ugc, carrossel termina num card nítido).
 - Carrossel do 02: 3 vídeos do portfólio que o Vítor baixou (brutos/portfolio/0N-edicao-dopaminetica-*.mp4, 360x640) + VSL Play + motions nossos (src/portfolio.json).
 
-## Próximo passo
-Esperar retorno do Vítor/chefe. Ajuste = mexer em cues.py/CriativoX.tsx e renderizar só o criativo afetado. Opcional: versões 4:5.
+## Rodada 4 (entregue 09/10 ~23:30 BRT): mais lento, legível, mais 3D
+Crítica do Vítor: rápido demais, informação demais, gancho de 3 s não fisgou, caixa 3D só 1 s. Pode ter até 1 min. Depois: "pacote cortou", "pausas estranhas".
+- `fonte/esticar.py`: pausas SÓ entre frases, corte no ponto mais silencioso (`voz/texto-N-esticado.wav`, `transcricao-esticada.json`); cues.py e audio.py usam a versão esticada. 01 = 32,5 s, 02 = 28,6 s.
+- Saíram A02, A06, A11, A12 (A10 = lista COPY/LOCUÇÃO/EDIÇÃO que se monta). HUD só cantos + "Rei da VSL"; sem notas mono, ecos, onda decorativa, letreiro do CTA. Seções da música seguem os eventos (grade()).
+- 3D (Blender, `caixa3d/`): caixa entra aberta 1,3 s antes de "Fechando", fecha, fita, câmera orbita até "10 CRIATIVOS" (caixa.py q 0-80); preço 3D dos ganchos (`preco3d.py A|B`); coroa real em 3D por camadas do PNG (`coroa3d.py`, B06). Render: `bash caixa3d/render_tudo.sh <pasta_png>` + `python3 caixa3d/converter.py <pasta_png>/<sub>`. Imagens com sombra levam máscara de borda (linear-gradient intersect) para não mostrar o quadrado.
+- Entregue: `criativo-01-rei-da-vsl-39,90-v2.mp4`, `criativo-02-rei-da-vsl-49,90-v2.mp4` (sem zip, sem versão celular, a pedido). Próximo: retorno do Vítor/chefe.
 
 ## Refazer
 ```

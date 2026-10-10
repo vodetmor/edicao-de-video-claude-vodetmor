@@ -1,6 +1,6 @@
 """Trilha + efeitos + mix dos 2 criativos Rei da VSL. Tudo sintetizado (synth.py, mesmo kit do anúncio VSL Play v6):
 trilha original a 128,57 BPM (14 quadros por tempo, compasso de 56 quadros) com a grade começando no quadro 7, então
-os tempos fortes caem nos momentos-chave (A: 'Sim' f119, 'incluso' f399, botão f679; B: preço bate f7, 'A gente' f343).
+as seções seguem os eventos de cues.json, encaixadas na grade (A: 'Sim', 'incluso', botão; B: preço bate f7, 'A gente').
 Efeitos presos aos eventos de src/cues.json (mesmos tempos da animação). Voz na frente, música abaixada ~10 dB sob a
 voz e volta suave nas pausas (0,7 s). Master -14 LUFS / -1 dBTP.
 Uso: python3 audio/audio.py A|B  ->  ../render/audio-A.wav (+ stems)"""
@@ -22,9 +22,13 @@ NFR = CU['dur']
 N = int(NFR / FPS * SR) + SR // 2
 OUT = os.path.join(HERE, '..', '..', 'render')
 os.makedirs(OUT, exist_ok=True)
-VOZ = os.path.join(HERE, '..', '..', '..', 'brutos', 'texto-1.mp3' if QUAL == 'A' else 'texto-2.mp3')
+VOZ = os.path.join(HERE, '..', '..', 'voz', ('texto-1' if QUAL == 'A' else 'texto-2') + '-esticado.wav')  # rodada 4: voz com pausas (esticar.py)
 
 G0, BEAT = 7, 14  # grid origin (frame) and frames per beat
+
+
+def grade(f):
+    return G0 + round((f - G0) / BEAT) * BEAT  # seções caem na grade do tempo
 
 
 def ts(f):
@@ -59,9 +63,9 @@ ROOT = {'F#m': 42, 'D': 38, 'A': 45, 'E': 40}
 CYC = ['F#m', 'D', 'A', 'E']
 
 if QUAL == 'A':
-    SECT = [(0, None), (G0, 'light'), (119, 'full'), (287, 'groove'), (399, 'full'), (623, 'build'), (679, 'full'), (735, 'outro'), (NFR, 'end')]
+    SECT = [(0, None), (G0, 'light'), (grade(EV['sim']), 'full'), (grade(EV['paga'] - 2), 'groove'), (grade(EV['incluso']), 'full'), (grade(EV['saiba']) - 56, 'build'), (grade(EV['saiba']), 'full'), (grade(NFR - 21), 'outro'), (NFR, 'end')]
 else:
-    SECT = [(0, None), (G0, 'full'), (175, 'groove'), (231, 'break'), (343, 'full'), (455, 'groove'), (511, 'full'), (651, 'outro'), (NFR, 'end')]
+    SECT = [(0, None), (G0, 'full'), (grade(EV['edicao'] - 10), 'groove'), (grade(EV['contratar'] - 6), 'break'), (grade(INI['B06']), 'full'), (grade(INI['B09']), 'groove'), (grade(EV['exemplo'] + 8), 'full'), (grade(NFR - 21), 'outro'), (NFR, 'end')]
 
 
 def sect(f):
@@ -151,7 +155,7 @@ for a, n in SECT:
 E = EV
 whips = {'whipL': (0.22, 700, 5200), 'whipR': (0.22, 700, 5200), 'whipU': (0.24, 500, 6000), 'zoomOut': (0.35, 4000, 600), 'punch': None, 'cut': None}
 ENTERS = {
-    'A': {'A02': 'zoomOut', 'A03': 'whipU', 'A04': 'punch', 'A05': 'whipL', 'A06': 'whipU', 'A07': 'whipL', 'A08': 'punch', 'A09': 'punch', 'A10': 'whipU', 'A11': 'whipL', 'A12': 'whipL', 'A13': 'whipU', 'A14': 'punch', 'A15': 'zoomOut'},
+    'A': {'A03': 'whipU', 'A04': 'punch', 'A05': 'whipL', 'A07': 'whipL', 'A08': 'punch', 'A09': 'punch', 'A10': 'whipU', 'A13': 'whipU', 'A14': 'punch', 'A15': 'zoomOut'},
     'B': {'B02': 'whipU', 'B03': 'cut', 'B04': 'whipL', 'B05': 'punch', 'B06': 'zoomOut', 'B07': 'whipU', 'B08': 'whipL'},
 }[QUAL]
 for n, e in ENTERS.items():
@@ -176,32 +180,26 @@ def digit_ticks(land, start):
 
 
 if QUAL == 'A':
-    # A01-A02 odometer 39,90
+    # A01 3D price: each piece spins in (whoosh) and lands (tap + thud)
     for k, L in enumerate(E['odo']):
-        for fr in digit_ticks(L, 0):
-            place(sfx, tick(2600 + 300 * k, 0.025, 0.003), fr, 0.10, pan=-0.3 + 0.2 * k)
-        place(sfx, tap(420 - 40 * k, weight=0.8), L, 0.42, send=0.08)
-    place(sfx, thud(0.5, 52), E['odo'][3], 0.5)
-    place(sfx, swish(0.3, 1500, 400), 46, 0.12)  # tag swing
-    place(sfx, swish(0.3, 400, 1500), 60, 0.08)
+        sp = 26 if k == 0 else 16
+        place(sfx, whoosh(sp / FPS, 700, 3800, peak=0.8, bw=0.5, tail=0.15), max(0, L - sp), 0.16, pan=-0.3 + 0.6 * k)
+        place(sfx, tap(420 - 60 * k, weight=0.8), L, 0.42, send=0.08)
+        place(sfx, thud(0.5, 52 - 6 * k), L, 0.45)
     # A03 tag swing on phone
-    place(sfx, swish(0.25, 1200, 500), 80, 0.07)
+    place(sfx, swish(0.25, 1200, 500), INI['A03'] + 5, 0.07)
     # A04 SIM echo + stamp
     for d in range(3):
         place(sfx, tap(300 + 60 * d), E['sim'] + d * 2.5, 0.15, pan=0.4 * (d - 1))
     place(sfx, flap_land(196, 0.35, 1.3), E['isso'], 0.6, send=0.15)
     place(sfx, thud(0.45, 60), E['isso'], 0.45)
-    # A05 box flaps + tape
-    i5 = INI['A05']
-    place(sfx, flap_land(262, 0.3), i5 + 8, 0.35)
-    place(sfx, flap_land(294, 0.3), i5 + 15, 0.4)
-    place(sfx, whoosh(0.32, 1800, 5500, peak=0.85, bw=0.5, tail=0.1), i5 + 20, 0.3)  # tape pull
-    place(sfx, snap(), i5 + 29, 0.45)
-    place(sfx, flap_land(330, 0.3, 0.6), i5 + 27 + 3, 0.35)  # 10x sticker
-    # A06 ten phones landing: rising taps
-    order = [4, 5, 3, 6, 2, 7, 1, 8, 0, 9]
-    for j in range(10):
-        place(sfx, tap(midi(69 + [0, 2, 4, 5, 7, 9, 11, 12, 14, 16][j]) / 2, 0), INI['A06'] + j * 1.4 + 5, 0.22, pan=(order[j] - 4.5) / 6)
+    # A05 box flaps + tape + orbit (same q mapping as CriativoA A05)
+    c0, c1 = E['fechando'] - 6, E['pacote'] + 4
+    place(sfx, flap_land(262, 0.3), c0 + round((c1 - c0) * 0.6), 0.35)
+    place(sfx, flap_land(294, 0.3), c1, 0.4)
+    place(sfx, whoosh(0.45, 1800, 5500, peak=0.85, bw=0.5, tail=0.1), c1 + 1, 0.3)  # tape pull
+    place(sfx, snap(), c1 + 14, 0.45)
+    place(sfx, whoosh(0.9, 300, 1200, peak=0.5, bw=0.8, tail=0.3), c1 + 15, 0.1)  # orbit air
     # A07 timecode 00 -> 30
     t0 = E['trinta'] - 4
     last = -1
@@ -232,15 +230,10 @@ if QUAL == 'A':
         place(sfx, blip(midi(76 + [0, 2, 4, 7, 9, 12][j]), 0.12, 0.05), INI['A09'] + j * 3 + 2, 0.12, pan=0.3)
     place(sfx, flap_land(175, 0.4, 1.4), E['incluso'], 0.7, send=0.18)
     place(sfx, thud(0.6, 50), E['incluso'], 0.5)
-    # A10 typing
-    for fr in range(INI['A10'], INI['A10'] + 13, 2):
-        place(sfx, keytick(), fr, 0.2, pan=0.2 * np.sin(fr))
-    # A11 mic pop
-    place(sfx, pop(700, 0.2), INI['A11'] + 2, 0.25)
-    # A12 clips snapping
-    for ri in range(2):
-        for ci in range(4):
-            place(sfx, snap(), INI['A12'] + ri * 2 + ci * 2.2 + 6, 0.13, pan=-0.4 + 0.25 * ci)
+    # A10 trio: a pop + tap on each word (copy, locução, edição)
+    for k, x in enumerate(['copy', 'locucao', 'edicao']):
+        place(sfx, pop(600 + 120 * k, 0.2), E[x] - 3, 0.28, pan=-0.2 + 0.2 * k)
+        place(sfx, tap(midi(64 + 3 * k), 0), E[x], 0.14)
     # A13 ten videos fly in, checks, move, toggles
     for k in range(10):
         place(sfx, swish(0.12, 1500, 4500), E['dez2'] - 9 + k * 1.3, 0.05, pan=(k % 5 - 2) / 3)
@@ -268,8 +261,6 @@ else:
     place(sfx, thud(0.5, 52), E['preco2'], 0.5)
     place(sfx, tap(330, weight=0.9), E['preco2'], 0.35)
     place(sfx, swish(0.2, 800, 4000), E['preco2'] + 1, 0.1)
-    for k in range(0, 19, 2):
-        place(sfx, keytick(), E['preco2'] + 8 + k * 0.8, 0.08)
     # B02 pieces + snap together
     i2 = INI['B02']
     for k, at in enumerate([2, 6, 10]):
@@ -291,17 +282,15 @@ else:
         place(sfx, flap_land(220 + 40 * k, 0.3, 0.6), E[x] + 1, 0.3)
     # B05 chat chaos
     for k in range(6):
-        place(sfx, blip(midi([79, 84, 81, 86, 83, 88][k]), 0.14, 0.05), INI['B05'] + k * 3.2, 0.22, pan=[-0.5, 0.5, -0.4, 0.4, -0.5, 0.5][k])
-        place(sfx, pop(1100, 0.12), INI['B05'] + k * 3.2 + 3, 0.08)
+        place(sfx, blip(midi([79, 84, 81, 86, 83, 88][k]), 0.14, 0.05), INI['B05'] + k * 6, 0.22, pan=[-0.5, 0.5, -0.4, 0.4, -0.5, 0.5][k])
+        place(sfx, pop(1100, 0.12), INI['B05'] + k * 6 + 3, 0.08)
     buzz = lp(np.sign(np.sin(2 * np.pi * 150 * T(0.5))) * 0.3, 800) * np.clip(1 - T(0.5) / 0.5, 0, 1)
     place(sfx, buzz, INI['B05'] + 6, 0.12)
-    # B06 squircle + crown + reply typing
+    # B06 3D crown spins in and lands (frame 14), bells
     place(sfx, pop(600, 0.2), INI['B06'] + 2, 0.3)
-    place(sfx, bell(midi(81), 1.6, 0.5), INI['B06'] + 6, 0.16, send=0.3)
-    place(sfx, bell(midi(85), 1.6, 0.5), INI['B06'] + 6, 0.1, send=0.3)
-    for fr in range(INI['B06'] + 10, INI['B06'] + 22, 2):
-        place(sfx, keytick(), fr, 0.12)
-    place(sfx, blip(1320, 0.15, 0.05), INI['B06'] + 25, 0.15)
+    place(sfx, bell(midi(81), 1.6, 0.5), INI['B06'] + 14, 0.16, send=0.3)
+    place(sfx, bell(midi(85), 1.6, 0.5), INI['B06'] + 14, 0.1, send=0.3)
+    place(sfx, whoosh(0.5, 600, 3500, peak=0.8, bw=0.5, tail=0.2), INI['B06'] - 2, 0.14)  # 3D crown spin
     # B07 export progress + ding
     for fr in range(INI['B07'] + 2, E['pronto'] - 3, 3):
         place(sfx, tick(1800 + (fr - INI['B07']) * 25, 0.02, 0.003), fr, 0.05)
@@ -313,9 +302,9 @@ else:
     # B09 pull-back, carousel steps
     place(sfx, suck(0.45), INI['B09'] - 2, 0.25)
     place(sfx, whoosh(0.5, 4000, 500, peak=0.3, bw=0.7, tail=0.5), INI['B09'], 0.2)
-    t0 = E['exemplo'] + 20
+    t0 = E['exemplo'] + 24
     for k in range(4):
-        fr = t0 + k * 30 + 21
+        fr = t0 + k * 40 + 28
         if fr < NFR - 6:
             place(sfx, swish(0.22, 900, 4200), fr - 2, 0.16, pan=-0.3)
             place(sfx, tap(midi(57 + 2 * k), 0), fr + 8, 0.1)

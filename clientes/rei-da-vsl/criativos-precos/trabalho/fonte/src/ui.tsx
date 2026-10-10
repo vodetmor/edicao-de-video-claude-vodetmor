@@ -64,13 +64,7 @@ export const Hud: React.FC<{f: number; cod: string; cor: string; beat?: number}>
       {t(508, 18, 90)}
       {t(508, 928, 180)}
       {t(18, 928, 270)}
-      <div style={{...hud, left: 40, top: 22}}>Rei da VSL · {cod}</div>
-      <div style={{...hud, right: 40, top: 22, display: 'flex', alignItems: 'center', gap: 5}}>
-        <div style={{width: 5, height: 5, borderRadius: 3, background: cor, opacity: 0.4 + 0.6 * b}} />
-        128 BPM
-      </div>
-      <div style={{...hud, left: 40, bottom: 22}}>{tc(f)}</div>
-      <div style={{...hud, right: 40, bottom: 22}}></div>
+      <div style={{...hud, left: 40, top: 22}}>Rei da VSL</div>
     </div>
   );
 };

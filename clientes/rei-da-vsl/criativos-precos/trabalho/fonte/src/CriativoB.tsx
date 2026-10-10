@@ -13,43 +13,15 @@ const I = B.ini;
 const loc = (n: string, a: number) => a - I[n];
 const COD = 'Criativo 02';
 
-// ------------------------------------------------------------------ B01 · o preço cai e bate no chão
+// ------------------------------------------------------------------ B01 · gancho: o preço em 3D (Blender) cai e quica no chão, com sombra real
+// rodada 4: um só elemento na tela, legível; '49' bate em 'quarenta e nove', ',90' em 'noventa'
 const B01: Shot['render'] = (f) => {
-  const h1 = ev.preco, h2 = ev.preco2; // "quarenta e nove" lands, then "e noventa"
-  const fall = (ff: number, hit: number, dur: number) => (ff >= hit ? 0 : -520 * Math.pow(1 - clamp((ff - (hit - dur)) / dur), 2));
-  const sqz = (ff: number, hit: number) => (ff >= hit ? 1 - 0.1 * Math.exp(-(ff - hit) * 0.4) * Math.cos((ff - hit) * 1.1) : 1.04);
-  const piece = (txt: string, hit: number, dur: number, x: number) => {
-    if (f < hit - dur) return null;
-    const y = fall(f, hit, dur);
-    const v = Math.abs(vel((ff) => fall(ff, hit, dur), f));
-    const sq = sqz(f, hit);
-    return (
-      <div style={abs({left: x, top: 340 + y, transform: `scaleY(${sq}) scaleX(${2 - sq})`, transformOrigin: '50% 100%'})}>
-        <DirBlur y={Math.min(30, v * 0.6)}>
-          <div style={{...NUM, fontSize: 230, color: C.preto}}>{txt}</div>
-        </DirBlur>
-      </div>
-    );
-  };
-  const dust = (hit: number, xs: number[][]) =>
-    xs.map(([x, h, r], k) => {
-      const p = prog(f, hit, 10);
-      return p > 0 && p < 1 ? <div key={`${hit}${k}`} style={abs({left: x + (r < 0 ? -1 : 1) * p * 20, top: 570 + p * 10, width: 3, height: h * (1 - p), background: C.preto, transform: `rotate(${r}deg)`})} /> : null;
-    });
+  const q = Math.min(74, Math.max(0, f));
   return (
     <>
       <DotField f={f} cor={C.preto} op={0.07} />
-      <div style={abs({left: -60, top: 250, width: 660, textAlign: 'center', ...NUM, fontSize: 470, color: C.preto, opacity: 0.09 * arrive(f, h1, 0.2), transform: `translateY(${-f * 0.5}px)`})}>
-        <DirBlur y={18}>49,90</DirBlur>
-      </div>
-      <div style={abs({left: 58, top: 280, fontFamily: DISPLAY, fontWeight: 800, fontStretch: '70%', fontSize: 42, color: C.preto, opacity: arrive(f, 0, 0.3)})}>POR R$</div>
-      {piece('49', h1, 7, 52)}
-      {piece(',90', h2, 6, 52 + 194)}
-      <div style={abs({left: 52, top: 540, width: 200 * arrive(f, h1 + 1, 0.3) + 236 * arrive(f, h2 + 1, 0.3), height: 14, background: C.ouro})} />
-      {dust(h1, [[70, 30, -30], [120, 22, -15], [210, 22, 15]])}
-      {dust(h2, [[300, 22, -15], [420, 22, 15], [470, 30, 30]])}
-      <HL f={f} top={630} size={46} lines={[{t: 'O CRIATIVO COMPLETO', c: C.preto, at: h2 + 8}]} stagger={0.8} />
-      <Nota x={34} y={880} txt={'PREÇO FECHADO · 1 CRIATIVO'} cor={C.preto} f={f} at={h2 + 4} />
+      <div style={abs({left: 58, top: 270, fontFamily: DISPLAY, fontWeight: 800, fontStretch: '70%', fontSize: 46, color: C.preto, opacity: arrive(f, 0, 0.3)})}>POR R$</div>
+      <Img src={staticFile(`preco/precoB_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 0, top: 190, width: 540, height: 540, WebkitMaskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 10%, #000 85%, transparent)', maskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 10%, #000 85%, transparent)', WebkitMaskComposite: 'source-in', maskComposite: 'intersect'})} />
     </>
   );
 };
@@ -87,7 +59,7 @@ const B02: Shot['render'] = (f) => {
       <svg width={540} height={960} style={abs({left: 0, top: 0, opacity: 1 - m})}>
         <path d="M176 230 L200 250 M380 280 L360 290 M370 442 L350 430" stroke="#8a877f" strokeWidth={2} strokeDasharray="4 4" />
       </svg>
-      <HL f={f} top={555} size={78} lines={[{t: 'CRIATIVO', c: C.branco, at: loc('B02', 97)}, {t: 'COMPLETO', c: C.ouro, at: comp - 2}]} />
+      <HL f={f} top={555} size={78} lines={[{t: 'CRIATIVO', c: C.branco, at: loc('B02', ev.criativo) - 2}, {t: 'COMPLETO', c: C.ouro, at: comp - 2}]} />
       <Burst f={f} at={comp + 2} x={276} y={330} r={150} n={12} cor={C.ouro} />
     </>
   );
@@ -164,7 +136,7 @@ const B05: Shot['render'] = (f) => {
   return (
     <>
       {msgs.map(([nome, txt, x, y, r], k) => {
-        const at = k * 3.2;
+        const at = k * 6;
         const p = spring(f, at, 0.5, 0.55);
         if (f < at) return null;
         const jit = Math.sin((f - at) * 2.7 + k) * 2 * Math.exp(-(f - at) * 0.2);
@@ -183,24 +155,17 @@ const B05: Shot['render'] = (f) => {
   );
 };
 
-// ------------------------------------------------------------------ B06 · a gente faz tudo: uma conversa só, com a coroa (ouro sobre branco)
+// ------------------------------------------------------------------ B06 · a gente faz tudo: a coroa real em 3D (Blender) gira e pousa
+// rodada 4: só a coroa e a frase (saiu a conversa); a coroa assenta no quadro 14 e balança devagar
 const B06: Shot['render'] = (f) => {
   const tudo = loc('B06', ev.tudo) - 2;
-  const sq = spring(f, 0, 0.36, 0.6);
-  const cr = spring(f, 4, 0.4, 0.5);
-  const msg = arrive(f, 8, 0.25);
+  const q = Math.min(44, Math.max(0, f));
+  const fl = Math.sin(f * 0.08) * 5;
   return (
     <>
       <DotField f={f} cor={C.branco} op={0.05} />
-      <div style={abs({left: 170, top: 170, width: 200, height: 200, borderRadius: '22%', background: C.branco, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${sq})`})}>
-        <Img src={staticFile('img/coroa_rei_da_VSL.png')} style={{width: 150, transform: `translateY(${(1 - cr) * -30}px) rotate(${(1 - cr) * -12}deg)`, opacity: clamp(cr * 2)}} />
-      </div>
-      <div style={abs({left: 80, top: 420 + (1 - msg) * 30, width: 380, padding: '16px 18px', borderRadius: 18, background: C.branco, opacity: msg})}>
-        <div style={{fontFamily: TEXT, fontWeight: 700, fontSize: 12, color: '#9a7f00', letterSpacing: '0.06em'}}>REI DA VSL</div>
-        <Typing f={f} at={10} txt="Deixa com a gente." cps={1.6} caret="transparent" caretH={0} style={{fontFamily: TEXT, fontWeight: 700, fontSize: 22, color: C.preto, marginTop: 4}} />
-        <div style={{fontFamily: TEXT, fontWeight: 600, fontSize: 12, color: C.ouroEs, textAlign: 'right', opacity: f > 24 ? 1 : 0}}>✓✓</div>
-      </div>
-      <HL f={f} top={545} size={90} lines={[{t: 'A GENTE', c: C.branco, at: 0}, {t: 'FAZ TUDO', c: C.ouro, at: tudo}]} />
+      <Img src={staticFile(`coroa/coroa_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 30, top: 60 + fl, width: 480, height: 480})} />
+      <HL f={f} top={520} size={96} lines={[{t: 'A GENTE', c: C.branco, at: 0}, {t: 'FAZ TUDO', c: C.ouro, at: tudo}]} />
     </>
   );
 };
@@ -320,8 +285,8 @@ const Final: React.FC<{F: number}> = ({F}) => {
   const scale = lerp(540 / CW, 1, pb);
   const cx = 270, cy = lerp(480, CT + CH / 2, pb);
   // carousel: holds each card ~1 s, then slides fast to the next; starts after "é um exemplo" has been read
-  const S0 = exm + 20;
-  const STEP = 30;
+  const S0 = exm + 24;
+  const STEP = 40;
   const sv = (ff: number) => {
     const t = ff - S0;
     if (t <= 0) return 0;
@@ -354,13 +319,6 @@ const Final: React.FC<{F: number}> = ({F}) => {
       {/* phase 1: "este vídeo / é um exemplo" + its own timeline */}
       <div style={abs({inset: 0, opacity: 1 - out1, transform: `translateY(${out1 * -20}px)`})}>
         <HL f={f} top={492} size={66} stagger={0.45} lines={[{t: 'ESTE VÍDEO', c: C.branco, at: vendo - 8}, {t: 'É UM EXEMPLO', c: C.ouro, at: exm - 3}]} />
-        <div style={abs({left: 40, top: 640, width: 460, opacity: arrive(f, 10, 0.2)})}>
-          <div style={{fontFamily: MONO, fontSize: 10, color: 'rgba(247,245,239,.6)', marginBottom: 6}}>{`00:00:${String(Math.floor(F / 30)).padStart(2, '0')}:${String(F % 30).padStart(2, '0')} / 00:00:22:12`}</div>
-          <div style={{position: 'relative', height: 26}}>
-            <Onda x={0} y={0} w={460} h={26} k="texto-2" cor={C.ouro} n={90} />
-            <div style={abs({left: 460 * (F / B.dur), top: -6, width: 2, height: 38, background: C.branco})} />
-          </div>
-        </div>
       </div>
       {/* phase 2: CTA under the carousel */}
       {f >= cta - 2 && (

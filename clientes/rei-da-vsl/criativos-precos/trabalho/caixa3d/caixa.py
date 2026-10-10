@@ -124,7 +124,10 @@ w = bpy.data.worlds.new('w'); sc.world = w; w.use_nodes = True
 w.node_tree.nodes['Background'].inputs['Color'].default_value = (1, 1, 1, 1); w.node_tree.nodes['Background'].inputs['Strength'].default_value = .35
 
 # câmera 3/4 levemente de cima
-bpy.ops.object.camera_add(location=(4.6, -6.2, 4.4)); cam = bpy.context.object; sc.camera = cam
+# Q 33..80: depois da fita, a câmera orbita devagar (giro de vitrine, rodada 4: a caixa fica ~3 s na tela)
+orb = (lambda t: t * t * (3 - 2 * t))(max(0, min(1, (Q - 32) / 48)))
+az = math.atan2(-6.2, 4.6) + math.radians(22) * orb; rr = math.hypot(4.6, -6.2) * (1 - .06 * orb)
+bpy.ops.object.camera_add(location=(rr * math.cos(az), rr * math.sin(az), 4.4 - .5 * orb)); cam = bpy.context.object; sc.camera = cam
 cam.data.lens = 70
 cam.rotation_euler = (Vector((0, 0, H * .55)) - cam.location).to_track_quat('-Z', 'Y').to_euler()
 sc.render.filepath = OUT
