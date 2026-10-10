@@ -42,3 +42,7 @@ O detalhe de cada regra (com data e motivo) está em `memoria/feedback-*.md`. Se
 - Segredos (chaves, tokens, cookies) nunca em arquivo versionado nem na memória.
 - Pessoal em `pessoal-vitor/`, cliente em `clientes/<cliente>/`, avulso em `outros/`. Nunca misturar.
 - Toda obra tem `trabalho/ESTADO.md`. Toda lição vai para a biblioteca na hora. Depois de cada entrega, salve no GitHub (`backup/sincronizar.py`).
+
+## Criativos de anúncio: capa e fala (Deidson, cliente Rei da VSL, 10/10/2026)
+- Quadro 0 = capa: a peça-chave (preço/oferta) já completa e legível, nunca tela vazia; cada criativo da série com capa diferente (o Gerenciador de anúncios usa esse quadro).
+- Fala direta: encurtar silêncios naturais (~0,18 s), sem pausas inseridas; pausa curta só onde o lead precisa olhar (exemplo, lista, "este vídeo é um exemplo").
