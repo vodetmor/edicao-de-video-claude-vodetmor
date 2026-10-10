@@ -34,6 +34,7 @@ MAPA = [
     ("escola-consciencia-negra", "pessoal-vitor/escola-consciencia-negra"),
     ("anuncio-vslplay", "clientes/vslplay/anuncio-vslplay"),
     ("criativos-vslplay", "clientes/vslplay/criativos-vslplay"),
+    ("clientes", "clientes"),
     ("vinheta-life", "outros/vinheta-life"),
     ("clientes", "clientes"), ("outros", "outros"),
     ("motion-demo", "laboratorio/motion-demo"),
