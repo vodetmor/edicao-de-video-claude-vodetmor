@@ -4,7 +4,7 @@ Fundo transparente (compõe sobre qualquer cor no Remotion)."""
 import bpy, sys, math, os
 from mathutils import Vector
 HERE = os.path.dirname(os.path.abspath(__file__))
-Q = int(sys.argv[1]) if len(sys.argv) > 1 else 30
+Q = float(sys.argv[1]) if len(sys.argv) > 1 else 30  # aceita fração (rodada 4c: abas em meio-passos)
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, 'caixa.png')
 RES = int(sys.argv[3]) if len(sys.argv) > 3 else 1080
 LOGO = os.path.join(HERE, 'coroa-decal.png')
@@ -59,24 +59,27 @@ def aba(nome, tam, piv, eixo, sinal, fechado):
 
 def aba_em(nome, comp, larg, borda, fechado, ordem):
     """borda: 'frente','tras','esq','dir'. Aba fechada fica deitada sobre a boca."""
-    ang_aberto = math.radians(-120)  # aberta e caída para fora
+    ang_aberto = math.radians(-105)  # aberta em V, um pouco para fora (rodada 4c: -120 caía sobre a frente e escondia a coroa)
     a = ang_aberto * (1 - fechado)
     if borda in ('frente', 'tras'):
         s = -1 if borda == 'frente' else 1
         piv = Vector((0, s * D/2, H + .001 * ordem))
         bpy.ops.object.empty_add(location=piv); e = bpy.context.object
         o = placa(nome, W - .02, D/2 - .01, T * .9, (0, -s * (D/4), T*.45), PAPELAO); o.parent = e
-        e.rotation_euler = (-s * a, 0, 0)
+        e.rotation_euler = (s * a, 0, 0)
     else:
         s = -1 if borda == 'esq' else 1
         piv = Vector((s * W/2, 0, H + .001 * ordem))
         bpy.ops.object.empty_add(location=piv); e = bpy.context.object
         o = placa(nome, W/2 - .02, D - .04, T * .9, (-s * (W/4), 0, T*.45), PAPELAO); o.parent = e
-        e.rotation_euler = (0, s * a, 0)
+        e.rotation_euler = (0, -s * a, 0)
     return e
 
 ease = lambda t: 1 - (1 - max(0, min(1, t))) ** 3
-f_lados = ease(Q / 12); f_fr = ease((Q - 6) / 12)
+# rodada 4c (Vítor: "a caixa não fechou direito, animação estranha de um quadro para o outro"): o ease-out cúbico
+# concentrava o giro de 120° em 2-3 quadros. Agora ease-in-out (smootherstep): o giro se espalha pelo intervalo todo.
+smooth = lambda t: (lambda u: u * u * u * (u * (6 * u - 15) + 10))(max(0, min(1, t)))
+f_lados = smooth(Q / 11); f_fr = smooth((Q - 7) / 11)
 aba_em('aba_esq', 0, 0, 'esq', f_lados, 0); aba_em('aba_dir', 0, 0, 'dir', f_lados, 0)
 aba_em('aba_fr', 0, 0, 'frente', f_fr, 3); aba_em('aba_tr', 0, 0, 'tras', f_fr, 3)
 

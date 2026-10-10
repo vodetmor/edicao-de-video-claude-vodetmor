@@ -82,13 +82,14 @@ const A05: Shot['render'] = (f) => {
   // (q 0-18), a fita corre (q 19-32) e a câmera orbita (q 33-80) até revelar '10 CRIATIVOS' em 'com dez criativos'
   const fe = loc('A05', ev.fechando);
   const pac = loc('A05', ev.pacote);
-  const c0 = fe - 6, c1 = pac + 4; // flaps
-  const q = f < c0 ? 0 : f < c1 ? Math.round((18 * (f - c0)) / (c1 - c0)) : f < c1 + 14 ? 18 + (f - c1) : Math.min(80, 32 + 2 * (f - c1 - 14));
+  const c0 = fe - 8, c1 = pac + 6; // flaps: 37 meio-passos (fecha_00..36, rodada 4c) espalhados por 26 quadros
+  const q = f < c1 + 14 ? 18 + Math.max(0, f - c1) : Math.min(80, 32 + 2 * (f - c1 - 14));
+  const src = f < c1 ? `fecha/fecha_${String(Math.round((36 * clamp((f - c0) / (c1 - c0))))).padStart(2, '0')}.webp` : `caixa/caixa_${String(q).padStart(2, '0')}.webp`;
   const fl = Math.sin(f * 0.07) * 6;
   return (
     <>
       <DotField f={f} cor={C.preto} op={0.08} />
-      <Img src={staticFile(`caixa/caixa_${String(q).padStart(2, '0')}.webp`)} style={abs({left: 0, top: 270 + fl, width: 540, height: 540, WebkitMaskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 90%, transparent)', maskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 90%, transparent)', WebkitMaskComposite: 'source-in', maskComposite: 'intersect'})} />
+      <Img src={staticFile(src)} style={abs({left: 0, top: 270 + fl, width: 540, height: 540, WebkitMaskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 90%, transparent)', maskImage: 'linear-gradient(to right, transparent, #000 12%, #000 88%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 90%, transparent)', WebkitMaskComposite: 'source-in', maskComposite: 'intersect'})} />
       <HL f={f} top={110} size={88} lines={[{t: 'FECHANDO', c: C.preto, at: fe - 2}, {t: 'O PACOTE', c: C.ouroEs, at: pac - 2}]} />
     </>
   );

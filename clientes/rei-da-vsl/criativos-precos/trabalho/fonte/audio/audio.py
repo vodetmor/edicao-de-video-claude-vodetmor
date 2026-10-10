@@ -194,8 +194,8 @@ if QUAL == 'A':
     place(sfx, flap_land(196, 0.35, 1.3), E['isso'], 0.6, send=0.15)
     place(sfx, thud(0.45, 60), E['isso'], 0.45)
     # A05 box flaps + tape + orbit (same q mapping as CriativoA A05)
-    c0, c1 = E['fechando'] - 6, E['pacote'] + 4
-    place(sfx, flap_land(262, 0.3), c0 + round((c1 - c0) * 0.6), 0.35)
+    c0, c1 = E['fechando'] - 8, E['pacote'] + 6
+    place(sfx, flap_land(262, 0.3), c0 + round((c1 - c0) * 0.55), 0.35)  # side flaps land (Q ~11)
     place(sfx, flap_land(294, 0.3), c1, 0.4)
     place(sfx, whoosh(0.45, 1800, 5500, peak=0.85, bw=0.5, tail=0.1), c1 + 1, 0.3)  # tape pull
     place(sfx, snap(), c1 + 14, 0.45)
