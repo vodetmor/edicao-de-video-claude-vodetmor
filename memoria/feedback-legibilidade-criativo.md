@@ -11,7 +11,7 @@ Vítor, 2026-10-09 on the Rei da VSL price ads v1: "muito rápido, informação 
 
 **How to apply:**
 - One idea per scene. Text stays on screen long enough to read it twice.
-- If the client's voice is too short, open pauses between phrases (esticar.py). Don't squeeze the visuals.
+- UPDATED 2026-10-10: the client (Deidson) wants NO inserted pauses: see [[feedback-capa-criativo]]. Readability comes from less information per scene.
 - The 3 s hook is one strong, legible, moving object, not three cuts.
 - Keep 3D hero pieces on screen for 3 s or more.
 - Strip decorative layers (HUD, mono notes, echoes).
