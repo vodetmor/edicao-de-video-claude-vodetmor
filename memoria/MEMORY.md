@@ -61,3 +61,4 @@
 - [[feedback-aprovacao-objetiva]]: APPROVAL PDFs must be SHORT and objective (Vítor 2026-10-09): keyframes + one-line idea per moment + sound page + checklist; keep design, cut explanations.
 - [[feedback-legibilidade-criativo]]: narrated ads: one idea per scene, readable text, 3 s hook = one strong 3D/legible object, hero 3D pieces 3+ s; up to 1 min OK (Vítor 2026-10-09).
 - [[feedback-capa-criativo]]: ad creatives: frame 0 = full cover (price complete, distinct per creative); narration direct, trim silences, pause only on look-moments (Deidson 2026-10-10).
+- [[guia-colaboracao-vslplay-app]]: 2026-10-12 guides for another AI on VSL Play: app dev (organizacao/COLABORACAO-AGENTICA-VSLPLAY.md) + site visual content (COLABORACAO-AGENTICA-VSLPLAY-CONTEUDO.md); app code never inspected yet.
