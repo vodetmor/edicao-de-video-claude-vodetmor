@@ -14,3 +14,8 @@ Estes são os desenhos reais das marcas, tirados de bibliotecas abertas via npm.
 **Direitos:** as marcas pertencem às empresas. Em comparativos editoriais, usar o logo para identificar o produto costuma ser aceito. Em anúncio pago, leia as regras de marca de cada empresa antes, e nunca dê a entender que a marca patrocina o vídeo.
 
 **No código:** no Remotion, importe o SVG e troque `fill="currentColor"` pela cor desejada. Cada `<path>` pode ser animado separadamente (traço desenhando, pétalas montando).
+
+## Google, Instagram, WhatsApp, Maps, Google Meu Negócio (14/10/2026, vídeo MedicMais)
+- wikimedia-*.svg: arquivos oficiais do Wikimedia Commons (Google 2015, "G", Maps 2020, ícone Instagram 2016, escrita Instagram, WhatsApp).
+- gstatic-google-meu-negocio-1024.png: ícone oficial do Google Meu Negócio, servido pelo próprio Google (www.gstatic.com/images/branding/product/2x/google_my_business_512dp.png).
+- Regra (Vítor): marca citada na narração = logo real na tela, nunca só o nome escrito.

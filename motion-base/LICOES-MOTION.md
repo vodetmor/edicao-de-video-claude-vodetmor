@@ -420,3 +420,14 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 - Cena que termina logo depois de uma palavra-chave: o elemento preso a ela pode nem aparecer (o tracejado ficou 4 quadros). Conferir sempre `evento < fim da cena - 30`.
 - Push-in linear 1,00 -> 1,04 em toda cena zerou os trechos parados (freezedetect) sem parecer movimento gratuito.
 - Mix com SFX: abaixar efeitos 9 dB enquanto a voz fala (não só 4) e adiantar o ducking ~100 ms para não pisar no ataque das palavras. Crítica independente: 6,5 -> 8,3 só com essas correções medidas.
+
+### Marca citada = marca na tela (Vítor, 2026-10-14)
+Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp, Maps…), mostrar o logo e a identidade reais dela (SVG oficial, cores dela), nunca só o nome em texto: o espectador não lê, ele reconhece a marca. Busca no Google = barra com o logo do Google. Interações físicas reais (ex.: NFC) ganham o som real correspondente (bip de pagamento por aproximação).
+
+### 3D real no Remotion com three.js (MedicMais v2, 14/10/2026)
+- @remotion/three tem de ter EXATAMENTE a versão do remotion (4.0.535 com remotion 4.0.529 quebra: "resolveSequenceDuration is not a function"). `npm i @remotion/three@<versão do remotion>`.
+- Render e stills com `--gl=angle` / chromiumOptions {gl:'angle'}. Texturas: TextureLoader dentro de delayRender/continueRender.
+- Retrato 9:16: o limite é a LARGURA. Largura visível = 2·d·tan(fov/2)·0,5625. Peça de 1,0 com fov 30 ocupa ~70% da largura a d≈4,8. Câmera perto demais = peça cortada.
+- Face impressa (adesivo da placa) fora da caixa de acrílico (z = espessura/2 + 0,0015) e com meshBasicMaterial toneMapped=false; dentro do material com transmission ela some (vira vidro fosco), e com meshStandard + ACES o vermelho da marca fica salmão.
+- Celular "encostando" num objeto em cima de balcão: o balcão termina logo à frente do objeto, assim o celular pode descer na frente da borda sem atravessar o tampo.
+- Troca de tela do celular (travada -> app -> 1..5 estrelas) = trocar a textura por quadro; mais barato e nítido que animar UI em 3D.
