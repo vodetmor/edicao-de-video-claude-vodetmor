@@ -416,3 +416,7 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 - Dado de mercado só com fonte na tela (TIC Saúde 2023, Cetic.br); dado do cliente só o que está no site. Afirmação sobre o Google do cliente: conferir no Google do Vítor antes do render.
 - Estrutura que fechou: gancho -> o que a clínica já tem -> problema (feed, pesquisa, mercado) -> 4 frentes (ser encontrado, 1 toque, prova, endereço próprio) -> com a cara deles + faltam N detalhes -> chamada que volta à capa.
 - wget direto na pasta do projeto (/mnt) dá "Bus error" ao converter links: baixar no scratch e copiar.
+- (produção, 14/10) Print de página inteira do Playwright "carimba" elementos `position:fixed` (barra do WhatsApp) no ponto da primeira tela: ao rolar o print no celular do vídeo aparece barra duplicada. Tirar o print com a barra escondida e sobrepor a barra real por cima. Espaço de vídeo vazio do site (degradê) lê como glow e "site quebrado": preencher com quadro real do reel que o site promete.
+- Cena que termina logo depois de uma palavra-chave: o elemento preso a ela pode nem aparecer (o tracejado ficou 4 quadros). Conferir sempre `evento < fim da cena - 30`.
+- Push-in linear 1,00 -> 1,04 em toda cena zerou os trechos parados (freezedetect) sem parecer movimento gratuito.
+- Mix com SFX: abaixar efeitos 9 dB enquanto a voz fala (não só 4) e adiantar o ducking ~100 ms para não pisar no ataque das palavras. Crítica independente: 6,5 -> 8,3 só com essas correções medidas.
