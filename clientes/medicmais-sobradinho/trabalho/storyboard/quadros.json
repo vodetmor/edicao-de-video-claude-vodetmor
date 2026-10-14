@@ -1,0 +1,114 @@
+[
+ {
+  "id": "K01",
+  "t": "0,0 s",
+  "cena": "Capa",
+  "fala": "Este é o site da MedicMais Sobradinho. E ele já está pronto.",
+  "acao": "Quadro 0 já é a capa: o site real no celular, título montado. Na fala, o celular sobe 40 px e a página rola sozinha."
+ },
+ {
+  "id": "K02",
+  "t": "5,3 s",
+  "cena": "A clínica",
+  "fala": "…quinhentos e cinquenta metros quadrados…",
+  "acao": "Corredor real do tour (Instagram da clínica) em card; \"550 m²\" conta de 0 a 550 e pousa na palavra."
+ },
+ {
+  "id": "K03",
+  "t": "8,6 s",
+  "cena": "A clínica",
+  "fala": "…médico e dentista no mesmo lugar…",
+  "acao": "Dois cards reais (consulta e cadeira odontológica) chegam de lados opostos e se encostam; o \"+\" nasce entre eles."
+ },
+ {
+  "id": "K04",
+  "t": "11,4 s",
+  "cena": "A clínica",
+  "fala": "…e mais de trinta edições do Saúde Day.",
+  "acao": "Fundo vira vermelho (cor do bloco Saúde Day do site); \"30+\" conta; os atendimentos reais do site entram em fila."
+ },
+ {
+  "id": "K05",
+  "t": "14,0 s",
+  "cena": "O problema",
+  "fala": "Mas, na internet, tudo isso está espalhado num feed.",
+  "acao": "Fundo grafite. Os reels reais da clínica caem em grade e se espalham, cada um torto para um lado."
+ },
+ {
+  "id": "K06",
+  "t": "18,6 s",
+  "cena": "O problema",
+  "fala": "Quem procura implante, prótese fixa ou lentes de contato dental pesquisa antes de decidir.",
+  "acao": "Barra de busca no estilo do site; o texto é digitado letra a letra; os 3 tratamentos reais do site sobem como etiquetas."
+ },
+ {
+  "id": "K07",
+  "t": "23,6 s",
+  "cena": "O problema",
+  "fala": "E, buscando pelo nome da clínica, encontra catálogos e outras clínicas.",
+  "acao": "Agora a busca é o nome da clínica. Chegam 3 resultados de outros; o lugar da MedicMais fica vazio, tracejado em vermelho."
+ },
+ {
+  "id": "K08",
+  "t": "30,4 s",
+  "cena": "O problema",
+  "fala": "Em 2023, um terço dos estabelecimentos de saúde já agendava pela internet. Um ano antes, eram treze por cento.",
+  "acao": "Barras crescem: 13% (2022, cinza) e 34% (2023, vermelho), com a fonte na tela."
+ },
+ {
+  "id": "K09",
+  "t": "35,5 s",
+  "cena": "Como o site agrega",
+  "fala": "O site resolve isso em quatro frentes.",
+  "acao": "Grafite. Quatro \"+\" nascem em grade 2x2 com stagger de 3 quadros; cada um vira o ícone da sua frente."
+ },
+ {
+  "id": "K10",
+  "t": "38,6 s",
+  "cena": "Frente 1 · Ser encontrado",
+  "fala": "Um: cada tratamento ganha o seu lugar, com o nome que o paciente digita na busca.",
+  "acao": "A busca \"implante dentário\" desce e encaixa no card real do site, que ganha o anel vermelho."
+ },
+ {
+  "id": "K11",
+  "t": "43,6 s",
+  "cena": "Frente 2 · Um toque",
+  "fala": "Dois: de qualquer ponto da página, um toque abre o WhatsApp da clínica.",
+  "acao": "O dedo toca \"Agendar no WhatsApp\" na barra fixa real do site; anel de toque + som de clique; \"1 toque\" pousa ao lado."
+ },
+ {
+  "id": "K12",
+  "t": "49,5 s",
+  "cena": "Frente 3 · Prova reunida",
+  "fala": "Três: a prova fica reunida. Estrutura, depoimentos e Saúde Day num lugar só…",
+  "acao": "Depoimento real (Dona Ana, reel da clínica) + comentário real do Instagram + faixa de diferenciais do site se empilham."
+ },
+ {
+  "id": "K13",
+  "t": "57,5 s",
+  "cena": "Frente 4 · Endereço de vocês",
+  "fala": "Quatro: é um endereço de vocês. Anúncio, Google e Instagram levam para a mesma porta, aberta vinte e quatro horas.",
+  "acao": "Três origens no topo; linhas vermelhas descem e convergem no celular com o site; selo \"aberto 24 h\"."
+ },
+ {
+  "id": "K14",
+  "t": "64,0 s",
+  "cena": "Por que comprar",
+  "fala": "E ele tem a cara da MedicMais: o vermelho, o sinal de mais, os serviços de verdade…",
+  "acao": "Notebook e celular com o site real; as peças da identidade (cores, Poppins, o \"+\", o botão) saem da tela como num catálogo."
+ },
+ {
+  "id": "K15",
+  "t": "71,0 s",
+  "cena": "Por que comprar",
+  "fala": "Faltam só quatro detalhes: horário, CNPJ, responsáveis técnicos e o logo oficial.",
+  "acao": "Checklist branco; cada item entra na palavra falada com a caixinha tracejada esperando a clínica."
+ },
+ {
+  "id": "K16",
+  "t": "76,4 s",
+  "cena": "Chamada",
+  "fala": "Vamos colocar a MedicMais no ar?",
+  "acao": "Volta ao enquadramento da capa (loop). O botão vermelho no estilo do site nasce embaixo e pulsa uma vez no \"no ar\"."
+ }
+]

@@ -1,0 +1,93 @@
+[
+ {
+  "id": "C01",
+  "ato": "Gancho",
+  "t": "Este é o site da MedicMais Sobradinho. E ele já está pronto.",
+  "ini": 0.0,
+  "fim": 3.98
+ },
+ {
+  "id": "C02",
+  "ato": "A clínica",
+  "t": "A clínica já tem o que muita clínica queria ter: quinhentos e cinquenta metros quadrados, médico e dentista no mesmo lugar, e mais de trinta edições do Saúde Day.",
+  "ini": 4.33,
+  "fim": 13.0
+ },
+ {
+  "id": "C03",
+  "ato": "O problema",
+  "t": "Mas, na internet, tudo isso está espalhado num feed.",
+  "ini": 13.35,
+  "fim": 16.66
+ },
+ {
+  "id": "C04",
+  "ato": "O problema",
+  "t": "Quem procura implante, prótese fixa ou lentes de contato dental pesquisa antes de decidir. E, buscando pelo nome da clínica, encontra catálogos e outras clínicas.",
+  "ini": 17.01,
+  "fim": 26.75
+ },
+ {
+  "id": "C05",
+  "ato": "O problema",
+  "t": "Em 2023, um terço dos estabelecimentos de saúde já agendava pela internet. Um ano antes, eram treze por cento.",
+  "ini": 27.1,
+  "fim": 34.86
+ },
+ {
+  "id": "C06",
+  "ato": "Como o site agrega",
+  "t": "O site resolve isso em quatro frentes.",
+  "ini": 35.21,
+  "fim": 37.34
+ },
+ {
+  "id": "C07",
+  "ato": "Como o site agrega",
+  "t": "Um: cada tratamento ganha o seu lugar, com o nome que o paciente digita na busca.",
+  "ini": 37.69,
+  "fim": 42.13
+ },
+ {
+  "id": "C08",
+  "ato": "Como o site agrega",
+  "t": "Dois: de qualquer ponto da página, um toque abre o WhatsApp da clínica.",
+  "ini": 42.48,
+  "fim": 46.66
+ },
+ {
+  "id": "C09",
+  "ato": "Como o site agrega",
+  "t": "Três: a prova fica reunida. Estrutura, depoimentos e Saúde Day num lugar só, para quem ainda não conhece vocês.",
+  "ini": 47.01,
+  "fim": 54.54
+ },
+ {
+  "id": "C10",
+  "ato": "Como o site agrega",
+  "t": "Quatro: é um endereço de vocês. Anúncio, Google e Instagram levam para a mesma porta, aberta vinte e quatro horas.",
+  "ini": 54.89,
+  "fim": 62.17
+ },
+ {
+  "id": "C11",
+  "ato": "Por que comprar",
+  "t": "E ele tem a cara da MedicMais: o vermelho, o sinal de mais, os serviços de verdade. Pensado primeiro para o celular.",
+  "ini": 62.52,
+  "fim": 69.93
+ },
+ {
+  "id": "C12",
+  "ato": "Por que comprar",
+  "t": "Faltam só quatro detalhes: horário, CNPJ, responsáveis técnicos e o logo oficial.",
+  "ini": 70.28,
+  "fim": 75.78
+ },
+ {
+  "id": "C13",
+  "ato": "Chamada",
+  "t": "Vamos colocar a MedicMais no ar?",
+  "ini": 76.13,
+  "fim": 77.83
+ }
+]

@@ -1,0 +1,16 @@
+{
+ "id": "medicmais-site",
+ "fonte": {"url": "https://medicmais-sobradinho-site.vercel.app/", "medido": "2026-10-14", "como": "ponte-tokens.mjs na cópia local (identidade/site) + leitura do CSS :root"},
+ "cores": {
+  "fundo": "#F4F5F7", "superficie": "#FFFFFF", "texto": "#121216", "textoSuave": "#55565E",
+  "linha": "#E6E8EC", "neutro": "#A1A1A9", "acento": "#EB2026", "acentoEscuro": "#A72A2E",
+  "acentoClaro": "#ED5C58", "escuro": "#121216", "textoSobreEscuro": "#C9CAD1", "whatsapp": "#25D366"
+ },
+ "fonteTitulo": "Poppins", "pesoTitulo": 800, "caixaTitulo": "maiúsculas", "trackingTitulo": "-0.025em",
+ "fonteTexto": "Poppins", "pesoTexto": 400,
+ "raio": {"card": 18, "bloco": 26, "plus": "28% do lado", "botao": 999},
+ "motivo": "sinal de + branco em squircle vermelho (26 px, raio 8) antes de cada item; '+' gigante a 12% de branco no bloco vermelho",
+ "botoes": {"primario": "#EB2026 / texto branco / pílula / Poppins 600 16px / sombra 0 8 20 rgba(235,32,38,.28)", "secundario": "contorno #121216 2px / pílula", "branco": "#FFF / texto #EB2026"},
+ "filtroDeGosto": "fora do vídeo: degradê do hero (#F4F5F7 -> branco) vira #F4F5F7 chapado; brilho radial vermelho do card de vídeo sai (P1). Fica o resto.",
+ "logo": "o site usa o letreiro 'Medic' grafite + 'Mais' vermelho (Poppins 800). Logo oficial (coração em M, visto na parede da recepção nos reels) ainda sem arquivo: NÃO redesenhar."
+}

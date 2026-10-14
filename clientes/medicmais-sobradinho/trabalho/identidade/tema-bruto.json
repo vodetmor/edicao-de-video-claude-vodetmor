@@ -1,0 +1,206 @@
+{
+  "titulo": "MedicMais Sobradinho-DF | Clínica Médica e Odontológica",
+  "fundos": [
+    {
+      "valor": "rgb(244, 245, 247)",
+      "peso": 1980490
+    },
+    {
+      "valor": "rgb(255, 255, 255)",
+      "peso": 1002192
+    },
+    {
+      "valor": "rgb(18, 18, 22)",
+      "peso": 646065
+    },
+    {
+      "valor": "rgb(235, 32, 38)",
+      "peso": 370023
+    },
+    {
+      "valor": "rgba(255, 255, 255, 0.94)",
+      "peso": 99360
+    },
+    {
+      "valor": "rgb(255, 243, 191)",
+      "peso": 26297
+    },
+    {
+      "valor": "rgb(37, 211, 102)",
+      "peso": 3600
+    }
+  ],
+  "textos": [
+    {
+      "valor": "rgb(85, 86, 94)",
+      "peso": 1383
+    },
+    {
+      "valor": "rgb(18, 18, 22)",
+      "peso": 850
+    },
+    {
+      "valor": "rgb(255, 255, 255)",
+      "peso": 572
+    },
+    {
+      "valor": "rgb(235, 32, 38)",
+      "peso": 335
+    },
+    {
+      "valor": "rgb(201, 202, 209)",
+      "peso": 205
+    },
+    {
+      "valor": "rgb(92, 68, 0)",
+      "peso": 138
+    }
+  ],
+  "bordas": [
+    {
+      "valor": "rgb(230, 232, 236)",
+      "peso": 5385
+    },
+    {
+      "valor": "rgba(0, 0, 0, 0)",
+      "peso": 1069
+    },
+    {
+      "valor": "rgb(18, 18, 22)",
+      "peso": 380
+    }
+  ],
+  "fontesTitulo": [
+    {
+      "valor": "Poppins 800",
+      "peso": 294
+    },
+    {
+      "valor": "Poppins 700",
+      "peso": 280
+    }
+  ],
+  "fontesTexto": [
+    {
+      "valor": "Poppins 400",
+      "peso": 1706
+    },
+    {
+      "valor": "Poppins 600",
+      "peso": 552
+    },
+    {
+      "valor": "Poppins 500",
+      "peso": 446
+    },
+    {
+      "valor": "Poppins 700",
+      "peso": 187
+    },
+    {
+      "valor": "Poppins 800",
+      "peso": 18
+    }
+  ],
+  "tamanhos": [
+    {
+      "valor": "15px",
+      "peso": 1022
+    },
+    {
+      "valor": "14px",
+      "peso": 647
+    },
+    {
+      "valor": "16px",
+      "peso": 402
+    },
+    {
+      "valor": "18px",
+      "peso": 397
+    },
+    {
+      "valor": "13px",
+      "peso": 306
+    },
+    {
+      "valor": "17px",
+      "peso": 224
+    },
+    {
+      "valor": "38px",
+      "peso": 194
+    },
+    {
+      "valor": "19px",
+      "peso": 82
+    },
+    {
+      "valor": "9px",
+      "peso": 58
+    },
+    {
+      "valor": "54px",
+      "peso": 45
+    }
+  ],
+  "raios": [
+    {
+      "valor": "8px",
+      "peso": 19
+    },
+    {
+      "valor": "999px",
+      "peso": 17
+    },
+    {
+      "valor": "18px",
+      "peso": 15
+    },
+    {
+      "valor": "26px",
+      "peso": 7
+    },
+    {
+      "valor": "50%",
+      "peso": 6
+    },
+    {
+      "valor": "4px",
+      "peso": 2
+    }
+  ],
+  "sombras": [
+    {
+      "valor": "rgba(18, 18, 22, 0.22) 0px 24px 50px 0px",
+      "peso": 5
+    },
+    {
+      "valor": "rgba(235, 32, 38, 0.28) 0px 8px 20px 0px",
+      "peso": 3
+    },
+    {
+      "valor": "rgba(0, 0, 0, 0.22) 0px 10px 24px 0px",
+      "peso": 1
+    }
+  ],
+  "botoes": [
+    {
+      "valor": "rgb(235, 32, 38) | texto rgb(255, 255, 255) | raio 999px | 600 16px",
+      "peso": 2
+    },
+    {
+      "valor": "rgb(255, 255, 255) | texto rgb(235, 32, 38) | raio 999px | 600 16px",
+      "peso": 2
+    },
+    {
+      "valor": "rgb(235, 32, 38) | texto rgb(255, 255, 255) | raio 999px | 600 14px",
+      "peso": 1
+    }
+  ],
+  "variaveisCss": {
+    "--radius": "18px"
+  },
+  "fonte": "file:///tmp/claude-0/-home-user-edicao-de-video-claude-vodetmor/97728075-4d23-54a9-9cd5-fd82f550f117/scratchpad/mirror/medicmais-sobradinho-site.vercel.app/index.html",
+  "medidoEm": "2026-10-14T02:48:13.450Z"
+}
