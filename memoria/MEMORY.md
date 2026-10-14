@@ -65,4 +65,4 @@
 - [[feedback-capa-criativo]]: ad creatives: frame 0 = full cover (price complete, distinct per creative); narration direct, trim silences, pause only on look-moments (Deidson 2026-10-10).
 - [[guia-colaboracao-vslplay-app]]: 2026-10-12 guides for another AI on VSL Play: app dev (organizacao/COLABORACAO-AGENTICA-VSLPLAY.md) + site visual content (COLABORACAO-AGENTICA-VSLPLAY-CONTEUDO.md); app code never inspected yet.
 - [[estaticos-precos-rei-da-vsl]]: 6 code-made static ads (Rei da VSL price creatives) delivered 2026-10-13 in clientes/rei-da-vsl/estaticos-precos; awaiting comparison with GPT version.
-- [[video-venda-site-medicmais]]: sales video for MedicMais clinic site (owner pitch); plan PDF + 16 keyframes 2026-10-14, awaiting OK. clientes/medicmais-sobradinho.
+- [[video-venda-site-medicmais]]: sales video for MedicMais clinic site (owner pitch); approved + DELIVERED 2026-10-14 (90 s, Ana Dias voice). clientes/medicmais-sobradinho.
