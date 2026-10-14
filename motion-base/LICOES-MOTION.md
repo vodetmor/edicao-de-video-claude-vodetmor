@@ -408,3 +408,11 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 ## Estático: código vs gerador de imagem (Vítor, 13/10/2026)
 - Estáticos por código (HTML+Playwright) saíram corretos mas "sem graça" para o Vítor: faltou fotografia/material/ousadia. Híbrido: gerador de imagem (GPT/Gemini) faz a arte com prompts muito específicos; logo real e botão entram depois por código (reservar faixa limpa no topo e embaixo no prompt).
 - Pinterest funciona da nuvem sem token: motion-base/fontes/pinterest/LEIA-ME.md.
+
+## Vídeo de venda de site para cliente (MedicMais, 14/10/2026, palpite até o Vítor aprovar)
+- Pitch 1 a 1 (vender o site ao dono) não é criativo de tráfego: o gancho é a personalização. Quadro 0 = o site DELE rodando no celular com "o site de vocês já está pronto".
+- Nada de UI falsa: o celular mostra o print real do site (página inteira @3x) rolado até a seção, com o cabeçalho fixo e a barra fixa reais por cima. Offsets das seções medidos com getBoundingClientRect no Playwright.
+- Reels públicos do Instagram do cliente baixam com yt-dlp da nuvem (sem login, quase todos). Material real da clínica > qualquer B-roll. Têm legenda queimada: card mostrando só o terço de cima.
+- Dado de mercado só com fonte na tela (TIC Saúde 2023, Cetic.br); dado do cliente só o que está no site. Afirmação sobre o Google do cliente: conferir no Google do Vítor antes do render.
+- Estrutura que fechou: gancho -> o que a clínica já tem -> problema (feed, pesquisa, mercado) -> 4 frentes (ser encontrado, 1 toque, prova, endereço próprio) -> com a cara deles + faltam N detalhes -> chamada que volta à capa.
+- wget direto na pasta do projeto (/mnt) dá "Bus error" ao converter links: baixar no scratch e copiar.
