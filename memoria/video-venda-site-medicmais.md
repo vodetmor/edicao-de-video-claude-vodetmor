@@ -1,12 +1,12 @@
 ---
 name: video-venda-site-medicmais
-description: Sales video pitching the MedicMais Sobradinho clinic website to its owner; approved and DELIVERED 2026-10-14 (90 s 9:16, Ana Dias voice)
+description: MedicMais Sobradinho sales video; v1 (site) delivered 2026-10-14; v2 = site + Google Meu Negócio NFC plaque, pre-approved, built overnight 2026-10-14
 metadata:
   type: project
-  modified: 2026-10-14T03:00:12.144Z
 ---
-Vítor (2026-10-13 23:44 BRT) asked for a narrated edited video selling the site https://medicmais-sobradinho-site.vercel.app/ to the clinic owner (why a clinic needs a site, how it adds to the business, why buy). Not related to VSL Play. Thread cmsg_01257unjkPWjtnQPA28xytUS61dtuLgwuXSNb3GRhbyodS.
-- Work: clientes/medicmais-sobradinho/trabalho (ESTADO.md, SPEC.md, identidade/tema.json = red #EB2026, ink #121216, Poppins 800, "+" squircle motif).
-- Delivered 2026-10-14: 5-page approval PDF, 16 keyframes 9:16, provisional edge-tts voice (~78 s). Real clinic reels downloaded via yt-dlp in brutos/reels.
-- 2026-10-14 03:06 UTC Vítor approved plan and sent Ana Dias ElevenLabs voice (one file; Claude splits it). Delivered video-site-medicmais.mp4 + -celular.mp4 (critic 8.3/10). Open: Scribe heard 'Magic Mais' (check pronunciation), Google claim K07 unverified, 16:9 on request.
-Related: [[extract-ds-avaliacao]], [[feedback-aprovacao-objetiva]], [[feedback-quadros-chave]].
+Vítor (2026-10-13 23:44 BRT) asked for a narrated video selling https://medicmais-sobradinho-site.vercel.app/ to the clinic owner. Thread cmsg_01257unjkPWjtnQPA28xytUS61dtuLgwuXSNb3GRhbyodS.
+- Work: clientes/medicmais-sobradinho/trabalho (ESTADO.md has everything). Identity: red #EB2026, ink #121216, Poppins 800, "+" squircle.
+- v1 delivered 2026-10-14 03:xx UTC (88 s, critic 8.3).
+- 2026-10-14 04:13 UTC Vítor: offer is now site + Google Meu Negócio (NFC review plaque, "aproxime seu celular"), i.e. digital positioning. Wants real logos for every brand mentioned (Google, Instagram, WhatsApp, Maps), IG feed with real IG identity (he sent the profile print), and a "3D bonitão" plaque scene with the NFC "tim" sound and a 5-star line. Pre-approved, no PDF, wants it ready when he wakes up.
+- v2 voice: brutos/voz/locucao-v2-ana-dias.mp3 (146.7 s). Scenes K01–K23; 3D plaque in src/Plaquinha3D.tsx (three.js, --gl=angle).
+Related: [[feedback-marca-real-na-tela]], [[feedback-aprovacao-objetiva]].
