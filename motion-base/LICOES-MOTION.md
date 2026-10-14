@@ -404,3 +404,7 @@ Estudo completo: fontes/chase-ai/NOTAS.md (transcrição, quadros e o código MI
 - PNG com "shadow catcher" do Blender traz um véu de alfa baixo no quadro inteiro: num fundo chapado aparece um quadrado cinza. Limpar: subtrair o alfa medido na borda e esfumar a sombra numa elipse (`clientes/rei-da-vsl/estaticos-precos/trabalho/prepara.py`).
 - Carimbo/selo por cima de texto (cupom, legenda) viola a regra "nada cruzando texto": prefira a linha de "incluso" dentro da peça.
 - Mesma regra de capa dos vídeos: preço inteiro e legível como peça principal; série distinta por cor de fundo (01 preto/ouro, 02 branco/preto).
+
+## Estático: código vs gerador de imagem (Vítor, 13/10/2026)
+- Estáticos por código (HTML+Playwright) saíram corretos mas "sem graça" para o Vítor: faltou fotografia/material/ousadia. Híbrido: gerador de imagem (GPT/Gemini) faz a arte com prompts muito específicos; logo real e botão entram depois por código (reservar faixa limpa no topo e embaixo no prompt).
+- Pinterest funciona da nuvem sem token: motion-base/fontes/pinterest/LEIA-ME.md.
