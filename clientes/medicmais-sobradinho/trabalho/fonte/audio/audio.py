@@ -20,7 +20,7 @@ NFR = CU['dur']
 N = int(NFR / FPS * SR) + SR // 2
 OUT = os.path.join(HERE, '..', '..', 'render')
 os.makedirs(OUT, exist_ok=True)
-VOZ = os.path.join(HERE, '..', '..', '..', 'brutos', 'voz', 'locucao-ana-dias.mp3')
+VOZ = os.path.join(HERE, '..', '..', '..', 'brutos', 'voz', 'locucao-v2-ana-dias.mp3')  # v2: site + Google Meu Negócio
 
 G0, BEAT = 0, 19
 
@@ -37,6 +37,7 @@ mus = np.zeros((N, 2))
 drm = np.zeros((N, 2))
 sfx = np.zeros((N, 2))
 rev = np.zeros((N, 2))
+hero = np.zeros((N, 2))  # o "tim" do NFC: momento-herói, quase sem ducking
 
 
 def place(dst, sig, f, gain=1.0, pan=0.0, send=0.0):
@@ -59,8 +60,9 @@ def place(dst, sig, f, gain=1.0, pan=0.0, send=0.0):
 CH = {'D': [50, 54, 57], 'A': [49, 52, 57], 'Bm': [50, 54, 59], 'G': [50, 55, 59]}
 ROOT = {'D': 38, 'A': 33, 'Bm': 35, 'G': 31}
 CYC = ['D', 'A', 'Bm', 'G']
-SECT = [(0, 'light'), (grade(INI['K02']), 'groove'), (grade(INI['K05']), 'break'), (grade(EV['frentes']) + 4 * BEAT, 'full'),
-        (grade(INI['K14']), 'groove'), (grade(INI['K15']), 'light'), (grade(EV['noar']) - 4 * BEAT, 'build'), (EV['noar'], 'outro'), (NFR, 'end')]
+SECT = [(0, 'light'), (grade(INI['K02']), 'groove'), (grade(INI['K05']), 'break'), (grade(INI['K09']), 'light'), (grade(EV['frentes']), 'full'),
+        (grade(INI['K16']), 'groove'), (grade(INI['K18']), 'break'), (grade(INI['K19']), 'full'), (grade(INI['K20']), 'groove'),
+        (grade(INI['K22']), 'light'), (grade(EV['noar']) - 4 * BEAT, 'build'), (EV['noar'], 'outro'), (NFR, 'end')]
 
 
 def sect(f):
@@ -129,8 +131,8 @@ place(drm, crash(), a, 0.4, send=0.2)
 
 # ---------------------------------------------------------------- efeitos nos eventos da imagem
 I = INI
-for k in ['K02', 'K04', 'K05', 'K06', 'K07', 'K08', 'K09', 'K10', 'K11', 'K12', 'K13', 'K14', 'K15', 'K16']:
-    place(sfx, whoosh(0.28, 600, 4200, peak=0.4, bw=0.7, tail=0.4), I[k] - 4, 0.16, send=0.08)
+for k in [k for k in I if k not in ('K01', 'K03')]:
+    place(sfx, whoosh(0.28, 600, 4200, peak=0.4, bw=0.7, tail=0.4), I[k] - 4, 0.10, send=0.08)
 place(sfx, swish(0.22, 900, 4000), I['K03'], 0.12, pan=-0.5)
 place(sfx, swish(0.22, 900, 4000), EV['dentista'] - 8, 0.12, pan=0.5)
 place(sfx, pop(700, 0.2), EV['dentista'] + 2, 0.25)
@@ -146,23 +148,42 @@ def contador(start, dur, n, freq):
     place(sfx, tap(380, weight=0.6), start + dur, 0.3)
 
 
+def digita(start, n):
+    for c in range(n):
+        place(sfx, keytick(), start + c * 2, 0.13, pan=0.15)
+
+
+def nfc_tim():
+    """O "tim" do pagamento por aproximação: bipe limpo ~2,4 kHz, ataque seco, 150 ms."""
+    t = T(0.16)
+    env = np.minimum(1, t / 0.004) * np.exp(-t / 0.09) * (t < 0.15)
+    x = np.sin(2 * np.pi * 2400 * t) + 0.18 * np.sin(2 * np.pi * 4800 * t) + 0.06 * np.sin(2 * np.pi * 7200 * t)
+    return norm(x * env, 0.9)
+
+
+def ding(f1, f2):
+    """confirmação do celular: duas notas de sino curtas"""
+    a = bell(f1, 0.6, 0.25)
+    b = bell(f2, 0.8, 0.3)
+    out = np.zeros(len(a) + int(0.09 * SR) + len(b))
+    out[: len(a)] += a
+    out[int(0.09 * SR): int(0.09 * SR) + len(b)] += b
+    return norm(out, 0.8)
+
+
 contador(EV['quinhentos'] - 4, 20, 550, 3200)
 place(sfx, thud(0.4, 60), EV['quinhentos'] + 16, 0.25)
 contador(EV['trinta'] - 8, 16, 30, 3000)
 place(sfx, thud(0.45, 55), EV['trinta'] + 8, 0.3)
 for i in range(6):
     place(sfx, tap(midi(67 + [0, 2, 4, 7, 9, 12][i]), 0), EV['saudeday'] - 12 + i * 3, 0.1, pan=-0.3 + 0.12 * i)
-# feed: cards caindo e se espalhando
+# K05 Instagram: o celular sobe, os posts voam do feed
+place(sfx, whoosh(0.5, 500, 2500, peak=0.4, bw=0.7, tail=0.3), I['K05'] + 2, 0.12)
 for i in range(9):
-    place(sfx, swish(0.12, 1500, 4500), I['K05'] + 6 + i * 2, 0.05, pan=(i % 3 - 1) * 0.5)
-place(sfx, whoosh(0.5, 3500, 600, peak=0.3, bw=0.7, tail=0.5), EV['espalhado'] - 2, 0.2)
-
-
-def digita(start, n):
-    for c in range(n):
-        place(sfx, keytick(), start + c * 2, 0.13, pan=0.15)
-
-
+    place(sfx, swish(0.14, 1300, 4800), EV['espalhado'] - 2 + i * 2, 0.06, pan=(i % 3 - 1) * 0.6)
+place(sfx, whoosh(0.5, 3500, 600, peak=0.3, bw=0.7, tail=0.5), EV['espalhado'] - 2, 0.16)
+# K06/K07 Google
+place(sfx, pop(880, 0.18), I['K06'] + 2, 0.18)
 digita(I['K06'] + 10, len('implante dentário sobradinho'))
 for k in ['implante', 'protese', 'lentes']:
     place(sfx, pop(820, 0.16), EV[k] - 2, 0.2)
@@ -171,15 +192,27 @@ for k, d in [('catalogos', 0), ('outras', 0), ('outras', 8)]:
     place(sfx, tap(300, weight=0.5), EV[k] - 2 + d, 0.18)
 place(sfx, thud(0.3, 80), EV['clinicas'] + 6, 0.2)
 place(sfx, blip(330, 0.2, 0.08), EV['clinicas'] + 6, 0.12)
-# gráfico
+# K08 gráfico
 place(sfx, riser(0.8, 300, 2500, tone=True), EV['terco'] - 4, 0.12)
 place(sfx, tap(420, weight=0.7), EV['terco'] + 20, 0.3)
 place(sfx, tap(300, weight=0.5), EV['treze'] + 10, 0.22)
-# 4 frentes: um "+" de cada vez
+# K09 não é só um site: risco, a peça central, as marcas em volta
+place(sfx, swish(0.3, 2500, 600), EV['site0'] + 2, 0.16)
+place(sfx, suck(0.3), EV['colocar'] - 8, 0.14)
+place(sfx, pluck(midi(74), 0.5, bright=1.1), EV['colocar'] - 4, 0.28, send=0.2)
+for i, (k, d) in enumerate([('colocar', 10), ('colocar', 16), ('certo', 2), ('internet2', 2)]):
+    place(sfx, pop(700 + 90 * i, 0.16), EV[k] + d, 0.18, pan=[-0.5, 0.5, -0.5, 0.5][i])
+# K10 duas partes
+place(sfx, whoosh(0.35, 700, 3000, peak=0.4, bw=0.7, tail=0.3), EV['duas'] - 2, 0.14, pan=-0.4)
+place(sfx, whoosh(0.35, 700, 3000, peak=0.4, bw=0.7, tail=0.3), EV['gmn1'] - 6, 0.14, pan=0.4)
+place(sfx, pluck(midi(79), 0.4, bright=1.1), EV['gmn1'] - 2, 0.26, send=0.2)
+for i in range(5):
+    place(sfx, tick(2600 + 200 * i, 0.03, 0.006), EV['gmn1'] + 10 + i * 3, 0.08)
+# K11 4 frentes: um "+" de cada vez
 for i in range(4):
     place(sfx, pluck(midi(74 + [0, 4, 7, 12][i]), 0.4, bright=1.1), EV['quatro'] + 2 + i * 3, 0.25, send=0.2)
 # frente 1: rolagem + digitação + anel
-place(sfx, whoosh(0.9, 400, 1800, peak=0.5, bw=0.8, tail=0.3), I['K10'] + 16, 0.1)
+place(sfx, whoosh(0.9, 400, 1800, peak=0.5, bw=0.8, tail=0.3), I['K12'] + 16, 0.1)
 digita(EV['tratamento'] - 6, len('implante dentário'))
 place(sfx, bell(midi(81), 1.2, 0.4), EV['digita'] - 2, 0.16, send=0.25)
 # frente 2: rolagem pela página, toque, WhatsApp abre
@@ -199,19 +232,64 @@ for i, k in enumerate(['anuncio', 'google', 'instagram']):
 place(sfx, whoosh(0.6, 3000, 700, peak=0.4, bw=0.6, tail=0.4), EV['levam'] - 2, 0.12)
 place(sfx, whoosh(0.4, 600, 2500, peak=0.4, bw=0.7, tail=0.4), EV['endereco'] - 6, 0.14)
 place(sfx, pop(560, 0.2), EV['vinte'] - 4, 0.2)
-# identidade
+# K16 parte 2: Google Meu Negócio, Google e Maps
+place(sfx, pluck(midi(81), 0.5, bright=1.1), EV['gmn2'] - 8, 0.3, send=0.25)
+place(sfx, thud(0.35, 70), EV['gmn2'] - 4, 0.18)
+place(sfx, pop(760, 0.18), EV['google2'] - 6, 0.2, pan=-0.4)
+place(sfx, pop(860, 0.18), EV['maps'] - 6, 0.2, pan=0.4)
+place(sfx, tap(260, weight=0.7), EV['maps'] + 4, 0.22, pan=0.4)
+# K17 o perfil se completa
+place(sfx, swish(0.3, 900, 3800), EV['fotos'] - 6, 0.12)
+for k in ['end', 'telefone', 'avaliacoes']:
+    place(sfx, tap(midi(72), 0), EV[k] - 4, 0.14)
+    place(sfx, blip(midi(84), 0.1, 0.04), EV[k] - 2, 0.06)
+place(sfx, pop(620, 0.2), EV['completo'] - 4, 0.24)
+place(sfx, bell(midi(86), 0.8, 0.3), EV['completo'] - 2, 0.1, send=0.25)
+place(sfx, button_press(), EV['ligado'] - 2, 0.3)
+# K18 plaquinha 3D: estrelas vazias, a peça sobe girando e pousa, o celular chega, "tim", a tela abre, estrelas
+for i in range(5):
+    place(sfx, tap(midi(76), 0), I['K18'] + 2 + i * 3, 0.06, pan=-0.4 + 0.2 * i)
+place(sfx, whoosh(1.0, 300, 3200, peak=0.75, bw=0.8, tail=0.2), EV['plaquinha'] - 32, 0.2, send=0.1)
+place(sfx, thud(0.45, 65), EV['plaquinha'] - 2, 0.3)
+place(sfx, tap(500, weight=0.8), EV['plaquinha'] - 2, 0.25)
+place(sfx, whoosh(1.4, 1200, 400, peak=0.5, bw=0.8, tail=0.4), EV['balcao'] - 10, 0.08)
+place(sfx, whoosh(1.2, 500, 2200, peak=0.85, bw=0.8, tail=0.15), EV['aproxima'] - 12, 0.16, pan=0.5)
+place(hero, nfc_tim(), EV['toca'], 0.75)
+place(hero, ding(midi(84), midi(91)), EV['toca'] + 3, 0.36, send=0.2)
+for i in range(5):
+    place(sfx, pluck(midi(76 + [0, 2, 4, 7, 9][i]), 0.35, bright=1.2), EV['avaliacao'] + i * 5, 0.22, pan=-0.4 + 0.2 * i, send=0.15)
+place(sfx, pop(600, 0.18), EV['sembaixar'] - 4, 0.2)
+place(sfx, pop(680, 0.18), EV['semprocurar'] - 4, 0.2)
+# K19 cada paciente vira uma estrela
+for i in range(3):
+    place(sfx, pop(560 + 60 * i, 0.16), I['K19'] + 4 + i * 5, 0.16, pan=-0.4 + 0.4 * i)
+for i in range(5):
+    place(sfx, suck(0.2) if i < 3 else swish(0.12, 1500, 4000), EV['estrela'] - 6 + i * 4, 0.06)
+    place(sfx, pluck(midi(79 + [0, 2, 4, 7, 12][i]), 0.4, bright=1.2), EV['estrela'] + i * 4, 0.24, pan=-0.5 + 0.25 * i, send=0.2)
+place(sfx, shimmer(midi(91), 1.2), EV['estrela'] + 18, 0.08)
+place(sfx, whoosh(0.5, 600, 2600, peak=0.5, bw=0.7, tail=0.3), EV['proximo'] - 8, 0.14)
+for i in range(5):
+    place(sfx, tick(3000 + 150 * i, 0.03, 0.006), EV['proximo'] + 4 + i * 3, 0.07)
+# K20 identidade
 for i in range(4):
     place(sfx, tap(midi(72 + 2 * i), 0), EV['vermelho'] - 4 + i * 3, 0.12)
 place(sfx, pluck(midi(79), 0.4), EV['sinal'] - 2, 0.25, send=0.2)
 place(sfx, pop(520, 0.2), EV['servicos'] - 4, 0.2)
 place(sfx, swish(0.25, 800, 3000), EV['celular'] - 4, 0.1)
+# K21 o sistema
+for i, k in enumerate(['site4', 'google4', 'plaquinha2']):
+    place(sfx, pluck(midi(74 + [0, 4, 7][i]), 0.45, bright=1.1), EV[k] - 6, 0.24, send=0.2)
+place(sfx, whoosh(0.7, 800, 3000, peak=0.5, bw=0.7, tail=0.3), EV['prova2'] - 8, 0.12)
+place(sfx, bell(midi(86), 1.4, 0.5), EV['prova2'] + 4, 0.12, send=0.3)
 # checklist
 for k in ['horario', 'cnpj', 'responsaveis', 'logo']:
     place(sfx, tap(360, weight=0.4), EV[k] - 4, 0.18)
     place(sfx, blip(midi(79), 0.1, 0.04), EV[k] - 2, 0.07)
-# chamada
+# chamada: no ar e no mapa (o pino cai)
 place(sfx, pop(520, 0.2), EV['noar'] - 12, 0.25)
 place(sfx, button_press(), EV['noar'] + 2, 0.4)
+place(sfx, whoosh(0.3, 3000, 900, peak=0.6, bw=0.6, tail=0.2), EV['mapa'] - 8, 0.12)
+place(sfx, tap(300, weight=0.8), EV['mapa'] + 2, 0.3)
 
 # ---------------------------------------------------------------- reverb
 
@@ -271,6 +349,7 @@ stems = {
     'drums': drm * G['drm'] * (DUCK * 10 ** (-3.0 * act_s / 20))[:, None],  # bateria 3 dB a mais sob a voz (crítica v2)
     'sfx': sfx * G['sfx'] * DUCK_SFX[:, None],
     'reverb': wet * G['wet'] * DUCK[:, None],
+    'hero': hero * G['sfx'] * (10 ** (-3.0 * act_s / 20))[:, None],
 }
 speaking = act_s > 0.9
 bed = (stems['music'] + stems['drums'] + stems['reverb'])[speaking]  # CLAUDE.md: music 18-22 LU under the voice

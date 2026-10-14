@@ -48,3 +48,25 @@ cd ~/mm && npx remotion render src/index.ts MedicMais out/video.mp4 --concurrenc
 ffmpeg -i out/video.mp4 -i $W/render/audio.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart $W/render/video-v3.mp4
 ```
 Próximo: retorno do Vítor; versão 16:9 se ele quiser para reunião.
+
+## Rodada 2 (2026-10-14 04:13 UTC) — site + Google Meu Negócio
+- Vítor pediu: logo do Google nas buscas, logos reais dos apps citados, e nova camada: plaquinha NFC do Google Meu Negócio (ref.: vídeo WhatsApp = placa "Nós agradeceríamos sua avaliação no Google!", celular encosta → abre tela de 5 estrelas). Oferta vira posicionamento digital (site + GMN).
+- Plano PRÉ-APROVADO (sem PDF). Roteiro novo: voz/roteiro-v2-gmn.txt (enviado). Próximo: quando chegar o áudio dele → transcreve.py, refazer cues.py, cenas novas (perfil GMN + plaquinha NFC + estrelas), logos reais (Google/Instagram/WhatsApp/Maps), render, crítico ≥ 8, entregar.
+- Vítor 04:14 UTC (para o ajuste, depois do áudio): cena da plaquinha em 3D caprichado — celular chega perto, som de NFC de pagamento por aproximação ("tim"), linha de cinco estrelas acendendo, motion forte. PRINCÍPIO: toda empresa citada (Google, Instagram, WhatsApp, Maps) aparece com logo/identidade real — o cliente vê a marca, não lê o texto.
+
+## v4 / v2 da oferta (14/10/2026 ~04:20–05:30 UTC): site + Google Meu Negócio — PRÉ-APROVADO, sem PDF
+- Voz: brutos/voz/locucao-v2-ana-dias.mp3 (146,7 s) -> voz/transcreve_v2.py -> voz/transcricao-v2.json (351 palavras).
+- Cenas (23): fonte/cues.py (INI K01–K23, EV por índice de palavra). v1 guardada em v1-backup/.
+- Novas: K05 Instagram real (print do perfil em brutos/ref/instagram-perfil.png, posts voam do feed), K06/K07 Google (logo real + barra com "G"),
+  K09 "não é só um site" (MedicMais no centro, Google/Instagram/Maps/WhatsApp em volta), K10 duas partes, K16 Parte 2 Google Meu Negócio,
+  K17 perfil se completando (dados reais do site: Quadra 7/9, CL 13; (61) 99825-5551), K18 plaquinha NFC em 3D real (src/Plaquinha3D.tsx, three.js),
+  K19 cada paciente vira uma estrela (pacientes reais dos depoimentos), K21 o sistema (site -> Google -> plaquinha -> prova), K23 "no ar e no mapa".
+- Logos reais: fonte/public/logos (cópia de motion-base/logos/wikimedia-* e gstatic-google-meu-negocio). Ícones Phosphor: src/icons.ts.
+- Texturas 3D: fonte/texturas/gera.py (HTML) + render.mjs (Playwright) -> public/tex/*.png (placa, tela travada, tela de avaliação 0–5 estrelas).
+- Áudio: fonte/audio/audio.py (voz v2; "tim" NFC = bipe 2,4 kHz 150 ms no toque + ding de 2 notas; estrelas em pluck subindo).
+- Render (precisa --gl=angle por causa do 3D; @remotion/three fixo em 4.0.529 = mesma versão do remotion):
+  cd ~/mm && npx remotion render src/index.ts MedicMais out/v4.mp4 --concurrency=4 --crf=18 --gl=angle ; depois mux com render/audio.wav.
+- Stills: cd ~/mm && node stills.mjs out/s2 <quadros...> (stills.mjs passa chromiumOptions gl angle).
+- ENTREGUE 14/10/2026 05:30 UTC: ../video-site-google-medicmais.mp4 (master, 148 s, 54 MB) + ../video-site-google-medicmais-celular.mp4 (29 MB). render/video-v6.mp4 = master.
+  Crítica independente: v4 7,0 -> v5 8,0 -> v6 (tim do NFC movido para a pausa antes de "e a tela", celular encostando no ícone NFC). -14,0 LUFS / -1,9 dBTP.
+  Pendências leves anotadas pela crítica (não bloqueiam): cenas mais paradas em 70–75 s (depoimento), 80–84 s (linhas + celular), 125–128 s (paleta); sem legenda (estilo aprovado na v1).
