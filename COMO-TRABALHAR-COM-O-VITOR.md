@@ -21,7 +21,7 @@ O detalhe de cada regra (com data e motivo) está em `memoria/feedback-*.md`. Se
 - Qualidade primeiro. "Econômico" significa processo sem retrabalho, nunca cortar qualidade. Tempo de edição não importa. Mais motion é bem-vindo.
 - Todo vídeo segue o método (skill `metodo-edicao`): referências buscadas por conta própria e acima do pedido literal → SPEC medida → arquitetura e plano → quadros-chave aprovados por ele → motion → som → crítica → render. Exceção: quando ele manda de madrugada e diz que pode, plano e render já estão aprovados.
 - Ajustes: mexa na fonte que já existe e renderize só o que mudou. Nunca refaça do zero. Não toque no que ele elogiou.
-- Gosto visual: odeia "AI slop" (gradiente, brilho de fundo, vidro, azul+roxo). Direção Apple. Logos reais em SVG.
+- Gosto visual: odeia "AI slop" (gradiente, brilho de fundo, vidro, azul+roxo). Direção Apple. Logos reais em SVG. Toda empresa ou app citado aparece com a marca real na tela (logo, barra do Google, perfil real do Instagram), nunca só o nome escrito; interação física real ganha o som real (ex.: o "tim" do pagamento por aproximação).
 - Áudio: voz na frente, música baixa sob a voz e subindo suave nas pausas; música e efeitos no tempo original.
 - Entregas: sempre uma versão para celular (< 30 MB) junto do master, porque ele confere e posta pelo celular. Pacotes sempre em .zip.
 - Ferramentas grátis. Sem assinatura paga de IA por enquanto: o Claude escreve os prompts e ele gera no Google Flow. PC dele sem GPU NVIDIA.
