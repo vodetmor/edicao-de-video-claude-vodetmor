@@ -1,6 +1,6 @@
 ---
 name: video-venda-site-medicmais
-description: MedicMais Sobradinho sales video; v1 (site) delivered 2026-10-14; v2 = site + Google Meu Negócio NFC plaque, pre-approved, built overnight 2026-10-14
+description: MedicMais Sobradinho sales video; v1 site (10-14), v2 site+GMN NFC plaque (10-14), v3 = v2 + proposal PDF continuation spliced (10-15, pre-approved)
 metadata:
   type: project
 ---
@@ -9,4 +9,5 @@ Vítor (2026-10-13 23:44 BRT) asked for a narrated video selling https://medicma
 - v1 delivered 2026-10-14 03:xx UTC (88 s, critic 8.3).
 - 2026-10-14 04:13 UTC Vítor: offer is now site + Google Meu Negócio (NFC review plaque, "aproxime seu celular"), i.e. digital positioning. Wants real logos for every brand mentioned (Google, Instagram, WhatsApp, Maps), IG feed with real IG identity (he sent the profile print), and a "3D bonitão" plaque scene with the NFC "tim" sound and a 5-star line. Pre-approved, no PDF, wants it ready when he wakes up.
 - v2 voice: brutos/voz/locucao-v2-ana-dias.mp3 (146.7 s). Scenes K01–K23; 3D plaque in src/Plaquinha3D.tsx (three.js, --gl=angle).
+- 2026-10-15: Vítor sent a 14-page proposal PDF (proposta/); asked to REUSE v2 without rework and splice the proposal video onto it. v3 = v2 K01–K21 untouched + new voice (brutos/voz/locucao-v3-proposta-ana-dias.mp3) from 137.0 s, scenes P01–P17, K23 close. 'Not super detailed: client sees PDF and video.' Pre-approved overnight. See ESTADO.md.
 Related: [[feedback-marca-real-na-tela]], [[feedback-aprovacao-objetiva]].
