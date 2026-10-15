@@ -1,3 +1,4 @@
+// v3 (15/10/2026): + a proposta (P01-P17) depois da K21; K22 saiu, K23 fecha.
 // Vídeo de venda MedicMais v2 (9:16): site + Google Meu Negócio (plaquinha NFC). 23 cenas presas às palavras
 // da locução da Ana Dias (cues.json, gerado por cues.py). Marca citada = logo real na tela (motion-base/logos).
 // Base: as 16 cenas aprovadas da v1 (v1-backup/), mais Instagram real, Google, Meu Negócio, plaquinha 3D, estrelas e o sistema.
@@ -891,9 +892,9 @@ const K21: React.FC<SP> = ({f, len, e}) => {
       ))}
       {/* o ciclo: prova traz o próximo paciente de volta ao começo */}
       <svg style={abs({left: 0, top: 0})} width={1080} height={1920}>
-        <path d={`M 1000 ${Y[2] + 135} C 1060 ${Y[2] + 135} 1060 ${Y[0] + 135} 1000 ${Y[0] + 135}`} stroke={C.red} strokeWidth={8} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - loop} />
+        <path d={`M 990 ${Y[2] + 135} C 1034 ${Y[2] + 135} 1034 ${Y[0] + 135} 990 ${Y[0] + 135}`} stroke={C.red} strokeWidth={8} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - loop} />
       </svg>
-      <div style={abs({left: 84, right: 84, top: 1640, display: 'flex', alignItems: 'center', gap: 18, fontSize: 40, fontWeight: 700, color: C.red, ...entra(f, e('prova2') + 4, 30)})}>
+      <div style={abs({left: 84, right: 84, top: 1640, display: 'flex', alignItems: 'center', gap: 18, fontSize: 40, fontWeight: 700, color: C.red, ...entra(f, e('prova2') - 4, 30)})}>
         <Ic k="star" size={46} color={C.star} />
         Cada avaliação traz o próximo paciente.
       </div>
@@ -959,7 +960,867 @@ const K23: React.FC<SP> = ({f, len, e}) => {
   );
 };
 
-const SCENES: Record<string, React.FC<SP>> = {K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23};
+
+// ================================================================ v3: a proposta (P01-P17), emendada depois da K21.
+// Mesmas peças da v2 (Phone, Logo, Ic, Star, Search, Tag, Stage, H, Plus); dados reais do PDF da proposta.
+const Kick: React.FC<{f: number; t: string; top?: number; color?: string; s?: number; icon?: React.ReactNode}> = ({f, t, top = 170, color = C.red, s = 0, icon}) => (
+  <div style={abs({left: 84, top, display: 'flex', alignItems: 'center', gap: 20, fontSize: 34, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color, ...entra(f, s, 30)})}>
+    {icon ?? <Plus size={62} />}
+    {t}
+  </div>
+);
+const Pill: React.FC<{f: number; s: number; children: React.ReactNode; style?: React.CSSProperties; dark?: boolean; red?: boolean}> = ({f, s, children, style, dark, red}) => (
+  <span
+    style={{
+      display: 'inline-flex', alignItems: 'center', gap: 18, padding: '22px 38px 22px 26px', fontSize: 38, fontWeight: 600, borderRadius: 999, whiteSpace: 'nowrap',
+      background: red ? C.red : dark ? C.panel : '#fff', color: red || dark ? '#fff' : C.ink, border: red || dark ? 'none' : `3px solid ${C.gray}`,
+      boxShadow: dark ? 'none' : '0 16px 40px rgba(18,18,22,.08)', ...entra(f, s, 40, 0.2), ...style,
+    }}
+  >
+    {children}
+  </span>
+);
+const Bola: React.FC<{k: string; size?: number; bg?: string; color?: string}> = ({k, size = 64, bg = C.red, color = '#fff'}) => (
+  <span style={{width: size, height: size, borderRadius: size * 0.3, background: bg, display: 'grid', placeItems: 'center', flex: 'none'}}>
+    <Ic k={k} size={size * 0.58} color={color} />
+  </span>
+);
+// estrela preenchida só em parte (o 4,7)
+const StarPart: React.FC<{size: number; frac: number}> = ({size, frac}) => (
+  <div style={{position: 'relative', width: size, height: size, flex: 'none'}}>
+    <Star size={size} on={0} />
+    <div style={abs({left: 0, top: 0, width: size * clamp(frac), height: size, overflow: 'hidden'})}>
+      <Star size={size} on={1} />
+    </div>
+  </div>
+);
+const brl = (n: number) => n.toLocaleString('pt-BR');
+const Risco: React.FC<{p: number; children: React.ReactNode; color?: string}> = ({p, children, color = C.red}) => (
+  <span style={{position: 'relative', display: 'inline-block'}}>
+    {children}
+    <span style={abs({left: -4, right: -4, top: '52%', height: 5, background: color, borderRadius: 3, transformOrigin: '0 50%', transform: `scaleX(${p})`})} />
+  </span>
+);
+
+// P01: a nota que a clínica já tem no Google
+const P01: React.FC<SP> = ({f, len, e}) => {
+  const n = e('p_47');
+  const v = 4.7 * E.expr(prog(f, 4, n + 14 - 4));
+  const q = Math.round(99 * E.expr(prog(f, e('p_noventa') - 4, 20)));
+  return (
+    <Stage bg={C.soft} f={f} len={len}>
+      <Kick f={f} t="Hoje, no Google" icon={<Logo k="g" h={62} />} />
+      <div style={abs({left: 84, right: 84, top: 300, fontSize: 92, fontWeight: 800, letterSpacing: '-0.025em', lineHeight: 1.04, textTransform: 'uppercase', ...entra(f, 2, 50)})}>A MedicMais já tem</div>
+      <div style={abs({left: 0, right: 0, top: 520, textAlign: 'center', fontSize: 420, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, fontVariantNumeric: 'tabular-nums', ...entra(f, 2, 80, 0.16)})}>
+        {v.toFixed(1).replace('.', ',')}
+      </div>
+      <div style={abs({left: 0, right: 0, top: 980, display: 'flex', justifyContent: 'center', gap: 20})}>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <div key={i} style={entra(f, 6 + i * 2, 30, 0.22)}>
+            <StarPart size={140} frac={clamp((v - i) / 1)} />
+          </div>
+        ))}
+      </div>
+      <div style={abs({left: 0, right: 0, top: 1210, display: 'flex', justifyContent: 'center', ...entra(f, e('p_google') - 4, 40)})}>
+        <Logo k="google" h={110} style={{transform: `scale(${1 + 0.06 * pulse(f, e('p_google') - 2, 16)})`}} />
+      </div>
+      <div style={abs({left: 0, right: 0, top: 1420, display: 'flex', justifyContent: 'center'})}>
+        <Pill f={f} s={e('p_noventa') - 6} dark>
+          <span style={{fontSize: 56, fontWeight: 800, fontVariantNumeric: 'tabular-nums', minWidth: 70}}>{q}</span>
+          avaliações de pacientes
+        </Pill>
+      </div>
+    </Stage>
+  );
+};
+
+// P02: para funcionar, a casa precisa estar arrumada: a lupa passa pela presença digital
+const PRES = [
+  ['site', 84 + 0, 560],
+  ['g', 566, 560],
+  ['ig', 84, 1010],
+  ['wa', 566, 1010],
+] as const;
+const P02: React.FC<SP> = ({f, len, e}) => {
+  const ol = e('p_olhou');
+  const path: [number, number][] = PRES.map(([, x, y]) => [x + 215, y + 200]);
+  const t = clamp((f - (ol - 4)) / 52) * (path.length - 1);
+  const i0 = Math.min(path.length - 2, Math.floor(t));
+  const u = E.cam(t - i0);
+  const lx = lerp(path[i0][0], path[i0 + 1][0], u), ly = lerp(path[i0][1], path[i0 + 1][1], u);
+  const lupa = arrive(f, ol - 8, 0.2);
+  return (
+    <Stage bg="#fff" f={f} len={len}>
+      <H top={170} size={96} f={f} s1={e('p_casa') - 8} s2={e('p_arrumada') - 4} l1="A casa precisa" l2="estar arrumada." />
+      {PRES.map(([k, x, y], i) => (
+        <div key={k} style={abs({left: x, top: y, width: 430, height: 400, borderRadius: 52, background: C.soft, overflow: 'hidden', display: 'grid', placeItems: 'center', ...entra(f, 2 + i * 3, 60, 0.16)})}>
+          {k === 'site' ? <Phone x={115} y={40} w={200} scroll={tween(f, 0, len, 0, 600, E.cam)} /> : <Logo k={k as 'g'} h={k === 'g' ? 170 : 180} />}
+        </div>
+      ))}
+      <div style={abs({left: 84, right: 84, top: 1480, fontSize: 44, fontWeight: 600, color: C.t2, ...entra(f, e('p_presenca') - 4, 30)})}>A gente olhou a presença digital da clínica.</div>
+      {f >= ol - 8 && (
+        <div style={abs({left: lx - 150, top: ly - 150, width: 300, height: 300, borderRadius: '50%', border: `16px solid ${C.ink}`, background: 'rgba(255,255,255,.18)', boxShadow: '0 30px 60px rgba(18,18,22,.25)', opacity: clamp(lupa * 2), transform: `scale(${0.7 + 0.3 * lupa})`, zIndex: 5})}>
+          <div style={abs({left: 220, top: 230, width: 150, height: 34, borderRadius: 17, background: C.ink, transform: 'rotate(45deg)', transformOrigin: '0 50%'})} />
+        </div>
+      )}
+    </Stage>
+  );
+};
+
+// P03: seis pontos que fazem perder pacientes
+const P03: React.FC<SP> = ({f, len, e}) => {
+  const s = e('p_seis');
+  const n = clamp(Math.floor((f - (s - 10)) / 2) + 1, 1, 6);
+  return (
+    <Stage bg={C.red} color="#fff" f={f} len={len}>
+      <div style={abs({right: -60, bottom: -260, fontSize: 1300, fontWeight: 800, lineHeight: 1, color: 'rgba(255,255,255,.10)', transform: `rotate(${f * 0.12}deg)`})}>+</div>
+      <div style={abs({left: 84, top: 260, fontSize: 34, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', opacity: 0.9, ...entra(f, 0, 30)})}>Diagnóstico</div>
+      <div style={abs({left: 84, top: 330, fontSize: 600, fontWeight: 800, lineHeight: 0.9, letterSpacing: '-0.04em', fontVariantNumeric: 'tabular-nums', ...entra(f, s - 12, 80), transform: `${entra(f, s - 12, 80).transform} scale(${1 + 0.05 * pulse(f, s, 14)})`, transformOrigin: '0 100%'})}>{n}</div>
+      <div style={abs({left: 84, right: 84, top: 940, fontSize: 92, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.025em', lineHeight: 1.04})}>
+        <div style={entra(f, s + 4, 40)}>pontos que fazem</div>
+        <div style={entra(f, s + 8, 40)}>a MedicMais</div>
+        <div style={{...entra(f, e('p_perder') - 4, 40), color: C.ink}}>perder pacientes.</div>
+      </div>
+    </Stage>
+  );
+};
+
+// P04: os 6 pontos, um cartão de cada vez, cada um com o seu visual
+const DIAG = [
+  ['d1', 'Não existe um site oficial'],
+  ['d2', 'Site antigo no ar, com dados velhos'],
+  ['d3', 'Google Meu Negócio pela metade'],
+  ['d4', 'Endereço diferente em cada lugar'],
+  ['d5', 'Link de agendar da bio não abria'],
+  ['d6', 'Vídeos bons, edição sem padrão'],
+] as const;
+const ENDS = [
+  ['Site antigo', 'Quadra Central, Lote I', -4],
+  ['Cadastro na Receita', 'Quadra Central, Lote I, Bloco A', 3],
+  ['Onde a clínica está', 'Quadra 7/9, CL 13', -2],
+] as const;
+const DiagVis: React.FC<{i: number; f: number; e: (k: string) => number}> = ({i, f, e}) => {
+  if (i === 0) {
+    const sd = e('d1site');
+    return (
+      <>
+        <Search f={f} start={e('d1') - 2} text="medicmais sobradinho site" top={430} h={130} fs={40} />
+        <div style={abs({left: 84, right: 84, top: 620, display: 'flex', flexDirection: 'column', gap: 24})}>
+          {['Catálogo de médicos', 'Outra clínica da região'].map((t, j) => (
+            <div key={t} style={{background: '#fff', border: `3px solid ${C.gray}`, borderRadius: 36, padding: '30px 40px', fontSize: 40, fontWeight: 600, color: C.mid, ...entra(f, e('d1') + 10 + j * 4, 40, 0.2)}}>{t}</div>
+          ))}
+          <div style={{border: `6px dashed ${C.red}`, borderRadius: 36, padding: '40px', fontSize: 46, fontWeight: 700, color: C.red, display: 'flex', alignItems: 'center', gap: 24, ...entra(f, sd - 6, 50, 0.16), transform: `${entra(f, sd - 6, 50, 0.16).transform} translateX(${12 * Math.sin((f - sd) * 0.9) * pulse(f, sd + 4, 16)}px)`}}>
+            <Ic k="x" size={70} color={C.red} />
+            Site oficial da MedicMais
+          </div>
+        </div>
+      </>
+    );
+  }
+  if (i === 1) {
+    const linhas = [
+      ['Endereço', 'Quadra Central, Lote I', 'Quadra 7/9, CL 13', e('d2end')],
+      ['Telefone', '(61) 3055-5222', '(61) 99825-5551', e('d2tel')],
+    ] as const;
+    return (
+      <>
+        <div style={abs({left: 84, top: 420, width: 912, height: 560, borderRadius: 44, overflow: 'hidden', boxShadow: '0 30px 60px rgba(18,18,22,.16)', ...entra(f, e('d2') - 4, 60, 0.16)})}>
+          <Img src={staticFile('img/site-antigo.jpg')} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 8%', transform: `scale(${1.06 - 0.06 * prog(f, e('d2'), 200)})`}} />
+          <div style={abs({left: 30, top: 30, display: 'flex', alignItems: 'center', gap: 14, background: C.ink, color: '#fff', padding: '16px 28px', borderRadius: 999, fontSize: 32, fontWeight: 600, ...entra(f, e('d2antigo') - 4, 20, 0.2)})}>
+            <span style={{width: 18, height: 18, borderRadius: '50%', background: C.red, opacity: 0.5 + 0.5 * Math.abs(Math.sin(f * 0.15))}} />
+            Site antigo, ainda no ar
+          </div>
+        </div>
+        {linhas.map(([lab, velho, novo, ev], j) => {
+          const r = E.expr(prog(f, ev + 2, 10));
+          return (
+            <div key={lab} style={abs({left: 84, right: 84, top: 1030 + j * 200, ...entra(f, ev - 6, 40, 0.2)})}>
+              <div style={{fontSize: 28, fontWeight: 700, letterSpacing: '.12em', color: C.mid, textTransform: 'uppercase'}}>{lab}</div>
+              <div style={{display: 'flex', alignItems: 'center', gap: 18, marginTop: 10, fontSize: 38, fontWeight: 700, whiteSpace: 'nowrap'}}>
+                <span style={{color: C.red}}>
+                  <Risco p={r}>{velho}</Risco>
+                </span>
+                <span style={{color: C.mid, opacity: clamp(r * 2)}}>→</span>
+                <span style={{opacity: clamp(r * 2), transform: `translateX(${(1 - r) * 20}px)`}}>{novo}</span>
+              </div>
+            </div>
+          );
+        })}
+      </>
+    );
+  }
+  if (i === 2) {
+    const m = E.expr(prog(f, e('d3metade') - 10, 18));
+    return (
+      <div style={abs({left: 84, right: 84, top: 430, background: '#fff', borderRadius: 52, padding: '50px 56px', boxShadow: '0 30px 60px rgba(18,18,22,.10)', ...entra(f, e('d3') - 4, 60, 0.16)})}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 30}}>
+          <Logo k="gmn" h={150} style={{transform: `scale(${0.6 + 0.4 * spring(f, e('d3gmn') - 4, 0.35, 0.6)})`}} />
+          <div>
+            <div style={{fontSize: 52, fontWeight: 800}}>MedicMais Sobradinho</div>
+            <div style={{fontSize: 32, color: C.t2, marginTop: 6}}>Perfil no Google</div>
+          </div>
+        </div>
+        <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 54, fontSize: 32, fontWeight: 700, color: C.t2}}>
+          <span>Perfil preenchido</span>
+          <span style={{color: C.red, fontVariantNumeric: 'tabular-nums'}}>{Math.round(50 * m)}%</span>
+        </div>
+        <div style={{height: 30, borderRadius: 15, background: C.soft, marginTop: 16, overflow: 'hidden'}}>
+          <div style={{height: '100%', width: `${50 * m}%`, background: C.red, borderRadius: 15}} />
+        </div>
+        <div style={{display: 'flex', flexDirection: 'column', gap: 26, marginTop: 50}}>
+          {[0, 1, 2, 3].map((j) => {
+            const ok = j < 2;
+            const a = arrive(f, e('d3') + 6 + j * 4, 0.2);
+            return (
+              <div key={j} style={{display: 'flex', alignItems: 'center', gap: 26, opacity: clamp(a * 2)}}>
+                <span style={{width: 64, height: 64, borderRadius: 20, border: ok ? 'none' : `5px dashed ${C.mid}`, background: ok ? 'rgba(235,32,38,.08)' : 'transparent', display: 'grid', placeItems: 'center'}}>
+                  {ok && <Ic k="check" size={38} color={C.red} />}
+                </span>
+                <span style={{height: 28, borderRadius: 14, width: ok ? 520 : 380, background: ok ? C.gray : C.soft}} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+  if (i === 3) {
+    const d = e('d4dif');
+    return (
+      <div style={abs({left: 84, right: 84, top: 440, display: 'flex', flexDirection: 'column', gap: 34})}>
+        {ENDS.map(([lab, end, rot], j) => {
+          const ok = j === 2;
+          const tw = spring(f, d - 4 + j * 3, 0.3, 0.45);
+          return (
+            <div key={lab} style={{background: '#fff', border: `3px solid ${ok ? C.ink : C.gray}`, borderRadius: 44, padding: '38px 44px', display: 'flex', alignItems: 'center', gap: 32, boxShadow: '0 20px 40px rgba(18,18,22,.08)', ...entra(f, e('d4') - 4 + j * 4, 50, 0.18), transform: `${entra(f, e('d4') - 4 + j * 4, 50, 0.18).transform} rotate(${rot * tw}deg) translateX(${(j - 1) * 30 * tw}px)`}}>
+              <Ic k="pin" size={80} color={ok ? C.red : C.mid} />
+              <div>
+                <div style={{fontSize: 28, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: C.mid}}>{lab}</div>
+                <div style={{fontSize: 40, fontWeight: 700, marginTop: 6, whiteSpace: 'nowrap'}}>{end}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+  if (i === 4) {
+    const nb = e('d5nao');
+    return (
+      <>
+        <Phone x={104} y={approach(f, e('d5') - 6, 540, 400, 0.15)} w={420} scroll={0} img="img/ig-perfil.png" style={{opacity: clamp(arrive(f, e('d5') - 6, 0.2) * 2)}} />
+        <div style={abs({left: 600, right: 84, top: 520, background: '#fff', border: `3px solid ${C.gray}`, borderRadius: 40, padding: '36px 34px', boxShadow: '0 20px 40px rgba(18,18,22,.10)', ...entra(f, e('d5link') - 6, 50, 0.18), transform: `${entra(f, e('d5link') - 6, 50, 0.18).transform} translateX(${12 * Math.sin((f - nb) * 0.9) * pulse(f, nb + 2, 16)}px)`})}>
+          <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
+            <Logo k="ig" h={56} />
+            <span style={{fontSize: 30, fontWeight: 700, color: C.t2}}>Link da bio</span>
+          </div>
+          <div style={{display: 'flex', alignItems: 'center', gap: 16, marginTop: 26, fontSize: 40, fontWeight: 700}}>
+            <Ic k="link" size={50} color={C.ink} />
+            Agendar
+          </div>
+        </div>
+        <div style={abs({left: 600, right: 84, top: 860, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, transform: `scale(${spring(f, nb - 4, 0.35, 0.5)})`})}>
+          <Ic k="x" size={190} color={C.red} />
+          <div style={{fontSize: 44, fontWeight: 800, color: C.red, textTransform: 'uppercase'}}>Não abria</div>
+        </div>
+      </>
+    );
+  }
+  const TH = [
+    ['ana-10.jpg', 84, 470, -7, 1.0],
+    ['maria-10.jpg', 400, 560, 5, 0.86],
+    ['familia-10.jpg', 690, 440, -3, 0.94],
+  ] as const;
+  const pd = e('d6padrao');
+  return (
+    <>
+      {TH.map(([im, x, y, r, s], j) => {
+        const tw = pulse(f, pd - 2 + j * 2, 18);
+        return (
+          <div key={im} style={abs({left: x, top: y, width: 300 * s, height: 530 * s, borderRadius: 30, overflow: 'hidden', border: '6px solid #fff', boxShadow: '0 24px 50px rgba(18,18,22,.18)', transform: `rotate(${r + 6 * tw * (j % 2 ? 1 : -1)}deg)`, ...entra(f, e('d6videos') - 6 + j * 3, 60, 0.18)})}>
+            <Img src={staticFile(`img/${im}`)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+            <div style={abs({left: 0, right: 0, bottom: [40, 160, 20][j], textAlign: 'center', padding: '0 14px', color: '#fff', fontWeight: [800, 400, 600][j], fontSize: [34, 22, 28][j], fontFamily: j === 1 ? 'serif' : 'P', textShadow: '0 2px 6px rgba(0,0,0,.6)', background: j === 2 ? 'rgba(0,0,0,.55)' : 'none'})}>
+              {['Depoimento', 'paciente', 'Saúde Day'][j]}
+            </div>
+          </div>
+        );
+      })}
+      <div style={abs({left: 84, right: 84, top: 1050, display: 'flex', gap: 22, flexWrap: 'wrap'})}>
+        <Pill f={f} s={e('d6bons') - 4}>
+          <Bola k="check" size={56} />
+          Conteúdo bom
+        </Pill>
+        <Pill f={f} s={pd - 6} style={{border: `5px dashed ${C.red}`, color: C.red}}>
+          <Bola k="x" size={56} />
+          Cada vídeo de um jeito
+        </Pill>
+      </div>
+    </>
+  );
+};
+const P04: React.FC<SP> = ({f, len, e}) => {
+  const st = DIAG.map(([k]) => e(k) - 6);
+  return (
+    <Stage bg={C.soft} f={f} len={len}>
+      <Kick f={f} t="Diagnóstico" />
+      <div style={abs({left: 84, right: 84, top: 270, display: 'flex', gap: 14})}>
+        {DIAG.map(([k], i) => {
+          const on = spring(f, st[i], 0.35, 0.6);
+          return <div key={k} style={{flex: 1, height: 14, borderRadius: 7, background: C.gray, overflow: 'hidden'}}><div style={{height: '100%', width: `${100 * clamp(on)}%`, background: C.red}} /></div>;
+        })}
+      </div>
+      {DIAG.map(([k, t], i) => {
+        const s = st[i], end = i < 5 ? st[i + 1] : len + 20;
+        if (f < s - 2 || f >= end) return null;
+        const a = arrive(f, s, 0.16);
+        const x = E.exit(prog(f, end - 9, 8));
+        return (
+          <AbsoluteFill key={k} style={{opacity: clamp(a * 1.6) * (1 - x), transform: `translateY(${-90 * x}px)`}}>
+            <DiagVis i={i} f={f} e={e} />
+            <div style={abs({left: 84, right: 84, top: 1450, display: 'flex', alignItems: 'flex-start', gap: 34, ...entra(f, s, 50, 0.18)})}>
+              <Plus size={120} label={String(i + 1)} style={{transform: `scale(${0.6 + 0.4 * spring(f, s, 0.4, 0.6)})`}} />
+              <div style={{fontSize: 70, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.02em', lineHeight: 1.04}}>{t}</div>
+            </div>
+          </AbsoluteFill>
+        );
+      })}
+    </Stage>
+  );
+};
+
+// P05: ponto de atenção: o CNPJ inapto (dados do PDF, página 5)
+const RISCOS = [
+  ['g', 'Verificação do Google', 'c_verif'],
+  ['receipt', 'Nota fiscal', 'c_nota'],
+  ['card', 'Maquininha', 'c_maquininha'],
+] as const;
+const P05: React.FC<SP> = ({f, len, e}) => {
+  const ina = e('c_inapto');
+  const st = spring(f, ina - 4, 0.3, 0.45);
+  return (
+    <Stage bg={C.ink} color="#fff" f={f} len={len}>
+      <Kick f={f} t="Ponto de atenção" icon={<Bola k="warning" size={62} />} />
+      <div style={abs({left: 84, right: 84, top: 300, background: '#fff', color: C.ink, borderRadius: 48, padding: '44px 52px', ...entra(f, 3, 70, 0.15)})}>
+        <div style={{fontSize: 28, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: C.mid}}>Cadastro na Receita Federal</div>
+        {[
+          ['Empresa', 'Clínica J Lima Ltda'],
+          ['CNPJ', '29.598.840/0001-80'],
+        ].map(([a, b]) => (
+          <div key={a} style={{marginTop: 34}}>
+            <div style={{fontSize: 28, color: C.t2, fontWeight: 500}}>{a}</div>
+            <div style={{fontSize: 52, fontWeight: 800, letterSpacing: '-0.01em', fontVariantNumeric: 'tabular-nums'}}>{b}</div>
+          </div>
+        ))}
+        <div style={{marginTop: 34, display: 'flex', alignItems: 'center', gap: 36}}>
+          <div>
+            <div style={{fontSize: 28, color: C.t2, fontWeight: 500}}>Situação</div>
+            <div style={{height: 64}} />
+          </div>
+          <div style={{border: `8px solid ${C.red}`, color: C.red, borderRadius: 22, padding: '6px 34px', fontSize: 76, fontWeight: 800, letterSpacing: '.06em', opacity: clamp(st * 3), transform: `rotate(${-8 * st}deg) scale(${lerp(1.8, 1, clamp(st))})`}}>INAPTA</div>
+        </div>
+        <div style={{marginTop: 22, fontSize: 32, color: C.t2, ...entra(f, e('c_declaracoes') - 4, 20, 0.2)}}>desde 27/05/2026, por declarações em atraso</div>
+      </div>
+      <div style={abs({left: 84, top: 1090, fontSize: 40, fontWeight: 700, color: '#c9cad0', ...entra(f, e('c_travar') - 6, 30)})}>Isso pode travar:</div>
+      <div style={abs({left: 84, right: 84, top: 1170, display: 'flex', flexDirection: 'column', gap: 24})}>
+        {RISCOS.map(([ic, t, k]) => (
+          <div key={k} style={{display: 'flex', alignItems: 'center', gap: 30, background: C.panel, borderRadius: 36, padding: '30px 40px', fontSize: 44, fontWeight: 700, ...entra(f, e(k) - 6, 50, 0.18)}}>
+            {ic === 'g' ? <span style={{width: 72, height: 72, borderRadius: 22, background: '#fff', display: 'grid', placeItems: 'center'}}><Logo k="g" h={46} /></span> : <Bola k={ic} size={72} bg="#fff" color={C.ink} />}
+            {t}
+          </div>
+        ))}
+      </div>
+    </Stage>
+  );
+};
+
+// P06: a solução: passo a passo com o contador, o mesmo endereço em todo lugar
+const UNI = [
+  ['id', 'Receita'],
+  ['g', 'Google'],
+  ['globe', 'Site'],
+] as const;
+const P06: React.FC<SP> = ({f, len, e}) => {
+  const me = e('c_mesmo');
+  return (
+    <Stage bg={C.soft} f={f} len={len}>
+      <Kick f={f} t="O que a gente faz" />
+      <H top={250} size={96} f={f} s1={2} s2={e('c_contador') - 4} l1="Passo a passo" l2="com o contador." />
+      <div style={abs({left: 84, right: 84, top: 620, background: '#fff', borderRadius: 48, padding: '16px 48px', boxShadow: '0 30px 60px rgba(18,18,22,.10)', ...entra(f, 8, 60, 0.15)})}>
+        {UNI.map(([ic, t], j) => {
+          const r = E.expr(prog(f, me - 4 + j * 5, 12));
+          return (
+            <div key={t} style={{display: 'flex', alignItems: 'center', gap: 30, padding: '40px 0', borderBottom: j < 2 ? `3px solid ${C.gray}` : 'none'}}>
+              {ic === 'g' ? <span style={{width: 84, height: 84, borderRadius: 26, background: C.soft, display: 'grid', placeItems: 'center', flex: 'none'}}><Logo k="g" h={50} /></span> : <Bola k={ic} size={84} bg={C.soft} color={C.ink} />}
+              <div style={{flex: 1}}>
+                <div style={{fontSize: 28, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: C.mid}}>{t}</div>
+                <div style={{position: 'relative', height: 60, marginTop: 4}}>
+                  <div style={abs({left: 0, top: 0, fontSize: 44, fontWeight: 700, color: C.mid, opacity: 1 - r, transform: `translateY(${-30 * r}px)`})}>{j === 2 ? 'endereço antigo' : 'Quadra Central, Lote I'}</div>
+                  <div style={abs({left: 0, top: 0, fontSize: 44, fontWeight: 700, opacity: r, transform: `translateY(${30 * (1 - r)}px)`})}>Quadra 7/9, CL 13</div>
+                </div>
+              </div>
+              <span style={{transform: `scale(${spring(f, me + 2 + j * 5, 0.4, 0.55)})`}}>
+                <Bola k="check" size={70} />
+              </span>
+            </div>
+          );
+        })}
+      </div>
+      <div style={abs({left: 0, right: 0, top: 1460, display: 'flex', justifyContent: 'center'})}>
+        <Pill f={f} s={e('c_endereco') - 2} red>
+          <Ic k="pin" size={48} color="#fff" />
+          O mesmo endereço em todo lugar
+        </Pill>
+      </div>
+      <div style={abs({left: 84, right: 84, top: 1600, textAlign: 'center', fontSize: 32, color: C.t2, ...entra(f, e('c_atualizada') - 10, 20)})}>assim que a Receita for atualizada</div>
+    </Stage>
+  );
+};
+
+// P07: a proposta em 4 entregas (mesma grade das 4 frentes)
+const ENTREGAS = [
+  ['01', 'Site no ar', 'globe'],
+  ['02', 'Presença', 'pin'],
+  ['03', 'CRM de pacientes', 'users'],
+  ['04', 'Organização', 'chart'],
+] as const;
+const P07: React.FC<SP> = ({f, len, e}) => {
+  const q = e('e_quatro');
+  return (
+    <Stage bg={C.ink} color="#fff" f={f} len={len}>
+      <div style={abs({left: 84, top: 150, fontSize: 32, fontWeight: 700, letterSpacing: '.14em', color: C.red, ...entra(f, 0, 30)})}>A PROPOSTA</div>
+      <H top={220} size={110} f={f} s1={0} s2={q - 4} l1="4 entregas." color="#fff" />
+      <div style={abs({left: 84, right: 84, top: 520, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32})}>
+        {ENTREGAS.map(([n, t, ic], i) => (
+          <div key={n} style={{background: C.panel, borderRadius: 44, padding: '44px 40px', height: 460, display: 'flex', flexDirection: 'column', gap: 30, ...entra(f, 6 + i * 3, 60, 0.18)}}>
+            <span style={{transform: `scale(${0.5 + 0.5 * spring(f, q - 4 + i * 3, 0.4, 0.6)})`, transformOrigin: '0 50%'}}>
+              <Bola k={ic} size={96} />
+            </span>
+            <div style={{fontSize: 30, fontWeight: 700, letterSpacing: '.14em', color: C.red}}>{n}</div>
+            <div style={{fontSize: 52, fontWeight: 700, lineHeight: 1.12}}>{t}</div>
+          </div>
+        ))}
+      </div>
+    </Stage>
+  );
+};
+
+// P08: entrega 1, o site no ar e mantido
+const P08: React.FC<SP> = ({f, len, e}) => (
+  <Stage bg={C.soft} f={f} len={len}>
+    <Tag n="1" t="Site no ar" f={f} />
+    <Phone x={260} y={approach(f, 2, 1300, 330, 0.15)} w={560} scroll={tween(f, 6, len, 0, 900, E.cam)} />
+    <div style={abs({left: 0, right: 0, top: 1450, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22})}>
+      <Pill f={f} s={e('e1mantido') - 4} red>
+        <Ic k="calcheck" size={50} color="#fff" />
+        Mantido todo mês
+      </Pill>
+      <Pill f={f} s={e('e1end') - 4}>
+        <Bola k="globe" size={56} />
+        No endereço da clínica
+      </Pill>
+    </div>
+  </Stage>
+);
+
+// P09: entrega 2, a presença: Google, Instagram, Facebook e WhatsApp com os mesmos dados
+const CANAIS = [
+  ['g', 'e2google'],
+  ['ig', 'e2insta'],
+  ['fb', 'e2face'],
+  ['wa', 'e2wa'],
+] as const;
+const DADOS = [
+  ['pin', 'Quadra 7/9, CL 13', 'e2end'],
+  ['phone', '(61) 99825-5551', 'e2tel'],
+  ['clock', 'Mesmo horário', 'e2hor'],
+] as const;
+const P09: React.FC<SP> = ({f, len, e}) => {
+  const cx = (i: number) => 84 + 100 + i * 237;
+  const lig = E.expr(prog(f, e('e2mesmo') - 6, 20));
+  return (
+    <Stage bg="#fff" f={f} len={len}>
+      <Tag n="2" t="Presença" f={f} />
+      {CANAIS.map(([k, ev], i) => (
+        <div key={k} style={abs({left: cx(i) - 100, top: 340, width: 200, height: 200, borderRadius: 56, background: C.soft, display: 'grid', placeItems: 'center', transform: `scale(${spring(f, 4 + i * 4, 0.35, 0.55) * (1 + 0.12 * pulse(f, e(ev) - 2, 14))})`})}>
+          <div style={{transform: `scale(${spring(f, e(ev) - 6, 0.35, 0.5)})`}}>
+            {k === 'fb' ? <Img src={staticFile('logos/facebook.svg')} style={{width: 120, height: 120, display: 'block'}} /> : <Logo k={k as 'g'} h={k === 'g' ? 100 : 120} />}
+          </div>
+        </div>
+      ))}
+      <svg style={abs({left: 0, top: 0})} width={1080} height={1920}>
+        {CANAIS.map(([k], i) => (
+          <path key={k} d={`M ${cx(i)} 550 C ${cx(i)} 610 540 600 540 660`} stroke={C.red} strokeWidth={6} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - lig} />
+        ))}
+      </svg>
+      <div style={abs({left: 84, right: 84, top: 670, background: C.soft, borderRadius: 48, padding: '10px 48px', ...entra(f, 16, 50, 0.16)})}>
+        {DADOS.map(([ic, t, k], j) => {
+          const a = arrive(f, e(k) - 4, 0.2);
+          return (
+            <div key={k} style={{display: 'flex', alignItems: 'center', gap: 28, padding: '30px 0', borderBottom: j < 2 ? `3px solid ${C.gray}` : 'none'}}>
+              <Bola k={ic} size={72} bg="#fff" color={C.red} />
+              <span style={{fontSize: 44, fontWeight: 700, opacity: clamp(0.15 + a), transform: `translateX(${(1 - a) * 30}px)`}}>{t}</span>
+            </div>
+          );
+        })}
+      </div>
+      <div style={abs({left: 84, right: 84, top: 1310, display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'flex-start'})}>
+        <Pill f={f} s={e('e2pub') - 4}>
+          <Bola k="cal" size={56} />
+          1 publicação por semana
+        </Pill>
+        <Pill f={f} s={e('e2resp') - 4}>
+          <Bola k="chat" size={56} />
+          Resposta a todas as avaliações
+        </Pill>
+        <div style={{display: 'flex', gap: 10, marginLeft: 26, ...entra(f, e('e2aval') - 6, 20)}}>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <Star key={i} size={56} on={spring(f, e('e2aval') - 2 + i * 3, 0.4, 0.6)} />
+          ))}
+        </div>
+      </div>
+    </Stage>
+  );
+};
+
+// P10: entrega 3, o CRM de pacientes: cada contato com a etiqueta certa, lembrete no WhatsApp
+const ETQ = [
+  ['Chamou', 'e3chamou', '#55565e'],
+  ['Marcou', 'e3marcou', '#1E8E3E'],
+  ['Faltou', 'e3faltou', '#EB2026'],
+  ['Precisa voltar', 'e3voltar', '#121216'],
+] as const;
+const P10: React.FC<SP> = ({f, len, e}) => {
+  const lb = e('e3lembrete');
+  const msg = arrive(f, lb - 6, 0.18);
+  return (
+    <Stage bg={C.soft} f={f} len={len}>
+      <Tag n="3" t="CRM de pacientes" f={f} />
+      <div style={abs({left: 84, right: 84, top: 320, background: '#fff', borderRadius: 48, overflow: 'hidden', boxShadow: '0 30px 60px rgba(18,18,22,.10)', ...entra(f, 3, 60, 0.15)})}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 20, padding: '30px 44px', borderBottom: `3px solid ${C.gray}`}}>
+          <span style={{transform: `scale(${1 + 0.12 * pulse(f, e('e3wa') - 2, 16)})`}}>
+            <Logo k="wa" h={64} />
+          </span>
+          <span style={{fontSize: 40, fontWeight: 800}}>Pacientes</span>
+          <span style={{marginLeft: 'auto', fontSize: 30, color: C.t2}}>organizados</span>
+        </div>
+        {ETQ.map(([t, k, cor], j) => {
+          const a = spring(f, e(k) - 4, 0.35, 0.6);
+          return (
+            <div key={t} style={{display: 'flex', alignItems: 'center', gap: 26, padding: '28px 44px', borderBottom: j < 3 ? `3px solid ${C.gray}` : 'none', ...entra(f, 6 + j * 3, 30, 0.2)}}>
+              <span style={{width: 84, height: 84, borderRadius: '50%', background: C.soft, display: 'grid', placeItems: 'center', flex: 'none'}}>
+                <Ic k="user" size={44} color={C.mid} />
+              </span>
+              <div style={{flex: 1}}>
+                <div style={{width: [260, 320, 220, 290][j] * E.expr(prog(f, e('e3lista') - 4 + j * 3, 14)), height: 26, borderRadius: 13, background: C.gray}} />
+                <div style={{width: [180, 140, 200, 160][j] * E.expr(prog(f, e('e3lista') + j * 3, 14)), height: 20, borderRadius: 10, background: C.soft, marginTop: 14}} />
+              </div>
+              <span style={{background: cor, color: '#fff', padding: '14px 28px', borderRadius: 999, fontSize: 32, fontWeight: 700, whiteSpace: 'nowrap', opacity: clamp(a * 3), transform: `scale(${0.5 + 0.5 * a})`, transformOrigin: '100% 50%'}}>{t}</span>
+            </div>
+          );
+        })}
+      </div>
+      {/* lembrete de consulta no WhatsApp */}
+      <div style={abs({left: 300, right: 84, top: 1170, background: '#D9FDD3', borderRadius: '36px 36px 8px 36px', padding: '28px 36px', fontSize: 36, fontWeight: 500, lineHeight: 1.3, boxShadow: '0 16px 40px rgba(18,18,22,.10)', opacity: clamp(msg * 2), transform: `translateY(${(1 - msg) * 60}px) scale(${0.94 + 0.06 * msg})`, transformOrigin: '100% 100%'})}>
+        <div style={{fontSize: 26, fontWeight: 700, color: '#1E8E3E', marginBottom: 6}}>Lembrete de consulta</div>
+        Sua consulta na MedicMais é amanhã. Confirma?
+      </div>
+      <div style={abs({left: 84, right: 84, top: 1440, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 22})}>
+        {[
+          ['down', 'Menos', 'faltas', 'e3menos'],
+          ['up', 'Mais', 'retornos', 'e3mais'],
+          ['check', 'Nenhum', 'orçamento esquecido', 'e3nenhum'],
+        ].map(([ic, a, b, k]) => (
+          <div key={k} style={{background: C.ink, color: '#fff', borderRadius: 36, padding: '30px 26px', display: 'flex', flexDirection: 'column', gap: 16, ...entra(f, e(k) - 6, 40, 0.2)}}>
+            <Bola k={ic} size={64} />
+            <div style={{fontSize: 40, fontWeight: 800, lineHeight: 1}}>{a}</div>
+            <div style={{fontSize: 30, fontWeight: 500, color: '#c9cad0', lineHeight: 1.2}}>{b}</div>
+          </div>
+        ))}
+      </div>
+    </Stage>
+  );
+};
+
+// P11: entrega 4, a organização do atendimento e o painel do mês
+const ORG = [
+  ['chat', 'Roteiro de conversa', 'e4roteiro'],
+  ['users', 'Treinamento da recepção', 'e4trein'],
+] as const;
+const P11: React.FC<SP> = ({f, len, e}) => {
+  const pn = e('e4painel');
+  return (
+    <Stage bg={C.ink} color="#fff" f={f} len={len}>
+      <Tag n="4" t="Organização" f={f} />
+      <div style={abs({left: 84, right: 84, top: 330, display: 'flex', flexDirection: 'column', gap: 22})}>
+        {ORG.map(([ic, t, k], i) => (
+          <div key={k} style={{display: 'flex', alignItems: 'center', gap: 28, background: C.panel, borderRadius: 36, padding: '28px 36px', fontSize: 44, fontWeight: 700, ...entra(f, e(k) - 6 + 0 * i, 50, 0.18), outline: `4px solid rgba(235,32,38,${pulse(f, e(k) - 2, 20)})`}}>
+            <Bola k={ic} size={72} />
+            {t}
+          </div>
+        ))}
+      </div>
+      {/* o painel do mês */}
+      <div style={abs({left: 84, right: 84, top: 680, height: 560, background: '#fff', color: C.ink, borderRadius: 44, padding: '36px 44px', ...entra(f, 4, 70, 0.15)})}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 18, fontSize: 38, fontWeight: 800}}>
+          <Ic k="chart" size={50} color={C.red} />
+          Painel do mês
+        </div>
+        <div style={abs({left: 44, right: 44, bottom: 40, height: 340, display: 'flex', alignItems: 'flex-end', gap: 26, borderBottom: `4px solid ${C.ink}`})}>
+          {[0.42, 0.58, 0.5, 0.72, 0.66, 0.9].map((h, i) => (
+            <div key={i} style={{flex: 1, height: `${100 * h * (0.12 + 0.88 * E.expr(prog(f, pn + 2 + i * 3, 16)))}%`, background: i === 5 ? C.red : C.gray, borderRadius: '18px 18px 0 0'}} />
+          ))}
+        </div>
+      </div>
+      <H top={1330} size={92} f={f} s1={e('e4numero') - 6} s2={e('e4achismo') - 6} l1="Decidir com número," l2="não com achismo." color="#fff" />
+    </Stage>
+  );
+};
+
+// P12: o vídeo: vocês gravam com o celular, a gente edita (cada palavra acende uma peça no vídeo editado)
+const P12: React.FC<SP> = ({f, len, e}) => {
+  const tr = e('v_transforma');
+  const ed = arrive(f, tr - 6, 0.16);
+  const on = (k: string) => spring(f, e(k) - 4, 0.35, 0.6);
+  const quadro = (x: number, y: number, rot: number, children: React.ReactNode, st: React.CSSProperties) => (
+    <div style={abs({left: x, top: y, width: 430, height: 800, borderRadius: 60, background: C.ink, padding: 14, boxShadow: '0 40px 80px rgba(0,0,0,.25)', opacity: st.opacity ?? 1, transform: `${st.transform ?? ''} rotate(${rot}deg)`})}>
+      <div style={{position: 'relative', width: '100%', height: '100%', borderRadius: 48, overflow: 'hidden'}}>{children}</div>
+    </div>
+  );
+  return (
+    <Stage bg={C.red} color="#fff" f={f} len={len}>
+      <div style={abs({left: 84, top: 150, fontSize: 32, fontWeight: 700, letterSpacing: '.14em', opacity: 0.9, ...entra(f, 0, 30)})}>CONTEÚDO E VÍDEO</div>
+      <div style={abs({left: 84, right: 84, top: 210, fontSize: 78, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.025em', lineHeight: 1.04})}>
+        <div style={entra(f, 3, 40)}>Vocês gravam.</div>
+        <div style={{color: C.ink, ...entra(f, tr - 4, 40)}}>A gente edita.</div>
+      </div>
+      {/* bruto, gravado no celular */}
+      {quadro(84, 470, -4, (
+        <>
+          <OffthreadVideo src={staticFile('clips/ana.mp4')} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          <div style={abs({left: 24, top: 24, display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(0,0,0,.5)', color: '#fff', padding: '8px 18px', borderRadius: 999, fontSize: 26, fontWeight: 700})}>
+            <span style={{width: 16, height: 16, borderRadius: '50%', background: C.red, opacity: Math.floor(f / 12) % 2 ? 1 : 0.3}} />
+            REC
+          </div>
+        </>
+      ), entra(f, 4, 80, 0.15))}
+      {/* editado: legenda, capa, logo, trilha, chamada */}
+      {quadro(566, 470, 3, (
+        <>
+          <OffthreadVideo src={staticFile('clips/ana.mp4')} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          <div style={abs({left: 0, right: 0, top: 0, height: 150, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `translateY(${(1 - clamp(spring(f, tr + 2, 0.3, 0.7))) * -150}px)`})}>
+            <Img src={staticFile('img/mm-logo-escrita.png')} style={{height: 64, transform: `scale(${0.6 + 0.4 * on('v_logo')})`}} />
+          </div>
+          <div style={abs({left: 0, right: 0, top: '51%', height: '30%', display: 'grid', placeItems: 'center', padding: '0 26px', background: '#fff', textAlign: 'center', fontSize: 42, fontWeight: 800, color: C.ink, lineHeight: 1.12, opacity: clamp(on('v_legenda') * 2), transform: `scaleY(${clamp(on('v_legenda'))})`})}>Nesta eu confio de olhos fechados.</div>
+          <div style={abs({right: 22, top: 172, width: 70, height: 70, borderRadius: 22, background: C.red, display: 'grid', placeItems: 'center', transform: `scale(${on('v_trilha') * (1 + 0.1 * Math.sin(f * 0.5))})`})}>
+            <Ic k="music" size={40} color="#fff" />
+          </div>
+          <div style={abs({left: 22, right: 22, bottom: 40, height: 96, borderRadius: 999, background: C.wa, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, fontSize: 27, whiteSpace: 'nowrap', fontWeight: 700, transform: `translateY(${(1 - clamp(on('v_chamada'))) * 160}px)`})}>
+            <svg viewBox="0 0 24 24" width={44} height={44}><path d={WA_PATH} fill="#fff" /></svg>
+            Agende pelo WhatsApp
+          </div>
+        </>
+      ), {opacity: clamp(ed * 2), transform: `translateY(${(1 - ed) * 80}px) scale(${0.94 + 0.06 * ed})`})}
+      <div style={abs({left: 84, right: 84, top: 1340, display: 'flex', flexWrap: 'wrap', gap: 18})}>
+        {[
+          ['v_roteiro', 'Roteiro toda semana', 'file'],
+          ['v_legenda', 'Legenda grande', 'cc'],
+          ['v_capa', 'Capa', 'imgsq'],
+          ['v_logo', 'Logo', 'check'],
+          ['v_trilha', 'Trilha', 'music'],
+          ['v_chamada', 'Chamada pro WhatsApp', 'chat'],
+        ].map(([k, t, ic]) => (
+          <span key={k} style={{display: 'inline-flex', alignItems: 'center', gap: 14, background: '#fff', color: C.ink, padding: '18px 30px 18px 20px', borderRadius: 999, fontSize: 34, fontWeight: 600, whiteSpace: 'nowrap', ...entra(f, e(k) - 6, 30, 0.22)}}>
+            <Ic k={ic} size={40} color={C.red} />
+            {t}
+          </span>
+        ))}
+      </div>
+    </Stage>
+  );
+};
+
+// P13: o Saúde Day entra nisso: convite antes, vídeo resumo depois, agenda cheia no mês seguinte
+const P13: React.FC<SP> = ({f, len, e}) => {
+  const rs = e('s_resumo');
+  return (
+    <Stage bg={C.soft} f={f} len={len}>
+      <H top={170} size={96} f={f} s1={0} s2={e('s_agenda') - 4} l1="Saúde Day" l2="vira agenda cheia." />
+      <div style={abs({left: 84, top: 520, width: 520, height: 650, borderRadius: 40, overflow: 'hidden', boxShadow: '0 30px 60px rgba(18,18,22,.18)', transform: `rotate(-3deg) ${entra(f, 2, 80, 0.15).transform}`, opacity: entra(f, 2).opacity})}>
+        <Img src={staticFile('img/saude-day-flyer.jpg')} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 0'}} />
+        <div style={abs({inset: 0, display: 'grid', placeItems: 'center', background: `rgba(18,18,22,${0.35 * clamp(spring(f, rs - 4, 0.3, 0.7))})`})}>
+          <div style={{width: 150, height: 150, borderRadius: '50%', background: '#fff', display: 'grid', placeItems: 'center', transform: `scale(${spring(f, rs - 2, 0.35, 0.55)})`}}>
+            <Ic k="play" size={76} color={C.red} style={{marginLeft: 10}} />
+          </div>
+        </div>
+      </div>
+      <div style={abs({left: 650, right: 60, top: 560, display: 'flex', flexDirection: 'column', gap: 40})}>
+        {[
+          ['Antes', 'Convite', 's_convite', 'mega'],
+          ['Depois', 'Vídeo resumo', 's_resumo', 'video'],
+          ['Mês seguinte', 'Agenda cheia', 's_agenda', 'calcheck'],
+        ].map(([a, b, k, ic], j) => (
+          <div key={k} style={{...entra(f, e(k) - 6, 40, 0.2)}}>
+            <Bola k={ic} size={80} bg={j === 2 ? C.red : C.ink} />
+            <div style={{fontSize: 26, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: C.mid, marginTop: 14}}>{a}</div>
+            <div style={{fontSize: 42, fontWeight: 800, lineHeight: 1.1}}>{b}</div>
+          </div>
+        ))}
+      </div>
+    </Stage>
+  );
+};
+
+// P14: 90 dias: arrumar a casa, ganhar ritmo, medir e ajustar
+const MESES = [
+  ['Mês 1', 'Arrumar a casa', 'n_m1', 'wrench'],
+  ['Mês 2', 'Ganhar ritmo', 'n_m2', 'trend'],
+  ['Mês 3', 'Medir e ajustar', 'n_m3', 'sliders'],
+] as const;
+const P14: React.FC<SP> = ({f, len, e}) => {
+  const Y = [600, 960, 1320];
+  const lin = (Y[2] - Y[0]) * E.expr(prog(f, e('n_m1'), e('n_m3') - e('n_m1') + 10));
+  return (
+    <Stage bg="#fff" f={f} len={len}>
+      <Kick f={f} t="O caminho" />
+      <div style={abs({left: 84, top: 250, display: 'flex', alignItems: 'baseline', gap: 26, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.025em', ...entra(f, 2, 50)})}>
+        <span style={{fontSize: 220, lineHeight: 1, color: C.red, fontVariantNumeric: 'tabular-nums'}}>{Math.round(90 * E.expr(prog(f, e('n_noventa') - 6, 20)))}</span>
+        <span style={{fontSize: 100}}>dias</span>
+      </div>
+      <div style={abs({left: 84 + 60 - 4, top: Y[0] + 60, width: 8, height: lin, background: C.red, borderRadius: 4})} />
+      {MESES.map(([m, t, k, ic], j) => (
+        <div key={k} style={abs({left: 84, right: 84, top: Y[j], display: 'flex', alignItems: 'center', gap: 40, ...entra(f, e(k) - 6, 50, 0.18)})}>
+          <Plus size={120} label={String(j + 1)} style={{transform: `scale(${0.6 + 0.4 * spring(f, e(k) - 4, 0.4, 0.6)})`}} />
+          <div style={{flex: 1, background: C.soft, borderRadius: 40, padding: '34px 40px', display: 'flex', alignItems: 'center', gap: 28}}>
+            <Ic k={ic} size={70} color={C.red} />
+            <div>
+              <div style={{fontSize: 30, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: C.red}}>{m}</div>
+              <div style={{fontSize: 54, fontWeight: 800, lineHeight: 1.1}}>{t}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </Stage>
+  );
+};
+
+// P15: quanto custa: a implantação, paga uma vez (valores do PDF, página 13)
+const IMPL = [
+  ['Site', 997, 'r_site'],
+  ['CRM', 697, 'r_crm'],
+  ['Organização', 497, 'r_org'],
+] as const;
+const P15: React.FC<SP> = ({f, len, e}) => {
+  const mil = e('r_mil');
+  const v = Math.round(1790 * E.expr(prog(f, mil - 6, 24)));
+  const risco = E.expr(prog(f, mil - 10, 10));
+  return (
+    <Stage bg={C.soft} f={f} len={len}>
+      <Kick f={f} t="Investimento" />
+      <H top={250} size={110} f={f} s1={0} s2={e('r_quanto') + 6} l1="Quanto" l2="custa?" />
+      <div style={abs({left: 84, right: 84, top: 600, background: '#fff', borderRadius: 52, padding: '44px 52px', boxShadow: '0 30px 60px rgba(18,18,22,.10)', ...entra(f, e('r_impl') - 6, 60, 0.15)})}>
+        <div style={{fontSize: 30, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: C.red}}>Implantação</div>
+        <div style={{fontSize: 40, fontWeight: 700, marginTop: 6, ...entra(f, e('r_umavez') - 4, 20)}}>paga uma vez</div>
+        <div style={{marginTop: 26}}>
+          {IMPL.map(([t, p, k]) => (
+            <div key={k} style={{display: 'flex', alignItems: 'center', gap: 22, padding: '24px 0', borderBottom: `3px solid ${C.gray}`, fontSize: 42, fontWeight: 600, ...entra(f, e(k) - 4, 30, 0.2)}}>
+              <Bola k="check" size={54} />
+              {t}
+              <span style={{marginLeft: 'auto', color: C.mid, fontWeight: 500, fontVariantNumeric: 'tabular-nums'}}>R$ {brl(p)}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 34}}>
+          <div style={{...entra(f, mil - 12, 20)}}>
+            <div style={{fontSize: 30, color: C.t2, fontWeight: 500}}>Os três juntos</div>
+            <div style={{fontSize: 40, color: C.mid, fontWeight: 600, marginTop: 6}}>
+              <Risco p={risco} color={C.mid}>R$ 2.191</Risco>
+            </div>
+          </div>
+          <div style={{fontSize: 120, fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1, color: C.red, fontVariantNumeric: 'tabular-nums', ...entra(f, mil - 8, 40, 0.2)}}>
+            <span style={{fontSize: 54, marginRight: 10}}>R$</span>
+            {brl(v)}
+          </div>
+        </div>
+      </div>
+      <div style={abs({left: 0, right: 0, top: 1520, display: 'flex', justifyContent: 'center'})}>
+        <Pill f={f} s={e('r_tres') - 4} red>
+          <Ic k="card" size={48} color="#fff" />
+          em até 3x
+        </Pill>
+      </div>
+    </Stage>
+  );
+};
+
+// P16: os planos por mês: Presença e o recomendado, Presença + Vídeos
+const P16: React.FC<SP> = ({f, len, e}) => {
+  const rc = e('r_recom');
+  const dim = E.expr(prog(f, rc - 4, 14));
+  const v1 = Math.round(497 * E.expr(prog(f, e('r_497') - 4, 20)));
+  const v2 = Math.round(859 * E.expr(prog(f, e('r_859') - 4, 20)));
+  const plano = (top: number, nome: React.ReactNode, v: number, s: number, rec: boolean, extra?: React.ReactNode) => (
+    <div style={abs({left: 84, right: 84, top: top + 8 * Math.sin((f + top) * 0.045), background: rec ? '#fff' : C.panel, color: rec ? C.ink : '#fff', borderRadius: 48, padding: '44px 52px', border: rec ? `6px solid ${C.red}` : 'none', ...entra(f, s, 60, 0.16), opacity: rec ? entra(f, s).opacity : clamp(entra(f, s).opacity as number) * (1 - 0.45 * dim)})}>
+      <div style={{fontSize: 30, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: C.red}}>Plano mensal</div>
+      <div style={{fontSize: 60, fontWeight: 800, marginTop: 8}}>{nome}</div>
+      <div style={{display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 18, fontVariantNumeric: 'tabular-nums'}}>
+        <span style={{fontSize: 44, fontWeight: 700}}>R$</span>
+        <span style={{fontSize: 130, fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1, color: rec ? C.red : '#fff'}}>{v}</span>
+        <span style={{fontSize: 40, fontWeight: 600, color: rec ? C.t2 : '#c9cad0'}}>/mês</span>
+      </div>
+      {extra}
+    </div>
+  );
+  return (
+    <Stage bg={C.ink} color="#fff" f={f} len={len}>
+      <div style={abs({left: 84, top: 150, fontSize: 32, fontWeight: 700, letterSpacing: '.14em', color: C.red, ...entra(f, 0, 30)})}>DEPOIS, POR MÊS</div>
+      {plano(240, 'Presença', v1, 3, false)}
+      {plano(760, (
+        <span style={{display: 'flex', alignItems: 'center', gap: 18}}>
+          Presença
+          <Plus size={64} />
+          Vídeos
+        </span>
+      ), v2, rc + 2, true, (
+        <div style={{display: 'flex', alignItems: 'center', gap: 18, marginTop: 26, fontSize: 38, fontWeight: 600, ...entra(f, e('r_oito') - 6, 20, 0.2)}}>
+          <Bola k="video" size={60} />
+          até 8 vídeos editados por mês
+        </div>
+      ))}
+      <div style={abs({right: 110, top: 730, background: C.red, color: '#fff', padding: '16px 32px', borderRadius: 999, fontSize: 32, fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', zIndex: 3, transform: `scale(${spring(f, rc - 2, 0.35, 0.5)})`, transformOrigin: '100% 50%'})}>Recomendado</div>
+      <div style={abs({left: 84, right: 84, top: 1420, display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start'})}>
+        <Pill f={f} s={e('r_contrato') - 4} dark>
+          <Ic k="file" size={46} color={C.red} />
+          Contrato mínimo de 6 meses
+        </Pill>
+        <Pill f={f} s={e('r_validos') - 4} dark>
+          <Ic k="clock" size={46} color={C.red} />
+          Valores válidos por 15 dias
+        </Pill>
+      </div>
+    </Stage>
+  );
+};
+
+// P17: o fecho (como a última página do PDF): Sobradinho já confia; falta o celular mostrar isso
+const P17: React.FC<SP> = ({f, len, e}) => {
+  const fa = e('f_falta');
+  return (
+    <Stage bg={C.ink} color="#fff" f={f} len={len}>
+      <div style={abs({left: 84, top: 220, transform: `scale(${spring(f, 2, 0.3, 0.6)})`, transformOrigin: '0 50%'})}>
+        <Img src={staticFile('img/mm-logo-coracao-branco.png')} style={{height: 200}} />
+      </div>
+      <div style={abs({left: 84, right: 84, top: 520, fontSize: 100, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.025em', lineHeight: 1.04})}>
+        <div style={entra(f, 4, 50)}>Sobradinho</div>
+        <div style={entra(f, e('f_confia') - 6, 50)}>já confia na</div>
+        <div style={entra(f, e('f_confia') - 2, 50)}>MedicMais.</div>
+      </div>
+      <div style={abs({left: 84, right: 84, top: 940, fontSize: 64, fontWeight: 800, color: C.red, lineHeight: 1.1, ...entra(f, fa - 4, 40)})}>Falta o celular mostrar isso.</div>
+      <Phone x={280} y={approach(f, e('f_celular') - 8, 1950, 1180, 0.14)} w={520} scroll={tween(f, e('f_celular'), 60, 0, 200, E.cam)} />
+    </Stage>
+  );
+};
+
+const SCENES: Record<string, React.FC<SP>> = {P01, P02, P03, P04, P05, P06, P07, P08, P09, P10, P11, P12, P13, P14, P15, P16, P17, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23};
 
 export const Video: React.FC = () => {
   const frame = useCurrentFrame();

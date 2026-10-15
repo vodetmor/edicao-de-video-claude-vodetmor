@@ -70,3 +70,23 @@ Próximo: retorno do Vítor; versão 16:9 se ele quiser para reunião.
 - ENTREGUE 14/10/2026 05:30 UTC: ../video-site-google-medicmais.mp4 (master, 148 s, 54 MB) + ../video-site-google-medicmais-celular.mp4 (29 MB). render/video-v6.mp4 = master.
   Crítica independente: v4 7,0 -> v5 8,0 -> v6 (tim do NFC movido para a pausa antes de "e a tela", celular encostando no ícone NFC). -14,0 LUFS / -1,9 dBTP.
   Pendências leves anotadas pela crítica (não bloqueiam): cenas mais paradas em 70–75 s (depoimento), 80–84 s (linhas + celular), 125–128 s (paleta); sem legenda (estilo aprovado na v1).
+
+## Vídeo da proposta (PDF) — 15/10/2026
+- Vítor mandou o PDF da proposta (14 páginas, copiado em ../proposta/Proposta-MedicMais-Sobradinho.pdf) e pediu SÓ o roteiro por ora; ele gera no ElevenLabs e manda o áudio para eu editar.
+- Roteiro: voz/roteiro-proposta-pdf.txt (segue a ordem das páginas: ponto de partida, 6 diagnósticos, CNPJ inapto, site pronto, 4 entregas, vídeos, Saúde Day, 90 dias, preços, próximo passo).
+- Próximo (quando chegar o áudio): transcrever (voz/transcreve_v2.py adaptado), planejar cenas pelas páginas do PDF + identidade MedicMais, render. Pasta nova sugerida: clientes/medicmais-sobradinho/proposta/trabalho/.
+- 15/10 03:08 UTC: Vítor pediu REAPROVEITAR o vídeo v2 sem retrabalho e emendar o da proposta. Plano: manter v2 K01–K21 INTACTOS (quadros 0–4095, 136,5 s, voz v2 já gerada, termina em "...transforma cada atendimento em prova"); a continuação nova começa dali (voz/roteiro-proposta-continuacao.txt, ~2:35) e fecha reaproveitando a cena K23 ("no ar e no mapa"). K22 (faltam 4 detalhes) sai: o CNPJ passa a ser tratado no diagnóstico. Reuso de peças: Phone, Logo, Plus, Star, grade das 4 frentes, Instagram real (K05), perfil Google (K17), plaquinha 3D, K23. Novas cenas: diagnóstico (6), site antigo x novo (print do PDF), CNPJ, 4 entregas, vídeo+Saúde Day (flyer do PDF), 90 dias, preços. Áudio: voz v2 cortada em 136,5 s + voz nova, mixagem única (audio.py).
+
+## v7 / v3 da oferta: vídeo + proposta emendados (15/10/2026 ~06:30 UTC), PRÉ-APROVADO
+- Voz: brutos/voz/locucao-v3-proposta-ana-dias.mp3 (174,1 s, transcrita em voz/transcricao-v3.json via voz/transcreve_v3.py, 423 palavras, bate com voz/roteiro-proposta-continuacao.txt).
+  Emenda: brutos/voz/locucao-v3-completa.wav = voz v2 0–136,5 s (fade 80 ms) + 0,5 s de silêncio + voz da proposta (OFF = 137,0 s). 311,1 s.
+- cues.py: K01–K21 iguais à v2 (P01 começa no quadro 4096 = fim exato da K21); eventos da proposta com nome (p_, d1–d6, c_, e1–e4, v_, s_, n_, r_, f_) por índice de palavra da transcricao-v3; K22 saiu; K23 fecha com os novos "no ar"/"mapa". DUR 9433 quadros (314,4 s).
+- Cenas novas em src/Video.tsx (bloco "v3: a proposta"): P01 nota 4,7 / 99 avaliações; P02 casa arrumada (lupa pela presença); P03 "6 pontos"; P04 diagnóstico (um cartão por ponto: busca sem site oficial, site antigo com dados velhos (print do PDF), GMN 50%, 3 endereços, link da bio não abria, vídeos sem padrão);
+  P05 CNPJ inapto (dados do PDF p.5); P06 passo a passo com o contador / mesmo endereço; P07 4 entregas; P08–P11 cada entrega (site, presença com Google/Instagram/Facebook/WhatsApp, CRM com etiquetas + lembrete, organização + painel);
+  P12 vídeo (bruto x editado, cada palavra acende uma peça); P13 Saúde Day (flyer do PDF); P14 90 dias; P15 implantação R$ 1.790 (R$ 2.191 riscado); P16 planos R$ 497 / R$ 859 recomendado; P17 fecho (logo coração branco do PDF); K23.
+- Material novo em public: img/site-antigo.jpg, img/saude-day-flyer.jpg, img/mm-logo-escrita.png e img/mm-logo-coracao-branco.png (extraídos do PDF com pdfimages + máscara alfa; logo oficial, não redesenhado), logos/facebook.svg (wikimedia 2021). Ícones Phosphor extras no fim de src/icons.ts.
+- v2 guardada em v2-backup/ (Video.tsx, cues.py, cues.json, audio.py).
+- Render: cd ~/mm && npx remotion render src/index.ts MedicMais out/v7.mp4 --concurrency=4 --crf=18 --gl=angle ; mux com render/audio.wav.
+- Crítica independente: v7 6,5 (aberturas vazias, trocas do diagnóstico sobrepostas, emenda) -> v8 7,5 -> v9 (ícones da Presença na palavra com moldura antes, lista do CRM se preenche, painel entra cedo, celular do Instagram sem cobrir o título, 4 entregas entram cedo).
+- ENTREGUE 15/10/2026 ~08:00 UTC: ../video-site-google-proposta-medicmais.mp4 (master 1080x1920, 312,7 s, 89 MB) + ../video-site-google-proposta-medicmais-celular.mp4 (720x1280, 24 MB). render/video-v9.mp4 = master. -14,1 LUFS / -1,7 dBTP.
+- Atenção: P05 mostra razão social, CNPJ e "INAPTA" (do PDF). Ok para mandar ao dono; não postar em público.

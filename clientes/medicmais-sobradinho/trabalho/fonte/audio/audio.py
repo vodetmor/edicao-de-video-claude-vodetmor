@@ -20,7 +20,7 @@ NFR = CU['dur']
 N = int(NFR / FPS * SR) + SR // 2
 OUT = os.path.join(HERE, '..', '..', 'render')
 os.makedirs(OUT, exist_ok=True)
-VOZ = os.path.join(HERE, '..', '..', '..', 'brutos', 'voz', 'locucao-v2-ana-dias.mp3')  # v2: site + Google Meu Negócio
+VOZ = os.path.join(HERE, '..', '..', '..', 'brutos', 'voz', 'locucao-v3-completa.wav')  # v3: v2 até 136,5 s + proposta a partir de 137,0 s
 
 G0, BEAT = 0, 19
 
@@ -62,7 +62,9 @@ ROOT = {'D': 38, 'A': 33, 'Bm': 35, 'G': 31}
 CYC = ['D', 'A', 'Bm', 'G']
 SECT = [(0, 'light'), (grade(INI['K02']), 'groove'), (grade(INI['K05']), 'break'), (grade(INI['K09']), 'light'), (grade(EV['frentes']), 'full'),
         (grade(INI['K16']), 'groove'), (grade(INI['K18']), 'break'), (grade(INI['K19']), 'full'), (grade(INI['K20']), 'groove'),
-        (grade(INI['K22']), 'light'), (grade(EV['noar']) - 4 * BEAT, 'build'), (EV['noar'], 'outro'), (NFR, 'end')]
+        (grade(INI['P01']), 'light'), (grade(INI['P04']), 'groove'), (grade(INI['P05']), 'break'), (grade(INI['P07']), 'full'),
+        (grade(INI['P10']), 'groove'), (grade(INI['P12']), 'full'), (grade(INI['P13']), 'groove'), (grade(INI['P15']), 'light'),
+        (grade(INI['P16']), 'groove'), (grade(INI['P17']), 'light'), (grade(EV['noar']) - 4 * BEAT, 'build'), (EV['noar'], 'outro'), (NFR, 'end')]
 
 
 def sect(f):
@@ -281,10 +283,112 @@ for i, k in enumerate(['site4', 'google4', 'plaquinha2']):
     place(sfx, pluck(midi(74 + [0, 4, 7][i]), 0.45, bright=1.1), EV[k] - 6, 0.24, send=0.2)
 place(sfx, whoosh(0.7, 800, 3000, peak=0.5, bw=0.7, tail=0.3), EV['prova2'] - 8, 0.12)
 place(sfx, bell(midi(86), 1.4, 0.5), EV['prova2'] + 4, 0.12, send=0.3)
-# checklist
-for k in ['horario', 'cnpj', 'responsaveis', 'logo']:
-    place(sfx, tap(360, weight=0.4), EV[k] - 4, 0.18)
-    place(sfx, blip(midi(79), 0.1, 0.04), EV[k] - 2, 0.07)
+# ---- v3: a proposta
+E_ = EV
+contador(INI['P01'] + 4, E_['p_47'] + 10 - INI['P01'], 47, 3200)
+for i in range(5):
+    place(sfx, pluck(midi(76 + [0, 2, 4, 7, 9][i]), 0.35, bright=1.2), INI['P01'] + 6 + i * 2, 0.12, pan=-0.4 + 0.2 * i, send=0.15)
+place(sfx, pop(880, 0.18), E_['p_google'] - 4, 0.18)
+contador(E_['p_noventa'] - 4, 20, 99, 3000)
+for i in range(4):
+    place(sfx, pop(620 + 70 * i, 0.16), INI['P02'] + 2 + i * 3, 0.14, pan=[-0.4, 0.4, -0.4, 0.4][i])
+place(sfx, whoosh(0.4, 600, 2600, peak=0.4, bw=0.7, tail=0.3), E_['p_olhou'] - 8, 0.12)
+for k in range(1, 4):
+    place(sfx, swish(0.2, 900, 3500), E_['p_olhou'] - 4 + k * 17, 0.08, pan=[0.4, -0.4, 0.4][k - 1])
+for k in range(6):
+    place(sfx, tick(2600 + 120 * k, 0.03, 0.006), E_['p_seis'] - 10 + 2 * k, 0.1)
+place(sfx, thud(0.45, 55), E_['p_seis'], 0.3)
+place(sfx, tap(300, weight=0.6), E_['p_perder'] - 4, 0.2)
+# diagnóstico: um "+" por ponto e o som de cada visual
+for i, k in enumerate(['d1', 'd2', 'd3', 'd4', 'd5', 'd6']):
+    place(sfx, pluck(midi(72 + [0, 2, 4, 5, 7, 9][i]), 0.4, bright=1.1), E_[k] - 6, 0.22, send=0.2)
+digita(E_['d1'] - 2, len('medicmais sobradinho site'))
+place(sfx, thud(0.3, 80), E_['d1site'] - 2, 0.2)
+place(sfx, blip(330, 0.2, 0.08), E_['d1site'] - 2, 0.12)
+place(sfx, pop(560, 0.18), E_['d2antigo'] - 4, 0.16)
+for k in ['d2end', 'd2tel']:
+    place(sfx, swish(0.18, 3000, 900), E_[k] + 2, 0.14)
+    place(sfx, tap(midi(74), 0), E_[k] + 8, 0.12)
+place(sfx, riser(0.6, 400, 1600, tone=True), E_['d3metade'] - 10, 0.1)
+place(sfx, tap(300, weight=0.6), E_['d3metade'] + 8, 0.2)
+for j in range(3):
+    place(sfx, tap(midi(67 + 3 * j), 0), E_['d4'] - 4 + j * 4, 0.14, pan=-0.3 + 0.3 * j)
+place(sfx, swish(0.25, 1200, 3000), E_['d4dif'] - 4, 0.12)
+place(sfx, pop(700, 0.16), E_['d5link'] - 6, 0.16)
+place(sfx, thud(0.35, 70), E_['d5nao'] - 2, 0.25)
+place(sfx, blip(300, 0.22, 0.08), E_['d5nao'] - 2, 0.14)
+for j in range(3):
+    place(sfx, pop(600 + 80 * j, 0.16), E_['d6videos'] - 6 + j * 3, 0.14, pan=-0.4 + 0.4 * j)
+place(sfx, pop(760, 0.18), E_['d6bons'] - 4, 0.16)
+place(sfx, tap(300, weight=0.5), E_['d6padrao'] - 6, 0.18)
+# CNPJ: o cartão, o carimbo "inapta", o que pode travar
+place(sfx, whoosh(0.5, 500, 2200, peak=0.4, bw=0.7, tail=0.3), E_['c_cnpj'] - 12, 0.12)
+place(sfx, thud(0.5, 50), E_['c_inapto'] + 1, 0.4)
+place(sfx, tap(220, weight=1.0), E_['c_inapto'] + 1, 0.3)
+for k in ['c_verif', 'c_nota', 'c_maquininha']:
+    place(sfx, tap(midi(62), 0), E_[k] - 6, 0.14)
+# a solução: endereço vira o mesmo em todo lugar
+for j in range(3):
+    place(sfx, swish(0.15, 1500, 4000), E_['c_mesmo'] - 4 + j * 5, 0.08)
+    place(sfx, pluck(midi(76 + [0, 4, 7][j]), 0.35, bright=1.2), E_['c_mesmo'] + 2 + j * 5, 0.18, send=0.2)
+place(sfx, pop(620, 0.2), E_['c_endereco'] - 2, 0.2)
+# 4 entregas
+for i in range(4):
+    place(sfx, pluck(midi(74 + [0, 4, 7, 12][i]), 0.4, bright=1.1), E_['e_quatro'] - 4 + i * 3, 0.24, send=0.2)
+place(sfx, whoosh(0.5, 500, 2400, peak=0.4, bw=0.7, tail=0.3), INI['P08'] + 2, 0.12)
+for k in ['e1mantido', 'e1end']:
+    place(sfx, pop(640, 0.18), E_[k] - 4, 0.18)
+for i, k in enumerate(['e2google', 'e2insta', 'e2face', 'e2wa']):
+    place(sfx, pop(700 + 80 * i, 0.16), E_[k] - 6, 0.18, pan=-0.5 + 0.33 * i)
+place(sfx, whoosh(0.5, 3000, 800, peak=0.4, bw=0.6, tail=0.4), E_['e2mesmo'] - 6, 0.1)
+for k in ['e2end', 'e2tel', 'e2hor']:
+    place(sfx, tap(midi(72), 0), E_[k] - 4, 0.12)
+for k in ['e2pub', 'e2resp']:
+    place(sfx, pop(600, 0.18), E_[k] - 4, 0.16)
+for i in range(5):
+    place(sfx, pluck(midi(79 + [0, 2, 4, 7, 12][i]), 0.35, bright=1.2), E_['e2aval'] - 2 + i * 3, 0.16, send=0.15)
+place(sfx, whoosh(0.4, 600, 2400, peak=0.4, bw=0.7, tail=0.3), E_['e3lista'] - 10, 0.1)
+for i, k in enumerate(['e3chamou', 'e3marcou', 'e3faltou', 'e3voltar']):
+    place(sfx, pop(560 + 90 * i, 0.16), E_[k] - 4, 0.2)
+place(sfx, plip(), E_['e3lembrete'] - 6, 0.3)
+for k in ['e3menos', 'e3mais', 'e3nenhum']:
+    place(sfx, tap(midi(69), 0), E_[k] - 6, 0.14)
+for k in ['e4roteiro', 'e4trein']:
+    place(sfx, pop(620, 0.16), E_[k] - 6, 0.16)
+place(sfx, whoosh(0.4, 600, 2400, peak=0.4, bw=0.7, tail=0.3), E_['e4painel'] - 8, 0.1)
+for i in range(6):
+    place(sfx, tick(2400 + 150 * i, 0.03, 0.006), E_['e4painel'] + 2 + i * 3, 0.08)
+place(sfx, thud(0.35, 70), E_['e4numero'] - 6, 0.2)
+# vídeo: gravar, editar, cada peça
+place(sfx, blip(midi(88), 0.08, 0.03), E_['v_celular'] - 8, 0.1)
+place(sfx, whoosh(0.5, 600, 3000, peak=0.5, bw=0.7, tail=0.3), E_['v_transforma'] - 8, 0.14, pan=0.4)
+for i, k in enumerate(['v_roteiro', 'v_legenda', 'v_capa', 'v_logo', 'v_trilha', 'v_chamada']):
+    place(sfx, pop(600 + 50 * i, 0.15), E_[k] - 6, 0.14, pan=-0.4 + 0.16 * i)
+place(sfx, whoosh(0.5, 500, 2200, peak=0.4, bw=0.7, tail=0.3), INI['P13'] + 2, 0.12)
+place(sfx, button_press(), E_['s_resumo'] - 2, 0.25)
+for k in ['s_convite', 's_resumo', 's_agenda']:
+    place(sfx, tap(midi(72), 0), E_[k] - 6, 0.12)
+contador(E_['n_noventa'] - 6, 20, 90, 3000)
+for i, k in enumerate(['n_m1', 'n_m2', 'n_m3']):
+    place(sfx, pluck(midi(74 + [0, 4, 7][i]), 0.45, bright=1.1), E_[k] - 4, 0.24, send=0.2)
+# preço
+for k in ['r_site', 'r_crm', 'r_org']:
+    place(sfx, tap(midi(72), 0), E_[k] - 4, 0.14)
+place(sfx, swish(0.2, 3000, 900), E_['r_mil'] - 10, 0.12)
+contador(E_['r_mil'] - 6, 24, 1790, 3200)
+place(sfx, bell(midi(86), 1.0, 0.3), E_['r_mil'] + 20, 0.1, send=0.25)
+place(sfx, pop(620, 0.2), E_['r_tres'] - 4, 0.2)
+contador(E_['r_497'] - 4, 20, 497, 3000)
+place(sfx, pluck(midi(81), 0.5, bright=1.1), E_['r_recom'] - 2, 0.26, send=0.25)
+contador(E_['r_859'] - 4, 20, 859, 3200)
+place(sfx, bell(midi(88), 1.0, 0.3), E_['r_859'] + 18, 0.1, send=0.25)
+place(sfx, pop(700, 0.16), E_['r_oito'] - 6, 0.16)
+for k in ['r_contrato', 'r_validos']:
+    place(sfx, tap(midi(67), 0), E_[k] - 4, 0.14)
+# fecho
+place(sfx, pluck(midi(74), 0.5, bright=1.0), INI['P17'] + 2, 0.24, send=0.3)
+place(sfx, pop(560, 0.18), E_['f_falta'] - 4, 0.16)
+place(sfx, whoosh(0.5, 400, 2000, peak=0.5, bw=0.7, tail=0.3), E_['f_celular'] - 8, 0.12)
 # chamada: no ar e no mapa (o pino cai)
 place(sfx, pop(520, 0.2), EV['noar'] - 12, 0.25)
 place(sfx, button_press(), EV['noar'] + 2, 0.4)
