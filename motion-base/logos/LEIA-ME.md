@@ -19,3 +19,4 @@ Estes são os desenhos reais das marcas, tirados de bibliotecas abertas via npm.
 - wikimedia-*.svg: arquivos oficiais do Wikimedia Commons (Google 2015, "G", Maps 2020, ícone Instagram 2016, escrita Instagram, WhatsApp).
 - gstatic-google-meu-negocio-1024.png: ícone oficial do Google Meu Negócio, servido pelo próprio Google (www.gstatic.com/images/branding/product/2x/google_my_business_512dp.png).
 - Regra (Vítor): marca citada na narração = logo real na tela, nunca só o nome escrito.
+- wikimedia-facebook-2021.svg: ícone oficial do Facebook (2021), upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg

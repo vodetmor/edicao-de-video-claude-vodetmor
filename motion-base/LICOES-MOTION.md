@@ -431,3 +431,11 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Face impressa (adesivo da placa) fora da caixa de acrílico (z = espessura/2 + 0,0015) e com meshBasicMaterial toneMapped=false; dentro do material com transmission ela some (vira vidro fosco), e com meshStandard + ACES o vermelho da marca fica salmão.
 - Celular "encostando" num objeto em cima de balcão: o balcão termina logo à frente do objeto, assim o celular pode descer na frente da borda sem atravessar o tampo.
 - Troca de tela do celular (travada -> app -> 1..5 estrelas) = trocar a textura por quadro; mais barato e nítido que animar UI em 3D.
+
+## Emendar uma continuação num vídeo já aprovado, sem retrabalho (MedicMais, 15/10/2026)
+- Corte a voz antiga num silêncio entre palavras (fim da última palavra + ~0,2 s, fade de 80 ms), some 0,5 s de silêncio e cole a voz nova: uma faixa só (`locucao-completa.wav`), mixada numa passada (ducking e seções seguem sozinhos).
+- Nas cues, a primeira cena nova começa EXATAMENTE no quadro em que a última cena aprovada acabava; assim ela fica idêntica (o push-in do Stage depende do `len`).
+- Eventos da segunda locução com nome próprio (prefixo por bloco) e `g(i) = round((OFF + s_i) * 30)`; as cenas antigas não mudam.
+- Reaproveite as peças (Phone, Logo, Star, Search, grade de cartões, Tag) e a cena de fecho; o que é novo é só conteúdo.
+- Material do PDF do cliente vira imagem real com `pdfimages -png` (junte a máscara alfa `smask` com PIL); o logo oficial sai daí, nunca redesenhado.
+- Vídeo do cliente que já tem legenda queimada: para mostrar "a nossa legenda", cubra a faixa da legenda dele com a nossa (caixa branca, Poppins 800), não amplie o vídeo (o rosto sai do quadro).
