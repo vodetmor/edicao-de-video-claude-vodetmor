@@ -1,0 +1,138 @@
+<title>Celular 3D estilo iPhone</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Palco único: o aparelho no centro, controles numa linha abaixo. Fundo de estúdio sem degradê. */
+:root {
+  --fundo: #ecebe8; --palco: #f6f5f2; --texto: #1c1c1e; --suave: #6e6c68; --linha: #d9d7d2; --azul: #0a66d8;
+  --f: Inter, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --fundo: #121212; --palco: #1b1b1c; --texto: #f2f1ee; --suave: #9b9995; --linha: #333335; --azul: #4b9bff; color-scheme: dark } }
+:root[data-theme="dark"] { --fundo: #121212; --palco: #1b1b1c; --texto: #f2f1ee; --suave: #9b9995; --linha: #333335; --azul: #4b9bff; color-scheme: dark }
+html, body { height: 100%; }
+body { background: var(--fundo); color: var(--texto); font-family: var(--f); font-size: 15px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px; box-sizing: border-box; }
+main { max-width: 880px; margin: 0 auto; display: grid; gap: 14px; }
+header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; }
+h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+header p { margin: 0; color: var(--suave); font-size: 13px; }
+#palco { position: relative; background: var(--palco); border-radius: 18px; aspect-ratio: 16 / 10; max-width: 100%; overflow: hidden; }
+#palco canvas { width: 100%; height: 100%; display: block; }
+.barra { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.cores { display: flex; gap: 8px; }
+.cor { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--linha); cursor: pointer; padding: 0; outline-offset: 3px; }
+.cor[aria-pressed="true"] { outline: 2px solid var(--azul); }
+button.acao { font: 500 14px var(--f); color: var(--texto); background: transparent; border: 1px solid var(--linha); border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+.tempo { flex: 1 1 200px; display: flex; align-items: center; gap: 10px; min-width: 0; }
+.tempo input { flex: 1; min-width: 0; accent-color: var(--azul); }
+.tempo output { font-variant-numeric: tabular-nums; color: var(--suave); font-size: 13px; width: 3.2em; text-align: right; }
+.notas { color: var(--suave); font-size: 13px; line-height: 1.55; margin: 0; max-width: 68ch; }
+.notas code { font-size: 12.5px; color: var(--texto); }
+#erro { color: #c0392b; font-size: 13px; }
+</style>
+
+<main>
+  <header>
+    <h1>Celular 3D estilo iPhone</h1>
+    <p>Componente reutilizável para os vídeos · animação de 8 s em loop</p>
+  </header>
+  <div id="palco" aria-label="Celular 3D girando: traseira, vira de frente, liga a tela e rola um site"></div>
+  <div class="barra">
+    <div class="cores" role="group" aria-label="Cor do aparelho">
+      <button class="cor" id="cor-natural" data-cor="natural" title="Titânio natural" style="background:#a19d95"></button>
+      <button class="cor" id="cor-preto" data-cor="preto" title="Titânio preto" style="background:#3a3a3c"></button>
+      <button class="cor" id="cor-branco" data-cor="branco" title="Titânio branco" style="background:#d8d6d1"></button>
+      <button class="cor" id="cor-deserto" data-cor="deserto" title="Titânio deserto" style="background:#b8a58f"></button>
+    </div>
+    <button class="acao" id="pausar">Pausar</button>
+    <label class="tempo"><span class="sr" hidden>Tempo</span><input id="linha" type="range" min="0" max="8" step="0.01" value="0" aria-label="Tempo da animação"><output id="seg">0,0 s</output></label>
+  </div>
+  <p class="notas">A tela aceita qualquer imagem, print de site ou vídeo; print mais alto que a tela rola sozinho. Brilho, cor, barra de status e hora são ajustáveis. Sem logo da Apple de propósito. No Remotion: <code>&lt;IPhone3D tela={textura} rolagem={0.4} cor="natural" /&gt;</code>.</p>
+  <p id="erro" hidden></p>
+</main>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+  "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import {criarIPhone, ambienteEstudio, desenhaBloqueio, poseDemo} from './iphone.js';
+
+const palco = document.getElementById('palco');
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true, preserveDrawingBuffer: true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+palco.appendChild(renderer.domElement);
+
+const cena = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(26, 16 / 10, 0.1, 50);
+camera.position.set(0, 0.03, 3.9);
+const luz = new THREE.DirectionalLight('#ffffff', 1.1);
+luz.position.set(2.5, 3, 4);
+cena.add(luz, new THREE.AmbientLight('#ffffff', 0.25));
+
+const cel = criarIPhone({cor: 'natural'});
+cel.setAmbiente(ambienteEstudio(renderer));
+cena.add(cel.objeto);
+
+const bloqueio = desenhaBloqueio();
+let site = null;
+new THREE.TextureLoader().load('exemplo-site.jpg', (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; site = t; });
+
+const ajusta = () => {
+  const {width, height} = palco.getBoundingClientRect();
+  renderer.setSize(width, height, false);
+  camera.aspect = width / height;
+  // em tela estreita, afasta a câmera para o aparelho caber
+  camera.position.z = camera.aspect < 1.2 ? 3.9 * 1.25 / camera.aspect : 3.9;
+  camera.updateProjectionMatrix();
+};
+new ResizeObserver(ajusta).observe(palco);
+ajusta();
+
+const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let barra = 'clara', t = reduz ? 5.2 : 0, tocando = !reduz, antes = performance.now();
+const linha = document.getElementById('linha'), seg = document.getElementById('seg'), pausar = document.getElementById('pausar');
+const desenha = () => {
+  const p = poseDemo(t);
+  cel.objeto.position.set(...p.pos);
+  cel.objeto.rotation.set(...p.rot);
+  const noSite = p.tela === 'site' && site;
+  if (noSite) cel.setTela(site, {areaSegura: true}); else cel.setTela(bloqueio);
+  const modo = noSite ? 'escura' : 'clara';
+  if (modo !== barra) cel.setBarra((barra = modo));
+  cel.setRolagem(p.rolagem).setBrilho(p.brilho);
+  renderer.domElement.style.opacity = String(1 - p.sumir);
+  renderer.render(cena, camera);
+  linha.value = t.toFixed(2);
+  seg.textContent = t.toFixed(1).replace('.', ',') + ' s';
+};
+const quadro = (agora) => {
+  if (tocando) t = (t + (agora - antes) / 1000) % 8;
+  antes = agora;
+  desenha();
+  requestAnimationFrame(quadro);
+};
+requestAnimationFrame(quadro);
+pausar.textContent = tocando ? 'Pausar' : 'Tocar';
+
+pausar.addEventListener('click', () => { tocando = !tocando; pausar.textContent = tocando ? 'Pausar' : 'Tocar'; });
+linha.addEventListener('input', () => { t = parseFloat(linha.value); tocando = false; pausar.textContent = 'Tocar'; });
+const botoes = [...document.querySelectorAll('.cor')];
+const marca = (nome) => botoes.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cor === nome)));
+botoes.forEach((b) => b.addEventListener('click', () => { cel.setCor(b.dataset.cor); marca(b.dataset.cor); }));
+marca('natural');
+window.__demo = {set: (s) => { t = s; tocando = false; desenha(); }};
+</script>
+<script>
+window.addEventListener('error', (e) => { const el = document.getElementById('erro'); el.hidden = false; el.textContent = 'Erro ao carregar o 3D: ' + e.message; });
+</script>
