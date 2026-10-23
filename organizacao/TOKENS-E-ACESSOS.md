@@ -38,7 +38,7 @@ Atualizado em 21/10/2026. Mapa de todas as chaves que o Vítor já passou: para 
 |---|---|---|---|---|
 | **Apify** | Biblioteca de anúncios da Meta/TikTok (escalados) | token da API | Só na sua mensagem do chat do projeto de 29/09/2026 (09:34 UTC); não está em nenhum arquivo | Funciona (testado 02/10: 10 anúncios "vsl"). Plano grátis US$ 5/mês |
 | X/Twitter (twitter-cli) | Busca de referências | cookies do seu navegador | Variáveis de ambiente no seu PC (`setx`) | Funciona pelo terminal do seu PC |
-| Pinterest | Referências | sem chave (páginas públicas) | — | Funciona só em páginas de ideias/pastas; MCP Pinterest ainda sem token |
+| Pinterest | Referências | sem chave | — | Funciona: pinterest-mcp-server faz a busca pública sem token (ver TUTORIAL-PINTEREST-E-X.md) |
 
 ## Repositório e contas
 
