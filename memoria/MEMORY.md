@@ -68,3 +68,4 @@
 - [[video-venda-site-medicmais]]: MedicMais clinic sales video; v1 site, v2 site+GMN NFC plaque (3D) delivered 2026-10-14; v3 = v2 + proposal PDF continuation spliced 2026-10-15. clientes/medicmais-sobradinho.
 - [[feedback-marca-real-na-tela]]: every brand named in narration shows its real logo/identity on screen (Vítor 2026-10-14).
 - [[tutorial-pinterest-x]]: 2026-10-23 organizacao/TUTORIAL-PINTEREST-E-X.md; Pinterest needs no token, X via his PC; .env reading blocked, no values written.
+- [[mentoria-ruan-lancar]]: 2026-10-27 opinion on Ruan LANÇAR site + plan to sell a mentorship to 4 CEUB marketing students (doc https://claude.ai/artifact/3srt1xT1CHF9qrARJFh1Zy).
