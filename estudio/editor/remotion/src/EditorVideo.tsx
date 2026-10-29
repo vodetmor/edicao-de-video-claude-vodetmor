@@ -116,8 +116,8 @@ export const EditorVideo: React.FC<Entrada> = ({roteiro, palavras, rosto, base, 
         {s.cena.elementos.map((el, i) => {
           const top = y;
           y += hs[i] + gap;
-          // na troca de layout, espera o apresentador sair do caminho (~8 quadros) antes de entrar
-          const ini = Math.max(el.de ? t(el.de) : s.ini, s.ini + (trocou ? 8 : 0));
+          // na troca de layout, espera o apresentador sair do caminho (~12 quadros) antes de entrar
+          const ini = Math.max(el.de ? t(el.de) : s.ini, s.ini + (trocou ? 12 : 0));
           const fim = el.ate ? t(el.ate) : s.fim;
           if (f < ini - 1 || f >= fim) return null;
           const c: Ctx = {f, ini, fim, w: z.w / esc, u, m, t, sobreVideo};
@@ -134,7 +134,7 @@ export const EditorVideo: React.FC<Entrada> = ({roteiro, palavras, rosto, base, 
 
   const zl = p < 0.5 ? zA : zB;
   // a legenda some rápido no meio da troca de layout e reaparece no lugar novo (não passa por cima da moldura andando)
-  const opLeg = ant.layout === seg.layout ? 1 : clamp(Math.abs(2 * p - 1) * 1.8);
+  const opLeg = ant.layout === seg.layout ? 1 : clamp((Math.abs(2 * p - 1) - 0.45) * 3);
   const temVideo = !!base.arquivo;
   return (
     <AbsoluteFill style={{background: m.fundo}}>

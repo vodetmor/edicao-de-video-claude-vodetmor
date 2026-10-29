@@ -446,7 +446,7 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Tomada repetida: frase cujo começo é ≥ 70% igual a uma das 3 seguintes sai; fica a última. "de novo" e "pera" são ambíguos: só sugestão.
 - Corte de pedaço sempre no quadro (múltiplo de 1/fps) e fade de 6 ms no áudio de cada junção: sem dessincronizar e sem estalo.
 - Rosto: detector YuNet a 480 px + mediana 0,3 s + zona morta 3% + gaussiana 0,5 s = enquadramento que anda como operador, sem tremer.
-- Troca de layout (tela cheia → moldura → só explicação): a caixa do apresentador interpola por mola crítica (w 0,26, ~20 quadros); sair de cena = descer para fora do quadro, NUNCA virar fantasma transparente sobre os cartões. Elementos da cena nova esperam ~8 quadros; a legenda some no meio da troca e reaparece no lugar novo.
+- Troca de layout (tela cheia → moldura → só explicação): a caixa do apresentador interpola por mola crítica (w 0,26, ~20 quadros); sair de cena = descer para fora do quadro, NUNCA virar fantasma transparente sobre os cartões. Elementos da cena nova esperam ~12 quadros; a legenda some no meio da troca e reaparece no lugar novo.
 - Vertical: moldura centrada (a coluna de botões do TikTok/Reels cobre a direita a partir de ~45% da altura); legenda nunca abaixo de ~84%. No split, legenda logo abaixo da emenda, ancorada pelo TOPO (ancorada pela base, a 2ª linha subia para dentro do vídeo).
 - Texto de painel em 9:16 a 1080 de largura: título 80 px, item de lista 54 px, número 190 px. Menor que isso some no celular (o mesmo defeito que vimos nos estilos do Jerônimo).
 - Legenda palavra a palavra sobre vídeo: o azul da marca some em camisa escura; a palavra ativa usa `destaqueLegenda` (amarelo claro), o azul fica para o papel.
