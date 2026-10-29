@@ -1,0 +1,13 @@
+{
+ "estilo": "painel",
+ "formato": "9:16",
+ "cenas": [
+  {"de": "inicio", "layout": "split-cima", "elementos": [
+    {"tipo": "comparar", "de": "postar", "esquerda": {"titulo": "Só postar", "texto": "todo dia, sem edição", "de": "postar"}, "direita": {"titulo": "Editar bem", "texto": "o que ninguém fala", "de": "ninguém"}}]},
+  {"de": "esse vídeo", "layout": "split-cima", "elementos": [
+    {"tipo": "titulo", "texto": "100% feito por IA", "de": "totalmente"},
+    {"tipo": "grafico", "rotulo": "Qualidade do vídeo", "nota": "ilustrativo", "de": "qualidade#2"}]},
+  {"de": "você pode", "layout": "split-cima", "elementos": [
+    {"tipo": "cta", "texto": "Quero acesso", "apoio": "toque no link", "de": "acesso"}]}
+ ]
+}

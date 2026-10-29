@@ -439,3 +439,15 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Reaproveite as peças (Phone, Logo, Star, Search, grade de cartões, Tag) e a cena de fecho; o que é novo é só conteúdo.
 - Material do PDF do cliente vira imagem real com `pdfimages -png` (junte a máscara alfa `smask` com PIL); o logo oficial sai daí, nunca redesenhado.
 - Vídeo do cliente que já tem legenda queimada: para mostrar "a nossa legenda", cubra a faixa da legenda dele com a nossa (caixa branca, Poppins 800), não amplie o vídeo (o rosto sai do quadro).
+
+## Editor de vídeo falado: o que aprendi construindo (29/10/2026, base: curso Máquina de Edição IA + teste no bruto do Jerônimo)
+- Pausa se mede pela ENERGIA do áudio, não pelo tempo das palavras do Whisper: ele estica a última palavra por cima do silêncio (no teste, "dias" ia até 3,36 s e a fala só voltava em 5,3 s). Corte deixa um respiro (0,18 s anúncio, 0,24 s conteúdo, 0,40 s aula), nunca zero.
+- Vício de fala se compara SEM tirar acento: "ã" normalizado vira "a" (artigo) e o corte comia palavras reais.
+- Tomada repetida: frase cujo começo é ≥ 70% igual a uma das 3 seguintes sai; fica a última. "de novo" e "pera" são ambíguos: só sugestão.
+- Corte de pedaço sempre no quadro (múltiplo de 1/fps) e fade de 6 ms no áudio de cada junção: sem dessincronizar e sem estalo.
+- Rosto: detector YuNet a 480 px + mediana 0,3 s + zona morta 3% + gaussiana 0,5 s = enquadramento que anda como operador, sem tremer.
+- Troca de layout (tela cheia → moldura → só explicação): a caixa do apresentador interpola por mola crítica (w 0,26, ~20 quadros); sair de cena = descer para fora do quadro, NUNCA virar fantasma transparente sobre os cartões. Elementos da cena nova esperam ~8 quadros; a legenda some no meio da troca e reaparece no lugar novo.
+- Vertical: moldura centrada (a coluna de botões do TikTok/Reels cobre a direita a partir de ~45% da altura); legenda nunca abaixo de ~84%. No split, legenda logo abaixo da emenda, ancorada pelo TOPO (ancorada pela base, a 2ª linha subia para dentro do vídeo).
+- Texto de painel em 9:16 a 1080 de largura: título 80 px, item de lista 54 px, número 190 px. Menor que isso some no celular (o mesmo defeito que vimos nos estilos do Jerônimo).
+- Legenda palavra a palavra sobre vídeo: o azul da marca some em camisa escura; a palavra ativa usa `destaqueLegenda` (amarelo claro), o azul fica para o papel.
+- Revisão sem esperar render: Remotion Player num painel local tocando a composição direto do código; nota presa ao quadro exato vira pedido verificável (tempo + fala daquele trecho).

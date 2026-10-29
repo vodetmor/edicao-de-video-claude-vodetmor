@@ -1,0 +1,25 @@
+{
+  "name": "editor-video",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Editor de vídeo falado: estilos, legendas e apresentador com rosto acompanhado, renderizados em Remotion.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "icones": "node gerar-icones.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@phosphor-icons/core": "^2.1.1",
+    "@remotion/bundler": "4.0.529",
+    "@remotion/cli": "4.0.529",
+    "@remotion/player": "^4.0.529",
+    "@remotion/renderer": "4.0.529",
+    "@types/react": "^18.3.12",
+    "esbuild": "^0.28.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.529",
+    "typescript": "^5.6.3"
+  }
+}
