@@ -28,7 +28,10 @@ lido), escreve o `roteiro-visual.json` e revisa quadros-chave. Nunca leia mídia
    Mostre ao usuário a folha + uma linha por momento. Só siga com o OK.
 5. **Revisão ao vivo.** `node estudio/editor/remotion/painel.mjs <pasta>` → o usuário abre http://localhost:8080,
    assiste sem esperar render e marca notas no quadro exato. "Aplica as notas": siga `references/revisao.md`.
-   Sem painel (ex.: usuário no celular): `renderizar.mjs --amostra 8` e notas por texto com tempo.
+   No claude.ai (usuário no celular ou sem PC): `node estudio/editor/remotion/artefato.mjs <pasta> --saida <tmp>` e publique
+   `<tmp>/index.html` como artefato com os arquivos de `<tmp>/arquivos.json` e `capabilities {db:{}, user:{}}`; as notas
+   chegam na coleção `notas` (leia com ArtifactData). Corrigiu: rode de novo e republique no mesmo endereço.
+   Sem nada disso: `renderizar.mjs --amostra 8` e notas por texto com tempo.
 6. **Final.** `renderizar.mjs <pasta> --nome V01` → `entregas/V01.mp4` (H.264, -14 LUFS). Confira abrindo o MP4
    (início, meio, fim, legenda). Na verificação final não acrescente efeito novo.
 7. **Guardar o padrão.** Aprovado, salve as regras do estilo (sem o conteúdo deste vídeo) para o próximo; atualize

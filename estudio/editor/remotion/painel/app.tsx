@@ -14,6 +14,12 @@ const tempo = (s: number) => {
   const m = Math.floor(s / 60);
   return `${String(m).padStart(2, '0')}:${(s - m * 60).toFixed(2).padStart(5, '0')}`;
 };
+// Duas fontes: o servidor local (painel.mjs) ou um artefato publicado no claude.ai, onde a entrada vem embutida
+// (window.__ENTRADA) e as notas ficam no banco do artefato (coleção "notas"), que o Claude lê depois.
+declare global {
+  interface Window { __ENTRADA?: Entrada; claude?: {use: (n: string) => Promise<any>} }
+}
+const ARTEFATO = typeof window !== 'undefined' && !!window.__ENTRADA;
 const json = (r: Response) => {
   if (!r.ok) throw new Error(r.statusText);
   return r.json();
@@ -31,14 +37,35 @@ const App: React.FC = () => {
   const player = React.useRef<PlayerRef>(null);
   const caixa = React.useRef<HTMLTextAreaElement>(null);
 
+  const [db, setDb] = React.useState<any>(null);
   const carrega = React.useCallback(() => {
+    if (ARTEFATO) { setEntrada(window.__ENTRADA!); return; }
     fetch('/entrada.json').then(json).then((e) => { setEntrada(e); setErro(''); }).catch((e) => setErro(String(e)));
     fetch('/notas').then(json).then(setNotas).catch(() => {});
   }, []);
   React.useEffect(carrega, [carrega]);
 
+  // no artefato: notas ao vivo do banco (assina uma vez)
+  React.useEffect(() => {
+    if (!ARTEFATO) return;
+    let fim: (() => void) | undefined;
+    let vivo = true;
+    (async () => {
+      const d = await window.claude?.use('db').catch(() => null);
+      if (!vivo) return;
+      if (!d) { setAviso('notas só neste navegador (entre na sua conta para salvar)'); return; }
+      setDb(d);
+      fim = d.collection('notas').orderBy('s').onSnapshot(
+        (snap: any) => setNotas(snap.docs.map((x: any) => ({...x.data(), id: x.id}) as Nota)),
+        () => setAviso('não consegui ler as notas'),
+      );
+    })();
+    return () => { vivo = false; fim?.(); };
+  }, []);
+
   // vigia o projeto: mudou roteiro/base/rosto -> recarrega as props; mudou o código -> recarrega a página
   React.useEffect(() => {
+    if (ARTEFATO) return;
     const id = setInterval(() => {
       fetch('/versao').then(json).then((v: {dados: string; codigo: string}) => {
         setVersao((ant) => {
@@ -64,7 +91,19 @@ const App: React.FC = () => {
 
   const salvar = (lista: Nota[]) => {
     setNotas(lista);
-    fetch('/notas', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(lista)});
+    if (!ARTEFATO) fetch('/notas', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(lista)});
+  };
+  const adiciona = (n: Nota) => {
+    if (db) db.collection('notas').doc(n.id).set(n).catch(() => setAviso('não salvou a nota'));
+    else salvar([...notas, n].sort((a, b) => a.s - b.s));
+  };
+  const muda = (id: string, status: Nota['status']) => {
+    if (db) db.collection('notas').doc(id).update({status}).catch(() => setAviso('não salvou'));
+    else salvar(notas.map((x) => (x.id === id ? {...x, status} : x)));
+  };
+  const apaga = (id: string) => {
+    if (db) db.collection('notas').doc(id).delete().catch(() => setAviso('não apagou'));
+    else salvar(notas.filter((x) => x.id !== id));
   };
   const fala = (s: number, e: number) =>
     (entrada?.palavras ?? []).filter((w) => w.e >= s - 0.3 && w.s <= e + 0.3).map((w) => w.w).join(' ');
@@ -78,8 +117,8 @@ const App: React.FC = () => {
     if (!texto.trim() || !marca) return;
     const s = Math.min(marca.s, marca.e);
     const e = Math.max(marca.s, marca.e);
-    salvar([...notas, {id: Date.now().toString(36), s: +s.toFixed(3), e: +e.toFixed(3), quadro: Math.round(s * fps), texto: texto.trim(),
-      fala: fala(s, e), status: 'pendente', criada: new Date().toISOString()}].sort((a, b) => a.s - b.s));
+    adiciona({id: Date.now().toString(36), s: +s.toFixed(3), e: +e.toFixed(3), quadro: Math.round(s * fps), texto: texto.trim(),
+      fala: fala(s, e), status: 'pendente', criada: new Date().toISOString()});
     setTexto('');
     setMarca(null);
   };
@@ -152,17 +191,17 @@ const App: React.FC = () => {
                 <div>{n.texto}</div>
                 {n.fala && <div className="fala">"{n.fala}"</div>}
               </div>
-              <select value={n.status} onChange={(e) => salvar(notas.map((x) => (x.id === n.id ? {...x, status: e.target.value as Nota['status']} : x)))}>
+              <select value={n.status} onChange={(e) => muda(n.id, e.target.value as Nota['status'])}>
                 <option value="pendente">pendente</option>
                 <option value="corrigido">corrigido</option>
                 <option value="aprovado">aprovado</option>
               </select>
-              <button className="x" title="apagar" onClick={() => salvar(notas.filter((x) => x.id !== n.id))}>×</button>
+              <button className="x" title="apagar" onClick={() => apaga(n.id)}>×</button>
             </div>
           ))}
         </div>
         <div className="rodape">
-          Depois diga ao Claude: <b>"aplica as notas da revisão"</b>. Ele corrige só esses trechos e a prévia atualiza aqui.
+          Depois diga ao Claude: <b>"aplica as notas da revisão"</b>. Ele corrige só esses trechos e a prévia atualiza {ARTEFATO ? 'quando ele publicar de novo' : 'aqui'}.
           <div className="atalhos">Espaço toca/pausa · ← → um quadro · Shift+← → um segundo</div>
         </div>
         <div className="fala-toda">
