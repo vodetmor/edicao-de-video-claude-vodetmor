@@ -1,17 +1,18 @@
 // Painel de revisão local. Uso: node painel.mjs <projeto> [--porta 8080]
 // Abre http://localhost:8080 : a edição toca ao vivo (sem render), com notas presas ao quadro exato,
-// salvas em <projeto>/projeto/revisao/notas.json. Mudou o roteiro, a base, o rosto ou o código: a prévia se atualiza.
+// salvas em <projeto>/projeto/revisao/notas.json. --visual claro troca o visual de vidro preto e branco pelo claro. Mudou o roteiro, a base, o rosto ou o código: a prévia se atualiza.
 import * as esbuild from 'esbuild';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {caminhos, montaEntrada, preparaPublico, vigiados} from './entrada.mjs';
+import {caminhos, fazFundo, montaEntrada, preparaPublico, vigiados} from './entrada.mjs';
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const raiz = path.resolve(args[0] ?? '');
 const porta = Number(args[args.indexOf('--porta') + 1]) || 8080;
+const visual = args.includes('--visual') ? args[args.indexOf('--visual') + 1] : 'vidro';
 const {notas} = caminhos(raiz);
 montaEntrada(raiz); // falha cedo e com mensagem clara se faltar a base ou o roteiro
 let pub = preparaPublico(raiz);
@@ -28,6 +29,8 @@ const ctx = await esbuild.context({
   plugins: [{name: 'versao', setup(b) { b.onEnd((r) => { if (!r.errors.length) codigo = Date.now().toString(36); }); }}],
 });
 await ctx.watch();
+const fundo = () => fazFundo(path.join(raiz, 'projeto', 'base.mp4'), path.join(saida, 'fundo.jpg'));
+fundo();
 
 const tipos = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
   '.mp4': 'video/mp4', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.webp': 'image/webp',
@@ -54,15 +57,18 @@ const assinatura = () => vigiados(raiz).map((p) => (fs.existsSync(p) ? fs.statSy
 http.createServer(async (req, res) => {
   const url = decodeURIComponent(new URL(req.url, 'http://x').pathname);
   try {
-    if (url === '/') return envia(res, path.join(aqui, 'painel', 'index.html'), req);
-    if (url === '/app.js' || url === '/app.css' || url.startsWith('/fontes/')) return envia(res, path.join(saida, url), req);
+    if (url === '/') {
+      res.writeHead(200, {'Content-Type': tipos['.html'], 'Cache-Control': 'no-store'});
+      return res.end(fs.readFileSync(path.join(aqui, 'painel', 'index.html'), 'utf8').replace('__VISUAL__', visual));
+    }
+    if (['/app.js', '/app.css', '/fundo.jpg'].includes(url) || url.startsWith('/fontes/')) return envia(res, path.join(saida, url), req);
     if (url === '/versao') {
       res.writeHead(200, {'Content-Type': 'application/json'});
       return res.end(JSON.stringify({dados: assinatura(), codigo}));
     }
     if (url === '/entrada.json') {
       const m = fs.statSync(path.join(raiz, 'projeto', 'base.mp4')).mtimeMs;
-      if (m !== baseMtime) { pub = preparaPublico(raiz); baseMtime = m; } // base remontada: religa o arquivo novo
+      if (m !== baseMtime) { pub = preparaPublico(raiz); baseMtime = m; fundo(); } // base remontada: religa o arquivo novo
       res.writeHead(200, {'Content-Type': 'application/json', 'Cache-Control': 'no-store'});
       const e = montaEntrada(raiz);
       e.base.arquivo = `v${Math.round(m)}/base.mp4`; // muda o endereço quando a base muda: o navegador não usa a antiga

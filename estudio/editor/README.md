@@ -16,6 +16,7 @@ python3 pipeline/limpar.py <pasta> --ritmo conteudo             # transcreve, pr
 node remotion/renderizar.mjs <pasta> --quadros                  # quadros-chave para aprovar a direção (segundos)
 node remotion/painel.mjs <pasta>                                # http://localhost:8080 : prévia AO VIVO + notas no quadro exato
 node remotion/artefato.mjs <pasta> --saida <tmp>                # o mesmo painel como artefato do claude.ai (notas no banco do artefato)
+#   visual padrão dos dois: vidro preto e branco; --visual claro para o claro
 node remotion/renderizar.mjs <pasta> --amostra 8                # amostra curta renderizada
 node remotion/renderizar.mjs <pasta> --nome V01                 # vídeo final em entregas/V01.mp4 (-14 LUFS)
 ```

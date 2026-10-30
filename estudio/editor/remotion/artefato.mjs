@@ -1,5 +1,5 @@
 // Gera o painel de revisão como página estática para publicar como artefato do claude.ai.
-// Uso: node artefato.mjs <projeto> [--saida <pasta>]   (padrão: <projeto>/projeto/artefato/)
+// Uso: node artefato.mjs <projeto> [--saida <pasta>] [--visual vidro|claro]   (padrão: <projeto>/projeto/artefato/)
 // A página leva o roteiro, as palavras e o rosto embutidos; as notas ficam no banco do artefato (coleção "notas").
 // Publicar: página index.html + arquivos app.js, app.css, fontes/*, base.mp4 e assets/* da mesma pasta,
 // com capabilities {db:{}, user:{}}. Mudou o roteiro: rode de novo e republique no mesmo endereço.
@@ -7,12 +7,13 @@ import * as esbuild from 'esbuild';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {caminhos, montaEntrada} from './entrada.mjs';
+import {caminhos, fazFundo, montaEntrada} from './entrada.mjs';
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const raiz = path.resolve(args[0] ?? '');
 const i = args.indexOf('--saida');
+const visual = args.includes('--visual') ? args[args.indexOf('--visual') + 1] : 'vidro';
 const saida = path.resolve(i >= 0 ? args[i + 1] : path.join(raiz, 'projeto', 'artefato'));
 const {pj, assets} = caminhos(raiz);
 const entrada = montaEntrada(raiz);
@@ -39,6 +40,7 @@ fs.writeFileSync(css, textoCss);
 for (const f of fs.readdirSync(path.join(saida, 'fontes'))) if (!usadas.has(f)) fs.rmSync(path.join(saida, 'fontes', f));
 
 fs.copyFileSync(pj('base.mp4'), path.join(saida, 'base.mp4'));
+fazFundo(pj('base.mp4'), path.join(saida, 'fundo.jpg'));
 if (fs.existsSync(assets)) {
   fs.mkdirSync(path.join(saida, 'assets'), {recursive: true});
   for (const f of fs.readdirSync(assets)) {
@@ -53,8 +55,9 @@ const pagina = `<title>Revisão da edição</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="app.css">
 ${estilo}
+<div class="fundo-vidro"></div>
 <div id="raiz"></div>
-<script>window.remotion_staticBase = "."; window.__ENTRADA = ${JSON.stringify(entrada).replace(/</g, '\\u003c')};</script>
+<script>window.remotion_staticBase = "."; document.documentElement.dataset.visual = ${JSON.stringify(visual)}; window.__ENTRADA = ${JSON.stringify(entrada).replace(/</g, '\\u003c')};</script>
 <script src="app.js"></script>
 `;
 fs.writeFileSync(path.join(saida, 'index.html'), pagina);

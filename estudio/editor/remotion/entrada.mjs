@@ -1,4 +1,5 @@
 // Monta as props do editor a partir da pasta de um projeto (usado pelo render e pelo painel de revisão).
+import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -44,4 +45,12 @@ export const montaEntrada = (raiz) => {
 export const vigiados = (raiz) => {
   const {pj} = caminhos(raiz);
   return [pj('roteiro-visual.json'), pj('base-palavras.json'), pj('rosto.json'), pj('marca.json'), pj('base.mp4'), path.join(raiz, 'marca.json')];
+};
+
+// um quadro pequeno do vídeo: vira o fundo desfocado do visual "vidro" do painel
+export const fazFundo = (video, destino) => {
+  fs.mkdirSync(path.dirname(destino), {recursive: true});
+  try {
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-ss', '1', '-i', video, '-frames:v', '1', '-vf', 'scale=320:-2', '-q:v', '5', destino]);
+  } catch { /* sem o quadro o fundo fica só preto */ }
 };

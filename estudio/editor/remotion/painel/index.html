@@ -9,6 +9,15 @@
   :root { --fundo: #F5F5F7; --papel: #FFFFFF; --tinta: #1D1D1F; --suave: #6E6E73; --linha: #E3E3E8; --azul: #0A66E8; --azul-claro: #EAF1FD; --sobre-azul: #FFFFFF; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fundo: #111214; --papel: #1C1D20; --tinta: #F2F2F4; --suave: #A1A1A8; --linha: #2E3036; --azul: #3D8BFF; --azul-claro: #1A2A44; color-scheme: dark; } }
   :root[data-theme="dark"] { --fundo: #111214; --papel: #1C1D20; --tinta: #F2F2F4; --suave: #A1A1A8; --linha: #2E3036; --azul: #3D8BFF; --azul-claro: #1A2A44; color-scheme: dark; }
+  /* visual "vidro" (padrão do produto): preto e branco, vidro fosco sobre o próprio vídeo desfocado, sem cor */
+  :root[data-visual="vidro"] { --fundo: #0A0A0B; --papel: rgba(255,255,255,.07); --tinta: #F5F5F7; --suave: rgba(245,245,247,.62); --linha: rgba(255,255,255,.14); --azul: #FFFFFF; --azul-claro: rgba(255,255,255,.16); --sobre-azul: #0A0A0B; color-scheme: dark; }
+  .fundo-vidro { display: none; }
+  :root[data-visual="vidro"] .fundo-vidro { display: block; position: fixed; inset: -10%; z-index: 0; pointer-events: none; background: var(--fundo) url(fundo.jpg) center / cover no-repeat; filter: grayscale(1) blur(60px) brightness(.55); }
+  :root[data-visual="vidro"] #raiz { position: relative; z-index: 1; height: 100%; }
+  :root[data-visual="vidro"] :is(.agora, .nova, .nota, .fala-toda, button, select, textarea) { backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); box-shadow: inset 0 1px 0 rgba(255,255,255,.10); }
+  :root[data-visual="vidro"] .nova { border-width: 1px; border-color: rgba(255,255,255,.5); }
+  :root[data-visual="vidro"] textarea { background: rgba(0,0,0,.25); color: var(--tinta); }
+  :root[data-visual="vidro"] .palco > * { border-radius: 22px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.14); }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; background: var(--fundo); color: var(--tinta); font: 15px/1.45 'Inter Variable', Inter, system-ui, sans-serif; }
   .tudo { display: grid; grid-template-columns: minmax(0, 1fr) 440px; height: 100%; gap: 20px; padding-block: 20px; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
@@ -43,8 +52,9 @@
 </style>
 </head>
 <body>
+<div class="fundo-vidro"></div>
 <div id="raiz"></div>
-<script>window.remotion_staticBase = "/arquivos";</script>
+<script>window.remotion_staticBase = "/arquivos"; document.documentElement.dataset.visual = "__VISUAL__";</script>
 <script src="/app.js"></script>
 </body>
 </html>
