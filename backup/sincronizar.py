@@ -46,7 +46,7 @@ MAPA = [
     ("backup/exportar_historico.py", "backup/exportar_historico.py"),
 ]
 # pastas e arquivos que nunca entram
-FORA = ["node_modules", "__pycache__", ".cache", ".git", "out", "frames", "vchunks", "resultados",
+FORA = ["node_modules", "__pycache__", ".cache", ".git", "out", ".build", "frames", "vchunks", "resultados",
         ".env", "*.env", "chaves.env", "*.key", "*.pem", "credentials*", "*.lock.json.bak"]
 MIDIA = {".mp4", ".mov", ".mkv", ".webm", ".wav", ".mp3", ".ogg", ".m4a", ".flac", ".aac", ".zip",
          ".png", ".jpg", ".jpeg", ".webp", ".gif", ".pdf", ".psd", ".blend"}
