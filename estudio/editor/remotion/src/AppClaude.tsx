@@ -49,8 +49,15 @@ const Teclado: React.FC<{tecla?: string}> = ({tecla}) => (
 // fundo do app (fica ATRÁS do cartão): fase 1 digitando, fase 2 enviado + status
 export const TelaClaude: React.FC<{f: number; ini: number; envio: number; comando: string; nota?: string; miniatura?: string; op: number}> = ({f, ini, envio, comando, nota, miniatura, op}) => {
   const enviado = f >= envio;
-  const n = Math.min(comando.length, Math.max(0, Math.floor(((f - ini) / Math.max(1, envio - ini - 2)) * comando.length)));
-  const digitado = comando.slice(0, n);
+  // digitação humana: ~8 letras/s só até o começo do nome; aí a sugestão aparece e é escolhida (autocompletar),
+  // o comando inteiro entra de uma vez e só então é enviado (Vítor 30/10: digitar tudo ficou rápido demais)
+  const prefixo = Math.min(comando.length, 5);
+  const porLetra = 3; // quadros por letra a 25-30 fps
+  const n = Math.min(prefixo, Math.max(0, Math.floor((f - ini) / porLetra)));
+  const escolhe = Math.max(ini + prefixo * porLetra + 4, envio - 8);
+  const completo = f >= escolhe;
+  const digitado = completo ? comando : comando.slice(0, n);
+  const sugestao = f >= ini + 2 * porLetra;
   const cursor = Math.floor(f / 8) % 2 === 0;
   const nome = comando.replace(/^\//, '');
   const pontos = '.'.repeat(1 + (Math.floor(f / 6) % 3));
@@ -62,7 +69,7 @@ export const TelaClaude: React.FC<{f: number; ini: number; envio: number; comand
       <Topo />
       {!enviado ? (
         <>
-          <div style={{position: 'absolute', left: 60, right: 60, top: 520, background: '#33332F', borderRadius: 22, padding: '22px 30px', fontFamily: INTER}}>
+          <div style={{position: 'absolute', left: 60, right: 60, top: 520, background: completo ? '#4A4844' : '#33332F', borderRadius: 22, padding: '22px 30px', fontFamily: INTER, opacity: sugestao ? 1 : 0, transform: `translateY(${sugestao ? 0 : 12}px) scale(${completo && f < escolhe + 4 ? 0.97 : 1})`}}>
             <div style={{fontSize: 36, fontWeight: 600, color: APP.texto}}>{nome}</div>
             {nota && <div style={{fontSize: 26, color: APP.suave, marginTop: 4}}>{nota}</div>}
           </div>
@@ -74,7 +81,7 @@ export const TelaClaude: React.FC<{f: number; ini: number; envio: number; comand
             <div style={{position: 'absolute', right: 26, bottom: 26, width: 64, height: 64, borderRadius: 16, background: APP.laranja,
               display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 40, fontWeight: 700}}>↑</div>
           </div>
-          <Teclado tecla={digitado.slice(-1)} />
+          <Teclado tecla={completo ? undefined : digitado.slice(-1)} />
         </>
       ) : (
         <>

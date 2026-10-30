@@ -143,27 +143,51 @@ const Passos: React.FC<{c: Ctx; el: Extract<Elemento, {tipo: 'passos'}>}> = ({c,
   );
 };
 
+// gráfico com "impacto": colunas sobem em cascata com mola, a linha se desenha por cima, o número de crescimento conta junto
+// e uma etiqueta acompanha a ponta. Dados sempre marcados como ilustrativos (nota).
 const Grafico: React.FC<{c: Ctx; el: Extract<Elemento, {tipo: 'grafico'}>}> = ({c, el}) => {
   const {f, ini, u, m, w} = c;
   const pts = el.pontos ?? [12, 18, 16, 28, 34, 31, 48, 62, 80];
   const gw = w - 88 * u;
   const gh = 250 * u;
   const max = Math.max(...pts);
-  const min = Math.min(...pts);
-  const xy = pts.map((v, i) => [(i / (pts.length - 1)) * gw, gh - ((v - min) / (max - min || 1)) * gh * 0.9 - gh * 0.05]);
+  const min = Math.min(0, ...pts);
+  const passo = gw / pts.length;
+  const xy = pts.map((v, i) => [passo * (i + 0.5), gh - ((v - min) / (max - min || 1)) * gh * 0.92]);
   const d = xy.map(([x, y], i) => (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1)).join(' ');
-  const p = tween(f, ini + 4, 30, 0, 1, E.expressiva);
+  const p = tween(f, ini + 8, 34, 0, 1, E.expressiva);
   const L = xy.reduce((acc, [x, y], i) => (i ? acc + Math.hypot(x - xy[i - 1][0], y - xy[i - 1][1]) : 0), 0);
-  const ultimo = xy[Math.min(xy.length - 1, Math.floor(p * (xy.length - 1)))];
+  const k = p * (xy.length - 1);
+  const i0 = Math.floor(k);
+  const fr = k - i0;
+  const a0 = xy[Math.min(i0, xy.length - 1)];
+  const a1 = xy[Math.min(i0 + 1, xy.length - 1)];
+  const ponta = [lerp(a0[0], a1[0], fr), lerp(a0[1], a1[1], fr)];
+  const cresc = Math.round(((pts[pts.length - 1] / (pts[0] || 1)) - 1) * 100 * p);
+  const tag = mola(f, ini + 42, 0.3, 0.6);
   return (
-    <div style={{...cartao(m, u, c.sobreVideo), padding: `${30 * u}px ${44 * u}px`, height: 430 * u, boxSizing: 'border-box'}}>
-      {el.rotulo && <div style={{fontFamily: m.fonteTexto, fontWeight: 600, fontSize: 44 * u, color: m.tinta, marginBottom: 18 * u}}>{el.rotulo}</div>}
+    <div style={{...cartao(m, u, c.sobreVideo), padding: `${30 * u}px ${44 * u}px`, height: 430 * u, boxSizing: 'border-box', position: 'relative'}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14 * u}}>
+        {el.rotulo && <div style={{fontFamily: m.fonteTexto, fontWeight: 600, fontSize: 40 * u, color: m.tinta}}>{el.rotulo}</div>}
+        <div style={{fontFamily: m.fonteTitulo, fontWeight: 800, fontSize: 64 * u, color: m.destaque, fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em',
+          transform: `scale(${1 + 0.12 * Math.max(0, 1 - Math.abs(f - ini - 42) / 6)})`, transformOrigin: '100% 50%'}}>+{cresc}%</div>
+      </div>
       <svg width={gw} height={gh} style={{overflow: 'visible'}}>
-        {[0.25, 0.5, 0.75].map((k) => <line key={k} x1={0} x2={gw} y1={gh * k} y2={gh * k} stroke={m.linha} strokeWidth={1.5 * u} />)}
+        {[0.25, 0.5, 0.75].map((q) => <line key={q} x1={0} x2={gw} y1={gh * q} y2={gh * q} stroke={m.linha} strokeWidth={1.5 * u} strokeDasharray={`${6 * u} ${8 * u}`} />)}
+        {pts.map((v, i) => {
+          const h = (gh - xy[i][1]) * clamp(mola(f, ini + 2 + i * 3, 0.28, 0.55), 0, 1.15);
+          return <rect key={i} x={xy[i][0] - passo * 0.3} width={passo * 0.6} y={gh - h} height={h} rx={8 * u} fill={i === pts.length - 1 ? m.destaque : m.linha} opacity={i === pts.length - 1 ? 0.35 : 0.9} />;
+        })}
         <path d={d} fill="none" stroke={m.destaque} strokeWidth={7 * u} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={L} strokeDashoffset={L * (1 - p)} />
-        <circle cx={ultimo[0]} cy={ultimo[1]} r={11 * u * clamp(p * 4)} fill={m.destaque} />
+        <circle cx={ponta[0]} cy={ponta[1]} r={13 * u * clamp(p * 4)} fill={m.destaque} stroke={m.papel} strokeWidth={4 * u} />
       </svg>
-      <div style={{fontFamily: m.fonteTexto, fontSize: 26 * u, color: m.suave, marginTop: 8 * u}}>{el.nota ?? 'ilustrativo'}</div>
+      {tag > 0.01 && (
+        <div style={{position: 'absolute', left: 44 * u + ponta[0], top: 30 * u + 78 * u + ponta[1] - 70 * u, transform: `translate(-90%, 0) scale(${tag})`, transformOrigin: '90% 100%',
+          background: m.tinta, color: m.papel, fontFamily: m.fonteTexto, fontWeight: 700, fontSize: 28 * u, padding: `${8 * u}px ${16 * u}px`, borderRadius: 10 * u, whiteSpace: 'nowrap'}}>
+          {el.nota && el.nota !== 'ilustrativo' ? el.nota : 'com o método'}
+        </div>
+      )}
+      <div style={{fontFamily: m.fonteTexto, fontSize: 24 * u, color: m.suave, marginTop: 8 * u}}>exemplo ilustrativo</div>
     </div>
   );
 };

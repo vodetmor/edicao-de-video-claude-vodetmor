@@ -28,7 +28,8 @@ export type VitrineProps = Entrada & {
   estilos: Roteiro[]; // cartões 1..n-2
   rotulos: string[]; // um por cartão
   camera: Camera[];
-  palco: {cruAte: string; atras: Atras[]; cta?: {de: string; texto: string}; ia?: TelaIA};
+  palco: {cruAte: string; atras: Atras[]; cta?: {de: string; texto: string}; ia?: TelaIA;
+    melhora?: {de: string; zoom?: number}}; // 'começa cru e vai melhorando': na palavra `de` uma linha varre o vídeo e deixa luz/cor tratadas; depois o rosto ganha zoom e fica fixo
   orbita: {de: string; atras?: Atras[]};
   fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
@@ -218,6 +219,16 @@ const Pessoa: React.FC<{src: string; tm?: Tema}> = ({src, tm}) => {
   );
 };
 
+// tratamento de luz e cor da 'melhora': contraste e cor de vídeo tratado, um pouco mais quente
+const GRADE = 'contrast(1.12) saturate(1.15) brightness(1.02) sepia(0.06)';
+// luz de recorte: uma luz quente suave no rosto (soft-light) e o resto do quadro levemente mais escuro (sombra de estúdio)
+const Luz: React.FC<{r: {cx: number; cy: number}}> = ({r}) => (
+  <>
+    <div style={{position: 'absolute', inset: 0, mixBlendMode: 'soft-light', background: `radial-gradient(ellipse 34% 22% at ${r.cx * 100 - 6}% ${r.cy * 100}%, rgba(255,214,170,.75), rgba(255,214,170,0) 100%)`}} />
+    <div style={{position: 'absolute', inset: 0, mixBlendMode: 'multiply', background: `radial-gradient(ellipse 70% 55% at ${r.cx * 100}% ${r.cy * 100 + 8}%, rgba(255,255,255,1) 40%, rgba(40,32,28,.55) 100%)`}} />
+  </>
+);
+
 const Base: React.FC<{src: string; filtro?: string}> = ({src, filtro}) => (
   <OffthreadVideo src={staticFile(src)} muted style={{position: 'absolute', inset: 0, width: W, height: H, objectFit: 'cover', filter: filtro}} />
 );
@@ -267,23 +278,56 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     <Legendas f={f} W={W} H={H} fps={fps} pal={pal} estilo="limpa" marca={m} zona={{y: zonaY, x: 90, w: W - 180, sobre: 'video'}} />
   );
 
+  // enquadramento: depois da 'melhora' o rosto ganha zoom suave e fica fixo no centro (acompanha o rosto detectado)
+  const rostoEm = (q: number) => {
+    if (!rosto || !rosto.cx?.length) return {cx: 0.5, cy: 0.42};
+    const passo = (rosto as {passo?: number}).passo || 1;
+    let sx = 0, sy = 0, k = 0;
+    for (let d = -12; d <= 12; d += 3) {
+      const i = Math.min(rosto.cx.length - 1, Math.max(0, Math.round((q + d) / passo)));
+      sx += rosto.cx[i]; sy += rosto.cy[i]; k++;
+    }
+    return {cx: sx / k, cy: sy / k};
+  };
+  const melhoraIni = palco.melhora ? t(palco.melhora.de) : Infinity;
+  const varre = clamp((f - melhoraIni) / 16);
+  const zoomAlvo = palco.melhora?.zoom ?? 1.22;
+  const enquadra = (q: number): React.CSSProperties => {
+    const z = 1 + (zoomAlvo - 1) * clamp(mola(q, melhoraIni + 16, 0.12, 0.9));
+    if (z <= 1.0001) return {};
+    const r = rostoEm(q);
+    return {transformOrigin: `${r.cx * 100}% ${r.cy * 100}%`, transform: `translateX(${(0.5 - r.cx) * W * (z - 1) / z}px) scale(${z})`};
+  };
   const palcoCartao = () => {
     const vira = clamp(mola(f, cruAte, 0.16, 1) * 1.04); // o quarto vai embora e fica o estúdio (1,04: não sobra fiapo no topo)
     const atras = palco.atras.map((a, i) => ({...a, ini: t(a.de), fim: a.ate ? t(a.ate) : (palco.atras[i + 1] ? t(palco.atras[i + 1].de) : dur)}));
     const cta = palco.cta ? {ini: t(palco.cta.de), texto: palco.cta.texto} : null;
     const ia = palco.ia;
     const sp = ia ? clamp(mola(f, t(ia.de), 0.2, 0.85)) * (1 - clamp(mola(f, t(ia.ate), 0.22, 1))) : 0;
-    const desce = sp * H * 0.27; // o rosto (cy ~0,38) vai para o meio da metade de baixo
+    const desce = sp * H * (0.72 - rostoEm(f).cy); // o rosto vai para o meio da metade de baixo
     return (
       <AbsoluteFill style={{background: col ? tm.tema : PRETO}}>
         {vira < 0.999 && (
           <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 0 ${vira * 100}% 0)`, transform: `translateY(${desce}px)`}}>
-            <Base src={base.arquivo} filtro={`saturate(${1 - vira * 0.6})`} />
+            <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}>
+              <Base src={base.arquivo} filtro={`saturate(${1 - vira * 0.6})`} />
+              {varre > 0 && (
+                <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 ${(1 - varre) * 100}% 0 0)`}}>
+                  {/* reiluminação: o fundo (cortina) desce e esfria, a pessoa recortada sobe com cor tratada e luz quente no rosto */}
+                  <Base src={base.arquivo} filtro={`brightness(0.62) contrast(1.1) saturate(0.85) hue-rotate(-8deg)`} />
+                  <div style={{position: 'absolute', inset: 0, filter: GRADE}}><Pessoa src={pessoa} /></div>
+                  <Luz r={rostoEm(f)} />
+                </div>
+              )}
+            </div>
+            {varre > 0 && varre < 1 && <div style={{position: 'absolute', top: 0, bottom: 0, left: varre * W - 3, width: 6, background: col ? tm.papel : OSSO, boxShadow: '0 0 0 2px rgba(0,0,0,.15)'}} />}
           </div>
         )}
         {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={col ? tm.papel : OSSO} serifa={col} topo={a.ini < cruAte ? 0.15 : undefined} />)}
         {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={col ? tm.papel : OSSO} serifa={col} />}
-        <div style={{position: 'absolute', inset: 0, transform: `translateY(${desce}px)`}}><Pessoa src={pessoa} tm={f >= cruAte ? tm : undefined} /></div>
+        {(f >= cruAte - 2 || atras.some((a) => a.ini < cruAte)) && (
+          <div style={{position: 'absolute', inset: 0, transform: `translateY(${desce}px)`}}><div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={f >= cruAte ? tm : undefined} /></div></div>
+        )}
         <InterfaceBruto f={f} fps={fps} op={(1 - clamp(vira * 2)) * (1 - clamp(sp * 3))} />
         {ia && sp > 0.001 && (
           <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H / 2, transform: `translateY(${-(1 - sp) * 100}%)`,
@@ -316,7 +360,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
       <AbsoluteFill style={{background: col ? tm.papel : '#E9E9E6'}}>
         {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={col ? tm.tema : PRETO} serifa={col} topo={0.14} />)}
         <Orbita ini={ini} lado="atras" cores={col ? [tm.tema, tm.tinta, tm.papel2] : undefined} />
-        <Pessoa src={pessoa} tm={tm} />
+        <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={tm} /></div>
         <Orbita ini={ini} lado="frente" cores={col ? [tm.tema, tm.tinta, tm.papel2] : undefined} />
         {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : legenda(H * 0.87)}
       </AbsoluteFill>
@@ -419,7 +463,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
         return (
           <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H, opacity: wA,
             transform: `translate(${p0.x}px, ${p0.y}px) scale(${p0.s})`}}>
-            <Pessoa src={pessoa} tm={tm} />
+            <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={tm} /></div>
             <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} />
           </div>
         );

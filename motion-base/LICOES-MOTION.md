@@ -470,3 +470,9 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - **Vídeo de vitrine de skills (Vítor 30/10/2026, ref. "8 Claude effects"):** mostrar o PROCESSO dentro do app do Claude
   (digita a skill → "Editando com…" → miniatura com dissolução em pixels → zoom para a tela cheia) vende mais que só os
   resultados. Música na frente e poucos efeitos. Ver `estudos/demo-skills-ref/ESTUDO.md`.
+- **Bruto oficial do Jerônimo (Vítor 30/10/2026):** "começar com 0 editado e ir melhorando": cru com interface de câmera →
+  na palavra "mesmo (assim)" uma linha varre o vídeo e deixa luz/cor tratadas (GRADE + luz quente no rosto + sombra de estúdio)
+  → zoom suave que fixa o rosto (rosto.json). Cortes só em pausas ≥ 0,4 s; respiração curta entre frases fica (corte no lugar
+  errado quebra o ritmo). Digitação no app: ~8 letras/s até o começo do nome e autocompletar; o app entra no FIM da frase
+  anterior para ter tempo. Gráfico com impacto: colunas em cascata com mola + linha + número contando + etiqueta na ponta.
+  Música: escolher pela semelhança com a referência (centroide, ataques, bandas) em vez de "energia".
