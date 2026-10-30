@@ -14,6 +14,8 @@ import {montaMarca} from './marca';
 import {Orbita} from './Orbita';
 import type {Entrada, Palavra, Roteiro} from './tipos';
 
+export type Tema = {visual: 'escuro' | 'colagem'; papel: string; papel2: string; tema: string; tinta: string; cinza: string; acento: string};
+const TEMA_ESCURO: Tema = {visual: 'escuro', papel: '#0A0A0B', papel2: '#1A1A1C', tema: '#0A0A0B', tinta: '#F2F2EF', cinza: '#8A8A8E', acento: '#F2F2EF'};
 type Camera = {de: string; modo: 'foco' | 'leque' | 'atras' | 'grade'; k?: number};
 type Atras = {de: string; ate?: string; texto: string};
 export type VitrineProps = Entrada & {
@@ -24,6 +26,7 @@ export type VitrineProps = Entrada & {
   palco: {cruAte: string; atras: Atras[]; cta?: {de: string; texto: string}};
   orbita: {de: string; atras?: Atras[]};
   fecho?: {de: string; linhas: string[]};
+  tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
   musica?: string; // arquivo na pasta pública (ex.: assets/musica.mp3); a voz manda e a música abaixa sob a fala
 };
 
@@ -38,6 +41,7 @@ const PRETO = '#0A0A0B';
 const OSSO = '#F2F2EF';
 const ARCHIVO = "'Archivo Variable', 'Archivo', sans-serif";
 const INTER = "'Inter Variable', 'Inter', sans-serif";
+const SERIFA = "'Instrument Serif', 'Georgia', serif";
 
 type Pose = {x: number; y: number; s: number; ry: number; rz: number; r: number; foco: number};
 
@@ -67,15 +71,16 @@ const mistura = (a: Pose, b: Pose, p: number): Pose => ({
 
 // palavras gigantes atrás da cabeça: cada palavra sobe da máscara, em Archivo largo
 // `topo`: onde começa (fração da altura). Nada de texto sobre texto: abaixo da interface do bruto e da pílula do topo.
-const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; cor: string; topo?: number}> = ({f, ini, fim, texto, cor, topo}) => {
+const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; cor: string; topo?: number; serifa?: boolean}> = ({f, ini, fim, texto, cor, topo, serifa}) => {
   if (f < ini - 1 || f >= fim) return null;
   const palavras = texto.split(' ');
   const sai = tween(f, fim - 8, 8, 0, 1, E.saida);
   // cada linha cabe na largura (Archivo 800 a 125% tem ~0,82 em por letra maiúscula)
-  const tam = Math.min(300, ...palavras.map((p) => (W * 0.92) / (Math.max(3, p.length) * 0.82)));
+  const tam = Math.min(serifa ? 420 : 300, ...palavras.map((p) => (W * 0.94) / (Math.max(3, p.length) * (serifa ? 0.56 : 0.82))));
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: H * (topo ?? (palavras.length > 1 ? 0.05 : 0.09)), display: 'flex', flexDirection: 'column', alignItems: 'center',
-      fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', fontSize: tam, lineHeight: 0.86, letterSpacing: '-0.03em',
+      ...(serifa ? {fontFamily: SERIFA, fontWeight: 400, letterSpacing: '-0.02em'} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', letterSpacing: '-0.03em'}),
+      fontSize: tam, lineHeight: 0.86,
       textTransform: 'uppercase', color: cor, opacity: 1 - sai}}>
       {palavras.map((p, i) => {
         const e = mola(f, ini + i * 4, 0.22, 0.82);
@@ -93,8 +98,8 @@ const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; 
 // Legenda editorial (referência: reels de criador com tipografia de cinema, ~0,7 corte/s): poucas palavras por vez,
 // a palavra forte da frase GRANDE em Archivo largo, as de ligação pequenas em caixa alta espaçada, uma em itálico serifado.
 // Fica no peito (camisa escura = contraste), nunca no rosto.
-const SERIFA = "'Instrument Serif', 'Georgia', serif";
-const LegendaEditorial: React.FC<{f: number; pal: Palavra[]; fps: number; y: number; cor: string}> = ({f, pal, fps, y, cor}) => {
+const LegendaEditorial: React.FC<{f: number; pal: Palavra[]; fps: number; y: number; cor: string; tm?: Tema}> = ({f, pal, fps, y, cor, tm}) => {
+  if (tm?.visual === 'colagem') return <LegendaRecorte f={f} pal={pal} fps={fps} y={y} tm={tm} />;
   const cues = React.useMemo(() => montaCues(pal, fps, 16, 1, 4, true), [pal, fps]);
   const c = cues.find((q) => f >= q.a && f < q.b);
   if (!c) return null;
@@ -125,9 +130,85 @@ const LegendaEditorial: React.FC<{f: number; pal: Palavra[]; fps: number; y: num
   );
 };
 
-const Pessoa: React.FC<{src: string}> = ({src}) => (
-  <OffthreadVideo src={staticFile(src)} transparent muted style={{position: 'absolute', inset: 0, width: W, height: H, objectFit: 'cover'}} />
+// Colagem: cada palavra é um recorte. A forte em serifa grande num pedaço de papel (com sublinhado de pincel na cor do
+// tema), as de ligação em fita rotuladora preta. Entra em "stop-motion" (3 posições, sem interpolar) para parecer à mão.
+const LegendaRecorte: React.FC<{f: number; pal: Palavra[]; fps: number; y: number; tm: Tema}> = ({f, pal, fps, y, tm}) => {
+  const cues = React.useMemo(() => montaCues(pal, fps, 16, 1, 4, true), [pal, fps]);
+  const c = cues.find((q) => f >= q.a && f < q.b);
+  if (!c) return null;
+  const limpa = (w: string) => w.replace(/[.,;:!?]+$/, '');
+  const forte = c.ws.reduce((m, w, i) => (limpa(w.w).length > limpa(c.ws[m].w).length ? i : m), 0);
+  return (
+    <div style={{position: 'absolute', left: 60, right: 60, top: y, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 14}}>
+      {c.ws.map((w, i) => {
+        if (f < w.f - 1) return null;
+        const q = Math.min(2, Math.floor((f - w.f + 1) / 2)); // 0,1,2: três "fotos" da entrada
+        const sc = [1.18, 0.96, 1][q];
+        const rot = ((i * 37) % 7) - 3;
+        const grande = i === forte;
+        const tx = limpa(w.w);
+        if (grande) {
+          const risco = clamp((f - w.f - 3) / 7);
+          return (
+            <div key={i} style={{position: 'relative', transform: `rotate(${rot * 0.6}deg) scale(${sc})`, background: tm.papel,
+              padding: '4px 22px 10px', boxShadow: '0 6px 0 rgba(0,0,0,.18)'}}>
+              <div style={{fontFamily: SERIFA, fontSize: Math.min(150, 1000 / (tx.length * 0.55)), lineHeight: 1, color: tm.tinta, textTransform: 'uppercase', letterSpacing: '-0.02em'}}>{tx}</div>
+              <svg style={{position: 'absolute', left: 10, right: 10, bottom: -4, width: 'calc(100% - 20px)', height: 26, overflow: 'visible'}} viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M2 6 C 20 2, 40 9, 60 5 S 90 3, 98 6" fill="none" stroke={tm.tema} strokeWidth={4} strokeLinecap="round"
+                  pathLength={1} strokeDasharray={1} strokeDashoffset={1 - risco} />
+              </svg>
+            </div>
+          );
+        }
+        return (
+          <div key={i} style={{transform: `rotate(${rot}deg) scale(${sc})`, background: tm.tinta, color: tm.papel, padding: '6px 14px',
+            fontFamily: INTER, fontWeight: 700, fontSize: 36, letterSpacing: '0.06em', textTransform: 'uppercase'}}>{tx}</div>
+        );
+      })}
+    </div>
+  );
+};
+
+// grão de papel/filme por cima de tudo (muda a cada 2 quadros, como película)
+const Grao: React.FC<{f: number; forca?: number}> = ({f, forca = 0.16}) => {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='540' height='960'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='${Math.floor(f / 2) % 9}'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.45  0 0 0 0 0.4  0 0 0 1.6 -0.3'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>`;
+  return <div style={{position: 'absolute', inset: 0, pointerEvents: 'none', opacity: forca, mixBlendMode: 'multiply',
+    backgroundImage: `url("data:image/svg+xml;utf8,${svg.replace(/#/g, '%23').replace(/"/g, "'")}")`, backgroundSize: '540px 960px'}} />;
+};
+
+// colagem: a pessoa vira um recorte de papel (P&B contrastado, borda branca de tesoura e sombra curta de papel)
+// A borda é feita por um filtro SVG: alfa endurecido (sem meia-transparência de mão borrada), abertura morfológica
+// (some com fiapos e pontinhos soltos) e dilatação = contorno de tesoura uniforme.
+const FiltroRecorte: React.FC<{id: string; cor: string}> = ({id, cor}) => (
+  <svg width={0} height={0} style={{position: 'absolute'}}>
+    <filter id={id} x="-5%" y="-5%" width="110%" height="110%" colorInterpolationFilters="sRGB">
+      <feComponentTransfer in="SourceAlpha" result="duro"><feFuncA type="discrete" tableValues="0 0 1 1 1" /></feComponentTransfer>
+      <feMorphology in="duro" operator="erode" radius="4" result="aberto0" />
+      <feMorphology in="aberto0" operator="dilate" radius="4" result="aberto" />
+      <feComposite in="SourceGraphic" in2="aberto" operator="in" result="pessoa" />
+      <feColorMatrix in="pessoa" type="saturate" values="0" result="pb" />
+      <feComponentTransfer in="pb" result="pbc"><feFuncR type="linear" slope="1.2" intercept="-0.06" /><feFuncG type="linear" slope="1.2" intercept="-0.06" /><feFuncB type="linear" slope="1.2" intercept="-0.06" /></feComponentTransfer>
+      <feMorphology in="aberto" operator="dilate" radius="8" result="borda0" />
+      <feFlood floodColor={cor} />
+      <feComposite in2="borda0" operator="in" result="borda" />
+      <feOffset in="borda0" dy="14" result="sombra0" />
+      <feFlood floodColor="rgba(0,0,0,.22)" />
+      <feComposite in2="sombra0" operator="in" result="sombra" />
+      <feMerge><feMergeNode in="sombra" /><feMergeNode in="borda" /><feMergeNode in="pbc" /></feMerge>
+    </filter>
+  </svg>
 );
+
+const Pessoa: React.FC<{src: string; tm?: Tema}> = ({src, tm}) => {
+  const id = React.useId().replace(/:/g, '');
+  const col = tm?.visual === 'colagem';
+  return (
+    <>
+      {col && <FiltroRecorte id={id} cor={tm!.papel} />}
+      <OffthreadVideo src={staticFile(src)} transparent muted style={{position: 'absolute', inset: 0, width: W, height: H, objectFit: 'cover', filter: col ? `url(#${id})` : undefined}} />
+    </>
+  );
+};
 
 const Base: React.FC<{src: string; filtro?: string}> = ({src, filtro}) => (
   <OffthreadVideo src={staticFile(src)} muted style={{position: 'absolute', inset: 0, width: W, height: H, objectFit: 'cover', filter: filtro}} />
@@ -161,6 +242,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const pal: Palavra[] = React.useMemo(() => palavras.map((p) => ({...p, f: Math.round(p.s * fps), fe: Math.round(p.e * fps)})), [palavras, fps]);
   const t = React.useMemo(() => relogio(pal, dur, fps), [pal, dur, fps]);
   const n = estilos.length + 2;
+  const tm = props.tema ?? TEMA_ESCURO;
+  const col = tm.visual === 'colagem';
 
   // estado da câmera neste quadro
   const cams = camera.map((c) => ({...c, a: t(c.de)})).sort((x, y) => x.a - y.a);
@@ -176,31 +259,31 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   );
 
   const palcoCartao = () => {
-    const vira = mola(f, cruAte, 0.16, 1); // o quarto vai embora e fica o estúdio
+    const vira = clamp(mola(f, cruAte, 0.16, 1) * 1.04); // o quarto vai embora e fica o estúdio (1,04: não sobra fiapo no topo)
     const atras = palco.atras.map((a, i) => ({...a, ini: t(a.de), fim: a.ate ? t(a.ate) : (palco.atras[i + 1] ? t(palco.atras[i + 1].de) : dur)}));
     const cta = palco.cta ? {ini: t(palco.cta.de), texto: palco.cta.texto} : null;
     return (
-      <AbsoluteFill style={{background: PRETO}}>
+      <AbsoluteFill style={{background: col ? tm.tema : PRETO}}>
         {vira < 0.999 && (
           <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 0 ${vira * 100}% 0)`}}>
             <Base src={base.arquivo} filtro={`saturate(${1 - vira * 0.6})`} />
           </div>
         )}
-        {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={OSSO} topo={a.ini < cruAte ? 0.15 : undefined} />)}
-        {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={OSSO} />}
-        <Pessoa src={pessoa} />
+        {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={col ? tm.papel : OSSO} serifa={col} topo={a.ini < cruAte ? 0.15 : undefined} />)}
+        {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={col ? tm.papel : OSSO} serifa={col} />}
+        <Pessoa src={pessoa} tm={f >= cruAte ? tm : undefined} />
         <InterfaceBruto f={f} fps={fps} op={1 - clamp(vira * 2)} />
         {cta && f >= cta.ini && (
           <div style={{position: 'absolute', left: 90, right: 90, bottom: 300, display: 'flex', justifyContent: 'center',
             transform: `translateY(${(1 - mola(f, cta.ini + 6, 0.2, 0.8)) * 60}px)`, opacity: clamp((f - cta.ini - 6) / 6)}}>
-            <div style={{background: OSSO, color: PRETO, borderRadius: 60, padding: '26px 44px', fontFamily: INTER, fontSize: 44, fontWeight: 600, display: 'flex', gap: 18, alignItems: 'center'}}>
+            <div style={{background: col ? tm.papel : OSSO, color: col ? tm.tinta : PRETO, borderRadius: col ? 4 : 60, transform: col ? 'rotate(-2deg)' : undefined, padding: '26px 44px', fontFamily: INTER, fontSize: 44, fontWeight: 600, display: 'flex', gap: 18, alignItems: 'center'}}>
               <span style={{opacity: 0.5}}>Comente</span>
               <span style={{fontWeight: 800}}>{cta.texto.slice(0, Math.max(0, Math.floor((f - cta.ini - 10) / 2)))}</span>
               <span style={{width: 3, height: 46, background: PRETO, opacity: Math.floor(f / 10) % 2 ? 1 : 0}} />
             </div>
           </div>
         )}
-        {f < cruAte ? legenda(H * 0.87) : (!cta || f < cta.ini) && <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} />}
+        {f < cruAte ? legenda(H * 0.87) : (!cta || f < cta.ini) && <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} />}
       </AbsoluteFill>
     );
   };
@@ -208,12 +291,12 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const orbitaCartao = () => {
     const ini = t(orbita.de);
     return (
-      <AbsoluteFill style={{background: '#E9E9E6'}}>
-        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={PRETO} topo={0.14} />)}
-        <Orbita ini={ini} lado="atras" />
-        <Pessoa src={pessoa} />
-        <Orbita ini={ini} lado="frente" />
-        {legenda(H * 0.87)}
+      <AbsoluteFill style={{background: col ? tm.papel : '#E9E9E6'}}>
+        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={col ? tm.tema : PRETO} serifa={col} topo={0.14} />)}
+        <Orbita ini={ini} lado="atras" cores={col ? [tm.tema, tm.tinta, tm.papel2] : undefined} />
+        <Pessoa src={pessoa} tm={tm} />
+        <Orbita ini={ini} lado="frente" cores={col ? [tm.tema, tm.tinta, tm.papel2] : undefined} />
+        {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : legenda(H * 0.87)}
       </AbsoluteFill>
     );
   };
@@ -248,6 +331,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   palco.atras.forEach((a) => efeitos.push({em: t(a.de), som: 'thud', vol: 0.45}));
   if (palco.cta) efeitos.push({em: t(palco.cta.de), som: 'thud', vol: 0.5}, {em: t(palco.cta.de) + 6, som: 'pop', vol: 0.4});
   if (fecho) fecho.linhas.forEach((_, i) => efeitos.push({em: t(fecho.de) + i * 9, som: 'tick', vol: 0.4}));
+  // colagem: cada recorte de palavra que entra tem o seu som curto (a referência tem um transiente a cada 0,2 a 0,3 s)
+  if (col) pal.forEach((w) => { if (w.f >= cruAte) efeitos.push({em: w.f - 1, som: w.w.replace(/[.,;:!?]/g, '').length >= 6 ? 'pop' : 'tick', vol: 0.18}); });
   const audio = (
     <>
       <Audio src={staticFile(base.arquivo)} />
@@ -266,7 +351,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const fechoIni = fecho ? t(fecho.de) : Infinity;
 
   return (
-    <AbsoluteFill style={{background: PRETO, perspective: 2600, overflow: 'hidden'}}>
+    <AbsoluteFill style={{background: col ? tm.papel : PRETO, perspective: 2600, overflow: 'hidden'}}>
       {audio}
       {poses.map((ps, i) => {
         const visivel = Math.abs(ps.x) - (W * ps.s) / 2 < W / 2 + 40;
@@ -274,13 +359,18 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
         return (
           <div key={i} style={{position: 'absolute', left: 0, top: 0, width: W, height: H,
             transform: `translate(${ps.x}px, ${ps.y}px) rotateY(${ps.ry}deg) rotate(${ps.rz}deg) scale(${ps.s})`, transformOrigin: '50% 50%'}}>
-            <div style={{position: 'absolute', inset: 0, borderRadius: ps.r / Math.max(ps.s, 0.2), overflow: 'hidden',
-              boxShadow: ps.foco < 1 ? `0 0 0 ${3 / Math.max(ps.s, 0.2)}px rgba(255,255,255,${0.18 * (1 - ps.foco)})` : 'none'}}>
+            <div style={{position: 'absolute', inset: 0, borderRadius: col ? 0 : ps.r / Math.max(ps.s, 0.2), overflow: 'hidden',
+              boxShadow: ps.foco < 1 ? (col
+                ? `0 0 0 ${16 * (1 - ps.foco) / Math.max(ps.s, 0.2)}px ${tm.papel2}, 0 ${18 / Math.max(ps.s, 0.2)}px 0 ${20 / Math.max(ps.s, 0.2)}px rgba(0,0,0,${0.14 * (1 - ps.foco)})`
+                : `0 0 0 ${3 / Math.max(ps.s, 0.2)}px rgba(255,255,255,${0.18 * (1 - ps.foco)})`) : 'none'}}>
               {conteudo(i)}
             </div>
-            <div style={{position: 'absolute', left: 0, right: 0, top: H + 70 / ps.s * 0.4, textAlign: 'center', fontFamily: INTER,
-              fontWeight: 600, fontSize: 30 / Math.max(ps.s, 0.2), letterSpacing: '0.02em', color: OSSO, opacity: clamp(1 - ps.foco * 3)}}>
-              {rotulos[i]}
+            <div style={{position: 'absolute', left: 0, right: 0, top: H + 70 / ps.s * 0.4, display: 'flex', justifyContent: 'center', opacity: clamp(1 - ps.foco * 3)}}>
+              <div style={{fontFamily: INTER, fontWeight: col ? 700 : 600, fontSize: 30 / Math.max(ps.s, 0.2), letterSpacing: col ? '0.08em' : '0.02em',
+                textTransform: col ? 'uppercase' : 'none', color: col ? tm.papel : OSSO, background: col ? tm.tinta : 'transparent',
+                padding: col ? `${6 / Math.max(ps.s, 0.2)}px ${14 / Math.max(ps.s, 0.2)}px` : 0, transform: col ? `rotate(${(i % 2 ? 2 : -2)}deg)` : undefined}}>
+                {rotulos[i]}
+              </div>
             </div>
           </div>
         );
@@ -293,8 +383,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
         return (
           <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H, opacity: wA,
             transform: `translate(${p0.x}px, ${p0.y}px) scale(${p0.s})`}}>
-            <Pessoa src={pessoa} />
-            <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} />
+            <Pessoa src={pessoa} tm={tm} />
+            <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} />
           </div>
         );
       })()}
@@ -306,8 +396,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
             const e = mola(f, fechoIni + i * 9, 0.22, 0.85);
             return (
               <div key={i} style={{overflow: 'hidden'}}>
-                <div style={{transform: `translateY(${(1 - e) * 100}%)`, fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '110%', fontSize: 50,
-                  lineHeight: 1, color: OSSO, letterSpacing: '-0.02em'}}>{l}</div>
+                <div style={{transform: `translateY(${(1 - e) * 100}%)`, ...(col ? {fontFamily: SERIFA, fontSize: 66} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '110%', fontSize: 50}),
+                  lineHeight: 1, color: col ? tm.tinta : OSSO, letterSpacing: '-0.02em'}}>{l}</div>
               </div>
             );
           })}
@@ -316,12 +406,13 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
       {pilula > 0 && (
         <div style={{position: 'absolute', left: 0, right: 0, top: 150, display: 'flex', justifyContent: 'center', opacity: pilula,
           transform: `translateY(${(1 - pilula) * -16}px)`}}>
-          <div style={{background: OSSO, color: PRETO, borderRadius: 40, padding: '16px 30px', fontFamily: INTER, fontWeight: 700, fontSize: 32,
+          <div style={{background: col ? tm.tinta : OSSO, color: col ? tm.papel : PRETO, borderRadius: col ? 0 : 40, transform: col ? 'rotate(-1.5deg)' : undefined, padding: '16px 30px', fontFamily: INTER, fontWeight: 700, fontSize: 32,
             letterSpacing: '0.04em', fontVariantNumeric: 'tabular-nums'}}>
             {String(entrouEm + 1).padStart(2, '0')} / {String(n).padStart(2, '0')} · {rotulos[entrouEm].toUpperCase()}
           </div>
         </div>
       )}
+      {col && <Grao f={f} />}
     </AbsoluteFill>
   );
 };

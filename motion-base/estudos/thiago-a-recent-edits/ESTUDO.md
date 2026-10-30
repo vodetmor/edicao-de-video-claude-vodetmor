@@ -35,3 +35,12 @@ Os edits são para a marca "Sessions" (marca d'água no topo), sobre IA, fundado
 - Cartões e grafismos do editor ganham um "tema" (`marca.json`: papel, tinta, cor de tema, acento, vozes tipográficas).
 - O vídeo-vitrine do Jerônimo pode sair desse universo: papel + terracota do Claude + tinta, com a pessoa recortada e
   colada no papel, em vez do preto e branco genérico.
+
+## Complemento (análise com espectrograma e mais quadros)
+- Som: trilha muito comprimida (variação de ~1 LU); o espectrograma mostra um transiente a cada 0,2 a 0,3 s, ou seja,
+  um efeito curto (pop, clique, papel, swoosh) para CADA elemento que entra.
+- Entrada de palavra: pop com passagem do ponto (~110% → 100%); setas, checks e rabiscos desenhados ao vivo.
+- Transição entre ideias com vazamento de luz laranja (light leak) na cor do tema.
+- Nunca branco ou preto puros: branco vira creme, preto vira grafite.
+- O acento complementar fica para "o outro lado" da história (o concorrente: verde OpenAI #138B60, azul Gemini #0F4C8E).
+- Cada beat (~3,4 s) tem UMA ideia: 1 objeto + 1 a 3 palavras; conectivo pequeno (script/caixa alta), palavra-chave enorme.

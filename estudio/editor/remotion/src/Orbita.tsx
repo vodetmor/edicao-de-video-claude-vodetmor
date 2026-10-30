@@ -22,8 +22,8 @@ const triangulo = (() => {
   return new THREE.ExtrudeGeometry(s, {depth: 0.32, bevelEnabled: true, bevelSize: 0.08, bevelThickness: 0.08, bevelSegments: 6});
 })();
 
-const Forma: React.FC<{o: Obj}> = ({o}) => {
-  const mat = <meshStandardMaterial color={o.cor} roughness={0.28} metalness={o.cor === '#1A1A1C' ? 0.55 : 0.1} />;
+const Forma: React.FC<{o: Obj; cor?: string}> = ({o, cor}) => {
+  const mat = <meshStandardMaterial color={cor ?? o.cor} roughness={0.28} metalness={o.cor === '#1A1A1C' ? 0.55 : 0.1} />;
   if (o.forma === 'play') return <mesh geometry={triangulo}>{mat}</mesh>;
   if (o.forma === 'anel') return <mesh><torusGeometry args={[0.55, 0.2, 32, 96]} />{mat}</mesh>;
   if (o.forma === 'cubo') return <mesh><boxGeometry args={[0.9, 0.9, 0.9, 4, 4, 4]} />{mat}</mesh>;
@@ -31,7 +31,8 @@ const Forma: React.FC<{o: Obj}> = ({o}) => {
   return <mesh><sphereGeometry args={[0.55, 48, 48]} />{mat}</mesh>;
 };
 
-export const Orbita: React.FC<{ini: number; lado: 'atras' | 'frente'; centroY?: number}> = ({ini, lado, centroY = 0.8}) => {
+// cores: paleta do vídeo (tema, tinta, papel); sem ela, preto e osso
+export const Orbita: React.FC<{ini: number; lado: 'atras' | 'frente'; centroY?: number; cores?: string[]}> = ({ini, lado, centroY = 0.8, cores}) => {
   const f = useCurrentFrame();
   const {width, height} = useVideoConfig();
   const t = (f - ini) / 30;
@@ -51,7 +52,7 @@ export const Orbita: React.FC<{ini: number; lado: 'atras' | 'frente'; centroY?: 
         return (
           <group key={i} position={[Math.sin(ang) * r, o.alt + centroY + Math.sin(t * 1.3 + i) * 0.12, z * r * 0.8]}
             rotation={[t * 0.7 + i, t * 1.1 + i * 2, t * 0.4]} scale={s}>
-            <Forma o={o} />
+            <Forma o={o} cor={cores ? cores[i % cores.length] : undefined} />
           </group>
         );
       })}
