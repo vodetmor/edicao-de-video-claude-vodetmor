@@ -13,14 +13,16 @@ import {Legendas, montaCues} from './Legendas';
 import {montaMarca} from './marca';
 import {Orbita} from './Orbita';
 import {PainelIA} from './MotionIA';
+import {Dissolve, MINI, TelaClaude} from './AppClaude';
 import type {Entrada, Palavra, Roteiro} from './tipos';
 
 export type Tema = {visual: 'escuro' | 'colagem'; papel: string; papel2: string; tema: string; tinta: string; cinza: string; acento: string};
 const TEMA_ESCURO: Tema = {visual: 'escuro', papel: '#0A0A0B', papel2: '#1A1A1C', tema: '#0A0A0B', tinta: '#F2F2EF', cinza: '#8A8A8E', acento: '#F2F2EF'};
-type Camera = {de: string; modo: 'foco' | 'leque' | 'atras' | 'grade'; k?: number};
+// 'app': tela do Claude digitando a skill (comando) e a versão k surgindo numa miniatura; envio = palavra em que o comando é enviado
+type Camera = {de: string; modo: 'foco' | 'leque' | 'atras' | 'grade' | 'app'; k?: number; comando?: string; envio?: string; nota?: string};
 type Atras = {de: string; ate?: string; texto: string};
 // tela dividida do bruto (MotionIA): painel de papel em cima se monta com a fala, a pessoa desce para a metade de baixo
-type TelaIA = {de: string; ate: string; logo?: string; marcas: {janela: string; carimbo: string; claude: string; corte: string; barra: string; cheio: string}};
+type TelaIA = {de: string; ate: string; logo?: string; programa?: string; marcas: {janela: string; carimbo: string; claude: string; corte: string; barra: string; cheio: string}};
 export type VitrineProps = Entrada & {
   pessoa: string;
   estilos: Roteiro[]; // cartões 1..n-2
@@ -30,6 +32,7 @@ export type VitrineProps = Entrada & {
   orbita: {de: string; atras?: Atras[]};
   fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
+  app?: {miniatura?: string}; // foto pequena do bruto que aparece anexada na mensagem
   musica?: string; // arquivo na pasta pública (ex.: assets/musica.mp3); a voz manda e a música abaixa sob a fala
 };
 
@@ -52,11 +55,13 @@ const pose = (c: Camera, i: number, n: number): Pose => {
   const k = c.k ?? 0;
   const d = i - k;
   if (c.modo === 'foco') return {x: d * W * 1.12, y: 0, s: 1, ry: 0, rz: 0, r: 0, foco: 1};
+  if (c.modo === 'app') return d === 0 ? {x: MINI.x * W, y: MINI.y * H, s: MINI.s, ry: 0, rz: 0, r: 36, foco: 0.99} : {x: d * W * 1.6, y: 0, s: MINI.s, ry: 0, rz: 0, r: 36, foco: 0.99};
   if (c.modo === 'atras') {
     // as outras versões abrem em leque ATRÁS da cabeça (como cartas na mão); o palco continua na tela inteira
-    if (i === 0) return {x: 0, y: 0, s: 1, ry: 0, rz: 0, r: 0, foco: 1};
+    // o palco encolhe para baixo (vira 'um dos vídeos') e as outras versões abrem em leque em cima, sem o rosto tampar
+    if (i === 0) return {x: 0, y: H * 0.19, s: 0.64, ry: 0, rz: 0, r: 70, foco: 0.5};
     const j = i - 1 - (n - 2) / 2;
-    return {x: j * W * 0.215, y: -H * 0.2 + j * j * 34, s: 0.25, ry: 0, rz: j * 9, r: 70, foco: 0};
+    return {x: j * W * 0.25, y: -H * 0.335 + j * j * 26, s: 0.21, ry: 0, rz: j * 7, r: 70, foco: 0}; // acima da cabeça: nada fica escondido pelo rosto
   }
   if (c.modo === 'leque') {
     const a = Math.abs(d);
@@ -255,7 +260,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   cams.forEach((c, i) => { if (f >= c.a) j = i; });
   const atual = cams[j];
   const ant = cams[Math.max(0, j - 1)];
-  const p = j === 0 ? 1 : mola(f, atual.a, 0.2, 0.92);
+  const p = j === 0 || atual.modo === 'app' ? 1 : mola(f, atual.a, 0.2, 0.92); // o app entra em corte seco; dele sai em zoom
 
   const cruAte = t(palco.cruAte);
   const legenda = (zonaY: number) => (
@@ -283,7 +288,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
         {ia && sp > 0.001 && (
           <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H / 2, transform: `translateY(${-(1 - sp) * 100}%)`,
             boxShadow: '0 10px 0 rgba(0,0,0,.18)'}}>
-            <PainelIA f={f} w={W} h={H / 2} tm={col ? tm : {papel: '#E9E9E6', papel2: '#D6D6D2', tema: PRETO, tinta: PRETO, cinza: '#8A8A8E'}} logo={ia.logo}
+            <PainelIA f={f} w={W} h={H / 2} tm={col ? tm : {papel: '#E9E9E6', papel2: '#D6D6D2', tema: PRETO, tinta: PRETO, cinza: '#8A8A8E'}} logo={ia.logo} programa={ia.programa}
               mk={{janela: t(ia.marcas.janela), carimbo: t(ia.marcas.carimbo), claude: t(ia.marcas.claude), corte: t(ia.marcas.corte),
                 barra: t(ia.marcas.barra), cheio: t(ia.marcas.cheio), fim: t(ia.ate)}} />
             {/* fita na emenda: o painel e o vídeo são uma peça só */}
@@ -335,32 +340,32 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     for (let q = 0; q <= dur; q++) { y += (v[q] - y) * (v[q] > y ? 0.3 : 0.07); out[q] = y; }
     return out;
   }, [pal, dur]);
-  const efeitos: {em: number; som: string; vol: number}[] = [];
+  // efeitos: POUCOS e variados, só nos momentos fortes (Vítor 30/10: som em cada palavra ficou repetitivo e irritante).
+  // Regra: no máximo um efeito a cada ~1,2 s e nunca o mesmo som duas vezes seguidas.
+  const cand: {em: number; som: string; vol: number}[] = [];
+  const giro = ['ar', 'swish', 'whoosh'];
   cams.forEach((c, i) => {
     if (i === 0) return;
-    const a = cams[i - 1];
-    if (c.modo === 'leque') { efeitos.push({em: c.a - 26, som: 'riser', vol: 0.35}, {em: c.a, som: 'whoosh', vol: 0.55}); }
-    else if (c.modo === 'grade') { efeitos.push({em: c.a, som: 'whoosh', vol: 0.5}, {em: c.a + 8, som: 'thud', vol: 0.5}); }
-    else if (a.modo === 'foco') efeitos.push({em: c.a - 2, som: 'swish', vol: 0.5});
-    else efeitos.push({em: c.a - 3, som: 'whoosh', vol: 0.5});
+    if (c.modo === 'grade') cand.push({em: c.a, som: 'whoosh', vol: 0.4}, {em: c.a + 10, som: 'baque', vol: 0.4});
+    else cand.push({em: c.a - 3, som: giro[i % giro.length], vol: 0.35});
   });
-  efeitos.push({em: cruAte, som: 'whoosh', vol: 0.4});
-  palco.atras.forEach((a) => efeitos.push({em: t(a.de), som: 'thud', vol: 0.45}));
   if (palco.ia) {
     const k = palco.ia.marcas;
-    efeitos.push({em: t(palco.ia.de) - 2, som: 'whoosh', vol: 0.5}, {em: t(k.janela), som: 'thud', vol: 0.4}, {em: t(k.carimbo), som: 'impact', vol: 0.5},
-      {em: t(k.claude) - 6, som: 'swish', vol: 0.4}, {em: t(k.claude), som: 'pop', vol: 0.45}, {em: t(k.corte), som: 'swish', vol: 0.35},
-      {em: t(k.barra), som: 'riser', vol: 0.25}, {em: t(k.cheio), som: 'pop', vol: 0.5}, {em: t(palco.ia.ate) - 2, som: 'whoosh', vol: 0.45});
-    for (let q = 0; q < 6; q++) efeitos.push({em: t(k.claude) + 4 + q * 2, som: 'tick', vol: 0.18}); // cada clipe que cai
-  }
-  if (palco.cta) efeitos.push({em: t(palco.cta.de), som: 'thud', vol: 0.5}, {em: t(palco.cta.de) + 6, som: 'pop', vol: 0.4});
-  if (fecho) fecho.linhas.forEach((_, i) => efeitos.push({em: fechoEm(i), som: 'tick', vol: 0.4}));
-  // colagem: cada recorte de palavra que entra tem o seu som curto (a referência tem um transiente a cada 0,2 a 0,3 s)
-  if (col) pal.forEach((w) => { if (w.f >= cruAte) efeitos.push({em: w.f - 1, som: w.w.replace(/[.,;:!?]/g, '').length >= 6 ? 'pop' : 'tick', vol: 0.18}); });
+    cand.push({em: t(palco.ia.de) - 2, som: 'ar', vol: 0.4}, {em: t(k.carimbo), som: 'impact', vol: 0.4}, {em: t(k.claude), som: 'pop', vol: 0.3},
+      {em: t(k.cheio), som: 'thud-suave', vol: 0.35}, {em: t(palco.ia.ate) - 2, som: 'whoosh', vol: 0.35});
+  } else cand.push({em: cruAte, som: 'whoosh', vol: 0.35});
+  if (palco.cta) cand.push({em: t(palco.cta.de), som: 'thud-suave', vol: 0.4});
+  cand.sort((x, y) => x.em - y.em);
+  const efeitos: typeof cand = [];
+  cand.forEach((e) => {
+    const u = efeitos[efeitos.length - 1];
+    if (u && (e.em - u.em < 36 || e.som === u.som)) return;
+    efeitos.push(e);
+  });
   const audio = (
     <>
       <Audio src={staticFile(base.arquivo)} />
-      {props.musica && <Audio src={staticFile(props.musica)} volume={(q) => 0.26 - 0.19 * (falando[Math.min(q, dur)] ?? 0)} />}
+      {props.musica && <Audio src={staticFile(props.musica)} volume={(q) => 0.3 - 0.2 * (falando[Math.min(q, dur)] ?? 0)} />}
       {efeitos.filter((e) => e.em >= 0).map((e, i) => (
         <Sequence key={i} from={Math.round(e.em)} durationInFrames={60}><Audio src={staticFile(`sons/sfx_${e.som}.wav`)} volume={e.vol} /></Sequence>
       ))}
@@ -377,9 +382,16 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   return (
     <AbsoluteFill style={{background: col ? tm.papel : PRETO, perspective: 2600, overflow: 'hidden'}}>
       {audio}
+      {(() => {
+        const c = atual.modo === 'app' ? atual : ant.modo === 'app' && j > 0 ? ant : null;
+        if (!c) return null;
+        const op = c === atual ? 1 : 1 - clamp((f - atual.a) / 8);
+        return <TelaClaude f={f} ini={c.a} envio={c.envio ? t(c.envio) : c.a + 15} comando={c.comando ?? '/editar-video'} nota={c.nota} miniatura={props.app?.miniatura} op={op} />;
+      })()}
       {poses.map((ps, i) => {
         const visivel = Math.abs(ps.x) - (W * ps.s) / 2 < W / 2 + 40;
         if (!visivel) return null;
+        if (atual.modo === 'app' && i === atual.k && f < (atual.envio ? t(atual.envio) : atual.a + 15)) return null; // ainda digitando
         return (
           <div key={i} style={{position: 'absolute', left: 0, top: 0, width: W, height: H,
             transform: `translate(${ps.x}px, ${ps.y}px) rotateY(${ps.ry}deg) rotate(${ps.rz}deg) scale(${ps.s})`, transformOrigin: '50% 50%'}}>
@@ -412,6 +424,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
           </div>
         );
       })()}
+      {atual.modo === 'app' && <Dissolve f={f} envio={atual.envio ? t(atual.envio) : atual.a + 15} op={1} />}
       {fecho && f >= fechoIni && (atual.modo === 'grade' || f < atual.a + 8) && (
         <div style={{position: 'absolute', left: W / 2 + W * 0.32 - (W * 0.29) / 2, top: H / 2 + H * 0.205 - (H * 0.29) / 2, width: W * 0.29, height: H * 0.29,
           display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 6, paddingLeft: 18,

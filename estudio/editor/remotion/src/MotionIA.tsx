@@ -16,7 +16,7 @@ const INTER = "'Inter Variable', 'Inter', sans-serif";
 const pop = (f: number, ini: number) => (f < ini ? 0 : [1.16, 0.95, 1][Math.min(2, Math.floor((f - ini) / 2))]);
 const treme = (f: number, k: number) => ((Math.floor(f / 3) * 7 + k * 13) % 5) - 2; // tremidinha de stop-motion (±2 px)
 
-export const PainelIA: React.FC<{f: number; w: number; h: number; tm: TemaMotion; mk: Marcas; logo?: string}> = ({f, w, h, tm, mk, logo}) => {
+export const PainelIA: React.FC<{f: number; w: number; h: number; tm: TemaMotion; mk: Marcas; logo?: string; programa?: string}> = ({f, w, h, tm, mk, logo, programa}) => {
   // 1 · a janela do programa de edição cai no papel; 2 · carimbo NUNCA ABERTO
   const sJan = pop(f, mk.janela);
   const saiJan = tween(f, mk.claude - 6, 10, 0, 1, E.saida);
@@ -35,7 +35,15 @@ export const PainelIA: React.FC<{f: number; w: number; h: number; tm: TemaMotion
       <div style={{position: 'absolute', inset: 0, opacity: 0.35, backgroundImage: `linear-gradient(${tm.papel2} 1.5px, transparent 1.5px), linear-gradient(90deg, ${tm.papel2} 1.5px, transparent 1.5px)`,
         backgroundSize: '54px 54px'}} />
 
-      {f >= mk.janela && saiJan < 1 && (
+      {programa && f >= mk.janela && saiJan < 1 && (
+        // print REAL de um programa de edição (projeto vazio), impresso e colado no papel: borda branca e sombra curta
+        <div style={{position: 'absolute', left: w * 0.06, top: h * 0.17, width: w * 0.88,
+          transform: `translate(${treme(f, 1)}px, ${-saiJan * h * 0.9}px) rotate(-2.5deg) scale(${sJan})`, background: tm.papel,
+          padding: 12, boxShadow: '0 14px 0 rgba(0,0,0,.18)'}}>
+          <Img src={staticFile(programa)} style={{width: '100%', display: 'block', filter: 'contrast(1.05)'}} />
+        </div>
+      )}
+      {!programa && f >= mk.janela && saiJan < 1 && (
         <div style={{position: 'absolute', left: w * 0.12, top: h * 0.16, width: w * 0.76, height: h * 0.56,
           transform: `translate(${treme(f, 1)}px, ${-saiJan * h * 0.9}px) rotate(-3deg) scale(${sJan})`, background: tm.papel2,
           boxShadow: `0 14px 0 rgba(0,0,0,.16)`, border: `6px solid ${tm.tinta}`}}>
@@ -54,9 +62,9 @@ export const PainelIA: React.FC<{f: number; w: number; h: number; tm: TemaMotion
         </div>
       )}
       {f >= mk.carimbo && saiJan < 1 && (
-        <div style={{position: 'absolute', left: w * 0.5, top: h * 0.47, transform: `translate(-50%, ${-saiJan * h * 0.9}px) rotate(-11deg) scale(${sCar})`,
+        <div style={{position: 'absolute', left: w * 0.5, top: h * 0.36, transform: `translate(-50%, ${-saiJan * h * 0.9}px) rotate(-11deg) scale(${sCar})`,
           border: `10px solid ${tm.tema}`, padding: '10px 30px', fontFamily: INTER, fontWeight: 900, fontSize: 92, letterSpacing: '0.04em',
-          color: tm.tema, mixBlendMode: 'multiply', opacity: 0.92, whiteSpace: 'nowrap'}}>NUNCA ABERTO</div>
+          color: tm.tema, background: 'rgba(225,221,214,.9)', whiteSpace: 'nowrap'}}>NUNCA ABERTO</div>
       )}
 
       {f >= mk.claude && (
