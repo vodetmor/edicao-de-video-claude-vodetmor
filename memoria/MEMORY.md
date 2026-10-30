@@ -69,3 +69,6 @@
 - [[feedback-marca-real-na-tela]]: every brand named in narration shows its real logo/identity on screen (Vítor 2026-10-14).
 - [[tutorial-pinterest-x]]: 2026-10-23 organizacao/TUTORIAL-PINTEREST-E-X.md; Pinterest needs no token, X via his PC; .env reading blocked, no values written.
 - [[mentoria-ruan-lancar]]: 2026-10-27 opinion on Ruan LANÇAR site + plan to sell a mentorship to 4 CEUB marketing students (doc https://claude.ai/artifact/3srt1xT1CHF9qrARJFh1Zy).
+- [[curso-maquina-edicaoia]]: full "Máquina de Edição IA" course (videos, transcripts, ebook, 7 cp-* skills) on his PC at C:\Users\vitor\Downloads\Maquina-EdicaoIA (2026-10-29); summary outros/maquina-edicaoia/RESUMO.md.
+- [[produto-skills-jeronimo]]: 2026-10-29 plan to sell a Claude video-editing skill pack (~R$97) with client Jerônimo; plan outros/maquina-edicaoia/PLANO-JERONIMO.md; do not repackage Tiago content.
+- [[editor-video-falado]]: 2026-10-29 estudio/editor = raw talking video -> edited (cuts, face, captions, 5 styles, review panel localhost:8080) + skill editar-video; product base for Jerônimo.
