@@ -1,0 +1,230 @@
+{
+ "pessoa": "pessoa.webm",
+ "estilos": [
+  {
+   "estilo": "reels-forte",
+   "formato": "9:16",
+   "cenas": [
+    {
+     "de": "inicio",
+     "layout": "cheio",
+     "elementos": [
+      {
+       "tipo": "titulo",
+       "texto": "Corte seco",
+       "apoio": "legenda forte",
+       "de": "corte",
+       "ate": "Tem#2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "estilo": "split",
+   "formato": "9:16",
+   "legenda": {
+    "estilo": "limpa"
+   },
+   "cenas": [
+    {
+     "de": "inicio",
+     "layout": "split",
+     "elementos": [
+      {
+       "tipo": "titulo",
+       "texto": "Tela dividida",
+       "apoio": "a explicação se monta",
+       "de": "tela"
+      }
+     ]
+    },
+    {
+     "de": "explicação",
+     "layout": "split",
+     "elementos": [
+      {
+       "tipo": "passos",
+       "de": "explicação",
+       "itens": [
+        {
+         "texto": "Gravar",
+         "icone": "video-camera",
+         "de": "explicação"
+        },
+        {
+         "texto": "Montar",
+         "icone": "stack",
+         "de": "montando"
+        },
+        {
+         "texto": "Explicar",
+         "icone": "chalkboard-teacher",
+         "de": "falo"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "estilo": "moldura",
+   "formato": "9:16",
+   "cenas": [
+    {
+     "de": "inicio",
+     "ate": "quadro",
+     "layout": "moldura",
+     "elementos": [
+      {
+       "tipo": "titulo",
+       "texto": "Versão aula",
+       "apoio": "quadro e gráfico",
+       "de": "aula"
+      }
+     ]
+    },
+    {
+     "de": "quadro",
+     "layout": "tela",
+     "elementos": [
+      {
+       "tipo": "grafico",
+       "pontos": [
+        2,
+        3,
+        3,
+        5,
+        6,
+        8,
+        11
+       ],
+       "rotulo": "alcance por vídeo",
+       "nota": "ilustrativo",
+       "de": "gráfico"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "rotulos": [
+  "Estúdio",
+  "Corte seco",
+  "Tela dividida",
+  "Aula",
+  "3D"
+ ],
+ "palco": {
+  "cruAte": "E",
+  "atras": [
+   {
+    "de": "só",
+    "ate": "Essa",
+    "texto": "Só ele?"
+   }
+  ],
+  "cta": {
+   "de": "Comenta",
+   "texto": "EDIÇÃO"
+  },
+  "ia": {
+   "de": "Nunca",
+   "ate": "E",
+   "logo": "assets/claude.svg",
+   "marcas": {
+    "janela": "Nunca",
+    "carimbo": "vida",
+    "claude": "Mesmo",
+    "corte": "assim",
+    "barra": "saiu",
+    "cheio": "qualidade"
+   }
+  }
+ },
+ "orbita": {
+  "de": "objetos",
+  "atras": [
+   {
+    "de": "3D",
+    "texto": "3D"
+   }
+  ]
+ },
+ "camera": [
+  {
+   "de": "inicio",
+   "modo": "foco",
+   "k": 0
+  },
+  {
+   "de": "virou",
+   "modo": "atras",
+   "k": 0
+  },
+  {
+   "de": "corte",
+   "modo": "foco",
+   "k": 1
+  },
+  {
+   "de": "tela",
+   "modo": "foco",
+   "k": 2
+  },
+  {
+   "de": "aula",
+   "modo": "foco",
+   "k": 3
+  },
+  {
+   "de": "objetos",
+   "modo": "foco",
+   "k": 4
+  },
+  {
+   "de": "Uma",
+   "modo": "grade"
+  },
+  {
+   "de": "Quer",
+   "modo": "foco",
+   "k": 0
+  }
+ ],
+ "fecho": {
+  "de": "gravação#2",
+  "linhas": [
+   "1 gravação",
+   "5 vídeos",
+   "0 edição"
+  ],
+  "em": [
+   "gravação#2",
+   "Cinco",
+   "Zero"
+  ]
+ },
+ "musica": "assets/musica.mp3",
+ "tema": {
+  "visual": "colagem",
+  "papel": "#E1DDD6",
+  "papel2": "#CDC9C1",
+  "tema": "#D97757",
+  "tinta": "#110E0D",
+  "cinza": "#726865",
+  "acento": "#2B4FB3"
+ },
+ "marca": {
+  "fundo": "#E1DDD6",
+  "papel": "#CDC9C1",
+  "tinta": "#110E0D",
+  "suave": "#726865",
+  "linha": "#CDC9C1",
+  "destaque": "#D97757",
+  "ok": "#2B4FB3",
+  "destaqueLegenda": "#E1DDD6",
+  "legenda": "#FFFFFF"
+ }
+}
