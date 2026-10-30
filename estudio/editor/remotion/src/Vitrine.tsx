@@ -9,12 +9,12 @@ import {relogio} from './ancora';
 import {EditorVideo} from './EditorVideo';
 import {useFontes} from './Fontes';
 import {clamp, lerp, mola, tween, E} from './kit';
-import {Legendas} from './Legendas';
+import {Legendas, montaCues} from './Legendas';
 import {montaMarca} from './marca';
 import {Orbita} from './Orbita';
 import type {Entrada, Palavra, Roteiro} from './tipos';
 
-type Camera = {de: string; modo: 'foco' | 'leque' | 'grade'; k?: number};
+type Camera = {de: string; modo: 'foco' | 'leque' | 'atras' | 'grade'; k?: number};
 type Atras = {de: string; ate?: string; texto: string};
 export type VitrineProps = Entrada & {
   pessoa: string;
@@ -39,35 +39,42 @@ const OSSO = '#F2F2EF';
 const ARCHIVO = "'Archivo Variable', 'Archivo', sans-serif";
 const INTER = "'Inter Variable', 'Inter', sans-serif";
 
-type Pose = {x: number; y: number; s: number; ry: number; r: number; foco: number};
+type Pose = {x: number; y: number; s: number; ry: number; rz: number; r: number; foco: number};
 
 const pose = (c: Camera, i: number, n: number): Pose => {
   const k = c.k ?? 0;
   const d = i - k;
-  if (c.modo === 'foco') return {x: d * W * 1.12, y: 0, s: 1, ry: 0, r: 0, foco: 1};
+  if (c.modo === 'foco') return {x: d * W * 1.12, y: 0, s: 1, ry: 0, rz: 0, r: 0, foco: 1};
+  if (c.modo === 'atras') {
+    // as outras versões abrem em leque ATRÁS da cabeça (como cartas na mão); o palco continua na tela inteira
+    if (i === 0) return {x: 0, y: 0, s: 1, ry: 0, rz: 0, r: 0, foco: 1};
+    const j = i - 1 - (n - 2) / 2;
+    return {x: j * W * 0.215, y: -H * 0.2 + j * j * 34, s: 0.25, ry: 0, rz: j * 9, r: 70, foco: 0};
+  }
   if (c.modo === 'leque') {
     const a = Math.abs(d);
-    return {x: d * W * 0.4, y: a * 40, s: 0.42 * (1 - 0.12 * a), ry: -d * 16, r: 70, foco: 0};
+    return {x: d * W * 0.4, y: a * 40, s: 0.42 * (1 - 0.12 * a), ry: -d * 16, rz: 0, r: 70, foco: 0};
   }
   // grade: 3 em cima, 2 embaixo + o texto do fecho na terceira casa
   const col = i < 3 ? i - 1 : i - 3 - 1;
   const lin = i < 3 ? -1 : 1;
-  return {x: col * W * 0.32, y: lin * H * 0.205, s: 0.29, ry: 0, r: 80, foco: 0};
+  return {x: col * W * 0.32, y: lin * H * 0.205, s: 0.29, ry: 0, rz: 0, r: 80, foco: 0};
 };
 
 const mistura = (a: Pose, b: Pose, p: number): Pose => ({
-  x: lerp(a.x, b.x, p), y: lerp(a.y, b.y, p), s: lerp(a.s, b.s, p), ry: lerp(a.ry, b.ry, p), r: lerp(a.r, b.r, p), foco: lerp(a.foco, b.foco, p),
+  x: lerp(a.x, b.x, p), y: lerp(a.y, b.y, p), s: lerp(a.s, b.s, p), ry: lerp(a.ry, b.ry, p), rz: lerp(a.rz, b.rz, p), r: lerp(a.r, b.r, p), foco: lerp(a.foco, b.foco, p),
 });
 
 // palavras gigantes atrás da cabeça: cada palavra sobe da máscara, em Archivo largo
-const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; cor: string}> = ({f, ini, fim, texto, cor}) => {
+// `topo`: onde começa (fração da altura). Nada de texto sobre texto: abaixo da interface do bruto e da pílula do topo.
+const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; cor: string; topo?: number}> = ({f, ini, fim, texto, cor, topo}) => {
   if (f < ini - 1 || f >= fim) return null;
   const palavras = texto.split(' ');
   const sai = tween(f, fim - 8, 8, 0, 1, E.saida);
   // cada linha cabe na largura (Archivo 800 a 125% tem ~0,82 em por letra maiúscula)
   const tam = Math.min(300, ...palavras.map((p) => (W * 0.92) / (Math.max(3, p.length) * 0.82)));
   return (
-    <div style={{position: 'absolute', left: 0, right: 0, top: H * (palavras.length > 1 ? 0.05 : 0.09), display: 'flex', flexDirection: 'column', alignItems: 'center',
+    <div style={{position: 'absolute', left: 0, right: 0, top: H * (topo ?? (palavras.length > 1 ? 0.05 : 0.09)), display: 'flex', flexDirection: 'column', alignItems: 'center',
       fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', fontSize: tam, lineHeight: 0.86, letterSpacing: '-0.03em',
       textTransform: 'uppercase', color: cor, opacity: 1 - sai}}>
       {palavras.map((p, i) => {
@@ -75,6 +82,42 @@ const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; 
         return (
           <div key={i} style={{overflow: 'hidden', paddingTop: 8}}>
             <div style={{transform: `translateY(${(1 - e) * 105}%) scaleY(${0.8 + 0.2 * e})`, transformOrigin: '50% 100%'}}>{p}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+
+// Legenda editorial (referência: reels de criador com tipografia de cinema, ~0,7 corte/s): poucas palavras por vez,
+// a palavra forte da frase GRANDE em Archivo largo, as de ligação pequenas em caixa alta espaçada, uma em itálico serifado.
+// Fica no peito (camisa escura = contraste), nunca no rosto.
+const SERIFA = "'Instrument Serif', 'Georgia', serif";
+const LegendaEditorial: React.FC<{f: number; pal: Palavra[]; fps: number; y: number; cor: string}> = ({f, pal, fps, y, cor}) => {
+  const cues = React.useMemo(() => montaCues(pal, fps, 16, 1, 4, true), [pal, fps]);
+  const c = cues.find((q) => f >= q.a && f < q.b);
+  if (!c) return null;
+  const limpa = (w: string) => w.replace(/[.,;:!?]+$/, '');
+  const forte = c.ws.reduce((m, w, i) => (limpa(w.w).length > limpa(c.ws[m].w).length ? i : m), 0);
+  return (
+    <div style={{position: 'absolute', left: 70, right: 70, top: y, display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
+      alignItems: 'baseline', columnGap: 22, rowGap: 0}}>
+      {c.ws.map((w, i) => {
+        const e = mola(f, w.f - 1, 0.3, 0.85);
+        if (f < w.f - 1) return null;
+        const grande = i === forte;
+        const serifa = !grande && limpa(w.w).length >= 5 && i === c.ws.length - 1 && c.ws.length > 2;
+        return (
+          <div key={i} style={{overflow: 'hidden', lineHeight: grande ? 0.95 : 1.1}}>
+            <div style={{transform: `translateY(${(1 - e) * 100}%)`, color: cor, textShadow: '0 2px 18px rgba(0,0,0,.35)',
+              ...(grande
+                ? {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '118%', fontSize: Math.min(150, 980 / (limpa(w.w).length * 0.78)), textTransform: 'uppercase', letterSpacing: '-0.02em'}
+                : serifa
+                  ? {fontFamily: SERIFA, fontStyle: 'italic', fontSize: 72}
+                  : {fontFamily: INTER, fontWeight: 600, fontSize: 38, textTransform: 'uppercase', letterSpacing: '0.12em'})}}>
+              {limpa(w.w)}
+            </div>
           </div>
         );
       })}
@@ -103,7 +146,7 @@ const InterfaceBruto: React.FC<{f: number; fps: number; op: number}> = ({f, fps,
         <div style={{width: 26, height: 26, borderRadius: 13, background: '#FF3B30', opacity: pisca ? 1 : 0.25}} />REC
       </div>
       <div style={{position: 'absolute', right: 64, top: 150, fontSize: 38, fontWeight: 600, fontVariantNumeric: 'tabular-nums'}}>{tc}</div>
-      <div style={{position: 'absolute', left: 64, bottom: 300, fontSize: 32, fontWeight: 600, letterSpacing: '0.08em', opacity: 0.85}}>BRUTO · SEM EDIÇÃO</div>
+      <div style={{position: 'absolute', left: 64, top: 206, fontSize: 30, fontWeight: 600, letterSpacing: '0.08em', opacity: 0.85}}>BRUTO · SEM EDIÇÃO</div>
     </div>
   );
 };
@@ -143,7 +186,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
             <Base src={base.arquivo} filtro={`saturate(${1 - vira * 0.6})`} />
           </div>
         )}
-        {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={OSSO} />)}
+        {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={OSSO} topo={a.ini < cruAte ? 0.15 : undefined} />)}
         {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={OSSO} />}
         <Pessoa src={pessoa} />
         <InterfaceBruto f={f} fps={fps} op={1 - clamp(vira * 2)} />
@@ -157,7 +200,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
             </div>
           </div>
         )}
-        {(!cta || f < cta.ini) && legenda(H * 0.87)}
+        {f < cruAte ? legenda(H * 0.87) : (!cta || f < cta.ini) && <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} />}
       </AbsoluteFill>
     );
   };
@@ -166,7 +209,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     const ini = t(orbita.de);
     return (
       <AbsoluteFill style={{background: '#E9E9E6'}}>
-        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={PRETO} />)}
+        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={PRETO} topo={0.14} />)}
         <Orbita ini={ini} lado="atras" />
         <Pessoa src={pessoa} />
         <Orbita ini={ini} lado="frente" />
@@ -230,7 +273,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
         if (!visivel) return null;
         return (
           <div key={i} style={{position: 'absolute', left: 0, top: 0, width: W, height: H,
-            transform: `translate(${ps.x}px, ${ps.y}px) rotateY(${ps.ry}deg) scale(${ps.s})`, transformOrigin: '50% 50%'}}>
+            transform: `translate(${ps.x}px, ${ps.y}px) rotateY(${ps.ry}deg) rotate(${ps.rz}deg) scale(${ps.s})`, transformOrigin: '50% 50%'}}>
             <div style={{position: 'absolute', inset: 0, borderRadius: ps.r / Math.max(ps.s, 0.2), overflow: 'hidden',
               boxShadow: ps.foco < 1 ? `0 0 0 ${3 / Math.max(ps.s, 0.2)}px rgba(255,255,255,${0.18 * (1 - ps.foco)})` : 'none'}}>
               {conteudo(i)}
@@ -242,6 +285,19 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
           </div>
         );
       })}
+      {(() => {
+        // leque atrás da cabeça: a pessoa do palco é desenhada de novo POR CIMA dos cartões, com a pose do palco
+        const wA = atual.modo === 'atras' ? 1 : ant.modo === 'atras' && j > 0 ? 1 - clamp((f - atual.a) / 6) : 0;
+        if (wA <= 0.01) return null;
+        const p0 = poses[0];
+        return (
+          <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H, opacity: wA,
+            transform: `translate(${p0.x}px, ${p0.y}px) scale(${p0.s})`}}>
+            <Pessoa src={pessoa} />
+            <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} />
+          </div>
+        );
+      })()}
       {fecho && f >= fechoIni && (atual.modo === 'grade' || f < atual.a + 8) && (
         <div style={{position: 'absolute', left: W / 2 + W * 0.32 - (W * 0.29) / 2, top: H / 2 + H * 0.205 - (H * 0.29) / 2, width: W * 0.29, height: H * 0.29,
           display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 6, paddingLeft: 18,
