@@ -4,6 +4,8 @@
 //   --trecho a-b  só um trecho (para conferir uma correção com a entrada e a saída)
 //   --quadros     em vez de vídeo, salva quadros-chave + uma folha de contato (projeto/quadros/)
 //   --roteiro R   usa outro roteiro visual com a mesma base (ex.: comparar estilos)
+//   --vitrine V   vídeo-vitrine: a mesma fala em vários estilos com câmera entre eles (V = JSON com estilos, camera, palco...)
+//   --quadros-em 1.2,4,7.5   quadros-chave nesses segundos (em vez de espaçados)
 //   --nome X      nome da versão (padrão: V01). Vídeo inteiro vai para entregas/, amostra e trecho para projeto/amostras/
 // Lê do projeto: projeto/roteiro-visual.json, base.mp4, base-palavras.json, rosto.json (opcional), marca.json (opcional).
 // Escreve também projeto/entrada.json, para abrir no Studio:
@@ -28,6 +30,7 @@ const tem = (k) => args.includes(k);
 const {pj} = caminhos(raiz);
 const entrada = montaEntrada(raiz);
 if (opt('--roteiro')) entrada.roteiro = JSON.parse(fs.readFileSync(opt('--roteiro'), 'utf8')); // outro roteiro, mesma base (galeria de estilos)
+if (opt('--vitrine')) Object.assign(entrada, JSON.parse(fs.readFileSync(opt('--vitrine'), 'utf8')));
 const pub = preparaPublico(raiz);
 fs.writeFileSync(pj('entrada.json'), JSON.stringify(entrada));
 
@@ -45,7 +48,7 @@ const achaNavegador = () => {
 const browserExecutable = achaNavegador();
 const t0 = Date.now();
 const serveUrl = await bundle({entryPoint: path.join(aqui, 'src/index.ts'), publicDir: pub});
-const comp = await selectComposition({serveUrl, id: 'Editor', inputProps: entrada, browserExecutable});
+const comp = await selectComposition({serveUrl, id: opt('--vitrine') ? 'Vitrine' : 'Editor', inputProps: entrada, browserExecutable});
 const fps = comp.fps;
 const nome = opt('--nome') ?? 'V01';
 const conc = Math.max(1, Math.min(8, os.cpus().length));
@@ -55,13 +58,14 @@ if (tem('--quadros')) {
   fs.rmSync(dir, {recursive: true, force: true});
   fs.mkdirSync(dir, {recursive: true});
   const n = Number(opt('--quadros-n') ?? 8);
-  const frames = Array.from({length: n}, (_, i) => Math.round(((i + 0.5) / n) * (comp.durationInFrames - 1)));
+  const frames = opt('--quadros-em') ? opt('--quadros-em').split(',').map((x) => Math.min(comp.durationInFrames - 1, Math.round(Number(x) * fps)))
+    : Array.from({length: n}, (_, i) => Math.round(((i + 0.5) / n) * (comp.durationInFrames - 1)));
   for (const fr of frames) {
     await renderStill({serveUrl, composition: comp, inputProps: entrada, frame: fr, output: path.join(dir, `q${String(fr).padStart(5, '0')}.png`),
       browserExecutable, timeoutInMilliseconds: 120000});
   }
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-pattern_type', 'glob', '-i', path.join(dir, 'q*.png'), '-vf',
-    `scale=-2:640,tile=${Math.min(n, 4)}x${Math.ceil(n / 4)}:padding=8:color=white`, '-frames:v', '1', path.join(dir, 'folha.png')]);
+    `scale=-2:640,tile=${Math.min(frames.length, 4)}x${Math.ceil(frames.length / 4)}:padding=8:color=white`, '-frames:v', '1', path.join(dir, 'folha.png')]);
   console.log(`${frames.length} quadros em ${dir} (folha.png = todos juntos)`);
   process.exit(0);
 }

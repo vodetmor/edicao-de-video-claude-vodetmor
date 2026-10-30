@@ -19,6 +19,11 @@ export const preparaPublico = (raiz) => {
     try { fs.linkSync(de, para); } catch { fs.copyFileSync(de, para); }
   };
   liga(pj('base.mp4'), path.join(pub, 'base.mp4'));
+  // efeitos sonoros nossos (sintetizados em estudio/motor/audio/sons.py, livres)
+  const sons = path.join(path.dirname(new URL(import.meta.url).pathname), 'sons');
+  fs.mkdirSync(path.join(pub, 'sons'), {recursive: true});
+  for (const f of fs.readdirSync(sons)) liga(path.join(sons, f), path.join(pub, 'sons', f));
+  if (fs.existsSync(pj('pessoa.webm'))) liga(pj('pessoa.webm'), path.join(pub, 'pessoa.webm')); // recorte da pessoa (recortar.py)
   if (fs.existsSync(assets)) {
     for (const f of fs.readdirSync(assets)) {
       if (fs.statSync(path.join(assets, f)).isFile()) liga(path.join(assets, f), path.join(pub, 'assets', f));

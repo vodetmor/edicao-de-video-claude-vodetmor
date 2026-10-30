@@ -21,7 +21,7 @@ export const calcula: CalculateMetadataFunction<Entrada> = ({props}) => {
 
 type Seg = {ini: number; layout: Layout; cena?: Cena; fim: number};
 
-export const EditorVideo: React.FC<Entrada> = ({roteiro, palavras, rosto, base, marca: marcaProj}) => {
+export const EditorVideo: React.FC<Entrada & {mudo?: boolean}> = ({roteiro, palavras, rosto, base, marca: marcaProj, mudo}) => {
   useFontes();
   const f = useCurrentFrame();
   const fmt = (roteiro.formato ?? '9:16') as Formato;
@@ -142,7 +142,7 @@ export const EditorVideo: React.FC<Entrada> = ({roteiro, palavras, rosto, base, 
         <div style={{position: 'absolute', left: cx.x, top: cx.y, width: cx.w, height: cx.h, borderRadius: cx.r, overflow: 'hidden',
           opacity: clamp(cx.op), boxShadow: moldura ? `0 ${18 * u}px ${48 * u}px rgba(20,20,30,.18)` : 'none',
           border: moldura ? `${3 * u * p}px solid ${m.papel}` : 'none', boxSizing: 'border-box'}}>
-          <OffthreadVideo src={staticFile(base.arquivo)} style={{position: 'absolute', left: rec.left, top: rec.top, width: rec.vw, height: rec.vh, maxWidth: 'none'}} />
+          <OffthreadVideo src={staticFile(base.arquivo)} muted={mudo} style={{position: 'absolute', left: rec.left, top: rec.top, width: rec.vw, height: rec.vh, maxWidth: 'none'}} />
         </div>
       )}
       {k > 0 && f < seg.ini + 8 && camada(ant, 1)}

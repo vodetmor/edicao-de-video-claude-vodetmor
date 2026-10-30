@@ -451,3 +451,9 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Texto de painel em 9:16 a 1080 de largura: título 80 px, item de lista 54 px, número 190 px. Menor que isso some no celular (o mesmo defeito que vimos nos estilos do Jerônimo).
 - Legenda palavra a palavra sobre vídeo: o azul da marca some em camisa escura; a palavra ativa usa `destaqueLegenda` (amarelo claro), o azul fica para o papel.
 - Revisão sem esperar render: Remotion Player num painel local tocando a composição direto do código; nota presa ao quadro exato vira pedido verificável (tempo + fala daquele trecho).
+
+## Vitrine de estilos e recorte da pessoa (30/10/2026, vídeo do Jerônimo)
+- Vítor achou o editor de estilos "simples, comum, todo mundo faz igual" e o painel "horrível": o padrão é o nível das aulas de física e do racismo ambiental. Estilo pronto aplicado sozinho NÃO é entrega de alto nível; precisa de uma ideia de direção por vídeo (aqui: o vídeo troca de estilo na palavra em que o estilo é nomeado, cinco versões tocando ao vivo como cartões e uma câmera passeando entre elas).
+- Recorte da pessoa em CPU: rembg `u2net_human_seg` ~1 s/quadro com borda boa em cabelo curto (teste no bruto do Jerônimo); BiRefNet ~45 s/quadro, só para planos curtos. Suavizar a máscara no tempo e erodir 1 px tira o tremido e o halo. Com o recorte: palavra gigante ATRÁS da cabeça, troca do quarto por estúdio (wipe), objetos 3D que passam atrás e na frente (a cena 3D é desenhada duas vezes, metade de trás antes da pessoa, metade da frente depois).
+- Palavra atrás da cabeça: o tamanho sai da largura (Archivo 800 a 125% ≈ 0,82 em por letra), senão corta nas bordas; texto de 2 linhas sobe para 5% da altura para a 1ª linha ficar acima da cabeça.
+- Vários cartões com o mesmo vídeo: só UMA trilha de voz (cartões mudos), senão dá eco de fase.
