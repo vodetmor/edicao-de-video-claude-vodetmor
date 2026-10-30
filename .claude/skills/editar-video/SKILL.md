@@ -15,14 +15,18 @@ lido), escreve o `roteiro-visual.json` e revisa quadros-chave. Nunca leia mídia
 ## Fluxo com portões
 
 1. **Projeto e briefing.** `python3 estudio/editor/pipeline/novo_projeto.py <pasta> --video <bruto>`.
-   Pegue as 7 respostas do `briefing.md` (objetivo, público, canal/formato, estilo, identidade, legenda, fatos
-   que não mudam). O que faltar, decida e avise. Detalhes: `references/briefing-e-amostra.md`.
+   Pegue as 8 respostas do `briefing.md` (objetivo, público, canal/formato, estilo, identidade, legenda, fatos
+   que não mudam) e o orçamento de pesquisa (0 = só grátis). O que faltar, decida e avise. Detalhes: `references/briefing-e-amostra.md`.
+   Vídeo novo: rode a skill `pesquisa-proativa` antes da direção (referências medidas em `projeto/referencias.md`).
 2. **Limpeza.** `python3 estudio/editor/pipeline/limpar.py <pasta> --ritmo anuncio|conteudo|aula [--termos "Marca,Nome"]`.
    Leia `projeto/cortes.md` e confira tomadas e pedidos de corte; sugestões (`aplicar=false`) você decide pelo
    sentido. Mudou algo em `cortes.json`: rode `montar.py` e `enquadrar.py`. Detalhes: `references/limpeza.md`.
 3. **Roteiro visual.** Escreva `projeto/roteiro-visual.json` a partir da fala real (`projeto/base-palavras.json`,
    ou a versão legível que você gerar dela). Uma ideia por cena, cada elemento preso à palavra em que é dito.
-   Formato, elementos e regras: `references/roteiro-visual.md`. Estilos: `estudio/editor/estilos/CATALOGO.md`.
+   Formato, elementos e regras: `references/roteiro-visual.md`. A direção de cada estilo está na skill dele:
+   `estilo-corte-limpo`, `estilo-tela-dividida`, `estilo-painel`, `estilo-moldura`, `estilo-reels-forte`
+   (mapa geral em `estudio/editor/estilos/CATALOGO.md`). Vários estilos do mesmo bruto: um roteiro por estilo,
+   a mesma base e o mesmo rosto (a limpeza roda uma vez só).
 4. **Portão de direção.** `node estudio/editor/remotion/renderizar.mjs <pasta> --quadros` e olhe `projeto/quadros/V01/folha.png`
    (critique você mesmo antes: legível no celular? rosto inteiro? nada sobre o rosto? um foco por quadro?).
    Mostre ao usuário a folha + uma linha por momento. Só siga com o OK.

@@ -5,6 +5,9 @@ se misturam (ex.: corte limpo que abre uma moldura numa explicação). Exemplo d
 
 ## Prontos (testados num bruto real de 20 s, 9:16)
 
+Cada estilo pronto tem uma skill própria com a receita, as perguntas extras do briefing e a crítica antes de mostrar
+(`.claude/skills/estilo-*`). Estilo novo = exemplo em `exemplos/` + skill `estilo-<nome>` no mesmo formato.
+
 | Estilo | Nome no roteiro | Quando usar | Layout base |
 |---|---|---|---|
 | Corte limpo | `corte-limpo` | fala forte, pouco a explicar; cartões curtos por cima | `cheio` + punch-in alternado por frase |

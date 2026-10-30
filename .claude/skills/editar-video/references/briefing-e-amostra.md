@@ -1,8 +1,8 @@
 # Briefing e amostra
 
-## Briefing (7 respostas)
+## Briefing (8 respostas)
 Objetivo · público · canal e formato · estilo (catálogo ou referência) · identidade (cores, fontes, logo real) ·
-legenda (estilo e termos de grafia) · fatos que não podem mudar (oferta, preço, CTA, nomes, números).
+legenda (estilo e termos de grafia) · fatos que não podem mudar (oferta, preço, CTA, nomes, números) · orçamento de pesquisa.
 Sem resposta = decida pelo objetivo e diga em uma linha o que escolheu. Pergunte só o que mudaria o resultado.
 
 Identidade do usuário: `marca.json` na pasta do projeto (chaves de `remotion/src/marca.ts`: `fundo`, `papel`,
