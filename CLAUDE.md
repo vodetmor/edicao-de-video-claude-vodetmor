@@ -37,10 +37,10 @@ Detalhe completo: skill `metodo-edicao` (em `.claude/skills/`).
 | Pasta | O que é |
 |---|---|
 | `motion-base/` | Biblioteca: DESIGN-SYSTEM, LICOES-MOTION (ler antes de qualquer motion), TEMPLATE-BRIEF, estudos quadro a quadro, fontes (HyperFrames, prompts, posts do X), logos reais, música. |
-| `estudio/` | Nosso motor de vídeo: Remotion + spec JSON com eventos presos às palavras faladas + blocos + variações em lote (`motor/`), camada GLSL/shaders, testes. |
+| `estudio/` | Nosso motor de vídeo: Remotion + spec JSON com eventos presos às palavras faladas + blocos + variações em lote (`motor/`), camada GLSL/shaders, testes. `editor/`: edição de vídeo falado de ponta a ponta (cortes, rosto, legendas, estilos, painel de revisão em localhost:8080). |
 | `ferramentas/busca/` | `busca.py`: busca material real grátis (Pexels, Mixkit, Openverse, Wikimedia, Archive, NASA, notícias, SFX) com folha de miniaturas e registro de licença. |
 | `organizacao/` | Planos do estúdio, propostas de acesso, avaliação de kits de agentes, kit do radar de novidades do X, amostras de voz grátis (edge-tts). |
-| `.claude/skills/` | Skills: as 5 escolhidas (remotion-best-practices, design-taste-frontend, apple-design, review-animations, animation-vocabulary) + as do projeto (modo-orientador, metodo-edicao, motor-estudio, pesquisa-referencias) + `animate` (vídeo desenhado em canvas JavaScript, do Chase AI; peças em `estudio/animacao-js/`). |
+| `.claude/skills/` | Skills: as 5 escolhidas (remotion-best-practices, design-taste-frontend, apple-design, review-animations, animation-vocabulary) + as do projeto (modo-orientador, metodo-edicao, motor-estudio, pesquisa-referencias) + `editar-video` (bruto falado → vídeo editado com o `estudio/editor`, escrita para qualquer usuário), uma skill por estilo (`estilo-corte-limpo`, `estilo-tela-dividida`, `estilo-painel`, `estilo-moldura`, `estilo-reels-forte`) e `pesquisa-proativa` (referências no nível de orçamento do usuário) + `animate` (vídeo desenhado em canvas JavaScript, do Chase AI; peças em `estudio/animacao-js/`). |
 | `memoria/` | A memória do projeto exatamente como estava (fatos, decisões, feedback do Vítor). Leia `memoria/MEMORY.md` no começo de trabalhos grandes. |
 | `pessoal-vitor/` | Produção pessoal do Vítor Machado Neves (TikTok/Instagram, aulas, bastidores, estratégia do perfil, marca, escola). |
 | `clientes/<cliente>/` | Trabalhos de clientes, separados por cliente (ex.: `clientes/vslplay/`). Nunca misturar com o pessoal. |
@@ -56,6 +56,7 @@ Mídia bruta pesada (acervo, renders intermediários, stems) não vai para o Git
 ## Como carregar (economia de contexto)
 Este arquivo é só o índice. Não leia tudo de uma vez: abra apenas o que a tarefa pede.
 - Qualquer vídeo: skill `metodo-edicao` → depois `motion-base/DESIGN-SYSTEM.md` e as seções relevantes de `LICOES-MOTION.md`.
+- Vídeo bruto de pessoa falando (cortes, legenda, estilos, revisão): skill `editar-video`.
 - Criativo/variações: skill `motor-estudio`. Pesquisa: skill `pesquisa-referencias`.
 - Lembrar uma decisão ou fato: procure em `memoria/` (o `MEMORY.md` é o índice de uma linha por fato) e em `historico/` com busca de texto, sem abrir arquivos inteiros.
 - Retomar um trabalho: só o `ESTADO.md` daquele trabalho.
