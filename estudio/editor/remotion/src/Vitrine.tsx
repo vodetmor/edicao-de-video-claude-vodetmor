@@ -12,20 +12,23 @@ import {clamp, lerp, mola, tween, E} from './kit';
 import {Legendas, montaCues} from './Legendas';
 import {montaMarca} from './marca';
 import {Orbita} from './Orbita';
+import {PainelIA} from './MotionIA';
 import type {Entrada, Palavra, Roteiro} from './tipos';
 
 export type Tema = {visual: 'escuro' | 'colagem'; papel: string; papel2: string; tema: string; tinta: string; cinza: string; acento: string};
 const TEMA_ESCURO: Tema = {visual: 'escuro', papel: '#0A0A0B', papel2: '#1A1A1C', tema: '#0A0A0B', tinta: '#F2F2EF', cinza: '#8A8A8E', acento: '#F2F2EF'};
 type Camera = {de: string; modo: 'foco' | 'leque' | 'atras' | 'grade'; k?: number};
 type Atras = {de: string; ate?: string; texto: string};
+// tela dividida do bruto (MotionIA): painel de papel em cima se monta com a fala, a pessoa desce para a metade de baixo
+type TelaIA = {de: string; ate: string; logo?: string; marcas: {janela: string; carimbo: string; claude: string; corte: string; barra: string; cheio: string}};
 export type VitrineProps = Entrada & {
   pessoa: string;
   estilos: Roteiro[]; // cartões 1..n-2
   rotulos: string[]; // um por cartão
   camera: Camera[];
-  palco: {cruAte: string; atras: Atras[]; cta?: {de: string; texto: string}};
+  palco: {cruAte: string; atras: Atras[]; cta?: {de: string; texto: string}; ia?: TelaIA};
   orbita: {de: string; atras?: Atras[]};
-  fecho?: {de: string; linhas: string[]};
+  fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
   musica?: string; // arquivo na pasta pública (ex.: assets/musica.mp3); a voz manda e a música abaixa sob a fala
 };
@@ -242,6 +245,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const pal: Palavra[] = React.useMemo(() => palavras.map((p) => ({...p, f: Math.round(p.s * fps), fe: Math.round(p.e * fps)})), [palavras, fps]);
   const t = React.useMemo(() => relogio(pal, dur, fps), [pal, dur, fps]);
   const n = estilos.length + 2;
+  const fechoEm = (i: number) => (fecho?.em?.[i] ? t(fecho.em[i]) : t(fecho!.de) + i * 9);
   const tm = props.tema ?? TEMA_ESCURO;
   const col = tm.visual === 'colagem';
 
@@ -262,17 +266,30 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     const vira = clamp(mola(f, cruAte, 0.16, 1) * 1.04); // o quarto vai embora e fica o estúdio (1,04: não sobra fiapo no topo)
     const atras = palco.atras.map((a, i) => ({...a, ini: t(a.de), fim: a.ate ? t(a.ate) : (palco.atras[i + 1] ? t(palco.atras[i + 1].de) : dur)}));
     const cta = palco.cta ? {ini: t(palco.cta.de), texto: palco.cta.texto} : null;
+    const ia = palco.ia;
+    const sp = ia ? clamp(mola(f, t(ia.de), 0.2, 0.85)) * (1 - clamp(mola(f, t(ia.ate), 0.22, 1))) : 0;
+    const desce = sp * H * 0.27; // o rosto (cy ~0,38) vai para o meio da metade de baixo
     return (
       <AbsoluteFill style={{background: col ? tm.tema : PRETO}}>
         {vira < 0.999 && (
-          <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 0 ${vira * 100}% 0)`}}>
+          <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 0 ${vira * 100}% 0)`, transform: `translateY(${desce}px)`}}>
             <Base src={base.arquivo} filtro={`saturate(${1 - vira * 0.6})`} />
           </div>
         )}
         {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={col ? tm.papel : OSSO} serifa={col} topo={a.ini < cruAte ? 0.15 : undefined} />)}
         {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={col ? tm.papel : OSSO} serifa={col} />}
-        <Pessoa src={pessoa} tm={f >= cruAte ? tm : undefined} />
-        <InterfaceBruto f={f} fps={fps} op={1 - clamp(vira * 2)} />
+        <div style={{position: 'absolute', inset: 0, transform: `translateY(${desce}px)`}}><Pessoa src={pessoa} tm={f >= cruAte ? tm : undefined} /></div>
+        <InterfaceBruto f={f} fps={fps} op={(1 - clamp(vira * 2)) * (1 - clamp(sp * 3))} />
+        {ia && sp > 0.001 && (
+          <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H / 2, transform: `translateY(${-(1 - sp) * 100}%)`,
+            boxShadow: '0 10px 0 rgba(0,0,0,.18)'}}>
+            <PainelIA f={f} w={W} h={H / 2} tm={col ? tm : {papel: '#E9E9E6', papel2: '#D6D6D2', tema: PRETO, tinta: PRETO, cinza: '#8A8A8E'}} logo={ia.logo}
+              mk={{janela: t(ia.marcas.janela), carimbo: t(ia.marcas.carimbo), claude: t(ia.marcas.claude), corte: t(ia.marcas.corte),
+                barra: t(ia.marcas.barra), cheio: t(ia.marcas.cheio), fim: t(ia.ate)}} />
+            {/* fita na emenda: o painel e o vídeo são uma peça só */}
+            <div style={{position: 'absolute', left: -20, right: -20, bottom: -14, height: 28, background: col ? tm.tinta : PRETO, transform: 'rotate(-0.6deg)'}} />
+          </div>
+        )}
         {cta && f >= cta.ini && (
           <div style={{position: 'absolute', left: 90, right: 90, bottom: 300, display: 'flex', justifyContent: 'center',
             transform: `translateY(${(1 - mola(f, cta.ini + 6, 0.2, 0.8)) * 60}px)`, opacity: clamp((f - cta.ini - 6) / 6)}}>
@@ -329,8 +346,15 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   });
   efeitos.push({em: cruAte, som: 'whoosh', vol: 0.4});
   palco.atras.forEach((a) => efeitos.push({em: t(a.de), som: 'thud', vol: 0.45}));
+  if (palco.ia) {
+    const k = palco.ia.marcas;
+    efeitos.push({em: t(palco.ia.de) - 2, som: 'whoosh', vol: 0.5}, {em: t(k.janela), som: 'thud', vol: 0.4}, {em: t(k.carimbo), som: 'impact', vol: 0.5},
+      {em: t(k.claude) - 6, som: 'swish', vol: 0.4}, {em: t(k.claude), som: 'pop', vol: 0.45}, {em: t(k.corte), som: 'swish', vol: 0.35},
+      {em: t(k.barra), som: 'riser', vol: 0.25}, {em: t(k.cheio), som: 'pop', vol: 0.5}, {em: t(palco.ia.ate) - 2, som: 'whoosh', vol: 0.45});
+    for (let q = 0; q < 6; q++) efeitos.push({em: t(k.claude) + 4 + q * 2, som: 'tick', vol: 0.18}); // cada clipe que cai
+  }
   if (palco.cta) efeitos.push({em: t(palco.cta.de), som: 'thud', vol: 0.5}, {em: t(palco.cta.de) + 6, som: 'pop', vol: 0.4});
-  if (fecho) fecho.linhas.forEach((_, i) => efeitos.push({em: t(fecho.de) + i * 9, som: 'tick', vol: 0.4}));
+  if (fecho) fecho.linhas.forEach((_, i) => efeitos.push({em: fechoEm(i), som: 'tick', vol: 0.4}));
   // colagem: cada recorte de palavra que entra tem o seu som curto (a referência tem um transiente a cada 0,2 a 0,3 s)
   if (col) pal.forEach((w) => { if (w.f >= cruAte) efeitos.push({em: w.f - 1, som: w.w.replace(/[.,;:!?]/g, '').length >= 6 ? 'pop' : 'tick', vol: 0.18}); });
   const audio = (
@@ -393,7 +417,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
           display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 6, paddingLeft: 18,
           opacity: atual.modo === 'grade' ? 1 : 1 - clamp((f - atual.a) / 8)}}>
           {fecho.linhas.map((l, i) => {
-            const e = mola(f, fechoIni + i * 9, 0.22, 0.85);
+            const e = mola(f, fechoEm(i), 0.22, 0.85);
             return (
               <div key={i} style={{overflow: 'hidden'}}>
                 <div style={{transform: `translateY(${(1 - e) * 100}%)`, ...(col ? {fontFamily: SERIFA, fontSize: 66} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '110%', fontSize: 50}),
