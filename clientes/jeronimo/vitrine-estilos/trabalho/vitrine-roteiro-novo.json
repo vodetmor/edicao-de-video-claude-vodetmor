@@ -140,7 +140,8 @@
     "corte": "assim",
     "barra": "saiu",
     "cheio": "qualidade"
-   }
+   },
+   "programa": "assets/programa-davinci.png"
   }
  },
  "orbita": {
@@ -164,9 +165,25 @@
    "k": 0
   },
   {
+   "de": "Tem",
+   "modo": "app",
+   "k": 1,
+   "comando": "/estilo-reels-forte",
+   "envio": "versão",
+   "nota": "corte seco, legenda forte"
+  },
+  {
    "de": "corte",
    "modo": "foco",
    "k": 1
+  },
+  {
+   "de": "Tem#2",
+   "modo": "app",
+   "k": 2,
+   "comando": "/estilo-tela-dividida",
+   "envio": "versão#2",
+   "nota": "a explicação se monta em cima"
   },
   {
    "de": "tela",
@@ -174,9 +191,25 @@
    "k": 2
   },
   {
+   "de": "Tem#3",
+   "modo": "app",
+   "k": 3,
+   "comando": "/estilo-moldura",
+   "envio": "versão#3",
+   "nota": "aula com quadro e gráfico"
+  },
+  {
    "de": "aula",
    "modo": "foco",
    "k": 3
+  },
+  {
+   "de": "E tem",
+   "modo": "app",
+   "k": 4,
+   "comando": "/editar-video 3D",
+   "envio": "versão#4",
+   "nota": "objetos 3D em volta de você"
   },
   {
    "de": "objetos",
@@ -226,5 +259,8 @@
   "ok": "#2B4FB3",
   "destaqueLegenda": "#E1DDD6",
   "legenda": "#FFFFFF"
+ },
+ "app": {
+  "miniatura": "assets/miniatura.jpg"
  }
 }

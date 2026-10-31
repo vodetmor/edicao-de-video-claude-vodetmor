@@ -1,0 +1,120 @@
+{
+ "ritmo": "anuncio",
+ "limiar_db": -53.7,
+ "duracao_original": 35.479,
+ "duracao_final": 31.849,
+ "itens": [
+  {
+   "s": 0.408,
+   "e": 1.078,
+   "tipo": "pausa",
+   "texto": "0.85s de silêncio",
+   "aplicar": true
+  },
+  {
+   "s": 4.88,
+   "e": 5.1,
+   "tipo": "vicio?",
+   "texto": "assim",
+   "aplicar": false
+  },
+  {
+   "s": 7.168,
+   "e": 7.308,
+   "tipo": "pausa",
+   "texto": "0.32s de silêncio",
+   "aplicar": false
+  },
+  {
+   "s": 11.318,
+   "e": 11.418,
+   "tipo": "pausa",
+   "texto": "0.28s de silêncio",
+   "aplicar": false
+  },
+  {
+   "s": 13.878,
+   "e": 14.188,
+   "tipo": "pausa",
+   "texto": "0.49s de silêncio",
+   "aplicar": true
+  },
+  {
+   "s": 20.048,
+   "e": 20.518,
+   "tipo": "pausa",
+   "texto": "0.65s de silêncio",
+   "aplicar": true
+  },
+  {
+   "s": 23.148,
+   "e": 23.288,
+   "tipo": "pausa",
+   "texto": "0.32s de silêncio",
+   "aplicar": false
+  },
+  {
+   "s": 27.158,
+   "e": 27.558,
+   "tipo": "pausa",
+   "texto": "0.58s de silêncio",
+   "aplicar": true
+  },
+  {
+   "s": 31.958,
+   "e": 32.088,
+   "tipo": "pausa",
+   "texto": "0.31s de silêncio",
+   "aplicar": false
+  },
+  {
+   "s": 34.108,
+   "e": 35.378,
+   "tipo": "pausa",
+   "texto": "1.45s de silêncio",
+   "aplicar": true
+  }
+ ],
+ "manter": [
+  [
+   0.0,
+   0.408
+  ],
+  [
+   1.078,
+   7.168
+  ],
+  [
+   7.308,
+   11.318
+  ],
+  [
+   11.418,
+   13.878
+  ],
+  [
+   14.188,
+   20.048
+  ],
+  [
+   20.518,
+   23.148
+  ],
+  [
+   23.288,
+   27.158
+  ],
+  [
+   27.558,
+   31.958
+  ],
+  [
+   32.088,
+   34.108
+  ],
+  [
+   35.378,
+   35.479
+  ]
+ ]
+}

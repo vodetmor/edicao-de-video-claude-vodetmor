@@ -1,0 +1,314 @@
+{
+ "pessoa": "pessoa.webm",
+ "estilos": [
+  {
+   "estilo": "reels-forte",
+   "formato": "9:16",
+   "cenas": [
+    {
+     "de": "inicio",
+     "layout": "cheio",
+     "elementos": [
+      {
+       "tipo": "titulo",
+       "texto": "Corte seco",
+       "apoio": "legenda forte",
+       "de": "seco",
+       "ate": "forte:fim"
+      }
+     ]
+    }
+   ],
+   "video": "assets/base-pb.mp4",
+   "marca": {
+    "fundo": "#0B0B0B",
+    "papel": "#161616",
+    "tinta": "#FFFFFF",
+    "suave": "#9A9A9A",
+    "linha": "#2A2A2A",
+    "destaque": "#FFE14D",
+    "ok": "#FFE14D",
+    "legenda": "#FFFFFF",
+    "destaqueLegenda": "#FFE14D"
+   }
+  },
+  {
+   "estilo": "split",
+   "formato": "9:16",
+   "legenda": {
+    "estilo": "limpa"
+   },
+   "cenas": [
+    {
+     "de": "inicio",
+     "layout": "split",
+     "elementos": [
+      {
+       "tipo": "titulo",
+       "texto": "Tela dividida",
+       "apoio": "a explicação se monta",
+       "de": "dividida"
+      }
+     ]
+    },
+    {
+     "de": "explicação",
+     "layout": "split",
+     "elementos": [
+      {
+       "tipo": "passos",
+       "de": "explicação",
+       "itens": [
+        {
+         "texto": "Gravar",
+         "icone": "video-camera",
+         "de": "explicação"
+        },
+        {
+         "texto": "Montar",
+         "icone": "stack",
+         "de": "montando"
+        },
+        {
+         "texto": "Explicar",
+         "icone": "chalkboard-teacher",
+         "de": "falo"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "video": "assets/base-claro.mp4",
+   "marca": {
+    "fundo": "#F5F5F7",
+    "papel": "#FFFFFF",
+    "tinta": "#1D1D1F",
+    "suave": "#6E6E73",
+    "linha": "#E3E3E8",
+    "destaque": "#0A66E8",
+    "ok": "#0A66E8",
+    "legenda": "#FFFFFF",
+    "destaqueLegenda": "#FFD23F"
+   }
+  },
+  {
+   "estilo": "moldura",
+   "formato": "9:16",
+   "cenas": [
+    {
+     "de": "inicio",
+     "ate": "com#3",
+     "layout": "moldura",
+     "elementos": [
+      {
+       "tipo": "titulo",
+       "texto": "Versão aula",
+       "apoio": "quadro e gráfico",
+       "de": "aula"
+      }
+     ]
+    },
+    {
+     "de": "com#3",
+     "layout": "tela",
+     "elementos": [
+      {
+       "tipo": "grafico",
+       "pontos": [
+        3,
+        4,
+        4,
+        6,
+        8,
+        11,
+        16
+       ],
+       "rotulo": "alcance por vídeo",
+       "nota": "com edição",
+       "de": "com#3"
+      }
+     ]
+    }
+   ],
+   "video": "assets/base-quadro.mp4",
+   "marca": {
+    "fundo": "#24392F",
+    "papel": "#2C4538",
+    "tinta": "#F2EFE4",
+    "suave": "#A9B8AC",
+    "linha": "#3E5A4C",
+    "destaque": "#F4D35E",
+    "ok": "#F4D35E",
+    "legenda": "#FFFFFF",
+    "destaqueLegenda": "#F4D35E"
+   }
+  }
+ ],
+ "rotulos": [
+  "Estúdio",
+  "Corte seco",
+  "Tela dividida",
+  "Aula",
+  "3D"
+ ],
+ "palco": {
+  "cruAte": "e#2",
+  "melhora": {
+   "de": "mesmo",
+   "zoom": 1.22
+  },
+  "atras": [
+   {
+    "de": "só",
+    "ate": "essa",
+    "texto": "Só ele?"
+   }
+  ],
+  "cta": {
+   "de": "comenta",
+   "texto": "EDIÇÃO"
+  },
+  "ia": {
+   "de": "nunca",
+   "ate": "e#2",
+   "logo": "assets/claude.svg",
+   "programa": "assets/programa-davinci.png",
+   "marcas": {
+    "janela": "nunca",
+    "carimbo": "vida",
+    "claude": "mesmo",
+    "corte": "esse",
+    "barra": "saiu",
+    "cheio": "qualidade"
+   }
+  }
+ },
+ "orbita": {
+  "de": "objetos",
+  "atras": [
+   {
+    "de": "3D",
+    "texto": "3D"
+   }
+  ],
+  "fundo": "#2340D8",
+  "cores": [
+   "#FFFFFF",
+   "#FFE14D",
+   "#0E1A6B"
+  ]
+ },
+ "camera": [
+  {
+   "de": "inicio",
+   "modo": "foco",
+   "k": 0
+  },
+  {
+   "de": "virou",
+   "modo": "atras",
+   "k": 0
+  },
+  {
+   "de": "diferentes:fim",
+   "modo": "app",
+   "k": 1,
+   "comando": "/estilo-reels-forte",
+   "envio": "versão",
+   "nota": "corte seco, legenda forte"
+  },
+  {
+   "de": "seco",
+   "modo": "foco",
+   "k": 1
+  },
+  {
+   "de": "forte:fim",
+   "modo": "app",
+   "k": 2,
+   "comando": "/estilo-tela-dividida",
+   "envio": "em#2",
+   "nota": "a explicação se monta em cima"
+  },
+  {
+   "de": "dividida",
+   "modo": "foco",
+   "k": 2
+  },
+  {
+   "de": "falo:fim",
+   "modo": "app",
+   "k": 3,
+   "comando": "/estilo-moldura",
+   "envio": "versão#3",
+   "nota": "aula com quadro e gráfico"
+  },
+  {
+   "de": "aula",
+   "modo": "foco",
+   "k": 3
+  },
+  {
+   "de": "gráfico:fim",
+   "modo": "app",
+   "k": 4,
+   "comando": "/editar-video 3D",
+   "envio": "versão#4",
+   "nota": "objetos 3D em volta de você"
+  },
+  {
+   "de": "objetos",
+   "modo": "foco",
+   "k": 4
+  },
+  {
+   "de": "uma",
+   "modo": "grade"
+  },
+  {
+   "de": "quer",
+   "modo": "foco",
+   "k": 0
+  }
+ ],
+ "fecho": {
+  "de": "gravação#2",
+  "linhas": [
+   "1 gravação",
+   "5 vídeos",
+   "0 edição"
+  ],
+  "em": [
+   "gravação#2",
+   "cinco",
+   "zero"
+  ]
+ },
+ "musica": "assets/musica.mp3",
+ "tema": {
+  "visual": "estudio",
+  "papel": "#0D0E10",
+  "papel2": "#191B1E",
+  "tema": "#D97757",
+  "tinta": "#F4F2EE",
+  "cinza": "#8E929A",
+  "acento": "#D97757"
+ },
+ "marca": {
+  "fundo": "#0F0E0D",
+  "papel": "#1B1A18",
+  "tinta": "#F4F1EC",
+  "suave": "#8C877F",
+  "linha": "#2C2A27",
+  "destaque": "#D97757",
+  "ok": "#D97757",
+  "legenda": "#FFFFFF",
+  "destaqueLegenda": "#FFFFFF"
+ },
+ "app": {
+  "miniatura": "assets/miniatura.jpg"
+ },
+ "baseCartoes": "assets/base-estudio.mp4",
+ "fpsSaida": 50
+}
