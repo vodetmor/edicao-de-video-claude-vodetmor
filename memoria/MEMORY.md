@@ -72,3 +72,5 @@
 - [[curso-maquina-edicaoia]]: full "Máquina de Edição IA" course (videos, transcripts, ebook, 7 cp-* skills) on his PC at C:\Users\vitor\Downloads\Maquina-EdicaoIA (2026-10-29); summary outros/maquina-edicaoia/RESUMO.md.
 - [[produto-skills-jeronimo]]: 2026-10-29 plan to sell a Claude video-editing skill pack (~R$97) with client Jerônimo; plan outros/maquina-edicaoia/PLANO-JERONIMO.md; do not repackage Tiago content.
 - [[editor-video-falado]]: 2026-10-29 estudio/editor = raw talking video -> edited (cuts, face, captions, 5 styles, review panel localhost:8080) + skill editar-video; product base for Jerônimo.
+
+- [[entrega-previas-video]]: thread caps at 24 attachments; deliver previews as a light Artifact player page and archive old versions on his PC (Maquina de Editar\clientes\...\previas). Keep messages short (Vítor 2026-10-31).
