@@ -26,6 +26,7 @@ export type Roteiro = {
   formato?: Formato;
   legenda?: {estilo?: EstiloLegenda; base?: number; tamanho?: number};
   marca?: Partial<Marca>;
+  video?: string; // vídeo base só desta versão (ex.: a pessoa sobre outro fundo); sem ele, o da vitrine
   cenas?: Cena[];
   zooms?: Zoom[];
   automatico?: {zooms?: boolean}; // punch-ins automáticos por frase no layout cheio (padrão: true)

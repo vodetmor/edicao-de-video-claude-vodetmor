@@ -120,7 +120,7 @@ export const PainelIA: React.FC<{f: number; w: number; h: number; tm: TemaMotion
 // Versão "estúdio" (31/10/2026, depois do Jerônimo comparar com a vitrine do curso): o mesmo roteiro do painel, mas no
 // sistema de produto: fundo escuro, um destaque, rótulo pequeno + título grande, cartões com borda fina, movimento calmo.
 // ANTES: o print real do editor vazio + selo "nunca aberto". DEPOIS: o Claude edita (checklist que marca) e a barra chega a 100%.
-const ARCH = "'Bricolage Grotesque Variable', 'Archivo Variable', sans-serif";
+const ARCH = "'Inter Variable', 'Inter', sans-serif";
 const GEIST = "'Geist Variable', 'Inter Variable', sans-serif";
 const entra = (f: number, ini: number, dy = 40) => {
   const e = clamp(mola(f, ini, 0.2, 0.9), 0, 1.04);
@@ -139,7 +139,7 @@ export const PainelIAEstudio: React.FC<{f: number; w: number; h: number; tm: Tem
     </div>
   );
   const Titulo: React.FC<{a: string; b: string}> = ({a, b}) => (
-    <div style={{fontFamily: ARCH, fontWeight: 800, fontStretch: '75%', fontSize: 100, lineHeight: 0.94, textTransform: 'uppercase', letterSpacing: '-0.01em', marginTop: 14}}>
+    <div style={{fontFamily: ARCH, fontWeight: 800, fontSize: 92, lineHeight: 0.98, letterSpacing: '-0.045em', marginTop: 14}}>
       <div style={{color: tm.tinta}}>{a}</div><div style={{color: tm.tema}}>{b}</div>
     </div>
   );

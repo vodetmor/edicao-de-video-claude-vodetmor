@@ -30,7 +30,7 @@ export type VitrineProps = Entrada & {
   camera: Camera[];
   palco: {cruAte: string; atras: Atras[]; cta?: {de: string; texto: string}; ia?: TelaIA;
     melhora?: {de: string; zoom?: number}}; // 'começa cru e vai melhorando': na palavra `de` uma linha varre o vídeo e deixa luz/cor tratadas; depois o rosto ganha zoom e fica fixo
-  orbita: {de: string; atras?: Atras[]};
+  orbita: {de: string; atras?: Atras[]; fundo?: string; cores?: string[]}; // fundo/cores: mundo próprio da versão 3D
   fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
   app?: {miniatura?: string};
@@ -50,7 +50,8 @@ const PRETO = '#0A0A0B';
 const OSSO = '#F2F2EF';
 const ARCHIVO = "'Archivo Variable', 'Archivo', sans-serif";
 const INTER = "'Inter Variable', 'Inter', sans-serif";
-const BRICO = "'Bricolage Grotesque Variable', 'Archivo Variable', sans-serif";
+// títulos atrás da cabeça e palavra forte da legenda: Inter 800 bem justa (31/10: a Bricolage condensada "não foi boa escolha")
+const BRICO = "'Inter Variable', 'Inter', sans-serif";
 const GEIST = "'Geist Variable', 'Inter Variable', sans-serif";
 const SERIFA = "'Instrument Serif', 'Georgia', serif";
 
@@ -89,10 +90,10 @@ const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; 
   const palavras = texto.split(' ');
   const sai = tween(f, fim - 8, 8, 0, 1, E.saida);
   // cada linha cabe na largura (Archivo 800 a 125% tem ~0,82 em por letra maiúscula)
-  const tam = Math.min(serifa ? 420 : cond ? 460 : 300, ...palavras.map((p) => (W * 0.94) / (Math.max(3, p.length) * (serifa ? 0.56 : cond ? 0.56 : 0.82))));
+  const tam = Math.min(serifa ? 420 : cond ? 460 : 300, ...palavras.map((p) => (W * 0.94) / (Math.max(3, p.length) * (serifa ? 0.56 : cond ? 0.7 : 0.82))));
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: H * (topo ?? (palavras.length > 1 ? 0.05 : 0.09)), display: 'flex', flexDirection: 'column', alignItems: 'center',
-      ...(serifa ? {fontFamily: SERIFA, fontWeight: 400, letterSpacing: '-0.02em'} : cond ? {fontFamily: BRICO, fontWeight: 800, fontStretch: '75%', letterSpacing: '-0.02em'} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', letterSpacing: '-0.03em'}),
+      ...(serifa ? {fontFamily: SERIFA, fontWeight: 400, letterSpacing: '-0.02em'} : cond ? {fontFamily: BRICO, fontWeight: 800, letterSpacing: '-0.045em', fontVariationSettings: "'opsz' 32"} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', letterSpacing: '-0.03em'}),
       fontSize: tam, lineHeight: cond ? 1.05 : 0.86,
       textTransform: 'uppercase', color: cor, opacity: 1 - sai}}>
       {palavras.map((p, i) => {
@@ -132,8 +133,8 @@ const LegendaCaixa: React.FC<{f: number; pal: Palavra[]; fps: number; y: number;
         const grande = destaca && i === forte;
         return (
           <div key={i} style={{transform: `translateY(${(1 - e) * 34}px) scale(${0.86 + 0.14 * e})`, opacity: clamp((f - w.f + 1) / 3), transformOrigin: '50% 100%',
-            fontFamily: grande ? BRICO : GEIST, fontWeight: grande ? 800 : 700, fontStretch: grande ? '82%' : undefined,
-            fontSize: grande ? 86 : cru ? 52 : 64, lineHeight: 1.05, letterSpacing: grande ? '-0.02em' : '-0.015em',
+            fontFamily: grande ? BRICO : GEIST, fontWeight: grande ? 800 : 700,
+            fontSize: grande ? 76 : cru ? 52 : 64, lineHeight: 1.05, letterSpacing: grande ? '-0.035em' : '-0.015em',
             color: grande ? (tm?.tema ?? '#D97757') : '#FFFFFF', textShadow: '0 3px 0 rgba(0,0,0,.28), 0 8px 30px rgba(0,0,0,.55)'}}>{limpaP(w.w)}</div>
         );
       })}
@@ -267,12 +268,12 @@ const Pessoa: React.FC<{src: string; tm?: Tema}> = ({src, tm}) => {
 };
 
 // tratamento de luz e cor da 'melhora': contraste e cor de vídeo tratado, um pouco mais quente
-const GRADE = 'contrast(1.12) saturate(1.15) brightness(1.02) sepia(0.06)';
+const GRADE = 'contrast(1.08) saturate(0.98) brightness(1.04)'; // 31/10: sem sépia e sem saturar (o rosto ficava amarelo)
 // luz de recorte: uma luz quente suave no rosto (soft-light) e o resto do quadro levemente mais escuro (sombra de estúdio)
 const Luz: React.FC<{r: {cx: number; cy: number}}> = ({r}) => (
   <>
-    <div style={{position: 'absolute', inset: 0, mixBlendMode: 'soft-light', background: `radial-gradient(ellipse 34% 22% at ${r.cx * 100 - 6}% ${r.cy * 100}%, rgba(255,214,170,.75), rgba(255,214,170,0) 100%)`}} />
-    <div style={{position: 'absolute', inset: 0, mixBlendMode: 'multiply', background: `radial-gradient(ellipse 70% 55% at ${r.cx * 100}% ${r.cy * 100 + 8}%, rgba(255,255,255,1) 40%, rgba(40,32,28,.55) 100%)`}} />
+    <div style={{position: 'absolute', inset: 0, mixBlendMode: 'soft-light', background: `radial-gradient(ellipse 34% 22% at ${r.cx * 100 - 6}% ${r.cy * 100}%, rgba(255,244,236,.45), rgba(255,244,236,0) 100%)`}} />
+    <div style={{position: 'absolute', inset: 0, mixBlendMode: 'multiply', background: `radial-gradient(ellipse 70% 55% at ${r.cx * 100}% ${r.cy * 100 + 8}%, rgba(255,255,255,1) 40%, rgba(30,32,36,.5) 100%)`}} />
   </>
 );
 
@@ -418,13 +419,16 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const orbitaCartao = () => {
     const ini = t(orbita.de);
     return (
-      <AbsoluteFill style={{background: col ? tm.papel : est ? tm.papel : '#E9E9E6'}}>
-        {est && <Estudio tm={tm} r={rostoEm(f)} />}
-        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={col || est ? tm.tema : PRETO} serifa={col} cond={est} topo={0.14} />)}
-        <Orbita ini={ini} fpsBase={fps} lado="atras" cores={col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined} />
+      <AbsoluteFill style={{background: orbita.fundo ?? (col ? tm.papel : est ? tm.papel : '#E9E9E6')}}>
+        {orbita.fundo ? (
+          // mundo próprio da versão 3D: cor chapada de estúdio fotográfico + sombra no chão
+          <div style={{position: 'absolute', inset: 0, background: `radial-gradient(ellipse 60% 8% at 50% 97%, rgba(0,0,0,.28), rgba(0,0,0,0) 100%)`}} />
+        ) : est && <Estudio tm={tm} r={rostoEm(f)} />}
+        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={orbita.fundo ? '#FFFFFF' : col || est ? tm.tema : PRETO} serifa={col} cond={est} topo={0.14} />)}
+        <Orbita ini={ini} fpsBase={fps} lado="atras" cores={orbita.cores ?? (col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined)} />
         <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={tm} /></div>
-        <Orbita ini={ini} fpsBase={fps} lado="frente" cores={col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined} />
-        {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : est ? <LegendaCaixa f={f} pal={pal} fps={fps} tm={tm} y={H * 0.78} /> : legenda(H * 0.87)}
+        <Orbita ini={ini} fpsBase={fps} lado="frente" cores={orbita.cores ?? (col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined)} />
+        {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : est ? <LegendaCaixa f={f} pal={pal} fps={fps} tm={orbita.cores ? {...tm, tema: orbita.cores[1]} : tm} y={H * 0.78} /> : legenda(H * 0.87)}
       </AbsoluteFill>
     );
   };
@@ -432,7 +436,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const conteudo = (i: number) => {
     if (i === 0) return palcoCartao();
     if (i === n - 1) return orbitaCartao();
-    return <EditorVideo roteiro={estilos[i - 1]} palavras={palavras} rosto={rosto} base={props.baseCartoes ? {...base, arquivo: props.baseCartoes} : base} marca={props.marca} mudo />;
+    return <EditorVideo roteiro={estilos[i - 1]} palavras={palavras} rosto={rosto} base={estilos[i - 1].video || props.baseCartoes ? {...base, arquivo: estilos[i - 1].video || props.baseCartoes!} : base} marca={props.marca} mudo />;
   };
 
 
