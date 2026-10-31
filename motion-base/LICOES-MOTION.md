@@ -512,3 +512,7 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - **3D em camadas precisa de tempo (Vítor 31/10: "foi tão rapidinho"):** abrir ~1,2 s, ficar aberto ≥ 2 s para ler os
   nomes, fechar antes da próxima ideia. Se a fala é curta, estique a cena até a próxima pausa natural (aqui: grade em
   "cinco", depois da pausa de 1 s).
+- **Fugir do padrão = trocar a GRAMÁTICA, não o enfeite (Vítor 31/10/2026: "algo totalmente novo, outro gancho, outra
+  música"):** composição "Cartaz" (`estudos/x-2026-10-31/ESTUDO.md`): fundo de cartaz chapado por frase, letra gigante
+  condensada atrás do recorte, pessoa como adesivo de borda branca, rabiscos à mão com função, bruto real por 0,7 s no
+  meio, legenda em fita. Gancho demonstra a promessa no 1º segundo. Buscas no X: parênteses no OR + filter:videos.

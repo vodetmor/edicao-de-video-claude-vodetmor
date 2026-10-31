@@ -3,6 +3,7 @@ import {Composition} from 'remotion';
 import {EditorVideo, calcula} from './EditorVideo';
 import type {Entrada} from './tipos';
 import {Vitrine, calculaVitrine, type VitrineProps} from './Vitrine';
+import {Cartaz, calculaCartaz, type CartazProps} from './Cartaz';
 
 // Uma composição só. renderizar.mjs (ou o Studio com --props) entrega roteiro, palavras, rosto e base de cada projeto.
 const vazio: Entrada = {
@@ -21,6 +22,8 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Editor" component={EditorVideo} calculateMetadata={calcula} defaultProps={vazio}
       durationInFrames={90} fps={30} width={1080} height={1920} />
     <Composition id="Vitrine" component={Vitrine} calculateMetadata={calculaVitrine} defaultProps={vitrineVazia}
+      durationInFrames={90} fps={30} width={1080} height={1920} />
+    <Composition id="Cartaz" component={Cartaz} calculateMetadata={calculaCartaz} defaultProps={{palavras: [], base: vazio.base, pessoa: ''} as CartazProps}
       durationInFrames={90} fps={30} width={1080} height={1920} />
   </>
 );

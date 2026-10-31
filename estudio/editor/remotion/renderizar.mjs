@@ -31,6 +31,7 @@ const {pj} = caminhos(raiz);
 const entrada = montaEntrada(raiz);
 if (opt('--roteiro')) entrada.roteiro = JSON.parse(fs.readFileSync(opt('--roteiro'), 'utf8')); // outro roteiro, mesma base (galeria de estilos)
 if (opt('--vitrine')) Object.assign(entrada, JSON.parse(fs.readFileSync(opt('--vitrine'), 'utf8')));
+if (opt('--cartaz')) Object.assign(entrada, JSON.parse(fs.readFileSync(opt('--cartaz'), 'utf8')));
 const pub = preparaPublico(raiz);
 fs.writeFileSync(pj('entrada.json'), JSON.stringify(entrada));
 
@@ -48,7 +49,7 @@ const achaNavegador = () => {
 const browserExecutable = achaNavegador();
 const t0 = Date.now();
 const serveUrl = await bundle({entryPoint: path.join(aqui, 'src/index.ts'), publicDir: pub});
-const comp = await selectComposition({serveUrl, id: opt('--vitrine') ? 'Vitrine' : 'Editor', inputProps: entrada, browserExecutable});
+const comp = await selectComposition({serveUrl, id: opt('--cartaz') ? 'Cartaz' : opt('--vitrine') ? 'Vitrine' : 'Editor', inputProps: entrada, browserExecutable});
 const fps = comp.fps;
 const nome = opt('--nome') ?? 'V01';
 const conc = Math.max(1, Math.min(8, os.cpus().length));
