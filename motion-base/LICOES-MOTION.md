@@ -493,3 +493,9 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
   sobre fundo quase preto, em vez de cortar a tela ao meio com uma fita.
 - **Cores do estúdio:** grafite frio (#0D0E10) + luz de recorte neutra atrás da cabeça + toque leve da cor do tema embaixo.
   Brilho laranja forte atrás da pessoa deixa o fundo barrento. Fontes: Bricolage Grotesque (títulos) + Geist (texto).
+- **"3D" num vídeo de edição = uso real de 3D, não formas soltas (Jerônimo 31/10/2026):** cubo, anel e esfera girando
+  parecem enfeite. Mostre o que editor faz com 3D: mockup de celular 3D (`src/iphone/`, `Celulares3D.tsx`) entrando de
+  costas e virando, com a tela mostrando o próprio vídeo editado. Texturas carregadas ANTES de montar o ThreeCanvas.
+- **Vídeo falado estilo TikTok (pesquisa 31/10/2026, `estudos/talking-head-tiktok/ESTUDO.md`):** legenda no peito (~55–60%),
+  palavra-chave maior com brilho, risco vermelho na palavra negada, selo #N por item da lista, ícone em círculo nos
+  substantivos concretos, inserção em tela cheia com logo e print reais quando cita ferramenta, um evento a cada ~1,5 s.

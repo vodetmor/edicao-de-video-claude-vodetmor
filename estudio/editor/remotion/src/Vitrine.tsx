@@ -8,6 +8,7 @@ import type {CalculateMetadataFunction} from 'remotion';
 import {relogio} from './ancora';
 import {EditorVideo} from './EditorVideo';
 import {Icone} from './Icone';
+import {Celulares3D, type Cel} from './Celulares3D';
 import {useFontes} from './Fontes';
 import {clamp, lerp, mola, tween, E, useQuadroBase} from './kit';
 import {Legendas, montaCues} from './Legendas';
@@ -33,7 +34,7 @@ export type VitrineProps = Entrada & {
     melhora?: {de: string; zoom?: number};
     riscar?: string[]; // palavras negadas: risco vermelho por cima na legenda (ref. @peterprojevic)
     icones?: {de: string; icone: string}[]}; // substantivo concreto vira ícone num círculo embaixo da legenda // 'começa cru e vai melhorando': na palavra `de` uma linha varre o vídeo e deixa luz/cor tratadas; depois o rosto ganha zoom e fica fixo
-  orbita: {de: string; atras?: Atras[]; fundo?: string; cores?: string[]}; // fundo/cores: mundo próprio da versão 3D
+  orbita: {de: string; atras?: Atras[]; fundo?: string; cores?: string[]; celulares?: Cel[]}; // fundo/cores: mundo próprio da versão 3D
   fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
   app?: {miniatura?: string};
@@ -450,9 +451,11 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
           <div style={{position: 'absolute', inset: 0, background: `radial-gradient(ellipse 60% 8% at 50% 97%, rgba(0,0,0,.28), rgba(0,0,0,0) 100%)`}} />
         ) : est && <Estudio tm={tm} r={rostoEm(f)} />}
         {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={orbita.fundo ? '#FFFFFF' : col || est ? tm.tema : PRETO} serifa={col} cond={est} topo={0.14} />)}
-        <Orbita ini={ini} fpsBase={fps} lado="atras" cores={orbita.cores ?? (col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined)} />
+        {orbita.celulares ? <Celulares3D ini={ini} fpsBase={fps} lado="atras" cels={orbita.celulares} />
+          : <Orbita ini={ini} fpsBase={fps} lado="atras" cores={orbita.cores ?? (col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined)} />}
         <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={tm} /></div>
-        <Orbita ini={ini} fpsBase={fps} lado="frente" cores={orbita.cores ?? (col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined)} />
+        {orbita.celulares ? <Celulares3D ini={ini} fpsBase={fps} lado="frente" cels={orbita.celulares} />
+          : <Orbita ini={ini} fpsBase={fps} lado="frente" cores={orbita.cores ?? (col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined)} />}
         {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : est ? <LegendaCaixa f={f} pal={pal} fps={fps} tm={orbita.cores ? {...tm, tema: orbita.cores[1]} : tm} y={H * 0.78} /> : legenda(H * 0.87)}
       </AbsoluteFill>
     );

@@ -1,0 +1,20 @@
+import * as THREE from 'three';
+export type CorIPhone = 'natural' | 'preto' | 'branco' | 'deserto';
+export type Barra = 'clara' | 'escura' | false;
+export const IPHONE: {w: number; h: number; d: number; raio: number; tela: {w: number; h: number; raio: number}; px: {w: number; h: number}};
+export const CORES: Record<CorIPhone, {aro: string; traseira: string; anel: string}>;
+export type IPhone = {
+  objeto: THREE.Group;
+  setTela(t: THREE.Texture | null, op?: number | {razao?: number; areaSegura?: boolean}): IPhone;
+  setRolagem(r: number): IPhone;
+  setBrilho(v: number): IPhone;
+  setCor(c: CorIPhone): IPhone;
+  setBarra(modo: Barra, hora?: string): IPhone;
+  setAmbiente(env: THREE.Texture): IPhone;
+  dispose(): void;
+};
+export function criarIPhone(op?: {cor?: CorIPhone; barra?: Barra; hora?: string; indicador?: boolean}): IPhone;
+export function ambienteEstudio(renderer: THREE.WebGLRenderer): THREE.Texture;
+export function desenhaBarra(hora?: string, cor?: string): THREE.CanvasTexture;
+export function desenhaBloqueio(op?: {hora?: string; data?: string; fundo?: string; texto?: string}): THREE.CanvasTexture;
+export function poseDemo(t: number): {pos: [number, number, number]; rot: [number, number, number]; brilho: number; tela: 'bloqueio' | 'site'; rolagem: number; sumir: number};
