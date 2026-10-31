@@ -43,6 +43,7 @@ lido), escreve o `roteiro-visual.json` e revisa quadros-chave. Nunca leia mídia
 
 ## Regras que não mudam
 
+- Toda versão passa pela `references/regua-profissional.md` antes de ser mostrada.
 - A fala real manda: roteiro escrito só ajuda na grafia. Nunca invente fala, número, resultado, depoimento ou preço.
 - Corrija por trecho: tempo, problema, mudança, o que preservar. Não reconstrua o que foi aprovado.
 - Mesmo erro duas vezes: pare, ache a causa, faça a menor correção.
@@ -65,4 +66,5 @@ lido), escreve o `roteiro-visual.json` e revisa quadros-chave. Nunca leia mídia
 | `references/revisao.md` | aplicar notas do painel, corrigir trechos |
 | `references/custos-e-tokens.md` | o usuário pergunta de custo, plano, limite, ou o vídeo é longo |
 | `references/formatos-e-variacoes.md` | 9:16 / 4:5 / 1:1 / 16:9, versões A/B/C, lote |
+| `references/regua-profissional.md` | ANTES de mostrar qualquer versão: checklist de nível profissional (corte, moldura, texto, 3D, identidade) |
 | `references/avancado.md` | recorte de fundo (alfa), 3D, B-roll: só com teste curto antes |

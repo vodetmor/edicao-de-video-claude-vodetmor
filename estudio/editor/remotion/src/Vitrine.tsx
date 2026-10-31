@@ -35,7 +35,7 @@ export type VitrineProps = Entrada & {
     melhora?: {de: string; zoom?: number};
     riscar?: string[]; // palavras negadas: risco vermelho por cima na legenda (ref. @peterprojevic)
     icones?: {de: string; icone: string}[]}; // substantivo concreto vira ícone num círculo embaixo da legenda // 'começa cru e vai melhorando': na palavra `de` uma linha varre o vídeo e deixa luz/cor tratadas; depois o rosto ganha zoom e fica fixo
-  orbita: {de: string; atras?: Atras[]; fundo?: string; cores?: string[]; celulares?: Cel[]; grafico?: {titulo?: string; nota?: string; colunas: Coluna[]}}; // grafico: gráfico 3D na metade de cima, a pessoa desce // fundo/cores: mundo próprio da versão 3D
+  orbita: {de: string; atras?: Atras[]; fundo?: string; cores?: string[]; celulares?: Cel[]; grafico?: {titulo?: string; nota?: string; colunas: Coluna[]}; camadas?: {ate: string; gatilho?: string; principal?: string; apoio?: string; rotulos?: string[]}}; // grafico: gráfico 3D na metade de cima, a pessoa desce // fundo/cores: mundo próprio da versão 3D
   fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
   app?: {miniatura?: string};
@@ -465,9 +465,55 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     );
   };
 
+  // versão 3D como no curso (31/10): "vira a cena de lado e separa em camadas de vidro: o fundo atrás, os elementos no
+  // meio e eu na frente; depois junta e volta ao normal". 3D mostra como o vídeo é feito (recorte + camadas), não objetos.
+  const camadasCartao = () => {
+    const cm = orbita.camadas!;
+    const ini = t(orbita.de);
+    const fim = t(cm.ate);
+    // abre devagar, PAUSA aberta para ler os nomes (curso: a câmera rápida não deixa ler), fecha antes da próxima ideia
+    const abre = clamp(mola(f, ini + 2, 0.1, 0.95)) * (1 - clamp(mola(f, fim - 30, 0.13, 0.95)));
+    const respira = Math.sin((f - ini) / fps * 0.8) * 2 * abre;
+    const rotY = -44 * abre + respira, rotX = 9 * abre, esc = 1 - 0.5 * abre;
+    const rot = cm.rotulos ?? ['Fundo', 'Lettering', 'Recorte', 'Legenda'];
+    const vidro = (z: number, k: number, filho: React.ReactNode, cheio?: boolean) => (
+      <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d', transform: `translateZ(${z * abre}px)`}}>
+        <div style={{position: 'absolute', inset: 0, borderRadius: 48 * abre, overflow: 'hidden',
+          background: cheio ? tm.papel : `rgba(255,255,255,${0.05 * abre})`,
+          boxShadow: abre > 0.02 ? `inset 0 0 0 3px rgba(255,255,255,${0.2 * abre})` : undefined}}>{filho}</div>
+        {abre > 0.02 && (
+          <div style={{position: 'absolute', left: 40, top: -150, padding: '20px 44px', borderRadius: 999,
+            background: k === 2 ? tm.tema : 'rgba(255,255,255,.16)', color: k === 2 ? '#111' : '#fff',
+            fontFamily: BRICO, fontWeight: 700, fontSize: 76, letterSpacing: '-0.02em',
+            opacity: clamp((abre - 0.6) / 0.25)}}>{`0${k + 1} · ${rot[k]}`}</div>
+        )}
+      </div>
+    );
+    const pPrin = clamp(mola(f, t(cm.gatilho ?? orbita.de) , 0.16, 0.8));
+    return (
+      <AbsoluteFill style={{background: '#08090A', overflow: 'hidden'}}>
+        <div style={{position: 'absolute', inset: 0, perspective: 2400, perspectiveOrigin: '50% 42%'}}>
+          <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d',
+            transform: `translateX(${70 * abre}px) translateY(${50 * abre}px) scale(${esc}) rotateX(${rotX}deg) rotateY(${rotY}deg)`}}>
+            {vidro(-800, 0, est ? <Estudio tm={tm} r={rostoEm(f)} /> : null, true)}
+            {vidro(-300, 1, (
+              <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.09, textAlign: 'center', opacity: pPrin,
+                transform: `translateY(${(1 - pPrin) * 40}px) scale(${0.92 + 0.08 * pPrin})`}}>
+                {cm.apoio && <div style={{fontFamily: BRICO, fontWeight: 800, fontSize: 64, letterSpacing: '-0.02em', color: '#fff', marginBottom: 6}}>{cm.apoio}</div>}
+                <div style={{fontFamily: BRICO, fontWeight: 800, fontSize: 520, lineHeight: 0.86, letterSpacing: '-0.06em', color: tm.tema}}>{cm.principal ?? '3D'}</div>
+              </div>
+            ))}
+            {vidro(300, 2, <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={tm} /></div>)}
+            {vidro(720, 3, <LegendaCaixa f={f} pal={pal} fps={fps} tm={tm} y={H * 0.6} />)}
+          </div>
+        </div>
+      </AbsoluteFill>
+    );
+  };
+
   const conteudo = (i: number) => {
     if (i === 0) return palcoCartao();
-    if (i === n - 1) return orbitaCartao();
+    if (i === n - 1) return orbita.camadas ? camadasCartao() : orbitaCartao();
     return <EditorVideo roteiro={estilos[i - 1]} palavras={palavras} rosto={rosto} base={estilos[i - 1].video || props.baseCartoes ? {...base, arquivo: estilos[i - 1].video || props.baseCartoes!} : base} marca={props.marca} mudo />;
   };
 

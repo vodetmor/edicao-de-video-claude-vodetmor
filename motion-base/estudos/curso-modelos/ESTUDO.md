@@ -34,5 +34,12 @@ análise (medidas e regras). Nenhum quadro, texto ou skill do curso entra no Git
 | uma identidade, variação por layout | 4 mundos de cor | manter os mundos? decidir com o Vítor (a crítica 5 pediu diferença) |
 | amostra de 8 s antes do todo | vídeo inteiro a cada versão | mostrar 8 s da cena 3D nova antes de renderizar tudo |
 
-Conflito anotado: a pesquisa TikTok (@peterprojevic) põe a legenda no peito e grande; o curso, que é a régua do Jerônimo,
-põe embaixo e pequena com título separado. Para o Jerônimo vale o curso.
+Correção após ler as aulas (31/10): a aula de edição simples pede a legenda na altura do peito, logo abaixo do queixo,
+~20% maior, até 2 linhas e longe das bordas. Os clipes-modelo mostram legenda mais baixa porque ali o título ocupa o
+peito. Regra: legenda no peito quando não há título; com título grande, legenda desce. Pontos das aulas (sem copiar):
+amostra de 8 s antes do todo (5–15 s se a técnica é avançada, sempre em VÍDEO); correção = trecho + problema + mudança +
+o que preservar; moldura só durante a explicação e volta para a tela cheia; ícone só com relação à fala e animando o
+significado; maquete 3D se abre em camadas nomeadas, pausa para ler, e se fecha igual; 3D de edição = "vira a cena de
+lado e separa em camadas de vidro: fundo, elementos, eu na frente; junta e volta"; recorte testado em cabelo, mãos e
+ombros sobre fundo claro e escuro; palavra com movimento que combina com o significado; padrão aprovado vira modelo/skill.
+Checklist completo: `.claude/skills/editar-video/references/regua-profissional.md`.
