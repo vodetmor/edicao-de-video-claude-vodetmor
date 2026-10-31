@@ -476,3 +476,9 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
   errado quebra o ritmo). Digitação no app: ~8 letras/s até o começo do nome e autocompletar; o app entra no FIM da frase
   anterior para ter tempo. Gráfico com impacto: colunas em cascata com mola + linha + número contando + etiqueta na ponta.
   Música: escolher pela semelhança com a referência (centroide, ataques, bandas) em vez de "energia".
+- **"Parece de quem está aprendendo" (Jerônimo, 31/10/2026, comparando com a vitrine do edicaomia.com.br):** o que faltava
+  era SISTEMA, não efeito. Um visual só do começo ao fim (fundo grafite, 1 destaque, texto claro), rótulo pequeno + título
+  condensado enorme em 2 tons, cartões com borda de 1,5 px e 10% de branco, legenda pequena em caixa escura, pessoa sempre
+  produzida (fundo trocado por estúdio com luz da cor do vídeo, cor tratada) inclusive dentro das versões (`baseCartoes`),
+  movimento calmo (sem tremido de colagem). Colagem P&B fica para quando o cliente pedir esse universo. Tema 'estudio' na Vitrine.
+  Estudo: `estudos/edicaomia-vitrine/ESTUDO.md`.

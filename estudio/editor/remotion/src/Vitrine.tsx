@@ -12,11 +12,11 @@ import {clamp, lerp, mola, tween, E} from './kit';
 import {Legendas, montaCues} from './Legendas';
 import {montaMarca} from './marca';
 import {Orbita} from './Orbita';
-import {PainelIA} from './MotionIA';
+import {PainelIA, PainelIAEstudio} from './MotionIA';
 import {Dissolve, MINI, TelaClaude} from './AppClaude';
 import type {Entrada, Palavra, Roteiro} from './tipos';
 
-export type Tema = {visual: 'escuro' | 'colagem'; papel: string; papel2: string; tema: string; tinta: string; cinza: string; acento: string};
+export type Tema = {visual: 'escuro' | 'colagem' | 'estudio'; papel: string; papel2: string; tema: string; tinta: string; cinza: string; acento: string};
 const TEMA_ESCURO: Tema = {visual: 'escuro', papel: '#0A0A0B', papel2: '#1A1A1C', tema: '#0A0A0B', tinta: '#F2F2EF', cinza: '#8A8A8E', acento: '#F2F2EF'};
 // 'app': tela do Claude digitando a skill (comando) e a versão k surgindo numa miniatura; envio = palavra em que o comando é enviado
 type Camera = {de: string; modo: 'foco' | 'leque' | 'atras' | 'grade' | 'app'; k?: number; comando?: string; envio?: string; nota?: string};
@@ -33,7 +33,8 @@ export type VitrineProps = Entrada & {
   orbita: {de: string; atras?: Atras[]};
   fecho?: {de: string; linhas: string[]; em?: string[]}; // em: uma palavra por linha (sem ela, uma linha a cada 0,3 s)
   tema?: Tema; // paleta do vídeo (ferramentas/paleta/paleta.py); visual 'colagem' = papel, recorte, serifa, anotação à mão
-  app?: {miniatura?: string}; // foto pequena do bruto que aparece anexada na mensagem
+  app?: {miniatura?: string};
+  baseCartoes?: string; // vídeo já 'produzido' (fundo de estúdio + cor tratada) para as versões; sem ele, o bruto // foto pequena do bruto que aparece anexada na mensagem
   musica?: string; // arquivo na pasta pública (ex.: assets/musica.mp3); a voz manda e a música abaixa sob a fala
 };
 
@@ -80,21 +81,21 @@ const mistura = (a: Pose, b: Pose, p: number): Pose => ({
 
 // palavras gigantes atrás da cabeça: cada palavra sobe da máscara, em Archivo largo
 // `topo`: onde começa (fração da altura). Nada de texto sobre texto: abaixo da interface do bruto e da pílula do topo.
-const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; cor: string; topo?: number; serifa?: boolean}> = ({f, ini, fim, texto, cor, topo, serifa}) => {
+const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; cor: string; topo?: number; serifa?: boolean; cond?: boolean}> = ({f, ini, fim, texto, cor, topo, serifa, cond}) => {
   if (f < ini - 1 || f >= fim) return null;
   const palavras = texto.split(' ');
   const sai = tween(f, fim - 8, 8, 0, 1, E.saida);
   // cada linha cabe na largura (Archivo 800 a 125% tem ~0,82 em por letra maiúscula)
-  const tam = Math.min(serifa ? 420 : 300, ...palavras.map((p) => (W * 0.94) / (Math.max(3, p.length) * (serifa ? 0.56 : 0.82))));
+  const tam = Math.min(serifa ? 420 : cond ? 460 : 300, ...palavras.map((p) => (W * 0.94) / (Math.max(3, p.length) * (serifa ? 0.56 : cond ? 0.5 : 0.82))));
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: H * (topo ?? (palavras.length > 1 ? 0.05 : 0.09)), display: 'flex', flexDirection: 'column', alignItems: 'center',
-      ...(serifa ? {fontFamily: SERIFA, fontWeight: 400, letterSpacing: '-0.02em'} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', letterSpacing: '-0.03em'}),
-      fontSize: tam, lineHeight: 0.86,
+      ...(serifa ? {fontFamily: SERIFA, fontWeight: 400, letterSpacing: '-0.02em'} : cond ? {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '72%', letterSpacing: '-0.01em'} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '125%', letterSpacing: '-0.03em'}),
+      fontSize: tam, lineHeight: cond ? 1.05 : 0.86,
       textTransform: 'uppercase', color: cor, opacity: 1 - sai}}>
       {palavras.map((p, i) => {
         const e = mola(f, ini + i * 4, 0.22, 0.82);
         return (
-          <div key={i} style={{overflow: 'hidden', paddingTop: 8}}>
+          <div key={i} style={{overflow: 'hidden', paddingTop: tam * 0.16, marginTop: -tam * 0.08}}>
             <div style={{transform: `translateY(${(1 - e) * 105}%) scaleY(${0.8 + 0.2 * e})`, transformOrigin: '50% 100%'}}>{p}</div>
           </div>
         );
@@ -107,8 +108,34 @@ const TextoAtras: React.FC<{f: number; ini: number; fim: number; texto: string; 
 // Legenda editorial (referência: reels de criador com tipografia de cinema, ~0,7 corte/s): poucas palavras por vez,
 // a palavra forte da frase GRANDE em Archivo largo, as de ligação pequenas em caixa alta espaçada, uma em itálico serifado.
 // Fica no peito (camisa escura = contraste), nunca no rosto.
+// estúdio: legenda pequena e limpa, branca numa caixa escura, abaixo do assunto (padrão de vitrine profissional)
+const LegendaCaixa: React.FC<{f: number; pal: Palavra[]; fps: number; y: number}> = ({f, pal, fps, y}) => {
+  const cues = React.useMemo(() => montaCues(pal, fps, 28, 2, 4, true), [pal, fps]);
+  const c = cues.find((q) => f >= q.a && f < q.b);
+  if (!c) return null;
+  const txt = c.ws.map((w) => w.w).join(' ');
+  return (
+    <div style={{position: 'absolute', left: 90, right: 90, top: y, display: 'flex', justifyContent: 'center'}}>
+      <div style={{background: 'rgba(12,11,10,.84)', borderRadius: 16, padding: '14px 26px', fontFamily: INTER, fontWeight: 600, fontSize: 42, lineHeight: 1.22,
+        color: '#FFFFFF', textAlign: 'center', maxWidth: 760}}>{txt}</div>
+    </div>
+  );
+};
+
+// estúdio escuro no lugar da cortina: grafite, uma luz suave da cor do vídeo atrás da cabeça, chão de grade em perspectiva
+const Estudio: React.FC<{tm: Tema; r: {cx: number; cy: number}}> = ({tm, r}) => (
+  <div style={{position: 'absolute', inset: 0, background: tm.papel, overflow: 'hidden'}}>
+    <div style={{position: 'absolute', inset: 0, background: `radial-gradient(ellipse 46% 26% at ${r.cx * 100}% ${r.cy * 100 - 4}%, ${tm.tema}55, ${tm.tema}00 100%)`}} />
+    <div style={{position: 'absolute', left: -W * 0.5, right: -W * 0.5, top: H * 0.62, height: H * 0.6, transform: 'perspective(900px) rotateX(62deg)', transformOrigin: '50% 0%',
+      backgroundImage: 'linear-gradient(rgba(255,255,255,.07) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.07) 2px, transparent 2px)', backgroundSize: '120px 120px',
+      maskImage: 'linear-gradient(to bottom, transparent, #000 40%)'}} />
+    <div style={{position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%)'}} />
+  </div>
+);
+
 const LegendaEditorial: React.FC<{f: number; pal: Palavra[]; fps: number; y: number; cor: string; tm?: Tema}> = ({f, pal, fps, y, cor, tm}) => {
   if (tm?.visual === 'colagem') return <LegendaRecorte f={f} pal={pal} fps={fps} y={y} tm={tm} />;
+  if (tm?.visual === 'estudio') return <LegendaCaixa f={f} pal={pal} fps={fps} y={y} />;
   const cues = React.useMemo(() => montaCues(pal, fps, 16, 1, 4, true), [pal, fps]);
   const c = cues.find((q) => f >= q.a && f < q.b);
   if (!c) return null;
@@ -214,7 +241,8 @@ const Pessoa: React.FC<{src: string; tm?: Tema}> = ({src, tm}) => {
   return (
     <>
       {col && <FiltroRecorte id={id} cor={tm!.papel} />}
-      <OffthreadVideo src={staticFile(src)} transparent muted style={{position: 'absolute', inset: 0, width: W, height: H, objectFit: 'cover', filter: col ? `url(#${id})` : undefined}} />
+      <OffthreadVideo src={staticFile(src)} transparent muted style={{position: 'absolute', inset: 0, width: W, height: H, objectFit: 'cover',
+        filter: col ? `url(#${id})` : tm?.visual === 'estudio' ? `${GRADE} drop-shadow(0 40px 50px rgba(0,0,0,.55))` : undefined}} />
     </>
   );
 };
@@ -264,6 +292,9 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const fechoEm = (i: number) => (fecho?.em?.[i] ? t(fecho.em[i]) : t(fecho!.de) + i * 9);
   const tm = props.tema ?? TEMA_ESCURO;
   const col = tm.visual === 'colagem';
+  const est = tm.visual === 'estudio';
+  const fundo = col ? tm.papel : est ? tm.papel : PRETO; // fundo geral
+  const claro = col || est ? tm.tinta : OSSO; // texto sobre o fundo geral
 
   // estado da câmera neste quadro
   const cams = camera.map((c) => ({...c, a: t(c.de)})).sort((x, y) => x.a - y.a);
@@ -306,7 +337,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     const sp = ia ? clamp(mola(f, t(ia.de), 0.2, 0.85)) * (1 - clamp(mola(f, t(ia.ate), 0.22, 1))) : 0;
     const desce = sp * H * (0.72 - rostoEm(f).cy); // o rosto vai para o meio da metade de baixo
     return (
-      <AbsoluteFill style={{background: col ? tm.tema : PRETO}}>
+      <AbsoluteFill style={{background: col ? tm.tema : est ? tm.papel : PRETO}}>
+        {est && f >= melhoraIni && <Estudio tm={tm} r={rostoEm(f)} />}
         {vira < 0.999 && (
           <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 0 ${vira * 100}% 0)`, transform: `translateY(${desce}px)`}}>
             <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}>
@@ -314,42 +346,44 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
               {varre > 0 && (
                 <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 ${(1 - varre) * 100}% 0 0)`}}>
                   {/* reiluminação: o fundo (cortina) desce e esfria, a pessoa recortada sobe com cor tratada e luz quente no rosto */}
-                  <Base src={base.arquivo} filtro={`brightness(0.62) contrast(1.1) saturate(0.85) hue-rotate(-8deg)`} />
-                  <div style={{position: 'absolute', inset: 0, filter: GRADE}}><Pessoa src={pessoa} /></div>
+                  {est ? <Estudio tm={tm} r={rostoEm(f)} /> : <Base src={base.arquivo} filtro={`brightness(0.62) contrast(1.1) saturate(0.85) hue-rotate(-8deg)`} />}
+                  <div style={{position: 'absolute', inset: 0, filter: est ? undefined : GRADE}}><Pessoa src={pessoa} tm={est ? tm : undefined} /></div>
                   <Luz r={rostoEm(f)} />
                 </div>
               )}
             </div>
-            {varre > 0 && varre < 1 && <div style={{position: 'absolute', top: 0, bottom: 0, left: varre * W - 3, width: 6, background: col ? tm.papel : OSSO, boxShadow: '0 0 0 2px rgba(0,0,0,.15)'}} />}
+            {varre > 0 && varre < 1 && <div style={{position: 'absolute', top: 0, bottom: 0, left: varre * W - 3, width: 6, background: col ? tm.papel : est ? tm.tema : OSSO, boxShadow: '0 0 0 2px rgba(0,0,0,.15)'}} />}
           </div>
         )}
-        {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={col ? tm.papel : OSSO} serifa={col} topo={a.ini < cruAte ? 0.15 : undefined} />)}
-        {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={col ? tm.papel : OSSO} serifa={col} />}
-        {(f >= cruAte - 2 || atras.some((a) => a.ini < cruAte)) && (
-          <div style={{position: 'absolute', inset: 0, transform: `translateY(${desce}px)`}}><div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={f >= cruAte ? tm : undefined} /></div></div>
+        {atras.map((a, i) => <TextoAtras key={i} f={f} ini={a.ini} fim={a.fim} texto={a.texto} cor={col ? tm.papel : est ? tm.tinta : OSSO} serifa={col} cond={est} topo={a.ini < cruAte ? 0.15 : undefined} />)}
+        {cta && <TextoAtras f={f} ini={cta.ini} fim={dur + 10} texto={cta.texto} cor={col ? tm.papel : est ? tm.tema : OSSO} serifa={col} cond={est} />}
+        {(f >= cruAte - 2 || (est && f >= melhoraIni + 16) || atras.some((a) => a.ini < cruAte)) && (
+          <div style={{position: 'absolute', inset: 0, transform: `translateY(${desce}px)`}}><div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={f >= cruAte || (est && f >= melhoraIni) ? tm : undefined} /></div></div>
         )}
         <InterfaceBruto f={f} fps={fps} op={(1 - clamp(vira * 2)) * (1 - clamp(sp * 3))} />
         {ia && sp > 0.001 && (
           <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H / 2, transform: `translateY(${-(1 - sp) * 100}%)`,
             boxShadow: '0 10px 0 rgba(0,0,0,.18)'}}>
-            <PainelIA f={f} w={W} h={H / 2} tm={col ? tm : {papel: '#E9E9E6', papel2: '#D6D6D2', tema: PRETO, tinta: PRETO, cinza: '#8A8A8E'}} logo={ia.logo} programa={ia.programa}
-              mk={{janela: t(ia.marcas.janela), carimbo: t(ia.marcas.carimbo), claude: t(ia.marcas.claude), corte: t(ia.marcas.corte),
-                barra: t(ia.marcas.barra), cheio: t(ia.marcas.cheio), fim: t(ia.ate)}} />
+            {React.createElement(est ? PainelIAEstudio : PainelIA, {f, w: W, h: H / 2, tm: col || est ? tm : {papel: '#E9E9E6', papel2: '#D6D6D2', tema: PRETO, tinta: PRETO, cinza: '#8A8A8E'},
+              logo: ia.logo, programa: ia.programa,
+              mk: {janela: t(ia.marcas.janela), carimbo: t(ia.marcas.carimbo), claude: t(ia.marcas.claude), corte: t(ia.marcas.corte),
+                barra: t(ia.marcas.barra), cheio: t(ia.marcas.cheio), fim: t(ia.ate)}})}
             {/* fita na emenda: o painel e o vídeo são uma peça só */}
-            <div style={{position: 'absolute', left: -20, right: -20, bottom: -14, height: 28, background: col ? tm.tinta : PRETO, transform: 'rotate(-0.6deg)'}} />
+            <div style={{position: 'absolute', left: -20, right: -20, height: est ? 3 : 28, bottom: est ? 0 : -14, background: col ? tm.tinta : est ? tm.tema : PRETO, transform: est ? undefined : 'rotate(-0.6deg)'}} />
           </div>
         )}
         {cta && f >= cta.ini && (
           <div style={{position: 'absolute', left: 90, right: 90, bottom: 300, display: 'flex', justifyContent: 'center',
             transform: `translateY(${(1 - mola(f, cta.ini + 6, 0.2, 0.8)) * 60}px)`, opacity: clamp((f - cta.ini - 6) / 6)}}>
-            <div style={{background: col ? tm.papel : OSSO, color: col ? tm.tinta : PRETO, borderRadius: col ? 4 : 60, transform: col ? 'rotate(-2deg)' : undefined, padding: '26px 44px', fontFamily: INTER, fontSize: 44, fontWeight: 600, display: 'flex', gap: 18, alignItems: 'center'}}>
+            <div style={{background: col ? tm.papel : est ? tm.tema : OSSO, color: col ? tm.tinta : est ? '#fff' : PRETO, borderRadius: col ? 4 : est ? 22 : 60, transform: col ? 'rotate(-2deg)' : undefined, padding: '26px 44px', fontFamily: INTER, fontSize: 44, fontWeight: 600, display: 'flex', gap: 18, alignItems: 'center'}}>
               <span style={{opacity: 0.5}}>Comente</span>
               <span style={{fontWeight: 800}}>{cta.texto.slice(0, Math.max(0, Math.floor((f - cta.ini - 10) / 2)))}</span>
               <span style={{width: 3, height: 46, background: PRETO, opacity: Math.floor(f / 10) % 2 ? 1 : 0}} />
             </div>
           </div>
         )}
-        {f < cruAte ? legenda(H * 0.87) : (!cta || f < cta.ini) && <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} />}
+        {est ? (!cta || f < cta.ini) && <LegendaCaixa f={f} pal={pal} fps={fps} y={sp > 0.5 ? H * 0.885 : H * 0.78} />
+          : f < cruAte ? legenda(H * 0.87) : (!cta || f < cta.ini) && <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} />}
       </AbsoluteFill>
     );
   };
@@ -357,12 +391,13 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const orbitaCartao = () => {
     const ini = t(orbita.de);
     return (
-      <AbsoluteFill style={{background: col ? tm.papel : '#E9E9E6'}}>
-        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={col ? tm.tema : PRETO} serifa={col} topo={0.14} />)}
-        <Orbita ini={ini} lado="atras" cores={col ? [tm.tema, tm.tinta, tm.papel2] : undefined} />
+      <AbsoluteFill style={{background: col ? tm.papel : est ? tm.papel : '#E9E9E6'}}>
+        {est && <Estudio tm={tm} r={rostoEm(f)} />}
+        {(orbita.atras ?? []).map((a, i) => <TextoAtras key={i} f={f} ini={t(a.de)} fim={a.ate ? t(a.ate) : dur} texto={a.texto} cor={col || est ? tm.tema : PRETO} serifa={col} cond={est} topo={0.14} />)}
+        <Orbita ini={ini} lado="atras" cores={col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined} />
         <div style={{position: 'absolute', inset: 0, ...enquadra(f)}}><Pessoa src={pessoa} tm={tm} /></div>
-        <Orbita ini={ini} lado="frente" cores={col ? [tm.tema, tm.tinta, tm.papel2] : undefined} />
-        {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : legenda(H * 0.87)}
+        <Orbita ini={ini} lado="frente" cores={col || est ? [tm.tema, est ? '#E9E5DE' : tm.tinta, tm.papel2] : undefined} />
+        {col ? <LegendaEditorial f={f} pal={pal} fps={fps} y={H * 0.66} cor={OSSO} tm={tm} /> : est ? <LegendaCaixa f={f} pal={pal} fps={fps} y={H * 0.78} /> : legenda(H * 0.87)}
       </AbsoluteFill>
     );
   };
@@ -370,7 +405,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const conteudo = (i: number) => {
     if (i === 0) return palcoCartao();
     if (i === n - 1) return orbitaCartao();
-    return <EditorVideo roteiro={estilos[i - 1]} palavras={palavras} rosto={rosto} base={base} marca={props.marca} mudo />;
+    return <EditorVideo roteiro={estilos[i - 1]} palavras={palavras} rosto={rosto} base={props.baseCartoes ? {...base, arquivo: props.baseCartoes} : base} marca={props.marca} mudo />;
   };
 
 
@@ -424,7 +459,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const fechoIni = fecho ? t(fecho.de) : Infinity;
 
   return (
-    <AbsoluteFill style={{background: col ? tm.papel : PRETO, perspective: 2600, overflow: 'hidden'}}>
+    <AbsoluteFill style={{background: fundo, perspective: 2600, overflow: 'hidden'}}>
       {audio}
       {(() => {
         const c = atual.modo === 'app' ? atual : ant.modo === 'app' && j > 0 ? ant : null;
@@ -446,9 +481,10 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
               {conteudo(i)}
             </div>
             <div style={{position: 'absolute', left: 0, right: 0, top: H + 70 / ps.s * 0.4, display: 'flex', justifyContent: 'center', opacity: clamp(1 - ps.foco * 3)}}>
-              <div style={{fontFamily: INTER, fontWeight: col ? 700 : 600, fontSize: 30 / Math.max(ps.s, 0.2), letterSpacing: col ? '0.08em' : '0.02em',
-                textTransform: col ? 'uppercase' : 'none', color: col ? tm.papel : OSSO, background: col ? tm.tinta : 'transparent',
-                padding: col ? `${6 / Math.max(ps.s, 0.2)}px ${14 / Math.max(ps.s, 0.2)}px` : 0, transform: col ? `rotate(${(i % 2 ? 2 : -2)}deg)` : undefined}}>
+              <div style={{fontFamily: INTER, fontWeight: col || est ? 700 : 600, fontSize: 30 / Math.max(ps.s, 0.2), letterSpacing: col || est ? '0.1em' : '0.02em',
+                textTransform: col || est ? 'uppercase' : 'none', color: col ? tm.papel : est ? tm.tinta : OSSO, background: col ? tm.tinta : est ? tm.papel2 : 'transparent',
+                border: est ? `${1.5 / Math.max(ps.s, 0.2)}px solid rgba(255,255,255,.14)` : undefined, borderRadius: est ? 40 / Math.max(ps.s, 0.2) : 0,
+                padding: col || est ? `${6 / Math.max(ps.s, 0.2)}px ${16 / Math.max(ps.s, 0.2)}px` : 0, transform: col ? `rotate(${(i % 2 ? 2 : -2)}deg)` : undefined}}>
                 {rotulos[i]}
               </div>
             </div>
@@ -477,8 +513,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
             const e = mola(f, fechoEm(i), 0.22, 0.85);
             return (
               <div key={i} style={{overflow: 'hidden'}}>
-                <div style={{transform: `translateY(${(1 - e) * 100}%)`, ...(col ? {fontFamily: SERIFA, fontSize: 66} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '110%', fontSize: 50}),
-                  lineHeight: 1, color: col ? tm.tinta : OSSO, letterSpacing: '-0.02em'}}>{l}</div>
+                <div style={{transform: `translateY(${(1 - e) * 100}%)`, ...(col ? {fontFamily: SERIFA, fontSize: 66} : est ? {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '74%', fontSize: 54, textTransform: 'uppercase', whiteSpace: 'nowrap'} : {fontFamily: ARCHIVO, fontWeight: 800, fontStretch: '110%', fontSize: 50}),
+                  lineHeight: 1, color: est && i === fecho.linhas.length - 1 ? tm.tema : claro, letterSpacing: '-0.02em'}}>{l}</div>
               </div>
             );
           })}
@@ -487,7 +523,7 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
       {pilula > 0 && (
         <div style={{position: 'absolute', left: 0, right: 0, top: 150, display: 'flex', justifyContent: 'center', opacity: pilula,
           transform: `translateY(${(1 - pilula) * -16}px)`}}>
-          <div style={{background: col ? tm.tinta : OSSO, color: col ? tm.papel : PRETO, borderRadius: col ? 0 : 40, transform: col ? 'rotate(-1.5deg)' : undefined, padding: '16px 30px', fontFamily: INTER, fontWeight: 700, fontSize: 32,
+          <div style={{background: col ? tm.tinta : est ? tm.papel2 : OSSO, color: col ? tm.papel : est ? tm.tinta : PRETO, borderRadius: col ? 0 : 40, border: est ? '1.5px solid rgba(255,255,255,.14)' : undefined, transform: col ? 'rotate(-1.5deg)' : undefined, padding: '16px 30px', fontFamily: INTER, fontWeight: 700, fontSize: 32,
             letterSpacing: '0.04em', fontVariantNumeric: 'tabular-nums'}}>
             {String(entrouEm + 1).padStart(2, '0')} / {String(n).padStart(2, '0')} · {rotulos[entrouEm].toUpperCase()}
           </div>
