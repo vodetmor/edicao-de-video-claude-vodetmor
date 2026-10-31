@@ -482,3 +482,14 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
   produzida (fundo trocado por estúdio com luz da cor do vídeo, cor tratada) inclusive dentro das versões (`baseCartoes`),
   movimento calmo (sem tremido de colagem). Colagem P&B fica para quando o cliente pedir esse universo. Tema 'estudio' na Vitrine.
   Estudo: `estudos/edicaomia-vitrine/ESTUDO.md`.
+- **"Não ficou fluido" (Vítor 31/10/2026, v2 → v3):** medir a diferença quadro a quadro acha os saltos. Causas: (1) troca de
+  posição por limiar (`sp > 0.5 ? a : b`) em vez de interpolar; (2) entrar no app com corte seco; (3) base de 25 qps. Correções:
+  posições sempre interpoladas pela mola; app entra com fade de 6 quadros + mola; saída a 50 qps com o relógio da base
+  (`useQuadroBase(fpsBase)` em kit.ts, prop `fpsSaida`), áudio e efeitos escalados por k = saída/base.
+- **Legenda dinâmica do tema estúdio (31/10/2026):** blocos de 1 a 3 palavras, cada palavra sobe com mola quando é falada,
+  a palavra mais forte (≥ 5 letras) em Bricolage Grotesque 800 condensada e na cor do tema, o resto em Geist 700 branco com
+  sombra; sem caixa e sem karaokê. No trecho cru ("0 editado") a legenda é crua: branca, menor, sem destaque.
+- **Divisão de tela profissional:** dois cartões arredondados (raio 40, margem e calha de 28 px, borda 1,5 px de 8% branco)
+  sobre fundo quase preto, em vez de cortar a tela ao meio com uma fita.
+- **Cores do estúdio:** grafite frio (#0D0E10) + luz de recorte neutra atrás da cabeça + toque leve da cor do tema embaixo.
+  Brilho laranja forte atrás da pessoa deixa o fundo barrento. Fontes: Bricolage Grotesque (títulos) + Geist (texto).

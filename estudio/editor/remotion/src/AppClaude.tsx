@@ -85,12 +85,12 @@ export const TelaClaude: React.FC<{f: number; ini: number; envio: number; comand
         </>
       ) : (
         <>
-          <div style={{position: 'absolute', right: 120, top: 270}}>{thumb(92)}</div>
-          <div style={{position: 'absolute', right: 120, top: 410, fontFamily: INTER, fontSize: 38, color: APP.laranja}}>{comando}</div>
+          <div style={{position: 'absolute', right: 72, top: 270}}>{thumb(92)}</div>
+          <div style={{position: 'absolute', right: 72, top: 410, maxWidth: 300, textAlign: 'right', fontFamily: INTER, fontSize: 34, lineHeight: 1.15, color: APP.laranja}}>{comando}</div>
           <div style={{position: 'absolute', left: 81, top: 462, fontFamily: INTER, fontSize: 28, color: APP.laranja, opacity: 0.9}}>
             ✱ <span style={{color: APP.suave}}>Editando com {nome}{pontos}</span>
           </div>
-          <div style={{position: 'absolute', right: 120, top: 466, fontFamily: MONO, fontSize: 20, letterSpacing: '0.2em', color: APP.suave, opacity: 0.6}}>ACELERADO</div>
+          <div style={{position: 'absolute', right: 72, top: comando.length > 16 ? 500 : 466, fontFamily: MONO, fontSize: 20, letterSpacing: '0.2em', color: APP.suave, opacity: 0.6}}>ACELERADO</div>
         </>
       )}
     </div>

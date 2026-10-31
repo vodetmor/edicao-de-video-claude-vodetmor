@@ -6,7 +6,7 @@ import type {CalculateMetadataFunction} from 'remotion';
 import {relogio} from './ancora';
 import {Desenha, altura, type Ctx} from './Elementos';
 import {estilo as pegaEstilo} from './estilos';
-import {clamp, lerp, mola, tween, E} from './kit';
+import {clamp, lerp, mola, tween, E, useQuadroBase} from './kit';
 import {DIM, recorte, zona, type Caixa} from './layout';
 import {Legendas} from './Legendas';
 import {montaMarca} from './marca';
@@ -23,7 +23,7 @@ type Seg = {ini: number; layout: Layout; cena?: Cena; fim: number};
 
 export const EditorVideo: React.FC<Entrada & {mudo?: boolean}> = ({roteiro, palavras, rosto, base, marca: marcaProj, mudo}) => {
   useFontes();
-  const f = useCurrentFrame();
+  const f = useQuadroBase(base.fps || 30);
   const fmt = (roteiro.formato ?? '9:16') as Formato;
   const [W, H] = DIM[fmt];
   const u = Math.min(W, H) / 1080;

@@ -120,7 +120,8 @@ export const PainelIA: React.FC<{f: number; w: number; h: number; tm: TemaMotion
 // Versão "estúdio" (31/10/2026, depois do Jerônimo comparar com a vitrine do curso): o mesmo roteiro do painel, mas no
 // sistema de produto: fundo escuro, um destaque, rótulo pequeno + título grande, cartões com borda fina, movimento calmo.
 // ANTES: o print real do editor vazio + selo "nunca aberto". DEPOIS: o Claude edita (checklist que marca) e a barra chega a 100%.
-const ARCH = "'Archivo Variable', 'Archivo', sans-serif";
+const ARCH = "'Bricolage Grotesque Variable', 'Archivo Variable', sans-serif";
+const GEIST = "'Geist Variable', 'Inter Variable', sans-serif";
 const entra = (f: number, ini: number, dy = 40) => {
   const e = clamp(mola(f, ini, 0.2, 0.9), 0, 1.04);
   return {opacity: clamp((f - ini) / 6), transform: `translateY(${(1 - e) * dy}px)`};
@@ -133,12 +134,12 @@ export const PainelIAEstudio: React.FC<{f: number; w: number; h: number; tm: Tem
   const itens = [{t: 'Pausas cortadas', em: mk.corte}, {t: 'Luz e cor tratadas', em: mk.barra}, {t: 'Legenda sincronizada', em: mk.cheio - 6}];
   const barra = clamp((f - mk.barra) / Math.max(1, mk.cheio - mk.barra));
   const Rotulo: React.FC<{n: string; t: string}> = ({n, t}) => (
-    <div style={{display: 'flex', alignItems: 'center', gap: 16, fontFamily: INTER, fontWeight: 700, fontSize: 28, letterSpacing: '0.16em', color: tm.cinza}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: 16, fontFamily: GEIST, fontWeight: 700, fontSize: 28, letterSpacing: '0.16em', color: tm.cinza}}>
       <span style={{background: tm.tema, color: '#fff', borderRadius: 8, padding: '4px 10px', letterSpacing: '0.04em'}}>{n}</span>{t}
     </div>
   );
   const Titulo: React.FC<{a: string; b: string}> = ({a, b}) => (
-    <div style={{fontFamily: ARCH, fontWeight: 800, fontStretch: '78%', fontSize: 104, lineHeight: 0.92, textTransform: 'uppercase', letterSpacing: '-0.01em', marginTop: 14}}>
+    <div style={{fontFamily: ARCH, fontWeight: 800, fontStretch: '75%', fontSize: 100, lineHeight: 0.94, textTransform: 'uppercase', letterSpacing: '-0.01em', marginTop: 14}}>
       <div style={{color: tm.tinta}}>{a}</div><div style={{color: tm.tema}}>{b}</div>
     </div>
   );
@@ -157,7 +158,7 @@ export const PainelIAEstudio: React.FC<{f: number; w: number; h: number; tm: Tem
               </div>
               {f >= mk.carimbo && (
                 <div style={{position: 'absolute', right: 26, bottom: -28, ...entra(f, mk.carimbo, 24), display: 'flex', alignItems: 'center', gap: 12,
-                  background: tm.tema, color: '#fff', borderRadius: 40, padding: '14px 26px', fontFamily: INTER, fontWeight: 700, fontSize: 32}}>
+                  background: tm.tema, color: '#fff', borderRadius: 40, padding: '14px 26px', fontFamily: GEIST, fontWeight: 700, fontSize: 32}}>
                   <span style={{width: 12, height: 12, borderRadius: 6, background: '#fff'}} />projeto vazio · nunca aberto
                 </div>
               )}
@@ -170,13 +171,13 @@ export const PainelIAEstudio: React.FC<{f: number; w: number; h: number; tm: Tem
           <div style={entra(f, mk.claude)}><Rotulo n="DEPOIS" t="O CLAUDE EDITA" /></div>
           <div style={entra(f, mk.claude + 3)}><Titulo a="Alta qualidade," b="sem editar." /></div>
           <div style={{marginTop: 40, background: tm.papel2, border: `1.5px solid ${borda}`, borderRadius: 26, padding: '30px 34px', ...entra(f, mk.claude + 6, 60)}}>
-            <div style={{display: 'flex', alignItems: 'center', gap: 16, fontFamily: INTER, fontWeight: 600, fontSize: 30, color: tm.tinta}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 16, fontFamily: GEIST, fontWeight: 600, fontSize: 30, color: tm.tinta}}>
               {logo && <Img src={staticFile(logo)} style={{width: 40, height: 40}} />}Claude · editando o bruto
             </div>
             {itens.map((it, i) => {
               const ok = clamp((f - it.em) / 6);
               return (
-                <div key={i} style={{display: 'flex', alignItems: 'center', gap: 18, marginTop: 22, fontFamily: INTER, fontSize: 34, color: ok > 0 ? tm.tinta : tm.cinza}}>
+                <div key={i} style={{display: 'flex', alignItems: 'center', gap: 18, marginTop: 22, fontFamily: GEIST, fontSize: 34, color: ok > 0 ? tm.tinta : tm.cinza}}>
                   <div style={{width: 40, height: 40, borderRadius: 20, border: `2.5px solid ${ok > 0 ? tm.tema : tm.cinza}`, background: ok > 0 ? tm.tema : 'transparent',
                     display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                     <svg width={22} height={22} viewBox="0 0 10 10"><path d="M1.5 5.2 L4 7.6 L8.6 2.6" fill="none" stroke="#fff" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ok} /></svg>
@@ -187,7 +188,7 @@ export const PainelIAEstudio: React.FC<{f: number; w: number; h: number; tm: Tem
             <div style={{marginTop: 30, height: 10, borderRadius: 5, background: 'rgba(255,255,255,.08)'}}>
               <div style={{height: '100%', width: `${barra * 100}%`, borderRadius: 5, background: tm.tema}} />
             </div>
-            <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 12, fontFamily: INTER, fontSize: 26, color: tm.cinza, fontVariantNumeric: 'tabular-nums'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 12, fontFamily: GEIST, fontSize: 26, color: tm.cinza, fontVariantNumeric: 'tabular-nums'}}>
               <span>{barra >= 1 ? 'Vídeo pronto' : 'Exportando…'}</span><span>{Math.round(barra * 100)}%</span>
             </div>
           </div>

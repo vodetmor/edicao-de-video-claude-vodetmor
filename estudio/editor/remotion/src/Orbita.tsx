@@ -2,9 +2,9 @@
 // objetos do lado de trás da órbita, na frente só os da frente; assim eles passam por trás da cabeça de verdade.
 import React from 'react';
 import {ThreeCanvas} from '@remotion/three';
-import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'remotion';
 import * as THREE from 'three';
-import {clamp, mola} from './kit';
+import {clamp, mola, useQuadroBase} from './kit';
 
 type Obj = {forma: 'play' | 'anel' | 'cubo' | 'capsula' | 'esfera'; fase: number; raio: number; alt: number; tam: number; cor: string};
 
@@ -32,8 +32,8 @@ const Forma: React.FC<{o: Obj; cor?: string}> = ({o, cor}) => {
 };
 
 // cores: paleta do vídeo (tema, tinta, papel); sem ela, preto e osso
-export const Orbita: React.FC<{ini: number; lado: 'atras' | 'frente'; centroY?: number; cores?: string[]}> = ({ini, lado, centroY = 0.8, cores}) => {
-  const f = useCurrentFrame();
+export const Orbita: React.FC<{ini: number; lado: 'atras' | 'frente'; centroY?: number; cores?: string[]; fpsBase?: number}> = ({ini, lado, centroY = 0.8, cores, fpsBase = 30}) => {
+  const f = useQuadroBase(fpsBase);
   const {width, height} = useVideoConfig();
   const t = (f - ini) / 30;
   const entra = mola(f, ini, 0.12, 0.7);

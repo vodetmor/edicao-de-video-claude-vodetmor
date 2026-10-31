@@ -1,3 +1,4 @@
+import {useCurrentFrame, useVideoConfig} from 'remotion';
 // Curvas e utilidades de movimento (as mesmas do estudio/motor, DESIGN-SYSTEM §5.2). Tudo é função do quadro:
 // nada de CSS animation, relógio próprio ou useFrame. Prévia e render saem idênticos.
 import {Easing} from 'remotion';
@@ -36,4 +37,12 @@ export const vida = (f: number, ini: number, fim: number, dy = 18) => {
   const e = chega(f, ini, 0.17);
   const sai = fim < Infinity ? tween(f, fim - 6, 6, 0, 1, E.saida) : 0;
   return {op: clamp(e * 1.4) * (1 - sai), y: (1 - e) * dy - sai * 8, s: 0.96 + 0.04 * e};
+};
+
+// Quadro no relógio do vídeo-base. Quando a saída é renderizada com mais quadros por segundo (ex.: base 25 → saída 50),
+// todas as animações continuam com os mesmos tempos, mas ganham quadros intermediários: movimento mais fluido.
+export const useQuadroBase = (fpsBase: number) => {
+  const q = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return (q * fpsBase) / fps;
 };
