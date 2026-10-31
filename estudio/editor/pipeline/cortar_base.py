@@ -23,8 +23,8 @@ def corta_video(p: Path, a: float, b: float, alfa=False):
     tem_audio = bool(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(p)],
                                     capture_output=True, text=True).stdout.strip())
     if tem_audio:
-        # junção de áudio com 15 ms de cruzamento: sem estalo
-        fc += (f";[0:a]atrim=0:{a},asetpts=PTS-STARTPTS[a0];[0:a]atrim={b},asetpts=PTS-STARTPTS[a1];[a0][a1]acrossfade=d=0.015[a]")
+        # junção de áudio com 30 ms de cruzamento: sem estalo (padrão do video-use)
+        fc += (f";[0:a]atrim=0:{a},asetpts=PTS-STARTPTS[a0];[0:a]atrim={b},asetpts=PTS-STARTPTS[a1];[a0][a1]acrossfade=d=0.03[a]")
     cmd = ["ffmpeg", "-v", "error", "-y"] + (["-c:v", "libvpx-vp9"] if alfa else []) + ["-i", str(p.with_name(p.name + ".antes-corte")), "-filter_complex", fc, "-map", "[v]"]
     if tem_audio:
         cmd += ["-map", "[a]", "-c:a", "aac", "-b:a", "192k"]
