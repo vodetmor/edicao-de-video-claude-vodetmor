@@ -499,3 +499,8 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - **Vídeo falado estilo TikTok (pesquisa 31/10/2026, `estudos/talking-head-tiktok/ESTUDO.md`):** legenda no peito (~55–60%),
   palavra-chave maior com brilho, risco vermelho na palavra negada, selo #N por item da lista, ícone em círculo nos
   substantivos concretos, inserção em tela cheia com logo e print reais quando cita ferramenta, um evento a cada ~1,5 s.
+- **Vídeos-modelo do curso medidos (31/10/2026, `estudos/curso-modelos/ESTUDO.md`):** quase zero cortes; o nível vem de
+  uma cena que se transforma (pessoa vira cartão, painel entra, volta). Legenda baixa e pequena com a palavra falada na cor de
+  destaque; o "grande" é um título separado com hierarquia 1 principal / 2 apoio / 3 legenda, ao lado do rosto ou atrás dele.
+  3D = as camadas da edição se abrindo em profundidade (vídeo, texto, elementos), não objetos. Variedade por layout, uma
+  identidade só. Para clientes que usam esse curso como régua, isso vence a legenda no peito do estudo TikTok.
