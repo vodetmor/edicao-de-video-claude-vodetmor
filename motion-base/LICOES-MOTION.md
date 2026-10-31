@@ -504,3 +504,11 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
   destaque; o "grande" é um título separado com hierarquia 1 principal / 2 apoio / 3 legenda, ao lado do rosto ou atrás dele.
   3D = as camadas da edição se abrindo em profundidade (vídeo, texto, elementos), não objetos. Variedade por layout, uma
   identidade só. Para clientes que usam esse curso como régua, isso vence a legenda no peito do estudo TikTok.
+- **Processo de fora (31/10/2026, `estudos/gringa-edicao-ia/ESTUDO.md`):** o modelo não "assiste" o vídeo: lê o texto
+  palavra a palavra e só nas dúvidas pede uma vista de linha do tempo (tira de quadros + onda + palavras). Depois do render,
+  autoavaliação em CADA emenda (salto de imagem, estalo, legenda escondida), até 3 rodadas, antes do humano ver. Fade de
+  30 ms nos cortes. Câmera muda uma vez por frase (punch-in suave 1,00↔1,07 + dolly 2,5%), não zoom fixo. Movimento
+  pedido por NOME a partir de um catálogo.
+- **3D em camadas precisa de tempo (Vítor 31/10: "foi tão rapidinho"):** abrir ~1,2 s, ficar aberto ≥ 2 s para ler os
+  nomes, fechar antes da próxima ideia. Se a fala é curta, estique a cena até a próxima pausa natural (aqui: grade em
+  "cinco", depois da pausa de 1 s).

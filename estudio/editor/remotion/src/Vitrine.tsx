@@ -357,8 +357,25 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
   const melhoraIni = palco.melhora ? t(palco.melhora.de) : Infinity;
   const varre = clamp((f - melhoraIni) / 16);
   const zoomAlvo = palco.melhora?.zoom ?? 1.22;
+  // ritmo de câmera (pesquisa 31/10, talking-head da gringa): a cada frase a câmera alterna plano aberto/fechado
+  // com mola curta (punch-in suave, não corte) e, dentro da frase, um dolly lento para o rosto. Um evento por frase.
+  const frases = React.useMemo(() => {
+    const ini: number[] = [];
+    pal.forEach((w, i) => { if (i === 0 || /[.,!?:;]$/.test(pal[i - 1].w)) ini.push(w.f); });
+    return ini;
+  }, [pal]);
+  const ritmo = (q: number) => {
+    if (q < melhoraIni + 30) return 1;
+    let k = 0;
+    while (k + 1 < frases.length && frases[k + 1] <= q) k++;
+    const a = frases[k], b = frases[k + 1] ?? dur;
+    const nivel = (j: number) => (j % 2 ? 1.07 : 1);
+    const troca = clamp(mola(q, a, 0.22, 0.95));
+    const dolly = 1 + 0.025 * clamp((q - a) / Math.max(1, b - a));
+    return (nivel(k - 1) + (nivel(k) - nivel(k - 1)) * troca) * dolly;
+  };
   const enquadra = (q: number): React.CSSProperties => {
-    const z = 1 + (zoomAlvo - 1) * clamp(mola(q, melhoraIni + 16, 0.12, 0.9));
+    const z = (1 + (zoomAlvo - 1) * clamp(mola(q, melhoraIni + 16, 0.12, 0.9))) * ritmo(q);
     if (z <= 1.0001) return {};
     const r = rostoEm(q);
     return {transformOrigin: `${r.cx * 100}% ${r.cy * 100}%`, transform: `translateX(${(0.5 - r.cx) * W * (z - 1) / z}px) scale(${z})`};
@@ -472,8 +489,8 @@ export const Vitrine: React.FC<VitrineProps> = (props) => {
     const ini = t(orbita.de);
     const fim = t(cm.ate);
     // abre devagar, PAUSA aberta para ler os nomes (curso: a câmera rápida não deixa ler), fecha antes da próxima ideia
-    const abre = clamp(mola(f, ini + 2, 0.1, 0.95)) * (1 - clamp(mola(f, fim - 30, 0.13, 0.95)));
-    const respira = Math.sin((f - ini) / fps * 0.8) * 2 * abre;
+    const abre = clamp(mola(f, ini + 2, 0.055, 0.98)) * (1 - clamp(mola(f, fim - Math.round(fps * 0.95), 0.07, 0.98)));
+    const respira = (clamp((f - ini) / (fim - ini)) * 10 - 5) * abre; // giro lento contínuo enquanto aberto (sem vaivém)
     const rotY = -44 * abre + respira, rotX = 9 * abre, esc = 1 - 0.5 * abre;
     const rot = cm.rotulos ?? ['Fundo', 'Lettering', 'Recorte', 'Legenda'];
     const vidro = (z: number, k: number, filho: React.ReactNode, cheio?: boolean) => (
