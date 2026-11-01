@@ -182,22 +182,48 @@
     "barra": "saiu",
     "cheio": "qualidade"
    }
-  }
+  },
+  "riscar": [
+   "edição#2"
+  ],
+  "icones": [
+   {
+    "de": "gravação",
+    "icone": "video-camera"
+   },
+   {
+    "de": "vários",
+    "icone": "stack"
+   }
+  ]
  },
  "orbita": {
   "de": "objetos",
-  "atras": [
-   {
-    "de": "3D",
-    "texto": "3D"
-   }
-  ],
+  "atras": [],
   "fundo": "#2340D8",
   "cores": [
    "#FFFFFF",
    "#FFE14D",
    "#0E1A6B"
-  ]
+  ],
+  "grafico": {
+   "titulo": "Horas de edição por vídeo",
+   "nota": "estimativa · exemplo ilustrativo",
+   "colunas": [
+    {
+     "rotulo": "Editando na mão",
+     "valor": 4,
+     "texto": "4 h",
+     "cor": "#C9CDD6"
+    },
+    {
+     "rotulo": "Com o Claude",
+     "valor": 0.15,
+     "texto": "0 h",
+     "cor": "#FFE14D"
+    }
+   ]
+  }
  },
  "camera": [
   {

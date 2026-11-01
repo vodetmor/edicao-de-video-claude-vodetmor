@@ -57,3 +57,16 @@ Feito: saída a 50 qps (`fpsSaida: 50` no vitrine.json, relógio da base via use
 legenda dinâmica (Geist + Bricolage na palavra forte, cor do tema; crua no trecho "0 editado"), divisão em 2 cartões
 arredondados com calha, grafite frio (#0D0E10) sem brilho laranja forte. Refazer:
 node renderizar.mjs /tmp/claude-0/ed/jer-oficial --vitrine <proj>/projeto/vitrine.json --nome jeronimo-oficial-v3
+
+## v8 (31/10 ~03:50 UTC) · método do curso
+- vitrine-v8.json (cópia em trabalho/): estilos sem `video` próprio e com a mesma marca (grafite + #D97757);
+  orbita.camadas = {ate:'uma', gatilho:'3D', principal:'3D', apoio:'camadas da edição'} → camadasCartao() em Vitrine.tsx.
+- Amostra do 3D: previas/jeronimo-v8-amostra-3d.mp4 (trecho 20.6–25.2).
+- Refazer: node renderizar.mjs /tmp/claude-0/ed/jer-oficial --vitrine <proj>/projeto/vitrine-v8.json --nome jeronimo-oficial-v8
+- Checklist: .claude/skills/editar-video/references/regua-profissional.md
+
+## Cartaz v1 (31/10 ~04:35 UTC) · versão inédita pedida pelo Vítor (fora do padrão, refs do X)
+- Composição "Cartaz" (estudio/editor/remotion/src/Cartaz.tsx); entrada trabalho/cartaz/cartaz.json; música assets/musica-cartaz.mp3
+  = motion-base/musica/faixas/gancho/viramiller--spark-of-inspiration.mp3 (CC BY 4.0: crédito na descrição).
+- Refazer: node renderizar.mjs /tmp/claude-0/ed/jer-oficial --cartaz <proj>/projeto/cartaz.json --nome jeronimo-cartaz-v1
+- Entrega: previas/jeronimo-cartaz-v1.mp4. Estudo: motion-base/estudos/x-2026-10-31/ESTUDO.md
