@@ -1,0 +1,12 @@
+{
+ "estilo": "corte-limpo",
+ "formato": "9:16",
+ "cenas": [
+  {"de": "mas", "ate": "esse:fim", "layout": "cheio", "elementos": [
+    {"tipo": "titulo", "texto": "O que ninguém fala", "apoio": "como editar com qualidade", "de": "ninguém"}]},
+  {"de": "totalmente", "ate": "artificial:fim+12", "layout": "cheio", "elementos": [
+    {"tipo": "icone", "icone": "magic-wand", "texto": "100% editado por IA", "de": "totalmente"}]},
+  {"de": "acesso", "layout": "cheio", "elementos": [
+    {"tipo": "cta", "texto": "Quero acesso", "de": "acesso"}]}
+ ]
+}

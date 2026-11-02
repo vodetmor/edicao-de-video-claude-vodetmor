@@ -1,0 +1,12 @@
+# Ícones Phosphor (MIT) disponíveis no editor. Para acrescentar: escreva o nome aqui e rode `npm run icones`.
+# Nomes: https://phosphoricons.com (o mesmo nome, sem o peso).
+check check-circle x x-circle warning info question lightbulb sparkle star heart fire lightning target trophy medal
+arrow-right arrow-down arrow-up trend-up trend-down chart-line-up chart-bar chart-pie-slice percent currency-dollar money wallet credit-card shopping-cart tag receipt
+calendar calendar-check clock timer hourglass alarm
+user users user-circle chat-circle chat-teardrop-text megaphone phone envelope paper-plane-tilt bell share-network
+video-camera film-strip microphone play pause scissors magic-wand pencil-simple text-t closed-captioning image images camera
+desktop laptop device-mobile cursor-click hand-tap app-window browser globe link code robot brain cpu cloud
+house buildings storefront briefcase graduation-cap book-open notebook student chalkboard-teacher exam
+rocket flag map-pin compass gear wrench shield-check lock key funnel funnel-simple path flow-arrow tree-structure stack list-checks kanban
+fork-knife coffee leaf drop barbell heartbeat first-aid pill car airplane
+thumbs-up smiley hand-heart handshake

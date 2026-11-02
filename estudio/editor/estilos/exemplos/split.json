@@ -1,0 +1,17 @@
+{
+ "estilo": "split",
+ "formato": "9:16",
+ "legenda": {"estilo": "limpa"},
+ "cenas": [
+  {"de": "inicio", "layout": "split", "elementos": [
+    {"tipo": "titulo", "texto": "Postar todo dia", "apoio": "o conselho que todo mundo dá", "de": "postar"}]},
+  {"de": "mas", "layout": "split", "elementos": [
+    {"tipo": "titulo", "texto": "O que ninguém fala", "apoio": "como editar com qualidade", "de": "ninguém"},
+    {"tipo": "passos", "de": "editar", "itens": [{"texto": "Gravar", "icone": "video-camera", "de": "editar"}, {"texto": "Editar", "icone": "scissors", "de": "vídeo"}, {"texto": "Postar", "icone": "paper-plane-tilt", "de": "qualidade"}]}]},
+  {"de": "esse vídeo", "layout": "split", "elementos": [
+    {"tipo": "numero", "valor": 100, "sufixo": "%", "rotulo": "editado por inteligência artificial", "de": "totalmente"},
+    {"tipo": "lista", "itens": [{"texto": "Cortes e respiros", "de": "inteligência"}, {"texto": "Legenda sincronizada", "de": "qualidade#2"}, {"texto": "Estilo pronto", "de": "entregando"}]}]},
+  {"de": "você pode", "layout": "split", "elementos": [
+    {"tipo": "cta", "texto": "Quero acesso", "apoio": "toque no link", "de": "acesso"}]}
+ ]
+}
