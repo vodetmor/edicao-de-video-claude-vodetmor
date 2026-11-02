@@ -40,7 +40,7 @@ MAPA = [
     # o "cérebro" (mantido em backup/kit)
     ("backup/kit/CLAUDE.md", "CLAUDE.md"), ("backup/kit/LEIA-ME.md", "LEIA-ME.md"), ("backup/kit/MIGRACAO.md", "MIGRACAO.md"),
     ("backup/kit/COMO-TRABALHAR-COM-O-VITOR.md", "COMO-TRABALHAR-COM-O-VITOR.md"),
-    ("backup/kit/gitignore", ".gitignore"), ("backup/kit/skills", ".claude/skills"),
+    ("backup/kit/gitignore", ".gitignore"), ("backup/kit/README.md", "README.md"), ("backup/kit/FICOU-DE-FORA.md", "FICOU-DE-FORA.md"), ("backup/kit/skills", ".claude/skills"),
     ("backup/kit/memoria", "memoria"), ("backup/kit/historico", "historico"),
     ("backup/sincronizar.py", "backup/sincronizar.py"), ("backup/juntar_partes.py", "backup/juntar_partes.py"),
     ("backup/exportar_historico.py", "backup/exportar_historico.py"),
