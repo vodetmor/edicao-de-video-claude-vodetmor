@@ -171,7 +171,7 @@ Fade puro só em: legenda (§3.3), e para trocar algo de lugar quando o trajeto 
 | Regra | Valor |
 |---|---|
 | Troca visual em trecho de fala | algo muda (corte, punch-in, B-roll, texto, câmera) a cada **3 a 8 s**; nunca mais de 10 s iguais |
-| Ritmo em ondas | cortes por minuto variam entre ~7 e ~22 (medido na referência Tinoco); o pico é o clímax |
+| Ritmo em ondas | cortes por minuto variam em ondas; na referência Tinoco a mediana é 10 a 11 e o pico 15 a 19 em 4 vídeos (`estudos/tinocandotv/ESTUDO.md`); o pico é o clímax |
 | Punch-in no A-roll | alternar 100%, 112%, 125% por frase; nunca dois iguais seguidos |
 | Silêncio como ferramenta | ≥ 1 buraco de silêncio de 0,3–0,6 s antes do maior impacto do vídeo |
 | Abertura | gancho nos primeiros 10 s; nada de logo ou vinheta longa antes do gancho |

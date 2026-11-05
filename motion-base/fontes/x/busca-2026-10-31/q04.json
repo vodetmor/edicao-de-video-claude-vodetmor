@@ -1,0 +1,137 @@
+[
+  {
+    "id": "2114920056803258687",
+    "text": "10s vid in JUST 190s.\n\nAnother example of FastH3 Omni, the quality is just insane for this speed.\n\nMade it on my RTX5090 in ComfyUI and edited with Claude. https://t.co/2SplsDqnbD",
+    "author": {
+      "id": "1881344833308217344",
+      "name": "Kent Dhani",
+      "screenName": "kentdhani",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2068692019971760128/yXxSAY19_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 188,
+      "retweets": 19,
+      "replies": 14,
+      "quotes": 2,
+      "views": 14172,
+      "bookmarks": 240
+    },
+    "createdAt": "Tue Oct 27 03:20:09 +0000 2026",
+    "createdAtLocal": "2026-10-27 00:20",
+    "createdAtISO": "2026-10-27T03:20:09+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2114919847058722816/vid/avc1/1920x1080/ZxJqgcieVoHdi1LR.mp4?tag=29",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2113659544358604873",
+      "text": "It is FAST.\n\nMiniMax FastH3 Omni just went open source, and it can now take up to 9 reference images, video clips, and voice references.\n\nRan it on my RTX5090 in ComfyUI. https://t.co/feKzYEZQRQ",
+      "author": {
+        "screenName": "kentdhani",
+        "name": "Kent Dhani"
+      }
+    }
+  },
+  {
+    "id": "2115712741268746339",
+    "text": "Imagine making a tutorial on how you created and edited a video with Claude… using a video you ALSO edited with Claude 🤯 Mad stuff.\n\nTo everyone who's been asking how I made the Chowdeck ad with Claude, here's the full tutorial. You're welcome 😌\n\nReply CHOWDECK and I'll send you the website link + my full workflow.",
+    "author": {
+      "id": "1701490266572476416",
+      "name": "Precious Jimoh",
+      "screenName": "DesignSorceress",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2084191173728509952/XwcDsFez_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 385,
+      "retweets": 47,
+      "replies": 140,
+      "quotes": 1,
+      "views": 14795,
+      "bookmarks": 572
+    },
+    "createdAt": "Thu Oct 29 07:50:00 +0000 2026",
+    "createdAtLocal": "2026-10-29 04:50",
+    "createdAtISO": "2026-10-29T07:50:00+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2115474090442055680/vid/avc1/1080x1920/9PArXgzoqXuXbiMn.mp4?tag=29",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2113535202098372655",
+      "text": "Are Motion designers really cooked?\n\nI just made a full Chowdeck motion ad (spec) with Claude Opus 5.5 in less than an hour. \n\nI fed it app screenshots, logo, food pics and VO. It animated it all, synced my voiceover to each scene and balanced the sound.\n\nThis is the result. Hit? https://t.co/B9YEHkpqnn",
+      "author": {
+        "screenName": "DesignSorceress",
+        "name": "Precious Jimoh"
+      }
+    }
+  },
+  {
+    "id": "2064903643846095055",
+    "text": "Language skills are so underrated - content creators can double and triple their audience if they can easily convert their content into multiple languages and post on different platforms. \n\nWith Pika MCP you can easily do that. Here's me speaking 4 different languages with one video as input, and the final comparison video was edited with Claude Fable in natural language:\n\nPika MCP + Claude Fable > such a power combo!",
+    "author": {
+      "id": "865233026044669952",
+      "name": "Jessie_Ma",
+      "screenName": "ytjessie_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1723181882295164928/HSt3e1VP_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 121,
+      "retweets": 10,
+      "replies": 6,
+      "quotes": 1,
+      "views": 12898,
+      "bookmarks": 67
+    },
+    "createdAt": "Thu Jun 11 02:52:47 +0000 2026",
+    "createdAtLocal": "2026-06-10 23:52",
+    "createdAtISO": "2026-06-11T02:52:47+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2064903076759429120/vid/avc1/1800x640/kCvQqYuKnzfEvIHn.mp4?tag=27",
+        "width": 1800,
+        "height": 640
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2064408753139835091",
+      "text": "Take your content global, already!\n\nThe Language Swap skill via Pika MCP swaps the language you’re speaking in any video, making it look and sound like you speak fluent…anything. https://t.co/kApd9yEbvX",
+      "author": {
+        "screenName": "pika_labs",
+        "name": "Pika"
+      }
+    }
+  }
+]

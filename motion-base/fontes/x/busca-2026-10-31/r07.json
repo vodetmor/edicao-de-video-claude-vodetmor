@@ -1,0 +1,1529 @@
+[
+  {
+    "id": "2096229986827182422",
+    "text": "kinetic typography study \nusing stroke fonts\n#touchdesigner #motiontype https://t.co/YkvOgs7Woj",
+    "author": {
+      "id": "605539158",
+      "name": "TsumikiRoom / ツミキルーム",
+      "screenName": "tsumiki_room",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1564249282353704963/nA3PIj_c_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1508,
+      "retweets": 158,
+      "replies": 6,
+      "quotes": 4,
+      "views": 46855,
+      "bookmarks": 655
+    },
+    "createdAt": "Sat Sep 05 13:32:29 +0000 2026",
+    "createdAtLocal": "2026-09-05 10:32",
+    "createdAtISO": "2026-09-05T13:32:29+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2096228247579287553/vid/avc1/1704x1920/VuAJpYtL1SHN-NiW.mp4?tag=29",
+        "width": 1704,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2103841515630174531",
+    "text": "messing around w kinetic typography https://t.co/uQRlt1OyHU",
+    "author": {
+      "id": "1417344738638766086",
+      "name": "Ayush Soni",
+      "screenName": "ayushsoni_io",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1840917900087201792/ATJCpFf0_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 371,
+      "retweets": 6,
+      "replies": 5,
+      "quotes": 0,
+      "views": 12168,
+      "bookmarks": 104
+    },
+    "createdAt": "Sat Sep 26 13:37:59 +0000 2026",
+    "createdAtLocal": "2026-09-26 10:37",
+    "createdAtISO": "2026-09-26T13:37:59+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2103841477181030400/vid/avc1/1954x1152/NnMKpgoOGdwkz_rT.mp4?tag=29",
+        "width": 1954,
+        "height": 1152
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2116183482883879313",
+    "text": "Holy f*ck, now anyone can make $500 motion effects with Opus 5.5\n\n12 free open-source repos instead of a $6,000 motion designer invoice\n\nSmoke. Glitch. Particles. Type. 3D.\n\nThe real libraries the pros use, all from code\n\nEverything below is free:\n\nWebGL Fluid → smoke that follows your cursor\nhttps://t.co/M59nphCLPM\n\nPostprocessing → glitch, bloom, chromatic aberration\nhttps://t.co/4qOHcLb5Z1\n\ntsParticles → particle bursts and confetti\nhttps://t.co/ORVvE9mJBh\n\nFlubber → one shape morphs into another\nhttps://t.co/jP3YYlaaXQ\n\nGSAP → kinetic typography, letter by letter\nhttps://t.co/NNFWOMI53b\n\nShaderGradient → living mesh gradients\nhttps://t.co/wYPluSk8hw\n\nThree.js → 3D in the browser, even ASCII renders\nhttps://t.co/V6zTkj4GeA\n\nRough.js → the hand-drawn sketch look\nhttps://t.co/tjq0xq6vnl\n\nHydra → visuals that move to the beat\nhttps://t.co/aX7eFqhvLU\n\nTheatre.js → cinematic camera moves on a timeline\nhttps://t.co/LqaVe8mjcg\n\nBlender → 3D shatter, real light, real renders\nhttps://t.co/6oqqkXVIdH\n\nLYGIA → liquid chrome and noise shaders\nhttps://t.co/NgOc5aYJp0\n\n$6,000 → $0\n\nSend the list to your Opus 5.5\n\nThen read the full motion design guide below ↓",
+    "author": {
+      "id": "1692493436924928000",
+      "name": "m4lka",
+      "screenName": "m4lkxx",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2037839170828464128/tdHPN5M4_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 346,
+      "retweets": 31,
+      "replies": 8,
+      "quotes": 2,
+      "views": 14243,
+      "bookmarks": 426
+    },
+    "createdAt": "Fri Oct 30 15:00:33 +0000 2026",
+    "createdAtLocal": "2026-10-30 12:00",
+    "createdAtISO": "2026-10-30T15:00:33+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2116181505479151616/vid/avc1/1920x1080/8jsIeUF_Dipj4kyC.mp4?tag=29",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2112550174962651338",
+      "text": "Opus 5.5 can make a beautiful first render.\n\nFixing one frame is the real skill.\n\nFull motion design guide ↓ https://t.co/82ZodCyf3P",
+      "author": {
+        "screenName": "m4lkxx",
+        "name": "m4lka"
+      }
+    }
+  },
+  {
+    "id": "1961143166217957517",
+    "text": "Kinetic typography experiment 101 https://t.co/BQm50zFKha",
+    "author": {
+      "id": "1831744824912777216",
+      "name": "Sanchita Mukherjee",
+      "screenName": "suncheetosji",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1913302074055708672/AJ6NgNBC_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 117,
+      "retweets": 1,
+      "replies": 8,
+      "quotes": 0,
+      "views": 4964,
+      "bookmarks": 12
+    },
+    "createdAt": "Thu Aug 28 19:05:41 +0000 2025",
+    "createdAtLocal": "2025-08-28 16:05",
+    "createdAtISO": "2025-08-28T19:05:41+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/1961143109754249216/vid/avc1/720x720/L7oX0mrjLqoIuwZM.mp4?tag=21",
+        "width": 720,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1815425975963754925",
+    "text": "Kinetic Typography Diffusion Model can generate kinetic typography videos with legible and artistic letter motions based on text prompts.\n\nLinks ⬇️ https://t.co/qbtXEPGvE2",
+    "author": {
+      "id": "1546508709513265153",
+      "name": "Dreaming Tulpa 🥓👑",
+      "screenName": "dreamingtulpa",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1546508877881032705/STWGWwF8_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 126,
+      "retweets": 17,
+      "replies": 6,
+      "quotes": 1,
+      "views": 9882,
+      "bookmarks": 76
+    },
+    "createdAt": "Mon Jul 22 16:37:36 +0000 2024",
+    "createdAtLocal": "2024-07-22 13:37",
+    "createdAtISO": "2024-07-22T16:37:36+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/1815425956258914309/vid/avc1/1280x720/wAaRUCmdjCSE0jSB.mp4?tag=14",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1829479665699844469",
+    "text": "A little kinetic typography practice  \n\nOh Qué Será? 🎶\nMade in after effects in 6 hours https://t.co/8ovbuRSiNx",
+    "author": {
+      "id": "1315699223766216707",
+      "name": "Étienne Lankai Lamptey",
+      "screenName": "Lankai_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1950525374695145472/dmCzjA8u_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 837,
+      "retweets": 62,
+      "replies": 12,
+      "quotes": 1,
+      "views": 27991,
+      "bookmarks": 314
+    },
+    "createdAt": "Fri Aug 30 11:21:57 +0000 2024",
+    "createdAtLocal": "2024-08-30 08:21",
+    "createdAtISO": "2024-08-30T11:21:57+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1829479420576362498/pu/vid/avc1/720x720/SMi1XA8EBii_sQh_.mp4?tag=12",
+        "width": 2160,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "es",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2104508003948830877",
+    "text": "ELON MUSK COULDN'T LEAVE THIS CLIP ALONE. AND I ABSOLUTELY GET IT.\n\nHe reposted it, shared the video again in a quote post with \"Wow,\" and replied to the original twice: \"Banger next-level\" and \"Epic.\"\n\nI've already watched the whole thing about ten times. \n\nThis is one of the best AI videos I have ever seen.\n\nThe song and the visuals feel inseparable. The kinetic typography is what pulls them together. The lyrics are woven into screens, dashboards, road signs, and interfaces throughout the video.\n\nI kept scanning each shot to see where the next line would turn up, and finding it became part of the fun.\n\n@anabology gave Opus 5.5 @donaldjewkes's prompt, Midjourney, and a moodboard. Twelve hours later, this was waiting.\n\nIt made me want to open @Picsart and create something that hits just as hard.\n\nThe song keeps swinging between \"we're so back\" and \"it's so over.\" Somehow, this video makes both feel true.",
+    "author": {
+      "id": "271760810",
+      "name": "Sethian",
+      "screenName": "theSethian",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2104127427572039681/DrpcHta6_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1247,
+      "retweets": 180,
+      "replies": 73,
+      "quotes": 34,
+      "views": 114758,
+      "bookmarks": 884
+    },
+    "createdAt": "Mon Sep 28 09:46:22 +0000 2026",
+    "createdAtLocal": "2026-09-28 06:46",
+    "createdAtISO": "2026-09-28T09:46:22+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2104506882517794816/vid/avc1/1920x1080/lKsnVGaNQoZ1Ysyw.mp4?tag=29",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2099566345511657974",
+      "text": "https://t.co/tMDJJVwLSu",
+      "author": {
+        "screenName": "0x_fokki",
+        "name": "Fokki"
+      }
+    }
+  },
+  {
+    "id": "2091676049251688806",
+    "text": "I improved the prompt 👇\n\n{\n\"archetype\": \"Artistic / Fashion / Conceptual\",\n\"duration\": \"15s\",\n\"prompt\": {\n\"concept\": {\n\"title\": \"Ink Smoke Art – Kinetic Title Sequence\",\n\"description\": \"Continuous 15s one-take black ink-smoke motion graphics. Five characters form from living smoke on pure white void, each performing a characteristic motion while smoke stays alive. Formation direction alternates every 3s. Characters dissolve smoothly through smoke into the next. Kinetic uppercase text emerges from smoke on the complementary side. Final invitation text at the end. Always fluid, never static.\",\n\"duration\": \"15s\",\n\"rhythm_structure\": {\n\"0-3s\": \"[image1] forms right-to-left + characteristic motion, text left\",\n\"3-6s\": \"Morph to [image3] left-to-right + characteristic motion, text right\",\n\"6-9s\": \"Morph to [image2] right-to-left + characteristic motion, text left\",\n\"9-12s\": \"Morph to [image4] left-to-right + characteristic motion, text right\",\n\"12-15s\": \"Morph to [image5] right-to-left + characteristic motion + final invitation text\"\n}\n},\n\"camera_direction\": {\n\"shot_type\": \"Strict continuous one-take, locked or micro-drift\",\n\"forbidden\": [\"No cuts\", \"No teleportation\", \"No hidden transitions\", \"No freeze frames\"],\n\"camera_journey\": \"Centered medium-wide on pure white void. Locked or extremely slow drift. All energy from living smoke and character motion.\"\n},\n\"typography\": {\n\"allowed_words\": [\n\"INK SMOKE ART\",\n\"MOTION GRAPHICS\",\n\"MIDJOURNEY + H3\",\n\"PROMPTS by TechHalla\",\n\"MAKE IT YOURS\"\n],\n\"treatment\": {\n\"not_flat_overlay\": true,\n\"required_properties\": [\n\"Formed from dense black smoke particles and tendrils\",\n\"Physical volumetric depth\",\n\"Smoke occlusion and interaction\",\n\"Subtle continuous warping\",\n\"Bold uppercase condensed sans-serif\",\n\"Kinetic emergence synchronized to morphs and directional flow\"\n]\n}\n},\n\"visual_style\": {\n\"overall\": \"Black ink-smoke art, ultra high-contrast monochrome, pure white void, volumetric living smoke with dense cores and wispy filaments\",\n\"inspired_by\": [\n\"[image1]– exact silhouette, long hair, armor, smoke density\",\n\"[image2]– exact suit, gun, coat edges, frontal presence\",\n\"[image3]– exact spiky hair, martial pose, wristbands, full-body mass\",\n\"[image4]– exact cowl, cape flow, dramatic profile\",\n\"[image5]– exact straw hat, back view, coat tails, dynamic stance\"\n],\n\"color_palette\": [\"pure black\", \"deep charcoal smoke\", \"pure white void\"],\n\"materials_and_texture\": \"Living ink smoke, variable density, continuous filament motion, soft volumetric edges, constant micro-turbulence\"\n},\n\"motion_language\": {\n\"follows_music\": false,\n\"core_behavior\": \"Never static. Smoke always swirls. Characters form while performing characteristic motion. Morphs only through smoke densifying and reforming. Direction alternates every beat. Visible smoke motion in every frame.\"\n},\n\"storyboard\": {\n\"total_beats\": 5,\n\"beat_duration\": \"3 seconds each\",\n\"beats\": [\n{\n\"id\": \"01\",\n\"time\": \"0.0–3.0\",\n\"description\": \"Pure white void. Black smoke enters from right, flows left, coalesces into [image1]. Smoke lives on hair, armor and cloak while figure performs slow head turn and shoulder roll, long hair and cloak billowing as if scanning the horizon. Text “INK SMOKE ART” forms left from arriving tendrils into bold uppercase interacting with smoke. End of beat: form smoothly dissolves into swirling smoke.\"\n},\n{\n\"id\": \"02\",\n\"time\": \"3.0–6.0\",\n\"description\": \"Smoke reverses, enters from left, flows right, reforms into [image3]. Smoke swirls on limbs and spiky hair while figure performs slight crouch into charged fighting stance, fists clenching, body vibrating with residual energy. Previous text dissolves; “MOTION GRAPHICS” emerges right from arriving smoke into bold uppercase. End of beat: form smoothly dissolves into smoke.\"\n},\n{\n\"id\": \"03\",\n\"time\": \"6.0–9.0\",\n\"description\": \"Smoke reverses, enters from right, flows left, reforms into [image32. Smoke lives on suit edges and coat while figure performs slow raise of gun-holding arm into low ready position, coat flaring, determined forward lean. Text “MIDJOURNEY + H3” forms left from rising particles into bold uppercase. End of beat: form smoothly dissolves into smoke.\"\n},\n{\n\"id\": \"04\",\n\"time\": \"9.0–12.0\",\n\"description\": \"Smoke reverses, enters from left, flows right, reforms into [image4]. Smoke billows on long cape while figure performs dramatic cape sweep and subtle crouch, head tilting under cowl as if listening. Text “PROMPTS by TechHalla” emerges right from trailing cape smoke into bold uppercase. End of beat: form smoothly dissolves into smoke.\"\n},\n{\n\"id\": \"05\",\n\"time\": \"12.0–15.0\",\n\"description\": \"Smoke reverses, enters from right, flows left, reforms into [image5]. Smoke rises and trails on coat tails and hat while figure performs confident stance shift, straw hat tilting, coat tails whipping backward, one arm slightly extending forward. Previous text dissolves; residual smoke briefly reforms titles, then “MAKE IT YOURS” emerges centered from final smoke into bold uppercase as smoke slowly dissipates into white void, never fully static until end frame.\"\n}\n]\n}\n}\n}\n\nCheck out the previous one along with the Midjourney prompt for the images!",
+    "author": {
+      "id": "119185333",
+      "name": "TechHalla",
+      "screenName": "techhalla",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2027024268723458053/iZHVefAG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 2367,
+      "retweets": 305,
+      "replies": 61,
+      "quotes": 22,
+      "views": 190515,
+      "bookmarks": 3015
+    },
+    "createdAt": "Sun Aug 23 23:56:46 +0000 2026",
+    "createdAtLocal": "2026-08-23 20:56",
+    "createdAtISO": "2026-08-23T23:56:46+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2091675100558786560/vid/avc1/2560x1440/_UlWrwenQl5vMne7.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2091457020213838151",
+      "text": "made with Midjourney + H3\n\nprompts below 👇 https://t.co/6N07Wxu9be",
+      "author": {
+        "screenName": "techhalla",
+        "name": "TechHalla"
+      }
+    }
+  },
+  {
+    "id": "2085606869545181461",
+    "text": "New component just dropped\n\nDia Text kinetic typography with smooth character morphing and gradient fill transitions\n\nIf you haven’t checked the library yet, now’s a good time. https://t.co/IrNF1l2F2p",
+    "author": {
+      "id": "1806570545267576832",
+      "name": "Nexvyn",
+      "screenName": "nexvyn",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2101971055376232448/rL06DpsJ_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 116,
+      "retweets": 5,
+      "replies": 3,
+      "quotes": 1,
+      "views": 11699,
+      "bookmarks": 151
+    },
+    "createdAt": "Fri Aug 07 06:00:01 +0000 2026",
+    "createdAtLocal": "2026-08-07 03:00",
+    "createdAtISO": "2026-08-07T06:00:01+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2085599171458027520/vid/avc1/1918x976/iESRBdba4iKeAwGG.mp4?tag=29",
+        "width": 1918,
+        "height": 976
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2084995339388342735",
+      "text": "Just shipped 6 new components to the library:\n\nNavigation Compass :- interactive 3D compass widget with smooth heading rotation and cardinal markers\n\nAccordion :- collapsible content sections with smooth spring animations, keyboard navigation, and custom icon slots\n\nAction Button :- interactive button with status morphing, loading spinner, and success/error feedback states\n\nAdaptive Actions :- toolbar that dynamically collapses overflow actions into a dropdown menu based on available width\n\nAI Input :- multi-modal prompt composer with model selector, token counter, attachment pills, and submit state transitions\n\nDia Text :- kinetic typography element with smooth character morphing and gradient fill transitions",
+      "author": {
+        "screenName": "nexvyn",
+        "name": "Nexvyn"
+      }
+    }
+  },
+  {
+    "id": "2090306302966919515",
+    "text": "Claude CodeにMiniMax H3のプロンプトを丸投げしたら、この動画ができました😃\n\nClaude Codeに投げたプロンプト↓\n-------------------\nMiniMax H3を使ってモーショングラフィックスをバリバリ使った15秒のCMを作りたい。\nどんな内容が良いと思う？\n条件は以下\n・モーショングラフィックスを多用\n・人物も登場させる（実写・アニメーションは問わない）\n・アスペクト比は16:9\n-------------------\n\nすると、Claude Codeが3つCM案を提案。\nそのうちの1つを選んだら↓のプロンプトができました。\nMiniMax H3を利用したツールはMiniMax Design。\n#MiniMaxH3 on #MiniMaxDesign\n\nClaude Codeが作ったMiniMax H3向けのプロンプト↓\n----------------------\nintegrated_multimodal_description:\n2D-animated, a bold graphic-design motion-graphics commercial in 16:9 with exactly 13\ndistinct cuts at 24fps. This film is 85% kinetic graphic design and 15% character action:\ngiant kinetic Japanese typography, hard-edged flat shapes, split screens, halftone, speed\nlines, torn-paper reveals and shutter flashes. Palette, strictly four colors: fluorescent\norange, deep black, off-white, silver grey. The recurring character is a young anime street\ndancer with a black chin-length bob and blunt bangs, sharp confident eyes, an oversized\noff-white track jacket with fluorescent-orange sleeve stripes, black cargo shorts, and\nchunky white sneakers with fluorescent-orange lines. Preserve her exact face, proportions,\nhairstyle, outfit, materials and colors throughout; never redesign her. Every graphic\nelement moves fast and snaps hard on the beat.\n\n[Shot 1] On a deep black field, a massive off-white circle slams into frame left of center,\nthen two fluorescent-orange bars wipe across the upper and lower thirds, then the Japanese\nkanji \"烈\" builds itself stroke by stroke in off-white at the center until it is complete.\nThe camera shakes slightly with small amplitude at fast speed on each impact.\n\n[Shot 2] At 00:01.000, the camera cuts to an off-white field where four black squares\nrotate into the center one at a time. The largest square opens as a porthole revealing an\nextreme close-up of the dancer's ice-sharp eye glancing up, then a red-and-cyan split flash\ntears across the edges and the squares shatter into flat shards. The camera pushes in with\nsmall amplitude at fast speed.\n\n[Shot 3] At 00:02.000, the camera cuts to an off-white field filled by an enormous black\nkanji \"烈\". The dancer sprints in from frame left, power-slides along the baseline of the\ntypography, and fluorescent-orange ink splatter trails behind her as speed lines streak\npast. The camera trucks left with large amplitude at fast speed. The kanji stays fully\nreadable before she crosses in front of it.\n\n[Shot 4] At 00:03.100, the camera cuts to a vertical triptych of fluorescent-orange, deep\nblack and off-white panels. Her flat silhouette appears in each panel in stroboscopic\nfreeze, one after another — takeoff, mid-air tuck, landing — while giant vertical silver\ntext \"全速\" scrolls upward behind the panels. Static shot.\n\n[Shot 5] At 00:04.000, the camera cuts to a black field where a giant tilted ring of\nfluorescent-orange Japanese characters reading \"止マルナ\" rotates. The dancer leaps through\nthe center of the ring, spins once in mid-air, and the characters break off and scatter\noutward as flat shards. The camera arcs with large amplitude at fast speed, then snap-zooms\nonto her confident face.\n\n[Shot 6] At 00:05.100, the camera cuts to a clean off-white editorial card holding a huge\nblack kanji \"跳\" with one orange diagonal slash. She vaults over the word itself, plants her\npalm on its left radical, the character compresses like a spring under her hand, then\nrebounds as her legs whip across the frame. Static shot.\n\n[Shot 7] At 00:06.000, the camera cuts to a full fluorescent-orange field crossed by one\nthick black diagonal stripe. She back-flips along the stripe in three stroboscopic ghost\nframes tinted black, off-white and silver grey, while a large outlined kanji \"回\" rotates\n180 degrees in sync with her rotation. The camera rolls clockwise with small amplitude at\nfast speed.\n\n[Shot 8] At 00:07.000, the camera cuts to an off-white field with a hard black band. Four\nbold black kanji slam in one at a time at different scales and angles — \"速\", then \"鋭\",\nthen \"静\", then \"烈\" — each landing with a white shutter flash and an orange impact mark,\nwhile she slides on her knees across the foreground, jacket flaring. The camera shakes\nslightly with small amplitude at fast speed.\n\n[Shot 9] At 00:08.000, the camera cuts to a black frame where a white wireframe grid tilts\naway in 3D. She runs up the grid like a wall, kicks off it, and hangs frozen in mid-air as\na fluorescent-orange circle stamps around her pose like a target lock with silver UI\nbrackets and tick marks. The camera tilts up with small amplitude at slow speed.\n\n[Shot 10] At 00:09.000, the freeze releases and the camera cuts to layered flat-color panes\nstacked toward the lens. She dives straight at the camera, the panes tear open one at a\ntime like thick paper, and each tear reveals a larger portion of the black kanji \"烈\"\nbehind, before her sneaker wipes across the foreground. The camera pulls out with large\namplitude at fast speed.\n\n[Shot 11] At 00:10.100, the camera cuts to a rapid-fire montage of four full-screen graphic\nposters of her in different action poses — mid-flip, sliding, landing, hands in pockets —\nsnapping past with hard cuts, each with an oversized silver number 01 to 04, a black\nbarcode strip and thick diagonal slashes. Static shot.\n\n[Shot 12] At 00:11.100, the camera cuts to a clean off-white cyclorama for the hero moment.\nShe lands a final backflip dead center in slow motion, straightens with both hands in her\npockets, and a shockwave of concentric fluorescent-orange rings blasts outward from her feet\ncarrying shattered fragments of the kanji \"烈\" with it, then the frame overexposes toward\nwhite. The camera pushes in with small amplitude at slow speed.\n\n[Shot 13] At 00:13.000, the camera cuts to the final identity card on a pale off-white\nfield. An enormous black kanji \"烈\" dominates the frame with translucent orange rings and\nthin technical arcs behind it, the silver-grey word \"RETSU\" sits directly beneath the kanji,\nand she stands relaxed at the lower center overlapping the bottom of the strokes with her\njacket rippling. One thin orange pulse sweeps horizontally through the typography and holds\ncleanly until exactly 15.000 seconds. Static shot.\n\nEditing: extremely aggressive rhythm — hard cuts on every beat, graphic matches, whip pans,\nsnap zooms, stroboscopic freezes, foreground wipes, split flashes and impact shakes. Every\ncut must feel compositionally different. All Japanese typography is always fully readable\nbefore the character overlaps it. No weapons, no combat, no fire, no explosions; all energy\ncomes from motion design, ink, torn paper, wind and her street-dance athleticism. No\nphotorealism, no 3D rendering, no gradients, no browser interface, no player controls, no\nsubtitles, no captions, and no text other than the Japanese characters named above.\nExactly 13 cuts.\n\noverall_soundscape:\nSneaker impacts, knee slides and landings hit hard against a clean room tone. Ink splatters\nburst, thick paper tears open, and flat panels shatter like glass. Sharp whooshes carry the\ncolor wipes and typography slams, with small shutter clicks on each flash. No dialogue.\n\nnon_diegetic_music:\nAn original 15-second drum-heavy breakbeat with a deep sub bass, hard snare hits, risers and\nglitch fills locked to every cut. Begin with a single impact, build tightly through the\nmiddle, peak at the landing at 00:11.100, and end with a cold electronic logo sting that\nresolves at 15.000 seconds.",
+    "author": {
+      "id": "1890302374708985856",
+      "name": "タナベ | AI動画 × マーケティング",
+      "screenName": "tanabe_fragm",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2046030035241607168/148F4m4X_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 620,
+      "retweets": 52,
+      "replies": 10,
+      "quotes": 11,
+      "views": 66330,
+      "bookmarks": 787
+    },
+    "createdAt": "Thu Aug 20 05:13:53 +0000 2026",
+    "createdAtLocal": "2026-08-20 02:13",
+    "createdAtISO": "2026-08-20T05:13:53+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2090304831605137408/vid/avc1/2560x1440/PrTTqT_q5LHsB6IT.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "ja",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2053332792906551404",
+    "text": "Want better text animations?\n\nStart here.\n\n→ https://t.co/Q4N4cN42dT\n\nBeautiful text animations for After Effects.\n\nCreate:\n\n• kinetic typography\n• animated titles\n• smooth motion\n\nBonus:\n\n• can double as logo animations\n\nLooks premium. https://t.co/ntcwo5EtzT",
+    "author": {
+      "id": "1781740548099063808",
+      "name": "Kailash",
+      "screenName": "kail_designs",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1781741994093805568/gi6iTUbP_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 504,
+      "retweets": 56,
+      "replies": 2,
+      "quotes": 2,
+      "views": 70294,
+      "bookmarks": 779
+    },
+    "createdAt": "Sun May 10 04:34:21 +0000 2026",
+    "createdAtLocal": "2026-05-10 01:34",
+    "createdAtISO": "2026-05-10T04:34:21+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2053332714003316736/vid/avc1/1198x720/-Gmwvb3npb3ItrNg.mp4?tag=14",
+        "width": 3596,
+        "height": 2160
+      }
+    ],
+    "urls": [
+      "http://animography.net"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2052653424710488243",
+      "text": "You should be living under a rock if you don't know this treasure-trove of tools, resources and products.\n\n→ https://t.co/BVNrxtw8Hu\n\nA huge collection of tools for:\n\n• design\n• AI\n• startups\n• marketing\n• coding\n• social media\n\nAll in one place. https://t.co/X2glxlKJEU",
+      "author": {
+        "screenName": "kail_designs",
+        "name": "Kailash"
+      }
+    }
+  },
+  {
+    "id": "1639588355582095361",
+    "text": "How to generate these kinetic typography videos in no time?\n\nGo to the site under the thread &gt; paste your own text &gt; pick your colors and effects &gt; export as seamless \n mp4 loops👇 https://t.co/9mZEPTsst9",
+    "author": {
+      "id": "971366656189566976",
+      "name": "Hüseyin Gayıran",
+      "screenName": "huseyingayiran",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2109559645400387585/H76xy3mo_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 532,
+      "retweets": 36,
+      "replies": 8,
+      "quotes": 2,
+      "views": 118152,
+      "bookmarks": 644
+    },
+    "createdAt": "Sat Mar 25 11:21:40 +0000 2023",
+    "createdAtLocal": "2023-03-25 08:21",
+    "createdAtISO": "2023-03-25T11:21:40+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1639584024761978881/pu/vid/1744x1080/w6RdMj0YcEpZnWbw.mp4?tag=14",
+        "width": 1744,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2083301476206588086",
+    "text": "One of my first MiniMax H3 tests\n\nOmni Reference worked really well here. I only provided references for the woman, the man and the horse and then used the prompt below 👇\n\nPrompt: \nUse @ Image1 as the man reference. \nUse @ Image2 as the woman reference. \nUse @ Image3 as the horse reference.  \n\nCreate a surreal 15-second fashion-film sequence inside a minimalist monochrome blue studio.  The woman performs an elegant contemporary dance.  The man casually walks into frame wearing a completely serious expression.  Without explanation, he immediately joins the choreography.  His movements are awkward, strangely confident, almost ritualistic.  The woman never acknowledges him.  The horse behaves as though both dancers are part of its routine.  It wanders through the studio.  Runs behind them.  Appears from impossible places.  Stops.  Looks directly into the camera.  Leaves.  Returns again.  Sometimes all three performers accidentally synchronize for one beat before drifting apart again.  The choreography becomes increasingly absurd but remains perfectly cinematic.  Every movement is intentional.  Every frame feels designed.  Throughout the sequence, premium kinetic typography appears as part of the composition, not subtitles, but editorial motion graphics inspired by high-end After Effects title design.  Animated words flash for only a few frames:  THE GARDENER.  THE DRIVER.  THE HORSE.  THE WOMAN.  KNIFE.  MOVE.  FASTER.  AGAIN.  THE EXIT. These words slam into frame, wrap around the dancers, disappear behind bodies, stretch with motion blur, rotate in 3D, fragment into pieces, reveal through masks, pulse with the bass, smear across cuts, become oversized, tiny, vertical, upside down, and constantly transform using premium motion-design techniques.  Add abstract editorial graphics: animated arrows, circles, blueprint lines, tape labels, interface markers, halftone textures, scribbles, grain, tracking graphics, geometric overlays, chromatic aberration, liquid masks, flash frames, split screens, typography trails, speed ramps and graphic wipes.  Music evolves into strange electronic art-pop.  Analog synths.  Mechanical breathing.  Heavy bass.  Everything is synchronized to the rhythm.  Final close-up.  The woman whispers:  \"Again.\"  The man quietly smiles for the first time.  The horse suddenly sprints directly toward the camera.  The word  AGAIN.  fills the screen before an instant cut to black.",
+    "author": {
+      "id": "1790083138959400961",
+      "name": "Ege",
+      "screenName": "egeberkina",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1948123483214401536/u8qBu-WZ_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 235,
+      "retweets": 26,
+      "replies": 15,
+      "quotes": 3,
+      "views": 23014,
+      "bookmarks": 206
+    },
+    "createdAt": "Fri Jul 31 21:19:12 +0000 2026",
+    "createdAtLocal": "2026-07-31 18:19",
+    "createdAtISO": "2026-07-31T21:19:12+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2083300689606852608/vid/avc1/2560x1440/fI84aXKhdEk3Fhp-.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2082796418155036914",
+      "text": "Got early access to MiniMax H3, so I had to try something with it.\n\nI generated 5 still frames for a fictional series intro, used them as Omni References and turned them into a short title sequence.\n\nJust sharing my first test and there's still a lot more to explore, but it's been fun playing around with it so far.\n\nI'll keep experimenting and share more as I go.\n\n#MiniMaxH3",
+      "author": {
+        "screenName": "egeberkina",
+        "name": "Ege"
+      }
+    }
+  },
+  {
+    "id": "2110656933044609476",
+    "text": "AIでアニメーションを作る時に使える指示文↓\n・Kinetic Typography：文字を動かして魅せる映像表現。おしゃれなMVやリリック動画に\n・UI UX animation：ボタンを押す・開くなど、操作に反応する気持ちいい動き\n・Infographic animation：数字やデータを図にして動かす表現\n・Claude Code：AIがコードを書いて動かしてくれる開発ツール（Anthropic）\n・Opus 5.5：Claudeの高性能モデル\n・Seedance 2.5：人や動物のリアルな動画を作れる動画生成AI（ByteDance）",
+    "author": {
+      "id": "3146636821",
+      "name": "usutaku",
+      "screenName": "usutaku_channel",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1917122204917239812/8b380viX_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 204,
+      "retweets": 8,
+      "replies": 5,
+      "quotes": 3,
+      "views": 16740,
+      "bookmarks": 215
+    },
+    "createdAt": "Thu Oct 15 09:00:01 +0000 2026",
+    "createdAtLocal": "2026-10-15 06:00",
+    "createdAtISO": "2026-10-15T09:00:01+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2110390655692517376/vid/avc1/1080x1920/hzrHN0eZtGkajbJa.mp4?tag=29",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "ja",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2103782315142815769",
+    "text": "Prompt: \n\n“Create a 30-second motion graphics showreel introducing @monad to the world: kinetic typography, fluid transitions and bold, fast-paced animation. Go all out. Use the attached brand kit.” https://t.co/Jjpy6URa3J",
+    "author": {
+      "id": "1257037850",
+      "name": "Matteo",
+      "screenName": "matteodotsui",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2109234575729713152/1w-FUb6r_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 105,
+      "retweets": 4,
+      "replies": 19,
+      "quotes": 0,
+      "views": 5446,
+      "bookmarks": 26
+    },
+    "createdAt": "Sat Sep 26 09:42:44 +0000 2026",
+    "createdAtLocal": "2026-09-26 06:42",
+    "createdAtISO": "2026-09-26T09:42:44+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2103782231156142080/vid/avc1/1920x1080/q3434FBZfk4vlHlg.mp4?tag=29",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2111412003554120007",
+    "text": "Minimax H3 is still the GOAT for character animation + kinetic typography. 👑🔥\nThe way it brings characters and text to life in the same shot is seriously impressive.\n\nFor motion design, this model is an absolute BEAST.\nAnd the creative possibilities are just ridiculous. 🤯\nI'll share the exact reference images I used in the next Tweet. 👇",
+    "author": {
+      "id": "442815466",
+      "name": "Pierrick Chevallier | IA",
+      "screenName": "CharaspowerAI",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1666802564002893824/5fF909Jc_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 385,
+      "retweets": 29,
+      "replies": 24,
+      "quotes": 6,
+      "views": 16676,
+      "bookmarks": 336
+    },
+    "createdAt": "Sat Oct 17 11:00:24 +0000 2026",
+    "createdAtLocal": "2026-10-17 08:00",
+    "createdAtISO": "2026-10-17T11:00:24+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/2111411978228957184/pu/vid/avc1/1280x720/1_Mr2FnJ9KdaPAV5.mp4?tag=12",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2030644973738319923",
+    "text": "[OC] Hozier - Too Sweet | Kinetic Typography Animation https://t.co/ARwPmxNHcg",
+    "author": {
+      "id": "1511682529191161858",
+      "name": "DOT",
+      "screenName": "DOT_0327",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1950927190557614080/VS6iabtf_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 2880,
+      "retweets": 327,
+      "replies": 3,
+      "quotes": 6,
+      "views": 48121,
+      "bookmarks": 784
+    },
+    "createdAt": "Sun Mar 08 14:01:03 +0000 2026",
+    "createdAtLocal": "2026-03-08 11:01",
+    "createdAtISO": "2026-03-08T14:01:03+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/2030644896764510208/pu/vid/avc1/720x1280/op9mP-20Kl-IVCcY.mp4?tag=12",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2055166020831301636",
+    "text": "Supercomputer is so good at motion design.\n\n&gt; Surfaces top motion graphics and brand reels across the web\n&gt; Studies kinetic typography and pacing systems\n&gt; Generates production-ready reveals, demos, and infographics.\n\nFully autonomous. The quality and consistency are next-level. https://t.co/0zEGB4kiYV",
+    "author": {
+      "id": "1895453094361890816",
+      "name": "Higgsfield AI 🧩",
+      "screenName": "higgsfield",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2029949430317637632/6qPl4MTS_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 2125,
+      "retweets": 142,
+      "replies": 116,
+      "quotes": 59,
+      "views": 1090420,
+      "bookmarks": 2483
+    },
+    "createdAt": "Fri May 15 05:58:57 +0000 2026",
+    "createdAtLocal": "2026-05-15 02:58",
+    "createdAtISO": "2026-05-15T05:58:57+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2055165794036940800/vid/avc1/1920x1080/sqHe_74yjhwLtNq-.mp4?tag=27",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1921513425579995351",
+    "text": "Kinetic typography animation use Scale Wipe in Adobe After Effects https://t.co/iHlU2S80CX",
+    "author": {
+      "id": "892347449330647040",
+      "name": "After Effects Tricks!",
+      "screenName": "jesiccaesthetic",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1993616221393350656/qp21-Xd__normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 360,
+      "retweets": 39,
+      "replies": 4,
+      "quotes": 0,
+      "views": 26624,
+      "bookmarks": 261
+    },
+    "createdAt": "Sun May 11 10:31:15 +0000 2025",
+    "createdAtLocal": "2025-05-11 07:31",
+    "createdAtISO": "2025-05-11T10:31:15+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1921513362623803392/pu/vid/avc1/576x1024/9L_AiSGGCasJ02Qg.mp4?tag=12",
+        "width": 576,
+        "height": 1024
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2104209124191793324",
+    "text": "Great editing isn’t just decoration — it controls attention and pacing.\n\nI used Pexo to turn this editing concept into a fast visual breakdown, combining kinetic typography, motion, contrast, and rapid visual changes to reinforce the message as it unfolds.\n\nThe interesting part is how movement adds information density — giving the viewer visual and verbal signals at the same time instead of relying on static text alone.\n\nA useful example of turning an editing insight into compact, highly visual educational content with @Pexoai_offical.\n\n#MadeWithPexo",
+    "author": {
+      "id": "1643431663513247744",
+      "name": "Antonio Costa | IA",
+      "screenName": "xetgepete",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1908951932015624192/I_L1PF-G_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 105,
+      "retweets": 22,
+      "replies": 19,
+      "quotes": 0,
+      "views": 32117,
+      "bookmarks": 3
+    },
+    "createdAt": "Sun Sep 27 13:58:44 +0000 2026",
+    "createdAtLocal": "2026-09-27 10:58",
+    "createdAtISO": "2026-09-27T13:58:44+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2104209101316120576/vid/avc1/848x480/7P_U5ZUnFWT9f-2-.mp4?tag=29",
+        "width": 848,
+        "height": 480
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1443180591160172545",
+    "text": "Trying a page transition based on a kinetic typography animation 👇\n\nhttps://t.co/FGrIhNND4w\n\n(colors are a bit off in the video, sorry about that!)\n\n#javascript #animation #webdesign #gsap #typography https://t.co/fUq69NDi57",
+    "author": {
+      "id": "18642262",
+      "name": "Manoela Ilic",
+      "screenName": "crnacura",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1895024977512144896/hZpsMHqA_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 193,
+      "retweets": 16,
+      "replies": 3,
+      "quotes": 1,
+      "views": 0,
+      "bookmarks": 27
+    },
+    "createdAt": "Wed Sep 29 11:47:20 +0000 2021",
+    "createdAtLocal": "2021-09-29 08:47",
+    "createdAtISO": "2021-09-29T11:47:20+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1443180437157855232/pu/vid/1024x640/86oh9QAwjQ017ckI.mp4?tag=12",
+        "width": 1024,
+        "height": 640
+      }
+    ],
+    "urls": [
+      "https://tympanus.net/codrops/2021/09/29/kinetic-typography-page-transition/"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2094371536623092160",
+    "text": "MINIMAX H3 — CHARACTER REVEAL\n\nCreate an explosive motion-graphics character reveal using MiniMax H3 on @Hailuo_AI.\n\nCHARACTER LOCK: Exact reference character: blue skin, messy black hair, orange beanie, cream hoodie with pink hood/polka dots, orange chest mark, black sling bag, CAF cup, teal/cream checker pants with BIG tag, blue socks, orange-black-white sneakers with pink laces. Preserve exact face, proportions, outfit, colors, materials and branding. No redesign.\n\nSTYLE: 80% kinetic graphics / 20% character action. Premium AAA title sequence × futuristic streetwear × NYC energy. Cream, teal, pink, orange, blue, black, white. Fast typography, portals, grids, stickers, checker patterns, halftone, UI marks and speed trails.\n\nCUT 01 | 0–1s — Black field. Orange dot expands into spinning teal/pink portal; character silhouette flashes.\n\nCUT 02 | 1–2s — Extreme eye close-up. Blink and sideways glance; scanning lines form around the face, then RGB flash.\n\nCUT 03 | 2–3.1s — Cream field, giant NO RUSH. Character walks through holding CAF cup; letters stretch with each step.\n\nCUT 04 | 3.1–4s — Six-panel character contact sheet rapidly rearranges into one portrait with pink arrows and graphic borders.\n\nCUT 05 | 4–5.1s — Teal city grid. Character walks along glowing route while orange circles appear beneath sneakers. Giant NEXT rotates behind.\n\nCUT 06 | 5.1–6s — Sneaker hits orange circle; checkerboard ripple expands and becomes STEP. Fast camera push.\n\nCUT 07 | 6–7s — Pink field. Character performs smooth 180° turn with three motion echoes. TURN rotates around them.\n\nCUT 08 | 7–8s — URBAN / SIMPLE / FRESH / BIG slam in rapidly as character crosses foreground, hoodie and bag moving naturally.\n\nCUT 09 | 8–9s — White field with moving black spotlight. Character raises CAF cup; steam becomes city lines. Orange UI lock-on.\n\nCUT 10 | 9–10.1s — Floating stickers surround character; each disappears on contact. Giant teal arrow becomes a full-screen wipe.\n\nCUT 11 | 10.1–11.1s — Rapid close-ups: eye, beanie, cup, sneakers, full character. Graphic frames and 01–04 flash between shots.\n\nCUT 12 | 11.1–13s — HERO: cream studio. Character walks center, stops with subtle smile. Portal explodes behind with teal rings, pink ribbons, orange shapes and checker tiles. Freeze → white flash.\n\nCUT 13 | 13–15s — Cream identity card. Huge black BIG, character relaxed beside it. Teal orbit, pink/orange marks and final checker flash. Logo pulses once → black.\n\nEDITING: Hard beat cuts, snap zooms, whip pans, speed ramps, freezes, RGB splits, wipes and impact shakes. Every cut visually distinct. Perfect character consistency.\n\nSOUND: Heavy electronic beat, sub-bass, glitches, whooshes, sneaker hits, cup clinks and UI sounds synced to cuts. Peak at CUT 12, cold logo stinger.\n\nQUALITY: Premium AAA cinematic × anime streetwear campaign, crisp character, natural motion, polished graphics. No weapons/combat/fire. Exactly 13 cuts, exactly 15 seconds.",
+    "author": {
+      "id": "1861118856460148736",
+      "name": "ÀBDŪLLÂH",
+      "screenName": "itxabdullaa",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2015459417131757569/40cydCN9_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 121,
+      "retweets": 4,
+      "replies": 76,
+      "quotes": 3,
+      "views": 5434,
+      "bookmarks": 51
+    },
+    "createdAt": "Mon Aug 31 10:27:40 +0000 2026",
+    "createdAtLocal": "2026-08-31 07:27",
+    "createdAtISO": "2026-08-31T10:27:40+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2094371357563695104/vid/avc1/2560x1440/AukpC-VezK0JeLof.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1471027370693902337",
+    "text": "Kinetic typography on material objects, existing within our world's rules of physics. \n\n#digital #graphicdesign #design #mediawork #paper https://t.co/NbUEuxCqCU",
+    "author": {
+      "id": "1085098644787916800",
+      "name": "Media.Work",
+      "screenName": "mediadotwork",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1455463267007139844/E83wnEFt_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 1212,
+      "retweets": 126,
+      "replies": 3,
+      "quotes": 11,
+      "views": 0,
+      "bookmarks": 95
+    },
+    "createdAt": "Wed Dec 15 08:00:30 +0000 2021",
+    "createdAtLocal": "2021-12-15 05:00",
+    "createdAtISO": "2021-12-15T08:00:30+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1471027276422725637/pu/vid/720x900/yMiwVDzP_LKV6nXC.mp4?tag=12",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1664411353384374273",
+    "text": "Yes, how dare communists ruin *checks notes*… Star Trek, the franchise that has quoted Karl Marx several times! /s https://t.co/XF2yZL2FgW",
+    "author": {
+      "id": "14447626",
+      "name": "Jessie Earl",
+      "screenName": "jessiegender",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1697672902056030208/0Ez2BVIi_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 3241,
+      "retweets": 264,
+      "replies": 94,
+      "quotes": 15,
+      "views": 203956,
+      "bookmarks": 34
+    },
+    "createdAt": "Thu Jun 01 23:19:24 +0000 2023",
+    "createdAtLocal": "2023-06-01 20:19",
+    "createdAtISO": "2023-06-01T23:19:24+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/FxktSPYaMAATREO.jpg",
+        "width": 1242,
+        "height": 1463
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1664448193361510400",
+    "text": "@jessiegender I loved this scene in Star Trek Lower Decks so much I made it into a kinetic typography GIF. Shax is the best, and happiest when he's finally allowed to eject the warp core https://t.co/0KYIZxLRwo",
+    "author": {
+      "id": "732385902354305025",
+      "name": "Grae Hall",
+      "screenName": "HallGrae",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1838696138456862720/iMiB-Voj_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 97,
+      "retweets": 15,
+      "replies": 1,
+      "quotes": 0,
+      "views": 4501,
+      "bookmarks": 8
+    },
+    "createdAt": "Fri Jun 02 01:45:47 +0000 2023",
+    "createdAtLocal": "2023-06-01 22:45",
+    "createdAtISO": "2023-06-02T01:45:47+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1664447977270960129/pu/vid/1280x720/uLk1WoOSKt_3hQc2.mp4?tag=12",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1389405449590431748",
+    "text": "kinetic typography animation study i did for a class project which i have now abandoned\n\nnow it's an ube corp ad :) https://t.co/SPbPGeC4be",
+    "author": {
+      "id": "1300461084403544065",
+      "name": "izzy (🦋 bsky @ donkey.gay)",
+      "screenName": "Cougar_Boss",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2114943702997065728/DqWXpH1a_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 190,
+      "retweets": 20,
+      "replies": 15,
+      "quotes": 0,
+      "views": 0,
+      "bookmarks": 5
+    },
+    "createdAt": "Tue May 04 02:24:07 +0000 2021",
+    "createdAtLocal": "2021-05-03 23:24",
+    "createdAtISO": "2021-05-04T02:24:07+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1389404878569500673/pu/vid/1280x720/2K8n17AEFZlIHbDm.mp4?tag=12",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1957553743236592099",
+    "text": "Midjourney Video V1 + Style Reference V7\n\nA bold experimental graphic style mixing surreal 3D figures, close-up portraiture, and kinetic typography in neon blue-orange gradients.\n--sref 3673730613 https://t.co/DsiPGi9Rlg",
+    "author": {
+      "id": "1451283336526278678",
+      "name": "Morph",
+      "screenName": "Morph_VGart",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2069838823316500480/M14qvmOI_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 249,
+      "retweets": 12,
+      "replies": 19,
+      "quotes": 1,
+      "views": 8652,
+      "bookmarks": 204
+    },
+    "createdAt": "Mon Aug 18 21:22:36 +0000 2025",
+    "createdAtLocal": "2025-08-18 18:22",
+    "createdAtISO": "2025-08-18T21:22:36+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/1957553604409081857/vid/avc1/2160x2518/h3f_eYcEo4b9hn2R.mp4?tag=21",
+        "width": 2666,
+        "height": 3110
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2046961156611547166",
+    "text": "Seedance 2.0 on @SocialSight \n\nPrompt:  SUBJECT: <<<54f8211a-f505-4c54-9e40-2767563fffda>>> . WARDROBE: Oversized black t-shirt, comfy grey sweatpants, stylish, well-designed white kitchen apron with modern aesthetic cut and subtle fabric texture. The apron features elegant, high-end typography with the text \"by Oogie\" clearly printed on the chest (IMPORTANT: exact spelling \"Oogie\", do not alter text). Typography should look premium, balanced kerning, clean logo-style design, visually striking and readable in motion.\n\nENVIRONMENT: Modern, well-lit kitchen with marble countertops. Ingredients in small glass bowls (mise en place). Bright daylight from window. Hygienic, dynamic, ready for action. MOOD: Hyper-kinetic energy, laser-focused precision, joyful frenzy, chef-level agility. MUSIC: High-BPM percussive drum track, fast and snappy. COLOR LOGIC: Bright Kitchen Pop vs Rich Chocolate (black and white contrast with deep cocoa brown). STYLE: Ultra-realistic, high-speed kinetic editing (Edgar Wright style).\n\nLOGIC RULE: Maintain recipe consistency. Bowl evolves from eggs/sugar to thick dark batter. The same square baking pan must be used from pouring to final result (no shape change). \"by Logolumos\" text remains visible, readable, and typographically consistent in all shots. SHOT 1: MCU, 35mm handheld / Girl stands at counter, eyes locked. Quickly grabs two eggs, cracks them one-handed into bowl in under a second. / SFX: eggshell crack, yolk plop.\n\nSHOT 2: Insert, 50mm macro / Smash cut to sugar pouring aggressively into eggs, forming white mountain. / SFX: granular shhhh, glass clink. SHOT 3: MS, 24mm tilt / Girl grabs electric mixer, turns on instantly. Whisks eggs and sugar rapidly until pale and fluffy. Apron visible with clean typographic \"by Logolumos\". / SFX: mixer whir, splashing. SHOT 4: ECU, 85mm push / Whip pan to milk and oil poured simultaneously from two jugs. / SFX: splash, glug.\n\nSHOT 5: Low-angle MS, 35mm / Metal sieve shakes over bowl. Flour and baking powder fall like snow. / SFX: metallic rattle, powder thud. SHOT 6: Insert, 85mm rack focus / Cocoa powder drops into flour mound like meteorite. / SFX: powder poof. SHOT 7: Overhead WS, 24mm / Mixer returns. Powders blend into smooth glossy chocolate batter quickly. / SFX: mixing, motor hum. SHOT 8: Insert, 50mm pan / Square baking pan buttered in three fast strokes. / SFX: brush sweep.\n\nSHOT 9: MCU, 35mm tracking / Girl pours thick chocolate batter into the same square baking pan. Scrapes bowl clean with spatula. / SFX: liquid gloop, silicone squeak. SHOT 10: MS, 50mm / Oven door opens, square pan slides in, door shuts quickly. / SFX: hinge squeak, rack clatter. SHOT 11: MCU, 85mm profile / Girl leans, crosses arms, taps finger three times, stares at oven. / SFX: finger taps, ticking.\n\nSHOT 12: ECU oven timelapse / Batter in the square pan bubbles, rises, bakes under heating element. / SFX: sizzling, rumble. SHOT 13: MS, 35mm / Oven opens. Steam billows. Girl with mitts removes the same square cake pan. / SFX: steam, metal scrape. SHOT 14: Insert, 50mm / Square cake flipped onto cooling rack, shape preserved. / SFX: cake thud, rack rattle. SHOT 15: MCU, 50mm / Girl holds rack near face. Elegant typographic \"by Logolumos\" clearly framed and readable.\n\nShe nods and smiles triumphantly. / SFX: celebratory chime, music end.",
+    "author": {
+      "id": "1880958681887485952",
+      "name": "Oogie",
+      "screenName": "oggii_0",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2008212741434269696/N7S0tqfn_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 114,
+      "retweets": 5,
+      "replies": 30,
+      "quotes": 1,
+      "views": 6499,
+      "bookmarks": 67
+    },
+    "createdAt": "Wed Apr 22 14:35:45 +0000 2026",
+    "createdAtLocal": "2026-04-22 11:35",
+    "createdAtISO": "2026-04-22T14:35:45+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/2046961126999797760/pu/vid/avc1/1280x720/S09Fgv5T2nnZpPED.mp4?tag=19",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1487419048367620100",
+    "text": "kinetic typography\nWOW - LOONA (이달의 소녀) https://t.co/ZM8aqxIuAY",
+    "author": {
+      "id": "1429754887974264837",
+      "name": "dills 🍒",
+      "screenName": "hyeaongie",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1759915634014781440/78sSWpLv_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 1102,
+      "retweets": 335,
+      "replies": 24,
+      "quotes": 40,
+      "views": 0,
+      "bookmarks": 106
+    },
+    "createdAt": "Sat Jan 29 13:35:10 +0000 2022",
+    "createdAtLocal": "2022-01-29 10:35",
+    "createdAtISO": "2022-01-29T13:35:10+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1487418080062210050/pu/vid/1280x720/xCxBVYCKrQHFt8Ku.mp4?tag=12",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "ko",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2090399014290075672",
+    "text": "Continuing my deep dive into #MiniMaxH3 on Runway, this time focusing on high-energy kinetic typography and fluid glitch transitions! 🚀🎬\n\nThe speed and precision of these motion graphics edits are a game changer for creating professional agency-level visual packaging.\n\nUnlimited #MiniMaxH3 on Runway\n\n@Hailuo_AI",
+    "author": {
+      "id": "1944746610849894400",
+      "name": "Noura",
+      "screenName": "noorwithwifi",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2105415334174035969/s4vIZUVA_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 76,
+      "retweets": 0,
+      "replies": 42,
+      "quotes": 0,
+      "views": 61100,
+      "bookmarks": 4
+    },
+    "createdAt": "Thu Aug 20 11:22:17 +0000 2026",
+    "createdAtLocal": "2026-08-20 08:22",
+    "createdAtISO": "2026-08-20T11:22:17+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2090398762586005504/vid/avc1/2560x1440/SgMBrAX-De8D40yV.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1619766879954018304",
+    "text": "From the #demo archives: Kinetic Typography Page Transition https://t.co/df55rIHpR7 #webdev #webdesign #animation #motion #javascript #gsap #typography #codropsarchives https://t.co/IZ1bUzmTS0",
+    "author": {
+      "id": "70096167",
+      "name": "Codrops",
+      "screenName": "codrops",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1784963500122550272/3kwa1gN5_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 169,
+      "retweets": 13,
+      "replies": 0,
+      "quotes": 0,
+      "views": 40827,
+      "bookmarks": 47
+    },
+    "createdAt": "Sun Jan 29 18:38:12 +0000 2023",
+    "createdAtLocal": "2023-01-29 15:38",
+    "createdAtISO": "2023-01-29T18:38:12+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1619766673187160065/pu/vid/1024x640/Zx_ZoBcvvuzxApnZ.mp4?tag=12",
+        "width": 1024,
+        "height": 640
+      }
+    ],
+    "urls": [
+      "https://tympanus.net/Development/KineticTypePageTransition/"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1396925254778253314",
+    "text": "CARPE DIEM\nKinetic Typography\n\n#창빈 #서창빈 #Changbin #한 #한지성 #Han \n#스트레이키즈 #StrayKids https://t.co/277XQj04Uf",
+    "author": {
+      "id": "1356496731068796928",
+      "name": "𝙢𝙚𝙣𝙜",
+      "screenName": "hanndorable",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1509733120295448585/A_nVBCe7_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 105,
+      "retweets": 59,
+      "replies": 1,
+      "quotes": 7,
+      "views": 0,
+      "bookmarks": 20
+    },
+    "createdAt": "Mon May 24 20:25:09 +0000 2021",
+    "createdAtLocal": "2021-05-24 17:25",
+    "createdAtISO": "2021-05-24T20:25:09+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1396924782516457473/pu/vid/1280x720/HS3ey8aylipgSgE_.mp4?tag=12",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1293187403553808386",
+    "text": "Kinetic typography using Cartoon Moblur.@aescripts\nYou can easily control the stroke from the trajectory of the movement of the object.\n\nhttps://t.co/CE65el7J1V\n\n https://t.co/qI673tpeBK",
+    "author": {
+      "id": "934575168520822784",
+      "name": "大橋史｜おおはしし😀",
+      "screenName": "6HPMPLP6",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1312207251952738304/Idf2y2TS_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 86,
+      "retweets": 17,
+      "replies": 1,
+      "quotes": 1,
+      "views": 0,
+      "bookmarks": 10
+    },
+    "createdAt": "Tue Aug 11 14:07:57 +0000 2020",
+    "createdAtLocal": "2020-08-11 11:07",
+    "createdAtISO": "2020-08-11T14:07:57+00:00",
+    "media": [],
+    "urls": [
+      "https://aescripts.com/cartoon-moblur/",
+      "https://x.com/kenditter/status/1088003156590526464/video/1"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2102993063237038188",
+    "text": "The luxury is here\nMade with GPT IMAGE 2.5 and Seedance 2.5 on @PixVerse \nPrompt:\nUsing the supplied reference image as the exact product reference, create an ultra-premium cinematic fashion advertising film for the same fictional burgundy luxury sandal.\n\nPRODUCT CONSISTENCY:\nThe sandal must remain EXACTLY the same throughout the entire sequence. Preserve its deep burgundy/oxblood color, oversized sculptural silhouette, architectural platform sole, asymmetric straps, dark-chrome hardware, stitching, embossed geometric emblem, proportions, materials and construction. Never redesign, morph, duplicate or replace the product.\n\nCONCEPT:\nA futuristic luxury footwear campaign introducing the sandal as an iconic fashion object.\n\nThe film should feel like a global premium fashion advertisement — sophisticated, cinematic, minimal, bold and expensive.\n\nVISUAL STYLE:\nUltra-photorealistic luxury commercial.\nDark futuristic fashion runway.\nGlossy black reflective floor.\nDeep charcoal architectural environment.\nSubtle atmospheric haze.\nBurgundy light accents.\nControlled studio lighting.\nHigh-contrast cinematic exposure.\nPremium editorial color grading.\nRealistic leather and metal reflections.\nExtremely clean visual composition.\n\nCAMERA & MOTION:\nUse constantly evolving premium commercial cinematography:\n\n* Extreme wide establishing shot\n* Low-angle hero shot\n* Slow cinematic dolly-in\n* Smooth lateral tracking shot\n* Macro product detail shot\n* Controlled 90-degree orbit\n* Low-to-high reveal\n* Fast but elegant push-in\n* Slow-motion three-quarter rotation\n* Extreme close-up of leather texture\n* Close-up of dark-chrome hardware\n* Final symmetrical hero composition\n\nAll camera movement must be perfectly stabilized, intentional and physically realistic.\n\nEDITING:\nCreate sophisticated modern commercial editing with precise cuts synchronized to the music.\n\nUse:\n\n* Speed ramps\n* Elegant match cuts\n* Subtle whip transitions\n* Motion-blur transitions\n* Micro zoom transitions\n* Seamless angle changes\n* Short rhythmic cuts\n* Slow-motion moments for product details\n* Clean cinematic fades\n* Brief black-frame impact transitions\n\nNever use cheap, excessive or distracting effects.\n\nKINETIC TYPOGRAPHY / SUBTITLES:\nIntegrate premium animated typography directly into the commercial.\n\nUse minimal elegant typography with modern editorial fashion-advertising aesthetics.\n\nExample on-screen text sequence:\n\n“BUILT TO BE SEEN”\n\nthen:\n\n“SCULPTED IN BURGUNDY”\n\nthen:\n\n“FORM. POWER. PRECISION.”\n\nthen:\n\n“THE NEW ICON”\n\nTypography should animate with subtle tracking expansion, smooth upward movement, masked reveals, kinetic positioning and precise timing with the soundtrack.\n\nText should appear naturally within negative space and NEVER cover important parts of the sandal.\n\nUse clean premium white/off-white typography with extremely subtle burgundy accents.\n\nDo not use recognizable real-world brand typography or logos.\n\nVOICEOVER:\nAdd a deep, sophisticated cinematic voiceover with a calm confident delivery.\n\nVoiceover:\n\n“Some designs are made to be worn.\n\nOthers are made to be remembered.\n\nSculpted with precision.\nDefined by presence.\n\nThis is more than a sandal.\n\nThis is the new icon.”\n\nThe voice should sound like a premium international fashion campaign: restrained, confident, cinematic and sophisticated.\n\nAUDIO DESIGN:\nCreate a complete luxury commercial soundscape.\n\nBegin with a deep atmospheric cinematic tone.\n\nGradually introduce:\n\n* Deep sub-bass\n* Elegant electronic pulse\n* Minimal fashion-show percussion\n* Subtle metallic impacts\n* Soft whooshes during camera movements\n* Cinematic risers before major reveals\n* Sharp impact sound during typography transitions\n* Subtle leather/material foley\n* Spacious reverb\n\nMusic should build toward the final hero shot without overpowering the voiceover.\n\nEDITING RHYTHM:\nStart slow and mysterious.\nBuild tension during the product reveal.\nIncrease cutting speed during the detail sequence.\nBriefly slow down for the final reveal.\nFinish with a powerful clean hero frame.\n\nFINAL HERO:\nEnd on an immaculate low three-quarter hero shot of the exact same burgundy sandal centered on the runway.\n\nThe sandal is illuminated by a controlled overhead spotlight while its reflection appears on the glossy floor.\n\nCamera performs a very subtle final push-in.\n\nDisplay:\n\n“THE NEW ICON”\n\nThen a clean fade to black.\n\nOVERALL FEEL:\nUltra-premium.\nFuturistic.\nFashion-forward.\nMinimal.\nCinematic.\nSophisticated.\nCommercially believable.\nLike a multimillion-dollar luxury footwear campaign.\n\nSTRICTLY AVOID:\nProduct morphing, changing sandal design, changing colors, additional footwear, humans, feet, distorted anatomy, duplicated products, floating objects, random props, excessive VFX, cartoon effects, cheap transitions, illegible typography, flickering text, warped geometry, unrealistic leather, or inconsistent hardware.\n #PixVerseRunway #IMG25onPixVerse",
+    "author": {
+      "id": "1092338849823494145",
+      "name": "Al-Shamus",
+      "screenName": "im_shahid7",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2057876541082894337/0rk-b_K2_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 91,
+      "retweets": 3,
+      "replies": 25,
+      "quotes": 0,
+      "views": 11362,
+      "bookmarks": 7
+    },
+    "createdAt": "Thu Sep 24 05:26:32 +0000 2026",
+    "createdAtLocal": "2026-09-24 02:26",
+    "createdAtISO": "2026-09-24T05:26:32+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2102992363417448448/vid/avc1/2688x1512/-BQD97CncIUD8GiR.mp4?tag=29",
+        "width": 2688,
+        "height": 1512
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1792231414030651897",
+    "text": "Kinetic Typography Animation\nhttps://t.co/f7nxpEP0XY",
+    "author": {
+      "id": "1008359941252321282",
+      "name": "Adobe After Effects - Tips, Tricks, & Tutorials",
+      "screenName": "AfterTricks",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1690750158332366848/P3GE3TA2_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 300,
+      "retweets": 40,
+      "replies": 0,
+      "quotes": 1,
+      "views": 16868,
+      "bookmarks": 202
+    },
+    "createdAt": "Sun May 19 16:30:41 +0000 2024",
+    "createdAtLocal": "2024-05-19 13:30",
+    "createdAtISO": "2024-05-19T16:30:41+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/jesiccaesthetic/status/1702648747132649833/video/1"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2101989866762354988",
+    "text": "Minimax H3 is insanely good at making typography feel like an actual EVENT. 🌀🔥\nThis time I wanted RIFT to look like space itself was tearing open just to create the word.\n\nDimensional distortion, violent compression, black metal, trapped energy…\nThen everything breaks again.\nFull prompt below 👇\nHigh-end sci-fi title sequence beginning with a razor-thin line of white energy slicing vertically through complete darkness. Space immediately begins deforming around it as metallic particles, dust and glowing fragments are violently pulled toward the opening. The line tears wider into a gigantic dimensional fracture filled with unstable plasma and gravitational distortion. The camera accelerates directly toward the rift, violently banking between fragments being stretched into luminous trails. Suddenly the dimensional tear snaps shut with enormous force, compressing all surrounding matter into four gigantic black-metal letterforms that slam together to reveal \"RIFT\". Brilliant energy remains trapped inside deep cracks across the typography while space visibly bends around its edges. The camera performs a fast orbital move before the title itself splits open along its center, releasing a catastrophic dimensional shockwave that tears through the frame. Sophisticated cosmic distortion, aggressive kinetic typography, premium superhero-film VFX.",
+    "author": {
+      "id": "442815466",
+      "name": "Pierrick Chevallier | IA",
+      "screenName": "CharaspowerAI",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1666802564002893824/5fF909Jc_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 164,
+      "retweets": 12,
+      "replies": 10,
+      "quotes": 0,
+      "views": 8776,
+      "bookmarks": 142
+    },
+    "createdAt": "Mon Sep 21 11:00:11 +0000 2026",
+    "createdAtLocal": "2026-09-21 08:00",
+    "createdAtISO": "2026-09-21T11:00:11+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/2101989846654832640/pu/vid/avc1/1280x720/u3JYNaVEyxN4T7ay.mp4?tag=12",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1443179719734800391",
+    "text": "Kinetic Typography Page Transition\n\nA concept for a kinetic typography based page transition where background letters come into the foreground and reveal a new content level.\n\nhttps://t.co/6PibNYGQzo\n\n#typography #animation #frontend #webdesign #uidesign #gsap #javascript https://t.co/7z4PTElteN",
+    "author": {
+      "id": "70096167",
+      "name": "Codrops",
+      "screenName": "codrops",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1784963500122550272/3kwa1gN5_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 114,
+      "retweets": 12,
+      "replies": 3,
+      "quotes": 1,
+      "views": 0,
+      "bookmarks": 16
+    },
+    "createdAt": "Wed Sep 29 11:43:52 +0000 2021",
+    "createdAtLocal": "2021-09-29 08:43",
+    "createdAtISO": "2021-09-29T11:43:52+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1443179698587152390/pu/vid/1024x640/janut5_jyersSkXy.mp4?tag=12",
+        "width": 1024,
+        "height": 640
+      }
+    ],
+    "urls": [
+      "https://tympanus.net/codrops/2021/09/29/kinetic-typography-page-transition/"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1711903491311177837",
+    "text": "#PortfolioDay\n\nHi, I'm Nashuu, I'm a motion designer who works on MVs. I like doing fast-paced videos and sometimes kinetic typography. https://t.co/UZ0ZJg4uwV",
+    "author": {
+      "id": "1495668272695431168",
+      "name": "Nashuuki | @ENAMOR",
+      "screenName": "nashuuki",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2060498823974432768/Ay2oStyd_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 196,
+      "retweets": 37,
+      "replies": 1,
+      "quotes": 1,
+      "views": 12181,
+      "bookmarks": 43
+    },
+    "createdAt": "Wed Oct 11 00:36:12 +0000 2023",
+    "createdAtLocal": "2023-10-10 21:36",
+    "createdAtISO": "2023-10-11T00:36:12+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1711901601399709696/pu/vid/avc1/1280x720/nilcVRJUKiRmvMsh.mp4?tag=12",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2113170819635609957",
+    "text": "SEMUA PRODUKSI VIDEO GUA DARI ANDROID !!! \n\nHOW THIS VIDEO WAS MADE ?\n\n• @HyperFrames_ Studio – kinetic typography, animated UI & final render\n\n• Seedance 2.5 – cinematic video generation: lighting, multi-camera moves & my character in one take\n\n• Claude Opus 5.5 – AI agent for the concept, prompting, motion graphics & sound design\n\nEverything directed from my Android phone \n\nLu pake HP apa Laptop atau PC bang ?",
+    "author": {
+      "id": "1866173877803765760",
+      "name": "Bozzx.",
+      "screenName": "bozzxyz",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2092881194094673921/H-trETe6_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 136,
+      "retweets": 17,
+      "replies": 23,
+      "quotes": 3,
+      "views": 6661,
+      "bookmarks": 94
+    },
+    "createdAt": "Thu Oct 22 07:29:18 +0000 2026",
+    "createdAtLocal": "2026-10-22 04:29",
+    "createdAtISO": "2026-10-22T07:29:18+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2113168890595545088/vid/avc1/1080x1920/owzw4u3QZffYbyRc.mp4?tag=29",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2092188350476337613",
+    "text": "Hailuo @MiniMax_AI @Hailuo_AI H3\n\nA prototype motion-graphics landing page for ice cream, built to test just how far H3 can push UI animation, typography, transitions, hover interactions, and product motion.\n\nI tried creating similar effects manually in Adobe After Effects but this version is 100% generated with H3.\n\nThe model handles these complex motion-design elements incredibly well, and the results are STUNNING\n\n- Animated Shape Layers\n- Kinetic Typography\n- Cursor Hover Update\n- Bounce Effects\n- Wiggle Effects\n- Live Background\n- Micro Text Renders\n- Ease in Ease out Keyframes\n\nPrompt Below",
+    "author": {
+      "id": "832143411855634433",
+      "name": "Shams",
+      "screenName": "ShamsAmin56",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1973122364503199744/vpKVkGyH_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 289,
+      "retweets": 33,
+      "replies": 52,
+      "quotes": 3,
+      "views": 36079,
+      "bookmarks": 290
+    },
+    "createdAt": "Tue Aug 25 09:52:28 +0000 2026",
+    "createdAtLocal": "2026-08-25 06:52",
+    "createdAtISO": "2026-08-25T09:52:28+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2092183092719132672/vid/avc1/2560x1440/BCB5-NBMVP-CTXGw.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  }
+]

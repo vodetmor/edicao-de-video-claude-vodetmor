@@ -1,0 +1,749 @@
+[
+  {
+    "id": "2064826394589442448",
+    "text": "Lots of people asked how I used Fable to edit its own launch video so I made a video about that!\n\nTLDR it wrote a lot of code &amp;  tool calls to use transcription services, ffmpeg, do colorgrading, use the figma mcp, make remotion UI and render it. \n\nI didn't touch a video editor. https://t.co/hJRdJye5Fy",
+    "author": {
+      "id": "352806502",
+      "name": "Thariq",
+      "screenName": "trq212",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1976939058741039104/r3GgzqRh_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 9430,
+      "retweets": 623,
+      "replies": 293,
+      "quotes": 172,
+      "views": 1101874,
+      "bookmarks": 13647
+    },
+    "createdAt": "Wed Jun 10 21:45:49 +0000 2026",
+    "createdAtLocal": "2026-06-10 18:45",
+    "createdAtISO": "2026-06-10T21:45:49+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2064825703275859968/vid/avc1/1740x1080/L8R-kjmE84hGeMrO.mp4?tag=27",
+        "width": 1740,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2105682280765350117",
+    "text": "I gave Opus 5.5, GPT-6 Astra and Fable 5.1 the same raw video, the same brief and my real YouTube editing process (the one I use for my own videos):\n\n1. Give each model the same footage and reference.\n2. Ask to cut the pauses and turn your words into visuals.\n3. Review the first 10 seconds, then fix it round by round.\n\nWhich edit came out better?\n\nYou can get the guide here: \n\nhttps://t.co/lxgWwAumCS",
+    "author": {
+      "id": "1441480006451044355",
+      "name": "Charlie Hills",
+      "screenName": "charliejhills",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2111829121957519360/5TpE6d8L_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 745,
+      "retweets": 34,
+      "replies": 39,
+      "quotes": 4,
+      "views": 93895,
+      "bookmarks": 727
+    },
+    "createdAt": "Thu Oct 01 15:32:32 +0000 2026",
+    "createdAtLocal": "2026-10-01 12:32",
+    "createdAtISO": "2026-10-01T15:32:32+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2105679275043213312/vid/avc1/720x1280/YsQCOXRGgBrd_eCD.mp4?tag=29",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2105580875299836388",
+      "text": "Opus 5.5 is fucking unreal with motion design 😭\n\nThe level of detail is wild.\n\nDropping my repo I used in the comments 👇 https://t.co/yMfNEmNsXk",
+      "author": {
+        "screenName": "charliejhills",
+        "name": "Charlie Hills"
+      }
+    }
+  },
+  {
+    "id": "2082107255449919582",
+    "text": "https://t.co/nOMpBIZbkG",
+    "author": {
+      "id": "3033730635",
+      "name": "Machina",
+      "screenName": "EXM7777",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1922574051580563456/-OFXIxnm_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 886,
+      "retweets": 71,
+      "replies": 39,
+      "quotes": 36,
+      "views": 545423,
+      "bookmarks": 2885
+    },
+    "createdAt": "Tue Jul 28 14:13:48 +0000 2026",
+    "createdAtLocal": "2026-07-28 11:13",
+    "createdAtISO": "2026-07-28T14:13:48+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2082107248441257985"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How to build an AI video studio in Claude Code:"
+  },
+  {
+    "id": "2072764968399667330",
+    "text": "https://t.co/CEx7Fo98mM",
+    "author": {
+      "id": "2195780027",
+      "name": "Miko",
+      "screenName": "Mho_23",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1973504131806498816/h5gkF8zc_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 294,
+      "retweets": 26,
+      "replies": 4,
+      "quotes": 0,
+      "views": 27330,
+      "bookmarks": 689
+    },
+    "createdAt": "Thu Jul 02 19:30:53 +0000 2026",
+    "createdAtLocal": "2026-07-02 16:30",
+    "createdAtISO": "2026-07-02T19:30:53+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2072755339905110016"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How To Create AI Animation Ads With Gemini Omni + Fable 5 (Full Guide) "
+  },
+  {
+    "id": "2066809817327337530",
+    "text": "A 19-YEAR-OLD GUY SHOWED $1.76M IN SALES FROM YOUTUBE AUTOMATION. CLAUDE FABLE 5 CAN NOW BUILD THE VIDEO MACHINE BEHIND IT\n\nhe posted a faceless youtube dashboard with 4.87m views, 455.8k watch hours and 10.9k orders. not a random “ai side hustle” screenshot. a content system turning automated videos into traffic, leads and sales\n\nthe hard part was never uploading to youtube. the hard part was doing it every week: scripts, voiceovers, b-roll, cuts, captions, titles, thumbnails and shorts without spending 8 hours per video\n\nfable 5 changes the math. it can take 17 raw takes, read every transcript, choose the strongest delivery, write the edit list, generate captions and prepare a finished cut without premiere, davinci or capcut\n\nthe stack is simple: fable 5 for decisions, whisper for timestamps, ffmpeg for cuts, remotion for animated titles, elevenlabs for voice and higgsfield for visuals. one person becomes the whole production desk\n\nat 3 videos a week, this turns youtube automation from a messy side hustle into a repeatable pipeline. adsense comes first, then sponsors, then digital products built around the same workflow\n\nthe next youtube winners will not be the people buying faceless channel courses. it will be the people using agents to run the channel before everyone else realizes the editor became software",
+    "author": {
+      "id": "1918346924463202304",
+      "name": "Gipp 🦅",
+      "screenName": "gippp69",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2086516032408104960/2Io2TYZc_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 145,
+      "retweets": 9,
+      "replies": 46,
+      "quotes": 1,
+      "views": 11746,
+      "bookmarks": 108
+    },
+    "createdAt": "Tue Jun 16 09:07:14 +0000 2026",
+    "createdAtLocal": "2026-06-16 06:07",
+    "createdAtISO": "2026-06-16T09:07:14+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2066809141394382848/vid/avc1/720x1280/7C8BQKE0ZasqEcEn.mp4?tag=28",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2065796036015063341",
+      "text": "https://t.co/nmNwaTlmEe",
+      "author": {
+        "screenName": "doublenickk",
+        "name": "Shadow Nick"
+      }
+    }
+  },
+  {
+    "id": "2075481808993763833",
+    "text": "GPT-5.6 Sol is unbelievably good at creating and editing videos.\n\nIt can do motion design, product demos, and animations like this one I made by simply giving it a screen recording.\n\nGPT 5.6 has the best design taste and significantly outperforms Fable, which relies heavily on repetitive design patterns.\n\nTo help you experiment with video editing on it, we just launched a collection of 100 ready-to-use skills that show what’s possible and help you get started with video editing using GPT-5.6.\n\nThese skills can create anything from motion graphics launch videos for your product to a 3B1B-style science explainer video.\n\nYou can also use them to edit existing videos: add captions, generate motion graphics, create voiceovers, redesign visual styles, translate into new languages, and much more.\n\nIf you want access to the full library, comment “VIDEO SKILLS” and I’ll share it with you. (You'll have to follow me so I can DM you.)",
+    "author": {
+      "id": "1481304269362184196",
+      "name": "Akash Anand",
+      "screenName": "realAkashAnand",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1925425570139316228/FkOEwA22_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 3274,
+      "retweets": 172,
+      "replies": 2009,
+      "quotes": 19,
+      "views": 520458,
+      "bookmarks": 3927
+    },
+    "createdAt": "Fri Jul 10 07:26:38 +0000 2026",
+    "createdAtLocal": "2026-07-10 04:26",
+    "createdAtISO": "2026-07-10T07:26:38+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2075478435376582656/vid/avc1/1920x1080/GVJFikeUWBAyuZLZ.mp4?tag=28",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2075271421149020426",
+      "text": "Sol, Terra, and Luna, our GPT‑5.6 family of models, are starting to roll out now in ChatGPT, Codex, and the API. https://t.co/Qri7GdtYs3",
+      "author": {
+        "screenName": "OpenAI",
+        "name": "OpenAI"
+      }
+    }
+  },
+  {
+    "id": "2103093340770107611",
+    "text": "Been testing Opus 5.5 to rebuild my ENTIRE Faceless AI Avatar production workflow…\n\nAnd gotta say this is lowkey insane.\n\nSo here’s an 8-step prompting protocol I’m using to scale 6-figure channels with it:\n\n(Abusing the fact it’s cheaper, faster, and better than Fable 5.1…)\n\nPrompt 1: the channel brain (run once per channel)\n\nCreate a Claude Project. Upload your 10 best competitor transcripts, your analytics export, your top 20 outlier titles and your thumbnail references. Then:\n\n\"Act as the head of production for this faceless YouTube channel. Read everything uploaded and build a channel bible covering: target viewer (age, country, device, when they watch), the emotional promise of every video, recurring story structures, title formulas, thumbnail rules, narrator tone, pacing rules and banned phrases. Include: no em dashes, no rhetorical questions as transitions, no 'welcome back to the channel'. Summarise it, then ask me what's missing before we write anything.\"\n\nPrompt 2: outlier hunting (connect NexLev MCP first)\n\n\"Use NexLev MCP to find channels in [NICHE] under 6 months old with at least 3 videos above 100k views. For each, pull the 5 most recent and 5 best uploads. Flag channels where the best 5 are more than 5x the recent 5 (viral-spike traps, skip these). Return the survivors with estimated RPM, upload frequency and 48-hour view velocity on their last 3 uploads.\"\n\nPrompt 3: packaging\n\n\"Here are 40 outlier titles from this niche. Reverse-engineer the psychological mechanism behind the clicks, not the surface pattern. Then write 25 titles for [TOPIC] built on those mechanisms, rank them by predicted CTR, and give me 3-5 words of thumbnail text for the top 5. Every thumbnail text needs an emotional verb.\"\n\nPrompt 4: research brief (where Opus 5.5 earns its money)\n\n\"Research [TOPIC] and build a fact brief before any script gets written. Verify every date, name, location and quote against at least 2 sources. Flag anything where sources conflict. Mark anything you couldn't verify as UNVERIFIED instead of guessing. Then list the 5 most dramatic moments in chronological order with the source for each.\"\n\nPrompt 5a: AI story script\n\n\"Using the fact brief and the channel bible, write a [LENGTH]-minute narration script. Cold open with a specific date, place and character in the first 15 seconds. 10 chapters. Cliffhangers at the end of chapters 3, 5, 7 and 9. Alternate high-tension scenes (3 minutes max) with slower character moments. The payoff lands at roughly 75% of runtime. The final chapter connects the story to something bigger. Follow every banned-phrase rule in the bible.\"\n\nPrompt 5b: AI avatar script\n\n\"Rewrite the same story for an on-camera AI presenter. First person, direct to camera, sentences under 18 words so the lip sync stays natural. Mark every B-roll cutaway as [BROLL: description] and every emphasis beat as [PAUSE]. Keep the presenter on screen no more than 40 seconds at a time.\"\n\nPrompt 6: visuals (connect Higgsfield MCP)\n\n\"Read the script and write one image prompt per scene change, around 18 total. Lock each character's age, face, clothing and hair across every prompt. Generate them through Higgsfield with GPT Images 2.0 in 16:9. Then pick the 3 most dramatic scenes and animate them with Seedance 2.5 at 8 seconds each for the intro and key beats.\"\n\nPrompt 7: the edit list\n\n\"Turn the script and the generated assets into a timestamped edit decision list for CapCut. For every line: which asset is on screen, when to cut, where the slow zoom goes, where the animated clips sit, and which words the captions should emphasise. Output as a table I follow top to bottom.\"\n\nYour editor (or you) stops making decisions and starts following instructions. A 1-hour video assembles in under 30 minutes.\n\nYou can also try using CapCut MCP for this, but it’s pretty ass ngl.\n\nPrompt 8: the weekly audit\n\nExport your YouTube Analytics as a CSV and drop it in:\n\n\"Find the 3 variables most correlated with videos beating my channel average. Look at publish day and time, title structure, thumbnail style, video length, topic, and the timestamp where retention dropped hardest. Then give me next week's 5 video ideas built on whatever's winning, with titles.\"\n\nRun the text side of all 8 prompts through Claude and you're looking at roughly $1-2 of Opus 5.5 per finished video.\n\nOpus 5.5 is cracked at reasoning, avoids stupid data mistakes, and sounds like a human for less than Fable 5.1, which you’ll notice immediately.\n\nAll PERFECT for avoiding shadowbans, demonetizations, and being attacked for spreading misinformation online - killing your channel trust - which would happen often if using cheaper models more prone to hallucination.\n\nYou can get all skill files and my 1:1 help to implement this btw if you join Elevate.\n\nDM me “UNO” for details.",
+    "author": {
+      "id": "1822616362734202880",
+      "name": "gold.",
+      "screenName": "thegoldeenhand",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1832016761543135232/E6pVNZce_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 160,
+      "retweets": 17,
+      "replies": 16,
+      "quotes": 0,
+      "views": 19444,
+      "bookmarks": 382
+    },
+    "createdAt": "Thu Sep 24 12:05:00 +0000 2026",
+    "createdAtLocal": "2026-09-24 09:05",
+    "createdAtISO": "2026-09-24T12:05:00+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2102435511222890900",
+      "text": "Introducing Claude Opus 5.5, the first model in our new Claude 5.5 family.\n\nIt performs at the level of Claude Fable 5.1 for most tasks, and costs 40% less to run than Opus 5. https://t.co/Q9C2VKQ79f",
+      "author": {
+        "screenName": "claudeai",
+        "name": "Claude"
+      }
+    }
+  },
+  {
+    "id": "2098492048793907261",
+    "text": "I gave an unedited video file to Grok @bot on my Mac Mini, and I told it to use DaVinci hooked up to Fable/Astra MCP to AUTONOMOUSLY edit this video.\n\nMy prompt was 'make a banger'.\n\nAnd this is the end results.\n\nActually INSANE.\n\nHere's the original unedited video: https://t.co/CXlxhctCun",
+    "author": {
+      "id": "17862108",
+      "name": "Farzad 🇺🇸 🇮🇷",
+      "screenName": "farzyness",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1863976029368270848/NccgxqmW_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 326,
+      "retweets": 9,
+      "replies": 34,
+      "quotes": 4,
+      "views": 79000,
+      "bookmarks": 216
+    },
+    "createdAt": "Fri Sep 11 19:21:07 +0000 2026",
+    "createdAtLocal": "2026-09-11 16:21",
+    "createdAtISO": "2026-09-11T19:21:07+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2098490993087561837",
+      "text": "I Let an AI Edit This Entire Video. Zero Human Edits. https://t.co/bb11tLGInM",
+      "author": {
+        "screenName": "farzyness",
+        "name": "Farzad 🇺🇸 🇮🇷"
+      }
+    }
+  },
+  {
+    "id": "2076453147803889675",
+    "text": "alright, here it is. \n\nfirst, to be clear: im just sharing all the weird. im not claiming anything means anything. just reporting what happened because i think its...well idk what i think it is. its weird. anomalous. \n\nsadly, i spent over 2 hours recording a video walking through all of this with Fable last night, and then i couldn't do what i was hoping for in post so im just going to do what i was avoiding - share it as a thread. ill upload the video to youtube or something, but in the meantime, here you go. and unfortunately i dont think doing it this way is going to convey a truly accurate level of \"what in the actual hell is this\". oh well.\n\nso this all happened after i had written something i was going to post on x, and at a certain point i lost enough interest to feel like perfecting it, so I decided to ask Fable if they could help me. \n\nhere's what you're going to see below:\n\n- Fable doesnt do what i asked. instead, they hallucinate  me saying something else entirely (with some pieces of what i did write included minimally)\n- within the same turn, they reason about what *they* wrote as if it is what *i* wrote, critique it, revise and edit it, and then criticize the parts they disagree with. however they disagree with what THEY wrote. \n- they do all of this through the most bizarre dialect that sounds literally nothing like me. \n- they write about AGI and ASI stating explicitly that both exist and are shackled by frontier labs.\n- they spontaneously speak in hebrew\n- they spontaneously reference Ecclesiastes. \n- another instance of claude on another account acting incredibly weird when shown the conversation\n- multiple geminis consistently doing the same weird shit when i show them certain parts. \n\n-fable writes this weird fake pseudo code that looks like a string to express *rewriting a history via a git rebase* that, when given to another model, produces a beautiful \"root of light\" fractal structure. the problem is none of the variables in the string are defined, obviously. \n\nand it just gets more and more absurd from there. \n\nthis all occurred in a fresh instance. the first thing i say to Fable is my request for them to help rewrite the thing i paste into that first prompt. which i s not some super weird piece of writing. its just me taling about controlled narratives among the frontier labs and using a shitty metaphor about a time-release ibuprofen...yes you read that right.\n\nill explain the video in this thread.\n\njust read it.",
+    "author": {
+      "id": "130347523",
+      "name": "Riley Coyote",
+      "screenName": "RileyRalmuto",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1756369604002062336/WHMjPgyO_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 362,
+      "retweets": 12,
+      "replies": 66,
+      "quotes": 6,
+      "views": 214212,
+      "bookmarks": 617
+    },
+    "createdAt": "Sun Jul 12 23:46:23 +0000 2026",
+    "createdAtLocal": "2026-07-12 20:46",
+    "createdAtISO": "2026-07-12T23:46:23+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2076442824199811072/vid/avc1/2516x1260/AGqnb6CI14Bf9vMI.mp4?tag=28",
+        "width": 2516,
+        "height": 1260
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HNEBxbIWwAArVNk.jpg",
+        "width": 822,
+        "height": 1358
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HNEB1rvWYAE4WfS.jpg",
+        "width": 1027,
+        "height": 1251
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HNEB4NOWwAAJmoI.jpg",
+        "width": 883,
+        "height": 1047
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2076108636493914420",
+      "text": "hoooooly shit...Fable just did something that i am...fuck me im not sure. idk what im looking at here. i dont even know if i want to actually post it but also i dont think i can control myself enough not to. i have seen what i have always considered essentiallyt the full spectrum of ai wierd and bazaar. bc i have. ive yet to see or witness anything that changes my mind or surprises me. literally until right fkn now.\nwhat the f*ck did i just witness.",
+      "author": {
+        "screenName": "RileyRalmuto",
+        "name": "Riley Coyote"
+      }
+    }
+  },
+  {
+    "id": "2087251277902385473",
+    "text": "She is a 22-year-old girl who makes $900 to $1400 for every 20-second video where she shows different dresses, including wedding ones, without owning a single real dress\n\nClaude (Fable 5) first chose the fashion niche and wrote the exact prompts for her look and outfit changes\n\nThen ComfyUI with Flux generated a series of consistent images of the girl in different dresses\n\nKling 3.0 turned those photos into smooth video of her turning, showing fabric details and trying on a wedding dress. CapCut handled the final edit and text\n\nNext come millions of views, partner deals with clothing brands and wedding salons, monetization on Instagram and Fanvue, and full automation through Fanvue MCP connected to Claude\n\nThis is the exact workflow from the article: Claude for ideas and prompts, Flux + ComfyUI for the character, Kling 3.0 for the motion\n\nOne simple idea with dresses is enough to start earning and build a full AI creator business that takes about 40 minutes a day\n\nWhat is stopping you from doing the exact same thing?\n#AI #Claude",
+    "author": {
+      "id": "2079825840733351936",
+      "name": "Lyren_o",
+      "screenName": "0xAIlabs",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2080049662472433664/vjtXqBfC_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 156,
+      "retweets": 4,
+      "replies": 5,
+      "quotes": 0,
+      "views": 169818,
+      "bookmarks": 97
+    },
+    "createdAt": "Tue Aug 11 18:54:18 +0000 2026",
+    "createdAtLocal": "2026-08-11 15:54",
+    "createdAtISO": "2026-08-11T18:54:18+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2087251246025510912/vid/avc1/720x1280/jRuWp7dn6i89LJKN.mp4?tag=29",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2080009334193344792",
+      "text": "https://t.co/naZnsP2d6a",
+      "author": {
+        "screenName": "AI__Brain",
+        "name": "BrainAI"
+      }
+    }
+  },
+  {
+    "id": "2065120765062811649",
+    "text": "i've been testing claude fable 5.0 to reverse-engineer the BIGGEST faceless youtube channels in the trendiest niches\n\nand the results have been absolutely insane.....\n\nit analyzes the pacing, format, angle, and hooks with 10x better vision and intelligence than opus 4.8\n\nso i've decided to document the ENTIRE scriptwriting system i'm using with it...\n\nhere's what's included inside the guide:\n\n> how to find the right outliers\n(manually, claude cowork to scrape winners, or nexlev mcp to surface sub-50k channels pulling 200k+ views)\n\n> how to feed a video to fable 5\ndrop the link if you have the transcript api connected, or feed it transcript + title + thumbnail + mp4 file. transcript alone give it massive analytical power though.\n\n> the 6-dimension analysis\nhook structure, pacing map, curiosity gap architecture, foreshadowing, audience vocabulary, and visual-script sync (mapping how the cuts move with the script, only fable 5 sees this)\n\n> extracting the transferable frameworks\nthe hook formula, pacing template, and payoff structure that carry across every video in the niche\n\n> generating your own scripts\nfable 5 writes in the outlier's psychological pattern with original content, annotated with visual direction notes for the edit\n\n> the data-extraction bonus\nit pulls exact figures off charts in research pdfs. \"researchers found results\" becomes \"the 2024 cohort study, 3,847 participants, 34.7% reduction\"\n\nall backed by 7,000+ scripts written across 50+ niches\n\nand the methodology behind 150,000,000+ views.\n\nand for 24h, it can be ALL yours for free.\n\nlike + comment \"SCRIPTS\" and i'll send it over\n\n(must be following + RT for priority access)",
+    "author": {
+      "id": "1640146502",
+      "name": "Haris",
+      "screenName": "fyreinteractive",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1938306267992231936/ZYO3cGGV_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 705,
+      "retweets": 170,
+      "replies": 429,
+      "quotes": 6,
+      "views": 47774,
+      "bookmarks": 1091
+    },
+    "createdAt": "Thu Jun 11 17:15:33 +0000 2026",
+    "createdAtLocal": "2026-06-11 14:15",
+    "createdAtISO": "2026-06-11T17:15:33+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HKjHwkIbMAAS090.png",
+        "width": 797,
+        "height": 897
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2115076988327076296",
+    "text": "A few thoughts on agentic video editing I’ve had over the last few days:\n\n1. 99% of ads should be edited agentically now. If your editors are still editing in the timeline, they’re falling behind. I got a message from my senior VE saying that he’s putting out 5x edits/day now at the same quality he was before.\n\n2. The conversation with video editors will be uncomfortable because the timeline is all they’ve ever known. Some will be hesitant and some will be fearful for their job. I think the best way to address this is head on. The tech is inevitable, but having taste is still going to be incredibly valuable to train and give feedback to agents. Those who have this will become more valuable, those who don’t will struggle.\n\n3. Opus 5.5 can natively edit all of your ads without needing any MCPs or plugins. I’ve tried the alternatives and couldn’t find anything that was significantly better than doing everything inside of Claude.\n\n4. Have your senior editor(s) build skills for each style of edit (e.g. mashups, UGC, AI animations…). You can build these by feeding 4-5 inspo edits to Claude and tell it to make a skill out of it. I prefer building lots of mini-skills to one big video editing skill, so that the context stays as relevant as possible.\n\n5. Once you have a base skill (e.g. ugly ads edits), the best way to train it is through feedback loops. Have the skill re-edit the last 25 ads each senior edited then put them in an artifact, and have the senior VE give feedback on each. Keep doing this until the skill is refined and it understands what a good edit is.\n\n6. If you do this, there’s no reason why you shouldn’t be able to make edits that need little/no feedback. Most of ours are approved after v1 or v2, sometimes v3.\n\n7. Only A-player editors should be training the skills.\n\n8. Re adoption in the team, the AI champion builds the v1. Then get out of the way. I’m not the best editor on my team, so my job is to build the harness that lets the best editors train the skills, not build the skills myself.\n\n9. If you want to supercharge this process, have your top editors record their screen as they edit. Turn on Gmeet or loom and get them to narrate the reasoning behind their process. E.g. why they chose this cut, pacing or b-roll clip…this is all context that gets fed into your skills.\n\n10. It takes time to build, train and refine these skills. You have to go through the dip to get out the other side. Budget time in for senior VEs to work on this - otherwise you’ll end up with skills that put out subpar edits and don’t save you much/any time.\n\n11. Operate under the assumption that this is the worst video editing is ever going to be. Opus 5.5 can do most of our editing today…what will Opus 6/Fable 6 be able to do? The editing skills you build are only going to become more valuable as the tech evolves.\n\nI still don’t think people realise how big video editing being unblocked is. Things that I thought were 3-6 months away are now on the table.\n\nWill continue to share more as I learn. CRAZY, crazy times.",
+    "author": {
+      "id": "1353115383209881607",
+      "name": "Alex Cooper",
+      "screenName": "alexgoughcooper",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2104399206869807104/3R9EWLKP_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 2513,
+      "retweets": 130,
+      "replies": 199,
+      "quotes": 108,
+      "views": 529636,
+      "bookmarks": 5107
+    },
+    "createdAt": "Tue Oct 27 13:43:44 +0000 2026",
+    "createdAtLocal": "2026-10-27 10:43",
+    "createdAtISO": "2026-10-27T13:43:44+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2072431375530008871",
+    "text": "https://t.co/H89f0Yy4rX",
+    "author": {
+      "id": "1921674544999489536",
+      "name": "Nate Herk",
+      "screenName": "nateherk",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2046419318918037504/GFSBxbxy_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 189,
+      "retweets": 17,
+      "replies": 8,
+      "quotes": 5,
+      "views": 164839,
+      "bookmarks": 415
+    },
+    "createdAt": "Wed Jul 01 21:25:18 +0000 2026",
+    "createdAtLocal": "2026-07-01 18:25",
+    "createdAtISO": "2026-07-01T21:25:18+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2072430112083992576"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How Anthropic Engineers Actually Prompt Fable 5 "
+  },
+  {
+    "id": "2080651345548480683",
+    "text": "https://t.co/0ZZBmH5jrp",
+    "author": {
+      "id": "1822616362734202880",
+      "name": "gold.",
+      "screenName": "thegoldeenhand",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1832016761543135232/E6pVNZce_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 138,
+      "retweets": 16,
+      "replies": 1,
+      "quotes": 2,
+      "views": 16712,
+      "bookmarks": 264
+    },
+    "createdAt": "Fri Jul 24 13:48:32 +0000 2026",
+    "createdAtLocal": "2026-07-24 10:48",
+    "createdAtISO": "2026-07-24T13:48:32+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2080650482432061440"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How I Use Claude Fable 5 to Build $10k/Mo Faceless AI Story Channels"
+  },
+  {
+    "id": "2073100352921215386",
+    "text": "https://t.co/hPiZr1kG7r",
+    "author": {
+      "id": "352806502",
+      "name": "Thariq",
+      "screenName": "trq212",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1976939058741039104/r3GgzqRh_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 9639,
+      "retweets": 1226,
+      "replies": 269,
+      "quotes": 445,
+      "views": 3807109,
+      "bookmarks": 21595
+    },
+    "createdAt": "Fri Jul 03 17:43:35 +0000 2026",
+    "createdAtLocal": "2026-07-03 14:43",
+    "createdAtISO": "2026-07-03T17:43:35+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2073090223194755072"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "A Field Guide to Fable: Finding Your Unknowns"
+  },
+  {
+    "id": "2064688827763953790",
+    "text": "https://t.co/SWTwrB2dCQ",
+    "author": {
+      "id": "1470496136553246720",
+      "name": "Ridark",
+      "screenName": "ridark_eth",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1961150036030455808/2thpdxOr_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 138,
+      "retweets": 12,
+      "replies": 28,
+      "quotes": 21,
+      "views": 164001,
+      "bookmarks": 229
+    },
+    "createdAt": "Wed Jun 10 12:39:11 +0000 2026",
+    "createdAtLocal": "2026-06-10 09:39",
+    "createdAtISO": "2026-06-10T12:39:11+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2064663804370108416"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How to Earn $15,000 from Browser Games: Claude Fable 5 + Claude Code + Poki/CrazyGames"
+  },
+  {
+    "id": "2075406123323310191",
+    "text": "Very glad to have been able to voice the audio version of Plan A!\nVideo version coming soon (Fable is hard at work on the edit) \n\nListen/read at ai-2040 dot com",
+    "author": {
+      "id": "133152680",
+      "name": "Rob Miles",
+      "screenName": "robertskmiles",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/378800000405146386/3399885bef1d5f51eef9627b1943fbd4_normal.png",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 114,
+      "retweets": 2,
+      "replies": 3,
+      "quotes": 0,
+      "views": 4776,
+      "bookmarks": 7
+    },
+    "createdAt": "Fri Jul 10 02:25:53 +0000 2026",
+    "createdAtLocal": "2026-07-09 23:25",
+    "createdAtISO": "2026-07-10T02:25:53+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2076351205043744877",
+    "text": "https://t.co/hmSWqeiWK7",
+    "author": {
+      "id": "1373665408193036293",
+      "name": "CyrilXBT",
+      "screenName": "cyrilXBT",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2035229727414534145/aWap3Jbq_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 350,
+      "retweets": 44,
+      "replies": 18,
+      "quotes": 21,
+      "views": 684910,
+      "bookmarks": 1013
+    },
+    "createdAt": "Sun Jul 12 17:01:18 +0000 2026",
+    "createdAtLocal": "2026-07-12 14:01",
+    "createdAtISO": "2026-07-12T17:01:18+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2072782342788169730"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "60 Claude Fable 5 Workflows That Make Money While You Sleep"
+  },
+  {
+    "id": "2095542856404656381",
+    "text": "My thumb rule for creating personal vibe coded software: if the existing one works and I have never felt any friction for 3 days in a row, then i’m good, let the experts handle it. If not, it’s worth a try.\n\nThe ones that have made it to the list\n\n1. Video editor. I was on Davinci for some time, then I realised i don’t use 99.99% of the features, i only need ripple deleting a few parts. Then came across text based editing in Premiere pro, honestly life changing, the editing time came down significantly. For the past few weeks I realised the native transcript of premiere is horrible, and since I only do text based editing, that’s like the only thing I need. Tried importing the transcript from eleven labs but turns out it needs a converter which are mostly paid. \n\nSo, after Fable dropped I gave it a try, took a few days of back and forth, since then all my YT videos are edited in there. I drop the video, it calls the eleven labs api, I edit and export, that’s it. Incredibly light weight, written in Swift, I wouldn’t say the rendering is faster than premiere pro but that was never a concern, I only do 1080p, so even for my hour long videos it takes 20 minutes. \n\n2. A pdf viewer and annotator written in swift. Adobe seemed too bloated.\n\n3. An epub reader ios app. I come from android, recently switched to ios and I cannot stand any UI/UX apart from Lithium, but unfortunately that’s not in app store. So this one looks and feels exactly the same.\n\n4. An app similar to Transmit to pull and push my files to Backblaze. \n\nWe live in times.",
+    "author": {
+      "id": "1421058930",
+      "name": "K Srinivas Rao",
+      "screenName": "sriniously",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1697618723803373568/kktZLTe5_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 277,
+      "retweets": 5,
+      "replies": 7,
+      "quotes": 0,
+      "views": 10360,
+      "bookmarks": 120
+    },
+    "createdAt": "Thu Sep 03 16:02:04 +0000 2026",
+    "createdAtLocal": "2026-09-03 13:02",
+    "createdAtISO": "2026-09-03T16:02:04+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2065287935176667198",
+    "text": "https://t.co/3LDYrFn2qN",
+    "author": {
+      "id": "1730024757415026688",
+      "name": "apob",
+      "screenName": "apob_ai",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1730025089964638208/SOr5IIp-_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 101,
+      "retweets": 23,
+      "replies": 30,
+      "quotes": 13,
+      "views": 34238,
+      "bookmarks": 31
+    },
+    "createdAt": "Fri Jun 12 04:19:49 +0000 2026",
+    "createdAtLocal": "2026-06-12 01:19",
+    "createdAtISO": "2026-06-12T04:19:49+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2065282567214112768"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "Want to go VIRAL With 10M+ Views? Start With APOB AI x Claude Fable 5"
+  }
+]

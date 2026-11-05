@@ -1,0 +1,1688 @@
+[
+  {
+    "id": "2092278549679886507",
+    "text": "EVERYTHING you see in the video below was generated using Claude Code.\n\nTurns out, you can vibe animate your way to a demo video with some super cool motion graphics elements.\n\nDoesn't mean it's an easy task, but you'd be surprised by what it's capable of.\n\n#Claude #Remotion https://t.co/Yp2jtdszBu",
+    "author": {
+      "id": "1929840030752587776",
+      "name": "Tim",
+      "screenName": "timkochjar",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2092280687369863168/N63Q9vOV_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 2659,
+      "retweets": 123,
+      "replies": 180,
+      "quotes": 29,
+      "views": 236334,
+      "bookmarks": 3396
+    },
+    "createdAt": "Tue Aug 25 15:50:53 +0000 2026",
+    "createdAtLocal": "2026-08-25 12:50",
+    "createdAtISO": "2026-08-25T15:50:53+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2092277506862612480/vid/avc1/1280x720/n30T8oWwSrYu7dot.mp4?tag=14",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2078869144171380763",
+    "text": "This video by Remotion is literally motion design porn.\n\nno skills , mcp , tools , video gen , special prompts\n\none shot fully in code or natural language , this is genuinely crazy https://t.co/JSIQ9LDZIA",
+    "author": {
+      "id": "3559894949",
+      "name": "Daniel Ch",
+      "screenName": "chddaniel",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1894373821580214272/IDXnVQLK_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1636,
+      "retweets": 68,
+      "replies": 62,
+      "quotes": 6,
+      "views": 320786,
+      "bookmarks": 2742
+    },
+    "createdAt": "Sun Jul 19 15:46:42 +0000 2026",
+    "createdAtLocal": "2026-07-19 12:46",
+    "createdAtISO": "2026-07-19T15:46:42+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2078868970363641856/vid/avc1/1280x720/7GEGCOjHoorgXSjM.mp4?tag=14",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2116270712390316375",
+    "text": "HOLY F*CK, motion studio in 100% free github skills for you guys.\n\n20 open-source skills for Opus 5.5.\n\nAnimation. Simulation. 3D. Audio. Export.\n\n01 Remotion → React video engine.\nhttps://t.co/w0z2Hw0CK4\n\n02 Remotion Skills → Official video skills for coding agents.\nhttps://t.co/9LdSkszrrB\n\n03 Anime.js → Timeline choreography.\nhttps://t.co/1pBmRIK3j2\n\n04 Motion → UI animation and layout transitions.\nhttps://t.co/GGPWFMlXRv\n\n05 Manim → Animated diagrams, equations and explainers.\nhttps://t.co/k8TQDlCx8R\n\n06 Lottie → Lightweight vector animation playback.\nhttps://t.co/zHgqWDygEL\n\n07 MCP for Blender → Let Claude build and edit 3D scenes.\nhttps://t.co/Z2IKpxV7kH\n\n08 Three.js → 3D scenes and camera moves.\nhttps://t.co/xEYhuCgtD8\n\n09 Three GPU Pathtracer → Realistic lighting and reflections.\nhttps://t.co/2VAhjMsJIt\n\n10 Jolt Physics → Collisions, rigid bodies and soft bodies.\nhttps://t.co/dQFBa8uR5m\n\n11 postprocessing → Bloom, depth of field and color grading.\nhttps://t.co/8JaIBClhOR\n\n12 Three.quarks → Particle trails and VFX.\nhttps://t.co/pMMECwvxVw\n\n13 Tweakpane → Live controls for your scene parameters.\nhttps://t.co/sl8RbNuW8U\n\n14 ComfyUI → Node-based generation workflows.\nhttps://t.co/gBXwu8n7qc\n\n15 CosyVoice → Multilingual voiceovers.\nhttps://t.co/lf7dxYYNMQ\n\n16 librosa → Beat detection for music-synced animation.\nhttps://t.co/2TtPiXs5gc\n\n17 WhisperX → Word-level timing for captions.\nhttps://t.co/EW3doglPwM\n\n18 OBS Studio → Screen capture.\nhttps://t.co/8tbe47USHo\n\n19 LosslessCut → Fast cuts without re-encoding.\nhttps://t.co/DjNBuKl9P8\n\n20 FFmpeg → Encoding and delivery.\nhttps://t.co/32LdpVocVR\n\nConcept → scene → motion → sound → final cut.\n\nBookmark this. Go build something worth watching ↓",
+    "author": {
+      "id": "754635708200054784",
+      "name": "eigen",
+      "screenName": "e1genqq",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2110111368342851584/sPBGYVZG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 534,
+      "retweets": 49,
+      "replies": 6,
+      "quotes": 0,
+      "views": 29505,
+      "bookmarks": 804
+    },
+    "createdAt": "Fri Oct 30 20:47:10 +0000 2026",
+    "createdAtLocal": "2026-10-30 17:47",
+    "createdAtISO": "2026-10-30T20:47:10+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2116270593607622657/vid/avc1/1080x1350/9EnS3HsB_5ok4Oob.mp4?tag=29",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [
+      "https://github.com/remotion-dev/remotion"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2110016031917855006",
+      "text": "https://t.co/0eGSO29Jv0",
+      "author": {
+        "screenName": "e1genqq",
+        "name": "eigen"
+      }
+    }
+  },
+  {
+    "id": "2114445900131013003",
+    "text": "HOLY F*CK, motion studio in 20 repos.\n\n20 open-source skills for Opus 5.5.\n\nAnimation. Physics. 3D. Sound. Delivery.\n\n01 Remotion → React video engine https://t.co/w0z2Hw0CK4\n\n02 HyperFrames → HTML-to-video renderer https://t.co/SYaBzpTEcI\n\n03 Anime.js → Timeline choreography https://t.co/1pBmRIK3j2\n\n04 React Spring → Spring animation https://t.co/Hz5WZ8FTHO\n\n05 PixiJS → GPU-powered 2D graphics https://t.co/wwZJXMnA54\n\n06 p5.js → Generative visuals https://t.co/Mka6oRT4l3\n\n07 Paper.js → Vector paths\nhttps://t.co/TROE2WuNHm\n\n08 Matter.js → 2D physics\nhttps://t.co/BNcgtwJ4fL\n\n09 Three.js → 3D scenes\nhttps://t.co/xEYhuCgtD8\n\n10 Rapier → 3D collisions\nhttps://t.co/9olSNfjTbq\n\n11 OGL → Custom shaders\nhttps://t.co/lm2sscOybY\n\n12 tsParticles → Particle effects https://t.co/vqJrFPjg29\n\n13 glTF Transform → 3D asset optimization https://t.co/nLwkwOoJmc\n\n14 GL Transitions → Shader transitions\nhttps://t.co/Z5kZzXcDU0\n\n15 OBS Studio → Screen capture https://t.co/8tbe47USHo\n\n16 Chatterbox → Voiceovers\nhttps://t.co/de6zjDFSTV\n\n17 Tone.js → Synths and sound effects https://t.co/l15z92P0TA\n\n18 faster-whisper → Caption transcription https://t.co/iMD1vRH1et\n\n19 OpenCut → Timeline editing\nhttps://t.co/l9uFAvlnw0\n\n20 FFmpeg → Encoding and delivery https://t.co/32LdpVocVR\n\nBrief → prototype → animate → render → ship.\n\nBookmark this. Go build something worth watching ↓",
+    "author": {
+      "id": "754635708200054784",
+      "name": "eigen",
+      "screenName": "e1genqq",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2110111368342851584/sPBGYVZG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 5123,
+      "retweets": 555,
+      "replies": 76,
+      "quotes": 14,
+      "views": 290368,
+      "bookmarks": 9678
+    },
+    "createdAt": "Sun Oct 25 19:56:01 +0000 2026",
+    "createdAtLocal": "2026-10-25 16:56",
+    "createdAtISO": "2026-10-25T19:56:01+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2114445764831096833/vid/avc1/1080x1350/QVUmiEE2DSafVRqW.mp4?tag=29",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [
+      "https://github.com/remotion-dev/remotion",
+      "https://github.com/heygen-com/hyperframes"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2110016031917855006",
+      "text": "https://t.co/0eGSO29Jv0",
+      "author": {
+        "screenName": "e1genqq",
+        "name": "eigen"
+      }
+    }
+  },
+  {
+    "id": "2108713173461160133",
+    "text": "Remotion is slow and indirectly causes \"slop\" videos. I switched to fframes, render time of my vid I attached here went from 700 seconds to <21 seconds. I used fframes to create variants of scenes and iterated obsessively on the little details over and over again, which add up fast to create a \"non-slop\" video.\n\nAs you scale number of variants across many scenes, your time spent rendering grows quickly! fframes literally renders my vid faster than it plays.\n\nI created a skill to create iterations of scenes. I focsued on iterating on both scene design and sound design. Letting sound design lead the scene works well with fframes as cohesive scene <> sound development necessitates experimentation. \n\nUsing Astra/Sol/Opus subagents to look up examples beforehand for inspiration is a great way to get unique variants. Make sure to tell them both what you like and what you hate (!) about what they make to instill direction.\n\nRendering a scene of ~120 frames, or 2 seconds at 60 fps video, sped up by 20x when I switched to fframes from Remotion.\n\nSearch tools for agents are nearly instant and have opened up doors to deep research. Jev made decision models cheap and we started deciding on unique things. We must make sure our primitives for video creation are as fast, if not faster, to allow for multi-agent scaling of intelligence for creative exploration, or in our case video iteration. \n\nThis entire vid was made only with fframes.",
+    "author": {
+      "id": "1983427963971612672",
+      "name": "Ashton Chew",
+      "screenName": "iamashtonchew",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2112989316540420097/EoZ9wI7A_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1002,
+      "retweets": 38,
+      "replies": 45,
+      "quotes": 3,
+      "views": 55481,
+      "bookmarks": 1544
+    },
+    "createdAt": "Sat Oct 10 00:16:13 +0000 2026",
+    "createdAtLocal": "2026-10-09 21:16",
+    "createdAtISO": "2026-10-10T00:16:13+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2108708027515723776/vid/avc1/1920x1080/9GQBpLATQcypBe3K.mp4?tag=29",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2108556991945638387",
+      "text": "When working on fframes video project it might be hard to iterate on many variants of the same scene. \n\nSo I sometimes ask codex to build me a website to show many options for a single scene. It works flawlessly. All the renderers take like 1-2s and you have this https://t.co/CAgbXyF5tP",
+      "author": {
+        "screenName": "neogoose_btw",
+        "name": "Dmitriy Kovalenko"
+      }
+    }
+  },
+  {
+    "id": "2043720981898768754",
+    "text": "Using @Remotion to generate assets for video using web tech. https://t.co/DKhrcYPTkj",
+    "author": {
+      "id": "173150263",
+      "name": "Gary Simon",
+      "screenName": "designcoursecom",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1596903331255001088/5u844gv1_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 908,
+      "retweets": 59,
+      "replies": 15,
+      "quotes": 5,
+      "views": 84688,
+      "bookmarks": 1223
+    },
+    "createdAt": "Mon Apr 13 16:00:27 +0000 2026",
+    "createdAtLocal": "2026-04-13 13:00",
+    "createdAtISO": "2026-04-13T16:00:27+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2043716866472845312/vid/avc1/1920x1080/QYZh-t_CgJSPABpC.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2115506273542168756",
+    "text": "HOLY F*CK, motion studio in 7 repos.\n\nI don't use After Effect anymore.\n\nJust Opus 5.5 and this open-source toolkit.\n\nMotion. VFX. Characters. Audio. Export.\n\n01 Remotion → The video engine.\nhttps://t.co/w0z2Hw0CK4\n\n02 Motion Canvas → The animation desk.\nhttps://t.co/IB6OVsK0FY\n\n03 Blender → The 3D studio.\nhttps://t.co/eKgKgMTPrb\n\n04 Natron → The compositing lab.\nhttps://t.co/QExxZUMwYY\n\n05 ComfyUI → The generation pipeline.\nhttps://t.co/gBXwu8n7qc\n\n06 Kokoro → The voice booth.\nhttps://t.co/Xp7DSbWaEt\n\n07 FFmpeg → The finishing tools.\nhttps://t.co/32LdpVocVR\n\nIdea → scenes → effects → mix → export.\n\nBookmark this. Go build something worth watching ↓",
+    "author": {
+      "id": "754635708200054784",
+      "name": "eigen",
+      "screenName": "e1genqq",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2110111368342851584/sPBGYVZG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1106,
+      "retweets": 109,
+      "replies": 21,
+      "quotes": 5,
+      "views": 79942,
+      "bookmarks": 2096
+    },
+    "createdAt": "Wed Oct 28 18:09:34 +0000 2026",
+    "createdAtLocal": "2026-10-28 15:09",
+    "createdAtISO": "2026-10-28T18:09:34+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2115506176993411072/vid/avc1/1080x1350/GxjdyzZYtqavAAzT.mp4?tag=29",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [
+      "https://github.com/remotion-dev/remotion",
+      "https://github.com/motion-canvas/motion-canvas"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2110016031917855006",
+      "text": "https://t.co/0eGSO29Jv0",
+      "author": {
+        "screenName": "e1genqq",
+        "name": "eigen"
+      }
+    }
+  },
+  {
+    "id": "2014775113397219487",
+    "text": "Remotion really changed the game...  \n\nThese AI animations are just insane.  \n\nBut most people don't know how to create them\n\nIn these 33 mins, you'll learn everything you need to know Claude Code video editing https://t.co/6v6hixtAz4",
+    "author": {
+      "id": "1648699406760255488",
+      "name": "David Ondrej",
+      "screenName": "DavidOndrej1",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1648700022563696642/fkEMa1qo_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 644,
+      "retweets": 48,
+      "replies": 24,
+      "quotes": 6,
+      "views": 54896,
+      "bookmarks": 974
+    },
+    "createdAt": "Fri Jan 23 18:59:54 +0000 2026",
+    "createdAtLocal": "2026-01-23 15:59",
+    "createdAtISO": "2026-01-23T18:59:54+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2014767185743241217/vid/avc1/1920x1080/YTXHsy5DhdUGWrg1.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2111393917899808880",
+    "text": "I don’t ask Claude to “make a video” anymore\n\nI give it 6 small jobs. each one produces one file, and the next job starts from that file\n\n> reference  spec.md\nit watches a video I like and writes down why it works: pacing, first motion, cut rhythm\n\n> data  data.json\nit pulls the real numbers and keeps the source next to every figure\n\n> story  story.md\none point, one hero number, three beats. before anything moves\n\n> motion  Scene.tsx\nit writes every frame as code with Remotion and a motion-design skill\n\n> direct  timing.ts\nI give notes in plain words. “title is a beat late”  one line changes\n\nship  final.mp4\nit renders stills, checks them against the spec and the data, then waits for my approval\n\nwhy small jobs work better:\n\neach step has one clear output, so it’s easy to check\nif something looks off, you know exactly which file to fix\nnothing gets re-rolled, so the rest of the video stays the same\n\none big prompt gives you a guess\nsix small jobs give you a video you can actually edit\n\nfull setup, prompt and the 10 open-source skills are in the article",
+    "author": {
+      "id": "1753702673256165376",
+      "name": "Francesco",
+      "screenName": "francescoinweb3",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2091616950551994368/LOOB_e1g_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 2072,
+      "retweets": 183,
+      "replies": 36,
+      "quotes": 15,
+      "views": 161330,
+      "bookmarks": 3772
+    },
+    "createdAt": "Sat Oct 17 09:48:32 +0000 2026",
+    "createdAtLocal": "2026-10-17 06:48",
+    "createdAtISO": "2026-10-17T09:48:32+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2111393587887849472/vid/avc1/1080x1350/zmJbUstHa4fSUwOg.mp4?tag=29",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2108882188624121896",
+      "text": "most people use Claude to write\n\na smaller group figured out how to turn it into an AI production studio.\n\ndashboards, motion graphics, open-source skills, and a full workflow to create exportable videos. one Claude stack. all in here https://t.co/j4U2cJMJqo",
+      "author": {
+        "screenName": "francescoinweb3",
+        "name": "Francesco"
+      }
+    }
+  },
+  {
+    "id": "2047813013395427587",
+    "text": "Create Motion Graphic Videos w/ Remotion\nUsing GPT 5.5 inside Codex\n\n(Full Guide)\n\nTIME STAMPS:\n00:00 Intro\n02:40 What is @Remotion\n04:31 Setting Up the Remotion Plugin\n05:47 First Prompt: Hello World (First Test)\n15:53 Building Brand Assets & File Organization\n19:25 Adding Music with @suno \n21:47 Adding More Scenes\n26:37 Rendering the Video\n27:12 Final Thoughts",
+    "author": {
+      "id": "1601693298707628035",
+      "name": "Riley Brown",
+      "screenName": "rileybrown",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1898571530956873728/JALEVTSb_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1960,
+      "retweets": 148,
+      "replies": 73,
+      "quotes": 13,
+      "views": 239791,
+      "bookmarks": 3287
+    },
+    "createdAt": "Fri Apr 24 23:00:43 +0000 2026",
+    "createdAtLocal": "2026-04-24 20:00",
+    "createdAtISO": "2026-04-24T23:00:43+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2047810877207023616/vid/avc1/3840x2160/mbP2vaDIRk2KgE2E.mp4?tag=21",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2111425771193434363",
+    "text": "Opus 5.5 + Remotion just f*cking killed the jobs of motion designers...\n\nadd GSAP + Three.js and you've got the building blocks for your own motion design studio\n\nthe stack:\n\nOpus 5.5 → plan the scenes and write the code\nhttps://t.co/hZ0SOW7LA0\n\nRemotion → compose, preview, and render the video\nhttps://t.co/u5gem0fo3i\n\nGSAP → choreograph the timing, easing, and transitions\nhttps://t.co/lVakaduLTz\n\nThree.js → build the geometry, cameras, lighting, and depth\nhttps://t.co/obc678oT4T\n\nthe useful part: the animation lives in code\n\nyou can change a scene, adjust the pacing, reuse a component, and render another version from the same project\n\nthe loop:\n\nbrief → storyboard → assets → scene code → motion → preview → refine → export\n\ngive the agent your brief, reference frames, fonts, colors, and delivery format. build one scene first, refine the direction, then carry it through the reel\n\nsave this, then create your own motion design studio, which will be run by your AI employee ↓",
+    "author": {
+      "id": "1829032796481888256",
+      "name": "beamnxw ./",
+      "screenName": "beamnxw",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2074793345314861056/3FE1i0oW_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 373,
+      "retweets": 47,
+      "replies": 43,
+      "quotes": 0,
+      "views": 22396,
+      "bookmarks": 419
+    },
+    "createdAt": "Sat Oct 17 11:55:06 +0000 2026",
+    "createdAtLocal": "2026-10-17 08:55",
+    "createdAtISO": "2026-10-17T11:55:06+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2111419902175145984/vid/avc1/1584x2016/ioK_uo0do0fzQu11.mp4?tag=29",
+        "width": 1584,
+        "height": 2016
+      }
+    ],
+    "urls": [
+      "https://www.anthropic.com/claude-opus-5-5"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2111079523089322438",
+      "text": "https://t.co/RxVUJPnb88",
+      "author": {
+        "screenName": "beamnxw",
+        "name": "beamnxw ./"
+      }
+    }
+  },
+  {
+    "id": "2097581401755308460",
+    "text": "j ai trouvé le shadcn de remotion pour sortir une video de demo sans after effect\n\nLayout, typo, block UI, transitions etc tout les composants motion y sont et c est vraiment clean ! Tu laisses ton agent faire ou tu le dirige !\n\nLe site c est https://t.co/86sxHFM4IN\n\nDemo 👇 https://t.co/T5MqGT61c3",
+    "author": {
+      "id": "1388024060827811841",
+      "name": "code w/Guillaume 💻",
+      "screenName": "guillaume_rygn",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1483519295288233991/9igtPNRr_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 349,
+      "retweets": 29,
+      "replies": 6,
+      "quotes": 0,
+      "views": 22207,
+      "bookmarks": 542
+    },
+    "createdAt": "Wed Sep 09 07:02:32 +0000 2026",
+    "createdAtLocal": "2026-09-09 04:02",
+    "createdAtISO": "2026-09-09T07:02:32+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2097581321199497216/vid/avc1/2560x1440/EVSOwFOoNShOnQkV.mp4?tag=29",
+        "width": 2560,
+        "height": 1440
+      }
+    ],
+    "urls": [
+      "https://remocn.dev"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "fr",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2075475330484273629",
+    "text": "GPT-5.6 Sol Ultra\n\nMade a video of introducing GPT 5.6\ntested with both remotion &amp; hyperframes\n\nRemotion                  /                  HyperFrames https://t.co/aGCboPu2jn",
+    "author": {
+      "id": "1812492025683664896",
+      "name": "Athrix ☄️",
+      "screenName": "athrix_codes",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2093906186412425216/34F68Bc4_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 460,
+      "retweets": 19,
+      "replies": 14,
+      "quotes": 3,
+      "views": 32324,
+      "bookmarks": 357
+    },
+    "createdAt": "Fri Jul 10 07:00:53 +0000 2026",
+    "createdAtLocal": "2026-07-10 04:00",
+    "createdAtISO": "2026-07-10T07:00:53+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2075469090697994240/vid/avc1/1080x1080/DX_TBqRRFtjIHSPu.mp4?tag=28",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2075469133379170304/vid/avc1/1080x1080/rNftNXMzrZFMWT1s.mp4?tag=28",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2015859121661059569",
+    "text": "I made this product launch video over the weekend with just prompts\n\nIt's all vibe coded\n\nhttps://t.co/V9i8Z6N8ow\n\nThere's something you should know, though:\n\nLike everyone else, a few days ago my timeline started getting full of videos like this when Remotion launched their Claude skill, so I decided to give it a go\n\nI was captivated by all the examples, so I started like everyone was saying: \"just write a prompt\"\n\nI typed the prompt, and it created an extremely bland, untasteful, stock-looking video\n\n10 prompts in and it was not getting better. It was very, very bland. But at least it was something, so I kept going at it\n\nI ended up spending my entire weekend on this, 2-3 days of work. Only to realize my original reference videos that inspired me to get started were all fake\n\nEveryone was outright lying about their results. They all claimed \"I made this with just one prompt\", but it was just bait, they didn't really use Remotion or code at all, it was just a normal, human-made motion video\n\nThen you expand the X post and read the replies and they're all like \"haha joke\" in the comments, but their main post already got 1.5 million views and bamboozled everyone who didn't read further\n\nAnd this is a problem: when a viral trend happens, these posts flood your timeline, and you only realize that they're all noise and bait (and that they haven't even used the tools they claim) when you click through the post and read its comments. But 90% of people (like me, initially) just see the post on their timeline while scrolling, and assume it's all real. You don't go in to check every single post you see: you just like it, or save it for later, and carry on with your day, thinking what you saw was the real thing, and that it's all outstanding results, and that motion designers are really done\n\nAnd it's so anxiety inducing, because everyone is hyping their results, but most of it is just not true. I have stopped reading X lately because going in makes me so anxious, everyone is claiming extraordinary outlier results just for the views and clicks, and you feel like you're lagging behind and you're not good enough because you don't get those results\n\nSo for this video I decided to actually take the tech out for a spin, and see what results I could really get out of it\n\nI used Remotion and Claude Code 4.5, but contrary to what everyone was claiming, this video was not \"just a prompt\". It was fully vibe coded, but it required much more than a prompt. It was multiple days worth of work\n\nHere's what I learned:\n\n- Making vibe coded videos with Remotion is ~10-20x slower than building app code. I've been wasting my Claude limits on this video\n\n- Everything takes a lot of manual work and reprompting. You often need to go frame by frame correcting tiny things\n\n- It makes very silly mistakes\n\n- Even Opus 4.5 has very very limited knowledge of spatial / visual things. It doesn't understand well z-indexes, layers, compositions, proportions, temporal coherence, etc. Claude Code feels extremely dumb when creating code for Remotion videos, which surprised me a lot, beacuse I had been mind blown by how incredibly well it worked with my Ruby on Rails SaaS codebases\n\n- You need to have some design knowledge to adjust things manually, you need to ask for exactly what you want, in the technical jargon it expects. You can't just say \"make this more beautiful\" or \"animate this better\" because it just creates slop\n\n- Right now vibe coded videos are promising, but I think I could have done this video faster just by doing it manually in After Effects. It really took that much work\n\n- If you have a creative idea for something you want to animate, it takes multiple hours of back and forth prompting to create just one or two seconds worth of **good** animation\n\n- Tip: PARAMETERIZE everything! It tends to hardcode magic numbers everywhere in the code, so if you change something earlier in the video timeline, everything else breaks. You want to essentially be creating \"key frames\" with code by telling it to parameterize every frame where something important happens, and calculate the rest of the keyframes based off that. This comes in handy when you need, for example, to adjust keyframes to match the music\n\nSo in summary: vibe coded videos are promising, but right now it only works for very stock-looking videos unless you put in a ton of effort\n\nMaybe actually useful for 1-2 second web animations though, I'll try that next\n\nIt will obviously get better, this feels like the quality of code generation in 2023-2024, you need to hold its hand and correct it at every step along the way. But even if video code generation was better, you would still need someone with motion design knowledge to at least set the creative direction, lay out the overall script and composition, etc. It's not completely hands-off unless you want slop\n\nAnd a word on caution: especially here on X, there's 90% hype and 10% reality, nothing is what it seems. Do not believe what you see online, people are constantly baiting and then just laughing it off in the comments",
+    "author": {
+      "id": "131687134",
+      "name": "Javi",
+      "screenName": "rameerez",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2109322787085000704/58RihEdf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1721,
+      "retweets": 94,
+      "replies": 132,
+      "quotes": 31,
+      "views": 317930,
+      "bookmarks": 2102
+    },
+    "createdAt": "Mon Jan 26 18:47:22 +0000 2026",
+    "createdAtLocal": "2026-01-26 15:47",
+    "createdAtISO": "2026-01-26T18:47:22+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2015855461103271937/vid/avc1/3840x2160/K97vRYb999SN5FFx.mp4?tag=21",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "urls": [
+      "https://x.com/Remotion/status/2013626968386765291"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2065482813252526405",
+    "text": "Introducing remocn/ui 😱\n@shadcn components, but for @Remotion video\n\nNo more building custom components, recording your screen, opening After Effects, and editing videos\n\nNow you can simply add a component to your code and turn it into a video\n\nForm filling, button clicks, select dropdown interactions, toast notifications, and 28 more components included 👇",
+    "author": {
+      "id": "1171640777644150784",
+      "name": "KapishDima",
+      "screenName": "kapish_dima",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2028105659359674368/VrsS1zcJ_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 872,
+      "retweets": 40,
+      "replies": 45,
+      "quotes": 6,
+      "views": 58957,
+      "bookmarks": 1093
+    },
+    "createdAt": "Fri Jun 12 17:14:12 +0000 2026",
+    "createdAtLocal": "2026-06-12 14:14",
+    "createdAtISO": "2026-06-12T17:14:12+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2065476816546967552/vid/avc1/1922x1080/GFVP8KHFlItFaJed.mp4?tag=27",
+        "width": 1922,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2080760984290120049",
+    "text": "Claude Opus 5 just made the best Remotion video I have ever seen.\n\nPerfect transitions. Music timing locked to the frame. Branding nailed without me asking.\n\nFable 5 held this crown for months. Opus 5 took it in one prompt.\n\nOpus 5 significantly outperforms Fable 5 at marketing videos, and it is not close.\n\nWatch this and remember Opus 5 made it.",
+    "author": {
+      "id": "1767869376496107520",
+      "name": "BridgeMind",
+      "screenName": "bridgemindai",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2011440113071382528/e2Qscbca_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 941,
+      "retweets": 34,
+      "replies": 62,
+      "quotes": 9,
+      "views": 189078,
+      "bookmarks": 410
+    },
+    "createdAt": "Fri Jul 24 21:04:11 +0000 2026",
+    "createdAtLocal": "2026-07-24 18:04",
+    "createdAtISO": "2026-07-24T21:04:11+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2080760909438320640/vid/avc1/1920x1080/yn6DNwa-k11NcUvy.mp4?tag=29",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2108182955671580771",
+    "text": "this is pure f*cking treasure\n\nNetflix engineers posted 20 GitHub repos that turn your Opus 5.5 into a f*cking motion empire:\n\nbuilt for Opus 5.5\n\n1. claude-motion: taste, checks its own frames, sound written in code. the author built it for Opus 5.5  \nhttps://t.co/TtBtU2nVrN\n\n2. claude-motion-design: HTML, Playwright and ffmpeg, no Remotion. the demo was made on Opus 5.5  \nhttps://t.co/iOsyrWUvKE\n\n3. motion-graphics-skills: 13 skills for launch videos. the README tells you to run it on Opus 5.5  \nhttps://t.co/yNZhCZO8wT\n\n4. claude-remotion-skill: a Remotion editor from one prompt. captions, B-roll, sound  \nhttps://t.co/immhzwVP5i\n\n5. klik-anim-skill-creation: the laws of animation and camera, built on Opus  \nhttps://t.co/XWqUnn4v7o\n\n6. hyperframes-motion-reel-skill: a showreel cut to the beat at 120 BPM, on HyperFrames  \nhttps://t.co/E96s10io4Q\n\n7. product-launch-motion: a full launch film. voice-over, camera, color grade  \nhttps://t.co/VBfllJ6j1K\n\n8. animate: a short clip in one canvas file, storyboarded as it goes  \nhttps://t.co/xafT2UPXUe\n\n9. motion-design-skills: timing, color, typography, logos, Remotion  \nhttps://t.co/gKUqO9P2Xe\n\n10. hyperframes-student-kit: 14 skills and 406 motion graphics cards  \nhttps://t.co/fJmzb9I5z0\n\nthe engines these skills render with\n\n11. hyperframes: HTML to MP4. the one almost everyone installs  \nhttps://t.co/4rIffGKusx\n\n12. remotion: video written in React  \nhttps://t.co/o5zRdBgcS0\n\n13. remotion skills: the official Remotion skills for your agent  \nhttps://t.co/EieoL5Quaq\n\n14. GSAP: the timelines HyperFrames runs on. skills: npx skills add greensock/gsap-skills  \nhttps://t.co/LYRTAx5wvF\n\ntaste and everything around it\n\n15. motion-design-skill: motion principles that work with any engine  \nhttps://t.co/Vgr318UX9h\n\n16. awesome-motion-design-agent-skills: a map of GSAP, Remotion, Lottie and Rive skills  \nhttps://t.co/hF0ZxWyjcI\n\n17. motion-graphics: B-roll built straight from your transcript  \nhttps://t.co/Gwi9SKlS9C\n\n18. motion-dev-animations-skill: web animation on https://t.co/V19R87wQid, not video  \nhttps://t.co/YOL7zHaCB5\n\n19. motion: Motion itself, formerly Framer Motion  \nhttps://t.co/Jp9AReFaWe\n\n20. lottie-web: when you need Lottie, not MP4  \nhttps://t.co/TEG0FY4vFg\n\nthe stack in one line: Opus 5.5 writes the code, a skill sets the timing and the camera, an engine renders the MP4.\n\ncheck each repo before you install. save this.",
+    "author": {
+      "id": "1761537434343370752",
+      "name": "NO1ennn",
+      "screenName": "N01ennn",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2042704855702147072/Scs1uqIO_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 5996,
+      "retweets": 661,
+      "replies": 114,
+      "quotes": 40,
+      "views": 509596,
+      "bookmarks": 14251
+    },
+    "createdAt": "Thu Oct 08 13:09:19 +0000 2026",
+    "createdAtLocal": "2026-10-08 10:09",
+    "createdAtISO": "2026-10-08T13:09:19+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2108182921622269952/vid/avc1/976x1026/nNfcbpKHq2b0rrD6.mp4?tag=29",
+        "width": 976,
+        "height": 1026
+      }
+    ],
+    "urls": [
+      "https://github.com/whaleyxbt/claude-motion"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2107826459804840072",
+      "text": "https://t.co/n9CBABFIZI",
+      "author": {
+        "screenName": "N01ennn",
+        "name": "NO1ennn"
+      }
+    }
+  },
+  {
+    "id": "2109314840057565345",
+    "text": "it's absolutely gold\n\nex-Figma Design Lead dropped a list of 15 github repos that turn Opus 5.5 into a full motion design studio\n\nSHIP A LAUNCH VIDEO\n\n01. product-launch-motion:\nhttps://t.co/TfWGMxzrur\n-> point it at your product, get script, voiceover, camera moves and film grade\n\n02. motion-graphics-skills:\nhttps://t.co/7sg0HIXwoJ\n-> 15 skills for launch videos, animated charts and reels, zero After Effects\n\n03. claude-motion-design:\nhttps://t.co/5BgewssG5C\n-> every cut lands on the beat, its demo film took 5 iterations on Opus 5.5\n\nEDIT YOUR OWN FOOTAGE\n\n04. hyperframes-student-kit:\nhttps://t.co/UZOGUFkEpB\n-> drop in your footage, it cuts dead air and mistakes, then adds motion graphics\n\n05. motion-graphics:\nhttps://t.co/bsOmEqoQ7M\n-> motion B-roll timed to your words, and it cuts you out of the background\n\nMAKE ANIMATED SHORTS\n\n06. animate:\nhttps://t.co/qFseHvZX4R\n-> explainers in 7 styles, cut paper to riso to pixel art, storyboard first\n\n07. claude-motion:\nhttps://t.co/TBZnzJ1Wdb\n-> teaches Claude taste, makes it check its own frames, adds a sound engine\n\n08. claude-remotion-skill:\nhttps://t.co/GJaH7oDOvm\n-> fixes the flat fades and stiff motion most AI videos ship with\n\nANIMATE YOUR SITE\n\n09. motion:\nhttps://t.co/RiDs7drR2u\n-> buttons, cards and page transitions for React, Vue and plain JS\n\n10. motion-dev-animations-skill:\nhttps://t.co/CYZzY342ac\n-> one sentence and Claude Code animates your site\n\nOFFICIAL BUILDING BLOCKS\n\n11. hyperframes:\nhttps://t.co/kk2yVJTmRr\n-> your agent writes HTML, HyperFrames renders it as video\n\n12. remotion:\nhttps://t.co/fRqecxwWFV\n-> turn an idea into a video straight from your coding agent\n\n13. remotion skills:\nhttps://t.co/YXSJfYIbM3\n-> Remotion's official best practices for Claude Code, Codex and Cursor\n\n14. gsap-skills:\nhttps://t.co/5aqOAl5RUL\n-> official GSAP skills, the engine under the launch and editing kits above\n\n15. motion-design-skill by LottieFiles:\nhttps://t.co/028XnA4JRT\n-> Disney's 12 animation principles, rewritten for AI agents\n\nthe map picks your first install in 3 questions",
+    "author": {
+      "id": "1062361511866327041",
+      "name": "Mnimiy",
+      "screenName": "Mnilax",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2007608177492217856/3gdItGwC_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 716,
+      "retweets": 81,
+      "replies": 32,
+      "quotes": 11,
+      "views": 113353,
+      "bookmarks": 1606
+    },
+    "createdAt": "Sun Oct 11 16:07:01 +0000 2026",
+    "createdAtLocal": "2026-10-11 13:07",
+    "createdAtISO": "2026-10-11T16:07:01+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2109314786747912194/vid/avc1/1080x1350/ziWjz48fCP3tIe5l.mp4?tag=29",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [
+      "https://github.com/AbubakrChan/product-launch-motion"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2108953625330356628",
+      "text": "it's f*cking insane..\n\nAnthropic just dropped a Claude Code setup that makes tokens up to 97% cheaper\n\nOpus brains, Sonnet bill:\n\n> Sonnet runs your session and writes the code\n> Haiku subagents grab the small tasks\n> Opus steps in only when Sonnet gets stuck\n> it checks the work, digs into the problem and puts Sonnet back on track\n\n$19.50 saved on every 1M tokens a Haiku 5.5 subagent writes, compared with Opus 5.5\n\none command sets it up:\n\nnpx claude-code-templates@latest --setting model/sonnet-opus-advisor-haiku-subagents\n\nthe easiest money you'll save on Claude Code this year",
+      "author": {
+        "screenName": "Mnilax",
+        "name": "Mnimiy"
+      }
+    }
+  },
+  {
+    "id": "2110039251681218763",
+    "text": "Opus 5.5 just f*cking killed the jobs of motion designers...\n\nClaude Code + Remotion = your own motion design studio\n\ngive it a brief, your assets, and a reference\nbuild the scenes as editable React code\n\n01 direct the scene\nlayout, typography, colors, and reusable components\n\n02 make it move\ntiming, easing, keyframes, transitions, and layered animation\n\n03 polish the result\npreview the frames, fix the spacing, adjust the pacing, and render the MP4\n\nthe clever part:\nyour video lives in code\nchange the headline, fonts, format, or motion curve → render again\n\nthe repo:\n▸ https://t.co/u5gem0fo3i\n\nstart a project:\nnpx create-video@latest\n\nadd the official Remotion skills:\nnpx skills add remotion-dev/skills\n\nskills for coding agents:\n▸ https://t.co/zpstNcymn9\n\nthe loop:\nbrief → storyboard → assets → layout → animate → preview → refine → render\n\nsave this, then read the full guide for Opus 5.5 Motion Engineering ↓",
+    "author": {
+      "id": "1829032796481888256",
+      "name": "beamnxw ./",
+      "screenName": "beamnxw",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2074793345314861056/3FE1i0oW_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 567,
+      "retweets": 82,
+      "replies": 37,
+      "quotes": 1,
+      "views": 32885,
+      "bookmarks": 637
+    },
+    "createdAt": "Tue Oct 13 16:05:34 +0000 2026",
+    "createdAtLocal": "2026-10-13 13:05",
+    "createdAtISO": "2026-10-13T16:05:34+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2110039174099128320/vid/avc1/1440x1224/VlZLlDxedGt-EvF5.mp4?tag=29",
+        "width": 1440,
+        "height": 1224
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2108616740846420354",
+      "text": "Opus 5.5 can run a whole motion design studio\n\nSell a 20-second launch clip built from real product screens\n\nCopy the motion engineering prompts and delivery process\n\nBuild your offer before the next product launch ↓ https://t.co/KjiDrYRDjQ",
+      "author": {
+        "screenName": "beamnxw",
+        "name": "beamnxw ./"
+      }
+    }
+  },
+  {
+    "id": "2013908334693527632",
+    "text": "this is incredible\n\nremotion + claude code almost one-shotted this full promo video \n\n~30 sec video with animations, transitions, product demos, brand colors, and background music :O https://t.co/R7y4Wtru57",
+    "author": {
+      "id": "1341662614313525248",
+      "name": "Sandra",
+      "screenName": "sandraleow",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2020139910347522048/AsVDYfs4_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1948,
+      "retweets": 63,
+      "replies": 70,
+      "quotes": 7,
+      "views": 308875,
+      "bookmarks": 2266
+    },
+    "createdAt": "Wed Jan 21 09:35:38 +0000 2026",
+    "createdAtLocal": "2026-01-21 06:35",
+    "createdAtISO": "2026-01-21T09:35:38+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2013908006904426496/vid/avc1/1920x1080/6f_iDDYUQo8qtxrG.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2111888466829303973",
+    "text": "this is pure f*cking treasure\n\nex.Antrophic engineer put together 20 GitHub repos to build a f*cking motion empire, with 1m+ combined stars:\n\ntaste: \n\n> LottieFiles/motion-design-skill: timing, easing, choreography + Disney principles\nhttps://t.co/ow344TmmRo\n>  iart-ai/motion-design-skills: timing, type, color, composition, logos\nhttps://t.co/lUM4oaqWDd\n> frankxai/awesome-motion-design-agent-skills: curated GSAP, Motion, Remotion, Lottie, Rive\nhttps://t.co/s16jaozNyr\n> ismoshushi/awesome-opus-video-skills: index of open video skills for Opus 5.5\nhttps://t.co/CQnJxGtn3c\n\n web motion:\n\n> whaleyxbt/claude-motion: a motion design toolkit for coding agents\nhttps://t.co/wmzL9ruICw\n06 freshtechbro/claudedesignskills: 3D, animation and interactive web\nhttps://t.co/FMl7pfCJlf\n> 199-biotechnologies/motion-dev-animations-skill: https://t.co/V19R87xo7L, 120fps, springs, scroll\nhttps://t.co/Jc2Nv10vHO\n> greensock/gsap-skills: official GSAP skills, 16.6K stars\nhttps://t.co/KNeQ9270T7\n\nvideo in code:\n\n> remotion-dev/skills: Remotion's own agent skills\nhttps://t.co/isBeFhYVrm\n> haidrrrry/claude-remotion-skill: B-roll, captions, sound design from one prompt\nhttps://t.co/zVs1wlT509\n> Liamrjohnston/remotion-motion-graphics-skill: production-ready Remotion graphics\nhttps://t.co/b84KP5Fi0g\n> wilwaldon/Claude-Code-Video-Toolkit: Remotion, Manim, screen capture, FFmpeg\nhttps://t.co/dBt3HRsLlP\n\nreels & launch:\n\n> iart-ai/motion-skills: 50 skills, 14 packs, from kinetic type to WebGL\nhttps://t.co/NEG7KeOKlO\n> kaventro/motion-designer: your real UI, cut to music, rendered locally\nhttps://t.co/4jDdGuBd35\n> Sunwood-ai-labs/hyperframes-motion-reel-skill: beat-synced reels, 120 BPM, 60 FPS\nhttps://t.co/AwfzdTTuXW\n> charlie947/motion-graphics-skills: 13 skills, launch-grade, no After Effects\nhttps://t.co/BRw74K9tkV\n\nopus 5.5 pipeline:\n\n> howseen-ai/claude-motion-design: pure-code video, HTML + Playwright + ffmpeg\nhttps://t.co/5OhRw9p4J0\n> tuzhechen2005/opus-video-skills: hand-painted animation, kinetic type\nhttps://t.co/ZUzS1Nyjyp\n> siyuanfeng636-cpu/agentic-motion-graphics: code-to-video with Whisper + TTS\nhttps://t.co/wBef5pd6F4\n> Lob0Garou/opus-visual-motion-engine: deterministic seek(t), render QA, MP4 export\nhttps://t.co/9sXm8sL1gj\n\nstart at floor 01. then climb.",
+    "author": {
+      "id": "1761537434343370752",
+      "name": "NO1ennn",
+      "screenName": "N01ennn",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2042704855702147072/Scs1uqIO_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 390,
+      "retweets": 48,
+      "replies": 27,
+      "quotes": 1,
+      "views": 22412,
+      "bookmarks": 620
+    },
+    "createdAt": "Sun Oct 18 18:33:42 +0000 2026",
+    "createdAtLocal": "2026-10-18 15:33",
+    "createdAtISO": "2026-10-18T18:33:42+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2111888394351435778/vid/avc1/2000x2160/8X3WQRQphQrNZl2C.mp4?tag=29",
+        "width": 2000,
+        "height": 2160
+      }
+    ],
+    "urls": [
+      "https://github.com/LottieFiles/motion-design-skill"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2107826459804840072",
+      "text": "https://t.co/n9CBABFIZI",
+      "author": {
+        "screenName": "N01ennn",
+        "name": "NO1ennn"
+      }
+    }
+  },
+  {
+    "id": "2108821248817971519",
+    "text": "Opus 5.5 is f*cking insane for motion design\n\n20 tools to build your own motion design studio with Opus 5.5\n\nproduct demos. launch videos. animated explainers. interactive UI.\n\nbuild the video, tune the movement, shape the scene, add sound, ship.\n\n01 Remotion\n▸ turn React components into editable videos\nhttps://t.co/NqkyLojY85\n\n02 Remotion Skills\n▸ give your coding agent the official video workflow\nhttps://t.co/2CtNBrJ83q\n\n03 Motion Canvas\n▸ build animated explainers with TypeScript\nhttps://t.co/lhrCld1EnC\n\n04 Motion\n▸ animate layouts, gestures and springs\nhttps://t.co/FLXKX3Lrof\n\n05 GSAP\n▸ coordinate complex sequences with timelines\nhttps://t.co/fSsxnPIyug\n\n06 Anime.js\n▸ animate text, SVG and interface elements\nhttps://t.co/jUWcWtUvh9\n\n07 Rive\n▸ build characters that react to user input\nhttps://t.co/HtcHlfxa66\n\n08 Animations .dev\n▸ study timing, easing and interaction details (paid course)\nhttps://t.co/Nxr12oHiNd\n\n09 Carbon Motion\n▸ plan movement around hierarchy and purpose\nhttps://t.co/3nYGjwd24u\n\n10 Easing Wizard\n▸ preview curves and tune the feel of a transition\nhttps://t.co/uyfXpeYbVo\n\n11 Google Fonts\n▸ choose typefaces for titles and readable labels\nhttps://t.co/wipr480nxn\n\n12 Three.js\n▸ build custom 3D scenes, lighting and cameras\nhttps://t.co/qdl6fQ0doV\n\n13 React Three Fiber\n▸ compose reusable 3D scenes in React\nhttps://t.co/w4CQH4b19C\n\n14 Spline\n▸ design interactive 3D scenes visually\nhttps://t.co/PnvB9J6syE\n\n15 Poly Haven\n▸ get CC0 models, materials and HDRIs\nhttps://t.co/juSduPiUyV\n\n16 Blender\n▸ model assets, animate objects and render scenes\nhttps://t.co/TIw4mEXF28\n\n17 SVGOMG\n▸ clean vector assets before animating them\nhttps://t.co/o3g8CDvglB\n\n18 Pixabay Music\n▸ find licensed music and sound effects\nhttps://t.co/0QCX0uXNiT\n\n19 Mediabunny\n▸ read, write and convert media in the browser\nhttps://t.co/3yqipHnAQC\n\n20 FFmpeg\n▸ encode, resize and prepare the final export\nhttps://t.co/ZC0BUgjfhu\n\nthe loop:\n\nwrite the brief → choose the type → map the keyframes → build the scene → add sound → review the render → ship\n\nstart with one product workflow. give every movement a job.\n\nsave this, then read the full guide for Opus 5.5 Motion Engineering ↓",
+    "author": {
+      "id": "1829032796481888256",
+      "name": "beamnxw ./",
+      "screenName": "beamnxw",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2074793345314861056/3FE1i0oW_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 327,
+      "retweets": 54,
+      "replies": 27,
+      "quotes": 1,
+      "views": 17036,
+      "bookmarks": 350
+    },
+    "createdAt": "Sat Oct 10 07:25:40 +0000 2026",
+    "createdAtLocal": "2026-10-10 04:25",
+    "createdAtISO": "2026-10-10T07:25:40+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2108821220556783619/vid/avc1/1080x1350/FBWN7LbWvfp9pOKM.mp4?tag=29",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2108616740846420354",
+      "text": "Opus 5.5 can run a whole motion design studio\n\nSell a 20-second launch clip built from real product screens\n\nCopy the motion engineering prompts and delivery process\n\nBuild your offer before the next product launch ↓ https://t.co/KjiDrYRDjQ",
+      "author": {
+        "screenName": "beamnxw",
+        "name": "beamnxw ./"
+      }
+    }
+  },
+  {
+    "id": "2064826394589442448",
+    "text": "Lots of people asked how I used Fable to edit its own launch video so I made a video about that!\n\nTLDR it wrote a lot of code &amp;  tool calls to use transcription services, ffmpeg, do colorgrading, use the figma mcp, make remotion UI and render it. \n\nI didn't touch a video editor. https://t.co/hJRdJye5Fy",
+    "author": {
+      "id": "352806502",
+      "name": "Thariq",
+      "screenName": "trq212",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1976939058741039104/r3GgzqRh_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 9430,
+      "retweets": 623,
+      "replies": 293,
+      "quotes": 172,
+      "views": 1101874,
+      "bookmarks": 13647
+    },
+    "createdAt": "Wed Jun 10 21:45:49 +0000 2026",
+    "createdAtLocal": "2026-06-10 18:45",
+    "createdAtISO": "2026-06-10T21:45:49+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2064825703275859968/vid/avc1/1740x1080/L8R-kjmE84hGeMrO.mp4?tag=27",
+        "width": 1740,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2033056646595850498",
+    "text": "HOW TO GET THOUSANDS OF VIEWS USING CLAUDE CODE AND REMOTION\n\none guy created demos that got him thousands of new visitors for his startup \n\nhere's the exact process:\n\n1\\ install remotion (react-based video generation)\n\ncode becomes a video. thats literally it.\n\n2\\ use claude code with remotion skills\n\n> remotion-transitions for scene cuts\n> frontend-design for illustrations  \n> claude writes the video components, you tweak timing\n\n3\\ build feature illustrations first\n\nclaude code generates SVG-based product visuals directly in your landing page components\n\nthings that take designers days now take hours\n\n4\\ rebuild your landing page\n\ngo from placeholder screenshots to actual branded, animated UI sections\n\nsame loop. claude does the heavy lifting\n\n5\\ create the reels\n\neach reel is just a react component\n\nclaude scaffolds the scene. you adjust copy and timing. export.\n\nfirst reel: 1 hours\nsecond reel: 30 minutes  \nnow under 10 minutes per reel\n\nit'll get faster and faster as you recycle what you already have made\n\nthe thing he thought required months and thousands of dollars he was doing himself for free\n\n$0 production costs besides claude code subscription\n\nhere's a demo using this exact strat for someone's product:",
+    "author": {
+      "id": "1785824188281876480",
+      "name": "Om Patel",
+      "screenName": "om_patel5",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1918476395111501824/M9qX-gQP_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1153,
+      "retweets": 70,
+      "replies": 42,
+      "quotes": 13,
+      "views": 186805,
+      "bookmarks": 2708
+    },
+    "createdAt": "Sun Mar 15 05:44:11 +0000 2026",
+    "createdAtLocal": "2026-03-15 02:44",
+    "createdAtISO": "2026-03-15T05:44:11+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2033056195653566464/vid/avc1/1920x1080/xL37opAudX7JkTX3.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2094092484473151579",
+    "text": "NO HE VUELTO A PAGAR CAPCUT DESDE QUE USO ESTO\n\nSe llama Video Use. Es una herramienta de edición para Claude Code, open source y gratuita.\n\nEl flujo es absurdo de simple: metes el material bruto en una carpeta, le dices qué quieres, y se encarga del resto.\n\nCorta los clips. Elimina muletillas y silencios. Genera los subtítulos. Aplica corrección de color. Añade animaciones. Renderiza el archivo final.\n\nSin línea de tiempo. Sin arrastrar clips durante tres horas. Sin suscripción mensual.\n\nNo es una librería para programar vídeos como Remotion, donde tú sigues montando todo a mano. Aquí la edición la hace la herramienta.\n\nYo lo uso para los cortes verticales de mis vídeos largos. Lo que antes me llevaba una tarde entera ahora sale mientras hago otra cosa.\n\nEstá en GitHub, es gratis y puedes revisar el código.",
+    "author": {
+      "id": "1588957793175871488",
+      "name": "said",
+      "screenName": "saidstetic",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2105643697408823297/1G8eBBil_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 844,
+      "retweets": 164,
+      "replies": 9,
+      "quotes": 5,
+      "views": 74070,
+      "bookmarks": 999
+    },
+    "createdAt": "Sun Aug 30 15:58:49 +0000 2026",
+    "createdAtLocal": "2026-08-30 12:58",
+    "createdAtISO": "2026-08-30T15:58:49+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2094092453062037504/vid/avc1/972x720/dA0bIsMgR2O5biNz.mp4?tag=29",
+        "width": 972,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "es",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2094061655990702150",
+      "text": "🚨 ADIÓS A LA EDICIÓN DE VIDEO\n\nAlguien acaba de crear una herramienta de edición de video gratuita para Claude Code... y es una locura.\n\nLiteralmente solo tienes que soltar tu material sin procesar + archivos en una carpeta.\n\nEso es todo.\n\nSe encarga de TODO:\n\n•Corta los clips\n•Elimina las palabras de relleno\n•Añade subtítulos\n•Aplica corrección de color y filtros\n•Maneja animaciones\n•Renderiza el video final\n\nSin línea de tiempo. Sin edición manual. Sin rodeos.\n\nHonestamente, esto va más allá de herramientas como Remotion.\n\nNo solo te ayuda a crear videos… hace la edición por ti.\n\nEl proyecto es open source en GitHub.\n\nSe llama Video Use.\n\nlink debajo ⬇️",
+      "author": {
+        "screenName": "lisaknowsai",
+        "name": "lis"
+      }
+    }
+  },
+  {
+    "id": "2095281811613987051",
+    "text": "🚨 المونتاج مثل ما تعرفه انتهى.\n\nأحدهم طوّر أداة تحوّل Claude إلى محرر فيديو محترف… والأفضل؟ مجانية.\n\nكل اللي عليك تسويه إنك تسحب ملفاتك وتحطها في مجلد.\n\nوتخليها تسوي الباقي لحالها:\n\n• تقص المقاطع تلقائيًا\n• تحذف التأتأة والسكوت الزائد\n• تنشئ ترجمة دقيقة\n• تطبّق تصحيح ألوان احترافي\n• تضيف أنيميشن سلس\n• ترندر الفيديو كامل بدون تدخل منك\n\nبدون تايم لاين. بدون نقرات يدوية. بدون تعقيد.\n\nوهذا يخلي أدوات مثل Remotion تبدو من الجيل القديم.\n\nهي ما تساعدك في شغلك…\n\nهي تسويه عنك.\n\nاسم المشروع Video Use، ومفتوح المصدر بالكامل.\n\nالرابط تحت 👇🏽",
+    "author": {
+      "id": "843030338628718596",
+      "name": "مالك بن حمود المالك",
+      "screenName": "cnemalek",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1971649636440883200/NSFJ-m6E_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 407,
+      "retweets": 70,
+      "replies": 4,
+      "quotes": 0,
+      "views": 23901,
+      "bookmarks": 437
+    },
+    "createdAt": "Wed Sep 02 22:44:46 +0000 2026",
+    "createdAtLocal": "2026-09-02 19:44",
+    "createdAtISO": "2026-09-02T22:44:46+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2095281732756836353/vid/avc1/640x316/4OjJ1h4C_4lY4UPo.mp4?tag=29",
+        "width": 640,
+        "height": 316
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "ar",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2102106357919064362",
+    "text": "🚨 LA EDICIÓN DE VIDEO COMO LA CONOCES ACABA DE MORIR.\n\nAlguien creó una herramienta que convierte a Claude en un editor profesional… y está GRATIS.\n\nSolo arrastras tus archivos a una carpeta.\n\nY observas cómo se edita solo:\n\n• Corta los clips automáticamente\n• Elimina muletillas y silencios\n• Genera subtítulos perfectos\n• Aplica corrección de color profesional\n• Añade animaciones fluidas\n• Renderiza todo sin intervención humana\n\nCero líneas de tiempo. Cero clics manuales. Cero fricción.\n\nEsto deja herramientas como Remotion en el pasado.\n\nNo asiste tu trabajo.\n\nLo reemplaza.\n\nEl proyecto se llama Video Use y es completamente open source.\n\nlink abajo ⬇️",
+    "author": {
+      "id": "1768796824112934912",
+      "name": "Alexander Inspira IA",
+      "screenName": "Alex_Inspira",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2106051853909688320/z7_DGR2u_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 578,
+      "retweets": 114,
+      "replies": 31,
+      "quotes": 2,
+      "views": 40084,
+      "bookmarks": 705
+    },
+    "createdAt": "Mon Sep 21 18:43:05 +0000 2026",
+    "createdAtLocal": "2026-09-21 15:43",
+    "createdAtISO": "2026-09-21T18:43:05+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2102106308229083136/vid/avc1/2186x1080/DoX7GmW9nsIa6zKr.mp4?tag=16",
+        "width": 2186,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "es",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2014179859241537575",
+    "text": "Remotion 这个 Skill 太酷了，真的是制作视频动画和 PPT 的神器。不多说直接看成果，只用了一句提示词：use remotion skill create a video about how to install codex https://t.co/P8AIS0uPJA",
+    "author": {
+      "id": "3007509396",
+      "name": "酱紫表",
+      "screenName": "pengchujin",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1772530812078239744/aPK5wde3_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 454,
+      "retweets": 66,
+      "replies": 14,
+      "quotes": 1,
+      "views": 60339,
+      "bookmarks": 585
+    },
+    "createdAt": "Thu Jan 22 03:34:34 +0000 2026",
+    "createdAtLocal": "2026-01-22 00:34",
+    "createdAtISO": "2026-01-22T03:34:34+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2014179711241613312/vid/avc1/1920x1080/YPkwAZYcYI7zjiBT.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zh",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1924721758709350466",
+    "text": "Introducing Remotion Media Parser, a modern multimedia library for JavaScript!\n\n👁️ A better way to retrieve metadata: More information, more formats, runs in the browser and on the server.\n\n📼 Decoding video + audio: Process video frames and  waveforms in the browser using the WebCodecs API.\n\n👩‍🎤 Awesome developer experience: We understand the needs of JavaScript developers and give you all of the niceness.\n\nVisit https://t.co/exEcegH0Re to get started!",
+    "author": {
+      "id": "81047449",
+      "name": "Jonny Burger",
+      "screenName": "JNYBGR",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1701672174661046272/Ez-SKeJ1_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 369,
+      "retweets": 50,
+      "replies": 15,
+      "quotes": 6,
+      "views": 28186,
+      "bookmarks": 154
+    },
+    "createdAt": "Tue May 20 07:00:01 +0000 2025",
+    "createdAtLocal": "2025-05-20 04:00",
+    "createdAtISO": "2025-05-20T07:00:01+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/1924720320302166016/vid/avc1/1920x1080/wZpdLSrFPOCmZ5xZ.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2014140335824212100",
+    "text": "CLAUDE CODE IS NOW MY VIDEO EDITOR 📽️\n\nI LOVE WHAT IT CAN DO WITH THIS REMOTION SKILL\n\nI asked it to make me a showcase for my project:\n\nSFX/Music/Images (besides the characters) was genned &amp; stitched by Claude using other skills!\n\nbesides my feedback, this was FULLY autonomous https://t.co/etQmWbB7Dt",
+    "author": {
+      "id": "1623247610730676224",
+      "name": "BOOTOSHI 👑",
+      "screenName": "KingBootoshi",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1683542427817353216/YtD-OcUJ_normal.png",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1672,
+      "retweets": 64,
+      "replies": 79,
+      "quotes": 10,
+      "views": 225018,
+      "bookmarks": 1569
+    },
+    "createdAt": "Thu Jan 22 00:57:31 +0000 2026",
+    "createdAtLocal": "2026-01-21 21:57",
+    "createdAtISO": "2026-01-22T00:57:31+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2014139337005559808/vid/avc1/1920x1080/n6xbagwh4fMhu66s.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2111502499048026232",
+    "text": "Give Opus 5.5 𝗮 𝗰𝗹𝗶𝗰𝗸𝗮𝗯𝗹𝗲 𝗺𝗼𝘁𝗶𝗼𝗻 𝗱𝗶𝗰𝘁𝗶𝗼𝗻𝗮𝗿𝘆: 𝟭𝟮𝟬 𝗺𝗼𝘃𝗶𝗻𝗴 𝘀𝗮𝗺𝗽𝗹𝗲𝘀, each labelled with its name and a ready-made prompt. Click the ones you like, and Claude Code builds them into your video or site.\n\nFive packs: motion graphics, camera moves and transitions, UI components, landing page and web effects, and photo looks and lighting.\n\nFour steps:\n1. Paste the line at the end into Claude Code to install the skill\n2. Tell it \"Open the motion-prompt library\"\n3. Tick the samples you like in the gallery and press \"Send to AI\"\n4. Back in Claude Code, say \"Edit the opening of this video like this\"\n\nIt gets each sample's motion spec and reference code, and it works with Remotion, CSS or Canvas. Without the skill, press \"Copy picks\" and paste them in.\n\nPaste this into Claude Code and it installs itself 👇\n\"Read https://t.co/QLB00Jm3Uf and install the motion-prompt skill in this environment. When it is installed, tell me how to use it in three lines.\"",
+    "author": {
+      "id": "1994077573694046208",
+      "name": "Vox",
+      "screenName": "Voxyz_ai",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1998303259279138816/5bqsxKJS_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 936,
+      "retweets": 69,
+      "replies": 22,
+      "quotes": 8,
+      "views": 63118,
+      "bookmarks": 1637
+    },
+    "createdAt": "Sat Oct 17 17:00:00 +0000 2026",
+    "createdAtLocal": "2026-10-17 14:00",
+    "createdAtISO": "2026-10-17T17:00:00+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2111107650469470208/vid/avc1/1440x816/eG2SPm7ZeuDhrogZ.mp4?tag=29",
+        "width": 1440,
+        "height": 816
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2109690569563746755",
+      "text": "Claude Code tip: install huashu-art-motion and Opus 5.5 can draw animations in 𝟯𝟱 𝗮𝗿𝘁 𝘀𝘁𝘆𝗹𝗲𝘀 with code. Van Gogh's starry sky swirls. Dalí's clocks drip. And its delivery script rejects any film where almost nothing moves.\n\nYou can just ask for an animation in the style of Van Gogh, Monet or Bauhaus, an explainer animation to go with your voiceover, or a character walking through one famous painting after another. Hand it a reference animation and it first breaks down the cuts, the beat and what moves where in the frame, then recreates it in code.\n\n𝗪𝗶𝘁𝗵𝗶𝗻 𝟭𝟬 𝗺𝗶𝗻𝘂𝘁𝗲𝘀 𝗼𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗶𝗻𝗴 𝗶𝘁, Opus 5.5 made this demo video from its 35 built-in styles. It runs from cave painting 40,000 years ago all the way to 2026. The room, the cat and the girl never change; only the style does.\n\n17 that work for any subject: products, data, stories\n→ Van Gogh, Matisse cut-outs, Seurat pointillism, Impressionism\n→ Analytic Cubism, Lichtenstein pop art, Bauhaus, Russian Constructivism\n→ Ghibli watercolor backgrounds, Makoto Shinkai light, Chinese ink wash\n→ 8-bit pixel art, vaporwave neon, 2026 flat illustration\n→ Pompeii mosaic, early ray-traced CGI, Rembrandt chiaroscuro\n\n18 for time travel, tributes and art-history speedruns\n→ Monet's water lilies, Klimt's golden period, Munch, Dalí\n→ Hopper, Picasso's blue period, Mucha's Art Nouveau\n→ Keith Haring, Kusama polka dots, Jack Kirby comics, 1930s rubber hose cartoons\n→ Cave painting, Egyptian tomb murals, Greek black-figure pottery, Dunhuang murals\n→ Chinese shadow puppets, Gothic illuminated manuscripts, Renaissance sfumato\n\nEach style spells out what moves in the picture. The eyes on Klimt's robe blink in turn, Hopper's hard-edged patch of sunlight slides slowly across a face, and the 8-bit question block pops out a coin.\n\n9 explainer styles\n→ For math and AI concepts, use 3Blue1Brown, where one shape morphs into the next\n→ For data, use finance charts: axes first, then the data, and label only one thing\n→ For UI steps in a software tutorial, use the keynote look: light-spot background, frosted-glass cards, big numbers\n→ To draw relationships as you narrate, use the whiteboard, where the pen tip reveals the line art bit by bit\n→ For a collage of graphics and info, use the Vox explainer look: clippings, red lines, highlighter\n→ Kurzgesagt, flat with no outlines, moving between tiny and huge scales\n→ Storytime, cutting to reaction close-ups and leaving a beat for the joke\n→ Kinetic type, with the key word slamming into the frame\n→ Presenter-led finance explainers, where you supply the character yourself\n\nThe music is synthesized in code too, note by note on a BPM grid. When a film is done, it runs its QA script, then sends an agent that took no part in making it to watch only the finished film and find problems. The delivery script also blocks two more things: 0.3+ seconds of blank frames mid-film, and a blue-purple background in over 30% of the film, a palette it counts as AI slop.\n\nThe skill has 𝗮 𝘁𝗶𝗲𝗿 𝗷𝘂𝘀𝘁 𝗳𝗼𝗿 𝗖𝗹𝗮𝘂𝗱𝗲 𝗢𝗽𝘂𝘀 𝟱.𝟱 or stronger models, where it can combine the libraries itself and write its own renderers. All 35 styles are star-rated, and the 20 with three stars are recognizable at a glance and ready to use.\n\nThe skill's docs are in Chinese; the prompt below has it read them and talk to you in English.\nRendering video needs uv, ffmpeg and Playwright Chromium.\nIf you want people on screen, use your own character art or connect an image model to make the frames. Without either, it only draws hands and figures seen from behind.\n\nnpx skills add alchaincyf/huashu-art-motion\nhttps://t.co/tGUVjIj4FB\n\nOnce it's installed, send this to Opus 5.5 in Claude Code 👇\n\n\"Use huashu-art-motion to make me a 15-second animation. The skill's docs are in Chinese; read them and talk to me in English.\n1. First check for uv, ffmpeg and Playwright Chromium, and tell me how to install anything that's missing.\n2. Ask me what it's about, who it's for, and whether it's landscape or portrait. From the material layer in references/风格配方/INDEX.md, pick 3 styles that fit, three-star ones first. Redesign the composition for my subject in all three, each different from the others, and don't copy the room from the samples. Show me one still frame of each to choose from.\n3. Once I pick, give each scene one main action plus two motif loops from that style's card. For Van Gogh, that's the starry sky curling into swirls and the lamp's halo spreading outward. If there's music, use the skill's BPM synthesis and put the motion on the beat.\n4. If people need to appear, ask me first: my own character art, frames from an image model, or only hands and figures seen from behind.\n5. After rendering, follow the skill's own QA steps: run its QA script first, then send a subagent that took no part in making it to watch only the finished film and find problems, have it write its findings into the 审片/ folder, and deliver with its delivery script. If anything comes up red, fix it and re-render before giving it to me.\"",
+      "author": {
+        "screenName": "Voxyz_ai",
+        "name": "Vox"
+      }
+    }
+  },
+  {
+    "id": "2018363329169809919",
+    "text": "Motion graphics were always the hardest part of making videos for me. Hours in After Effects for 10 seconds of movement.\n\nNow I can do them 10x faster without touching a timeline or writing a single line of code.\n\n@Remotion released a skill that lets Claude Code create videos programmatically. I spent 5 hours building with it so I could show you exactly how it works.\n\nWhat's in the guide:\n\n- Installing the Remotion skill (takes 2 minutes)\n- Creating your first video scene by scene\n- Auto-editing long videos into clips\n- Adding animated captions and subtitles\n- Reframing for TikTok/Reels/Shorts\n- Stacking multiple skills into a mini production studio\n\nThis is for content creators, marketers and GTM engineers who want to create more videos, better and faster, without learning video editing software or code.\n\nI recorded the full walkthrough. Every step.\n\n👇 Comment \"GUIDE\" and I'll DM you the repo with all of the skills installed + getting started guide.\n\n(Make sure we're connected so I can DM you)",
+    "author": {
+      "id": "319449386",
+      "name": "JJ Englert",
+      "screenName": "JJEnglert",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2020688928215646208/w1dcfnp3_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1148,
+      "retweets": 111,
+      "replies": 458,
+      "quotes": 6,
+      "views": 143900,
+      "bookmarks": 2548
+    },
+    "createdAt": "Mon Feb 02 16:38:11 +0000 2026",
+    "createdAtLocal": "2026-02-02 13:38",
+    "createdAtISO": "2026-02-02T16:38:11+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2018361979904073728/vid/avc1/1280x720/r00DqUUg8Za0USw0.mp4?tag=21",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2115515804942991859",
+    "text": "🚨 LA EDICIÓN DE VIDEO COMO LA CONOCES ACABA DE MORIR.\n\nAlguien creó una herramienta que convierte a Claude en un editor profesional… y está GRATIS.\n\nSolo arrastras tus archivos a una carpeta.\n\nY observas cómo se edita solo:\n\n• Corta los clips automáticamente\n• Elimina muletillas y silencios\n• Genera subtítulos perfectos\n• Aplica corrección de color profesional\n• Añade animaciones fluidas\n• Renderiza todo sin intervención humana\n\nCero líneas de tiempo. Cero clics manuales. Cero fricción.\n\nEsto deja herramientas como Remotion en el pasado.\n\nNo asiste tu trabajo.\n\nLo reemplaza.\n\nEl proyecto se llama Video Use y es completamente open source.\n\nlink abajo ⬇️",
+    "author": {
+      "id": "136138863",
+      "name": "Polanco | IA",
+      "screenName": "Polanco_IA",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2105428429969522688/WhAVbKU4_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 341,
+      "retweets": 46,
+      "replies": 14,
+      "quotes": 0,
+      "views": 19943,
+      "bookmarks": 398
+    },
+    "createdAt": "Wed Oct 28 18:47:26 +0000 2026",
+    "createdAtLocal": "2026-10-28 15:47",
+    "createdAtISO": "2026-10-28T18:47:26+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2115515729982464000/vid/avc1/2186x1080/HVbQYpzFSBc3P8KY.mp4?tag=16",
+        "width": 2186,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "es",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2079118667074376114",
+    "text": "最近研究了一个 skill能够生成类似产品发布宣传片质感的动效视频。前段时间在尝试 remotion 插件+Claude code，视频动效基本处于 PPT 动画的水平。没有镜头运动，没有转场，没有音效，没有足够丰富的动画特效。于是我开源了这个video-shotcraft skill：https://t.co/AOaKvkJiob https://t.co/jqlKv2Foib",
+    "author": {
+      "id": "2034662857015734272",
+      "name": "Vincent文森特",
+      "screenName": "VincentWei93",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2034663299468681216/_GwzW8Tf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1554,
+      "retweets": 241,
+      "replies": 76,
+      "quotes": 37,
+      "views": 314743,
+      "bookmarks": 2567
+    },
+    "createdAt": "Mon Jul 20 08:18:13 +0000 2026",
+    "createdAtLocal": "2026-07-20 05:18",
+    "createdAtISO": "2026-07-20T08:18:13+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2079118623243960320/vid/avc1/1280x720/DV5UEEk2hvip2Q18.mp4?tag=29",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [
+      "https://github.com/Vincentwei1021/video-shotcraft"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zh",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2034314244066529581",
+    "text": "Introducing Reel Farmer\n\nPaste a YouTube URL, get TikTok/Reel with animated captions in one command. Fully local.\n\n> How it works:\n\n1. yt-dlp downloads the video\n2. LLM reads the transcript and picks the most clip-worthy moments\n3. FFmpeg cuts each clip, silence removed automatically\n4. Whisper.cpp runs locally for word-level timestamps\n5. Remotion renders animated captions\n6. Combines everything into 1080x1920 reels\n\nEvery stage checkpoints to SQLite. In case of a crash, it'll pick up exactly where it left off.\n\n@MiniMax_AI M2.7 wrote the entire code.",
+    "author": {
+      "id": "1654347044503408640",
+      "name": "shydev",
+      "screenName": "shydev69",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2091228441702273024/hvsUwDfq_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1802,
+      "retweets": 111,
+      "replies": 85,
+      "quotes": 10,
+      "views": 148789,
+      "bookmarks": 2806
+    },
+    "createdAt": "Wed Mar 18 17:01:26 +0000 2026",
+    "createdAtLocal": "2026-03-18 14:01",
+    "createdAtISO": "2026-03-18T17:01:26+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2034310788056559616/vid/avc1/1388x1080/NNvbg8UXrWXljXPo.mp4?tag=21",
+        "width": 1388,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2016714990242439600",
+    "text": "Don’t know how to use @Remotion with @Claudeai Code?\n\nWe got you.\n\nThis video is fully made with Video Agent.\n\nAvatar, script, motion graphics, and the final edits all with one prompt.\n\nTry Video Agent for free on @HeyGen https://t.co/zxRMFuXXpo",
+    "author": {
+      "id": "1549669426399629312",
+      "name": "Joshua Xu",
+      "screenName": "joshua_xu_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1550485924277936133/btSGVpDM_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 824,
+      "retweets": 49,
+      "replies": 50,
+      "quotes": 11,
+      "views": 173501,
+      "bookmarks": 1269
+    },
+    "createdAt": "Thu Jan 29 03:28:17 +0000 2026",
+    "createdAtLocal": "2026-01-29 00:28",
+    "createdAtISO": "2026-01-29T03:28:17+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2016714820134080512/vid/avc1/1920x1080/BxQDcSUXSPaD5SO2.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2014819359244615890",
+    "text": "How I AI: wtf @Remotion x claude code edition\n- had cc install remotion + skills \n- recreate app components pixel-for-pixel\n- brainstorm hype-video style storyboard\n- claude implements e2e\n- @suno for the banger, @capcutapp for the edit\n\n0 to rendered in &lt; 2 hours https://t.co/HHF8zDFf9a",
+    "author": {
+      "id": "15383123",
+      "name": "claire vo 🖤",
+      "screenName": "clairevo",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1565475442470965248/LBMzyamM_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 451,
+      "retweets": 16,
+      "replies": 45,
+      "quotes": 0,
+      "views": 66638,
+      "bookmarks": 678
+    },
+    "createdAt": "Fri Jan 23 21:55:43 +0000 2026",
+    "createdAtLocal": "2026-01-23 18:55",
+    "createdAtISO": "2026-01-23T21:55:43+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2014818511567171584/vid/avc1/1080x1080/i1bwDAVLXi4VhmyU.mp4?tag=21",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2052711995737260214",
+    "text": "cursor design mode + remotion is actually insane\n\neverything in remotion is code, so you can annotate changes directly on the video and cursor just updates it. having a lot of fun with this\n\nhere's 15 minutes of me improving the agent swarm video https://t.co/5PBefO3tRC",
+    "author": {
+      "id": "505835394",
+      "name": "eric zakariasson",
+      "screenName": "ericzakariasson",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1841151626456801283/HnXqy3TQ_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1083,
+      "retweets": 46,
+      "replies": 48,
+      "quotes": 6,
+      "views": 157234,
+      "bookmarks": 1128
+    },
+    "createdAt": "Fri May 08 11:27:31 +0000 2026",
+    "createdAtLocal": "2026-05-08 08:27",
+    "createdAtISO": "2026-05-08T11:27:31+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2052711876363276288/vid/avc1/928x720/F-YqNjiY3rXhXP2Y.mp4?tag=14",
+        "width": 2788,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2052453150888755551",
+      "text": "orchestrate a swarm of agents\n\nhere's a visualization of the swarm and how it's using multiple planners, verifiers, and workers\n\ntry it today with /add-plugin orchestrate and then /orchestrate [goal] https://t.co/hPn06riZ3U",
+      "author": {
+        "screenName": "ericzakariasson",
+        "name": "eric zakariasson"
+      }
+    }
+  },
+  {
+    "id": "2013868186807242855",
+    "text": "Claude Code for Video Animations? \n\nBuilding an app with an agent that can create and edit animated videos...\n\nIn 4 prompts. This was my first test of remotion, i'm going to see how good i can get the Claude Agent SDK at making animated videos. https://t.co/VXS5z6z3XR",
+    "author": {
+      "id": "1601693298707628035",
+      "name": "Riley Brown",
+      "screenName": "rileybrown",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1898571530956873728/JALEVTSb_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 689,
+      "retweets": 42,
+      "replies": 35,
+      "quotes": 5,
+      "views": 95453,
+      "bookmarks": 802
+    },
+    "createdAt": "Wed Jan 21 06:56:06 +0000 2026",
+    "createdAtLocal": "2026-01-21 03:56",
+    "createdAtISO": "2026-01-21T06:56:06+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2013867712368517120/vid/avc1/1920x1080/Rv_uRNGnolsQSG5v.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  },
+  {
+    "id": "2013758167386030458",
+    "text": "Wow this skill by remotion is SICK\n\nI nearly 1 shotted this launch video for https://t.co/kdOWe32i5V \n\n@opencode  chat transcript down below 👇 https://t.co/eNJkC6HoZt",
+    "author": {
+      "id": "1272541278593564672",
+      "name": "Andrew Qu",
+      "screenName": "andrewqu",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1976812562143641600/e_E_wlXX_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 979,
+      "retweets": 30,
+      "replies": 26,
+      "quotes": 4,
+      "views": 145087,
+      "bookmarks": 1254
+    },
+    "createdAt": "Tue Jan 20 23:38:55 +0000 2026",
+    "createdAtLocal": "2026-01-20 20:38",
+    "createdAtISO": "2026-01-20T23:38:55+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2013757964554022912/vid/avc1/1920x1080/d23n_wj2AJdpsxZC.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [
+      "http://skills.sh"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2013626968386765291",
+      "text": "Remotion now has Agent Skills - make videos just with Claude Code!\n\n$ npx skills add remotion-dev/skills\n\nThis animation was created just by prompting 👇 https://t.co/hadnkHlG6E",
+      "author": {
+        "screenName": "Remotion",
+        "name": "Remotion"
+      }
+    }
+  }
+]

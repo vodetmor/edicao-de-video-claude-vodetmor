@@ -21,4 +21,4 @@ Apify (conta grátis, ~US$0,005/anúncio): actor `apify~facebook-ads-scraper` co
 ## Música, voz e outros
 - Trilha épica grátis: `motion-base/MUSICA-EPICA.md` (ACE-Step 1.5, MIT). Freesound/Jamendo para SFX/música.
 - Voz grátis pt-BR para rascunho: edge-tts (Thalita, Francisca, Antonio), script `organizacao/amostras-voz/voz_edge.py`. Voz final: ElevenLabs (o Vítor gera no site; plano grátis bloqueia vozes BR pela API).
-- Vídeo de IA: o Claude escreve prompts, o Vítor gera no Google Flow com a automação do PC (`pc/COMO-USAR.txt`).
+- Vídeo de IA: o Claude escreve prompts, o Vítor gera no Google Flow com a automação do PC (`ferramentas/pc-automacao/COMO-USAR.txt`).

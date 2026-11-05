@@ -8,7 +8,7 @@
 - Painel de revisão `painel.mjs` (localhost:8080): prévia ao vivo pelo Remotion Player, notas no quadro exato em
   `projeto/revisao/notas.json`, recarrega sozinho quando o projeto ou o código mudam. Testado com Playwright.
 - 5 estilos testados no bruto do Jerônimo (IMG_4309, 20,2 s → 17,5 s): split, corte-limpo, moldura, painel, reels-forte.
-  Vídeos e folhas em /mnt/project-files/outros/maquina-edicaoia/teste-editor/ (mídia fora do Git).
+  Vídeos e folhas em /mnt/project-files/clientes/jeronimo/maquina-edicaoia/teste-editor/ (mídia fora do Git).
 - Skill `.claude/skills/editar-video` (SKILL.md + 9 referências) escrita para "o usuário", sem nomes do projeto.
 
 ## Próximo passo

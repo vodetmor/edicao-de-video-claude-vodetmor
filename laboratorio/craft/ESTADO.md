@@ -21,7 +21,7 @@ Aqui eles entram como **fornecedores de pe√ßas** para o nosso motor Remotion, n√
 
 ## Refazer
 ```
-bash /mnt/project-files/estudio/craft/instalar.sh            # effectcraft + filmcraft em ~/craft/bin
+bash /mnt/project-files/laboratorio/craft/instalar.sh            # effectcraft + filmcraft em ~/craft/bin
 EC=~/craft/bin/effectcraft-cli
 $EC script exemplos/cartao.jsx --empty --save-as cartao.ecproj
 $EC run prop.convertExpressionToKeyframes '{"layer":"Squircle","path":"transform/scale"}' \

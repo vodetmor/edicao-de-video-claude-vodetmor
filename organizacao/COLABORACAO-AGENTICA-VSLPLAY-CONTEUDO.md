@@ -79,7 +79,7 @@ Skill `motor-estudio`. É o que usamos para peças em série:
 - Use com moderação no site: 3D e shader pesam. Um objeto 3D forte por peça, no máximo.
 
 ### 4.5 Manim (gráficos e matemática animada)
-- Skill `manim-3b1b`. Bom para **insights com dado**: curva de retenção, comparação de custo, gráfico que se desenha. Exemplos: `estudio/aula-lancamento-obliquo/`, `pessoal-vitor/questao-tangente/`.
+- Skill `manim-3b1b`. Bom para **insights com dado**: curva de retenção, comparação de custo, gráfico que se desenha. Exemplos: `pessoal-vitor/aula-lancamento-obliquo/`, `pessoal-vitor/questao-tangente/`.
 - Para gráfico, leia também a skill `dataviz`.
 
 ### 4.6 Animação em canvas JavaScript (skill `animate`)
@@ -99,7 +99,7 @@ Skill `motor-estudio`. É o que usamos para peças em série:
 
 ### 4.9 Material real
 - `ferramentas/busca/busca.py` busca fotos e vídeos grátis (Pexels, Wikimedia, Archive, NASA...) com folha de miniaturas e licença. Guia: `motion-base/BUSCA-MATERIAL-REAL.md`.
-- Imagem e vídeo com IA: Google Flow (contas grátis do Vítor). A IA escreve o prompt, ele gera (automação em `pc/`).
+- Imagem e vídeo com IA: Google Flow (contas grátis do Vítor). A IA escreve o prompt, ele gera (automação em `ferramentas/pc-automacao/`).
 
 ### 4.10 Componentes prontos
 - `motion-base/componentes/`: `pilula-seguir`, `card-seguir`, `claude-ui`. Catálogo de pedidos de componente: `motion-base/PROMPT-COMPONENTES.md`.

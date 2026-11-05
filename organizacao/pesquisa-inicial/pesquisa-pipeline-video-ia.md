@@ -109,7 +109,7 @@ video-ia/
 │   ├── motion/               # guia de estilo (Apple, Corte), curvas de mola, tipografia
 │   ├── musica-sfx/           # como escolher trilha, biblioteca de SFX, prompts ACE-Step
 │   └── prompts-flow/         # prompts de takes que funcionaram, com o resultado
-├── pesquisa/
+├── organizacao/pesquisa-inicial/
 │   ├── ferramentas.md        # este mapa, atualizado
 │   └── criativos/            # fichas de dissecação de cada criativo analisado
 ├── kit/                      # scripts: silence_cut, transcribe, captions, render_edl

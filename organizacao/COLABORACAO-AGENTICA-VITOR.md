@@ -142,7 +142,7 @@ A ferramenta `ferramentas/busca/busca.py` lê essas chaves sozinha e busca em Pe
 | Ferramenta | Para quê |
 |---|---|
 | **edge-tts** | Voz neural pt-BR grátis (Thalita, Francisca, Antonio) para rascunho. Script: `organizacao/amostras-voz/voz_edge.py`. Na nuvem, apontar o certifi para `/root/.ccr/ca-bundle.crt`. |
-| **Google Flow** (várias contas grátis dele) | Vídeos e imagens com IA. A IA escreve os prompts; a automação roda no PC dele: `C:\flow-automation`, `node gerar-videos.js --prompts meus-prompts.json` (guia `pc/COMO-USAR-flow.txt`; avisa no Telegram se pausar). Sai em 720p. |
+| **Google Flow** (várias contas grátis dele) | Vídeos e imagens com IA. A IA escreve os prompts; a automação roda no PC dele: `C:\flow-automation`, `node gerar-videos.js --prompts meus-prompts.json` (guia `ferramentas/pc-automacao/COMO-USAR-flow.txt`; avisa no Telegram se pausar). Sai em 720p. |
 | **Remotion** (nosso motor) | Vídeo e motion em código, `estudio/motor` (`npm i`). Serve para o vídeo/VSL que entra na página. |
 | **Whisper / Hugging Face** | Transcrição na nuvem. |
 | **yt-dlp, ffmpeg, Blender (`pip install bpy`), Manim** | Mídia, 3D e animação matemática na nuvem (CPU). |

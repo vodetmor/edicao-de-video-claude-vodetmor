@@ -26,7 +26,7 @@ Abaixo, cada acesso ligado ao gargalo que resolve. Em ordem de prioridade.
 - **Custo:** o Apify grátis dá US$ 5 por mês de crédito. O robô da Meta cobra por anúncio coletado (centavos por lote); dá para centenas de anúncios por mês. Você já mandou o token do Apify.
 - **Risco:** baixo. Só leitura de biblioteca pública.
 - **Testado daqui:** a biblioteca da Meta tem uma barreira anti-robô que o navegador da nuvem não passa, e a API oficial da Meta só mostra anúncio político no Brasil. Por isso o caminho é o Apify (robôs prontos: `apify/facebook-ads-scraper`, 40 mil usuários; `doliz/tiktok-creative-center-scraper`). Plano B grátis: o Chrome do seu PC pelo Remote Control.
-- **Status (02/10, 21:40 UTC): FUNCIONANDO.** O token do Apify que você mandou no dia 29 vale; teste com 10 anúncios da busca "vsl" no Brasil trouxe página, texto, há quantos dias roda (69 a 162 dias) e o link do vídeo em HD. Resultado em `estudio/escalados/teste-apify/anuncios.json`.
+- **Status (02/10, 21:40 UTC): FUNCIONANDO.** O token do Apify que você mandou no dia 29 vale; teste com 10 anúncios da busca "vsl" no Brasil trouxe página, texto, há quantos dias roda (69 a 162 dias) e o link do vídeo em HD. Resultado em `laboratorio/escalados/teste-apify/anuncios.json`.
 - **O que você faz:** escolher o nicho do primeiro lote de verdade.
 
 ### 3. Voz provisória grátis, já funcionando — matéria-prima

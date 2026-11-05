@@ -2,7 +2,7 @@
 
 Pedido (30/10/2026): Jerônimo grava ~30 s "não sei editar, uma gravação virou vários vídeos"; Vítor quer edição
 fora da curva, por código, nível das aulas de física/matemática e do racismo ambiental, com referências do X.
-Roteiro enviado no thread em 30/10 (frase por estilo). Áudio dele transcrito: outros/maquina-edicaoia/contexto-jeronimo/audio-2026-10-29-WA0168.txt.
+Roteiro enviado no thread em 30/10 (frase por estilo). Áudio dele transcrito: clientes/jeronimo/maquina-edicaoia/contexto-jeronimo/audio-2026-10-29-WA0168.txt.
 
 ## Direção (v1)
 O vídeo principal troca de estilo na palavra em que ele fala o nome do estilo. Cada estilo é um cartão que toca ao vivo

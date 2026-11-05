@@ -24,13 +24,13 @@ Chaves (Pexels, Freesound, Apify, X…) não estão aqui: recrie num `.env` loca
 | `memoria/` | Memória do projeto: `MEMORY.md` (índice, uma linha por fato) + um arquivo por assunto. |
 | `.claude/skills/` | Skills: metodo-edicao, motor-estudio, modo-orientador, pesquisa-referencias, editar-video, estilos, remotion-best-practices, apple-design etc. |
 | `motion-base/` | Biblioteca: `DESIGN-SYSTEM.md`, **`LICOES-MOTION.md` (as lições)**, estudos, fontes do X, logos reais, música. |
-| `estudio/` | Motor de vídeo (Remotion + spec JSON por palavra falada, GLSL, editor de vídeo falado, animação JS). |
-| `ferramentas/` | `busca/busca.py` (material grátis com licença), voz, modelos. |
-| `organizacao/` | Modelo de pensamento, guias de colaboração, propostas de acesso, tutoriais. |
+| `estudio/` | Só o que roda: motor (Remotion + spec JSON por palavra falada), GLSL, editor de vídeo falado, animação JS. |
+| `ferramentas/` | `busca/busca.py` (material grátis com licença), voz, modelos, automação do PC. |
+| `organizacao/` | Modelo de pensamento, guias, acessos, tutoriais e `MAPA-DE-CAMINHOS.md` (caminho antigo → novo e a regra de cada pasta). |
 | `pessoal-vitor/` | Conteúdo do perfil pessoal (aulas ENEM/PAS, bastidores, estratégia, escola). |
 | `clientes/<cliente>/` | Trabalhos de clientes (vslplay, rei-da-vsl, medicmais-sobradinho, jeronimo…). |
-| `outros/`, `laboratorio/` | Pedidos avulsos e testes antigos. |
+| `outros/`, `laboratorio/` | Pedidos avulsos; testes e ferramentas avaliadas. |
 | `historico/` | Índice e texto das conversas do projeto original. |
-| `backup/` | `sincronizar.py` (salva no GitHub) e `juntar_partes.py`. |
+| `backup/` | `sincronizar.py` (salva no GitHub depois de cada entrega e todo dia) e `juntar_partes.py`. |
 | `MIGRACAO.md` | Passo a passo para trocar de conta. |
 | `FICOU-DE-FORA.md` | O que não subiu (mídia bruta pesada) e por quê. |

@@ -1,0 +1,702 @@
+[
+  {
+    "id": "2109436776657945054",
+    "text": "Olhem o Claude editando... INSANO. https://t.co/Orcjd01aj3",
+    "author": {
+      "id": "858209096461201408",
+      "name": "Condz",
+      "screenName": "condzxyz",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2096717387148169216/YQ1nVDAk_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 341,
+      "retweets": 7,
+      "replies": 9,
+      "quotes": 2,
+      "views": 32429,
+      "bookmarks": 192
+    },
+    "createdAt": "Mon Oct 12 00:11:33 +0000 2026",
+    "createdAtLocal": "2026-10-11 21:11",
+    "createdAtISO": "2026-10-12T00:11:33+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HUY5i6gW0AACeoF.jpg",
+        "width": 1816,
+        "height": 1108
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "pt",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2109415406448607409",
+      "text": "Primeiro vídeo sai hoje @ conradodesa3 https://t.co/jwyeqY2z2F",
+      "author": {
+        "screenName": "condzxyz",
+        "name": "Condz"
+      }
+    }
+  },
+  {
+    "id": "2109655186369114281",
+    "text": "@condzxyz Como ce fez? Qual skill? Conta pra noissss",
+    "author": {
+      "id": "52909981",
+      "name": "Deborah Folloni → 🪽epic.new",
+      "screenName": "dfolloni",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1928054644506292225/rBRy5Ale_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 15,
+      "retweets": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 6054,
+      "bookmarks": 12
+    },
+    "createdAt": "Mon Oct 12 14:39:26 +0000 2026",
+    "createdAtLocal": "2026-10-12 11:39",
+    "createdAtISO": "2026-10-12T14:39:26+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "pt",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2109656043441561893",
+    "text": "basicamente joga isso no seu claude e ele entende (opus 5.5 max effort):\n\nEdit my talking-head video into a polished YouTube video with explanatory motion graphics.  INPUT - Raw video: <path/to/raw.mp4>. Speech is Portuguese; don't translate. - Target: at most <6:30>. Style: premium, clean, editorial (\"Anthropic/Apple level\"). - End card: subscribe + follow me on X (<https://t.co/tSjKsZveHR>) + \"comment what you want to see next\". - Never cover my face. Never show where I live.  STACK - Remotion (https://t.co/RONMuXavg6) for the composition, ffmpeg for cuts and encoding, Python for analysis. - Transcribe with word timestamps using ElevenLabs Scribe. It has precise word boundaries and marks fillers like \"hã\"/\"é\". - If you use Whisper instead: its word ends stretch over pauses, so refine every cut point with the audio energy.  1) PLAN THE CUT - Make an indexed transcript (word index → text, start, end). - Choose keep-ranges by word index. Remove fillers, false starts, repeated sentences and weak tangents until it fits the target. - Put the strongest line (2–4 s) at the very start as a cold-open hook.  2) CUT, FRAME-ACCURATE AND IN SYNC - Cut points:   - Cut in the silence between words, never inside a word.   - Keep ~50 ms before the first word and ~60 ms after the last word (~160 ms if it ends a sentence). - Silences inside kept ranges:   - Detect them with a 10 ms RMS envelope. A threshold around −38 dBFS worked here; measure your own noise floor first.   - Shorten any pause over 0.32 s to 0.22 s (0.36 s after a sentence ends). - Round every boundary to whole frames (30 fps) and merge touching segments. - Video: ffmpeg split → trim(start_frame, end_frame) → concat, plus a light grade (hqdn3d, eq, colorbalance, unsharp) → intermediate at CRF 14. - Audio: cut the same boundaries in numpy with 8 ms fades and no overlap. A/V stays in sync. - QA: re-transcribe the cut and diff it against the intended text. Fix leaked fragments and clipped word starts, then repeat until clean.  3) FACE TRACK - Detect the face every 0.2 s (Apple Vision or MediaPipe). - Smooth with a moving average inside each cut segment, never across a jump cut. - Use it to frame the camera and to place graphics on the side away from the face.  4) DESIGN SYSTEM - One palette: dark warm stage #14120F, ivory \"paper\" #F1ECE2, one accent (clay #D97A4E). - Fonts: Fraunces (serif display), Inter Tight (UI), JetBrains Mono (labels). Add subtle grain and soft glows. - No gradient text, no neon. - Camera layout modes, morphing between them in ~0.7 s (cubic in-out):   - full frame;   - split left/right: rounded camera card 856×936, face at 42% of its height, graphics on the other half;   - PIP: 256 px circle over a full-screen paper sheet, for chapter moments.  5) BEAT SHEET (JSON) - Give every sentence group a visual, cued to word start times in the cut timeline:   - lower third (name/role);   - big numbers with count-up;   - lists that reveal on each spoken item;   - SVG diagrams that draw on;   - timeline, before→after, comparison cards, quotes;   - arrows annotating objects in the room. - Structure: cold open with kinetic captions → 1.5 s title card → content → end card (CTAs plus a portrait still).  6) BUILD IN REMOTION - One composition, 1920×1080 at 30 fps. Put `<OffthreadVideo>` (muted) inside a container whose rect and transform come from the layout keyframes plus the face track. - Each graphic is a `<Sequence>` component. Drive reveals with useCurrentFrame + interpolate/spring (opacity, translateY, blur). - SVG draw-on: animate strokeDashoffset using the real path length. - Jump cuts: alternate zoom 1.0 ↔ 1.075 around the face when the picture jumps. Add a 1–2% slow breathing zoom elsewhere and a punch-in on punchlines. - Deterministic only: no Math.random. - Check key frames with `npx remotion still`: face uncovered, no clipped text, nothing appearing before its cue.  7) SOUND - Voice: highpass 80 Hz, light denoise, −2.5 dB at 280 Hz, +2 dB at 3.6 kHz, de-ess, 3:1 compressor. - Music: royalty-free lo-fi (e.g. Mixkit). Change track per section with 4 s crossfades.   - Duck 9–12 dB under the voice in the speech band, keeping the lows.   - Louder only on the title and end cards. - SFX: very subtle whooshes on layout changes, pops on reveals, ticks on counters. - Master: two-pass loudnorm to −14 LUFS, true peak −1.5.  8) RENDER, VERIFY, DELIVER - Encode: H.264 CRF 16, AAC 320k, BT.709, +faststart. - Verify:   - duration within the target, −14 LUFS;   - no frozen stretch over 0.3 s;   - a 40-frame contact sheet;   - re-transcribe the final mix: at least 95% of words should match, so the music isn't masking the voice. - Deliver the MP4, an .srt from the word timings (max 42 chars per line, 2 lines), and YouTube chapters (first at 0:00, each at least 10 s).  RULES - Show numbers and claims exactly as I say them. - Check names and spellings on the web before they go on screen. - No invented stats or testimonials. - Short, concrete on-screen copy with no AI clichés. - Don't publish anything without my OK.",
+    "author": {
+      "id": "858209096461201408",
+      "name": "Condz",
+      "screenName": "condzxyz",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2096717387148169216/YQ1nVDAk_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 299,
+      "retweets": 9,
+      "replies": 6,
+      "quotes": 3,
+      "views": 23507,
+      "bookmarks": 834
+    },
+    "createdAt": "Mon Oct 12 14:42:50 +0000 2026",
+    "createdAtLocal": "2026-10-12 11:42",
+    "createdAtISO": "2026-10-12T14:42:50+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2040495833846866104",
+    "text": "Claude Code can now make full videos from your terminal..\n\nNot slideshows. Not text on screen..\n\nActual motion graphics with animations, transitions, custom photos, and background music.\n\n[ SHARED A TUTORIAL BELOW EDITED WITH THIS SETUP IN JUST 5mins ]\n\n▫️Here's the setup: \n\nClaude Code + Remotion\n\nRemotion is a React based framework that renders video programmatically.\n\nYou describe what you want in plain English, Claude writes the React components and Remotion renders it into a real MP4.\n\nWhat you can actually do with this:\n\n> Generate 9:16 vertical videos for TikTok / Reels / Shorts \n> Add animated text with viral hooks and safe zones \n> Pull live web screenshots directly into your scenes using Chrome MCP \n> Fact-check your content in real time with Perplexity MCP \n> Drop in your own photos and background music \n> Edit existing talking-head footage cut bloopers, add captions \n> Schedule posts to your socials straight from the terminal\n\n▫️How to set it up (takes 5 minutes) :\n\n> Make sure you have Node.js installed ( node -v  to check )\n> Create a new Remotion project: \nnpx create-video@latest\nPick the Blank template, enable TailwindCSS, and install the Skills package when prompted.\n> Install dependencies:\ncd my-video\nnpm install\n> Start the preview server: npm run dev\n> Open Claude Code in the same project folder:\ncd my-video\nclaude\n\nThat's it. You can now prompt videos in plain English.\n\nIf you already have a Remotion project, just add the skill directly:\n\nnpx skills add remotion-dev/skills\n\nThis drops a SKILL.md into your project that gives Claude expert knowledge of Remotion.. animations, compositions, captions, assets, 3D content everything.\n\nExample prompt you can steal:\n\n\"Create a 30-second 9:16 vertical video about the top 3 AI tools this week. Use animated text with a hook in the first 2 seconds. Add smooth transitions between scenes. Keep text in the safe zone for TikTok. Use a dark tech aesthetic with blue accent colors.\"\n\nClaude writes all the React code, renders a preview, you tweak with natural language, and export when ready.\n\nThe crazy part is this whole pipeline is local, free (minus your Claude sub), and you never open a video editor.\n\nimo this kills CapCut for anyone making info-style content. You describe the video in English and get back a rendered MP4.\n\ntry it now.",
+    "author": {
+      "id": "3168947216",
+      "name": "Axel Bitblaze 🪓",
+      "screenName": "Axel_bitblaze69",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1883446587822608384/6eprnWjH_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 236,
+      "retweets": 29,
+      "replies": 15,
+      "quotes": 2,
+      "views": 32010,
+      "bookmarks": 389
+    },
+    "createdAt": "Sat Apr 04 18:24:52 +0000 2026",
+    "createdAtLocal": "2026-04-04 15:24",
+    "createdAtISO": "2026-04-04T18:24:52+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2040494269941919744/vid/avc1/1648x1080/9DE37wWeEBU1slwq.mp4?tag=21",
+        "width": 1648,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2034995870035268034",
+    "text": "https://t.co/9jwAgqJb2q",
+    "author": {
+      "id": "40646215",
+      "name": "Wilco de Kreij",
+      "screenName": "Emarky",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1536671447413817344/A5TSykDG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 422,
+      "retweets": 17,
+      "replies": 19,
+      "quotes": 3,
+      "views": 68711,
+      "bookmarks": 1375
+    },
+    "createdAt": "Fri Mar 20 14:09:58 +0000 2026",
+    "createdAtLocal": "2026-03-20 11:09",
+    "createdAtISO": "2026-03-20T14:09:58+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2034973462830125056"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How I Edit Videos Entirely with AI (And You Can Too)"
+  },
+  {
+    "id": "2115380225580433800",
+    "text": "Edit video sekarang simple dan bagus banget pake Claude: \n\nCapcut :\nrough cut talking head (biar ga cepet\nlimit claudenya) + export autocaption format .SRT biar subtitle & visual sync waktu render di Claude\n\nClaude:\n- import asset, guide, style, warna, referensi, dil\n- claude kirim preview beberapa frame\n- gua revisi kalo ada\n- render jadi video\n- revisi lagi kalo misalkan ada\n- render lagi\n- upload\n\ngas di coba bang, jangan lupa follow😆",
+    "author": {
+      "id": "1649846141624946690",
+      "name": "Nicholas Jason",
+      "screenName": "nicholasjasons_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2048800192242331649/o4kF7UzP_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 141,
+      "retweets": 11,
+      "replies": 3,
+      "quotes": 0,
+      "views": 3022,
+      "bookmarks": 66
+    },
+    "createdAt": "Wed Oct 28 09:48:42 +0000 2026",
+    "createdAtLocal": "2026-10-28 06:48",
+    "createdAtISO": "2026-10-28T09:48:42+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2115311862980215055",
+      "text": "Video ke-2 edit pake AI Claude https://t.co/jhArRwOcAb",
+      "author": {
+        "screenName": "nicholasjasons_",
+        "name": "Nicholas Jason"
+      }
+    }
+  },
+  {
+    "id": "2114061786404307119",
+    "text": "This is the second video where I let AI edit the entire thing. I recorded my A-roll, gave it to the Claude, gave it ZERO instructions, and it used the skill from my previous video to edit the whole thing (now with music from ElevenLabs). This was one prompt. And the prompt was me just dragging the A-roll (talking head) video in and giving it a link to Kimi's launch video on YouTube.",
+    "author": {
+      "id": "1544387652811493377",
+      "name": "Matt Wolfe",
+      "screenName": "mreflow",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1589388263193657345/kkyYyBue_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 157,
+      "retweets": 7,
+      "replies": 32,
+      "quotes": 4,
+      "views": 14023,
+      "bookmarks": 99
+    },
+    "createdAt": "Sat Oct 24 18:29:41 +0000 2026",
+    "createdAtLocal": "2026-10-24 15:29",
+    "createdAtISO": "2026-10-24T18:29:41+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2114060842488786944/vid/avc1/1080x1918/_raCmzb-DiGSPusm.mp4?tag=29",
+        "width": 1081,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2063624356484501832",
+    "text": "https://t.co/JFqE4B02Tc",
+    "author": {
+      "id": "6238012",
+      "name": "Matt Van Horn",
+      "screenName": "mvanhorn",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1565403341647400960/55RW_HGX_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 288,
+      "retweets": 27,
+      "replies": 12,
+      "quotes": 8,
+      "views": 87924,
+      "bookmarks": 721
+    },
+    "createdAt": "Sun Jun 07 14:09:21 +0000 2026",
+    "createdAtLocal": "2026-06-07 11:09",
+    "createdAtISO": "2026-06-07T14:09:21+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2063492603706740736"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "Remotion Was My First Agentic Video Love. Then HyperFrames Stole Me. /last30days for both"
+  },
+  {
+    "id": "2115450836398882941",
+    "text": "https://t.co/Sl1CTzJcUK",
+    "author": {
+      "id": "2829677670",
+      "name": "Lad",
+      "screenName": "ladprofit",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2079945871169646592/qhb5pJ9x_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 122,
+      "retweets": 5,
+      "replies": 5,
+      "quotes": 1,
+      "views": 13681,
+      "bookmarks": 273
+    },
+    "createdAt": "Wed Oct 28 14:29:17 +0000 2026",
+    "createdAtLocal": "2026-10-28 11:29",
+    "createdAtISO": "2026-10-28T14:29:17+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/i/article/2115436903474561024"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "Agentic Video Editing: How to Train AI to Edit Like You (Full Guide)"
+  },
+  {
+    "id": "2115888132847468662",
+    "text": "Looking for a long-form video editor.\n\nI run a full-stack content agency and I’m looking for a professional editor to help edit our long-form YouTube videos. \n\nIdeally someone who understands pacing, retention, and hooks, and knows how to make talking-head videos engaging without overediting.\n\nYou need to meet every deadline, pay attention to detail, and keep us updated at all times.\n\nPay: $250+ per video.\n\nStarting on a per-video basis, with the goal of moving to a long-term retainer.\n\nTo apply, fill out the form below.",
+    "author": {
+      "id": "1875599228979875840",
+      "name": "Milos.VFX",
+      "screenName": "milos_vfx",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1956440008094543872/P95A3F8Z_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 111,
+      "retweets": 1,
+      "replies": 66,
+      "quotes": 1,
+      "views": 7245,
+      "bookmarks": 39
+    },
+    "createdAt": "Thu Oct 29 19:26:56 +0000 2026",
+    "createdAtLocal": "2026-10-29 16:26",
+    "createdAtISO": "2026-10-29T19:26:56+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2114672104021148033",
+    "text": "GitHub is hiding an absolute GOLDMINE for AI filmmakers.\n\n10 open-source repos that can generate videos, animate photos, create cinematic scenes, and automate video editing.\n\nSome of these are ridiculously powerful.\n\nBookmark this:\n\n1. LTX-2\n\nGenerate video with synchronized audio. Includes tools for running the model and training LoRAs to customize your output.\n\nhttps://t.co/YY5CauxtxZ\n\n2. ComfyUI WanVideo Wrapper\n\nBuild visual workflows for video generation, photo animation, and camera control using supported Wan models inside ComfyUI.\n\nhttps://t.co/d0tsf21RNU\n\n3. CogVideoX\n\nTurn text prompts or reference images into video clips using the appropriate model. Useful for experimenting with scenes and visual concepts.\n\nhttps://t.co/ZOZV61iswU\n\n4. VACE\n\nGenerate and edit videos using reference images, existing footage, and masks. Combine different controls to guide what changes in your shot.\n\nhttps://t.co/6zWZsuyoQc\n\n5. DiffSynth-Studio\n\nRun video-generation models and experiment with image animation, camera movement, and model training in one toolkit.\n\nhttps://t.co/TCpg3j63SN\n\n6. MuseTalk\n\nMatch a face’s lip movements to your audio. Useful for dubbing, dialogue shots, and talking-character workflows.\n\nhttps://t.co/r2qgcEKfcW\n\n7. OpenChatCut\n\nEdit through conversation with a multitrack timeline. Connect AI agents through skills and MCP, then render with Remotion.\n\nhttps://t.co/utEGOA4Pgr\n\n8. FireRed-OpenStoryline\n\nDescribe your edit in plain language. Its AI agent plans the steps and coordinates editing tools, with reusable skills for consistent styling.\n\nhttps://t.co/maktqr5Sk8\n\n9. AutoSubs\n\nGenerate subtitles locally and connect them to DaVinci Resolve, Premiere Pro, or After Effects.\n\nhttps://t.co/wwfJ17C5vI\n\n10. Editly\n\nAutomate video assembly with reusable instructions. Combine clips, images, titles, transitions, and music through its command-line tool or API.\n\nhttps://t.co/Rx48ccKx7b\n\nWhich one are you trying first?",
+    "author": {
+      "id": "1824076867998994432",
+      "name": "Rimsha Bhardwaj",
+      "screenName": "heyrimsha",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2090372940781228032/IEKqCyX3_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 705,
+      "retweets": 82,
+      "replies": 15,
+      "quotes": 4,
+      "views": 39764,
+      "bookmarks": 1323
+    },
+    "createdAt": "Mon Oct 26 10:54:52 +0000 2026",
+    "createdAtLocal": "2026-10-26 07:54",
+    "createdAtISO": "2026-10-26T10:54:52+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HVjTEPwa4AAc0TM.png",
+        "width": 671,
+        "height": 693
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HVjTEbdbIAAu7IL.png",
+        "width": 669,
+        "height": 709
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HVjTEmhaMAEAIDs.png",
+        "width": 667,
+        "height": 738
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2115104735279931803",
+    "text": "If you make videos but can’t afford a video editor and you have a paid Claude plan, pivot here sharply. 😹\n\nHere are two Claude skills you can use to get Claude to edit your videos like a pro.\n\nI’m talking sleek motion graphics too.\n\n1. HyperFrames\n2. Remotion\n\nJust go to YouTube and search: “How to use Claude and Remotion to edit videos.”\n\nYou’ll find detailed tutorials.\n\nBut if you’re too busy to help yourself and you have the money, you can work with @Wizzdomval. He’s good with edits, ngl.",
+    "author": {
+      "id": "1734986618543509505",
+      "name": "Victoria Enebeli 🙂‍↔️",
+      "screenName": "iamveektoria_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2090147022355456000/Ncdk7d4P_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 162,
+      "retweets": 20,
+      "replies": 11,
+      "quotes": 0,
+      "views": 6034,
+      "bookmarks": 216
+    },
+    "createdAt": "Tue Oct 27 15:34:00 +0000 2026",
+    "createdAtLocal": "2026-10-27 12:34",
+    "createdAtISO": "2026-10-27T15:34:00+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2116018484379615412",
+    "text": "This guy has been EVERYWHERE on my timeline recently, and as someone who's been editing for over a decade and full-time since the pandemic, imo he's massively overselling what AI can do.\n\nCutting bad takes and silences with software isn't a revolutionary new thing. I use a program called Gling, which auto-transcribes my video, removes dead air, and then attempts to detect and cut all the bad takes automatically. The attempt is never perfect, but it's pretty solid, and having my recording laid out as text I can interact with makes corrections way faster than if I had to listen back through the recording. I then take it into Premiere Pro, and use a script I wrote myself to trim out any leftover silent frames so that the edit is as tight as possible.\n\nHere's the thing: I've been doing this for years. And Gling is still better at it than what he's showing off here.\n\nAnd ngl, it's awesome to be able to automate this part away, there's nothing creative or fun about scrubbing through your bad takes and chopping them out by hand. The same applies to things like importing and syncing up all your clips and audio, refining subtitles, etc. I wrote a bunch of scripts to help with stuff like this, I'm not surprised that AI can do it as well, and as far as I'm concerned, this is great. It's doing what computers are supposed to be doing: handling the tedious busywork.\n\nWhen I make a Pokémon video, I don't import hundreds of Pokémon images and stick their Type-matched backgrounds behind them in the timeline by hand every time. I click on their Google Images result, and press the \"import Pokémon\" button I coded for myself. If ChatGPT or Claude can give someone who doesn't know how to script that same ability, cool, I have a hard time getting upset at that.\n\nThis is also, like, 10% of the process of making many types of video. The rest of it, the part that isn't just busywork, is something AI is still mediocre-to-terrible at unless you're making unbelievably basic stuff, the stuff that you were already at risk of being ousted from because anyone with basic experience could replace you.\n\nThat unbelievably basic stuff is, unfortunately, going to start getting handed over to AI instead of external editors. I'm not saying it's a good thing, in fact it really sucks, but I also live in reality. As soon as the person who recorded the footage realizes they can give their video file to Astra and pop out a whatever video, they're not going to hand it over to a human editor to do the same thing. Again: I'd much rather these low grade edits continue to create work for people, but humans follow the path of least resistance so it is absolutely, 100% coming.\n\nThe good news is, you can safeguard against this simply by NOT handing back whatever videos. There still are, and will continue to be, plenty of people out there who care about making the videos GOOD, and distinctive, and have an actual voice. This is something AI is totally, 100% incapable of right now, and likely will be for as long as it's based on neural networks; by their very nature they will always default down to middle-of-the-road swill. This dude's doing, as far as I can tell, content that's largely talking head and basic B-roll that doesn't particularly need elements like funny jokes or interesting visuals, but he's taken that and extrapolated it to a statement as sweeping as \"I'm not sure I'd bother teaching a kid to edit anymore,\" which, in my opinion, is completely unreasonable.\n\nIf you're an editor, the better you are at the fundamentally human elements, the better off you'll be. And really, this is how it's always worked to some extent. You do need to start stepping your game up though, now. You need to be better at editing than AI is, but fortunately this really isn't a tall order.\n\nI'll also note: EVEN THE BUSYWORK is still only partway there. I've gone through some of this guy's other AI editing content, as well as looked at other sources, and... man, I'm not impressed. \"Hey computer, on your last pass you chopped off half the first word of this sentence, next time make sure you go in and correct it.\" Or, hear me out dude: how about you just go into the timeline and fix it yourself??? It literally takes less time than saying that sentence. This kind of stuff will become less of an issue as models get more refined, but we're sure as hell not there yet.\n\nAlso, on a personal note, I will say that I know this guy has a pedigree behind him, but I'm inherently set up to distrust someone who has stuff like \"obsessed with making perfect videos\" in his bio. It reeks of hustle bro culture, and then when I see his AI-edited stuff coming out thoroughly unimpressive, with bland visuals that would be a rough cut starting point on my relatively smaller channels, it casts doubt on that statement.\n\nAnd then you go to the comments about these videos that he \"handed off to AI and walked away from.\" And what do you see? He's telling one person that actually, he still had to do a ton of his own work. And then he's telling another person that actually, for the style of video they create, this workflow probably wouldn't work at all. And now I find myself wondering what the hell point he was ever trying to make.",
+    "author": {
+      "id": "985655635",
+      "name": "MockRock",
+      "screenName": "MrMockRock",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2007190144827424768/KhxQzeas_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 262,
+      "retweets": 14,
+      "replies": 14,
+      "quotes": 0,
+      "views": 10072,
+      "bookmarks": 123
+    },
+    "createdAt": "Fri Oct 30 04:04:55 +0000 2026",
+    "createdAtLocal": "2026-10-30 01:04",
+    "createdAtISO": "2026-10-30T04:04:55+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2115412009806414253",
+      "text": "Is editing \"the old way\" gone forever?\n\n... yeah https://t.co/uyua4tOPKa",
+      "author": {
+        "screenName": "ForwardEditor",
+        "name": "Future Brian"
+      }
+    }
+  },
+  {
+    "id": "2036060081696231512",
+    "text": "the best ai video operators in march 2026 are running multi-model pipelines.\n\nhere's the stack that's working right now:\n\n- kling 3.0 for talking head ugc (best character consistency + reference locking)\n- veo 3.1 for b-roll and cinematic shots (best visual quality + native audio)\n- sora 2 pro for narrative sequences (best multi-scene coherence)\n- seedance 2.0 for dance/movement clips (best body motion)\n\neach model has a specific strength. using one model for everything means you're getting its weaknesses on half your output.\n\nthe workflow: script in claude > voice in chatterbox > talking head in kling 3.0 > b-roll in veo 3.1 > edit everything together in capcut/remotion.\n\nthe final video looks like it was shot by 2 different cameras in 2 different locations. the talking head footage has the natural ugc feel from kling.\n\nthe product shots have the cinematic quality from veo. nobody can tell it's ai because no single model's artifacts are present throughout the whole video.\n\nthis is the production method the agencies charging $5k+ per month are using. one model workflows are for beginners now.",
+    "author": {
+      "id": "4066969994",
+      "name": "KNOX",
+      "screenName": "knoxtwts",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2111900247668518912/i2lQMsQ6_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 237,
+      "retweets": 16,
+      "replies": 14,
+      "quotes": 2,
+      "views": 16483,
+      "bookmarks": 433
+    },
+    "createdAt": "Mon Mar 23 12:38:46 +0000 2026",
+    "createdAtLocal": "2026-03-23 09:38",
+    "createdAtISO": "2026-03-23T12:38:46+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2114782042936189097",
+    "text": "HOLY SH*T, GROK BOT HAS A BOT FOR EVERY STEP OF CONTENT, AND ALMOST NOBODY HAS STACKED THEM\n\none cloud computer, 10 jobs: research, briefs, drafts, edits, clips, distribution. it keeps running while you're offline.\n\n10 bots from the marketplace, one job each:\n\n1. last30days: researches what people said on a topic over the last 30 days\n2. X Brief: one short daily brief from the topics you pick\n3. SEO & AEO Desk: turns keywords into writer-ready briefs\n4. Product Marketer: holds your tone and positioning\n5. Writing Bot: drafts and revises\n6. Copy Humanizer: strips the ai sound, shows every edit\n7. Video Editor: cuts vertical talking-head videos with captions and b-roll\n8. Clip Bot: turns long recordings into captioned clips\n9. Stills & Clips Desk: thumbnails, stills, alt text\n10. Distro Bot: runs the distribution loop\n\nthe ones that touch your accounts or footage ask for your yes first.\n\nhow to install:\n\n1. open https://t.co/Ro14miVyKg\n2. find these 10 bots\n3. hit add on each one\n4. make one shared chat with all of them\n\nsave this and read the article below to make money with grok bot ↓",
+    "author": {
+      "id": "862958707503771648",
+      "name": "unicode",
+      "screenName": "unicodef1wn",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2069360360763576321/Id-DSoyU_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 113,
+      "retweets": 4,
+      "replies": 21,
+      "quotes": 0,
+      "views": 9042,
+      "bookmarks": 162
+    },
+    "createdAt": "Mon Oct 26 18:11:44 +0000 2026",
+    "createdAtLocal": "2026-10-26 15:11",
+    "createdAtISO": "2026-10-26T18:11:44+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2114781261193506816/vid/avc1/1800x1950/MiYb9vuVnXQZvsVY.mp4?tag=29",
+        "width": 1800,
+        "height": 1950
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2112574886421901822",
+      "text": "I put together one guide for anyone who wants a workflow like the SpaceXSI team's.\n\nOne message builds your whole Grok Bot setup. Plus the team's rules, prompt habits, routines and permissions. Every setup is a block you paste.\n\n16-min read. Save it ↓ https://t.co/gJ8ddzRkkM",
+      "author": {
+        "screenName": "unicodef1wn",
+        "name": "unicode"
+      }
+    }
+  },
+  {
+    "id": "2115164938884862375",
+    "text": "this is the most underrated format on youtube right now\n\na 65-second cartoon about a bronze jar got 27M views in 8 days\n\n2D characters. lit 3D sets. one voice. a true story.\n\nhere's the full course: prompts, skills and the review loop ↓ https://t.co/bBDrMecCDR",
+    "author": {
+      "id": "1669037755156819968",
+      "name": "Dumble",
+      "screenName": "Y0urDumble",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2103962793485475840/yB2v8EZQ_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 200,
+      "retweets": 26,
+      "replies": 8,
+      "quotes": 4,
+      "views": 84886,
+      "bookmarks": 594
+    },
+    "createdAt": "Tue Oct 27 19:33:13 +0000 2026",
+    "createdAtLocal": "2026-10-27 16:33",
+    "createdAtISO": "2026-10-27T19:33:13+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/i/article/2115149367057256448"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How to build a 2.5D motion studio with Opus 5.5 (Full Course)"
+  },
+  {
+    "id": "2113820889867297075",
+    "text": "https://t.co/FT45bZFGIt",
+    "author": {
+      "id": "1985408927236825089",
+      "name": "Lino",
+      "screenName": "LinoLeighton",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2032908812450181120/Mg7NsK_D_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 151,
+      "retweets": 24,
+      "replies": 15,
+      "quotes": 3,
+      "views": 22857,
+      "bookmarks": 467
+    },
+    "createdAt": "Sat Oct 24 02:32:27 +0000 2026",
+    "createdAtLocal": "2026-10-23 23:32",
+    "createdAtISO": "2026-10-24T02:32:27+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/i/article/2111551453806415872"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How Paid Ads Took Me to $55K/Month in 5 Months ( Step By Step )"
+  },
+  {
+    "id": "2115830155113365927",
+    "text": "how to get your app a viral tiktok, from 69,674 videos we posted last year:\n\n209 of them (0.3%) drove 64.6% of our 755M views. virality is a numbers game you can rig. here's how we find the winners fast and squeeze them dry:\n\nbefore you post\n\n1. one brand new account per creator per app.\n\n2. days 1-3, don't post. scroll the niche 1-2 hours, watch 10+ videos to the end, like 20-30, leave 3-5 real comments, follow 5-10 accounts.\n\n3. days 3-4, post one broad video (\"realizing how much money i spent last month\"). then 1 campaign video a day, aiming for 200+ views in the first 24 hours.\n\n4. 9 out of 10 \"shadowbans\" aren't real. it's a cold account, a flagged keyword, a duplicate edit or a bad hook. you can reuse footage but  can't reuse the cut.\n\nresearch\n\n5. find your star feature, the 1-2 things the app is built around. your real competitor is whoever markets that feature. ex: parrot's is swiping, so tiktok is on its list.\n\n6. save viral videos in 3 buckets: your niche, your star-feature competitors, viral ugc in general. only organically viral ones, no ad spend behind them.\n\n7. 9 times out of 10 you can tweak a viral general ugc format to fit your app.\n\nformats\n\n8. run all 4: wall of text, talking head, slideshow, hook + demo.\n\n9. talking heads take longer to pop, then convert more because the viewer trusts the person. they get flagged as ads way less too.\n\n10. slideshows are the easiest product placement. people swipe to the end, so the app slide almost always gets seen.\n\n11. hook + demo: take your best wall of text, cut it to a 3-second hook, show the app at the end.\n\n12. read the comments on your wall of text videos. they double as a free focus group.\n\nhooks\n\n13. open on a problem your audience has lived, felt in that exact spot.\n\n14. the best ones split the room. jenni ai pulled a 3.6M-view video by pulling in people who use ai for essays and people who judge them for it.\n\n15. skip shock bait. the comments fill up with the bait and the video gets pushed to people who came for the hook instead of the problem.\n\n16. cta at the end.\n\n17. on a 60s video, under 25% average watch time and tiktok stops pushing it.\n\nkill or keep\n\n18. 10-15 videos per account across every format. comments or 5-10k views = keep going. can't clear 1k views on any account = kill it.\n\n19. every video over 10k views gets 4 questions: which pain point hit, did it reach the right audience, did more product context hurt reach, how do we combine its virality with another video's buying intent.\n\n20. retention tells you what gets views. saves and comments tell you what converts.\n\n21. match view spikes to attribution spikes over the next 72 hours. a video from a month ago can come back and crush.\n\n22. a format is repeatable once it clears 100k views 5 times. after that, expect about 10-15% of videos at similar quality to go viral.\n\nscaling winners\n\n23. repost a winner until it stops working. make 3 iterations on the same concept: hook, wording, visual.\n\n24. put the app name on screen and in the first words of the caption. one of our 7M+ view videos led to 2x that in replies.\n\n25. at 50k views it goes in the bounty channel. creators comment from their personal accounts (\"dude same, that's why i use [app]\") and we pay out on comments that get likes.\n\n26. then a creator films a reply to the top \"wait what app is that?\" comment. comment likes are our earliest signal that downloads are coming.\n\n27. every video over 20k views adds the brand as a collaborator on instagram.\n\n28. views but no site visits = fix the ugc. site visits but no conversions = fix onboarding and the product.\n\nmost importantly: do not quit at week 3!!",
+    "author": {
+      "id": "2022116141120798721",
+      "name": "Alexis Hedley",
+      "screenName": "alexishedley_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2051722470772588546/vUo8Ynn-_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 165,
+      "retweets": 4,
+      "replies": 14,
+      "quotes": 1,
+      "views": 11553,
+      "bookmarks": 452
+    },
+    "createdAt": "Thu Oct 29 15:36:33 +0000 2026",
+    "createdAtLocal": "2026-10-29 12:36",
+    "createdAtISO": "2026-10-29T15:36:33+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2115121622965522810",
+    "text": "If you've ever searched for a specific speedrun trick, someone has likely already answered it in a channel somewhere, in one of 63,000 Discoverable Servers. We’re updating Discoverable Servers to make those answers easier to find. https://t.co/kYowgybmZj",
+    "author": {
+      "id": "3065618342",
+      "name": "Discord",
+      "screenName": "discord",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2107152184295235584/9MRgiFUB_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 869,
+      "retweets": 143,
+      "replies": 292,
+      "quotes": 168,
+      "views": 2276122,
+      "bookmarks": 273
+    },
+    "createdAt": "Tue Oct 27 16:41:06 +0000 2026",
+    "createdAtLocal": "2026-10-27 13:41",
+    "createdAtISO": "2026-10-27T16:41:06+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/i/article/2115119686740590592"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "Making Content from Discoverable Servers Easier to Discover"
+  },
+  {
+    "id": "2114067562690716015",
+    "text": "Selected tweets from the past four years, translated from Hebrew: an ordinary Israeli citizen’s portrait of the Netanyahu regime. Preserved for my children and future generations, so that what happened here (and who was responsible) is never forgotten. https://t.co/sxis5mKQEW",
+    "author": {
+      "id": "1316023094",
+      "name": "הסולידית",
+      "screenName": "hasolidit",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/378800000769914281/61be6c8513b0ad405485d0375c74b2cf_normal.png",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 552,
+      "retweets": 72,
+      "replies": 10,
+      "quotes": 4,
+      "views": 14874,
+      "bookmarks": 34
+    },
+    "createdAt": "Sat Oct 24 18:52:39 +0000 2026",
+    "createdAtLocal": "2026-10-24 15:52",
+    "createdAtISO": "2026-10-24T18:52:39+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/i/article/2043760048598380544"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "I Want My Children to Know"
+  }
+]

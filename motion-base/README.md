@@ -14,7 +14,7 @@ Pasta do projeto "Edição de Vídeo com IA". Criada em 28/09/2026 para o Claude
 5. **`fontes/artigos.md`**: resumo dos artigos lidos e links dos que estão pagos ou bloqueados.
 6. **`logos/`**: logos reais em SVG (Claude, OpenAI, Anthropic, Gemini e outros) e as regras de uso.
 7. **`MUSICA-EPICA.md`**: opções grátis de trilha épica, com licença conferida.
-8. **`estudos/`**: estudos quadro a quadro de referências (`gojiberry/`, `caso-criminal/`), cada um com `SPEC.md`.
+8. **`estudos/`**: estudos quadro a quadro de referências (`gojiberry/`, `caso-criminal/`, `thiago-a-recent-edits/`, `tinocandotv/`).
 9. **`referencias/`**: moodboard de motion documental (Pinterest, X, YouTube), com notas do que vale copiar.
 10. **`TEMPLATE-BRIEF.md`**: modelo de brief no formato do prompt "caderno de motion" (OUTPUT, CREATIVE DIRECTION, VISUAL SYSTEM, SEQUENCE, MOTION, AUDIO, FINAL CHECK) para passar a outros chats. Exemplo preenchido: `anuncio-vslplay/BRIEF.md`.
 

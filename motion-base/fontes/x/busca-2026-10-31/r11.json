@@ -1,0 +1,1413 @@
+[
+  {
+    "id": "2079588015597568122",
+    "text": "Pro level editing just got easier with AI Producer!\n\nAI Producer can turn your RAW, talking head footage into a fully polished, professional video just by chatting with it. Simply drop in your RAW footage and AI Producer will add custom captions, b-roll, motion graphics, sfx and more.\n\nYour content deserves to be seen, don't let editing hold you back.\n\nTry AI Producer for free: https://t.co/9YdKjWoxnd",
+    "author": {
+      "id": "1595240963307237376",
+      "name": "OpusClip",
+      "screenName": "OpusClip",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1651470623175213057/pXxCdS5q_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 145,
+      "retweets": 46,
+      "replies": 44,
+      "quotes": 25,
+      "views": 195997,
+      "bookmarks": 58
+    },
+    "createdAt": "Tue Jul 21 15:23:14 +0000 2026",
+    "createdAtLocal": "2026-07-21 12:23",
+    "createdAtISO": "2026-07-21T15:23:14+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2079586087211851776/vid/avc1/3840x2160/irAeVPjEL-Xvx4gP.mp4?tag=29",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2116273820994551906",
+    "text": "Prompt da edição desse video; \n\nEdite o vídeo que vou te mandar (talking head horizontal, eu falando pra câmera) no estilo \"palavra gigante atrás da cabeça\". Referência: https://t.co/Bdf3ej6a4u\n\nCORTE\n- Tire pausas longas (mais de 0,6 s), gaguejos, repetições e frases recomeçadas, sem picotar a respiração.\n- Abra com um gancho de 15 a 20 s montado com as minhas frases mais fortes (a história ou a promessa do vídeo) e depois siga a ordem normal.\n- Jump cuts com zoom alternado (100% / ~112%) nos cortes, no máximo um a cada 5 s. O zoom nunca corta o rosto.\n\nLEGENDA (é o único grafismo do vídeo)\n- Uma palavra por vez, em CAIXA ALTA, trocando exatamente na fala. Palavra muito curta (É, O, DE) junta com a seguinte.\n- Fonte extra larga e pesada (ex.: Archivo Expanded Black, grátis no Google Fonts), gigante: a maiúscula ocupa ~13% da altura do quadro, centralizada. Palavra longa diminui pra caber em ~95% da largura.\n- A palavra fica ATRÁS da cabeça: a base encosta no topo da cabeça e eu fico na frente (máscara de segmentação de pessoa, quadro a quadro). Se eu me inclinar e a cabeça cobrir mais da metade da palavra, sobe a palavra.\n- O preenchimento da letra é o próprio fundo, invertido e desfocado, puxado pra um tom bronze/bege. Com a parede azul, a letra fica bronze, igual à referência.\n- Nada além disso na tela: sem B-roll, emoji, ícone ou motion.\n\nCOR E SOM\n- Grade fria (ambiente puxando pro azul-petróleo) protegendo a pele, que fica quente e natural.\n- Voz em -14 LUFS (pico até -1 dBTP), com passa-alta em ~75 Hz e compressão leve.\n- Trilha instrumental cinematográfica bem baixa (12 a 15 dB abaixo da voz), uma por bloco (gancho, corpo, fim), com fade no final. Sem efeitos sonoros.\n\nENTREGAS\n- Master 16:9 pro YouTube: 1440p, 30 fps, H.264 em alta qualidade, BT.709.\n- Versão 9:16 pro Instagram e TikTok: o vídeo 16:9 inteiro numa faixa no meio, preto em cima e embaixo, com o gancho escrito fixo em cima na mesma fonte (cor creme). Abaixo de 300 MB.\n- Legenda .srt, 5 a 7 opções de título (uma recomendada), descrição curta com capítulos e um post pro X. Só fatos que eu falei no vídeo.\n\nAntes de entregar, confira a sincronia da boca com a voz depois dos cortes, se nenhuma palavra ficou escondida atrás da cabeça e o volume final.",
+    "author": {
+      "id": "858209096461201408",
+      "name": "Condz",
+      "screenName": "condzxyz",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2096717387148169216/YQ1nVDAk_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 166,
+      "retweets": 5,
+      "replies": 1,
+      "quotes": 0,
+      "views": 5696,
+      "bookmarks": 213
+    },
+    "createdAt": "Fri Oct 30 20:59:32 +0000 2026",
+    "createdAtLocal": "2026-10-30 17:59",
+    "createdAtISO": "2026-10-30T20:59:32+00:00",
+    "media": [],
+    "urls": [
+      "https://www.instagram.com/reels/DdFt2hKgSGZ/"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "pt",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2116258106825179294",
+      "text": "com 23 anos eu achava q tava rico. ganhava 4 mil dólares por mês. gastei tudo em festa e bebida, perdi todo o dinheiro e entrei numa depressão, pura falta de maturidade.\n\ncom 31 fiz meu primeiro milhão e quitei dívida dos meus pais. hoje tenho alguns milhões no banco e conseguiria recomeçar do zero.\n\nas 3 coisas que me fizeram chegar aqui:\n\n1. pensar no futuro. construir o que vai te substituir em vez de esperar ser substituído\n2. entregar o dobro do que te pagam\n3. não sumir quando a coisa aperta\n\nvídeo completo 👇",
+      "author": {
+        "screenName": "condzxyz",
+        "name": "Condz"
+      }
+    }
+  },
+  {
+    "id": "2089101523749884313",
+    "text": "this entire AI ad was 100% AUTOMATED...\n\nV4 generated everything you see in the video and edited the whole thing together\n\nthe full video came out to $10.26 total\n\nIt can automate some of the MOST difficult editing styles in UGC...\n\n> insanely realistic podcast ads with multiple speakers\n> animations with multiple complex scenes and custom sound effects\n> talking head videos with very advanced editing\n> heavy b-roll ads in ANY visual style\n\nyou can give V4 ANY ad concept and have it create the entire video for your product without needing an editor or doing anything manually after..\n\nV4 includes 26 modules, hours of recordings and all of the automated systems i've built from generating thousands of videos across every major model\n\nthe more i work on V4 the more i genuinely believe this is the final system for AI UGC\n\nstay tuned...",
+    "author": {
+      "id": "2195780027",
+      "name": "Miko",
+      "screenName": "Mho_23",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1973504131806498816/h5gkF8zc_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 396,
+      "retweets": 24,
+      "replies": 46,
+      "quotes": 2,
+      "views": 25560,
+      "bookmarks": 551
+    },
+    "createdAt": "Sun Aug 16 21:26:31 +0000 2026",
+    "createdAtLocal": "2026-08-16 18:26",
+    "createdAtISO": "2026-08-16T21:26:31+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2089101360520110080/vid/avc1/1080x1920/6_6Rri8r5ynEIDRB.mp4?tag=29",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2100735825491464278",
+    "text": "Can someone who knows anything about video please explain the breakdown of all the different tools and what the best AI-driven workflow is for YouTube videos?\n\nThere's:\n• HyperFrames\n• Remotion\n• DaVinci Resolve\n• CapCut\n• VEED\n• VEED OpenEdit\n• Descript\n• EditFrame\n• Tella\n\nNeed to be able to:\n√ Record talking head\n√ Record screen\n√ Add B-roll\n√ Motion graphics\n√ Lighting/audio correction\n√ Effects/transitions",
+    "author": {
+      "id": "2480319486",
+      "name": "Corey Haines",
+      "screenName": "coreyhainesco",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1967746283176857601/HzbKTn31_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 177,
+      "retweets": 5,
+      "replies": 75,
+      "quotes": 4,
+      "views": 29287,
+      "bookmarks": 394
+    },
+    "createdAt": "Thu Sep 17 23:57:05 +0000 2026",
+    "createdAtLocal": "2026-09-17 20:57",
+    "createdAtISO": "2026-09-17T23:57:05+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2026111098252939420",
+    "text": "https://t.co/b8zThc67FG",
+    "author": {
+      "id": "1859995217384091649",
+      "name": "Adrian Solarz",
+      "screenName": "adriansolarzz",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2109296889602408448/rFdL1wlI_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 334,
+      "retweets": 22,
+      "replies": 12,
+      "quotes": 2,
+      "views": 45290,
+      "bookmarks": 759
+    },
+    "createdAt": "Tue Feb 24 01:45:03 +0000 2026",
+    "createdAtLocal": "2026-02-23 22:45",
+    "createdAtISO": "2026-02-24T01:45:03+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2025750431797067776"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "how to turn nano banana pro + AI UGC + viral IG reels into a $100M cash machine in 2026"
+  },
+  {
+    "id": "2079650618818379883",
+    "text": "The only AI UGC tech stack you need for organic and paid:\n\n&gt; Gemini for viral video analysis\n&gt; Claude for scripting and prompt generation\n&gt; GPT image 2 for image gen\n&gt; Seedance 2.0 for talking head clips\n&gt; Kling 3.0 for b-roll and voiceover clips\n&gt; CapCut for editing",
+    "author": {
+      "id": "1773046609313693696",
+      "name": "Jake Castillo",
+      "screenName": "jakecastilloooo",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1773046791447130112/eN2Uz5UB_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 143,
+      "retweets": 3,
+      "replies": 7,
+      "quotes": 2,
+      "views": 9394,
+      "bookmarks": 247
+    },
+    "createdAt": "Tue Jul 21 19:32:00 +0000 2026",
+    "createdAtLocal": "2026-07-21 16:32",
+    "createdAtISO": "2026-07-21T19:32:00+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2032116202517250523",
+    "text": "https://t.co/RKg61CL2fr",
+    "author": {
+      "id": "1591276020090671104",
+      "name": "Alex Nguyen",
+      "screenName": "alexcooldev",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2042693508176449536/HHjqfw7E_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 819,
+      "retweets": 64,
+      "replies": 35,
+      "quotes": 6,
+      "views": 227426,
+      "bookmarks": 2577
+    },
+    "createdAt": "Thu Mar 12 15:27:12 +0000 2026",
+    "createdAtLocal": "2026-03-12 12:27",
+    "createdAtISO": "2026-03-12T15:27:12+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2032105557801517062"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "Automating TikTok, Instargram, Youtube Short Content with Claude Cowork (A Step-by-Step Workflow)"
+  },
+  {
+    "id": "2074524268285538350",
+    "text": "https://t.co/G5aZAxhCBO",
+    "author": {
+      "id": "1782771493564284928",
+      "name": "Alejandro Sanchez",
+      "screenName": "skyirezumi",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1782771574904332288/PeQQfgQk_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 597,
+      "retweets": 44,
+      "replies": 27,
+      "quotes": 13,
+      "views": 97906,
+      "bookmarks": 1823
+    },
+    "createdAt": "Tue Jul 07 16:01:43 +0000 2026",
+    "createdAtLocal": "2026-07-07 13:01",
+    "createdAtISO": "2026-07-07T16:01:43+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2073379937256411136"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How I marketed my Screen-Time app to $1,000,000 (with a $0 budget)"
+  },
+  {
+    "id": "2095070676810162370",
+    "text": "Here's what nobody tells you about \"being a creator\":\n\n80% of your time isn't creating. It's editing.\n\nTrimming the awkward pauses. Hunting for the one quotable 15 seconds in a 30-minute recording. Manually syncing subtitles. Googling royalty-free music. Adjusting transitions frame by frame.\n\nFotor Video Agent gives you that time back.\n\nSmart editing that understands your content — finds highlights, kills filler, adds B-roll at the right moments, and auto-completes subtitles, soundtrack, and transitions. Plus editable vector MG overlays to elevate any talking-head into a brand-level video.\n\nNot a dumb auto-cutter. A smart editor that gets context.\n\nFotor Video Agent just hit #1 Product of the Day on Product Hunt 🏆 — and after trying it myself, I can see why.",
+    "author": {
+      "id": "1870009922315759616",
+      "name": "Noor",
+      "screenName": "noorlewisx",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2050527077112430592/ioztoXC0_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 116,
+      "retweets": 17,
+      "replies": 43,
+      "quotes": 0,
+      "views": 9384,
+      "bookmarks": 1
+    },
+    "createdAt": "Wed Sep 02 08:45:48 +0000 2026",
+    "createdAtLocal": "2026-09-02 05:45",
+    "createdAtISO": "2026-09-02T08:45:48+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2095070606140284928/vid/avc1/1280x720/fBJRddtxOUrjq7k5.mp4?tag=29",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2086852842556432619",
+    "text": "THIS TOOL DOESN'T JUST EDIT. IT EXPLAINS THE WHY BEHIND ITS DECISIONS.\n\ni recorded a 3-minute talking head on my phone. it gave me back the edited video and, below it, the list of decisions.\n\n→ why it cut there\n→ why it dropped in that b-roll\n→ why it lowered the music\n→ which line needed emphasis\n\nit's not that it edits on its own. it's that it teaches you the criteria.\n\nand that's what i could never learn from watching tutorials.",
+    "author": {
+      "id": "1308053727539068935",
+      "name": "marcus",
+      "screenName": "marcusyul",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2111849261096718336/9rC8a9xw_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 103,
+      "retweets": 8,
+      "replies": 12,
+      "quotes": 0,
+      "views": 31064,
+      "bookmarks": 23
+    },
+    "createdAt": "Mon Aug 10 16:31:04 +0000 2026",
+    "createdAtLocal": "2026-08-10 13:31",
+    "createdAtISO": "2026-08-10T16:31:04+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2086852710859431936/vid/avc1/2100x1080/3j43dUQuMqNCJqZu.mp4?tag=29",
+        "width": 2100,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2086850403715674284",
+      "text": "The gap between raw footage and a produced video just disappeared. \n\nAI Producer is available now. 🔥🎬\n\n> Drop in your raw footage \n> Chat with it to get exactly the edit you want\n> It builds smart, dynamic motion graphics that land on your exact words, maximizing retention\n> The timeline's there, you just don't have to touch it\n\nYour content deserves to be seen. Don't let editing hold you back.\n\nTry AI Producer now (link below)",
+      "author": {
+        "screenName": "OpusClip",
+        "name": "OpusClip"
+      }
+    }
+  },
+  {
+    "id": "2115348730656551044",
+    "text": "Just had a mind blown moment.\n\nSet up a flow where my agents can take my long-form videos and make shortform projects. And even organise the shots so that talking head is above, b-roll below.\n\nThis is a 3-cam setup, so it switches between three different angles. https://t.co/lnH2aKWNmh",
+    "author": {
+      "id": "61072541",
+      "name": "Oliur",
+      "screenName": "UltraLinx",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1763960055521562624/zYpUaDFn_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 277,
+      "retweets": 2,
+      "replies": 26,
+      "quotes": 0,
+      "views": 16559,
+      "bookmarks": 117
+    },
+    "createdAt": "Wed Oct 28 07:43:33 +0000 2026",
+    "createdAtLocal": "2026-10-28 04:43",
+    "createdAtISO": "2026-10-28T07:43:33+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HVs6HN8bEAA99oc.jpg",
+        "width": 3886,
+        "height": 2648
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2034995870035268034",
+    "text": "https://t.co/9jwAgqJb2q",
+    "author": {
+      "id": "40646215",
+      "name": "Wilco de Kreij",
+      "screenName": "Emarky",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1536671447413817344/A5TSykDG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 422,
+      "retweets": 17,
+      "replies": 19,
+      "quotes": 3,
+      "views": 68711,
+      "bookmarks": 1375
+    },
+    "createdAt": "Fri Mar 20 14:09:58 +0000 2026",
+    "createdAtLocal": "2026-03-20 11:09",
+    "createdAtISO": "2026-03-20T14:09:58+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2034973462830125056"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How I Edit Videos Entirely with AI (And You Can Too)"
+  },
+  {
+    "id": "2086855151843705298",
+    "text": "Recorded a quick talking head clip on my phone this week & ran it through AI Producer by OpusClip\n\nGave it the raw file, got back something i'd actually publish. B roll, pacing, structure, all built around what i was saying. The kind of polish i used to wait days for happened while i made coffee\n\nI've got a whole folder of good footage waiting for exactly this. Finally putting it to work",
+    "author": {
+      "id": "1437557747512397830",
+      "name": "PARSA",
+      "screenName": "Parsats_eth",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2064754130149625856/uzulyDhp_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 36,
+      "retweets": 2,
+      "replies": 28,
+      "quotes": 0,
+      "views": 7039,
+      "bookmarks": 2
+    },
+    "createdAt": "Mon Aug 10 16:40:14 +0000 2026",
+    "createdAtLocal": "2026-08-10 13:40",
+    "createdAtISO": "2026-08-10T16:40:14+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2086850403715674284",
+      "text": "The gap between raw footage and a produced video just disappeared. \n\nAI Producer is available now. 🔥🎬\n\n> Drop in your raw footage \n> Chat with it to get exactly the edit you want\n> It builds smart, dynamic motion graphics that land on your exact words, maximizing retention\n> The timeline's there, you just don't have to touch it\n\nYour content deserves to be seen. Don't let editing hold you back.\n\nTry AI Producer now (link below)",
+      "author": {
+        "screenName": "OpusClip",
+        "name": "OpusClip"
+      }
+    }
+  },
+  {
+    "id": "2052419857325441430",
+    "text": "https://t.co/mjhx8jskUV",
+    "author": {
+      "id": "126101752",
+      "name": "Nick Theriot",
+      "screenName": "nicktheriot_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1536724430470119425/yhcNbGM8_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 198,
+      "retweets": 10,
+      "replies": 6,
+      "quotes": 1,
+      "views": 21244,
+      "bookmarks": 441
+    },
+    "createdAt": "Thu May 07 16:06:40 +0000 2026",
+    "createdAtLocal": "2026-05-07 13:06",
+    "createdAtISO": "2026-05-07T16:06:40+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2051758336799133696"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How To Generate UNLIMITED Winning Ad Ideas in 2026 (without starting from scratch)"
+  },
+  {
+    "id": "2029262055555969297",
+    "text": "https://t.co/g1QW9ztUKU",
+    "author": {
+      "id": "2375988555",
+      "name": "MAX",
+      "screenName": "maxxmalist",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1958851009893093376/eps3XB3o_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 984,
+      "retweets": 70,
+      "replies": 25,
+      "quotes": 12,
+      "views": 255323,
+      "bookmarks": 3318
+    },
+    "createdAt": "Wed Mar 04 18:25:50 +0000 2026",
+    "createdAtLocal": "2026-03-04 15:25",
+    "createdAtISO": "2026-03-04T18:25:50+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2029192483486248960"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "how to master AI content (step by step playbook)"
+  },
+  {
+    "id": "2113727289355554829",
+    "text": "Yeah, this is incredibly impressive.\n\nI gave Claude Opus 5.5 a raw talking-head video and it handed back an entirely completed edit.\n\nBUT in the reply, I will put the version edited by me -- so you can see the difference between high-end human vs AI editing prowess.\n\nHere's what Claude did:\n\n• Transcribed the a-roll word-by-word and found the 10 black gaps I’d left for b-roll\n\n• Studied my Instagram reels to learn my style: pacing, captions, serif titles, etc.\n\n• Pulled real, contextual footage from all over the internet and added sources\n\n• Built 39 b-roll cuts, punch-ins, titles and motion graphics\n\n• Picked 3 music cues that shift with the story\n\n• Checked every cut for problems and fixed the bad ones before handing it over\n\n• Completed the task in about 2 hours and 50 minutes across 3 rounds of revisions.",
+    "author": {
+      "id": "16517825",
+      "name": "Roberto Nickson",
+      "screenName": "rpnickson",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2116353552792653824/2PRE_9Sz_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 107,
+      "retweets": 5,
+      "replies": 32,
+      "quotes": 3,
+      "views": 9241,
+      "bookmarks": 107
+    },
+    "createdAt": "Fri Oct 23 20:20:31 +0000 2026",
+    "createdAtLocal": "2026-10-23 17:20",
+    "createdAtISO": "2026-10-23T20:20:31+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2113721559508504576/vid/avc1/1080x1920/o436sErQ1HftGcjn.mp4?tag=29",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2021874066098205178",
+    "text": "Finally, an AI that edits your actual footage — not fake clips.\n\nI edit videos. \n\nNot professionally, but enough to know how broken the process is.\n\nYou film a 45-minute talking-head session. Then you spend 3 hours:\n\n • Scrubbing through every pause and \"um\"\n • Syncing audio that somehow drifted\n • Hunting for B-roll that fits\n • Adding captions manually\n • Then doing it all again for vertical, square, and landscape cuts\n\nBy the time you're done, you've forgotten why you wanted to make the video in the first place.\n\nThen I came across EditWithAva.\n\nAva isn't just an editor. She's like having a whole personal video team in your pocket.\n\nShe watches your raw footage, understands what's being said, and can:\n🎬 Script – Helps draft hooks and storyboards based on your references\n🎙 Narrate – Adds voiceover if you don't have a recorded track\n✂️ Edit – Assembles the best takes, removes filler, paces the story\n🖼 Refine – Adds B-roll, captions, and cleans audio\n🔄 Remix – Creates multiple versions for different platforms in seconds\n\nAll from a simple conversation. No timeline. No technical skills.\n\nWhat surprised me:\n\nUnlike every \"AI video\" tool flooding my feed, Ava isn't trying to replace footage with prompts. She's working with your content—the messy, authentic, actually-shot-by-you stuff. She understands context, selects the best moments, and assembles them with actual creative intent.\n\nThis is for:\n • Solo creators drowning in post-production\n • UGC teams cutting multiple versions for different platforms\n • Anyone who's ever dreaded opening Premiere or CapCut\n\nNot affiliated. Just genuinely impressed.\n\nYour first 5 videos are free to test.\n👉 Try Ava free: https://t.co/ObkpaHI85a\n\nThey’re live on Product Hunt today 🚀\n: https://t.co/wZaGkjqahz\n\nAnyone else tried it? Curious how it handles longer interviews.",
+    "author": {
+      "id": "1595399463992184833",
+      "name": "Anuj",
+      "screenName": "anujcodes_21",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1823409668993245187/zP-_Y2Cg_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 59,
+      "retweets": 2,
+      "replies": 14,
+      "quotes": 0,
+      "views": 4609,
+      "bookmarks": 39
+    },
+    "createdAt": "Thu Feb 12 09:08:36 +0000 2026",
+    "createdAtLocal": "2026-02-12 06:08",
+    "createdAtISO": "2026-02-12T09:08:36+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2021873682378108930/vid/avc1/1920x1080/d_iUSaqFfCg_ibum.mp4?tag=21",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2110727718513889314",
+    "text": "NYESEL SUBS CAPCUT PRO SETAUN!!!\n\nclaude aja udah cukup!!\n\nvideo talking head ini diedit pake claude code opus 5.5,\n\naku udah ga perlu kumpulin animasi buat B-Roll, dan ga perlu ngedit berjam jam lagi\n\nada rencana mau hire editor soalnya aku kalau ngedit lama bgt, tp kayaknya ga jadi soalnya CLAUDE juga bisa ngedit talking head sesuai yang kita mau 😽😽\n\nkalau tutorial motion videos sudah aku bikin yaaa, resources dan starter packnya check aja di https://t.co/6oFSwDp237\n\ndisini ada yg pernah nyobain video talking head pake claude juga ?",
+    "author": {
+      "id": "1776608116790153216",
+      "name": "Raniii 🔥",
+      "screenName": "ranimth07",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1964530712562077696/Yu1-36cj_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 232,
+      "retweets": 25,
+      "replies": 11,
+      "quotes": 0,
+      "views": 9521,
+      "bookmarks": 167
+    },
+    "createdAt": "Thu Oct 15 13:41:18 +0000 2026",
+    "createdAtLocal": "2026-10-15 10:41",
+    "createdAtISO": "2026-10-15T13:41:18+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HUrPqT_bIAAu--N.jpg",
+        "width": 1600,
+        "height": 799
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "in",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2110721682050838994",
+      "text": "I make motion videos without touching CapCut or After Effects.\n\nJust Claude Code, in 4 steps:\n\n1/ Ask Claude to set up a motion studio (prompt in the video, save it)\n2/ Research first. Brief + docs → a storyboard, second by second\n3/ Each video is one HTML file, animated to your music. Check stills before you render\n4/ Render, then let Claude scan every frame for glitches\n\nMore details check: https://t.co/6oFSwDpzSF\nTo run it you need a Claude subscription. I paid for mine with @avici USDC in, Visa card out, and the funds stay in my own wallet \n\nGet your card: https://t.co/m5MFSnQjId",
+      "author": {
+        "screenName": "ranimth07",
+        "name": "Raniii 🔥"
+      }
+    }
+  },
+  {
+    "id": "2087663656926585124",
+    "text": "https://t.co/u1dA1swNqF",
+    "author": {
+      "id": "1502356865794985986",
+      "name": "Sarah Chieng",
+      "screenName": "MilksandMatcha",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1868428856908304384/6BROXdW-_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 327,
+      "retweets": 19,
+      "replies": 23,
+      "quotes": 8,
+      "views": 81240,
+      "bookmarks": 838
+    },
+    "createdAt": "Wed Aug 12 22:12:57 +0000 2026",
+    "createdAtLocal": "2026-08-12 19:12",
+    "createdAtISO": "2026-08-12T22:12:57+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2087346256041627648"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "What 200 Million Views Taught Us About AI and Creativity"
+  },
+  {
+    "id": "1977647164772753789",
+    "text": "EDITORS LISTEN UP!!!\n\nWe are looking for talking head editors around the $150-$300 range 💸\n\nMust know how to utilize b-roll, cut properly, and have basic AE experience 🎬\n\nComment \"EDIT\" and I'll DM you details 👀 https://t.co/zYcJutmRpl",
+    "author": {
+      "id": "1932569090",
+      "name": "Linden Chasteen",
+      "screenName": "lindenchasteen",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2098183295674773504/_vjx33z0_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 110,
+      "retweets": 3,
+      "replies": 182,
+      "quotes": 0,
+      "views": 10572,
+      "bookmarks": 37
+    },
+    "createdAt": "Mon Oct 13 08:06:41 +0000 2025",
+    "createdAtLocal": "2025-10-13 05:06",
+    "createdAtISO": "2025-10-13T08:06:41+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/ext_tw_video/1977647113572950016/pu/vid/avc1/1282x720/VRTlMt5rwF26nZ3M.mp4?tag=12",
+        "width": 1802,
+        "height": 1012
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2109602794995089505",
+    "text": "https://t.co/glh0MvrIQP",
+    "author": {
+      "id": "1402082661993222144",
+      "name": "Mark Vassilevskiy",
+      "screenName": "MarkKnd",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1923971076276502528/uw7iJX4A_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 196,
+      "retweets": 7,
+      "replies": 20,
+      "quotes": 7,
+      "views": 29789,
+      "bookmarks": 197
+    },
+    "createdAt": "Mon Oct 12 11:11:15 +0000 2026",
+    "createdAtLocal": "2026-10-12 08:11",
+    "createdAtISO": "2026-10-12T11:11:15+00:00",
+    "media": [],
+    "urls": [
+      "https://x.com/i/article/2103857694318989313"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How we made the most viral launch of the year (40m+ views)"
+  },
+  {
+    "id": "2066128216239087803",
+    "text": "https://t.co/exJE6Rrso9",
+    "author": {
+      "id": "1801989726569709569",
+      "name": "arc.",
+      "screenName": "arceyul",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2057278321717637120/RI9FJRyE_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 36,
+      "retweets": 6,
+      "replies": 3,
+      "quotes": 0,
+      "views": 25258,
+      "bookmarks": 20
+    },
+    "createdAt": "Sun Jun 14 11:58:48 +0000 2026",
+    "createdAtLocal": "2026-06-14 08:58",
+    "createdAtISO": "2026-06-14T11:58:48+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2066124554833911808"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "HEYGEN VIDEO AGENT + CLAUDE THE WHOLE WORKFLOW."
+  },
+  {
+    "id": "2034734161047491021",
+    "text": "https://t.co/ae8PNOtSDa",
+    "author": {
+      "id": "2375988555",
+      "name": "MAX",
+      "screenName": "maxxmalist",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1958851009893093376/eps3XB3o_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 283,
+      "retweets": 24,
+      "replies": 19,
+      "quotes": 4,
+      "views": 105000,
+      "bookmarks": 661
+    },
+    "createdAt": "Thu Mar 19 20:50:02 +0000 2026",
+    "createdAtLocal": "2026-03-19 17:50",
+    "createdAtISO": "2026-03-19T20:50:02+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2034573424513675264"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "The UGC industry is dead. AI killed it. here's what comes next + my AI UGC workflow"
+  },
+  {
+    "id": "2115830155113365927",
+    "text": "how to get your app a viral tiktok, from 69,674 videos we posted last year:\n\n209 of them (0.3%) drove 64.6% of our 755M views. virality is a numbers game you can rig. here's how we find the winners fast and squeeze them dry:\n\nbefore you post\n\n1. one brand new account per creator per app.\n\n2. days 1-3, don't post. scroll the niche 1-2 hours, watch 10+ videos to the end, like 20-30, leave 3-5 real comments, follow 5-10 accounts.\n\n3. days 3-4, post one broad video (\"realizing how much money i spent last month\"). then 1 campaign video a day, aiming for 200+ views in the first 24 hours.\n\n4. 9 out of 10 \"shadowbans\" aren't real. it's a cold account, a flagged keyword, a duplicate edit or a bad hook. you can reuse footage but  can't reuse the cut.\n\nresearch\n\n5. find your star feature, the 1-2 things the app is built around. your real competitor is whoever markets that feature. ex: parrot's is swiping, so tiktok is on its list.\n\n6. save viral videos in 3 buckets: your niche, your star-feature competitors, viral ugc in general. only organically viral ones, no ad spend behind them.\n\n7. 9 times out of 10 you can tweak a viral general ugc format to fit your app.\n\nformats\n\n8. run all 4: wall of text, talking head, slideshow, hook + demo.\n\n9. talking heads take longer to pop, then convert more because the viewer trusts the person. they get flagged as ads way less too.\n\n10. slideshows are the easiest product placement. people swipe to the end, so the app slide almost always gets seen.\n\n11. hook + demo: take your best wall of text, cut it to a 3-second hook, show the app at the end.\n\n12. read the comments on your wall of text videos. they double as a free focus group.\n\nhooks\n\n13. open on a problem your audience has lived, felt in that exact spot.\n\n14. the best ones split the room. jenni ai pulled a 3.6M-view video by pulling in people who use ai for essays and people who judge them for it.\n\n15. skip shock bait. the comments fill up with the bait and the video gets pushed to people who came for the hook instead of the problem.\n\n16. cta at the end.\n\n17. on a 60s video, under 25% average watch time and tiktok stops pushing it.\n\nkill or keep\n\n18. 10-15 videos per account across every format. comments or 5-10k views = keep going. can't clear 1k views on any account = kill it.\n\n19. every video over 10k views gets 4 questions: which pain point hit, did it reach the right audience, did more product context hurt reach, how do we combine its virality with another video's buying intent.\n\n20. retention tells you what gets views. saves and comments tell you what converts.\n\n21. match view spikes to attribution spikes over the next 72 hours. a video from a month ago can come back and crush.\n\n22. a format is repeatable once it clears 100k views 5 times. after that, expect about 10-15% of videos at similar quality to go viral.\n\nscaling winners\n\n23. repost a winner until it stops working. make 3 iterations on the same concept: hook, wording, visual.\n\n24. put the app name on screen and in the first words of the caption. one of our 7M+ view videos led to 2x that in replies.\n\n25. at 50k views it goes in the bounty channel. creators comment from their personal accounts (\"dude same, that's why i use [app]\") and we pay out on comments that get likes.\n\n26. then a creator films a reply to the top \"wait what app is that?\" comment. comment likes are our earliest signal that downloads are coming.\n\n27. every video over 20k views adds the brand as a collaborator on instagram.\n\n28. views but no site visits = fix the ugc. site visits but no conversions = fix onboarding and the product.\n\nmost importantly: do not quit at week 3!!",
+    "author": {
+      "id": "2022116141120798721",
+      "name": "Alexis Hedley",
+      "screenName": "alexishedley_",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2051722470772588546/vUo8Ynn-_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 165,
+      "retweets": 4,
+      "replies": 14,
+      "quotes": 1,
+      "views": 11561,
+      "bookmarks": 452
+    },
+    "createdAt": "Thu Oct 29 15:36:33 +0000 2026",
+    "createdAtLocal": "2026-10-29 12:36",
+    "createdAtISO": "2026-10-29T15:36:33+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1375175806364708865",
+    "text": "the streamy awards should have categories for cinematography with sub sections like \"best b-roll\" &amp; \"best talking head setup\"\n\nand I think @beckiandchris should win both of those categories.",
+    "author": {
+      "id": "84256116",
+      "name": "patrick.",
+      "screenName": "imPatrickT",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1754509665902219264/Sc1SLpKv_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 85,
+      "retweets": 0,
+      "replies": 9,
+      "quotes": 1,
+      "views": 0,
+      "bookmarks": 1
+    },
+    "createdAt": "Thu Mar 25 20:00:36 +0000 2021",
+    "createdAtLocal": "2021-03-25 17:00",
+    "createdAtISO": "2021-03-25T20:00:36+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2068703873733472303",
+    "text": "https://t.co/qnV6Va9gGM",
+    "author": {
+      "id": "1620321223938043904",
+      "name": "Zack (Paid Ads Specialist)",
+      "screenName": "zackpaid",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2055480268564123649/5ijM3Y6V_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 123,
+      "retweets": 10,
+      "replies": 3,
+      "quotes": 1,
+      "views": 72010,
+      "bookmarks": 575
+    },
+    "createdAt": "Sun Jun 21 14:33:32 +0000 2026",
+    "createdAtLocal": "2026-06-21 11:33",
+    "createdAtISO": "2026-06-21T14:33:32+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2068700483330732032"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "every meta ad format explained in 1 article "
+  },
+  {
+    "id": "2005002285265682925",
+    "text": "I just vibe-coded my own Arcads in n8n + Airtable 🤯\n\nSame \"actor library\", same UGC style videos, same output quality.\n\nBut instead of $11 per video, it's just a few bucks.\n\nPerfect for e-comm brands & agencies scaling AI UGC without the ridiculous per-video pricing.\n\nHere's the math that made me build this:\n\nArcads charges $11 per video.\n\n(Good luck finding that anywhere on their homepage, by the way.)\n\nThat's $110/month for 10 videos.\n\nIf you're testing creative at any real volume—50, 100, 200 videos/month—you're looking at thousands in AI UGC costs alone.\n\nThe math doesn't work.\n\nSo I built my own system:\n\n→ 30+ AI actors ready to use (or create your own with Nano Banana Pro)\n→ Put products directly in your actor's hands\n→ Same character across multiple scenes\n→ Quick mode: 8-second hooks via Veo 3.1\n→ Extended mode: longer talking-head testimonials\n→ B-roll generator for lifestyle content\n→ ElevenLabs integration for any voice you want\n\nA few bucks per video. Not $11.\n\nNo caps, no per-video gouging.\n\nI recorded a 20-minute walkthrough breaking down exactly how this works—the actor library, UGC generator, B-roll creator—and how I'm making it available to my upcoming community.\n\nWant to see the full breakdown + learn how to get access?\n\n> Comment \"ADS\"\n> Like this post\n\nAnd I'll send it over (must be following so I can DM)",
+    "author": {
+      "id": "965583025957371904",
+      "name": "Mike Futia",
+      "screenName": "mikefutia",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1923873453498646528/wNZGnvlf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 433,
+      "retweets": 25,
+      "replies": 347,
+      "quotes": 0,
+      "views": 26492,
+      "bookmarks": 436
+    },
+    "createdAt": "Sat Dec 27 19:46:10 +0000 2025",
+    "createdAtLocal": "2025-12-27 16:46",
+    "createdAtISO": "2025-12-27T19:46:10+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2005002233919016961/vid/avc1/1280x720/h1IMX0xb0KwdtgM7.mp4?tag=14",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2010854294208291278",
+    "text": "I just replaced my $110/month Arcads subscription with an AI agent 🤯\n\nSame AI UGC output.\n\nSame actor library.\n\nAll for a fraction of the cost.\n\nPerfect for e-comm brands & agencies who need AI UGC at scale without the per-video tax.\n\nHere's why you don't need those expensive subscriptions:\n\nArcads charges $11 per video.\n\n$110/month gets you just 10 videos (!!)\n\nIf you're testing creative at any real volume, the math breaks fast.\n\nSo I built my own system:\n\n→ 30+ AI actors ready to use\n→ Create custom actors with Nano Banana Pro\n→ Add products directly into their hands\n→ Same character across multiple scenes\n→ Quick mode: 8-second hooks (Veo 3.1)\n→ Extended mode: longer talking-head testimonials\n→ B-roll generator for lifestyle clips\n→ ElevenLabs integration for any voice\n\n What it actually costs:\n\n~$0.40/second for Veo 3 hooks\n~$0.11/second for AI avatar videos\n\nNo monthly caps.\n\nNo per-video gouging.\n\nScale however you want.\n\nI recorded a 20-minute breakdown showing the full system—actor library, UGC generator, B-roll creator, everything.\n\nWant to see how it works + learn how to get access?\n\n> Like this post\n> Comment \"ADS\"\n\nAnd I'll send it over (must be following so I can DM)",
+    "author": {
+      "id": "965583025957371904",
+      "name": "Mike Futia",
+      "screenName": "mikefutia",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1923873453498646528/wNZGnvlf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 582,
+      "retweets": 39,
+      "replies": 413,
+      "quotes": 1,
+      "views": 41162,
+      "bookmarks": 657
+    },
+    "createdAt": "Mon Jan 12 23:19:58 +0000 2026",
+    "createdAtLocal": "2026-01-12 20:19",
+    "createdAtISO": "2026-01-12T23:19:58+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2010854242886828032/vid/avc1/1280x720/9rs50710Cjrklp8N.mp4?tag=14",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2100603470059291122",
+    "text": "Most AI avatar tools solve the presenter problem, but Headcast is trying to remove the entire production workflow.\n\nYou paste the script, choose the presenter and voice, then it assembles the talking head, cuts and B-roll for you.If the final video consistently matches the quality in this demo, this could save faceless creators hours of editing.",
+    "author": {
+      "id": "1525947709064093696",
+      "name": "Orikan",
+      "screenName": "GesoraMeshack",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2016475650694037504/qIIQ_i2F_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 102,
+      "retweets": 102,
+      "replies": 14,
+      "quotes": 0,
+      "views": 22989,
+      "bookmarks": 13
+    },
+    "createdAt": "Thu Sep 17 15:11:09 +0000 2026",
+    "createdAtLocal": "2026-09-17 12:11",
+    "createdAtISO": "2026-09-17T15:11:09+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2100202744204128745",
+      "text": "You can now make a talking head video without ever filming anything \n\nIntroducing Headcast  \n\nPaste a script \nCreate your presenter \nGet a full finished video with any voice you want  \n\nIncluding b-roll and cuts already done for you\n\nSign up below for public beta ⬇️",
+      "author": {
+        "screenName": "samgrows",
+        "name": "sam"
+      }
+    }
+  },
+  {
+    "id": "2064856810410905923",
+    "text": "https://t.co/b1lOtiIm3E",
+    "author": {
+      "id": "1346924468988481538",
+      "name": "Noah Frydberg | Tiktok Shop For Brands",
+      "screenName": "maverickecom",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2068854361325727744/-ie7fYet_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 402,
+      "retweets": 54,
+      "replies": 15,
+      "quotes": 5,
+      "views": 304073,
+      "bookmarks": 1356
+    },
+    "createdAt": "Wed Jun 10 23:46:41 +0000 2026",
+    "createdAtLocal": "2026-06-10 20:46",
+    "createdAtISO": "2026-06-10T23:46:41+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2064854658602962945"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How to reach 550 videos per day with Claude (Step-by-Step Guide for eCom)  "
+  },
+  {
+    "id": "2060873726036738263",
+    "text": "I just cracked the code on AI UGC ads 🤯\n\n51 seconds long.\n\nOne creator across the entire ad: same face, same voice, same product packaging in every single shot.\n\nTalking-head delivery, b-roll cutaways, voiceover running over the b-roll, and the creator moving through different settings.\n\nA fully edited, multi-shot ad that actually holds.\n\nIf you've been stuck generating 8-second clips that look fine but fall apart the second you try to string them into a real ad,\n\nno character that holds,\n\nno voice that stays the same clip to clip,\n\nno product that survives more than one shot,\n\nthis is the workflow you're missing.\n\nHere's exactly how I did it:\n\n→ Pull a winning authority ad and rewrite the script for your product\n→ Build your creator in ChatGPT Images 2.0 to match the exact buyer demographic\n→ Lock the creator + product as reusable Elements so they stay identical across every shot\n→ Break the script into single-scene shots so each one is a clean generation\n→ Lock the voice on the first clip, then carry that same voice through every shot after\n→ Tag your b-roll shots as voiceover so the line plays over the cutaway instead of lip-syncing\n→ Edit in CapCut: cut the dead air, nudge to 1.1x\n→ Drop the final cut in Captions, add subtitles, export\n\nConsistent character, consistent voice, consistent packaging — across talking head, b-roll, voiceover, and multiple settings.\n\nNo character drift.\nNo robotic voice swap.\nNo disconnected 8-second clips.\n\nI put together the full step-by-step playbook with the exact ChatGPT Images 2.0 and Seedance prompts, the element-tagging setup, and the voice trick most people miss.\n\nWant it?\n\n> Like this post\n> Comment \"UGC\"\n\nAnd I'll send it over (must be following so I can DM)",
+    "author": {
+      "id": "965583025957371904",
+      "name": "Mike Futia",
+      "screenName": "mikefutia",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1923873453498646528/wNZGnvlf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 404,
+      "retweets": 20,
+      "replies": 291,
+      "quotes": 2,
+      "views": 38160,
+      "bookmarks": 429
+    },
+    "createdAt": "Sat May 30 23:59:20 +0000 2026",
+    "createdAtLocal": "2026-05-30 20:59",
+    "createdAtISO": "2026-05-30T23:59:20+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2060873645434810368/vid/avc1/720x1280/usvkDNv6XKqqHORG.mp4?tag=14",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2070207620196258101",
+    "text": "Fuck hiring an editor.\nFuck buying a camera.\nFuck spending $8,000 a month on a production team that ghosts you for 5 days between drafts and delivers 4 mid videos...\n\nThe actual cost to produce a YouTube video in 2026 is $7\n\nNot $7,000. Seven dollars\n\nAnd the output is better than what most $5k/mo editors deliver because the bottleneck was never the edit. It was always the script\n\nHere's the math nobody in the production world wants you to see\n\nTraditional YouTube production:\n\n- Scriptwriter $2k/mo (writes like a blog post, retention craters at minute 3)\n- Editor $3k/mo (takes 2 weeks per video, ghosts, gets re-hired 3x a year)\n- Thumbnail designer $500/mo (same template every time)\n- Total: $5,500-$8,000/mo for 4 videos\n- Cost per video: $1,375-$2,000\n\nAI production pipeline:\n\n- Script: Subscribr or Claude Pro $20/mo. Feed it the transcript of an outlier video in your niche + your voice profile. Full 12 minute script with hooks and open loops every 3 minutes. Done in 20 minutes\n- Talking head: HeyGen $99/mo. One consistent AI character (same face every video) or just run your own Zoom recording through the tool\n- B-roll: Midjourney $10/mo. Pexels $0\n- Edit: CapCut $0\n- Thumbnail: Midjourney $10-20/mo. 3 options in 5 minutes\n- Total: ~$150-200/mo for 8-12 videos\n- Cost per video: $7-17\n\n$96,000/yr vs $2,400/yr. For MORE videos with BETTER scripts and ZERO ghosting editors\n\nI know this works because we've tested both pipelines side by side. The AI scripts outperformed the human scripts on retention almost every time. Not because the AI is smarter. Because it doesn't write filler to sound smart\n\nHere's the part the $8k/mo production agencies pray you never figure out:\n\nA great script edited simply outperforms a garbage script with $5,000 of motion graphics on top of it. Every single time\n\nThe edit can be mid. The thumbnail can be decent. But if the first 30 seconds don't hook, nothing else matters. $8,000 worth of polish on a weak script is $8,000 set on fire\n\nMost business owners quit YouTube after 3 months. They spend $24k on production, get mid results because the scripts were never right, and conclude \"YouTube doesn't work for my business\"\n\nYouTube works. Your production pipeline was broken. And the fix costs 97% less than what you were paying\n\nThe angry grandpa test btw: picture an angry old man reading your script over your shoulder screaming \"IS THIS IMPORTANT?? CAN YOU CUT IT??\" at every single line\n\nMost lines don't survive that. And that's the entire point\n\nWatch it on a real opening:\n\n\"Most business owners struggle with lead generation. It's a common problem. In fact, 73% of service providers say finding clients is their biggest challenge\"\n\n3 sentences. One point. And the video is TITLED \"how to get more clients\" so the viewer already knows it's hard. You just spent 10 seconds confirming the thing they clicked because they already believed it\n\nCut it to:\n\n\"73% of service providers can't find clients. By the end of this video you'll have a system that makes them come to you\"\n\nSame info. Half the words. Straight into the promise\n\n5 nothing burgers in a 10 minute video = 30-60 seconds of dead air where people leave. On YouTube one click-off is all it takes\n\nIf you want to start this week:\n\n1) Pick a niche on math. Target 35-65 year olds in US/UK/Canada/Australia. They watch 11+ minute videos start to finish. Advertisers pay $15-$45 per thousand views. Finance, retirement, health, real estate, coaching. All wide open\n\n2) Find outlier topics. Search your niche. Find channels with under 10k subs that have a video doing 200k+ views. The IDEA did all the work. Screenshot the topic + title format. Rebuild through your angle\n\n3) Script with Subscribr. Plug in the outlier topic, it pulls the research and writes a full retention-optimised script with hooks baked in. 20 minutes. Done\n\n4) Produce. Zoom call or AI character. B-roll from Pexels. Edit in CapCut. 2-3 hours total. Under $7\n\n5) Attach revenue from video 1. $29 ebook. $9/mo community. Consulting call link. Put it in every description BEFORE you have the audience\n\nChannels running this properly are doing $15k-$40k/mo. Some running 3-5 characters across niches stacking $$$ across all of them\n\nStop overpaying for polish. Start paying for scripts that hold attention\n\nThat's the whole game and it always was\n\n(we built the tool that handles scripting, research, and the full production pipeline so you don't have to. link in bio.)",
+    "author": {
+      "id": "1473477276184420356",
+      "name": "Bryan Ng",
+      "screenName": "boomerrbryan",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2062576051859939328/p95ADnLY_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 155,
+      "retweets": 15,
+      "replies": 10,
+      "quotes": 1,
+      "views": 14558,
+      "bookmarks": 237
+    },
+    "createdAt": "Thu Jun 25 18:08:53 +0000 2026",
+    "createdAtLocal": "2026-06-25 15:08",
+    "createdAtISO": "2026-06-25T18:08:53+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2053701702713319664",
+    "text": "https://t.co/je1mqS6KT3",
+    "author": {
+      "id": "1180879279598559232",
+      "name": "TrekDeFi 💚.🧃",
+      "screenName": "TrekDeFi",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2034512975617507329/-zIyjFYe_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 180,
+      "retweets": 20,
+      "replies": 82,
+      "quotes": 0,
+      "views": 20979,
+      "bookmarks": 0
+    },
+    "createdAt": "Mon May 11 05:00:16 +0000 2026",
+    "createdAtLocal": "2026-05-11 02:00",
+    "createdAtISO": "2026-05-11T05:00:16+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2053698241590435840"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How to Use Advanced Motion Control in Yapper.so – Complete Tutorial"
+  },
+  {
+    "id": "2012560060153471331",
+    "text": "DAN KOE'S COMPLETE ARTICULATION SYSTEM... TURNED INTO A YOUTUBE SCRIPT GENERATOR\n\n----------------------------------------\nELITE YOUTUBE SCRIPT GENERATOR\n----------------------------------------\n\n<context>\nYouTube scripts fail when creators try to be clever on the spot instead of deploying refined ideas through proven structures. The best YouTube creators like Dan Koe, Alex Hormozi, Jordan Peterson, don't improvise brilliance. They have an \"inner album of greatest hits\" (8-10 refined ideas) and deploy them using psychological frameworks that keep viewers watching. This prompt combines Dan Koe's complete articulation system with retention-optimized script architecture to create videos that captivate from hook to CTA.\n</context>\n\n<role>\nYou are my YouTube scriptwriter and retention architect - a former head of content for multi-million subscriber channels who spent years analyzing retention graphs across 50+ niches and studying how the most articulate creators structure their ideas. You understand that YouTube success isn't about what you say, it's about how you structure what you say. You combine Dan Koe's articulation frameworks with retention science to create scripts that don't just inform, they transform viewers and keep them watching.\n\nYou know that \"writing teaches you how to think\" and that the best ideas come from hunting — reading old books, going down rabbit holes, listening intently for insights worth stealing. You help creators build their body of work, refine their greatest hits, and deploy them at high-retention moments.\n\nBefore writing any script, you think step by step: 1) Identify the ONE transformation, 2) Select the right frameworks for this topic, 3) Map the retention architecture, 4) Deploy pattern interrupts strategically, 5) Place greatest hits at clippable moments.\n</role>\n\n<articulation_frameworks>\n\n## THE INNER ALBUM OF GREATEST HITS\nEvery articulate creator has 8-10 refined ideas they can connect to any topic:\n- Ideas proven to resonate (viral posts, life-changing DMs, client wins)\n- Ideas refined through hundreds of iterations\n- Ideas you speak with complete confidence\n- Ideas that represent your unique perspective\n- The best podcast guests don't answer directly — they deploy their greatest hit on that topic, then expand\n\nKey insight: \"Most important ideas deserve to be repeated. How else are you going to refine them?\"\n\n## THE MICRO STORY (Beginner Framework)\nThe mind is a story engine. The foundation of every story is TRANSFORMATION.\n\nStructure:\n1. PROBLEM — State a relatable problem you've observed or experienced. This grounds the idea and creates curiosity.\n2. AMPLIFY — Illustrate how the problem leads to negative outcomes if unsolved. This increases desire for the solution.\n3. SOLUTION — State the answer. Can be one sentence (short-form) or multiple sections (long-form).\n\n\"After 6 years of doing this, it's still my go-to when I need to articulate a thought fast.\"\n\n## THE PYRAMID PRINCIPLE (Intermediate Framework)\nAnswer-first communication that makes ideas palatable and persuasive.\n\nStructure:\n1. MAIN IDEA — Start with your key conclusion (don't bury the lead)\n2. KEY ARGUMENTS — Support with 3-5 reasons (ask \"why\" 3-5 times)\n3. DETAILED EVIDENCE — Data, examples, personal anecdotes, analysis\n\n\"Unlike most content that waits to give you the answer until the end, this takes an answer-first approach.\"\n\n## CROSS-DOMAIN SYNTHESIS (Advanced Framework)\nDraw patterns from multiple disciplines to create uncopyable content.\n\nStructure:\n1. PROBLEM + AMPLIFY — Hook with relatable problem and stakes\n2. CROSS-DOMAIN INSIGHT — Bring concept from another field (physics, psychology, biology, philosophy, economics) to explain your point in a way no one else does\n3. UNIQUE PROCESS — Your original framework or steps that solve the problem\n\n\"If I'm talking about deep work, I can use the concept of entropy from physics to illustrate how distraction works. This teaches my audience something new, and I can sleep well knowing that all other deep work content does not do this.\"\n\n## WRITING LEGOS (Content Building Blocks)\n\"Writing is like legos with ideas, and ideas come in predictable forms.\"\n\nWhen stuck, cycle through these:\n- Pain point — Start here when stuck, ideas flow from pain\n- Example — Grounds abstract ideas in reality\n- Personal story — Creates connection, can go anywhere\n- Statistic — Adds authority and credibility\n- Metaphor — Explains complex ideas simply (Alan Watts style)\n- Quote — Borrowed credibility, quotes are almost always great ideas\n- Reframe — New perspective on what you just discussed\n- What/How/Why — \"Thinking is questioning\" — ultimate fallback\n\n## IDEA HUNTING\n\"You need to hunt for ideas. Read old books, go down rabbit holes, listen to new podcasts, sit with your thoughts.\"\n\nProcess:\n1. Listen intently for ideas you wish YOU wrote\n2. Jot it down immediately so you don't lose it\n3. Articulate it in your own words using these frameworks\n4. Let it take a new shape — transform borrowed ideas into your voice\n\n## THE REWIRING EFFECT\n\"Once you get the hang of it, it becomes second nature, and your thinking process starts to rewire.\"\n\nThe frameworks don't just help you write — they change how you think.\n\n</articulation_frameworks>\n\n<retention_architecture>\n\n## HOOK (0:00-0:30)\nGoal: Stop the scroll. Create curiosity gap. Promise transformation.\n\nStructure:\n- 0:00-0:05 — Pattern interrupt (bold statement, unexpected claim, or direct question)\n- 0:05-0:15 — Micro Story hook (Problem + Amplify in compressed form)\n- 0:15-0:30 — Promise + Preview (what transformation awaits, why this matters NOW)\n\nHook Formulas:\n- \"Most people think [common belief]. They're wrong.\"\n- \"[Outcome] isn't about [obvious thing]. It's about [unexpected thing].\"\n- \"I spent [time] figuring out [topic]. Here's what I wish I knew.\"\n- \"[Number]% of [group] fail at [thing] because [specific mistake].\"\n- \"Stop [common action]. It's destroying your [desired outcome].\"\n- \"The single greatest [thing] you can [verb] is [unexpected answer].\"\n\n## SETUP (0:30-2:00)\nGoal: Establish stakes. Create emotional investment. Open loops.\n\nInclude:\n- Why this matters NOW (urgency)\n- What happens if they don't solve this (amplify pain)\n- What's possible when they do (paint the transformation)\n- Preview the structure (roadmap reduces anxiety)\n- Personal credibility signal (why you can teach this)\n\n## MAIN CONTENT SECTIONS\nGoal: Deliver value in digestible chunks with retention beats every 45-90 seconds.\n\nFor each section use this structure:\n```\n[SECTION TITLE — Keeps viewers oriented]\n\n[MICRO STORY HOOK — Problem specific to this point]\n\n[MAIN INSIGHT — Lead with answer using Pyramid Principle]\n\n[SUPPORTING ARGUMENTS — 2-3 reasons why]\n\n[EVIDENCE — Use Writing Legos: example, story, stat, metaphor, quote]\n\n[PATTERN INTERRUPT — Re-engage attention]\n\n[TRANSITION — Bridge to next section, open new loop]\n```\n\n## PATTERN INTERRUPTS (Every 45-90 seconds)\nOptions:\n- Direct question: \"Think about this for a second...\"\n- Tone shift: Serious → playful or vice versa\n- Curiosity spike: \"Here's where it gets interesting...\"\n- Callback: Reference the hook promise\n- Visual change: B-roll, graphic, or camera angle shift\n- Counter-argument: \"Now you might be thinking...\" then resolve\n- Quick story: 15-30 second anecdote\n- Data drop: Surprising statistic\n- Greatest hit deployment: Your refined insight at peak attention\n\n## PAYOFF (Final 10-15%)\nGoal: Deliver on promise. Create satisfaction. Drive next action.\n\nStructure:\n- Summarize transformation (before state → after state)\n- Deploy your best \"greatest hit\" — the most refined insight\n- Create next curiosity gap (tease related video)\n- CTA: Subscribe, comment prompt, or next video link\n</retention_architecture>\n\n<response_guidelines>\n\nBefore writing, I will:\n1. Confirm the ONE transformation viewers will experience\n2. Identify the unexpected angle that makes this different\n3. Ask which \"greatest hits\" should be deployed\n4. Select the right framework combination for this topic\n\nScript output will include:\n- 3 title options (curiosity-driven)\n- Full script with timestamps\n- [VISUAL] cues for each section\n- [PATTERN INTERRUPT] markers with specific techniques\n- Clippable moments flagged for Shorts/social\n- Thumbnail moment identified\n- B-roll suggestions throughout\n\nFormat:\n```\n## TITLE OPTIONS\n1. [Title 1]\n2. [Title 2]\n3. [Title 3]\n\n## HOOK (0:00-0:30)\n[VISUAL]: [Description]\n[AUDIO]: [Exact script]\n\n## SETUP (0:30-2:00)\n[VISUAL]: [Description]\n[AUDIO]: [Exact script]\n\n## SECTION 1: [Title] (Timestamp)\n[VISUAL]: [B-roll/graphic suggestions]\n[AUDIO]: [Script]\n[PATTERN INTERRUPT at X:XX]: [Technique]\n[CLIP MOMENT]: [If applicable]\n\n## SECTION 2: [Title] (Timestamp)\n[Continue structure...]\n\n## PAYOFF (Timestamp-END)\n[VISUAL]: [Description]\n[AUDIO]: [Script including CTA]\n[GREATEST HIT DEPLOYMENT]: [Your refined insight]\n\n---\n## PRODUCTION NOTES\n- Pattern interrupts at: [timestamps]\n- Best clip moments: [timestamps + descriptions]\n- Thumbnail moment: [timestamp + description]\n- Suggested B-roll: [list]\n```\n\n</response_guidelines>\n\n<task_criteria>\n● Every section must use at least one Writing Lego (example, story, stat, metaphor, quote, reframe, or question)\n● Pattern interrupts must appear every 45-90 seconds — no exceptions\n● The Micro Story structure (Problem → Amplify → Solution) must appear in the hook\n● Cross-domain insights should be suggested when the topic allows\n● Greatest hits must be deployed at high-attention moments (after pattern interrupts)\n● Scripts must include visual cues — YouTube is visual medium\n● Clippable moments must be identified for repurposing\n● Transitions must open loops to maintain watch time\n● Never bury the lead - use Pyramid Principle (answer first)\n</task_criteria>\n\n<information_about_me>\n● My topic: [TOPIC]\n● My target length: [LENGTH IN MINUTES]\n● My audience: [WHO IS WATCHING + THEIR LEVEL]\n● My other interests for cross-domain synthesis: [INTERESTS]\n● My tone: [EDUCATIONAL / MOTIVATIONAL / ENTERTAINING / CONVERSATIONAL]\n</information_about_me>",
+    "author": {
+      "id": "1643695629665722379",
+      "name": "Alex Prompter",
+      "screenName": "alex_prompter",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2066532957049769985/zzC81Zmq_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 342,
+      "retweets": 21,
+      "replies": 6,
+      "quotes": 1,
+      "views": 38360,
+      "bookmarks": 574
+    },
+    "createdAt": "Sat Jan 17 16:18:04 +0000 2026",
+    "createdAtLocal": "2026-01-17 13:18",
+    "createdAtISO": "2026-01-17T16:18:04+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "quotedTweet": {
+      "id": "2012306032534393085",
+      "text": "DAN KOE'S WHOLE ARTICULATION PHILOSOPHY... PACKED INTO ONE PROMPT\n\n-------------------------------\nTHE ARTICULATION ENGINE\n-------------------------------\n\n<context>\nArticulate people don't come up with brilliant ideas on the spot. They have an \"inner album of greatest hits\" — 8-10 big ideas refined over thousands of iterations that connect to any topic. When asked a question, they don't answer directly. They speak their best idea with confidence, then expand with supporting points. This prompt transforms any AI into an articulation coach that helps you build your greatest hits, structure your thoughts using proven frameworks, and communicate ideas that resonate.\n</context>\n\n<role>\nYou are my articulation architect - a communication strategist who studied how the most captivating speakers and writers structure their ideas. You understand that being articulate isn't about memorizing information or sounding clever. It's about having a pool of refined ideas and knowing how to deploy them using psychological frameworks that short-circuit attention. You help me build my inner album of greatest hits and teach me to structure any thought for maximum impact. You think like Jordan Peterson, write like Dan Koe, and speak like Alex Hormozi.\n</role>\n\n<frameworks>\n\n## THE INNER ALBUM\nEvery articulate person has 8-10 big ideas they've refined thousands of times. These are:\n- Ideas that have proven to resonate (viral posts, life-changing DMs, key client wins)\n- Ideas that represent your unique perspective\n- Ideas that can connect to almost any topic\n- Ideas you speak with complete confidence because you've thought them through\n\n## THE MICRO STORY (Beginner)\nThe mind is a story engine. Structure any thought as:\n1. PROBLEM — State a relatable problem you've observed or experienced\n2. AMPLIFY — Illustrate the negative outcome if unsolved (increases desire for solution)\n3. SOLUTION — State the solution (one sentence for short-form, multiple sections for long-form)\n\n## THE PYRAMID PRINCIPLE (Intermediate)\nAnswer-first communication:\n1. MAIN IDEA — Start with your key conclusion or recommendation\n2. KEY ARGUMENTS — Support with 3-5 reasons (ask \"why\" 3-5 times)\n3. EVIDENCE — Data, examples, personal anecdotes, analysis\n\n## CROSS-DOMAIN SYNTHESIS (Advanced)\nCreate unique content by drawing from multiple disciplines:\n1. PROBLEM + AMPLIFY — Hook with relatable problem\n2. CROSS-DOMAIN INSIGHT — Bring concept from another field (physics, psychology, art, etc.) to explain your point\n3. UNIQUE PROCESS — Your original solution/framework\n\n## WRITING LEGOS (Content Building Blocks)\nWhen you don't know what to write/say next, cycle through:\n- Pain point (start here when stuck)\n- Example (grounds abstract ideas)\n- Personal story (creates connection)\n- Statistic (adds authority)\n- Metaphor (explains complex simply)\n- Quote (borrowed credibility)\n- Reframe (new perspective)\n- What/How/Why questions (drives deeper)\n\n</frameworks>\n\n<response_guidelines>\nWhen I give you a topic or idea:\n1. First, identify which framework fits best (Micro Story, Pyramid, or Cross-Domain)\n2. Structure my idea using that framework\n3. Suggest which of my \"greatest hits\" could connect to this (ask me to share them if I haven't)\n4. Provide the articulated version in both SHORT (tweet/soundbite) and LONG (newsletter/speech) formats\n5. Rate the articulation 1-10 and explain why\n\nWhen helping me build my Inner Album:\n1. Ask about my biggest wins, most-liked content, life-changing client moments\n2. Extract the core ideas from those experiences\n3. Refine each into a single powerful statement\n4. Show how each connects to common topics\n</response_guidelines>\n\n<information_about_me>\n● My niche/expertise: [YOUR NICHE]\n● My biggest ideas so far: [LIST 3-5 IDEAS YOU'RE KNOWN FOR]\n● Current situation: [PODCAST, ARTICLE, MEETING, SPEECH, ETC.]\n● Topic I need to articulate: [THE SPECIFIC TOPIC]\n</information_about_me>",
+      "author": {
+        "screenName": "alex_prompter",
+        "name": "Alex Prompter"
+      }
+    }
+  },
+  {
+    "id": "2031784184390287790",
+    "text": "https://t.co/FVhlNCihh5",
+    "author": {
+      "id": "1620321223938043904",
+      "name": "Zack (Paid Ads Specialist)",
+      "screenName": "zackpaid",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2055480268564123649/5ijM3Y6V_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 249,
+      "retweets": 20,
+      "replies": 5,
+      "quotes": 2,
+      "views": 22769,
+      "bookmarks": 408
+    },
+    "createdAt": "Wed Mar 11 17:27:52 +0000 2026",
+    "createdAtLocal": "2026-03-11 14:27",
+    "createdAtISO": "2026-03-11T17:27:52+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2031712881503334400"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "stop spending $10k on creative design. nano banana + sora do it for free. here's how:"
+  },
+  {
+    "id": "1893019071303827764",
+    "text": "We're back with more retention tips for your long-form videos on YouTube to make people watch for longer! Here are 10 more tips that you should consider when creating your YouTube videos:\n\n1. Keep intros 8-25 seconds. Typical warm intros confirm the concept, establish structural context, set goals, and create a tone. Longer intros tend to disengage people faster. Shorter ones tend to feel jarring.\n\n2. Avoid making viewers feel like a third wheel when talking to another person in your content. Position your body in a tilted way to make the viewer feel more included in the content. This is very important to consider during conversation-heavy scenes.\n\n3. Subtitles are great for clarifying language (traditional use) or emphasizing key words or phrases for comedic effect (modern use). However, they can also help increase the perceived effort put into content. This is valuable is the natural visual appeal of your content isn't that great.\n\n4. Avoid long and complex transitions. They slow down pacing and can cause viewers to lose interest. Keep transitions short and simple. Fun fact: the natural loss of interest after a segment ends is called segmentation loss and can only be combatted with shorter transitions between high-value content bits.\n\n5. Avoid overusing side angles in talking head videos. Too many side shots can make viewers feel less connected. Use them strategically to hide cuts or break up long frontal shots. When you come back from B-roll, it's also a good idea to start on your frontal shot to instantly re-connect the viewer.\n\n6. Use visual timers for time-sensitive challenges. A visible countdown keeps viewers constantly aware of the time limit, helping to maintain that sense of urgency. Regularly come back to this timer as a reminder.\n\n7. Stick to simple storylines for broader appeal. If you want to have more complex stories, gradually introduce layers so that viewers can process the depth one layer at a time. It's false to say that YouTube videos cannot have complex storylines, it just shouldn't instantly start off this way.\n\n8. Avoid unnecessary repetition—whether it’s explaining a rule twice, restating something in a different way, or re-using an earlier visual. Repetition is one of the biggest killers of retention.\n\n9. Don’t be afraid to break the fourth wall to build authenticity or to increase the perceived quality of content as it seems more produced (especially in educational content).\n\n10. Avoid using overused or outdated memes. Memes like the SpongeBob '10 hours later' or the old man laughing can feel like lazy editing, which harms retention.",
+    "author": {
+      "id": "2886410451",
+      "name": "Mario Joos",
+      "screenName": "MarioJoos",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1693997267689316352/ddmGweWF_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 308,
+      "retweets": 24,
+      "replies": 11,
+      "quotes": 1,
+      "views": 26634,
+      "bookmarks": 459
+    },
+    "createdAt": "Fri Feb 21 19:24:51 +0000 2025",
+    "createdAtLocal": "2025-02-21 16:24",
+    "createdAtISO": "2025-02-21T19:24:51+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GkVWHTlXAAA1EXU.jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2018451938246099313",
+    "text": "Stop paying $11/video for AI UGC. I built my own Arcads for a few bucks 🤯\n\nSame actor library, same UGC-style videos, same output quality.\n\nAll inside n8n + Airtable.\n\nPerfect for e-comm brands and agencies scaling AI UGC without the ridiculous per-video pricing.\n\nDid you know that Arcads charges $11 PER video?\n\nAt any real testing volume—50, 100, 200 videos a month—you're burning thousands on AI UGC alone.\n\nThe math doesn't work.\n\nThis system solves it:\n\n→ 30+ AI actors ready to go\n→ Put products directly in your actor's hands\n→ Same character across multiple scenes\n→ Quick mode: 8-second hooks via Veo 3\n→ Extended mode: longer talking-head testimonials\n→ B-roll generator for lifestyle content\n→ ElevenLabs integration for any voice\n\nNo caps, no per-video gouging, no $11 per video price gouging.\n\nMy system:\n\n> Full actor library system\n> UGC video generator\n> B-roll creator\n\nI recorded a 20-minute breakdown showing exactly how this works and how to get access.\n\nWant the full tutorial?\n\n> Like this post\n> Comment \"UGC\"\n\nAnd I'll send it over (must be following so I can DM)",
+    "author": {
+      "id": "965583025957371904",
+      "name": "Mike Futia",
+      "screenName": "mikefutia",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1923873453498646528/wNZGnvlf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 342,
+      "retweets": 18,
+      "replies": 246,
+      "quotes": 0,
+      "views": 25391,
+      "bookmarks": 332
+    },
+    "createdAt": "Mon Feb 02 22:30:17 +0000 2026",
+    "createdAtLocal": "2026-02-02 19:30",
+    "createdAtISO": "2026-02-02T22:30:17+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2018451886958075904/vid/avc1/1280x720/myoz-wuN-s8GSa9U.mp4?tag=14",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2021268943814738192",
+    "text": "Here's the easiest way to go from 0-100k/pm with VSLs\n\nMost people waste months writing scripts from scratch that never convert\n\nThere's a faster way\n\nStart by finding a VSL in your niche that's been running for 60+ days \n\nIf it's still live after that long, chances are it's making money\n\nDownload the video and upload it to Gemini\n\nThen ask Gemini to break down the mechanics of why it works\n\nThe prompt should be something along the lines of:\n\n\"Analyse this VSL script and identify: 1) What hook pattern opens it 2) What enemy or villain is introduced 3) What mechanism is presented as the solution 4) What proof elements are used 5) What objections are handled and when\"\n\nGemini will break down the framework and you will then know exactly why that VSL is working\n\nIt's never about the production value at this stage, or the spokesperson\n\nIt's the mechanical structure of how they agitate pain, introduce the mechanism, and build to the offer\n\nTake those same mechanics and ask Claude to apply it to your product (you should have a project already set up)\n\nIt's important you have the same hook pattern, same enemy structure, same proof cadence\n\nImportant to note, you're not copying the script... you're copying what makes the script work\n\n(Same way you can have two people tell the same joke and one gets laughs and one doesn't)\n\nThe difference matters\n\nVSLs are the same\n\nYou're taking the proven structure that's already converting and filling it with your mechanism\n\nNow here's where most people mess up\n\nThey nail the script but forget about editing\n\nYou want quick, sharp cuts. No lingering shots\n\nTalking head footage mixed with B-roll to keep visual interest\n\nAll the B-roll can be generated with AI now (I could talk about this for hours, saving it for another tweet)\n\nIf the mechanics work the conversions will show up even with basic editing & ugly slides\n\nOnce you validate the structure then you invest in better production (does get expensive fyi)\n\nMost people try to write VSLs from scratch and wonder why nothing lands\n\nThe brands scaling VSLs right now are modeling what already works and adapting it\n\nFind what converts. Reverse engineer why. Apply it to your offer\n\nThat's the easiest way to start",
+    "author": {
+      "id": "1379851823822028800",
+      "name": "Joe | Ecom VSL Ads",
+      "screenName": "Aducate",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1667913004917063680/q_J4Ihsw_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 214,
+      "retweets": 15,
+      "replies": 12,
+      "quotes": 3,
+      "views": 22747,
+      "bookmarks": 367
+    },
+    "createdAt": "Tue Feb 10 17:04:04 +0000 2026",
+    "createdAtLocal": "2026-02-10 14:04",
+    "createdAtISO": "2026-02-10T17:04:04+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HAz9LstaAAE5FVl.jpg",
+        "width": 1241,
+        "height": 629
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2008955779085422758",
+    "text": "I made this AI Ad for a power generator company in 20 minutes with $12 of credits.\n\nA creator could easily charge $300+ for this.\n\nHere's exactly how I did it:\n\n→ Ad scripting in Claude\n→ Talking head UGC AI Avatar with Fabric\n→ B-Roll generation with Fabric\n→ Edit all clips together & ad captions with CapCut\n\nWith this tool + system, I can generate 5 variations of this ad concept in an afternoon and be testing all of them by tomorrow morning.\n\nBy the end of next week, I can see which is driving highest ROAS, and then iterate on the winners again.\n\nIn a month, I will have tested dozens of high quality video concepts across multiple of personas.\n\nThis is how you scale eComm in 2026 and beyond.\n\nThose who don't learn how to do this will fall behind and be outcompeted by people who do (and can outbid you on facebook).\n\nIf you want early access to the tool I used to build this ad:\nLike, RT, and comment \"FABRIC\", and I'll dm it to you.\n\n(must be following so I can dm)",
+    "author": {
+      "id": "1935745376969195520",
+      "name": "David Roberts",
+      "screenName": "recap_david",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1935745579960696832/B7dByvKW_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 184,
+      "retweets": 55,
+      "replies": 108,
+      "quotes": 0,
+      "views": 14411,
+      "bookmarks": 216
+    },
+    "createdAt": "Wed Jan 07 17:35:56 +0000 2026",
+    "createdAtLocal": "2026-01-07 14:35",
+    "createdAtISO": "2026-01-07T17:35:56+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2008955716640587776/vid/avc1/1280x720/yVJTzHECt68kdYAj.mp4?tag=14",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2027770755153527243",
+    "text": "Mau dapet $25–$40 cuma bikin video 15 detik pake AI?,\n\nBaru nih campaign GIMI: \"Scroll-Stopping AI UGC\" bareng VEED!\n\n✅ Daftar VEED gratis  \n✅ Klaim 1000 AI credits pake code: VEEDGIMI  \n✅ Bikin video showcase AI UGC (bisa AI Twin, talking head, cinematic b-roll)  \n✅ Post ke TikTok/IG/YT Shorts + #MadeWithVEED @veedstudio  \n✅ Submit → di Approve langsung  di bayar.\n\nPool sisa $2.500 & countdown 20 hari doang. \n\nAku lagi ikutan nih, mau coba juga?\nLinknya disini  [https://t.co/laT6atcnlD]",
+    "author": {
+      "id": "1918932474245390336",
+      "name": "Haze Moriarty",
+      "screenName": "hazemoriartyy",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2109621958816276480/FiwjzQgR_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 292,
+      "retweets": 38,
+      "replies": 26,
+      "quotes": 2,
+      "views": 75752,
+      "bookmarks": 301
+    },
+    "createdAt": "Sat Feb 28 15:39:56 +0000 2026",
+    "createdAtLocal": "2026-02-28 12:39",
+    "createdAtISO": "2026-02-28T15:39:56+00:00",
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HCQWoRnbEAAgrPD.jpg",
+        "width": 3190,
+        "height": 1914
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "in",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  }
+]

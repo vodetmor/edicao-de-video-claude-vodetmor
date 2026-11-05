@@ -22,7 +22,7 @@ pip install faster-whisper numpy pillow                                    # só
 # Remotion
 cp -r fonte/remotion /root/aula && cd /root/aula && npm ci                # (package.json do motor + katex 0.16)
 mkdir -p public/audio && cp BASE/audio/mix.wav public/audio/
-# ordem do pipeline (BASE = /mnt/project-files/estudio/aula-lancamento-obliquo)
+# ordem do pipeline (BASE = /mnt/project-files/pessoal-vitor/aula-lancamento-obliquo)
 python3 fonte/tempo.py                    # pausas -> audio/voz_final.wav + fonte/remotion/src/data/relogio.json (copiar para /root/aula/src/data/)
 mkdir -p /root/manimwork && cp fonte/manim/{aula.py,render.sh,manifesto.py} /root/manimwork/ && bash /root/manimwork/render.sh   # rodar da cópia local; retomável; FORCA=1 refaz
 cd /root/aula && /opt/manimenv/bin/python BASE/fonte/manim/manifesto.py   # -> src/data/manim.json

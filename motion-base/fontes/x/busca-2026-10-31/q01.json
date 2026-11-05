@@ -1,0 +1,132 @@
+[
+  {
+    "id": "2034995870035268034",
+    "text": "https://t.co/9jwAgqJb2q",
+    "author": {
+      "id": "40646215",
+      "name": "Wilco de Kreij",
+      "screenName": "Emarky",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1536671447413817344/A5TSykDG_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 422,
+      "retweets": 17,
+      "replies": 19,
+      "quotes": 3,
+      "views": 68711,
+      "bookmarks": 1375
+    },
+    "createdAt": "Fri Mar 20 14:09:58 +0000 2026",
+    "createdAtLocal": "2026-03-20 11:09",
+    "createdAtISO": "2026-03-20T14:09:58+00:00",
+    "media": [],
+    "urls": [
+      "http://x.com/i/article/2034973462830125056"
+    ],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "zxx",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false,
+    "articleTitle": "How I Edit Videos Entirely with AI (And You Can Too)"
+  },
+  {
+    "id": "2018721578050318736",
+    "text": "Watch this fully autonomous agent edit 3 videos end to end.\n\nIt pulled videos from @Lovable @ManusAI @Suno's YouTube, “studied” them and proceeded to rebuild their motion graphics ads in minutes. Turned raw talking head into publish-ready, sourced stock footage, added additional clips from YouTube, and matched commercial footage to a storyboard.\n\nDemo below 👇",
+    "author": {
+      "id": "1876494331491848192",
+      "name": "ChatCut",
+      "screenName": "chatcutapp",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/2001891337348718593/Y916DBYf_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 2533,
+      "retweets": 120,
+      "replies": 60,
+      "quotes": 16,
+      "views": 886342,
+      "bookmarks": 290
+    },
+    "createdAt": "Tue Feb 03 16:21:44 +0000 2026",
+    "createdAtLocal": "2026-02-03 13:21",
+    "createdAtISO": "2026-02-03T16:21:44+00:00",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2018720558494666752/vid/avc1/3840x2160/gsnJZyX8PV33h5eL.mp4?tag=21",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "2042226784255742329",
+    "text": "📁 Meta Ads Account\n┃\n┣ 📁 Campaign Structure\n┃ ┣ 📁 CBO per product or offer\n┃ ┣ 📁 Single ad set per campaign (start here)\n┃ ┣ 📁 New ads into existing ad sets\n┃ ┗ 📁 Separate ABO for testing only\n┃\n┣ 📁 Creative Testing\n┃ ┣ 📁 8-10 concepts per month\n┃ ┣ 📁 40-50 assets total\n┃ ┣ 📁 Big gaps between concepts\n┃ ┗ 📁 Let Meta decide what spends\n┃\n┣ 📁 Creative Formats\n┃ ┣ 📁 Static ads (70% of output)\n┃ ┣ 📁 Yapper videos (talking head, no edit)\n┃ ┣ 📁 Partnership ads (run through creator)\n┃ ┗ 📁 Motion graphics\n┃\n┣ 📁 Audience Strategy\n┃ ┣ 📁 Broad targeting (no interests)\n┃ ┣ 📁 Exclusions (buyers, email, visitors)\n┃ ┣ 📁 Creative does the targeting\n┃ ┗ 📁 Net new reach above 70%\n┃\n┣ 📁 Health Metrics\n┃ ┣ 📁 CPMr (CPM x frequency)\n┃ ┣ 📁 Net new reach % week on week\n┃ ┣ 📁 Creative win rate (10-20% healthy)\n┃ ┗ 📁 Cost per 1k accounts reached\n┃\n┣ 📁 Measurement\n┃ ┣ 📁 Blended revenue (source of truth)\n┃ ┣ 📁 Third party attribution (Northbeam)\n┃ ┣ 📁 In-platform ROAS (one signal only)\n┃ ┗ 📁 Contribution margin (actual profit)\n┃\n┗ 📁 Signals to Watch\n┣ 📁 CPMr climbing week on week\n┣ 📁 Net new reach % declining\n┣ 📁 High ROAS + high CPMr (warning)\n┗ 📁 Frequency above 2.5 over 7 days\n\nShare this. Bookmark it.",
+    "author": {
+      "id": "20301968",
+      "name": "Phil Kiel",
+      "screenName": "PhilKiel",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1843725836655947776/UOX0BQPs_normal.jpg",
+      "verified": true
+    },
+    "metrics": {
+      "likes": 1002,
+      "retweets": 81,
+      "replies": 25,
+      "quotes": 2,
+      "views": 80678,
+      "bookmarks": 2275
+    },
+    "createdAt": "Thu Apr 09 13:03:02 +0000 2026",
+    "createdAtLocal": "2026-04-09 10:03",
+    "createdAtISO": "2026-04-09T13:03:02+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  },
+  {
+    "id": "1678177688618692608",
+    "text": "Dear video editors looking at this:\n\nFor transparency, when @tonystoodios started with me 5 years ago, we started at $350/video and very quickly increased rate from there.\n\n\"Length of video\" is a garbage metric for setting a rate. Charge either hourly, or by average project complexity. \n\nA per-video rate can work well if you build a long-term relationship with your client, but be cautious about it in the beginning. Get a sense of the project's scope.\n\nLeading with, \"I charge $300 per video\" is a good way to find yourself underneath a 100-hour project, and realize you're making $3/hour.\n\nTrust me, I've been there. Just out of high school, I once quoted $50 for a project that ended up taking 80 hours. Lesson learned.\n\nA 10-minute assembly cut of talking-head footage might take 30-60 minutes (of edit time), but a 10-minute explainer with b-roll, motion graphics, etc can take 40 hours of work. It all depends.\n\nKeep in mind that edit time isn't your only time expenditure. You'll spend time waiting for your client to deliver assets, and if they expect you to render the video, that's time your machine is basically unusable. Consider all these factors when setting your rates.\n\nUse a contract, and include language about how you handle revision requests. Typically it's a good idea to charge hourly after the first round or two. When I did web dev, I charged $60/hour after 2 revision requests – and that was back in 2009, when I was 18.\n\nStand your ground if asked to do more work than your negotiated rate covers. It's ok to give your client a bit of leeway in order to build a good long-term relationship, but don't let yourself be exploited.\n\nAnd let me put this part in bold:\n\nYour portfolio is everything, and it can include work you do for yourself. I have my eye out for motion graphics artists right now, and I couldn't care less if the work in an artist's portfolio was done for a client or for themselves.\n\nDon't let a cheap client try to pressure you with the old \"work with me and I'll help you make more connections\".\n\nThere's merit to that – to a degree – but not to such a degree that you should allow yourself to be exploited.",
+    "author": {
+      "id": "39262778",
+      "name": "Thomas Frank",
+      "screenName": "TomFrankly",
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1011750442135678976/pjQtLPdD_normal.jpg",
+      "verified": false
+    },
+    "metrics": {
+      "likes": 511,
+      "retweets": 66,
+      "replies": 26,
+      "quotes": 11,
+      "views": 151015,
+      "bookmarks": 201
+    },
+    "createdAt": "Sun Jul 09 23:01:54 +0000 2023",
+    "createdAtLocal": "2023-07-09 20:01",
+    "createdAtISO": "2023-07-09T23:01:54+00:00",
+    "media": [],
+    "urls": [],
+    "isRetweet": false,
+    "retweetedBy": null,
+    "lang": "en",
+    "score": null,
+    "isSubscriberOnly": false,
+    "isPromoted": false
+  }
+]
