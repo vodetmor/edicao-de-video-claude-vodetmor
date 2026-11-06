@@ -1,0 +1,68 @@
+/* Template visual do PDF de aprovação (A4 deitado).
+   As cores e fontes vêm de :root, que o gera_pdf.py preenche a partir de "tema" no plano.json.
+   Para mudar o visual de TODOS os PDFs, mexa aqui. Para mudar só um, use "tema" no plano.json. */
+@page { size: 297mm 210mm; margin: 0 }
+* { box-sizing: border-box; margin: 0; padding: 0 }
+body { font-family: Inter, sans-serif; color: var(--tinta); -webkit-print-color-adjust: exact; print-color-adjust: exact }
+
+.pg { width: 297mm; height: 210mm; padding: 12mm 15mm 10mm; position: relative; overflow: hidden;
+      background: var(--fundo); page-break-after: always; break-after: page }
+.escuro { background: var(--escuro); color: var(--papel) }
+
+.k { font: 700 8.5pt Inter; letter-spacing: .16em; text-transform: uppercase; color: var(--acento-texto) }
+.escuro .k { color: var(--acento) }
+h1, h2 { font-family: var(--fonte-titulo); font-weight: 900; font-stretch: var(--titulo-largura);
+         text-transform: var(--titulo-caixa); letter-spacing: var(--titulo-espaco) }
+h1 { font-size: var(--h1); line-height: .9 }
+h2 { font-size: var(--h2); line-height: .95; margin-top: 1.5mm }
+h1 em, h2 em { font-style: normal; color: var(--acento) }
+.ideia { font: 500 11pt/1.35 Inter; margin: 2mm 0 5mm; color: var(--tinta-2); max-width: 240mm }
+.ideia b { color: var(--tinta); font-weight: 700 }
+.escuro .ideia { color: var(--papel-2) }
+
+/* faixa "jornada": os atos do vídeo em uma linha */
+.jrs { display: flex; gap: 2.5mm; margin: -2mm 0 4.5mm }
+.jr { flex: 1; background: var(--cartao); border: .5pt solid var(--linha); border-radius: 2mm; padding: 1.6mm 2.4mm;
+      font: 500 7.6pt/1.3 Inter; color: var(--tinta-2) }
+.jr b { display: block; font: 700 7pt Inter; letter-spacing: .12em; text-transform: uppercase; color: var(--acento-texto); margin-bottom: .4mm }
+
+/* grade de quadros-chave */
+.grid { display: grid; gap: 4mm 3.4mm; justify-content: center; margin: 0 auto }
+figure img { width: 100%; border-radius: 2mm; display: block; object-fit: cover; box-shadow: 0 .8mm 2.5mm rgba(0,0,0,.18) }
+figcaption { margin-top: 1.4mm; font: 500 7.4pt/1.25 Inter }
+figcaption span { display: inline-block; font: 700 7pt Inter; background: var(--acento); color: var(--sobre-acento);
+                  padding: .3mm 1.3mm; border-radius: 1mm; margin-right: 1.2mm; font-variant-numeric: tabular-nums }
+
+.rod { position: absolute; left: 15mm; right: 15mm; bottom: 5mm; display: flex; justify-content: space-between;
+       font: 500 7pt Inter; color: var(--cinza); letter-spacing: .06em; text-transform: uppercase }
+
+/* capa */
+.capa-txt { position: absolute; left: 15mm; top: 60mm; width: 145mm }
+.capa-txt p { margin-top: 6mm; font-size: 11.5pt; line-height: 1.45; color: var(--papel-2) }
+.capa:not(.escuro) .capa-txt p { color: var(--tinta-2) }
+.capa-imgs { position: absolute; right: 15mm; top: 30mm; display: flex; gap: 5mm; align-items: flex-start }
+.capa-imgs img { border-radius: 3mm; box-shadow: 0 1mm 4mm rgba(0,0,0,.25) }
+.capa-nums { position: absolute; left: 15mm; bottom: 15mm; display: flex; gap: 14mm }
+.capa-nums p { font-size: 10pt; color: var(--papel-2) } .capa:not(.escuro) .capa-nums p { color: var(--tinta-2) }
+.big { font-family: var(--fonte-titulo); font-weight: 900; font-stretch: var(--titulo-largura); font-size: 38pt; line-height: .85; color: var(--acento) }
+.atos { display: grid; gap: 4mm; position: absolute; left: 15mm; right: 15mm; bottom: 14mm }
+.ato { border-radius: 3mm; padding: 4mm 4.5mm; background: var(--cartao); border: .5pt solid var(--linha) }
+.escuro .ato { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08) }
+.ato .k { font-size: 7.5pt } .ato div:last-child { font-size: 8.8pt; line-height: 1.4; margin-top: 1.5mm }
+
+/* som */
+.cols { display: grid; grid-template-columns: 1fr 1.35fr; gap: 8mm }
+.card { background: var(--cartao); border: .5pt solid var(--linha); border-radius: 3mm; padding: 4.5mm 5mm; margin-bottom: 4mm }
+.card h3 { font: 700 11pt Inter; margin-bottom: 1.5mm } .card p { font: 400 9.6pt/1.45 Inter }
+table { width: 100%; border-collapse: collapse; font: 400 9.4pt/1.35 Inter }
+th { text-align: left; font: 700 7.6pt Inter; letter-spacing: .1em; text-transform: uppercase; color: var(--cinza);
+     padding: 1.6mm 2.5mm; border-bottom: 1.2pt solid var(--tinta) }
+td { padding: 2.1mm 2.5mm; border-bottom: .5pt solid var(--linha); vertical-align: top }
+td:first-child { font-weight: 650; white-space: nowrap }
+
+/* aprovar */
+.oks { margin-top: 8mm; width: 180mm }
+.ok { display: flex; gap: 3.5mm; align-items: flex-start; margin-bottom: 4.5mm; font: 500 12pt/1.35 Inter }
+.ok i { flex: none; width: 6mm; height: 6mm; border: 1.4pt solid var(--acento); border-radius: 1.2mm; margin-top: .3mm }
+.ok small { display: block; font: 400 9.5pt Inter; color: var(--cinza); margin-top: .6mm }
+.nota-fim { position: absolute; left: 15mm; bottom: 16mm; width: 220mm; color: var(--cinza); font-size: 9pt }
