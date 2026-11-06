@@ -1,0 +1,5 @@
+https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/football/football_1k.gltf
+textures/football_arm_1k.jpg https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/football/football_arm_1k.jpg
+textures/football_nor_gl_1k.jpg https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/football/football_nor_gl_1k.jpg
+football.bin https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/football/football.bin
+textures/football_diff_1k.jpg https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/football/football_diff_1k.jpg

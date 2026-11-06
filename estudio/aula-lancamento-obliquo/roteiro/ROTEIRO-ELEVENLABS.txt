@@ -1,0 +1,34 @@
+Você chuta uma bola. Ela sobe, faz uma curva perfeita e cai lá na frente. Essa curva tem nome, tem fórmula, e dá pra prever cada centímetro dela. Isso é lançamento oblíquo. Bora entender, passo a passo.
+
+Primeiro, a regra do jogo: vamos desprezar a resistência do ar. Sobra só uma força agindo na bola: o peso. E o peso puxa pra baixo. Só pra baixo.
+
+A bola sai com uma velocidade inicial, vê zero, inclinada de um ângulo teta em relação ao chão. E o segredo inteiro do lançamento oblíquo é este: quebrar essa velocidade em duas.
+
+Na horizontal: vê zero xis, igual a vê zero vezes cosseno de teta.
+Na vertical: vê zero ípsilon, igual a vê zero vezes seno de teta.
+
+E agora vem a mágica. Esses dois movimentos são independentes. Um não interfere no outro.
+
+Na horizontal, não existe nenhuma força. Então a velocidade nunca muda. É um movimento uniforme: xis igual a vê zero xis vezes tê.
+
+Na vertical, a gravidade freia a bola na subida e acelera na descida. É um movimento uniformemente variado: ípsilon igual a vê zero ípsilon vezes tê, menos gê tê ao quadrado sobre dois. E a velocidade vertical: vê ípsilon igual a vê zero ípsilon, menos gê tê.
+
+Junta os dois movimentos, e a bola desenha uma parábola.
+
+Agora, as três perguntas que caem em toda prova.
+
+Um: quanto tempo ela leva pra subir? No ponto mais alto, a velocidade vertical zera. Então: zero igual a vê zero ípsilon, menos gê tê. Isolando o tempo: tempo de subida igual a vê zero seno de teta, sobre gê. E se ela cai na mesma altura de onde saiu, a descida leva exatamente o mesmo tempo. Tempo total: duas vezes vê zero seno de teta, sobre gê.
+
+Repara num detalhe: lá no topo, a bola não para. A velocidade vertical zerou, mas a horizontal continua ali. No ponto mais alto, a velocidade é só vê zero xis.
+
+Dois: qual a altura máxima? Usando Torricelli na vertical: zero igual a vê zero ípsilon ao quadrado, menos dois gê agá. Então, altura máxima: agá igual a vê zero ao quadrado, vezes seno ao quadrado de teta, sobre dois gê.
+
+Três: até onde ela vai? O alcance é a velocidade horizontal vezes o tempo total. Vê zero cosseno de teta, vezes dois vê zero seno de teta, sobre gê. E como dois seno de teta cosseno de teta é o seno de dois teta, chegamos na fórmula mais bonita do assunto: alcance igual a vê zero ao quadrado, vezes seno de dois teta, sobre gê.
+
+E essa fórmula esconde dois segredos. O primeiro: o seno de dois teta chega no máximo quando vale um. Ou seja, quando dois teta é noventa graus. Teta igual a quarenta e cinco. Quarenta e cinco graus é o ângulo do alcance máximo.
+
+O segundo: ângulos complementares, tipo trinta e sessenta graus, dão exatamente o mesmo alcance. Um voa baixo e rápido. O outro sobe alto e demora mais. Mas os dois caem no mesmo lugar.
+
+Resumindo: quebra a velocidade em duas. Na horizontal, movimento uniforme. Na vertical, movimento variado. Tempo de subida, altura máxima e alcance. Três fórmulas. Uma parábola.
+
+Agora, quando alguém chutar uma bola, você já sabe onde ela vai cair.

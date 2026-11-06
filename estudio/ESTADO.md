@@ -4,7 +4,7 @@ Plano completo: /mnt/project-files/organizacao/ESTUDIO-PLANO.md
 
 ## Feito (02/10/2026)
 - Motor genérico em Remotion: `motor/`. Uma composição só ("Video") que lê uma SPEC em JSON (eventos presos a palavras) e monta blocos React, cenas HTML/GSAP (estilo HyperFrames) e sons.
-- Teste "gancho do criativo 2" com 3 variações em `laboratorio/teste-gancho/` (5,3 s cada, -14 LUFS, render de 7 a 9 s cada):
+- Teste "gancho do criativo 2" com 3 variações em `teste-gancho/` (5,3 s cada, -14 LUFS, render de 7 a 9 s cada):
   - A: tipográfico em React (9:16). B: cena HTML + GSAP escrita do jeito HyperFrames rodando dentro do Remotion (9:16). C: feed 4:5 com outra copy e outra cor, só mudando a spec.
 
 ## Peças do motor
