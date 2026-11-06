@@ -239,3 +239,23 @@ export const Cena: React.FC<{dur: number; n: string; texto: string; tag?: string
     <div style={{position: 'absolute', left: 70, top: 1380, padding: '16px 30px', borderRadius: 999, border: `2px solid ${V.linhaForte}`, fontFamily: TXT, fontWeight: 700, fontSize: 36, color: V.apoio}}>{tag}</div>
   </div>
 );
+
+// Faixa que substitui o banner vermelho "Sinal GPT" do c1 (mesma posição) com a nossa marca
+export const BannerC1: React.FC<{dur: number; l1?: string; l2?: string}> = ({l1 = 'VixPlay TV', l2 = 'Teste grátis de 4 horas'}) => (
+  <div style={{position: 'absolute', left: 0, right: 0, top: 905, height: 300, background: `linear-gradient(90deg, ${V.brilho}, ${V.neon} 45%, ${V.fim})`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 40px rgba(153,226,0,.5)'}}>
+    <div style={{fontFamily: TIT, fontStyle: 'italic', fontWeight: 900, fontSize: 110, color: V.sobre, lineHeight: 1}}>{l1}</div>
+    <div style={{fontFamily: TXT, fontWeight: 800, fontSize: 48, color: V.sobre, marginTop: 14}}>{l2}</div>
+  </div>
+);
+
+// Estalo da marca no instante em que o nome original foi falado (a fala fica muda e a marca aparece)
+export const PopMarca: React.FC<{dur: number; texto?: string; top?: number; w?: number}> = ({dur, texto, top = 1000, w = 600}) => {
+  const {f, fps, t} = useT();
+  const m = mola(f, fps, 0.05, 11);
+  return (
+    <div style={{position: 'absolute', left: 0, right: 0, top, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: sai(t, dur, 0.2)}}>
+      <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{width: w, transform: `scale(${0.6 + 0.4 * m})`, opacity: clamp01(m), filter: 'drop-shadow(0 6px 24px rgba(1,2,4,0.95))'}} />
+      {texto && <div style={{marginTop: 18, fontFamily: TXT, fontWeight: 800, fontSize: 50, color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.3))}}>{texto}</div>}
+    </div>
+  );
+};

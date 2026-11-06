@@ -37,7 +37,7 @@ O PDF vai para cliente que só passa o olho. Então:
 | `tema` | cores e fonte de título da marca. Sem `tema` sai a direção Apple do DESIGN-SYSTEM (fundo claro, um azul, Inter). Chaves: `acento`, `acento_texto`, `sobre_acento`, `fundo`, `cartao`, `linha`, `tinta`, `tinta_2`, `cinza`, `escuro`, `papel`, `papel_2`, `fonte_titulo` (`Inter` ou `Archivo`), `titulo_caixa_alta`, `capa_escura`, `aprovar_escura` |
 | `capa` | `chamada`, `titulo`, `titulo_destaque` (linha na cor de destaque), `texto`, `logo`, `logo_altura_mm`, `imagens` (1 a 3), e `numeros` (um por vídeo) OU `atos` (a história em 3 a 5 atos). Use um dos dois |
 | `videos[]` | `etiqueta` (ex.: "Criativo 01 · 25 s · 15 cenas"), `titulo`, `ideia`, `jornada[]` (`titulo`, `texto`), `quadros[]` (`id`, `t`, `legenda`, `img`) |
-| `videos[].roteiro` | opcional: `narracao` (texto inteiro) e `cenas[]` (`t`, `fala`, `direcao`). Gera uma página de roteiro depois dos quadros do vídeo |
+| `videos[].roteiro` | opcional: `narracao` (texto inteiro), `cartoes[]` (`titulo`, `texto`, cartões livres, ex. Mantém, Tira, Põe) e `cenas[]` (`t`, `fala`, `direcao`). Gera uma página de roteiro depois dos quadros do vídeo |
 | `som` | `titulo`, `texto`, `cartoes[]` (`titulo`, `texto`), `efeitos` (lista de pares `[momento, efeito]`) |
 | `aprovar` | `titulo`, `itens[]` (`texto`, `nota` opcional), `nota_final` |
 
@@ -54,3 +54,11 @@ Textos aceitam `<b>` (negrito) e `<em>` (cor de destaque). O resto é escapado.
 - `template/estilo.css`: o visual de todas as páginas (mexa aqui para mudar todos os PDFs).
 - `fontes/`: Inter e Archivo (licença OFL, arquivos `OFL-*.txt`).
 - `exemplo/`: `plano.json` completo (criativos Rei da VSL), quadros e o PDF gerado `exemplo-aprovacao.pdf`.
+
+## Modo COPY "Rei da VSL · Copy" (novo, 06/11/2026)
+`gera_copy.py` aplica o visual desta skill ao PDF de **copy** (criativos): capa preta com logo e título em ouro, 1 criativo por página (barra preta com logo, número grande, Roteiro com filete dourado, Descrição para anúncio em cartão), rodapé "Rei da VSL · Copy · Cliente" com n/total. Lê o MESMO JSON do `roteiro_pdf.py` (meta + blocks), então não muda copy nem organização; os rótulos vêm do JSON (Roteiro / Texto da imagem / Descrição para anúncio).
+```
+python gera_copy.py entrada.json --out "Cliente - Projeto.pdf"
+python ..\pdf-entrega-reidavsl\scripts\render_check.py "Cliente - Projeto.pdf" --png-dir <pasta>
+```
+Atenção: o Deidson rejeitou em 07/10/2026 o visual "muito IA" para entregável de cliente. Usar como padrão só com o OK do Vítor/Deidson; sem OK, segue o motor Roteiro simples.

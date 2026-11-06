@@ -5,8 +5,8 @@ import '@fontsource/montserrat/900-italic.css';
 import '@fontsource/montserrat/800.css';
 import '@fontsource/montserrat/900.css';
 import '@fontsource-variable/inter/opsz.css';
-import {V, TXT, W, H, Spec, Pal} from './tema';
-import {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena} from './Blocos';
+import {V, TXT, TIT, W, H, Spec, Pal} from './tema';
+import {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca} from './Blocos';
 import {SPECS} from './specs';
 
 export type Props = {id: string};
@@ -16,7 +16,7 @@ export const calcula: CalculateMetadataFunction<Props> = ({props}) => {
   return {durationInFrames: Math.round(s.dur * 30), fps: 30, width: W, height: H};
 };
 
-const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena};
+const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca};
 
 // Legenda contínua: Inter 500, base a 87% da altura, até 2 linhas, sem caixa, sem karaokê
 type Cue = {txt: string; s: number; e: number};
@@ -54,10 +54,10 @@ const Legenda: React.FC<{pal: Pal[]; fim: number}> = ({pal, fim}) => {
 };
 
 // Faixa suave que cobre a legenda original (desfoque forte + degradê até o fundo da marca)
-const Faixa: React.FC = () => (
+const Faixa: React.FC<{topo?: number}> = ({topo = 0.70}) => (
   <>
-    <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.70, bottom: 0, backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(34px)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, #000 22%)', maskImage: 'linear-gradient(180deg, transparent 0%, #000 22%)'}} />
-    <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.70, bottom: 0, background: `linear-gradient(180deg, rgba(1,2,4,0) 0%, rgba(1,2,4,0.9) 26%, rgba(1,2,4,0.97) 50%, ${V.bg} 100%)`}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: H * topo, bottom: 0, backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(34px)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, #000 22%)', maskImage: 'linear-gradient(180deg, transparent 0%, #000 22%)'}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: H * topo, bottom: 0, background: `linear-gradient(180deg, rgba(1,2,4,0) 0%, rgba(1,2,4,0.9) 26%, rgba(1,2,4,0.97) 50%, ${V.bg} 100%)`}} />
     {/* topo: cobre o canto com o nome de outro aplicativo e dá lugar ao nosso selo */}
     <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 250, backdropFilter: 'blur(22px)', WebkitBackdropFilter: 'blur(26px)', WebkitMaskImage: 'linear-gradient(180deg, #000 30%, transparent 100%)', maskImage: 'linear-gradient(180deg, #000 30%, transparent 100%)'}} />
     <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 250, background: `linear-gradient(180deg, rgba(1,2,4,0.92) 0%, rgba(1,2,4,0.6) 50%, rgba(1,2,4,0) 100%)`}} />
@@ -115,10 +115,11 @@ const ClipV: React.FC<{c: Spec['clips'][number]; z: number}> = ({c, z}) => {
   );
 };
 
-// Quadro-chave para o PDF de aprovação: um still com a imagem de uma take, o bloco de motion e a legenda
-export type QuadroProps = {src?: 'c2' | 'c4'; ss?: number; zoom?: number; ox?: number; oy?: number; blur?: number; bloco: string; p?: any; legenda?: string};
-export const Quadro: React.FC<QuadroProps> = ({src, ss = 10, zoom = 1.2, ox = 82, oy = 62, blur, bloco, p, legenda}) => {
-  const B = BLOCOS[bloco];
+// Quadro-chave para o PDF de aprovação: um still com a imagem de uma take, camadas de motion e legenda
+export type QuadroProps = {src?: string; ss?: number; zoom?: number; ox?: number; oy?: number; blur?: number; bloco?: string; p?: any; camadas?: {bloco: string; p?: any}[];
+  faixa?: number | false; selo?: boolean; legenda?: string; legendaGrande?: boolean; legendaTop?: number};
+export const Quadro: React.FC<QuadroProps> = ({src, ss = 10, zoom = 1.2, ox = 82, oy = 62, blur, bloco, p, camadas, faixa = 0.70, selo = true, legenda, legendaGrande, legendaTop}) => {
+  const cs = camadas ?? (bloco ? [{bloco, p}] : []);
   const [h] = React.useState(() => delayRender('fontes-q'));
   React.useEffect(() => {
     Promise.all([document.fonts.load("900 italic 100px 'Montserrat'", 'AÇÃO ção'), document.fonts.load("800 100px 'Montserrat'", 'SAIBA'), document.fonts.load("500 40px 'Inter Variable'", 'áéí'), document.fonts.load("700 40px 'Inter Variable'", 'áéí')]).then(() => continueRender(h)).catch(() => continueRender(h));
@@ -126,11 +127,14 @@ export const Quadro: React.FC<QuadroProps> = ({src, ss = 10, zoom = 1.2, ox = 82
   return (
     <AbsoluteFill style={{background: V.bg, overflow: 'hidden'}}>
       {src && <ClipV c={{src, ss, t0: 0, t1: 9, zoom, ox, oy, blur}} z={zoom} />}
-      {src && <Faixa />}
-      <B dur={9} {...(p ?? {})} />
-      {legenda && src && (
+      {src && faixa !== false && <Faixa topo={faixa} />}
+      {src && faixa === false && selo && <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 54, top: 50, width: 230, filter: 'drop-shadow(0 3px 10px rgba(1,2,4,.9))'}} />}
+      {cs.map((c, i) => { const B = BLOCOS[c.bloco]; return <B key={i} dur={9} {...(c.p ?? {})} />; })}
+      {legenda && src && (legendaGrande ? (
+        <div style={{position: 'absolute', left: 60, width: W - 120, top: legendaTop ?? 1290, textAlign: 'center', fontFamily: TIT, fontWeight: 900, fontStyle: 'italic', fontSize: 92, lineHeight: 1.05, textTransform: 'uppercase', color: V.txt, textShadow: '0 4px 18px rgba(1,2,4,0.95)'}}>{legenda}</div>
+      ) : (
         <div style={{position: 'absolute', left: 90, width: W - 180, bottom: H * 0.13, textAlign: 'center', fontFamily: TXT, fontWeight: 500, fontSize: 54, lineHeight: 1.22, color: V.txt, textShadow: '0 2px 14px rgba(1,2,4,0.9)'}}>{legenda}</div>
-      )}
+      ))}
     </AbsoluteFill>
   );
 };

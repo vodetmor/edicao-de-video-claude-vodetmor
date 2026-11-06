@@ -1,0 +1,477 @@
+{
+ "titulo": "VixPlay TV · 4 versões dos criativos do CMD",
+ "arquivo": "VixPlay TV - 4 versoes dos criativos para aprovacao.pdf",
+ "rodape": "VixPlay TV · Versões dos criativos validados · Para aprovação",
+ "formato": "9:16",
+ "quadros_por_pagina": 10,
+ "tema": {
+  "acento": "#99E200",
+  "acento_texto": "#3C7A00",
+  "sobre_acento": "#061000",
+  "fundo": "#F5F6F2",
+  "cartao": "#FFFFFF",
+  "linha": "#E1E5DA",
+  "tinta": "#10140F",
+  "tinta_2": "#2E352B",
+  "cinza": "#7A8576",
+  "escuro": "#010204",
+  "papel": "#F2F7EE",
+  "papel_2": "#A7B5A2",
+  "fonte_titulo": "Archivo",
+  "titulo_caixa_alta": true,
+  "capa_escura": true,
+  "aprovar_escura": true
+ },
+ "capa": {
+  "chamada": "Para aprovação · 4 versões",
+  "titulo": "Quatro versões",
+  "titulo_destaque": "dos criativos do CMD",
+  "texto": "Fala original das pessoas, nome deles trocado pelo nosso e edição diferente em cada versão.",
+  "logo": "logo.png",
+  "logo_altura_mm": 17,
+  "imagens": [
+   "quadros/E03.jpg",
+   "quadros/F04.jpg",
+   "quadros/H04.jpg"
+  ],
+  "numeros": [
+   {
+    "n": "E",
+    "texto": "Rápida: o homem no carro (C1)."
+   },
+   {
+    "n": "F",
+    "texto": "Economia de casa (C2)."
+   },
+   {
+    "n": "G",
+    "texto": "Desabafo: a penteadeira (C3)."
+   },
+   {
+    "n": "H",
+    "texto": "Passeio: a cozinha e o menu (C4)."
+   }
+  ]
+ },
+ "videos": [
+  {
+   "etiqueta": "Versão E · base C1 · cerca de 24 s",
+   "titulo": "Rápida: o homem no carro",
+   "ideia": "Mesmo gancho de ruptura do C1, com a fala original do homem. Edição de ritmo alto: zoom de impacto, legenda grande palavra a palavra, imagem de apoio de pessoa frustrada e a nossa faixa no lugar do banner vermelho.",
+   "jornada": [
+    {
+     "titulo": "Gancho",
+     "texto": "Dor em texto grande, sem rodeio."
+    },
+    {
+     "titulo": "Virada",
+     "texto": "A marca estoura onde ele dizia o nome."
+    },
+    {
+     "titulo": "Benefícios",
+     "texto": "Telas e suporte do original."
+    },
+    {
+     "titulo": "Chamada",
+     "texto": "Saiba mais."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "E01",
+     "t": "0:00",
+     "legenda": "Abre direto na dor: Travamentos. Banner vermelho coberto pelo nosso.",
+     "img": "quadros/E01.jpg"
+    },
+    {
+     "id": "E02",
+     "t": "0:03",
+     "legenda": "Corte para imagem de apoio: pessoa frustrada com a TV.",
+     "img": "quadros/E02.jpg"
+    },
+    {
+     "id": "E03",
+     "t": "0:06",
+     "legenda": "\"Sabe o que vale?\": o nome deles fica mudo e a nossa marca estoura.",
+     "img": "quadros/E03.jpg"
+    },
+    {
+     "id": "E04",
+     "t": "0:10",
+     "legenda": "Take da TV do original com a legenda grande nossa.",
+     "img": "quadros/E04.jpg"
+    },
+    {
+     "id": "E05",
+     "t": "0:15",
+     "legenda": "\"Três telas simultâneas\": faixa de aparelhos.",
+     "img": "quadros/E05.jpg"
+    },
+    {
+     "id": "E06",
+     "t": "0:20",
+     "legenda": "\"Testa agora\": homem de volta, zoom de impacto.",
+     "img": "quadros/E06.jpg"
+    },
+    {
+     "id": "E07",
+     "t": "0:24",
+     "legenda": "Fecha com o botão Saiba mais e o link.",
+     "img": "quadros/E07.jpg"
+    }
+   ],
+   "roteiro": {
+    "cartoes": [
+     {
+      "titulo": "O que fica do original",
+      "texto": "Toda a fala original do homem, do \"Travamentos\" até o \"Toque em Saiba mais\"."
+     },
+     {
+      "titulo": "O que sai",
+      "texto": "A primeira frase (\"... não vale mais a pena\"), porque ataca o nosso próprio tipo de serviço. O nome GPT-TV fica mudo nas duas vezes em que é falado, com a nossa marca no lugar. Banner \"Sinal GPT\" e legenda do original cobertos."
+     },
+     {
+      "titulo": "O que entra",
+      "texto": "Legenda grande nossa, banner VixPlay, zoom no final, imagem de apoio (Pexels), faixa Até 3 telas e painel final com Saiba mais."
+     }
+    ],
+    "cenas": []
+   }
+  },
+  {
+   "etiqueta": "Versão F · base C2 · cerca de 52 s",
+   "titulo": "Economia de casa: a apresentadora",
+   "ideia": "A apresentadora fala como no C2 e depois a TV mostra o app. A diferença está no ritmo mais calmo, na legenda fina e no cartão de preço nosso no lugar da frase de preço do original.",
+   "jornada": [
+    {
+     "titulo": "Abertura",
+     "texto": "Ela acordando e ligando a TV."
+    },
+    {
+     "titulo": "Marca",
+     "texto": "Nome original mudo, marca estoura."
+    },
+    {
+     "titulo": "Passeio",
+     "texto": "Filmes, séries, novelas e animes."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35 e teste de 4 horas."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "F01",
+     "t": "0:00",
+     "legenda": "Abre com ela falando: \"É muito bom acordar e ligar a TV\".",
+     "img": "quadros/F01.jpg"
+    },
+    {
+     "id": "F02",
+     "t": "0:03",
+     "legenda": "Imagem de apoio (manhã em casa) com a voz dela por cima.",
+     "img": "quadros/F02.jpg"
+    },
+    {
+     "id": "F03",
+     "t": "0:06",
+     "legenda": "\"Conheça o ...\": o nome original fica mudo e a marca estoura.",
+     "img": "quadros/F03.jpg"
+    },
+    {
+     "id": "F04",
+     "t": "0:13",
+     "legenda": "Take limpa da TV (posters) no lugar da lista de canais do original; chips do que existe dentro.",
+     "img": "quadros/F04.jpg"
+    },
+    {
+     "id": "F05",
+     "t": "0:25",
+     "legenda": "Pergunta de economia: pílulas de assinatura colapsam na marca.",
+     "img": "quadros/F05.jpg"
+    },
+    {
+     "id": "F06",
+     "t": "0:34",
+     "legenda": "No lugar da frase de preço do original, entra o nosso cartão: R$ 35.",
+     "img": "quadros/F06.jpg"
+    },
+    {
+     "id": "F07",
+     "t": "0:43",
+     "legenda": "\"Disponível para Smart TV, TV Box, celular\": faixa de aparelhos.",
+     "img": "quadros/F07.jpg"
+    },
+    {
+     "id": "F08",
+     "t": "0:49",
+     "legenda": "O pedido de teste de 3 ou 7 dias sai; entra o nosso: teste grátis de 4 horas.",
+     "img": "quadros/F08.jpg"
+    }
+   ],
+   "roteiro": {
+    "cartoes": [
+     {
+      "titulo": "O que fica do original",
+      "texto": "A fala da apresentadora e do narrador da TV, a ordem do passeio e os trechos de cinema e séries."
+     },
+     {
+      "titulo": "O que sai",
+      "texto": "\"Mais de 20 mil conteúdos\", \"planos a partir de 20 reais\" e \"teste de 3 ou 7 dias\", que não valem para a VixPlay. A lista de nomes de streaming e canais com logo fica fora da imagem (sem desfoque, só corte). Legenda e logo do app original cobertos."
+     },
+     {
+      "titulo": "O que entra",
+      "texto": "Imagem de apoio de manhã em casa, chips do que existe dentro, pílulas de assinatura, cartão de preço, faixa de aparelhos e painel final."
+     }
+    ],
+    "cenas": []
+   }
+  },
+  {
+   "etiqueta": "Versão G · base C3 · cerca de 50 s",
+   "titulo": "Desabafo: a penteadeira",
+   "ideia": "Depoimento caseiro, como o C3: ela fala direto para a câmera. A edição é a mais limpa das quatro: zoom suave, legenda fina e imagens de apoio nos momentos de dor.",
+   "jornada": [
+    {
+     "titulo": "Dor",
+     "texto": "Paga, começa a assistir e trava."
+    },
+    {
+     "titulo": "Confiança",
+     "texto": "\"Não é vídeo de venda\"."
+    },
+    {
+     "titulo": "Descoberta",
+     "texto": "Nome original mudo, marca estoura."
+    },
+    {
+     "titulo": "Chamada",
+     "texto": "Saiba mais."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "G01",
+     "t": "0:00",
+     "legenda": "Abre em preto e branco, como no original, com ela falando.",
+     "img": "quadros/G01.jpg"
+    },
+    {
+     "id": "G02",
+     "t": "0:05",
+     "legenda": "Imagem de apoio (carregando sem parar) com a voz dela.",
+     "img": "quadros/G02.jpg"
+    },
+    {
+     "id": "G03",
+     "t": "0:13",
+     "legenda": "Ela de volta, zoom suave: \"Não é vídeo de venda\".",
+     "img": "quadros/G03.jpg"
+    },
+    {
+     "id": "G04",
+     "t": "0:24",
+     "legenda": "O suporte que demora: imagem de apoio de pessoa irritada.",
+     "img": "quadros/G04.jpg"
+    },
+    {
+     "id": "G05",
+     "t": "0:33",
+     "legenda": "\"Foi aí que eu encontrei o ...\": nome original mudo, marca estoura.",
+     "img": "quadros/G05.jpg"
+    },
+    {
+     "id": "G06",
+     "t": "0:39",
+     "legenda": "O que ela gostou: chips sobre a imagem de apoio de celular.",
+     "img": "quadros/G06.jpg"
+    },
+    {
+     "id": "G07",
+     "t": "0:46",
+     "legenda": "Suporte (balões simples, sem nome de pessoa).",
+     "img": "quadros/G07.jpg"
+    },
+    {
+     "id": "G08",
+     "t": "0:50",
+     "legenda": "O pedido de comentário do original sai; entra o botão Saiba mais.",
+     "img": "quadros/G08.jpg"
+    }
+   ],
+   "roteiro": {
+    "cartoes": [
+     {
+      "titulo": "O que fica do original",
+      "texto": "A fala da mulher do começo até o trecho do suporte."
+     },
+     {
+      "titulo": "O que sai",
+      "texto": "O pedido de comentário (\"comenta a palavra aplicativo\"), que é chamada para engajamento orgânico e não funciona em anúncio pago. O nome Mundo Play fica mudo."
+     },
+     {
+      "titulo": "O que entra",
+      "texto": "Imagens de apoio (carregando sem parar, pessoa irritada, celular), chips do que ela gostou, balões de suporte e painel final com Saiba mais."
+     }
+    ],
+    "cenas": []
+   }
+  },
+  {
+   "etiqueta": "Versão H · base C4 · cerca de 85 s",
+   "titulo": "Passeio: a cozinha e o menu",
+   "ideia": "A mulher na cozinha abre e depois a TV mostra o menu, com a voz dela narrando. É a versão mais longa, com chips acompanhando a fala e as listas de canais desfocadas.",
+   "jornada": [
+    {
+     "titulo": "Abertura",
+     "texto": "Aqui em casa usamos o app."
+    },
+    {
+     "titulo": "Dor",
+     "texto": "Cansado de pagar vários."
+    },
+    {
+     "titulo": "Passeio",
+     "texto": "Canais, filmes, séries, novelas."
+    },
+    {
+     "titulo": "Chamada",
+     "texto": "Teste gratuito."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "H01",
+     "t": "0:00",
+     "legenda": "Abre em \"Aqui em casa usamos o ...\": a primeira frase do original sai.",
+     "img": "quadros/H01.jpg"
+    },
+    {
+     "id": "H02",
+     "t": "0:08",
+     "legenda": "\"Cansado de pagar vários streamings?\": pílulas colapsam na marca.",
+     "img": "quadros/H02.jpg"
+    },
+    {
+     "id": "H03",
+     "t": "0:17",
+     "legenda": "\"Pago apenas uma mensalidade\": chip simples sobre a TV.",
+     "img": "quadros/H03.jpg"
+    },
+    {
+     "id": "H04",
+     "t": "0:26",
+     "legenda": "Canais ao vivo (nomes dos canais desfocados), chips das categorias.",
+     "img": "quadros/H04.jpg"
+    },
+    {
+     "id": "H05",
+     "t": "0:45",
+     "legenda": "Filmes: lançamentos, com chips.",
+     "img": "quadros/H05.jpg"
+    },
+    {
+     "id": "H06",
+     "t": "0:60",
+     "legenda": "Séries e doramas.",
+     "img": "quadros/H06.jpg"
+    },
+    {
+     "id": "H07",
+     "t": "0:70",
+     "legenda": "Novelas, com o corte seguindo o ritmo da fala.",
+     "img": "quadros/H07.jpg"
+    },
+    {
+     "id": "H08",
+     "t": "0:84",
+     "legenda": "Fecha no \"é só clicar no link e fazer um teste gratuito\".",
+     "img": "quadros/H08.jpg"
+    }
+   ],
+   "roteiro": {
+    "cartoes": [
+     {
+      "titulo": "O que fica do original",
+      "texto": "A fala e o passeio do original, na ordem."
+     },
+     {
+      "titulo": "O que sai",
+      "texto": "\"IPTV é coisa do passado\" (contradiz o nosso serviço) e o nome Mundo Play, que fica mudo; o menu final com o nome \"Mundo TV\" fica fora da imagem. Nomes de canais na lista e legenda original cobertos."
+     },
+     {
+      "titulo": "O que entra",
+      "texto": "Estalo da marca, pílulas de assinatura, chips por seção, desfoque forte nas listas de canais e painel final."
+     }
+    ],
+    "cenas": []
+   }
+  }
+ ],
+ "som": {
+  "titulo": "Áudio e música",
+  "texto": "A voz é a original de cada pessoa. A música entra baixa por baixo, diferente em cada versão.",
+  "cartoes": [
+   {
+    "titulo": "Voz",
+    "texto": "Áudio original de cada vídeo, com o nome deles silenciado onde era falado e um estalo curto da nossa marca no lugar."
+   },
+   {
+    "titulo": "Música",
+    "texto": "Uma faixa por versão, 18 a 22 LU abaixo da voz, com ducking. As faixas de teste são prévia da Epidemic; antes de anunciar, baixar com a licença do plano."
+   },
+   {
+    "titulo": "Volume final",
+    "texto": "-14 LUFS, pico máximo -1 dBTP."
+   }
+  ],
+  "efeitos": [
+   [
+    "Nome original silenciado",
+    "estalo curto e grave da marca"
+   ],
+   [
+    "Preço sobe até R$ 35",
+    "tique suave"
+   ],
+   [
+    "Botão SAIBA MAIS",
+    "toque discreto, uma vez"
+   ]
+  ]
+ },
+ "aprovar": {
+  "titulo": "Para aprovar",
+  "itens": [
+   {
+    "texto": "Versão E (C1, o homem no carro)"
+   },
+   {
+    "texto": "Versão F (C2, a apresentadora e a TV)"
+   },
+   {
+    "texto": "Versão G (C3, o desabafo)"
+   },
+   {
+    "texto": "Versão H (C4, a cozinha e o passeio)"
+   },
+   {
+    "texto": "Manter a fala original das pessoas, com o nome deles silenciado",
+    "nota": "A voz de cada pessoa fica como no original. Onde ela falava Mundo Play ou GPT-TV, o áudio fica mudo e a nossa marca aparece."
+   },
+   {
+    "texto": "Aceitar as promessas que ficam na fala original",
+    "nota": "Streamings citados pelo nome, \"1.300 canais\", \"sem travamento\" e Big Brother 24 horas continuam na voz do C2 e do C4. É decisão do Vítor e do Deidson; fica registrado aqui. Preço, prazo de teste e pedido de comentário do original saem."
+   },
+   {
+    "texto": "Depoimento de pessoa real falando de outro aplicativo",
+    "nota": "No C3 e no C4 a pessoa diz que usa o aplicativo. Foi liberado pelo CMD para modelar; confirmar com ele por escrito que as imagens podem ser usadas com a nossa marca."
+   },
+   {
+    "texto": "Imagens de apoio do Pexels e música"
+   }
+  ],
+  "nota_final": "Para ajustar, cite o código (ex.: muda o F05). Depois da aprovação, renderizamos as 4 versões."
+ }
+}

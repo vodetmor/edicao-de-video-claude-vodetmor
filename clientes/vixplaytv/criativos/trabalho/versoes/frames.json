@@ -1,0 +1,771 @@
+{
+ "E": [
+  {
+   "id": "E01",
+   "t": "0:00",
+   "legenda": "Abre direto na dor: Travamentos. Banner vermelho coberto pelo nosso.",
+   "spec": {
+    "src": "c1",
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "faixa": 0.595,
+    "ss": 1.7,
+    "camadas": [
+     {
+      "bloco": "BannerC1",
+      "p": {}
+     }
+    ],
+    "legenda": "TRAVAMENTOS,",
+    "legendaGrande": true,
+    "legendaTop": 1290,
+    "f": 10
+   }
+  },
+  {
+   "id": "E02",
+   "t": "0:03",
+   "legenda": "Corte para imagem de apoio: pessoa frustrada com a TV.",
+   "spec": {
+    "src": "stock/frustrado",
+    "ss": 2,
+    "zoom": 1.0,
+    "faixa": false,
+    "legenda": "ATUALIZAÇÕES BUGADAS",
+    "legendaGrande": true,
+    "legendaTop": 1300,
+    "f": 15
+   }
+  },
+  {
+   "id": "E03",
+   "t": "0:06",
+   "legenda": "\"Sabe o que vale?\": o nome deles fica mudo e a nossa marca estoura.",
+   "spec": {
+    "src": "c1",
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "faixa": 0.595,
+    "ss": 6.7,
+    "camadas": [
+     {
+      "bloco": "BannerC1",
+      "p": {}
+     },
+     {
+      "bloco": "PopMarca",
+      "p": {
+       "top": 1260,
+       "w": 520
+      }
+     }
+    ],
+    "f": 25
+   }
+  },
+  {
+   "id": "E04",
+   "t": "0:10",
+   "legenda": "Take da TV do original com a legenda grande nossa.",
+   "spec": {
+    "src": "c1",
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "faixa": 0.595,
+    "ss": 10.4,
+    "camadas": [
+     {
+      "bloco": "BannerC1",
+      "p": {}
+     }
+    ],
+    "legenda": "FLUIDEZ E ESTABILIDADE",
+    "legendaGrande": true,
+    "legendaTop": 1290,
+    "f": 10
+   }
+  },
+  {
+   "id": "E05",
+   "t": "0:15",
+   "legenda": "\"Três telas simultâneas\": faixa de aparelhos.",
+   "spec": {
+    "src": "c1",
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "faixa": 0.595,
+    "ss": 14.6,
+    "camadas": [
+     {
+      "bloco": "BannerC1",
+      "p": {}
+     }
+    ],
+    "legenda": "TRÊS TELAS SIMULTÂNEAS",
+    "legendaGrande": true,
+    "legendaTop": 1290,
+    "f": 10
+   }
+  },
+  {
+   "id": "E06",
+   "t": "0:20",
+   "legenda": "\"Testa agora\": homem de volta, zoom de impacto.",
+   "spec": {
+    "src": "c1",
+    "zoom": 1.25,
+    "ox": 50,
+    "oy": 50,
+    "faixa": 0.595,
+    "ss": 20.5,
+    "camadas": [
+     {
+      "bloco": "BannerC1",
+      "p": {}
+     }
+    ],
+    "legenda": "TESTA AGORA",
+    "legendaGrande": true,
+    "legendaTop": 1290,
+    "f": 10
+   }
+  },
+  {
+   "id": "E07",
+   "t": "0:24",
+   "legenda": "Fecha com o botão Saiba mais e o link.",
+   "spec": {
+    "src": "c1",
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "faixa": 0.595,
+    "ss": 24.4,
+    "camadas": [
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "f": 80
+   }
+  }
+ ],
+ "F": [
+  {
+   "id": "F01",
+   "t": "0:00",
+   "legenda": "Abre com ela falando: \"É muito bom acordar e ligar a TV\".",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 0.8,
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "legenda": "É muito bom acordar e ligar a TV",
+    "f": 12
+   }
+  },
+  {
+   "id": "F02",
+   "t": "0:03",
+   "legenda": "Imagem de apoio (manhã em casa) com a voz dela por cima.",
+   "spec": {
+    "src": "stock/manha",
+    "ss": 1.5,
+    "zoom": 1.0,
+    "faixa": false,
+    "legenda": "Posso assistir à vontade",
+    "f": 15
+   }
+  },
+  {
+   "id": "F03",
+   "t": "0:06",
+   "legenda": "\"Conheça o ...\": o nome original fica mudo e a marca estoura.",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 5.8,
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "camadas": [
+     {
+      "bloco": "PopMarca",
+      "p": {}
+     }
+    ],
+    "f": 25
+   }
+  },
+  {
+   "id": "F04",
+   "t": "0:13",
+   "legenda": "Take limpa da TV (posters) no lugar da lista de canais do original; chips do que existe dentro.",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 41,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "Tudo em um só lugar",
+       "chips": [
+        {
+         "l": "Filmes",
+         "t": 0.15,
+         "d": false
+        },
+        {
+         "l": "Séries",
+         "t": 0.4,
+         "d": false
+        },
+        {
+         "l": "Novelas",
+         "t": 0.65,
+         "d": false
+        },
+        {
+         "l": "Animes",
+         "t": 0.9,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "Filmes, séries, novelas e animes em um só lugar",
+    "f": 100
+   }
+  },
+  {
+   "id": "F05",
+   "t": "0:25",
+   "legenda": "Pergunta de economia: pílulas de assinatura colapsam na marca.",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 29.5,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Gancho",
+      "p": {
+       "titulo": "Quanto você paga por mês?",
+       "sub": "Uma assinatura aqui, outra ali",
+       "colapsa": 1.8
+      }
+     }
+    ],
+    "legenda": "Em vez de pagar por cada aplicativo",
+    "f": 40
+   }
+  },
+  {
+   "id": "F06",
+   "t": "0:34",
+   "legenda": "No lugar da frase de preço do original, entra o nosso cartão: R$ 35.",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 37,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Preco",
+      "p": {
+       "tNum": 0.1,
+       "tRenova": 1.0,
+       "tPix": 1.4
+      }
+     }
+    ],
+    "legenda": "O primeiro mês custa R$ 35",
+    "f": 105
+   }
+  },
+  {
+   "id": "F07",
+   "t": "0:43",
+   "legenda": "\"Disponível para Smart TV, TV Box, celular\": faixa de aparelhos.",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 47,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Telas",
+      "p": {}
+     }
+    ],
+    "legenda": "Disponível para Smart TV, TV Box e celular",
+    "f": 80
+   }
+  },
+  {
+   "id": "F08",
+   "t": "0:49",
+   "legenda": "O pedido de teste de 3 ou 7 dias sai; entra o nosso: teste grátis de 4 horas.",
+   "spec": {
+    "src": "c2",
+    "faixa": 0.7,
+    "ss": 40,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "legenda": "Solicite agora o seu teste grátis",
+    "f": 80
+   }
+  }
+ ],
+ "G": [
+  {
+   "id": "G01",
+   "t": "0:00",
+   "legenda": "Abre em preto e branco, como no original, com ela falando.",
+   "spec": {
+    "src": "c3",
+    "faixa": 0.7,
+    "ss": 0.8,
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "legenda": "Você paga pelo serviço, começa a assistir e trava.",
+    "f": 12
+   }
+  },
+  {
+   "id": "G02",
+   "t": "0:05",
+   "legenda": "Imagem de apoio (carregando sem parar) com a voz dela.",
+   "spec": {
+    "src": "stock/buffering",
+    "ss": 2,
+    "zoom": 1.0,
+    "faixa": false,
+    "legenda": "Aí você fecha, abre, troca de canal",
+    "f": 15
+   }
+  },
+  {
+   "id": "G03",
+   "t": "0:13",
+   "legenda": "Ela de volta, zoom suave: \"Não é vídeo de venda\".",
+   "spec": {
+    "src": "c3",
+    "faixa": 0.7,
+    "ss": 14,
+    "zoom": 1.15,
+    "ox": 50,
+    "oy": 30,
+    "legenda": "Eu não tô aqui pra vender nada pra vocês",
+    "f": 12
+   }
+  },
+  {
+   "id": "G04",
+   "t": "0:24",
+   "legenda": "O suporte que demora: imagem de apoio de pessoa irritada.",
+   "spec": {
+    "src": "stock/frustrado",
+    "ss": 4,
+    "zoom": 1.0,
+    "faixa": false,
+    "legenda": "O suporte demora uma eternidade pra responder",
+    "f": 15
+   }
+  },
+  {
+   "id": "G05",
+   "t": "0:33",
+   "legenda": "\"Foi aí que eu encontrei o ...\": nome original mudo, marca estoura.",
+   "spec": {
+    "src": "c3",
+    "faixa": 0.7,
+    "ss": 33.1,
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "camadas": [
+     {
+      "bloco": "PopMarca",
+      "p": {}
+     }
+    ],
+    "f": 25
+   }
+  },
+  {
+   "id": "G06",
+   "t": "0:39",
+   "legenda": "O que ela gostou: chips sobre a imagem de apoio de celular.",
+   "spec": {
+    "src": "stock/celular",
+    "ss": 3,
+    "zoom": 1.0,
+    "faixa": false,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "O que ela gostou",
+       "chips": [
+        {
+         "l": "Navegação simples",
+         "t": 0.15,
+         "d": false
+        },
+        {
+         "l": "Filmes",
+         "t": 0.4,
+         "d": false
+        },
+        {
+         "l": "Séries",
+         "t": 0.65,
+         "d": false
+        },
+        {
+         "l": "Canais ao vivo",
+         "t": 0.9,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "A navegação é simples, tem bastante conteúdo",
+    "f": 100
+   }
+  },
+  {
+   "id": "G07",
+   "t": "0:46",
+   "legenda": "Suporte (balões simples, sem nome de pessoa).",
+   "spec": {
+    "src": "c3",
+    "faixa": 0.7,
+    "ss": 44,
+    "zoom": 1.1,
+    "ox": 50,
+    "oy": 30,
+    "camadas": [
+     {
+      "bloco": "Suporte",
+      "p": {}
+     }
+    ],
+    "legenda": "Outra coisa que gostei foi ter suporte",
+    "f": 80
+   }
+  },
+  {
+   "id": "G08",
+   "t": "0:50",
+   "legenda": "O pedido de comentário do original sai; entra o botão Saiba mais.",
+   "spec": {
+    "src": "c3",
+    "faixa": 0.7,
+    "ss": 62,
+    "zoom": 1.1,
+    "ox": 50,
+    "oy": 30,
+    "camadas": [
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "legenda": "Clique em Saiba mais",
+    "f": 80
+   }
+  }
+ ],
+ "H": [
+  {
+   "id": "H01",
+   "t": "0:00",
+   "legenda": "Abre em \"Aqui em casa usamos o ...\": a primeira frase do original sai.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 2.7,
+    "zoom": 1.0,
+    "ox": 50,
+    "oy": 50,
+    "camadas": [
+     {
+      "bloco": "PopMarca",
+      "p": {}
+     }
+    ],
+    "legenda": "Aqui em casa usamos o VixPlay TV",
+    "f": 40
+   }
+  },
+  {
+   "id": "H02",
+   "t": "0:08",
+   "legenda": "\"Cansado de pagar vários streamings?\": pílulas colapsam na marca.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 10.4,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Gancho",
+      "p": {
+       "titulo": "Cansado de pagar vários?",
+       "sub": "Uma mensalidade só",
+       "colapsa": 1.8
+      }
+     }
+    ],
+    "legenda": "Está cansado de pagar vários streamings?",
+    "f": 40
+   }
+  },
+  {
+   "id": "H03",
+   "t": "0:17",
+   "legenda": "\"Pago apenas uma mensalidade\": chip simples sobre a TV.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 17.5,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "Uma mensalidade",
+       "chips": [
+        {
+         "l": "Tudo que eu vou mostrar",
+         "t": 0.15,
+         "d": false
+        },
+        {
+         "l": "Em um só aplicativo",
+         "t": 0.4,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "Eu pago apenas uma mensalidade por mês",
+    "f": 100
+   }
+  },
+  {
+   "id": "H04",
+   "t": "0:26",
+   "legenda": "Canais ao vivo (nomes dos canais desfocados), chips das categorias.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 26.5,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "blur": 9,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "Canais ao vivo",
+       "chips": [
+        {
+         "l": "Esportes",
+         "t": 0.15,
+         "d": false
+        },
+        {
+         "l": "Infantil",
+         "t": 0.4,
+         "d": false
+        },
+        {
+         "l": "Documentário",
+         "t": 0.65,
+         "d": false
+        },
+        {
+         "l": "Canal aberto",
+         "t": 0.9,
+         "d": false
+        },
+        {
+         "l": "Canal fechado",
+         "t": 1.15,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "Aqui nós temos canais ao vivo",
+    "f": 100
+   }
+  },
+  {
+   "id": "H05",
+   "t": "0:45",
+   "legenda": "Filmes: lançamentos, com chips.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 48,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "Filmes",
+       "chips": [
+        {
+         "l": "Lançamentos",
+         "t": 0.15,
+         "d": false
+        },
+        {
+         "l": "Filmes antigos",
+         "t": 0.4,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "Filme que está no cinema, mas já está por aqui",
+    "f": 100
+   }
+  },
+  {
+   "id": "H06",
+   "t": "0:60",
+   "legenda": "Séries e doramas.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 66,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "Séries",
+       "chips": [
+        {
+         "l": "Anime",
+         "t": 0.15,
+         "d": false
+        },
+        {
+         "l": "Dorama",
+         "t": 0.4,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "Em séries nós vamos ter anime e dorama",
+    "f": 100
+   }
+  },
+  {
+   "id": "H07",
+   "t": "0:70",
+   "legenda": "Novelas, com o corte seguindo o ritmo da fala.",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 74,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "Secao",
+      "p": {
+       "titulo": "Novelas",
+       "chips": [
+        {
+         "l": "Das mais novas às mais antigas",
+         "t": 0.15,
+         "d": true
+        }
+       ]
+      }
+     }
+    ],
+    "legenda": "Novela de todo lado você encontra aqui",
+    "f": 100
+   }
+  },
+  {
+   "id": "H08",
+   "t": "0:84",
+   "legenda": "Fecha no \"é só clicar no link e fazer um teste gratuito\".",
+   "spec": {
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 87,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "camadas": [
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "legenda": "É só clicar no link e fazer um teste gratuito",
+    "f": 80
+   }
+  }
+ ]
+}

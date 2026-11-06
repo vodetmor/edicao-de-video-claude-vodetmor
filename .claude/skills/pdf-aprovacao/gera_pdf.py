@@ -97,6 +97,7 @@ def pagina_roteiro(v, rod):
                      for c in r.get("cenas", []))
     tab = f'<table class="rot"><tr><th>tempo</th><th>fala</th><th>direção da cena</th></tr>{linhas}</table>' if linhas else ""
     nar = f'<div class="card"><h3>Narração completa</h3><p>{e(r["narracao"])}</p></div>' if r.get("narracao") else ""
+    nar += "".join(f'<div class="card"><h3>{e(c["titulo"])}</h3><p>{e(c["texto"])}</p></div>' for c in r.get("cartoes", []))
     return (f'<div class="pg"><div class="k">{e(v.get("etiqueta", ""))} · Roteiro</div><h2>{e(v["titulo"])}</h2>'
             f'{nar}{tab}{rod}</div>')
 
