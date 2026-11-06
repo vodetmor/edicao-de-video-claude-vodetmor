@@ -104,7 +104,7 @@ const r4 = (): Spec => {
     {t0: tSup, t1: tCta - 0.05, bloco: 'Suporte'},
     {t0: tCta, t1: dur, bloco: 'CTA', p: {horas: true}},
   ];
-  const clips = [C('c4', 10, 0, tCanais), C('c4', 14.6, tCanais, tFilmes), C('c4', 47, tFilmes, a('categorias') - 0.2, 1.2, 70), C('c4', 59, a('categorias') - 0.2, tSeries, 1.2, 75),
+  const clips = [C('c4', 10, 0, tCanais), C('c4', 14.6, tCanais, tFilmes), C('c4', 47, tFilmes, a('categorias') - 0.2, 1.2, 70), C('c2', 41, a('categorias') - 0.2, tSeries, 1.25, 85, 70),
     C('c4', 64.5, tSeries, tNov, 1.2, 70), C('c4', 72, tNov, tTudo), C('c2', 38, tTudo, tPreco, 1.25, 85, 70), C('c4', 74.5, tPreco, tSup), C('c2', 44, tSup, tCta, 1.25, 85, 70)];
   return {id: 'r4', audio: 'vix/r4.mp3', dur, pal, clips, ev, utm: utm(4)};
 };
