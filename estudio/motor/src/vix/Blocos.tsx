@@ -223,9 +223,19 @@ export const CTA: React.FC<{dur: number; horas?: boolean}> = ({dur, horas}) => {
   return (
     <div style={{position: 'absolute', inset: 0}}>
       <div style={{position: 'absolute', left: 0, right: 0, top: 760, bottom: 0, background: `linear-gradient(180deg, rgba(1,2,4,0) 0%, rgba(1,2,4,0.88) 22%, rgba(1,2,4,0.95) 100%)`, opacity: clamp01(m)}} />
-      <div style={{position: 'absolute', top: 880, width: W, textAlign: 'center', fontFamily: TIT, fontStyle: 'italic', fontWeight: 900, fontSize: 72, color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.15)), transform: `translateY(${(1 - m) * 30}px)`}}>Solicite seu <span style={{color: V.neon}}>teste grátis{horas ? ' de 4 horas' : ''}</span></div>
-      <div style={{position: 'absolute', top: 1010, left: 150, width: 780, height: 140, borderRadius: 14, background: `linear-gradient(90deg, ${V.brilho}, ${V.neon} 45%, ${V.fim})`, boxShadow: '0 0 0 1px rgba(153,226,0,.35), 0 0 40px rgba(153,226,0,.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: TIT, fontWeight: 800, fontSize: 66, letterSpacing: 4, color: V.sobre, textTransform: 'uppercase', transform: `scale(${(0.85 + 0.15 * bt) * pulso})`, opacity: clamp01(bt)}}>Saiba mais</div>
-      <div style={{position: 'absolute', top: 1180, width: W, textAlign: 'center', fontFamily: TXT, fontWeight: 700, fontSize: 40, color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.8))}}>vixplaytv.com/teste</div>
+      <div style={{position: 'absolute', top: 880, width: W, textAlign: 'center', fontFamily: TIT, fontStyle: 'italic', fontWeight: 900, fontSize: 60, whiteSpace: 'nowrap', color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.15)), transform: `translateY(${(1 - m) * 30}px)`}}>Solicite seu <span style={{color: V.neon}}>teste grátis</span></div>
+      {horas && <div style={{position: 'absolute', top: 962, width: W, textAlign: 'center', fontFamily: TXT, fontWeight: 700, fontSize: 44, color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.3))}}>de 4 horas</div>}
+      <div style={{position: 'absolute', top: 1050, left: 150, width: 780, height: 140, borderRadius: 14, background: `linear-gradient(90deg, ${V.brilho}, ${V.neon} 45%, ${V.fim})`, boxShadow: '0 0 0 1px rgba(153,226,0,.35), 0 0 40px rgba(153,226,0,.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: TIT, fontWeight: 800, fontSize: 66, letterSpacing: 4, color: V.sobre, textTransform: 'uppercase', transform: `scale(${(0.85 + 0.15 * bt) * pulso})`, opacity: clamp01(bt)}}>Saiba mais</div>
+      <div style={{position: 'absolute', top: 1225, width: W, textAlign: 'center', fontFamily: TXT, fontWeight: 700, fontSize: 40, color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.8))}}>vixplaytv.com/teste</div>
     </div>
   );
 };
+
+// Cena de história (só para o PDF de aprovação): cartão com a descrição da cena a ser gerada/gravada
+export const Cena: React.FC<{dur: number; n: string; texto: string; tag?: string}> = ({n, texto, tag = 'Cena a gerar no Google Flow'}) => (
+  <div style={{position: 'absolute', inset: 0, background: V.bg}}>
+    <div style={{position: 'absolute', left: 70, right: 70, top: 300, fontFamily: TXT, fontWeight: 800, fontSize: 44, letterSpacing: 6, color: V.neon, textTransform: 'uppercase'}}>{n}</div>
+    <div style={{position: 'absolute', left: 70, right: 70, top: 400, fontFamily: TIT, fontStyle: 'italic', fontWeight: 900, fontSize: 84, lineHeight: 1.08, color: V.txt}}>{texto}</div>
+    <div style={{position: 'absolute', left: 70, top: 1380, padding: '16px 30px', borderRadius: 999, border: `2px solid ${V.linhaForte}`, fontFamily: TXT, fontWeight: 700, fontSize: 36, color: V.apoio}}>{tag}</div>
+  </div>
+);

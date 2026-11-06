@@ -37,6 +37,7 @@ O PDF vai para cliente que só passa o olho. Então:
 | `tema` | cores e fonte de título da marca. Sem `tema` sai a direção Apple do DESIGN-SYSTEM (fundo claro, um azul, Inter). Chaves: `acento`, `acento_texto`, `sobre_acento`, `fundo`, `cartao`, `linha`, `tinta`, `tinta_2`, `cinza`, `escuro`, `papel`, `papel_2`, `fonte_titulo` (`Inter` ou `Archivo`), `titulo_caixa_alta`, `capa_escura`, `aprovar_escura` |
 | `capa` | `chamada`, `titulo`, `titulo_destaque` (linha na cor de destaque), `texto`, `logo`, `logo_altura_mm`, `imagens` (1 a 3), e `numeros` (um por vídeo) OU `atos` (a história em 3 a 5 atos). Use um dos dois |
 | `videos[]` | `etiqueta` (ex.: "Criativo 01 · 25 s · 15 cenas"), `titulo`, `ideia`, `jornada[]` (`titulo`, `texto`), `quadros[]` (`id`, `t`, `legenda`, `img`) |
+| `videos[].roteiro` | opcional: `narracao` (texto inteiro) e `cenas[]` (`t`, `fala`, `direcao`). Gera uma página de roteiro depois dos quadros do vídeo |
 | `som` | `titulo`, `texto`, `cartoes[]` (`titulo`, `texto`), `efeitos` (lista de pares `[momento, efeito]`) |
 | `aprovar` | `titulo`, `itens[]` (`texto`, `nota` opcional), `nota_final` |
 

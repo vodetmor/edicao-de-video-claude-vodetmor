@@ -1,0 +1,728 @@
+{
+ "A": [
+  {
+   "id": "A01",
+   "t": "0:00",
+   "legenda": "Sala, domingo à noite. A família toda no sofá.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena A01",
+     "texto": "Sala, domingo à noite. Família no sofá, pipoca pronta, o controle passando de mão em mão."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "A02",
+   "t": "0:05",
+   "legenda": "Cada um pede uma coisa diferente.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena A02",
+     "texto": "Um quer filme, outro quer série, a criança pede desenho e a avó quer a novela."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "A03",
+   "t": "0:10",
+   "legenda": "Quatro celulares, quatro aplicativos, quatro assinaturas.",
+   "spec": {
+    "bloco": "Gancho",
+    "src": "c4",
+    "ss": 11,
+    "zoom": 1.2,
+    "p": {
+     "titulo": "Cada um no seu aplicativo",
+     "sub": "Uma assinatura aqui, outra ali",
+     "colapsa": 1.8
+    },
+    "f": 40,
+    "legenda": "Cada um num aplicativo, cada um com uma assinatura."
+   }
+  },
+  {
+   "id": "A04",
+   "t": "0:14",
+   "legenda": "Alguém lembra da VixPlay TV. A tela inicial aparece.",
+   "spec": {
+    "bloco": "Titulo",
+    "src": "c4",
+    "ss": 12,
+    "zoom": 1.2,
+    "p": {
+     "l1": "Conheça a",
+     "l2": "VixPlay TV"
+    },
+    "f": 50,
+    "legenda": "Foi aí que alguém lembrou da VixPlay TV."
+   }
+  },
+  {
+   "id": "A05",
+   "t": "0:18",
+   "legenda": "Canais ao vivo, filmes, séries, doramas, novelas e infantil no mesmo lugar.",
+   "spec": {
+    "bloco": "Secao",
+    "src": "c4",
+    "ss": 48,
+    "zoom": 1.2,
+    "ox": 70,
+    "p": {
+     "titulo": "Tudo em um só lugar",
+     "chips": [
+      {
+       "l": "Canais ao vivo",
+       "t": 0.15,
+       "d": false
+      },
+      {
+       "l": "Filmes",
+       "t": 0.4,
+       "d": false
+      },
+      {
+       "l": "Séries",
+       "t": 0.65,
+       "d": false
+      },
+      {
+       "l": "Doramas",
+       "t": 0.9,
+       "d": false
+      },
+      {
+       "l": "Novelas",
+       "t": 1.15,
+       "d": false
+      },
+      {
+       "l": "Infantil",
+       "t": 1.4,
+       "d": true
+      }
+     ]
+    },
+    "f": 100,
+    "legenda": "Tudo em um só aplicativo."
+   }
+  },
+  {
+   "id": "A06",
+   "t": "0:26",
+   "legenda": "Sala, quarto e celular: até 3 telas no mesmo plano.",
+   "spec": {
+    "bloco": "Telas",
+    "src": "c2",
+    "ss": 37,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "p": {},
+    "f": 80,
+    "legenda": "Funciona em até três telas."
+   }
+  },
+  {
+   "id": "A07",
+   "t": "0:31",
+   "legenda": "Primeiro mês R$ 35, Pix, sem cartão, sem fidelidade.",
+   "spec": {
+    "bloco": "Preco",
+    "src": "c4",
+    "ss": 73,
+    "zoom": 1.2,
+    "p": {
+     "renova": false,
+     "tNum": 0.1,
+     "tPix": 1.0
+    },
+    "f": 95,
+    "legenda": "O primeiro mês custa trinta e cinco reais."
+   }
+  },
+  {
+   "id": "A08",
+   "t": "0:36",
+   "legenda": "Botão Saiba mais e teste grátis de 4 horas.",
+   "spec": {
+    "bloco": "CTA",
+    "src": "c2",
+    "ss": 40,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "p": {
+     "horas": true
+    },
+    "f": 80,
+    "legenda": "Solicite o seu teste grátis de quatro horas."
+   }
+  }
+ ],
+ "B": [
+  {
+   "id": "B01",
+   "t": "0:00",
+   "legenda": "Cozinha, fim do mês. Caderno aberto e calculadora.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena B01",
+     "texto": "Cozinha, fim do mês. Caderno aberto, calculadora e uma xícara de café. Plano fechado na mão que anota."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "B02",
+   "t": "0:05",
+   "legenda": "As assinaturas entram na página, uma a uma.",
+   "spec": {
+    "bloco": "Gancho",
+    "src": "c4",
+    "ss": 17,
+    "zoom": 1.3,
+    "ox": 30,
+    "oy": 55,
+    "p": {
+     "titulo": "A conta do mês",
+     "sub": "Uma assinatura aqui, outra ali",
+     "colapsa": 1.8
+    },
+    "f": 40,
+    "legenda": "Uma assinatura de filmes, outra de séries, outra de esportes."
+   }
+  },
+  {
+   "id": "B03",
+   "t": "0:11",
+   "legenda": "O total chega maior do que parecia.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena B03",
+     "texto": "A calculadora mostra o total. A mão para. Olhar de quem esperava menos."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "B04",
+   "t": "0:15",
+   "legenda": "Existe um jeito mais simples: tudo em um aplicativo só.",
+   "spec": {
+    "bloco": "Titulo",
+    "src": "c4",
+    "ss": 19,
+    "zoom": 1.3,
+    "ox": 30,
+    "oy": 55,
+    "p": {
+     "l1": "Mais simples",
+     "l2": "um app só"
+    },
+    "f": 50,
+    "legenda": "A VixPlay TV reúne tudo em um aplicativo só."
+   }
+  },
+  {
+   "id": "B05",
+   "t": "0:20",
+   "legenda": "Canais ao vivo, filmes, séries, doramas e novelas.",
+   "spec": {
+    "bloco": "Secao",
+    "src": "c2",
+    "ss": 39,
+    "zoom": 1.3,
+    "ox": 12,
+    "oy": 72,
+    "p": {
+     "titulo": "O que tem dentro",
+     "chips": [
+      {
+       "l": "Canais ao vivo",
+       "t": 0.15,
+       "d": false
+      },
+      {
+       "l": "Filmes",
+       "t": 0.4,
+       "d": false
+      },
+      {
+       "l": "Séries",
+       "t": 0.65,
+       "d": false
+      },
+      {
+       "l": "Doramas",
+       "t": 0.9,
+       "d": false
+      },
+      {
+       "l": "Novelas",
+       "t": 1.15,
+       "d": true
+      }
+     ]
+    },
+    "f": 100,
+    "legenda": "Canais ao vivo, filmes, séries, doramas e novelas."
+   }
+  },
+  {
+   "id": "B06",
+   "t": "0:26",
+   "legenda": "R$ 35 no primeiro mês; R$ 30 renovando em dia.",
+   "spec": {
+    "bloco": "Preco",
+    "src": "c4",
+    "ss": 76,
+    "zoom": 1.3,
+    "ox": 30,
+    "oy": 55,
+    "p": {
+     "tNum": 0.1,
+     "tRenova": 1.0,
+     "tPix": 1.4
+    },
+    "f": 105,
+    "legenda": "A renovação em dia sai por trinta."
+   }
+  },
+  {
+   "id": "B07",
+   "t": "0:32",
+   "legenda": "Pix, sem renovação automática. Saiba mais.",
+   "spec": {
+    "bloco": "CTA",
+    "src": "c4",
+    "ss": 80,
+    "zoom": 1.3,
+    "ox": 30,
+    "oy": 55,
+    "p": {
+     "horas": true
+    },
+    "f": 80,
+    "legenda": "Toque em Saiba mais e solicite o seu teste grátis."
+   }
+  }
+ ],
+ "C": [
+  {
+   "id": "C01",
+   "t": "0:00",
+   "legenda": "Quarto da avó. O neto senta ao lado dela.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena C01",
+     "texto": "Quarto, fim de tarde. A avó com o controle na mão, indecisa. O neto senta ao lado."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "C02",
+   "t": "0:06",
+   "legenda": "Ele abre o tutorial do aparelho no celular.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena C02",
+     "texto": "Close no celular do neto com o tutorial do aparelho aberto. A avó olha por cima do ombro."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "C03",
+   "t": "0:11",
+   "legenda": "Três passos: plano, Pix, acesso pelo WhatsApp.",
+   "spec": {
+    "bloco": "Passos",
+    "src": "c2",
+    "ss": 22,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "blur": 9,
+    "p": {
+     "ts": [
+      0.2,
+      0.7,
+      1.2
+     ]
+    },
+    "f": 80,
+    "legenda": "Escolheu o plano, pagou por Pix e recebeu o acesso."
+   }
+  },
+  {
+   "id": "C04",
+   "t": "0:20",
+   "legenda": "Tutorial para cada aparelho: Smart TV, TV Box e celular.",
+   "spec": {
+    "bloco": "Telas",
+    "src": "c4",
+    "ss": 14,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "a": "Tutorial para ",
+     "b": "cada aparelho",
+     "sub": "Smart TV, TV Box e celular"
+    },
+    "f": 80,
+    "legenda": "Tem tutorial para cada aparelho."
+   }
+  },
+  {
+   "id": "C05",
+   "t": "0:27",
+   "legenda": "Dúvida na instalação? Atendimento pelo WhatsApp.",
+   "spec": {
+    "bloco": "Suporte",
+    "src": "c2",
+    "ss": 44,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "p": {},
+    "f": 80,
+    "legenda": "Se aparece uma dúvida, o suporte atende pelo WhatsApp."
+   }
+  },
+  {
+   "id": "C06",
+   "t": "0:33",
+   "legenda": "A avó achou a novela. Por dentro: novelas, filmes, séries.",
+   "spec": {
+    "bloco": "Secao",
+    "src": "c4",
+    "ss": 75,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "titulo": "Novelas",
+     "chips": [
+      {
+       "l": "Novelas",
+       "t": 0.15,
+       "d": false
+      },
+      {
+       "l": "Filmes",
+       "t": 0.4,
+       "d": false
+      },
+      {
+       "l": "Séries",
+       "t": 0.65,
+       "d": false
+      },
+      {
+       "l": "Canais ao vivo",
+       "t": 0.9,
+       "d": false
+      },
+      {
+       "l": "Infantil",
+       "t": 1.15,
+       "d": true
+      }
+     ]
+    },
+    "f": 100,
+    "legenda": "Lá dentro tem novelas, filmes, séries e canais ao vivo."
+   }
+  },
+  {
+   "id": "C07",
+   "t": "0:40",
+   "legenda": "R$ 35 no primeiro mês, até 3 telas na mesma casa.",
+   "spec": {
+    "bloco": "Preco",
+    "src": "c4",
+    "ss": 79,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "renova": false,
+     "tNum": 0.1,
+     "tPix": 1.0
+    },
+    "f": 95,
+    "legenda": "O primeiro mês custa trinta e cinco reais."
+   }
+  },
+  {
+   "id": "C08",
+   "t": "0:45",
+   "legenda": "Botão Saiba mais e teste grátis de 4 horas.",
+   "spec": {
+    "bloco": "CTA",
+    "src": "c4",
+    "ss": 81,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "horas": true
+    },
+    "f": 80,
+    "legenda": "Solicite o seu teste grátis de quatro horas."
+   }
+  }
+ ],
+ "D": [
+  {
+   "id": "D01",
+   "t": "0:00",
+   "legenda": "Ela quer série, ele quer esporte: a TV vive trocando de aplicativo.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena D01",
+     "texto": "Tela dividida: de um lado ela com o controle e uma série, do outro ele com o controle e um jogo. O controle muda de mão."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "D02",
+   "t": "0:06",
+   "legenda": "Aplicativo, login, menu, de novo.",
+   "spec": {
+    "bloco": "Cena",
+    "p": {
+     "n": "Cena D02",
+     "texto": "Menu cheio de ícones de aplicativos. A TV pula de um para outro, e eles trocam um olhar cansado."
+    },
+    "f": 10
+   }
+  },
+  {
+   "id": "D03",
+   "t": "0:11",
+   "legenda": "Agora tudo no mesmo lugar: por dentro da VixPlay TV.",
+   "spec": {
+    "bloco": "Titulo",
+    "src": "c4",
+    "ss": 11.5,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "l1": "Por dentro da",
+     "l2": "VixPlay TV"
+    },
+    "f": 50,
+    "legenda": "Agora tudo fica no mesmo lugar."
+   }
+  },
+  {
+   "id": "D04",
+   "t": "0:16",
+   "legenda": "Canais ao vivo: esportes, filmes e séries, infantil, documentários.",
+   "spec": {
+    "bloco": "Secao",
+    "src": "c4",
+    "ss": 20,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "titulo": "Canais ao vivo",
+     "chips": [
+      {
+       "l": "Esportes",
+       "t": 0.15,
+       "d": false
+      },
+      {
+       "l": "Filmes e séries",
+       "t": 0.4,
+       "d": false
+      },
+      {
+       "l": "Infantil",
+       "t": 0.65,
+       "d": false
+      },
+      {
+       "l": "Documentários",
+       "t": 0.9,
+       "d": false
+      },
+      {
+       "l": "Abertos e fechados",
+       "t": 1.15,
+       "d": true
+      }
+     ]
+    },
+    "f": 100,
+    "legenda": "Em canais ao vivo tem esportes, filmes e séries, infantil..."
+   }
+  },
+  {
+   "id": "D05",
+   "t": "0:22",
+   "legenda": "Filmes: seção só de lançamentos e categorias.",
+   "spec": {
+    "bloco": "Secao",
+    "src": "c4",
+    "ss": 47,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "titulo": "Filmes",
+     "chips": [
+      {
+       "l": "Lançamentos",
+       "t": 0.15,
+       "d": false
+      },
+      {
+       "l": "Ação",
+       "t": 0.4,
+       "d": false
+      },
+      {
+       "l": "Comédia",
+       "t": 0.65,
+       "d": false
+      },
+      {
+       "l": "Drama",
+       "t": 0.9,
+       "d": false
+      },
+      {
+       "l": "Infantil",
+       "t": 1.15,
+       "d": true
+      }
+     ]
+    },
+    "f": 100,
+    "legenda": "Em filmes, uma seção só de lançamentos."
+   }
+  },
+  {
+   "id": "D06",
+   "t": "0:28",
+   "legenda": "Séries, doramas e novelas.",
+   "spec": {
+    "bloco": "Secao",
+    "src": "c4",
+    "ss": 66,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "titulo": "Séries",
+     "chips": [
+      {
+       "l": "Várias temporadas",
+       "t": 0.15,
+       "d": false
+      },
+      {
+       "l": "Doramas",
+       "t": 0.4,
+       "d": false
+      },
+      {
+       "l": "Novelas",
+       "t": 0.65,
+       "d": true
+      }
+     ]
+    },
+    "f": 100,
+    "legenda": "Séries com várias temporadas e um espaço só para doramas."
+   }
+  },
+  {
+   "id": "D07",
+   "t": "0:33",
+   "legenda": "Até 3 telas: uma na sala, outra no quarto, outra no celular.",
+   "spec": {
+    "bloco": "Telas",
+    "src": "c2",
+    "ss": 41,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "p": {},
+    "f": 80,
+    "legenda": "Até três telas, no mesmo plano."
+   }
+  },
+  {
+   "id": "D08",
+   "t": "0:38",
+   "legenda": "R$ 35 no primeiro mês; R$ 30 renovando em dia.",
+   "spec": {
+    "bloco": "Preco",
+    "src": "c4",
+    "ss": 78,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
+    "p": {
+     "tNum": 0.1,
+     "tRenova": 1.0,
+     "tPix": 1.4
+    },
+    "f": 105,
+    "legenda": "Primeiro mês, trinta e cinco reais. Renovação em dia, trinta."
+   }
+  },
+  {
+   "id": "D09",
+   "t": "0:43",
+   "legenda": "Suporte pelo WhatsApp.",
+   "spec": {
+    "bloco": "Suporte",
+    "src": "c2",
+    "ss": 45,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "p": {},
+    "f": 80,
+    "legenda": "Se tiver dúvida, o suporte atende pelo WhatsApp."
+   }
+  },
+  {
+   "id": "D10",
+   "t": "0:47",
+   "legenda": "Botão Saiba mais e teste grátis de 4 horas.",
+   "spec": {
+    "bloco": "CTA",
+    "src": "c2",
+    "ss": 43,
+    "zoom": 1.28,
+    "ox": 88,
+    "oy": 70,
+    "p": {
+     "horas": true
+    },
+    "f": 80,
+    "legenda": "Solicite o seu teste grátis de quatro horas."
+   }
+  }
+ ]
+}

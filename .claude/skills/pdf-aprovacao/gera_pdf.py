@@ -90,6 +90,17 @@ def pagina_quadros(v, quadros, a, prop, parte, total, rod):
             f'<div class="grid" style="grid-template-columns:repeat({c},{w:.1f}mm)">{figs}</div>{rod}</div>')
 
 
+def pagina_roteiro(v, rod):
+    """Página opcional de roteiro: narração inteira + tabela cena a cena (tempo, fala, direção)."""
+    r = v["roteiro"]
+    linhas = "".join(f"<tr><td>{e(c.get('t', ''))}</td><td>{e(c.get('fala', ''))}</td><td>{e(c.get('direcao', ''))}</td></tr>"
+                     for c in r.get("cenas", []))
+    tab = f'<table class="rot"><tr><th>tempo</th><th>fala</th><th>direção da cena</th></tr>{linhas}</table>' if linhas else ""
+    nar = f'<div class="card"><h3>Narração completa</h3><p>{e(r["narracao"])}</p></div>' if r.get("narracao") else ""
+    return (f'<div class="pg"><div class="k">{e(v.get("etiqueta", ""))} · Roteiro</div><h2>{e(v["titulo"])}</h2>'
+            f'{nar}{tab}{rod}</div>')
+
+
 def monta(plano, tema):
     prop = plano.get("formato", "9:16")
     a = PROPORCOES.get(prop)
@@ -134,6 +145,8 @@ def monta(plano, tema):
         tam = math.ceil(len(qs) / partes)
         for i in range(partes):
             paginas.append(pagina_quadros(v, qs[i * tam:(i + 1) * tam], a, prop, i + 1, partes, "{ROD}"))
+        if v.get("roteiro"):
+            paginas.append(pagina_roteiro(v, "{ROD}"))
 
     # som
     s = plano.get("som")

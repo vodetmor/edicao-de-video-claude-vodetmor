@@ -127,3 +127,10 @@ Feedback: "tudo igual" (mesmos takes nos 4) e o motion "tampava o vídeo", sem v
 - Takes: `specs.ts` agora sorteia, por criativo, cortes de 2,6 a 3,6 s de todos os trechos limpos de c2 e c4 (home com a mão, listas de canais com desfoque forte nos nomes, lançamentos, menus, doramas, novelas), cada criativo com ordem e enquadramento próprios (`ENQ`). Cortes seguem o tema que está sendo falado.
 - Motion: blocos compactos por cima da imagem (sem fundo chapado e sem escurecer a TV): pílulas no gancho, chips no topo, faixa de 3 telas e cartão de preço na parte baixa, CTA em painel inferior com a imagem rodando. Faixa de cobertura da legenda original começa a 70% da altura.
 - Cópias `-leve.mp4` de 02, 03 e 04 (limite de 30 MiB do envio pelo celular).
+
+## 17. Reformulação em história (06/11, tarde): PDF de aprovação
+Feedback do Deidson: "tudo igual", "era melhor storytelling". Proposta: 4 histórias (A Domingo à noite, B A conta do mês, C O tutorial do neto, D Tudo no mesmo lugar), cada uma com narração nova, cenas de abertura a gerar no Google Flow e as takes do app (c2/c4) com motion compacto por cima.
+- PDF para aprovar: `saida/VixPlay TV - 4 historias para aprovacao.pdf` (11 páginas: capa, quadros e roteiro de cada história, som, checklist). Fonte: `trabalho/historias/montar.py` (gera `frames.json` e `plano.json`); quadros: `node estudio/motor/stills_vix.mjs trabalho/historias`; PDF: `python -I ~/.claude/skills/pdf-aprovacao/gera_pdf.py plano.json`.
+- Quadros de cena (A01, A02, B01, B03, C01, C02, D01, D02) são cartões de descrição; as imagens saem do Flow.
+- Bug achado e corrigido no bloco CTA: "Solicite seu teste grátis de 4 horas" estourava a largura e encostava no botão. Os vídeos v2 de `saida/` (criativos 02, 03 e 04) têm esse defeito; as histórias novas já saem corrigidas.
+- Próximo (só após aprovação): vozes novas (4 textos Narração, ElevenLabs, 2 takes), cenas no Flow (prompts a escrever), render, mixagem com música licenciada, entrega.

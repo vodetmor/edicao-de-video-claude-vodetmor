@@ -1,0 +1,592 @@
+{
+ "titulo": "VixPlay TV · 4 histórias para anúncio",
+ "arquivo": "VixPlay TV - 4 historias para aprovacao.pdf",
+ "rodape": "VixPlay TV · Criativos em história · Para aprovação",
+ "formato": "9:16",
+ "quadros_por_pagina": 10,
+ "tema": {
+  "acento": "#99E200",
+  "acento_texto": "#3C7A00",
+  "sobre_acento": "#061000",
+  "fundo": "#F5F6F2",
+  "cartao": "#FFFFFF",
+  "linha": "#E1E5DA",
+  "tinta": "#10140F",
+  "tinta_2": "#2E352B",
+  "cinza": "#7A8576",
+  "escuro": "#010204",
+  "papel": "#F2F7EE",
+  "papel_2": "#A7B5A2",
+  "fonte_titulo": "Archivo",
+  "titulo_caixa_alta": true,
+  "capa_escura": true,
+  "aprovar_escura": true
+ },
+ "capa": {
+  "chamada": "Para aprovação · 4 roteiros",
+  "titulo": "Quatro histórias",
+  "titulo_destaque": "VixPlay TV",
+  "texto": "Cada criativo conta uma história diferente, com personagem, situação e visual próprios. A tela do aplicativo aparece o tempo todo e o motion fica em cima, compacto.",
+  "logo": "logo.png",
+  "logo_altura_mm": 17,
+  "imagens": [
+   "quadros/A05.png",
+   "quadros/B06.png",
+   "quadros/D05.png"
+  ],
+  "numeros": [
+   {
+    "n": "A",
+    "texto": "Domingo à noite: a família disputa o controle."
+   },
+   {
+    "n": "B",
+    "texto": "A conta do mês: o caderno e a calculadora."
+   },
+   {
+    "n": "C",
+    "texto": "O tutorial do neto: instalar e usar."
+   },
+   {
+    "n": "D",
+    "texto": "Tudo no mesmo lugar: o casal e o menu."
+   }
+  ]
+ },
+ "videos": [
+  {
+   "etiqueta": "Criativo A · cerca de 40 s · 8 quadros",
+   "titulo": "Domingo à noite",
+   "ideia": "Uma família disputa o controle. Cada um num aplicativo; a VixPlay TV junta tudo e todo mundo assiste junto.",
+   "jornada": [
+    {
+     "titulo": "Conflito",
+     "texto": "Todos querem coisas diferentes."
+    },
+    {
+     "titulo": "Descoberta",
+     "texto": "Alguém lembra da VixPlay TV."
+    },
+    {
+     "titulo": "Solução",
+     "texto": "Tudo no mesmo lugar, em até 3 telas."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35 no 1º mês, Pix."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "A01",
+     "t": "0:00",
+     "legenda": "Sala, domingo à noite. A família toda no sofá.",
+     "img": "quadros/A01.png"
+    },
+    {
+     "id": "A02",
+     "t": "0:05",
+     "legenda": "Cada um pede uma coisa diferente.",
+     "img": "quadros/A02.png"
+    },
+    {
+     "id": "A03",
+     "t": "0:10",
+     "legenda": "Quatro celulares, quatro aplicativos, quatro assinaturas.",
+     "img": "quadros/A03.png"
+    },
+    {
+     "id": "A04",
+     "t": "0:14",
+     "legenda": "Alguém lembra da VixPlay TV. A tela inicial aparece.",
+     "img": "quadros/A04.png"
+    },
+    {
+     "id": "A05",
+     "t": "0:18",
+     "legenda": "Canais ao vivo, filmes, séries, doramas, novelas e infantil no mesmo lugar.",
+     "img": "quadros/A05.png"
+    },
+    {
+     "id": "A06",
+     "t": "0:26",
+     "legenda": "Sala, quarto e celular: até 3 telas no mesmo plano.",
+     "img": "quadros/A06.png"
+    },
+    {
+     "id": "A07",
+     "t": "0:31",
+     "legenda": "Primeiro mês R$ 35, Pix, sem cartão, sem fidelidade.",
+     "img": "quadros/A07.png"
+    },
+    {
+     "id": "A08",
+     "t": "0:36",
+     "legenda": "Botão Saiba mais e teste grátis de 4 horas.",
+     "img": "quadros/A08.png"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Domingo à noite. A família toda no sofá, pipoca pronta, e a disputa de sempre: o que vamos assistir? Um quer filme, outro quer série, a criança pede desenho e a avó só quer a novela. Cada um num aplicativo, cada um com uma assinatura. Foi aí que alguém lembrou da Vix Play TV. Dentro dela tem canais ao vivo, filmes, séries, doramas, novelas e infantil, tudo em um só aplicativo, em até três telas: na sala, no quarto e no celular. O primeiro mês custa trinta e cinco reais, no Pix, sem cartão e sem fidelidade. Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "Domingo à noite. A família toda no sofá, pipoca pronta, e a disputa de sempre: o que vamos assistir?",
+      "direcao": "A01 e A02: cena de sala em plano aberto, luz quente. O controle passa de mão em mão."
+     },
+     {
+      "t": "0:10",
+      "fala": "Cada um num aplicativo, cada um com uma assinatura.",
+      "direcao": "A03: bloco de gancho sobre a tela do app; as pílulas Assinatura se juntam na marca."
+     },
+     {
+      "t": "0:14",
+      "fala": "Foi aí que alguém lembrou da Vix Play TV.",
+      "direcao": "A04: título Conheça a VixPlay TV sobre a tela inicial (a mão mostrando o menu)."
+     },
+     {
+      "t": "0:18",
+      "fala": "Canais ao vivo, filmes, séries, doramas, novelas e infantil, tudo em um só aplicativo.",
+      "direcao": "A05: chips entram na palavra falada, com cortes de filmes e novelas."
+     },
+     {
+      "t": "0:26",
+      "fala": "Em até três telas: na sala, no quarto e no celular.",
+      "direcao": "A06: faixa Smart TV, TV Box e celular acendendo em sequência."
+     },
+     {
+      "t": "0:31",
+      "fala": "O primeiro mês custa trinta e cinco reais, no Pix, sem cartão e sem fidelidade.",
+      "direcao": "A07: etiqueta de preço compacta, número subindo até R$ 35."
+     },
+     {
+      "t": "0:36",
+      "fala": "Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+      "direcao": "A08: painel inferior com o botão SAIBA MAIS; a imagem do app segue rodando."
+     }
+    ]
+   }
+  },
+  {
+   "etiqueta": "Criativo B · cerca de 36 s · 7 quadros",
+   "titulo": "A conta do mês",
+   "ideia": "Caderno e calculadora no fim do mês: a soma das assinaturas assusta. A VixPlay TV reúne tudo em um aplicativo só.",
+   "jornada": [
+    {
+     "titulo": "Cena",
+     "texto": "Fim do mês, caderno aberto."
+    },
+    {
+     "titulo": "Susto",
+     "texto": "O total é maior do que parecia."
+    },
+    {
+     "titulo": "Caminho",
+     "texto": "Tudo em um aplicativo."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, depois R$ 30 em dia."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "B01",
+     "t": "0:00",
+     "legenda": "Cozinha, fim do mês. Caderno aberto e calculadora.",
+     "img": "quadros/B01.png"
+    },
+    {
+     "id": "B02",
+     "t": "0:05",
+     "legenda": "As assinaturas entram na página, uma a uma.",
+     "img": "quadros/B02.png"
+    },
+    {
+     "id": "B03",
+     "t": "0:11",
+     "legenda": "O total chega maior do que parecia.",
+     "img": "quadros/B03.png"
+    },
+    {
+     "id": "B04",
+     "t": "0:15",
+     "legenda": "Existe um jeito mais simples: tudo em um aplicativo só.",
+     "img": "quadros/B04.png"
+    },
+    {
+     "id": "B05",
+     "t": "0:20",
+     "legenda": "Canais ao vivo, filmes, séries, doramas e novelas.",
+     "img": "quadros/B05.png"
+    },
+    {
+     "id": "B06",
+     "t": "0:26",
+     "legenda": "R$ 35 no primeiro mês; R$ 30 renovando em dia.",
+     "img": "quadros/B06.png"
+    },
+    {
+     "id": "B07",
+     "t": "0:32",
+     "legenda": "Pix, sem renovação automática. Saiba mais.",
+     "img": "quadros/B07.png"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Fim do mês. Em cima da mesa, o caderno e a calculadora. Uma assinatura de filmes, outra de séries, outra de esportes, outra de infantil. Soma daqui, soma dali, e o total chega maior do que parecia. Existe um jeito mais simples de organizar isso. A Vix Play TV reúne canais ao vivo, filmes, séries, doramas e novelas em um aplicativo só. O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta. Pagamento por Pix, sem cartão e sem renovação automática. Quer ver como funciona antes? Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "Fim do mês. Em cima da mesa, o caderno e a calculadora.",
+      "direcao": "B01: plano fechado da mão que anota, cozinha, luz de manhã."
+     },
+     {
+      "t": "0:05",
+      "fala": "Uma assinatura de filmes, outra de séries, outra de esportes, outra de infantil.",
+      "direcao": "B02: as etiquetas Assinatura entram na página do caderno e colapsam na marca."
+     },
+     {
+      "t": "0:11",
+      "fala": "Soma daqui, soma dali, e o total chega maior do que parecia.",
+      "direcao": "B03: a calculadora mostra o total; a mão para."
+     },
+     {
+      "t": "0:15",
+      "fala": "Existe um jeito mais simples de organizar isso. A Vix Play TV reúne tudo em um aplicativo só.",
+      "direcao": "B04: título Mais simples, um app só sobre a tela inicial."
+     },
+     {
+      "t": "0:20",
+      "fala": "Canais ao vivo, filmes, séries, doramas e novelas.",
+      "direcao": "B05: chips sobre os pôsteres de filmes."
+     },
+     {
+      "t": "0:26",
+      "fala": "O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta.",
+      "direcao": "B06: etiqueta de preço com a linha Renovando em dia: R$ 30."
+     },
+     {
+      "t": "0:32",
+      "fala": "Pix, sem cartão e sem renovação automática. Toque em Saiba mais.",
+      "direcao": "B07: painel inferior com SAIBA MAIS e teste grátis de 4 horas."
+     }
+    ]
+   }
+  },
+  {
+   "etiqueta": "Criativo C · cerca de 48 s · 8 quadros",
+   "titulo": "O tutorial do neto",
+   "ideia": "O neto instala o aplicativo para a avó seguindo o tutorial do aparelho. Mostra o processo simples e o suporte.",
+   "jornada": [
+    {
+     "titulo": "Cena",
+     "texto": "Avó indecisa, neto ao lado."
+    },
+    {
+     "titulo": "Passo a passo",
+     "texto": "Plano, Pix, acesso pelo WhatsApp."
+    },
+    {
+     "titulo": "Instalação",
+     "texto": "Tutorial para cada aparelho."
+    },
+    {
+     "titulo": "Resultado",
+     "texto": "Ela acha a novela. R$ 35."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "C01",
+     "t": "0:00",
+     "legenda": "Quarto da avó. O neto senta ao lado dela.",
+     "img": "quadros/C01.png"
+    },
+    {
+     "id": "C02",
+     "t": "0:06",
+     "legenda": "Ele abre o tutorial do aparelho no celular.",
+     "img": "quadros/C02.png"
+    },
+    {
+     "id": "C03",
+     "t": "0:11",
+     "legenda": "Três passos: plano, Pix, acesso pelo WhatsApp.",
+     "img": "quadros/C03.png"
+    },
+    {
+     "id": "C04",
+     "t": "0:20",
+     "legenda": "Tutorial para cada aparelho: Smart TV, TV Box e celular.",
+     "img": "quadros/C04.png"
+    },
+    {
+     "id": "C05",
+     "t": "0:27",
+     "legenda": "Dúvida na instalação? Atendimento pelo WhatsApp.",
+     "img": "quadros/C05.png"
+    },
+    {
+     "id": "C06",
+     "t": "0:33",
+     "legenda": "A avó achou a novela. Por dentro: novelas, filmes, séries.",
+     "img": "quadros/C06.png"
+    },
+    {
+     "id": "C07",
+     "t": "0:40",
+     "legenda": "R$ 35 no primeiro mês, até 3 telas na mesma casa.",
+     "img": "quadros/C07.png"
+    },
+    {
+     "id": "C08",
+     "t": "0:45",
+     "legenda": "Botão Saiba mais e teste grátis de 4 horas.",
+     "img": "quadros/C08.png"
+    }
+   ],
+   "roteiro": {
+    "narracao": "A avó queria assistir à novela no quarto, mas não sabia por onde começar. O neto sentou do lado e resolveu em poucos passos. Ele escolheu o plano, pagou por Pix e recebeu o acesso pelo WhatsApp. Depois abriu o tutorial do aparelho e instalou pelo aplicativo Downloader, com um código. Tem tutorial para cada aparelho: Smart TV, TV Box, celular e outros. Se aparece uma dúvida, o suporte atende pelo WhatsApp. Lá dentro da Vix Play TV tem novelas, filmes, séries, canais ao vivo e infantil. O primeiro mês custa trinta e cinco reais, em até três telas na mesma casa. Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "A avó queria assistir à novela no quarto, mas não sabia por onde começar.",
+      "direcao": "C01: quarto no fim da tarde; avó com o controle, neto senta ao lado."
+     },
+     {
+      "t": "0:06",
+      "fala": "O neto sentou do lado e resolveu em poucos passos.",
+      "direcao": "C02: close no celular com o tutorial do aparelho aberto."
+     },
+     {
+      "t": "0:11",
+      "fala": "Ele escolheu o plano, pagou por Pix e recebeu o acesso pelo WhatsApp.",
+      "direcao": "C03: três cartões de passo entram um a um sobre a tela do app."
+     },
+     {
+      "t": "0:20",
+      "fala": "Depois abriu o tutorial do aparelho e instalou pelo Downloader, com um código. Tem tutorial para cada aparelho.",
+      "direcao": "C04: faixa Smart TV, TV Box e celular com o selo Tutorial para cada aparelho."
+     },
+     {
+      "t": "0:27",
+      "fala": "Se aparece uma dúvida, o suporte atende pelo WhatsApp.",
+      "direcao": "C05: dois balões de conversa simples, sem nome de pessoa."
+     },
+     {
+      "t": "0:33",
+      "fala": "Lá dentro tem novelas, filmes, séries, canais ao vivo e infantil.",
+      "direcao": "C06: chips sobre as novelas; corte curto para a avó sorrindo (cena gerada)."
+     },
+     {
+      "t": "0:40",
+      "fala": "O primeiro mês custa trinta e cinco reais, em até três telas na mesma casa.",
+      "direcao": "C07: etiqueta de preço."
+     },
+     {
+      "t": "0:45",
+      "fala": "Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+      "direcao": "C08: painel inferior com SAIBA MAIS."
+     }
+    ]
+   }
+  },
+  {
+   "etiqueta": "Criativo D · cerca de 50 s · 10 quadros",
+   "titulo": "Tudo no mesmo lugar",
+   "ideia": "Um casal cansado de trocar de aplicativo ganha um menu só, e o vídeo faz o passeio completo por dentro do app.",
+   "jornada": [
+    {
+     "titulo": "Atrito",
+     "texto": "Ela quer série, ele quer esporte."
+    },
+    {
+     "titulo": "Virada",
+     "texto": "Tudo no mesmo menu."
+    },
+    {
+     "titulo": "Passeio",
+     "texto": "Canais, filmes, séries, doramas, novelas."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, suporte, teste."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "D01",
+     "t": "0:00",
+     "legenda": "Ela quer série, ele quer esporte: a TV vive trocando de aplicativo.",
+     "img": "quadros/D01.png"
+    },
+    {
+     "id": "D02",
+     "t": "0:06",
+     "legenda": "Aplicativo, login, menu, de novo.",
+     "img": "quadros/D02.png"
+    },
+    {
+     "id": "D03",
+     "t": "0:11",
+     "legenda": "Agora tudo no mesmo lugar: por dentro da VixPlay TV.",
+     "img": "quadros/D03.png"
+    },
+    {
+     "id": "D04",
+     "t": "0:16",
+     "legenda": "Canais ao vivo: esportes, filmes e séries, infantil, documentários.",
+     "img": "quadros/D04.png"
+    },
+    {
+     "id": "D05",
+     "t": "0:22",
+     "legenda": "Filmes: seção só de lançamentos e categorias.",
+     "img": "quadros/D05.png"
+    },
+    {
+     "id": "D06",
+     "t": "0:28",
+     "legenda": "Séries, doramas e novelas.",
+     "img": "quadros/D06.png"
+    },
+    {
+     "id": "D07",
+     "t": "0:33",
+     "legenda": "Até 3 telas: uma na sala, outra no quarto, outra no celular.",
+     "img": "quadros/D07.png"
+    },
+    {
+     "id": "D08",
+     "t": "0:38",
+     "legenda": "R$ 35 no primeiro mês; R$ 30 renovando em dia.",
+     "img": "quadros/D08.png"
+    },
+    {
+     "id": "D09",
+     "t": "0:43",
+     "legenda": "Suporte pelo WhatsApp.",
+     "img": "quadros/D09.png"
+    },
+    {
+     "id": "D10",
+     "t": "0:47",
+     "legenda": "Botão Saiba mais e teste grátis de 4 horas.",
+     "img": "quadros/D10.png"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Ela quer série, ele quer esporte, e a TV vive trocando de aplicativo, de login e de menu. Agora tudo fica no mesmo lugar. Abre a Vix Play TV e o menu é direto. Em canais ao vivo tem esportes, filmes e séries, infantil, documentários, canais abertos e fechados. Em filmes, uma seção só de lançamentos e categorias como ação, comédia e drama. Em séries, várias temporadas e um espaço só para doramas, e tem novelas também. Até três telas no mesmo plano: uma na sala, outra no quarto e outra no celular. O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta. Pix, sem cartão e sem fidelidade. Se tiver dúvida, o suporte atende pelo WhatsApp. Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "Ela quer série, ele quer esporte, e a TV vive trocando de aplicativo, de login e de menu.",
+      "direcao": "D01 e D02: tela dividida (ela / ele); o controle muda de mão; menu cheio de ícones."
+     },
+     {
+      "t": "0:11",
+      "fala": "Agora tudo fica no mesmo lugar. Abre a Vix Play TV e o menu é direto.",
+      "direcao": "D03: título Por dentro da VixPlay TV sobre a tela inicial."
+     },
+     {
+      "t": "0:16",
+      "fala": "Em canais ao vivo tem esportes, filmes e séries, infantil, documentários, canais abertos e fechados.",
+      "direcao": "D04: chips entram na palavra falada; listas de canais só com desfoque forte."
+     },
+     {
+      "t": "0:22",
+      "fala": "Em filmes, uma seção só de lançamentos e categorias como ação, comédia e drama.",
+      "direcao": "D05: chips sobre os pôsteres."
+     },
+     {
+      "t": "0:28",
+      "fala": "Em séries, várias temporadas e um espaço só para doramas, e tem novelas também.",
+      "direcao": "D06: chips sobre séries, doramas e novelas."
+     },
+     {
+      "t": "0:33",
+      "fala": "Até três telas no mesmo plano: sala, quarto e celular.",
+      "direcao": "D07: faixa de aparelhos."
+     },
+     {
+      "t": "0:38",
+      "fala": "O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta. Pix, sem cartão e sem fidelidade.",
+      "direcao": "D08: etiqueta de preço com a linha de renovação."
+     },
+     {
+      "t": "0:43",
+      "fala": "Se tiver dúvida, o suporte atende pelo WhatsApp.",
+      "direcao": "D09: balões simples."
+     },
+     {
+      "t": "0:47",
+      "fala": "Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+      "direcao": "D10: painel inferior com SAIBA MAIS."
+     }
+    ]
+   }
+  }
+ ],
+ "som": {
+  "titulo": "Voz, música e efeitos",
+  "texto": "Voz de narrador por história (nova locução). Música discreta sob a voz. Poucos efeitos, só onde importam.",
+  "cartoes": [
+   {
+    "titulo": "Voz",
+    "texto": "Locução nova no ElevenLabs a partir do texto Narração de cada roteiro, 2 takes. Voz brasileira, calorosa, ritmo de conversa."
+   },
+   {
+    "titulo": "Música",
+    "texto": "Uma faixa instrumental por criativo, 18 a 22 LU abaixo da voz, com ducking. As faixas de teste vieram da Epidemic em prévia; antes de anunciar, baixar com a licença do plano."
+   },
+   {
+    "titulo": "Volume final",
+    "texto": "-14 LUFS, pico máximo -1 dBTP."
+   }
+  ],
+  "efeitos": [
+   [
+    "Pílulas se juntam na marca",
+    "toque curto e grave"
+   ],
+   [
+    "Preço sobe até R$ 35",
+    "tique suave"
+   ],
+   [
+    "Botão SAIBA MAIS",
+    "toque discreto, uma vez"
+   ]
+  ]
+ },
+ "aprovar": {
+  "titulo": "Para aprovar",
+  "itens": [
+   {
+    "texto": "A história do criativo A (Domingo à noite)"
+   },
+   {
+    "texto": "A história do criativo B (A conta do mês)"
+   },
+   {
+    "texto": "A história do criativo C (O tutorial do neto)"
+   },
+   {
+    "texto": "A história do criativo D (Tudo no mesmo lugar)"
+   },
+   {
+    "texto": "Cenas de abertura geradas no Google Flow",
+    "nota": "Os quadros de cena (A01, A02, B01, B03, C01, C02, D01, D02) são cartões de descrição; as imagens saem do Flow."
+   },
+   {
+    "texto": "Os textos de narração",
+    "nota": "Só fatos já confirmados: R$ 35, R$ 30 em dia, 3 telas, Pix, suporte pelo WhatsApp, teste de 4 horas."
+   },
+   {
+    "texto": "Música e volume"
+   }
+  ],
+  "nota_final": "Para ajustar, cite o código (ex.: muda o B03). Depois da aprovação, geramos as vozes e as cenas e renderizamos."
+ }
+}

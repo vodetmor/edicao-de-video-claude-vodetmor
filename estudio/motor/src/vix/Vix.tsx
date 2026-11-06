@@ -6,7 +6,7 @@ import '@fontsource/montserrat/800.css';
 import '@fontsource/montserrat/900.css';
 import '@fontsource-variable/inter/opsz.css';
 import {V, TXT, W, H, Spec, Pal} from './tema';
-import {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA} from './Blocos';
+import {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena} from './Blocos';
 import {SPECS} from './specs';
 
 export type Props = {id: string};
@@ -16,7 +16,7 @@ export const calcula: CalculateMetadataFunction<Props> = ({props}) => {
   return {durationInFrames: Math.round(s.dur * 30), fps: 30, width: W, height: H};
 };
 
-const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA};
+const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena};
 
 // Legenda contínua: Inter 500, base a 87% da altura, até 2 linhas, sem caixa, sem karaokê
 type Cue = {txt: string; s: number; e: number};
@@ -111,6 +111,26 @@ const ClipV: React.FC<{c: Spec['clips'][number]; z: number}> = ({c, z}) => {
   return (
     <AbsoluteFill style={{opacity: o}}>
       <OffthreadVideo src={staticFile(`vix/${c.src}.mp4`)} startFrom={Math.round(c.ss * 30)} muted style={{width: W, height: H, objectFit: 'cover', filter: c.blur ? `blur(${c.blur}px)` : undefined, transform: `scale(${z})`, transformOrigin: `${c.ox ?? 82}% ${c.oy ?? 62}%`}} />
+    </AbsoluteFill>
+  );
+};
+
+// Quadro-chave para o PDF de aprovação: um still com a imagem de uma take, o bloco de motion e a legenda
+export type QuadroProps = {src?: 'c2' | 'c4'; ss?: number; zoom?: number; ox?: number; oy?: number; blur?: number; bloco: string; p?: any; legenda?: string};
+export const Quadro: React.FC<QuadroProps> = ({src, ss = 10, zoom = 1.2, ox = 82, oy = 62, blur, bloco, p, legenda}) => {
+  const B = BLOCOS[bloco];
+  const [h] = React.useState(() => delayRender('fontes-q'));
+  React.useEffect(() => {
+    Promise.all([document.fonts.load("900 italic 100px 'Montserrat'", 'AÇÃO ção'), document.fonts.load("800 100px 'Montserrat'", 'SAIBA'), document.fonts.load("500 40px 'Inter Variable'", 'áéí'), document.fonts.load("700 40px 'Inter Variable'", 'áéí')]).then(() => continueRender(h)).catch(() => continueRender(h));
+  }, [h]);
+  return (
+    <AbsoluteFill style={{background: V.bg, overflow: 'hidden'}}>
+      {src && <ClipV c={{src, ss, t0: 0, t1: 9, zoom, ox, oy, blur}} z={zoom} />}
+      {src && <Faixa />}
+      <B dur={9} {...(p ?? {})} />
+      {legenda && src && (
+        <div style={{position: 'absolute', left: 90, width: W - 180, bottom: H * 0.13, textAlign: 'center', fontFamily: TXT, fontWeight: 500, fontSize: 54, lineHeight: 1.22, color: V.txt, textShadow: '0 2px 14px rgba(1,2,4,0.9)'}}>{legenda}</div>
+      )}
     </AbsoluteFill>
   );
 };
