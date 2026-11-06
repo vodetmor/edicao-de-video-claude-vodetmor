@@ -15,7 +15,7 @@ Pedido do Vítor (04/10 noite): editar o pré-edit dos bastidores da aula de lan
 python3 -m venv /opt/va && /opt/va/bin/pip install faster-whisper deepfilternet soundfile scipy && /opt/va/bin/pip install torch==2.3.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cpu
 mkdir -p ~/.cache/DeepFilterNet && cd ~/.cache/DeepFilterNet && unzip /mnt/project-files/ferramentas/modelos/DeepFilterNet3.zip
 cp -r trabalho/fonte/remotion /root/bast && cd /root/bast && npm ci
-mkdir -p public/video && ffmpeg -i ../brutos/... -an -c:v libx264 -crf 14 -g 15 public/video/face.mp4 ; idem aula.mp4 (pessoal-vitor/aula-lancamento-obliquo/renders/lancamento-obliquo.mp4)
+mkdir -p public/video && ffmpeg -i ../brutos/... -an -c:v libx264 -crf 14 -g 15 public/video/face.mp4 ; idem aula.mp4 (estudio/aula-lancamento-obliquo/renders/lancamento-obliquo.mp4)
 OUT=/root/bast/src/data python3 trabalho/fonte/prepara.py
 /opt/va/bin/python trabalho/fonte/sons.py
 npx remotion render src/index.ts Bastidores out/video.mp4 --muted --concurrency=4 --crf=17 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell
