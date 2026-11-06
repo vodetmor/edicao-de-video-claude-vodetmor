@@ -40,14 +40,14 @@ adobe apps with opus-5.5, ported them to rust, and opensourced them"). Thread "A
 - Lottie: expressões NÃO vão para o Lottie por padrão. Assar antes: `prop.convertExpressionToKeyframes`
   (a mola virou 75 keyframes) e exportar com `textAsShapes: true`.
 - Ponte com o motor: o mesmo cartão em Lottie (`@remotion/lottie`) e em ProRes 4444 (`<OffthreadVideo transparent>`)
-  ficou idêntico no Remotion. Arquivos: `laboratorio/craft/provas/`.
+  ficou idêntico no Remotion. Arquivos: `estudio/craft/provas/`.
 - FilmCraft: import de 2 clipes, `file.newSequenceFromClip`, faixa de legenda, `captions.setStyle` Inter 50,
   export H.264+AAC com legenda queimada (7 s para 8 s de vídeo) e FCPXML/OTIO. O FCPXML 1.10 não levou a legenda.
 - VectorCraft: `.ai` (PDF) → SVG em 1 comando.
 - Não testado: app com janela (não há tela na nuvem), GPU, arquivos grandes, os outros 4 apps.
 
 ## Como nos conectar
-- Na nuvem: `bash laboratorio/craft/instalar.sh` e eu chamo os `*-cli` direto pelo terminal. MCP não é necessário aqui,
+- Na nuvem: `bash estudio/craft/instalar.sh` e eu chamo os `*-cli` direto pelo terminal. MCP não é necessário aqui,
   o CLI faz tudo e é mais simples.
 - No PC do Vítor (Windows): baixar o `.msi` ou o portátil da release; para o Claude Code do PC, registrar
   `claude mcp add effectcraft -- "C:\...\effectcraft-cli.exe" mcp`. Com o app aberto em `--control 9877`,
