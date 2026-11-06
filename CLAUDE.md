@@ -36,18 +36,19 @@ Detalhe completo: skill `metodo-edicao` (em `.claude/skills/`).
 ## Mapa da pasta
 | Pasta | O que é |
 |---|---|
-| `motion-base/` | Biblioteca: DESIGN-SYSTEM, LICOES-MOTION (ler antes de qualquer motion), TEMPLATE-BRIEF, estudos quadro a quadro (`estudos/tinocandotv/` = referência de documentário), fontes (HyperFrames, prompts, posts do X), logos reais, música. |
-| `estudio/` | Só o que roda: motor (Remotion + spec JSON presa às palavras faladas + blocos + variações em lote, `motor/`), editor de vídeo falado (`editor/`), GLSL/shaders (`glsl/`), animação JS (`animacao-js/`). |
-| `ferramentas/` | `busca/busca.py`: material real grátis (Pexels, Mixkit, Openverse, Wikimedia, Archive, NASA, notícias, SFX) com folha de miniaturas e registro de licença. Também voz, modelos, paleta e `pc-automacao/` (Google Flow e imagens no PC do Vítor). |
-| `organizacao/` | Planos do estúdio, propostas de acesso, avaliação de kits de agentes, kit do radar de novidades do X, amostras de voz grátis (edge-tts), pesquisa inicial, `MAPA-DE-CAMINHOS.md` (caminho antigo → novo e a regra de cada pasta). |
+| `motion-base/` | Biblioteca: DESIGN-SYSTEM, LICOES-MOTION (ler antes de qualquer motion), TEMPLATE-BRIEF, estudos quadro a quadro, fontes (HyperFrames, prompts, posts do X), logos reais, música. |
+| `estudio/` | Nosso motor de vídeo: Remotion + spec JSON com eventos presos às palavras faladas + blocos + variações em lote (`motor/`), camada GLSL/shaders, testes. |
+| `ferramentas/busca/` | `busca.py`: busca material real grátis (Pexels, Mixkit, Openverse, Wikimedia, Archive, NASA, notícias, SFX) com folha de miniaturas e registro de licença. |
+| `organizacao/` | Planos do estúdio, propostas de acesso, avaliação de kits de agentes, kit do radar de novidades do X, amostras de voz grátis (edge-tts). |
 | `.claude/skills/` | Skills: as 5 escolhidas (remotion-best-practices, design-taste-frontend, apple-design, review-animations, animation-vocabulary) + as do projeto (modo-orientador, metodo-edicao, motor-estudio, pesquisa-referencias) + `animate` (vídeo desenhado em canvas JavaScript, do Chase AI; peças em `estudio/animacao-js/`). |
 | `memoria/` | A memória do projeto exatamente como estava (fatos, decisões, feedback do Vítor). Leia `memoria/MEMORY.md` no começo de trabalhos grandes. |
 | `pessoal-vitor/` | Produção pessoal do Vítor Machado Neves (TikTok/Instagram, aulas, bastidores, estratégia do perfil, marca, escola). |
-| `clientes/<cliente>/` | Trabalhos de clientes, separados por cliente (ex.: `clientes/vslplay/`; `clientes/jeronimo/` inclui o produto Máquina de Edição IA). Nunca misturar com o pessoal. |
+| `clientes/<cliente>/` | Trabalhos de clientes, separados por cliente (ex.: `clientes/vslplay/`). Nunca misturar com o pessoal. |
 | `outros/` | Pedidos avulsos que não são perfil pessoal nem cliente (ex.: vinheta da igreja). |
-| `laboratorio/` | Testes, demos antigos e ferramentas avaliadas (`craft`, `teste-gancho`, `teste-blender`, `escalados`). |
-| `backup/` | `sincronizar.py` (salva tudo no GitHub) e `juntar_partes.py` (remonta vídeos grandes salvos em partes de 90 MB). `backup/pc/` é só do PC. |
-| `historico/` | Índice e texto das conversas do projeto original. Registro: não atualizar caminhos aqui. |
+| `laboratorio/` | Testes e demos antigos. |
+| `backup/` | `sincronizar.py` (salva tudo no GitHub) e `juntar_partes.py` (remonta vídeos grandes salvos em partes de 90 MB). |
+| `pc/` | Automação do Google Flow e de imagens que roda no PC do Vítor (como usar). |
+| `pesquisa/`, `historico/` | Pesquisa inicial do pipeline e o índice das conversas do projeto original. |
 
 Caminhos antigos: documentos escritos no projeto original citam `/mnt/project-files/<algo>`. Aqui isso é `./<algo>`.
 Mídia bruta pesada (acervo, renders intermediários, stems) não vai para o Git; fica no projeto e no OneDrive pessoal do Vítor. Vídeos entregues entram (os > 90 MB em partes).
@@ -67,16 +68,16 @@ O núcleo cresce a cada vídeo. Cada lição vai para o arquivo certo na hora (L
 - Persistência: toda obra fica numa pasta `<obra>/trabalho/` com `ESTADO.md` (feito, próximo passo, comandos exatos para refazer). Ao retomar, leia o `ESTADO.md` primeiro. Caches reinstaláveis (node_modules, pip) podem ficar fora.
 - Segredos nunca em arquivo versionado nem na memória: use `.env` (há `estudio/motor/.env.exemplo`) e `ferramentas/busca/chaves.env` local. O `.gitignore` já ignora esses arquivos.
 - Pesquisa no X: pelo terminal do PC dele (`twitter -c search ...` com cookies no `setx`), depois `motion-base/fontes/x/xler.py` baixa texto e vídeos. Ver skill `pesquisa-referencias`.
-- Sem assinatura paga de IA por enquanto: o Claude escreve os prompts, o Vítor gera grátis no Google Flow com várias contas (automação em `ferramentas/pc-automacao/`).
+- Sem assinatura paga de IA por enquanto: o Claude escreve os prompts, o Vítor gera grátis no Google Flow com várias contas (automação em `pc/`).
 - Instalação típica: `npm i` em `estudio/motor`; `python3 -m pip install numpy scipy pillow yt-dlp edge-tts`; ffmpeg no sistema.
 
 ## No PC do Vítor (Claude Code em `C:\dev\maquina-de-editar`)
 Esta pasta É o repositório (clone de `vodetmor/edicao-de-video-claude-vodetmor`) mais o que é só do PC. Windows 11, sem GPU NVIDIA; ffmpeg, Node, Python 3.13 e `gh` (logado como vodetmor) instalados. Shell: PowerShell ou Git Bash.
 - **Memória do projeto = `memoria/`** (um fato por arquivo, `MEMORY.md` é o índice de uma linha por fato). Fato novo, decisão ou feedback do Vítor: crie/atualize o arquivo em `memoria/` e a linha no `MEMORY.md` na hora. Lição de edição vai para `motion-base/LICOES-MOTION.md`. Nunca chave em `memoria/` nem em `.md`.
-- **Sincronizar:** a nuvem (projeto do claude.ai) também grava neste repo e sobrescreve com a versão dela os arquivos que mantém (`CLAUDE.md`, `memoria/`, `LICOES-MOTION.md`, skills…). Então, antes de começar: `git pull --rebase --autostash`. Depois de mexer em arquivo versionado: commit com caminho explícito (nunca `git add -A`/`.`) e `git push origin main`, e avise o Vítor para a nuvem copiar a mudança (senão a próxima sincronização dela desfaz). Uma tarefa do Windows ("Backup Maquina de Editar") roda `backup/pc/atualizar-backup-github.ps1` todo dia às 23:55 (pull + `juntar_partes.py`).
+- **Sincronizar:** a nuvem (projeto do claude.ai) também grava neste repo e sobrescreve com a versão dela os arquivos que mantém (`CLAUDE.md`, `memoria/`, `LICOES-MOTION.md`, skills…). Então, antes de começar: `git pull --rebase --autostash`. Depois de mexer em arquivo versionado: commit com caminho explícito (nunca `git add -A`/`.`) e `git push origin main`, e avise o Vítor para a nuvem copiar a mudança (senão a próxima sincronização dela desfaz). Uma tarefa do Windows ("Backup Maquina de Editar") roda `atualizar-backup-github.ps1` todo dia às 23:55 (pull + `juntar_partes.py`).
 - **Git no Windows:** há um arquivo com `?` no nome (`clientes/medicmais-sobradinho/trabalho/identidade/site/fonts.googleapis.com/…`) que o Windows não aceita; está fora do checkout por `sparse-checkout` e `core.protectNTFS=false`. Não desfazer.
 - **Mídia pesada:** o que não cabe no GitHub está listado em `FICOU-DE-FORA.md`. A cópia que veio para o PC fica nas mesmas pastas do repo, ignorada pelo Git. Vídeos > 90 MB do repo vêm em partes: `python backup/juntar_partes.py`.
-- **Só do PC (fora do Git, em `.git/info/exclude`):** `backup/pc/` (script e log da tarefa, zips de código do `image-automation`, `flow-automation` e da config do Claude, cópia antiga do iPhone 3D), `motion-base/fontes/x/buscas-cruas/` (buscas do X em JSON), `clientes/jeronimo/oferta-edicao-ia/` (1,9 GB de trabalho feito no PC), `clientes/jeronimo/estudo-curso/` e `motion-base/estudos/tinocandotv/folhas/` (imagens de terceiros).
+- **Só do PC (fora do Git, em `.git/info/exclude`):** `Backup-Maquina-de-Editar/` (zips de código do `image-automation`, `flow-automation` e da config do Claude), `pesquisa-x/` (buscas do X em JSON), `iphone-3d-para-subir/`, `outros/oferta-edicao-ia-jeronimo/` (1,9 GB de trabalho feito no PC).
 
 ### Acessos e chaves (`.env` na raiz)
 Todas as chaves que o Vítor passou estão em `.env` (raiz) e, para o `busca.py`, também em `ferramentas/busca/chaves.env`. Os dois são ignorados pelo `.gitignore`: **nunca** copie valores para arquivo versionado, commit, memória ou chat. São contas grátis e revogáveis (autorizado pelo Vítor em 03/11/2026). Para usar em script: Python lê com `os.environ` depois de carregar o `.env` (ex.: `python-dotenv` ou ler as linhas `NOME=valor`); no PowerShell: `Get-Content .env | ? {$_ -match '^[A-Z_]+='} | % { $k,$v = $_ -split '=',2; Set-Item "env:$k" $v }`. Mapa completo e status: `organizacao/TOKENS-E-ACESSOS.md`.
@@ -92,12 +93,12 @@ Todas as chaves que o Vítor passou estão em `.env` (raiz) e, para o `busca.py`
 | `PIXABAY_API_KEY` | Pixabay | Vazia: nunca enviada (criar em pixabay.com/api/docs). |
 | `HIGGSFIELD_API_KEY`, `FAL_KEY`, `HYPIHUB_API_KEY` | Pagos | Vazias até o Vítor assinar. |
 
-Sem chave: Pinterest (busca pública, `motion-base/fontes/pinterest/busca.mjs` com `pinterest-mcp-server`; neste PC também há o MCP `pinterest`), Mixkit, Openverse, Wikimedia, Internet Archive, NASA (todos no `busca.py`), yt-dlp (YouTube/Instagram público), Google Flow (vídeo/imagem de IA nas contas do Vítor, automação em `C:\image-automation`, ver `ferramentas/pc-automacao/`).
+Sem chave: Pinterest (busca pública, `motion-base/fontes/pinterest/busca.mjs` com `pinterest-mcp-server`; neste PC também há o MCP `pinterest`), Mixkit, Openverse, Wikimedia, Internet Archive, NASA (todos no `busca.py`), yt-dlp (YouTube/Instagram público), Google Flow (vídeo/imagem de IA nas contas do Vítor, automação em `C:\image-automation`, ver `pc/`).
 
 ### Fluxo de pesquisa de referências (antes de planejar qualquer vídeo)
 Skill `pesquisa-referencias` (e `pesquisa-proativa`). Ordem que funciona:
 1. **Entender o pedido** e escrever o que procurar (estilo, ritmo, tipo de cena) com a skill `modo-orientador`.
-2. **X/Twitter** (melhor fonte de motion de alto nível): `twitter -c search` com `--min-likes`, depois `xler.py` para baixar texto e vídeo; salvar achados em `motion-base/fontes/x/` (as buscas cruas podem ir para `motion-base/fontes/x/buscas-cruas/`).
+2. **X/Twitter** (melhor fonte de motion de alto nível): `twitter -c search` com `--min-likes`, depois `xler.py` para baixar texto e vídeo; salvar achados em `motion-base/fontes/x/` (as buscas cruas podem ir para `pesquisa-x/`).
 3. **Pinterest** para direção visual (folhas de contato) e **web** (WebSearch/Firecrawl, `site:x.com <tema>`).
 4. **Anúncios que escalaram**: Apify na Ad Library (quantos dias rodando = prova).
 5. **Medir** as referências (cortes/s, cores, curvas, loudness) e virar SPEC → skill `metodo-edicao`.
