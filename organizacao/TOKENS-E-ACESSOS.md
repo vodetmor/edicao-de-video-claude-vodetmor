@@ -30,7 +30,7 @@ Atualizado em 21/10/2026. Mapa de todas as chaves que o Vítor já passou: para 
 | edge-tts (Microsoft) | Voz provisória pt-BR (Thalita, Francisca, Antonio) | sem chave | — | Funciona |
 | Gemini (Google AI Studio) | Analista de vídeo com som | — | — | Não enviada (decidimos em 02/10 não usar por enquanto) |
 | Kaggle | GPU grátis | `kaggle.json` | — | Não enviado |
-| Google Flow | Geração de vídeo/imagem | login das suas contas no PC | Só no seu PC (`C:\image-automation`) | Funciona pela automação em `ferramentas/pc-automacao/` |
+| Google Flow | Geração de vídeo/imagem | login das suas contas no PC | Só no seu PC (`C:\image-automation`) | Funciona pela automação em `pc/` |
 
 ## Pesquisa e scraping
 

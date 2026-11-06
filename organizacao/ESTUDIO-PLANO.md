@@ -45,7 +45,7 @@ Gancho do criativo 2 ("Seu botão de compra aparece antes da sua VSL apresentar 
 - **B, player escuro (HTML + GSAP do jeito HyperFrames, 9:16):** a cena foi escrita como o HyperFrames escreve e rodou dentro do Remotion, presa às mesmas palavras.
 - **C, feed 4:5:** outra copy ("Seu CTA chega cedo") e outra cor, mudando só a spec.
 
-Números: 5,3 s cada, de 7 a 9 s de render por variação, -14 LUFS. Arquivos em `laboratorio/teste-gancho/`.
+Números: 5,3 s cada, de 7 a 9 s de render por variação, -14 LUFS. Arquivos em `estudio/teste-gancho/`.
 
 **Limites do teste:** é uma prova da máquina, não um anúncio pronto. No B o apresentador é uma foto, não vídeo. A cama musical é um pulso simples sintetizado.
 
@@ -66,4 +66,4 @@ Números: 5,3 s cada, de 7 a 9 s de render por variação, -14 LUFS. Arquivos em
 ## Onde está cada coisa
 - Motor: `/mnt/project-files/estudio/motor/` (README com os comandos)
 - Estado: `/mnt/project-files/estudio/ESTADO.md`
-- Teste: `/mnt/project-files/laboratorio/teste-gancho/`
+- Teste: `/mnt/project-files/estudio/teste-gancho/`
