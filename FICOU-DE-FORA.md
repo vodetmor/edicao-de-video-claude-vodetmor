@@ -12,7 +12,7 @@ Fica fora: renders intermediários (versões antigas), stems de áudio WAV, acer
 | 1751.7 | `escola-consciencia-negra/trabalho` |
 | 1005.7 | `estudio/animacao-js` |
 | 553.2 | `clientes/medicmais-sobradinho` |
-| 518.3 | `pessoal-vitor/aula-lancamento-obliquo` |
+| 518.3 | `estudio/aula-lancamento-obliquo` |
 | 453.5 | `motion-base/musica` |
 | 356.2 | `YTDown.com_YouTube_Media_-A_8YE1tipI_a-TRISTE-HISTÓRIA-de-FRANZ-KAFKA_001_1080p.mp4` |
 | 282.3 | `anuncio-vslplay/trabalho` |
