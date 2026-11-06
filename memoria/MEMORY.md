@@ -43,8 +43,8 @@
 - [[acessos-proposta]]: access proposal organizacao/ACESSOS-PROPOSTA.md; edge-tts free pt-BR voice works in cloud.
 - [[feedback-quadros-chave]]: gate before any full render: storytelling + ~12 keyframes PDF, wait for OK (unless he pre-approves).
 - [[voz-clonagem-local]]: local voice cloning tested, quality bad, ON STAND-BY.
-- [[aula-lancamento-obliquo]]: physics explainer (Manim+Remotion+GLSL, ElevenLabs voice) delivered 2026-10-03 and posted. State in pessoal-vitor/aula-lancamento-obliquo/ESTADO.md.
-- Blender by code works in cloud (`pip install bpy`), ~8 s/frame 540x960 CPU; test laboratorio/teste-blender. AI-tools map "Arsenal de IAs para o motor" (https://claude.ai/code/artifact/a55e9a8b-d729-4652-9504-7138e63d933d).
+- [[aula-lancamento-obliquo]]: physics explainer (Manim+Remotion+GLSL, ElevenLabs voice) delivered 2026-10-03 and posted. State in estudio/aula-lancamento-obliquo/ESTADO.md.
+- Blender by code works in cloud (`pip install bpy`), ~8 s/frame 540x960 CPU; test estudio/teste-blender. AI-tools map "Arsenal de IAs para o motor" (https://claude.ai/code/artifact/a55e9a8b-d729-4652-9504-7138e63d933d).
 - [[aula-otica]]: optics lesson 2026-10-05 (prism 3D hook/end, fiber, loop); provisional voice, swap with fonte/troca-voz.sh. In pessoal-vitor/aula-otica/trabalho.
 - [[feedback-tiktok-loop]]: personal TikTok rules: loop first/last frame, no text over lines, audiovisual composition.
 - [[feedback-roteiro-voz]]: write "téta" not "teta" in ElevenLabs scripts; follow his slower pace, music swells in pauses.
@@ -69,10 +69,8 @@
 - [[feedback-marca-real-na-tela]]: every brand named in narration shows its real logo/identity on screen (Vítor 2026-10-14).
 - [[tutorial-pinterest-x]]: 2026-10-23 organizacao/TUTORIAL-PINTEREST-E-X.md; Pinterest needs no token, X via his PC; .env reading blocked, no values written.
 - [[mentoria-ruan-lancar]]: 2026-10-27 opinion on Ruan LANÇAR site + plan to sell a mentorship to 4 CEUB marketing students (doc https://claude.ai/artifact/3srt1xT1CHF9qrARJFh1Zy).
-- [[curso-maquina-edicaoia]]: full "Máquina de Edição IA" course (videos, transcripts, ebook, 7 cp-* skills) on his PC at C:\Users\vitor\Downloads\Maquina-EdicaoIA (2026-10-29); summary clientes/jeronimo/maquina-edicaoia/RESUMO.md.
-- [[produto-skills-jeronimo]]: 2026-10-29 plan to sell a Claude video-editing skill pack (~R$97) with client Jerônimo; plan clientes/jeronimo/maquina-edicaoia/PLANO-JERONIMO.md; do not repackage Tiago content.
+- [[curso-maquina-edicaoia]]: full "Máquina de Edição IA" course (videos, transcripts, ebook, 7 cp-* skills) on his PC at C:\Users\vitor\Downloads\Maquina-EdicaoIA (2026-10-29); summary outros/maquina-edicaoia/RESUMO.md.
+- [[produto-skills-jeronimo]]: 2026-10-29 plan to sell a Claude video-editing skill pack (~R$97) with client Jerônimo; plan outros/maquina-edicaoia/PLANO-JERONIMO.md; do not repackage Tiago content.
 - [[editor-video-falado]]: 2026-10-29 estudio/editor = raw talking video -> edited (cuts, face, captions, 5 styles, review panel localhost:8080) + skill editar-video; product base for Jerônimo.
 
 - [[entrega-previas-video]]: thread caps at 24 attachments; deliver previews as a light Artifact player page and archive old versions on his PC (Maquina de Editar\clientes\...\previas). Keep messages short (Vítor 2026-10-31).
-- [[uso-ofertas-e-massa]]: base also serves the offers app (C:\dev\ofertas): offer videos, mass editing/creation, avatar, API; table of what exists vs missing (Vítor 2026-11-05).
-- [[reorganizacao-pastas]]: folders reorganized 2026-11-05; old -> new paths in organizacao/MAPA-DE-CAMINHOS.md; TinocandoTV study in motion-base/estudos/tinocandotv/ESTUDO.md.

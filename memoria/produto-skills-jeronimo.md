@@ -5,7 +5,7 @@ metadata:
   type: project
   modified: 2026-10-29T16:46:03.635Z
 ---
-Vítor + Jerônimo (client/partner, "o Jerônimo é o cliente") want to sell a skill pack for editing video in the buyer's own Claude (cuts/no breaths, captions, many styles/formats). Jerônimo is the face/sales/LP; Vítor edits and builds skills. Context in `Maquina-EdicaoIA/Contexto-Jeronimo` on Vítor's PC (audios/videos); transcripts + plan in /mnt/project-files/clientes/jeronimo/maquina-edicaoia/ (PLANO-JERONIMO.md, contexto-jeronimo/).
+Vítor + Jerônimo (client/partner, "o Jerônimo é o cliente") want to sell a skill pack for editing video in the buyer's own Claude (cuts/no breaths, captions, many styles/formats). Jerônimo is the face/sales/LP; Vítor edits and builds skills. Context in `Maquina-EdicaoIA/Contexto-Jeronimo` on Vítor's PC (audios/videos); transcripts + plan in /mnt/project-files/outros/maquina-edicaoia/ (PLANO-JERONIMO.md, contexto-jeronimo/).
 **Why:** Jerônimo burned his Claude plan in 4 days; deterministic scripts (ffmpeg+transcription) for cuts/captions cut buyer's token cost = differentiator.
 **How to apply:** write our own skills from scratch (do NOT repackage Tiago's paid course/ebook/cp-* skills; ebook has a third person's license watermark); model competitors only from public content; recommend stating the paid-Claude requirement openly (Jerônimo wanted to hide it). REA (github.com/morluto/rea) = local reverse-engineering MCP, optional, install only with Vítor's OK. Vítor's preference: Claude Projects over Claude Code. Related: [[curso-maquina-edicaoia]], [[estudio-motor]].
 

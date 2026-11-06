@@ -5,7 +5,7 @@ metadata:
   type: project
   modified: 2026-09-28T21:46:09.372Z
 ---
-Report: /mnt/project-files/organizacao/pesquisa-inicial/pesquisa-pipeline-video-ia.md (2026-09-28).
+Report: /mnt/project-files/pesquisa/pesquisa-pipeline-video-ia.md (2026-09-28).
 
 - Tool Vítor saw: most likely Claude (Cowork/Opus) + Higgsfield MCP + Meta MCP (Ad Library research → briefs → Higgsfield generates → Ad Multiplier variants). "Opus ou Astra" = Claude Opus / GPT-6 Astra as the editing brain, not Opus Clip.
 - DIY plan: user generates takes manually in Google Flow (free ~50 credits/day/account, 720p); Claude does dissection of winning ads, briefing, script, Flow prompts, editing (ffmpeg + Remotion/HyperFrames), music (ACE-Step 1.5, MIT), SFX, and variations ("Ad Multiplier caseiro").

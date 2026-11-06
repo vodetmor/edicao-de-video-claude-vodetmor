@@ -6,7 +6,7 @@ metadata:
   modified: 2026-10-29T18:24:04.892Z
 ---
 Folder on Vítor's PC (access granted 2026-10-29): `C:\Users\vitor\Downloads\Maquina-EdicaoIA`. Contents: ~30 lesson mp4s (Fundamentos, Editando com ChatGPT, Editando com Claude incl. PREMIUM 3D, Carrossel), Curso-Transcricao/ with a .md transcript per lesson, ebook (pdf + ebook.md), caixapreta-backup/ "Cofre" (panel, todos-os-prompts.txt, templates, 10 model videos, 7 cp-* skills), instalar-skills.mjs.
-Summary: /mnt/project-files/clientes/jeronimo/maquina-edicaoia/RESUMO.md.
+Summary: /mnt/project-files/outros/maquina-edicaoia/RESUMO.md.
 The ebook carries a license watermark with a third person's personal data: never copy it to repo/backup.
 Checked 2026-10-29: the course has NO localhost:8080 review panel (no "localhost"/"8080" in any transcript or Cofre file); its "painel" is the Caixa Preta prompt/model page (caixapretaia.com.br/painel). Our live review panel (painel.mjs + artifact) is our own differentiator.
 Used 2026-10-29 as study base for [[produto-skills-jeronimo]].
