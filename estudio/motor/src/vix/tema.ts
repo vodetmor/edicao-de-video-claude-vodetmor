@@ -11,6 +11,6 @@ export const W = 1080;
 export const H = 1920;
 
 export type Pal = {w: string; s: number; e: number};
-export type Clip = {src: 'c2' | 'c4'; ss: number; t0: number; t1: number; zoom?: number; ox?: number; oy?: number};
+export type Clip = {src: 'c2' | 'c4'; ss: number; t0: number; t1: number; zoom?: number; ox?: number; oy?: number; blur?: number};
 export type Ev = {t0: number; t1: number; bloco: string; p?: any};
 export type Spec = {id: string; audio: string; dur: number; pal: Pal[]; clips: Clip[]; ev: Ev[]; utm: string};

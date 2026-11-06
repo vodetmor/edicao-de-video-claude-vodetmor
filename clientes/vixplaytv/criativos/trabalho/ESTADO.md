@@ -121,3 +121,9 @@ Vítor aprovou tudo de antemão (sem quadros-chave intermediários) e as 4 vozes
 - Chave da Epidemic Sound (`EPIDEMIC_SOUND_API_KEY`, no `.env`): API `https://partner-content-api.epidemicsound.com/v0` (Bearer). Busca `/tracks/search?term=`, download `/tracks/{id}/download?format=mp3&quality=normal`. **Todas as faixas vieram `isPreviewOnly: true` (mp3 de baixa qualidade): servem de rascunho; antes de anunciar, trocar por faixa baixada com a licença do plano do Vítor.**
 - Faixas usadas (em `estudio/motor/public/vix/musica/`, fora do Git): m1 Orbit, m2 Touch, m3 Offline (Instrumental), m4 Runaway. Mixagem: `estudio/motor/mix_vix.sh N` (música em -32 LUFS, ducking pela voz, master -14 LUFS, medido -14,0 a -14,1).
 - R4: trecho borrado de ~20 s trocado por c2 (41 s).
+
+## 16. Versão 2 (06/11, tarde): feedback do Deidson e do sócio
+Feedback: "tudo igual" (mesmos takes nos 4) e o motion "tampava o vídeo", sem vontade de comprar; copy, narração e música aprovadas.
+- Takes: `specs.ts` agora sorteia, por criativo, cortes de 2,6 a 3,6 s de todos os trechos limpos de c2 e c4 (home com a mão, listas de canais com desfoque forte nos nomes, lançamentos, menus, doramas, novelas), cada criativo com ordem e enquadramento próprios (`ENQ`). Cortes seguem o tema que está sendo falado.
+- Motion: blocos compactos por cima da imagem (sem fundo chapado e sem escurecer a TV): pílulas no gancho, chips no topo, faixa de 3 telas e cartão de preço na parte baixa, CTA em painel inferior com a imagem rodando. Faixa de cobertura da legenda original começa a 70% da altura.
+- Cópias `-leve.mp4` de 02, 03 e 04 (limite de 30 MiB do envio pelo celular).

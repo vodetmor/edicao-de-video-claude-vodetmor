@@ -15,6 +15,38 @@ const mk = (pal: Pal[]) => (txt: string, n = 0) => {
 const fimDe = (pal: Pal[]) => pal[pal.length - 1].e + 1.5;
 const rel = (t: number, t0: number) => Math.max(0, t - t0);
 const C = (src: 'c2' | 'c4', ss: number, t0: number, t1: number, zoom = 1.2, ox = 82, oy = 62): Clip => ({src, ss, t0, t1, zoom, ox, oy});
+
+// ---- Takes: todos os trechos limpos de c2 e c4, por tema; cada criativo sorteia ordem/enquadramento diferentes ----
+type Take = {src: 'c2' | 'c4'; ss: number; blur?: number};
+const POOL: Record<string, Take[]> = {
+  home: [{src: 'c4', ss: 10.5}, {src: 'c4', ss: 13.5}, {src: 'c4', ss: 16.5}, {src: 'c4', ss: 19}],
+  live: [{src: 'c2', ss: 10, blur: 9}, {src: 'c4', ss: 26, blur: 9}, {src: 'c2', ss: 16, blur: 9}, {src: 'c4', ss: 30, blur: 9}, {src: 'c2', ss: 22, blur: 9}, {src: 'c4', ss: 34, blur: 9}, {src: 'c2', ss: 13, blur: 9}, {src: 'c4', ss: 40, blur: 9}],
+  filmes: [{src: 'c4', ss: 47}, {src: 'c2', ss: 36}, {src: 'c4', ss: 50}, {src: 'c2', ss: 39}, {src: 'c4', ss: 53}, {src: 'c2', ss: 42}],
+  cat: [{src: 'c4', ss: 57}, {src: 'c4', ss: 60}, {src: 'c2', ss: 43}, {src: 'c4', ss: 55}],
+  series: [{src: 'c4', ss: 66}, {src: 'c4', ss: 64.5}, {src: 'c4', ss: 69}, {src: 'c4', ss: 67.5}],
+  novelas: [{src: 'c4', ss: 72}, {src: 'c4', ss: 75}, {src: 'c4', ss: 78}, {src: 'c4', ss: 81}],
+};
+// enquadramento por criativo (muda o recorte; c2 precisa de zoom maior para sair o canto com o nome de outro app)
+const ENQ = [
+  {c4: [1.2, 82, 62], c2: [1.28, 88, 70]},
+  {c4: [1.3, 30, 55], c2: [1.3, 12, 72]},
+  {c4: [1.16, 55, 40], c2: [1.26, 90, 60]},
+  {c4: [1.25, 90, 70], c2: [1.34, 70, 80]},
+];
+const plan = (n: number, janelas: [string, number, number][]): Clip[] => {
+  const out: Clip[] = []; const usados: Record<string, number> = {};
+  janelas.forEach(([tema, t0, t1]) => {
+    const pool = POOL[tema]; let t = t0; let k = 0;
+    while (t < t1 - 0.05) {
+      const len = Math.min(t1 - t, 2.6 + ((k + n) % 3) * 0.5);
+      const i = ((usados[tema] ?? 0) + n * 2) % pool.length; usados[tema] = (usados[tema] ?? 0) + 1;
+      const tk = pool[i]; const e = (ENQ[n - 1] as any)[tk.src];
+      out.push({src: tk.src, ss: tk.ss + ((k + n) % 2) * 0.4, t0: t, t1: t + len, zoom: e[0], ox: e[1], oy: e[2], blur: tk.blur});
+      t += len; k++;
+    }
+  });
+  return out;
+};
 const utm = (n: number) => `https://vixplaytv.com/teste?utm_source=meta&utm_medium=paid&utm_campaign=criativo${n}`;
 
 // ---------- Criativo 1: gancho de preço (voz: roteiro (1).mp3) ----------
@@ -33,7 +65,7 @@ const r1 = (): Spec => {
     {t0: tPrim, t1: tCta - 0.1, bloco: 'Preco', p: {renova: false, tNum: rel(a('r$'), tPrim), tPix: rel(a('pix'), tPrim) - 0.1}},
     {t0: tCta, t1: dur, bloco: 'CTA', p: {horas: false}},
   ];
-  const clips = [C('c4', 10, tConh - 0.2, tCanais + 0.6), C('c4', 47.5, tCanais + 0.6, a('doramas') - 0.1, 1.2, 70), C('c4', 67, a('doramas') - 0.1, tTudo, 1.2, 70), C('c2', 36, tTudo, tPrim, 1.25, 85, 70), C('c4', 72.5, tPrim, tCta, 1.2)];
+  const clips = plan(1, [['home', 0, tCanais], ['live', tCanais, a('filmes')], ['filmes', a('filmes'), a('doramas')], ['series', a('doramas'), tTudo], ['filmes', tTudo, tPrim], ['novelas', tPrim, tCta], ['home', tCta, dur]]);
   return {id: 'r1', audio: 'vix/r1.mp3', dur, pal, clips, ev, utm: utm(1)};
 };
 
@@ -56,8 +88,7 @@ const r2 = (): Spec => {
     {t0: tSup, t1: tCta - 0.1, bloco: 'Suporte'},
     {t0: tCta, t1: dur, bloco: 'CTA', p: {horas: true}},
   ];
-  const clips = [C('c4', 10, tVeja + 0.3, tCanais + 2), C('c4', 16, tCanais + 2, tFilmes), C('c4', 47, tFilmes, tFilmes + 2.8, 1.2, 70), C('c2', 37, tFilmes + 2.8, tSeries, 1.25, 85, 70),
-    C('c4', 67, tSeries, tTudo, 1.2, 70), C('c2', 41, tTudo, tPreco, 1.25, 85, 70), C('c4', 72, tPreco, tSup), C('c2', 44, tSup, tCta, 1.25, 85, 70)];
+  const clips = plan(2, [['home', 0, tVeja + 0.3], ['home', tVeja + 0.3, tCanais], ['live', tCanais, tFilmes], ['filmes', tFilmes, tSeries], ['series', tSeries, a('novelas')], ['novelas', a('novelas'), tTudo], ['cat', tTudo, tPreco], ['novelas', tPreco, tSup], ['filmes', tSup, tCta], ['home', tCta, dur]]);
   return {id: 'r2', audio: 'vix/r2.mp3', dur, pal, clips, ev, utm: utm(2)};
 };
 
@@ -79,8 +110,7 @@ const r3 = (): Spec => {
     {t0: tPreco, t1: tCta - 0.1, bloco: 'Preco', p: {tNum: rel(a('r$ 35'), tPreco), tRenova: rel(a('renovacao'), tPreco), tPix: rel(a('sem', 0), tPreco)}},
     {t0: tCta, t1: dur, bloco: 'CTA', p: {horas: true}},
   ];
-  const clips = [C('c4', 10, tViX, tDep), C('c2', 36, tDep, tOlha, 1.25, 85, 70), C('c4', 17, tOlha, a('filmes', 1) - 0.2), C('c4', 47, a('filmes', 1) - 0.2, a('doramas') - 0.3, 1.2, 70),
-    C('c4', 67, a('doramas') - 0.3, tTelas - 1.1, 1.2, 70), C('c4', 72, tTelas - 1.1, tCta)];
+  const clips = plan(3, [['live', 0, tViX], ['home', tViX, tDep], ['cat', tDep, tOlha], ['live', tOlha, a('filmes', 1) - 0.2], ['filmes', a('filmes', 1) - 0.2, a('doramas') - 0.3], ['series', a('doramas') - 0.3, tTelas - 1.1], ['novelas', tTelas - 1.1, tCta], ['filmes', tCta, dur]]);
   return {id: 'r3', audio: 'vix/r3.mp3', dur, pal, clips, ev, utm: utm(3)};
 };
 
@@ -104,8 +134,7 @@ const r4 = (): Spec => {
     {t0: tSup, t1: tCta - 0.05, bloco: 'Suporte'},
     {t0: tCta, t1: dur, bloco: 'CTA', p: {horas: true}},
   ];
-  const clips = [C('c4', 10, 0, tCanais), C('c4', 14.6, tCanais, tFilmes), C('c4', 47, tFilmes, a('categorias') - 0.2, 1.2, 70), C('c2', 41, a('categorias') - 0.2, tSeries, 1.25, 85, 70),
-    C('c4', 64.5, tSeries, tNov, 1.2, 70), C('c4', 72, tNov, tTudo), C('c2', 38, tTudo, tPreco, 1.25, 85, 70), C('c4', 74.5, tPreco, tSup), C('c2', 44, tSup, tCta, 1.25, 85, 70)];
+  const clips = plan(4, [['home', 0, tCanais], ['live', tCanais, tFilmes], ['filmes', tFilmes, a('categorias') - 0.2], ['cat', a('categorias') - 0.2, tSeries], ['series', tSeries, tNov], ['novelas', tNov, tTudo], ['filmes', tTudo, tPreco], ['novelas', tPreco, tSup], ['home', tSup, tCta], ['filmes', tCta, dur]]);
   return {id: 'r4', audio: 'vix/r4.mp3', dur, pal, clips, ev, utm: utm(4)};
 };
 

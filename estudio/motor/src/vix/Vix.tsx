@@ -56,12 +56,12 @@ const Legenda: React.FC<{pal: Pal[]; fim: number}> = ({pal, fim}) => {
 // Faixa suave que cobre a legenda original (desfoque forte + degradê até o fundo da marca)
 const Faixa: React.FC = () => (
   <>
-    <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.7, bottom: 0, backdropFilter: 'blur(34px)', WebkitBackdropFilter: 'blur(34px)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, #000 32%)', maskImage: 'linear-gradient(180deg, transparent 0%, #000 32%)'}} />
-    <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.7, bottom: 0, background: `linear-gradient(180deg, rgba(1,2,4,0) 0%, rgba(1,2,4,0.82) 30%, rgba(1,2,4,0.96) 55%, ${V.bg} 100%)`}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.70, bottom: 0, backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(34px)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, #000 22%)', maskImage: 'linear-gradient(180deg, transparent 0%, #000 22%)'}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: H * 0.70, bottom: 0, background: `linear-gradient(180deg, rgba(1,2,4,0) 0%, rgba(1,2,4,0.9) 26%, rgba(1,2,4,0.97) 50%, ${V.bg} 100%)`}} />
     {/* topo: cobre o canto com o nome de outro aplicativo e dá lugar ao nosso selo */}
-    <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 330, backdropFilter: 'blur(26px)', WebkitBackdropFilter: 'blur(26px)', WebkitMaskImage: 'linear-gradient(180deg, #000 30%, transparent 100%)', maskImage: 'linear-gradient(180deg, #000 30%, transparent 100%)'}} />
-    <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 330, background: `linear-gradient(180deg, rgba(1,2,4,0.95) 0%, rgba(1,2,4,0.7) 45%, rgba(1,2,4,0) 100%)`}} />
-    <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 54, top: 60, width: 250}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 250, backdropFilter: 'blur(22px)', WebkitBackdropFilter: 'blur(26px)', WebkitMaskImage: 'linear-gradient(180deg, #000 30%, transparent 100%)', maskImage: 'linear-gradient(180deg, #000 30%, transparent 100%)'}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 250, background: `linear-gradient(180deg, rgba(1,2,4,0.92) 0%, rgba(1,2,4,0.6) 50%, rgba(1,2,4,0) 100%)`}} />
+    <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 54, top: 50, width: 230}} />
   </>
 );
 
@@ -110,7 +110,7 @@ const ClipV: React.FC<{c: Spec['clips'][number]; z: number}> = ({c, z}) => {
   const o = interpolate(f, [0, 6], [0, 1], {extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{opacity: o}}>
-      <OffthreadVideo src={staticFile(`vix/${c.src}.mp4`)} startFrom={Math.round(c.ss * 30)} muted style={{width: W, height: H, objectFit: 'cover', transform: `scale(${z})`, transformOrigin: `${c.ox ?? 82}% ${c.oy ?? 62}%`}} />
+      <OffthreadVideo src={staticFile(`vix/${c.src}.mp4`)} startFrom={Math.round(c.ss * 30)} muted style={{width: W, height: H, objectFit: 'cover', filter: c.blur ? `blur(${c.blur}px)` : undefined, transform: `scale(${z})`, transformOrigin: `${c.ox ?? 82}% ${c.oy ?? 62}%`}} />
     </AbsoluteFill>
   );
 };
