@@ -38,31 +38,13 @@ MAPA = [
     ("clientes", "clientes"), ("outros", "outros"),
     ("motion-demo", "laboratorio/motion-demo"),
     # o "cérebro" (mantido em backup/kit)
-    ("backup/kit/CLAUDE.md", "CLAUDE.md"), ("backup/kit/MIGRACAO.md", "MIGRACAO.md"),
+    ("backup/kit/CLAUDE.md", "CLAUDE.md"), ("backup/kit/LEIA-ME.md", "LEIA-ME.md"), ("backup/kit/MIGRACAO.md", "MIGRACAO.md"),
     ("backup/kit/COMO-TRABALHAR-COM-O-VITOR.md", "COMO-TRABALHAR-COM-O-VITOR.md"),
     ("backup/kit/gitignore", ".gitignore"), ("backup/kit/README.md", "README.md"), ("backup/kit/FICOU-DE-FORA.md", "FICOU-DE-FORA.md"), ("backup/kit/skills", ".claude/skills"),
     ("backup/kit/memoria", "memoria"), ("backup/kit/historico", "historico"),
     ("backup/sincronizar.py", "backup/sincronizar.py"), ("backup/juntar_partes.py", "backup/juntar_partes.py"),
     ("backup/exportar_historico.py", "backup/exportar_historico.py"),
 ]
-# pastas reorganizadas em 05/11/2026 (organizacao/MAPA-DE-CAMINHOS.md): destino antigo -> novo.
-# Sem isto, a cópia recria as pastas antigas no repositório, porque este script nunca apaga nada.
-MOVIDOS = {
-    "estudio/aula-lancamento-obliquo": "pessoal-vitor/aula-lancamento-obliquo",
-    "estudio/makingof-aula": "pessoal-vitor/makingof-aula",
-    "estudio/teste-blender": "laboratorio/teste-blender",
-    "estudio/teste-gancho": "laboratorio/teste-gancho",
-    "estudio/craft": "laboratorio/craft",
-    "estudio/escalados": "laboratorio/escalados",
-    "pesquisa": "organizacao/pesquisa-inicial",
-    "pc": "ferramentas/pc-automacao",
-    "outros/maquina-edicaoia": "clientes/jeronimo/maquina-edicaoia",
-}
-def destino(d):
-    for velho, novo in MOVIDOS.items():
-        if d == velho or d.startswith(velho + "/"):
-            return novo + d[len(velho):]
-    return d
 # pastas e arquivos que nunca entram
 FORA = ["node_modules", "__pycache__", ".cache", ".git", "out", ".build", "frames", "vchunks", "resultados",
         ".env", "*.env", "chaves.env", "*.key", "*.pem", "credentials*", "*.lock.json.bak"]
@@ -106,7 +88,7 @@ def plano():
     for o, d in MAPA:
         src = P / o
         if src.is_file():
-            itens[destino(d)] = (src, "copia"); continue
+            itens[d] = (src, "copia"); continue
         if not src.is_dir(): continue
         for raiz, dirs, arqs in os.walk(src):
             dirs[:] = [x for x in dirs if not fora(x)]
@@ -114,7 +96,7 @@ def plano():
                 f = Path(raiz) / a
                 rel = f.relative_to(src).as_posix()
                 modo = entra(f, f"{o}/{rel}")
-                if modo: itens[destino(f"{d}/{rel}")] = (f, modo)
+                if modo: itens[f"{d}/{rel}"] = (f, modo)
     return itens
 
 def igual(src, dst):
