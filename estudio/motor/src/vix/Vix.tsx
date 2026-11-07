@@ -6,7 +6,7 @@ import '@fontsource/montserrat/800.css';
 import '@fontsource/montserrat/900.css';
 import '@fontsource-variable/inter/opsz.css';
 import {V, TXT, TIT, W, H, Spec, Pal} from './tema';
-import {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca} from './Blocos';
+import {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca, Kin, Mont, Janela} from './Blocos';
 import {SPECS} from './specs';
 
 export type Props = {id: string};
@@ -16,7 +16,7 @@ export const calcula: CalculateMetadataFunction<Props> = ({props}) => {
   return {durationInFrames: Math.round(s.dur * 30), fps: 30, width: W, height: H};
 };
 
-const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca};
+const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca, Kin, Mont, Janela};
 
 // Legenda contínua: Inter 500, base a 87% da altura, até 2 linhas, sem caixa, sem karaokê
 type Cue = {txt: string; s: number; e: number};

@@ -426,12 +426,14 @@
   {
    "id": "G06",
    "t": "0:39",
-   "legenda": "O que ela gostou: chips sobre a imagem de apoio de celular.",
+   "legenda": "O que ela gostou: corte para a tela do nosso aplicativo (sem celular de banco de imagem), com chips.",
    "spec": {
-    "src": "stock/celular",
-    "ss": 3,
-    "zoom": 1.0,
-    "faixa": false,
+    "src": "c4",
+    "faixa": 0.7,
+    "ss": 47,
+    "zoom": 1.25,
+    "ox": 90,
+    "oy": 70,
     "camadas": [
      {
       "bloco": "Secao",

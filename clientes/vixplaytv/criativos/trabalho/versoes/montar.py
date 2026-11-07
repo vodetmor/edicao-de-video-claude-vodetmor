@@ -49,7 +49,7 @@ f("G", "G02", "0:05", "Imagem de apoio (carregando sem parar) com a voz dela.", 
 f("G", "G03", "0:13", "Ela de volta, zoom suave: \"Não é vídeo de venda\".", {**c3, "ss": 14, "zoom": 1.15, "ox": 50, "oy": 30, "legenda": "Eu não tô aqui pra vender nada pra vocês", "f": 12})
 f("G", "G04", "0:24", "O suporte que demora: imagem de apoio de pessoa irritada.", {"src": "stock/frustrado", "ss": 4, "zoom": 1.0, "faixa": False, "legenda": "O suporte demora uma eternidade pra responder", "f": 15})
 f("G", "G05", "0:33", "\"Foi aí que eu encontrei o ...\": nome original mudo, marca estoura.", {**c3, "ss": 33.1, "zoom": 1.0, "ox": 50, "oy": 50, "camadas": [POP], "f": 25})
-f("G", "G06", "0:39", "O que ela gostou: chips sobre a imagem de apoio de celular.", {"src": "stock/celular", "ss": 3, "zoom": 1.0, "faixa": False, "camadas": [{"bloco": "Secao", "p": sec("O que ela gostou", ["Navegação simples", "Filmes", "Séries", "Canais ao vivo"])}], "legenda": "A navegação é simples, tem bastante conteúdo", "f": 100})
+f("G", "G06", "0:39", "O que ela gostou: corte para a tela do nosso aplicativo (sem celular de banco de imagem), com chips.", {"src": "c4", "faixa": 0.70, "ss": 47, "zoom": 1.25, "ox": 90, "oy": 70, "camadas": [{"bloco": "Secao", "p": sec("O que ela gostou", ["Navegação simples", "Filmes", "Séries", "Canais ao vivo"])}], "legenda": "A navegação é simples, tem bastante conteúdo", "f": 100})
 f("G", "G07", "0:46", "Suporte (balões simples, sem nome de pessoa).", {**c3, "ss": 44, "zoom": 1.1, "ox": 50, "oy": 30, "camadas": [{"bloco": "Suporte", "p": {}}], "legenda": "Outra coisa que gostei foi ter suporte", "f": 80})
 f("G", "G08", "0:50", "O pedido de comentário do original sai; entra o botão Saiba mais.", {**c3, "ss": 62, "zoom": 1.1, "ox": 50, "oy": 30, "camadas": [{"bloco": "CTA", "p": CTA}], "legenda": "Clique em Saiba mais", "f": 80})
 
@@ -82,7 +82,7 @@ VERSOES = {
   "jornada": [("Dor", "Paga, começa a assistir e trava."), ("Confiança", "\"Não é vídeo de venda\"."), ("Descoberta", "Nome original mudo, marca estoura."), ("Chamada", "Saiba mais.")],
   "mantem": "A fala da mulher do começo até o trecho do suporte.",
   "tira": "O pedido de comentário (\"comenta a palavra aplicativo\"), que é chamada para engajamento orgânico e não funciona em anúncio pago. O nome Mundo Play fica mudo.",
-  "poe": "Imagens de apoio (carregando sem parar, pessoa irritada, celular), chips do que ela gostou, balões de suporte e painel final com Saiba mais."},
+  "poe": "Imagens de apoio (carregando sem parar, pessoa irritada) e a tela do app, chips do que ela gostou, balões de suporte e painel final com Saiba mais."},
  "H": {"etiqueta": "Versão H · base C4 · cerca de 85 s", "titulo": "Passeio: a cozinha e o menu",
   "ideia": "A mulher na cozinha abre e depois a TV mostra o menu, com a voz dela narrando. É a versão mais longa, com chips acompanhando a fala e as listas de canais desfocadas.",
   "jornada": [("Abertura", "Aqui em casa usamos o app."), ("Dor", "Cansado de pagar vários."), ("Passeio", "Canais, filmes, séries, novelas."), ("Chamada", "Teste gratuito.")],

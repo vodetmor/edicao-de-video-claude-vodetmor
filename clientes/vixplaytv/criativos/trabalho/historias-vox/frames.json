@@ -1,0 +1,985 @@
+{
+ "A": [
+  {
+   "id": "A01",
+   "t": "0:00",
+   "legenda": "três cartões de imagem sobem com a família e o controle; texto grande: DOMINGO À NOITE, UM SÓ CONTROLE.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Mont",
+      "p": {
+       "imgs": [
+        "familia",
+        "controle",
+        "casal"
+       ],
+       "ss": [
+        1,
+        2,
+        3
+       ],
+       "linhas": [
+        {
+         "l": "DOMINGO À NOITE"
+        },
+        {
+         "l": "UM SÓ CONTROLE",
+         "c": "neon"
+        }
+       ]
+      }
+     }
+    ],
+    "f": 45
+   }
+  },
+  {
+   "id": "A02",
+   "t": "0:06",
+   "legenda": "palavras grandes entram uma a uma sobre fundo escuro: CADA UM PEDE UMA COISA.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "CADA UM"
+        },
+        {
+         "l": "PEDE UMA"
+        },
+        {
+         "l": "COISA",
+         "c": "neon"
+        }
+       ],
+       "fs": 132,
+       "top": 620,
+       "sub": "Filme, série, desenho e novela"
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "A03",
+   "t": "0:10",
+   "legenda": "contagem em texto grande: 4 CELULARES, 4 APLICATIVOS, 4 ASSINATURAS.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "4 CELULARES"
+        },
+        {
+         "l": "4 APLICATIVOS"
+        },
+        {
+         "l": "4 ASSINATURAS",
+         "c": "neon"
+        }
+       ],
+       "fs": 96,
+       "top": 620
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "A04",
+   "t": "0:14",
+   "legenda": "a janela com o nosso aplicativo entra com o título CONHEÇA A VIXPLAY TV.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 12,
+       "titulo": [
+        "CONHEÇA A",
+        "VIXPLAY TV"
+       ],
+       "chips": []
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "A05",
+   "t": "0:18",
+   "legenda": "janela do app; chips entram na palavra falada.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 48,
+       "titulo": [
+        "TUDO EM",
+        "UM LUGAR"
+       ],
+       "chips": [
+        "Canais ao vivo",
+        "Filmes",
+        "Séries",
+        "Doramas",
+        "Novelas",
+        "Infantil"
+       ],
+       "ox": 70
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "A06",
+   "t": "0:26",
+   "legenda": "texto grande: ATÉ 3 TELAS; ao lado, sala, quarto e celular.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "ATÉ"
+        },
+        {
+         "l": "3 TELAS",
+         "c": "neon"
+        }
+       ],
+       "fs": 190,
+       "top": 620,
+       "sub": "Na sala, no quarto e no celular"
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "A07",
+   "t": "0:31",
+   "legenda": "preço como cartão grande: R$ 35, Pix, sem cartão.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "PRIMEIRO MÊS"
+        }
+       ],
+       "fs": 150,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "Preco",
+      "p": {
+       "renova": false,
+       "tNum": 0.1,
+       "tPix": 1.0
+      }
+     }
+    ],
+    "f": 105
+   }
+  },
+  {
+   "id": "A08",
+   "t": "0:36",
+   "legenda": "texto grande SEU TESTE GRÁTIS e painel com o botão SAIBA MAIS.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "SEU TESTE"
+        },
+        {
+         "l": "GRÁTIS",
+         "c": "neon"
+        }
+       ],
+       "fs": 120,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "f": 80
+   }
+  }
+ ],
+ "B": [
+  {
+   "id": "B01",
+   "t": "0:00",
+   "legenda": "cartões de imagem com a pessoa e o dinheiro; texto grande: FIM DO MÊS, A CONTA CHEGOU.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Mont",
+      "p": {
+       "imgs": [
+        "dinheiro",
+        "manha",
+        "frustrado"
+       ],
+       "ss": [
+        1,
+        2,
+        3
+       ],
+       "linhas": [
+        {
+         "l": "FIM DO MÊS"
+        },
+        {
+         "l": "A CONTA CHEGOU",
+         "c": "neon"
+        }
+       ]
+      }
+     }
+    ],
+    "f": 45
+   }
+  },
+  {
+   "id": "B02",
+   "t": "0:05",
+   "legenda": "frases grandes entram em sequência: UMA ASSINATURA AQUI, OUTRA ALI.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "UMA ASSINATURA"
+        },
+        {
+         "l": "AQUI,"
+        },
+        {
+         "l": "OUTRA ALI",
+         "c": "neon"
+        }
+       ],
+       "fs": 100,
+       "top": 620
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "B03",
+   "t": "0:11",
+   "legenda": "texto grande pesado: O TOTAL PESA MAIS DO QUE PARECIA.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "O TOTAL"
+        },
+        {
+         "l": "PESA MAIS",
+         "c": "neon"
+        }
+       ],
+       "fs": 132,
+       "top": 620,
+       "sub": "do que parecia"
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "B04",
+   "t": "0:15",
+   "legenda": "a janela com o nosso aplicativo entra: MAIS SIMPLES, UM APP SÓ.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 19,
+       "titulo": [
+        "MAIS SIMPLES:",
+        "UM APP SÓ"
+       ],
+       "chips": [],
+       "ox": 30,
+       "oy": 55,
+       "zoom": 1.6
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "B05",
+   "t": "0:20",
+   "legenda": "janela do app com chips do que tem dentro.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 39,
+       "titulo": [
+        "O QUE TEM",
+        "DENTRO"
+       ],
+       "chips": [
+        "Canais ao vivo",
+        "Filmes",
+        "Séries",
+        "Doramas",
+        "Novelas"
+       ]
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "B06",
+   "t": "0:26",
+   "legenda": "cartão de preço com a linha Renovando em dia: R$ 30.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "A CONTA"
+        },
+        {
+         "l": "FICA SIMPLES",
+         "c": "neon"
+        }
+       ],
+       "fs": 150,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "Preco",
+      "p": {
+       "tNum": 0.1,
+       "tRenova": 1.0,
+       "tPix": 1.4
+      }
+     }
+    ],
+    "f": 105
+   }
+  },
+  {
+   "id": "B07",
+   "t": "0:32",
+   "legenda": "texto grande e painel com SAIBA MAIS e teste de 4 horas.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "TESTE"
+        },
+        {
+         "l": "SEM CARTÃO",
+         "c": "neon"
+        }
+       ],
+       "fs": 120,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "f": 80
+   }
+  }
+ ],
+ "C": [
+  {
+   "id": "C01",
+   "t": "0:00",
+   "legenda": "cartões de imagem com o controle e o celular; texto grande: A AVÓ QUERIA ASSISTIR À NOVELA.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Mont",
+      "p": {
+       "imgs": [
+        "controle",
+        "manha",
+        "celular"
+       ],
+       "ss": [
+        1,
+        2,
+        3
+       ],
+       "linhas": [
+        {
+         "l": "A AVÓ QUERIA"
+        },
+        {
+         "l": "ASSISTIR À NOVELA",
+         "c": "neon"
+        }
+       ]
+      }
+     }
+    ],
+    "f": 45
+   }
+  },
+  {
+   "id": "C02",
+   "t": "0:06",
+   "legenda": "cartões de imagem com o celular; texto grande: O NETO ABRIU O TUTORIAL.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Mont",
+      "p": {
+       "imgs": [
+        "celular",
+        "familia",
+        "controle"
+       ],
+       "ss": [
+        2,
+        1,
+        4
+       ],
+       "linhas": [
+        {
+         "l": "O NETO ABRIU"
+        },
+        {
+         "l": "O TUTORIAL",
+         "c": "neon"
+        }
+       ]
+      }
+     }
+    ],
+    "f": 45
+   }
+  },
+  {
+   "id": "C03",
+   "t": "0:11",
+   "legenda": "três passos grandes entram um a um: ESCOLHE O PLANO, PAGA POR PIX, RECEBE O ACESSO.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "1 ESCOLHE O PLANO"
+        },
+        {
+         "l": "2 PAGA POR PIX"
+        },
+        {
+         "l": "3 RECEBE O ACESSO",
+         "c": "neon"
+        }
+       ],
+       "fs": 86,
+       "top": 640
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "C04",
+   "t": "0:20",
+   "legenda": "janela do app; título TUTORIAL PARA CADA APARELHO; chips Smart TV, TV Box e celular.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 14,
+       "titulo": [
+        "TUTORIAL PARA",
+        "CADA APARELHO"
+       ],
+       "chips": [
+        "Smart TV",
+        "TV Box",
+        "Celular"
+       ],
+       "ox": 90,
+       "oy": 70
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "C05",
+   "t": "0:27",
+   "legenda": "texto grande: DÚVIDA? SUPORTE NO WHATSAPP, com dois balões simples.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "DÚVIDA?"
+        },
+        {
+         "l": "SUPORTE NO"
+        },
+        {
+         "l": "WHATSAPP",
+         "c": "neon"
+        }
+       ],
+       "fs": 132,
+       "top": 620,
+       "sub": "Gente de verdade do outro lado"
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "C06",
+   "t": "0:33",
+   "legenda": "janela do app nas novelas, com chips.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 75,
+       "titulo": [
+        "A NOVELA",
+        "ESTÁ AQUI"
+       ],
+       "chips": [
+        "Novelas",
+        "Filmes",
+        "Séries",
+        "Canais ao vivo",
+        "Infantil"
+       ],
+       "ox": 90,
+       "oy": 70
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "C07",
+   "t": "0:40",
+   "legenda": "preço como cartão grande, com até 3 telas.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "PRIMEIRO MÊS"
+        }
+       ],
+       "fs": 150,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "Preco",
+      "p": {
+       "renova": false,
+       "tNum": 0.1,
+       "tPix": 1.0
+      }
+     }
+    ],
+    "f": 105
+   }
+  },
+  {
+   "id": "C08",
+   "t": "0:45",
+   "legenda": "texto grande e painel com SAIBA MAIS.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "SEU TESTE"
+        },
+        {
+         "l": "GRÁTIS",
+         "c": "neon"
+        }
+       ],
+       "fs": 120,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "f": 80
+   }
+  }
+ ],
+ "D": [
+  {
+   "id": "D01",
+   "t": "0:00",
+   "legenda": "cartões de imagem do casal e do controle; texto grande: ELA QUER SÉRIE, ELE QUER ESPORTE.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Mont",
+      "p": {
+       "imgs": [
+        "casal",
+        "controle",
+        "frustrado"
+       ],
+       "ss": [
+        1,
+        3,
+        2
+       ],
+       "linhas": [
+        {
+         "l": "ELA QUER SÉRIE"
+        },
+        {
+         "l": "ELE QUER ESPORTE",
+         "c": "neon"
+        }
+       ]
+      }
+     }
+    ],
+    "f": 45
+   }
+  },
+  {
+   "id": "D02",
+   "t": "0:06",
+   "legenda": "palavras grandes em sequência: APLICATIVO, LOGIN, MENU, DE NOVO.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "APLICATIVO,"
+        },
+        {
+         "l": "LOGIN,"
+        },
+        {
+         "l": "MENU,"
+        },
+        {
+         "l": "DE NOVO",
+         "c": "neon"
+        }
+       ],
+       "fs": 120,
+       "top": 620
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "D03",
+   "t": "0:11",
+   "legenda": "janela do app com o título POR DENTRO DA VIXPLAY TV.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 11.5,
+       "titulo": [
+        "POR DENTRO DA",
+        "VIXPLAY TV"
+       ],
+       "chips": [],
+       "ox": 90,
+       "oy": 70
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "D04",
+   "t": "0:16",
+   "legenda": "janela do app (listas de canais desfocadas) e chips das categorias.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 20,
+       "titulo": [
+        "CANAIS",
+        "AO VIVO"
+       ],
+       "chips": [
+        "Esportes",
+        "Filmes e séries",
+        "Infantil",
+        "Documentários",
+        "Abertos e fechados"
+       ],
+       "blur": 9
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "D05",
+   "t": "0:22",
+   "legenda": "janela do app nos filmes, com chips.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 47,
+       "titulo": [
+        "FILMES",
+        "LANÇAMENTOS"
+       ],
+       "chips": [
+        "Lançamentos",
+        "Ação",
+        "Comédia",
+        "Drama",
+        "Infantil"
+       ]
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "D06",
+   "t": "0:28",
+   "legenda": "janela do app nas séries, com chips.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Janela",
+      "p": {
+       "ss": 66,
+       "titulo": [
+        "SÉRIES,",
+        "DORAMAS"
+       ],
+       "chips": [
+        "Várias temporadas",
+        "Doramas",
+        "Novelas"
+       ]
+      }
+     }
+    ],
+    "f": 60
+   }
+  },
+  {
+   "id": "D07",
+   "t": "0:33",
+   "legenda": "texto grande ATÉ 3 TELAS.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "ATÉ"
+        },
+        {
+         "l": "3 TELAS",
+         "c": "neon"
+        }
+       ],
+       "fs": 190,
+       "top": 620,
+       "sub": "No mesmo plano"
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "D08",
+   "t": "0:38",
+   "legenda": "cartão de preço com a linha de renovação em dia.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "PRIMEIRO MÊS"
+        },
+        {
+         "l": "R$ 35",
+         "c": "neon"
+        }
+       ],
+       "fs": 150,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "Preco",
+      "p": {
+       "tNum": 0.1,
+       "tRenova": 1.0,
+       "tPix": 1.4
+      }
+     }
+    ],
+    "f": 105
+   }
+  },
+  {
+   "id": "D09",
+   "t": "0:43",
+   "legenda": "texto grande: SUPORTE NO WHATSAPP.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "DÚVIDA?"
+        },
+        {
+         "l": "SUPORTE",
+         "c": "neon"
+        },
+        {
+         "l": "NO WHATSAPP"
+        }
+       ],
+       "fs": 120,
+       "top": 620
+      }
+     }
+    ],
+    "f": 40
+   }
+  },
+  {
+   "id": "D10",
+   "t": "0:47",
+   "legenda": "texto grande e painel com SAIBA MAIS.",
+   "spec": {
+    "camadas": [
+     {
+      "bloco": "Kin",
+      "p": {
+       "linhas": [
+        {
+         "l": "SEU TESTE"
+        },
+        {
+         "l": "GRÁTIS",
+         "c": "neon"
+        }
+       ],
+       "fs": 120,
+       "top": 330
+      }
+     },
+     {
+      "bloco": "CTA",
+      "p": {
+       "horas": true
+      }
+     }
+    ],
+    "f": 80
+   }
+  }
+ ]
+}

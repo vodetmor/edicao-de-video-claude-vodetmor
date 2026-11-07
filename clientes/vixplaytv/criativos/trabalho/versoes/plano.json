@@ -284,7 +284,7 @@
     {
      "id": "G06",
      "t": "0:39",
-     "legenda": "O que ela gostou: chips sobre a imagem de apoio de celular.",
+     "legenda": "O que ela gostou: corte para a tela do nosso aplicativo (sem celular de banco de imagem), com chips.",
      "img": "quadros/G06.jpg"
     },
     {
@@ -312,7 +312,7 @@
      },
      {
       "titulo": "O que entra",
-      "texto": "Imagens de apoio (carregando sem parar, pessoa irritada, celular), chips do que ela gostou, balões de suporte e painel final com Saiba mais."
+      "texto": "Imagens de apoio (carregando sem parar, pessoa irritada) e a tela do app, chips do que ela gostou, balões de suporte e painel final com Saiba mais."
      }
     ],
     "cenas": []

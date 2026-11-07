@@ -1,0 +1,610 @@
+{
+ "titulo": "VixPlay TV · 4 histórias na edição da referência",
+ "arquivo": "VixPlay TV - 4 historias estilo referencia para aprovacao.pdf",
+ "rodape": "VixPlay TV · Histórias na edição da referência · Para aprovação",
+ "formato": "9:16",
+ "quadros_por_pagina": 10,
+ "tema": {
+  "acento": "#99E200",
+  "acento_texto": "#3C7A00",
+  "sobre_acento": "#061000",
+  "fundo": "#F5F6F2",
+  "cartao": "#FFFFFF",
+  "linha": "#E1E5DA",
+  "tinta": "#10140F",
+  "tinta_2": "#2E352B",
+  "cinza": "#7A8576",
+  "escuro": "#010204",
+  "papel": "#F2F7EE",
+  "papel_2": "#A7B5A2",
+  "fonte_titulo": "Archivo",
+  "titulo_caixa_alta": true,
+  "capa_escura": true,
+  "aprovar_escura": true
+ },
+ "capa": {
+  "chamada": "Para aprovação · 4 roteiros",
+  "titulo": "Quatro histórias",
+  "titulo_destaque": "na edição da referência",
+  "texto": "As mesmas histórias A a D, agora com a edição do anúncio de referência: cena cheia, texto grande em movimento, cartões de imagem inclinados, janela com o nosso aplicativo e preço e botão em cartões grandes.",
+  "logo": "logo.png",
+  "logo_altura_mm": 17,
+  "imagens": [
+   "quadros/A05.jpg",
+   "quadros/B03.jpg",
+   "quadros/D01.jpg"
+  ],
+  "numeros": [
+   {
+    "n": "A",
+    "texto": "Domingo à noite: a família disputa o controle."
+   },
+   {
+    "n": "B",
+    "texto": "A conta do mês: o caderno e a calculadora."
+   },
+   {
+    "n": "C",
+    "texto": "O tutorial do neto: instalar e usar."
+   },
+   {
+    "n": "D",
+    "texto": "Tudo no mesmo lugar: o casal e o menu."
+   }
+  ]
+ },
+ "videos": [
+  {
+   "etiqueta": "Criativo A · cerca de 40 s · 8 quadros",
+   "titulo": "Domingo à noite",
+   "ideia": "Uma família disputa o controle. Cada um num aplicativo; a VixPlay TV junta tudo e todo mundo assiste junto.",
+   "jornada": [
+    {
+     "titulo": "Conflito",
+     "texto": "Todos querem coisas diferentes."
+    },
+    {
+     "titulo": "Descoberta",
+     "texto": "Alguém lembra da VixPlay TV."
+    },
+    {
+     "titulo": "Solução",
+     "texto": "Tudo no mesmo lugar, em até 3 telas."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35 no 1º mês, Pix, teste de 4 horas."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "A01",
+     "t": "0:00",
+     "legenda": "três cartões de imagem sobem com a família e o controle; texto grande: DOMINGO À NOITE, UM SÓ CONTROLE.",
+     "img": "quadros/A01.jpg"
+    },
+    {
+     "id": "A02",
+     "t": "0:06",
+     "legenda": "palavras grandes entram uma a uma sobre fundo escuro: CADA UM PEDE UMA COISA.",
+     "img": "quadros/A02.jpg"
+    },
+    {
+     "id": "A03",
+     "t": "0:10",
+     "legenda": "contagem em texto grande: 4 CELULARES, 4 APLICATIVOS, 4 ASSINATURAS.",
+     "img": "quadros/A03.jpg"
+    },
+    {
+     "id": "A04",
+     "t": "0:14",
+     "legenda": "a janela com o nosso aplicativo entra com o título CONHEÇA A VIXPLAY TV.",
+     "img": "quadros/A04.jpg"
+    },
+    {
+     "id": "A05",
+     "t": "0:18",
+     "legenda": "janela do app; chips entram na palavra falada.",
+     "img": "quadros/A05.jpg"
+    },
+    {
+     "id": "A06",
+     "t": "0:26",
+     "legenda": "texto grande: ATÉ 3 TELAS; ao lado, sala, quarto e celular.",
+     "img": "quadros/A06.jpg"
+    },
+    {
+     "id": "A07",
+     "t": "0:31",
+     "legenda": "preço como cartão grande: R$ 35, Pix, sem cartão.",
+     "img": "quadros/A07.jpg"
+    },
+    {
+     "id": "A08",
+     "t": "0:36",
+     "legenda": "texto grande SEU TESTE GRÁTIS e painel com o botão SAIBA MAIS.",
+     "img": "quadros/A08.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Domingo à noite. A família toda no sofá, pipoca pronta, e a disputa de sempre: o que vamos assistir? Um quer filme, outro quer série, a criança pede desenho e a avó só quer a novela. Cada um num aplicativo, cada um com uma assinatura. Foi aí que alguém lembrou da Vix Play TV. Canais ao vivo, filmes, séries, doramas, novelas e infantil, tudo em um só aplicativo. Em até três telas: na sala, no quarto e no celular. O primeiro mês custa trinta e cinco reais, no Pix, sem cartão e sem fidelidade. Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "Domingo à noite. A família toda no sofá, pipoca pronta, e a disputa de sempre: o que vamos assistir?",
+      "direcao": "A01: três cartões de imagem sobem com a família e o controle; texto grande: DOMINGO À NOITE, UM SÓ CONTROLE."
+     },
+     {
+      "t": "0:06",
+      "fala": "Um quer filme, outro quer série, a criança pede desenho e a avó só quer a novela.",
+      "direcao": "A02: palavras grandes entram uma a uma sobre fundo escuro: CADA UM PEDE UMA COISA."
+     },
+     {
+      "t": "0:10",
+      "fala": "Cada um num aplicativo, cada um com uma assinatura.",
+      "direcao": "A03: contagem em texto grande: 4 CELULARES, 4 APLICATIVOS, 4 ASSINATURAS."
+     },
+     {
+      "t": "0:14",
+      "fala": "Foi aí que alguém lembrou da Vix Play TV.",
+      "direcao": "A04: a janela com o nosso aplicativo entra com o título CONHEÇA A VIXPLAY TV."
+     },
+     {
+      "t": "0:18",
+      "fala": "Canais ao vivo, filmes, séries, doramas, novelas e infantil, tudo em um só aplicativo.",
+      "direcao": "A05: janela do app; chips entram na palavra falada."
+     },
+     {
+      "t": "0:26",
+      "fala": "Em até três telas: na sala, no quarto e no celular.",
+      "direcao": "A06: texto grande: ATÉ 3 TELAS; ao lado, sala, quarto e celular."
+     },
+     {
+      "t": "0:31",
+      "fala": "O primeiro mês custa trinta e cinco reais, no Pix, sem cartão e sem fidelidade.",
+      "direcao": "A07: preço como cartão grande: R$ 35, Pix, sem cartão."
+     },
+     {
+      "t": "0:36",
+      "fala": "Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+      "direcao": "A08: texto grande SEU TESTE GRÁTIS e painel com o botão SAIBA MAIS."
+     }
+    ]
+   }
+  },
+  {
+   "etiqueta": "Criativo B · cerca de 36 s · 7 quadros",
+   "titulo": "A conta do mês",
+   "ideia": "Caderno e calculadora no fim do mês: a soma das assinaturas assusta. A VixPlay TV reúne tudo em um aplicativo só.",
+   "jornada": [
+    {
+     "titulo": "Cena",
+     "texto": "Fim do mês, caderno aberto."
+    },
+    {
+     "titulo": "Susto",
+     "texto": "O total é maior do que parecia."
+    },
+    {
+     "titulo": "Caminho",
+     "texto": "Tudo em um aplicativo."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, depois R$ 30 em dia."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "B01",
+     "t": "0:00",
+     "legenda": "cartões de imagem com a pessoa e o dinheiro; texto grande: FIM DO MÊS, A CONTA CHEGOU.",
+     "img": "quadros/B01.jpg"
+    },
+    {
+     "id": "B02",
+     "t": "0:05",
+     "legenda": "frases grandes entram em sequência: UMA ASSINATURA AQUI, OUTRA ALI.",
+     "img": "quadros/B02.jpg"
+    },
+    {
+     "id": "B03",
+     "t": "0:11",
+     "legenda": "texto grande pesado: O TOTAL PESA MAIS DO QUE PARECIA.",
+     "img": "quadros/B03.jpg"
+    },
+    {
+     "id": "B04",
+     "t": "0:15",
+     "legenda": "a janela com o nosso aplicativo entra: MAIS SIMPLES, UM APP SÓ.",
+     "img": "quadros/B04.jpg"
+    },
+    {
+     "id": "B05",
+     "t": "0:20",
+     "legenda": "janela do app com chips do que tem dentro.",
+     "img": "quadros/B05.jpg"
+    },
+    {
+     "id": "B06",
+     "t": "0:26",
+     "legenda": "cartão de preço com a linha Renovando em dia: R$ 30.",
+     "img": "quadros/B06.jpg"
+    },
+    {
+     "id": "B07",
+     "t": "0:32",
+     "legenda": "texto grande e painel com SAIBA MAIS e teste de 4 horas.",
+     "img": "quadros/B07.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Fim do mês. Em cima da mesa, o caderno e a calculadora. Uma assinatura de filmes, outra de séries, outra de esportes, outra de infantil. Soma daqui, soma dali, e o total chega maior do que parecia. Existe um jeito mais simples de organizar isso. A Vix Play TV reúne tudo em um aplicativo só. Canais ao vivo, filmes, séries, doramas e novelas. O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta. Pix, sem cartão e sem renovação automática. Toque em Saiba mais.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "Fim do mês. Em cima da mesa, o caderno e a calculadora.",
+      "direcao": "B01: cartões de imagem com a pessoa e o dinheiro; texto grande: FIM DO MÊS, A CONTA CHEGOU."
+     },
+     {
+      "t": "0:05",
+      "fala": "Uma assinatura de filmes, outra de séries, outra de esportes, outra de infantil.",
+      "direcao": "B02: frases grandes entram em sequência: UMA ASSINATURA AQUI, OUTRA ALI."
+     },
+     {
+      "t": "0:11",
+      "fala": "Soma daqui, soma dali, e o total chega maior do que parecia.",
+      "direcao": "B03: texto grande pesado: O TOTAL PESA MAIS DO QUE PARECIA."
+     },
+     {
+      "t": "0:15",
+      "fala": "Existe um jeito mais simples de organizar isso. A Vix Play TV reúne tudo em um aplicativo só.",
+      "direcao": "B04: a janela com o nosso aplicativo entra: MAIS SIMPLES, UM APP SÓ."
+     },
+     {
+      "t": "0:20",
+      "fala": "Canais ao vivo, filmes, séries, doramas e novelas.",
+      "direcao": "B05: janela do app com chips do que tem dentro."
+     },
+     {
+      "t": "0:26",
+      "fala": "O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta.",
+      "direcao": "B06: cartão de preço com a linha Renovando em dia: R$ 30."
+     },
+     {
+      "t": "0:32",
+      "fala": "Pix, sem cartão e sem renovação automática. Toque em Saiba mais.",
+      "direcao": "B07: texto grande e painel com SAIBA MAIS e teste de 4 horas."
+     }
+    ]
+   }
+  },
+  {
+   "etiqueta": "Criativo C · cerca de 48 s · 8 quadros",
+   "titulo": "O tutorial do neto",
+   "ideia": "O neto instala o aplicativo para a avó seguindo o tutorial do aparelho. Mostra o processo simples e o suporte.",
+   "jornada": [
+    {
+     "titulo": "Cena",
+     "texto": "Avó indecisa, neto ao lado."
+    },
+    {
+     "titulo": "Passo a passo",
+     "texto": "Plano, Pix, acesso pelo WhatsApp."
+    },
+    {
+     "titulo": "Instalação",
+     "texto": "Tutorial para cada aparelho."
+    },
+    {
+     "titulo": "Resultado",
+     "texto": "Ela acha a novela. R$ 35."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "C01",
+     "t": "0:00",
+     "legenda": "cartões de imagem com o controle e o celular; texto grande: A AVÓ QUERIA ASSISTIR À NOVELA.",
+     "img": "quadros/C01.jpg"
+    },
+    {
+     "id": "C02",
+     "t": "0:06",
+     "legenda": "cartões de imagem com o celular; texto grande: O NETO ABRIU O TUTORIAL.",
+     "img": "quadros/C02.jpg"
+    },
+    {
+     "id": "C03",
+     "t": "0:11",
+     "legenda": "três passos grandes entram um a um: ESCOLHE O PLANO, PAGA POR PIX, RECEBE O ACESSO.",
+     "img": "quadros/C03.jpg"
+    },
+    {
+     "id": "C04",
+     "t": "0:20",
+     "legenda": "janela do app; título TUTORIAL PARA CADA APARELHO; chips Smart TV, TV Box e celular.",
+     "img": "quadros/C04.jpg"
+    },
+    {
+     "id": "C05",
+     "t": "0:27",
+     "legenda": "texto grande: DÚVIDA? SUPORTE NO WHATSAPP, com dois balões simples.",
+     "img": "quadros/C05.jpg"
+    },
+    {
+     "id": "C06",
+     "t": "0:33",
+     "legenda": "janela do app nas novelas, com chips.",
+     "img": "quadros/C06.jpg"
+    },
+    {
+     "id": "C07",
+     "t": "0:40",
+     "legenda": "preço como cartão grande, com até 3 telas.",
+     "img": "quadros/C07.jpg"
+    },
+    {
+     "id": "C08",
+     "t": "0:45",
+     "legenda": "texto grande e painel com SAIBA MAIS.",
+     "img": "quadros/C08.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "A avó queria assistir à novela no quarto, mas não sabia por onde começar. O neto sentou do lado e resolveu em poucos passos. Ele escolheu o plano, pagou por Pix e recebeu o acesso pelo WhatsApp. Depois abriu o tutorial do aparelho e instalou pelo Downloader, com um código. Tem tutorial para cada aparelho. Se aparece uma dúvida, o suporte atende pelo WhatsApp. Lá dentro tem novelas, filmes, séries, canais ao vivo e infantil. O primeiro mês custa trinta e cinco reais, em até três telas na mesma casa. Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "A avó queria assistir à novela no quarto, mas não sabia por onde começar.",
+      "direcao": "C01: cartões de imagem com o controle e o celular; texto grande: A AVÓ QUERIA ASSISTIR À NOVELA."
+     },
+     {
+      "t": "0:06",
+      "fala": "O neto sentou do lado e resolveu em poucos passos.",
+      "direcao": "C02: cartões de imagem com o celular; texto grande: O NETO ABRIU O TUTORIAL."
+     },
+     {
+      "t": "0:11",
+      "fala": "Ele escolheu o plano, pagou por Pix e recebeu o acesso pelo WhatsApp.",
+      "direcao": "C03: três passos grandes entram um a um: ESCOLHE O PLANO, PAGA POR PIX, RECEBE O ACESSO."
+     },
+     {
+      "t": "0:20",
+      "fala": "Depois abriu o tutorial do aparelho e instalou pelo Downloader, com um código. Tem tutorial para cada aparelho.",
+      "direcao": "C04: janela do app; título TUTORIAL PARA CADA APARELHO; chips Smart TV, TV Box e celular."
+     },
+     {
+      "t": "0:27",
+      "fala": "Se aparece uma dúvida, o suporte atende pelo WhatsApp.",
+      "direcao": "C05: texto grande: DÚVIDA? SUPORTE NO WHATSAPP, com dois balões simples."
+     },
+     {
+      "t": "0:33",
+      "fala": "Lá dentro tem novelas, filmes, séries, canais ao vivo e infantil.",
+      "direcao": "C06: janela do app nas novelas, com chips."
+     },
+     {
+      "t": "0:40",
+      "fala": "O primeiro mês custa trinta e cinco reais, em até três telas na mesma casa.",
+      "direcao": "C07: preço como cartão grande, com até 3 telas."
+     },
+     {
+      "t": "0:45",
+      "fala": "Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+      "direcao": "C08: texto grande e painel com SAIBA MAIS."
+     }
+    ]
+   }
+  },
+  {
+   "etiqueta": "Criativo D · cerca de 50 s · 10 quadros",
+   "titulo": "Tudo no mesmo lugar",
+   "ideia": "Um casal cansado de trocar de aplicativo ganha um menu só, e o vídeo faz o passeio completo por dentro do app.",
+   "jornada": [
+    {
+     "titulo": "Atrito",
+     "texto": "Ela quer série, ele quer esporte."
+    },
+    {
+     "titulo": "Virada",
+     "texto": "Tudo no mesmo menu."
+    },
+    {
+     "titulo": "Passeio",
+     "texto": "Canais, filmes, séries, doramas, novelas."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, suporte, teste."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "D01",
+     "t": "0:00",
+     "legenda": "cartões de imagem do casal e do controle; texto grande: ELA QUER SÉRIE, ELE QUER ESPORTE.",
+     "img": "quadros/D01.jpg"
+    },
+    {
+     "id": "D02",
+     "t": "0:06",
+     "legenda": "palavras grandes em sequência: APLICATIVO, LOGIN, MENU, DE NOVO.",
+     "img": "quadros/D02.jpg"
+    },
+    {
+     "id": "D03",
+     "t": "0:11",
+     "legenda": "janela do app com o título POR DENTRO DA VIXPLAY TV.",
+     "img": "quadros/D03.jpg"
+    },
+    {
+     "id": "D04",
+     "t": "0:16",
+     "legenda": "janela do app (listas de canais desfocadas) e chips das categorias.",
+     "img": "quadros/D04.jpg"
+    },
+    {
+     "id": "D05",
+     "t": "0:22",
+     "legenda": "janela do app nos filmes, com chips.",
+     "img": "quadros/D05.jpg"
+    },
+    {
+     "id": "D06",
+     "t": "0:28",
+     "legenda": "janela do app nas séries, com chips.",
+     "img": "quadros/D06.jpg"
+    },
+    {
+     "id": "D07",
+     "t": "0:33",
+     "legenda": "texto grande ATÉ 3 TELAS.",
+     "img": "quadros/D07.jpg"
+    },
+    {
+     "id": "D08",
+     "t": "0:38",
+     "legenda": "cartão de preço com a linha de renovação em dia.",
+     "img": "quadros/D08.jpg"
+    },
+    {
+     "id": "D09",
+     "t": "0:43",
+     "legenda": "texto grande: SUPORTE NO WHATSAPP.",
+     "img": "quadros/D09.jpg"
+    },
+    {
+     "id": "D10",
+     "t": "0:47",
+     "legenda": "texto grande e painel com SAIBA MAIS.",
+     "img": "quadros/D10.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Ela quer série, ele quer esporte, e a TV vive trocando de aplicativo. Aplicativo, login, menu, de novo. Agora tudo fica no mesmo lugar. Abre a Vix Play TV e o menu é direto. Em canais ao vivo tem esportes, filmes e séries, infantil, documentários, canais abertos e fechados. Em filmes, uma seção só de lançamentos e categorias como ação, comédia e drama. Em séries, várias temporadas e um espaço só para doramas, e tem novelas também. Até três telas no mesmo plano: sala, quarto e celular. O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta. Pix, sem cartão e sem fidelidade. Se tiver dúvida, o suporte atende pelo WhatsApp. Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+    "cenas": [
+     {
+      "t": "0:00",
+      "fala": "Ela quer série, ele quer esporte, e a TV vive trocando de aplicativo.",
+      "direcao": "D01: cartões de imagem do casal e do controle; texto grande: ELA QUER SÉRIE, ELE QUER ESPORTE."
+     },
+     {
+      "t": "0:06",
+      "fala": "Aplicativo, login, menu, de novo.",
+      "direcao": "D02: palavras grandes em sequência: APLICATIVO, LOGIN, MENU, DE NOVO."
+     },
+     {
+      "t": "0:11",
+      "fala": "Agora tudo fica no mesmo lugar. Abre a Vix Play TV e o menu é direto.",
+      "direcao": "D03: janela do app com o título POR DENTRO DA VIXPLAY TV."
+     },
+     {
+      "t": "0:16",
+      "fala": "Em canais ao vivo tem esportes, filmes e séries, infantil, documentários, canais abertos e fechados.",
+      "direcao": "D04: janela do app (listas de canais desfocadas) e chips das categorias."
+     },
+     {
+      "t": "0:22",
+      "fala": "Em filmes, uma seção só de lançamentos e categorias como ação, comédia e drama.",
+      "direcao": "D05: janela do app nos filmes, com chips."
+     },
+     {
+      "t": "0:28",
+      "fala": "Em séries, várias temporadas e um espaço só para doramas, e tem novelas também.",
+      "direcao": "D06: janela do app nas séries, com chips."
+     },
+     {
+      "t": "0:33",
+      "fala": "Até três telas no mesmo plano: sala, quarto e celular.",
+      "direcao": "D07: texto grande ATÉ 3 TELAS."
+     },
+     {
+      "t": "0:38",
+      "fala": "O primeiro mês custa trinta e cinco reais, e a renovação em dia, trinta. Pix, sem cartão e sem fidelidade.",
+      "direcao": "D08: cartão de preço com a linha de renovação em dia."
+     },
+     {
+      "t": "0:43",
+      "fala": "Se tiver dúvida, o suporte atende pelo WhatsApp.",
+      "direcao": "D09: texto grande: SUPORTE NO WHATSAPP."
+     },
+     {
+      "t": "0:47",
+      "fala": "Toque em Saiba mais e solicite o seu teste grátis de quatro horas.",
+      "direcao": "D10: texto grande e painel com SAIBA MAIS."
+     }
+    ]
+   }
+  }
+ ],
+ "som": {
+  "titulo": "Voz, música e efeitos",
+  "texto": "Locução de narrador por história, no ritmo da referência: frase curta, palavra-chave grande na tela no momento em que é falada.",
+  "cartoes": [
+   {
+    "titulo": "Voz",
+    "texto": "Locução no ElevenLabs a partir do texto Narração de cada roteiro, 2 takes. Voz brasileira, ritmo firme e claro."
+   },
+   {
+    "titulo": "Música",
+    "texto": "Faixa instrumental por criativo, 18 a 22 LU abaixo da voz, com ducking. As faixas de teste são prévias da Epidemic; antes de anunciar, baixar com a licença do plano."
+   },
+   {
+    "titulo": "Volume final",
+    "texto": "-14 LUFS, pico máximo -1 dBTP."
+   }
+  ],
+  "efeitos": [
+   [
+    "Palavra grande entra",
+    "toque curto e seco"
+   ],
+   [
+    "Cartões de imagem sobem",
+    "deslize suave"
+   ],
+   [
+    "Preço sobe até R$ 35",
+    "tique suave"
+   ],
+   [
+    "Botão SAIBA MAIS",
+    "toque discreto, uma vez"
+   ]
+  ]
+ },
+ "aprovar": {
+  "titulo": "Para aprovar",
+  "itens": [
+   {
+    "texto": "O estilo da edição (texto grande, cartões, janela do app)",
+    "nota": "Montado a partir do anúncio de referência que o Deidson enviou."
+   },
+   {
+    "texto": "A história do criativo A (Domingo à noite)"
+   },
+   {
+    "texto": "A história do criativo B (A conta do mês)"
+   },
+   {
+    "texto": "A história do criativo C (O tutorial do neto)"
+   },
+   {
+    "texto": "A história do criativo D (Tudo no mesmo lugar)"
+   },
+   {
+    "texto": "Imagens de apoio de banco de imagens grátis (Pexels)",
+    "nota": "Pessoas e cenas vêm do Pexels; se preferirem cenas geradas no Google Flow, trocamos os cartões."
+   },
+   {
+    "texto": "Os textos de narração",
+    "nota": "Só fatos já confirmados: R$ 35, R$ 30 em dia, 3 telas, Pix, suporte pelo WhatsApp, teste de 4 horas."
+   },
+   {
+    "texto": "Música e volume"
+   }
+  ],
+  "nota_final": "Para ajustar, cite o código (ex.: muda o B03). Depois da aprovação, geramos as vozes e renderizamos um de cada vez."
+ }
+}

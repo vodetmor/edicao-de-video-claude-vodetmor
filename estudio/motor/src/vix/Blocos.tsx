@@ -1,5 +1,5 @@
 import React from 'react';
-import {Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Img, interpolate, OffthreadVideo, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {V, TIT, TXT, W} from './tema';
 
 // v2 (06/11): motion COMPACTO por cima da imagem. Nada de fundo chapado nem escurecer a TV:
@@ -256,6 +256,90 @@ export const PopMarca: React.FC<{dur: number; texto?: string; top?: number; w?: 
     <div style={{position: 'absolute', left: 0, right: 0, top, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: sai(t, dur, 0.2)}}>
       <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{width: w, transform: `scale(${0.6 + 0.4 * m})`, opacity: clamp01(m), filter: 'drop-shadow(0 6px 24px rgba(1,2,4,0.95))'}} />
       {texto && <div style={{marginTop: 18, fontFamily: TXT, fontWeight: 800, fontSize: 50, color: V.txt, textShadow: SOMBRA, opacity: clamp01(mola(f, fps, 0.3))}}>{texto}</div>}
+    </div>
+  );
+};
+
+// ---------- Estilo "Vox" (referência do Deidson, 06/11): cena cheia, texto grande em movimento, cartões de imagem, janela com o nosso app ----------
+const FUNDO: React.CSSProperties = {
+  position: 'absolute', inset: 0, background: V.bg,
+  backgroundImage: `linear-gradient(${V.linha} 1px, transparent 1px), linear-gradient(90deg, ${V.linha} 1px, transparent 1px)`,
+  backgroundSize: '90px 90px', backgroundPosition: 'center',
+};
+const Topo: React.FC<{w?: number}> = ({w = 300}) => (
+  <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 0, right: 0, margin: '0 auto', top: 150, width: w}} />
+);
+const GRANDE: React.CSSProperties = {fontFamily: TIT, fontWeight: 900, fontStyle: 'italic', textTransform: 'uppercase', lineHeight: 1.0, textAlign: 'center', letterSpacing: -2};
+
+// linhas grandes entrando em sequência; c: 'neon' (verde), 'out' (contorno), padrão branco
+export const Kin: React.FC<{dur: number; linhas: {l: string; c?: string; t?: number}[]; sub?: string; fs?: number; top?: number; logo?: boolean}> = ({dur, linhas, sub, fs = 132, top = 620, logo = true}) => {
+  const {f, fps, t} = useT();
+  return (
+    <div style={{position: 'absolute', inset: 0, opacity: sai(t, dur, 0.15)}}>
+      <div style={FUNDO} />
+      {logo && <Topo />}
+      <div style={{position: 'absolute', left: 50, right: 50, top}}>
+        {linhas.map((x, i) => {
+          const m = mola(f, fps, x.t ?? 0.12 + i * 0.22, 14);
+          return (
+            <div key={i} style={{...GRANDE, fontSize: fs, color: x.c === 'neon' ? V.neon : V.txt, WebkitTextStroke: x.c === 'out' ? `3px ${V.txt}` : undefined, ...(x.c === 'out' ? {color: 'transparent'} : {}),
+              transform: `translateY(${(1 - m) * 60}px)`, opacity: clamp01(m), textShadow: x.c === 'neon' ? '0 0 30px rgba(153,226,0,0.45)' : undefined}}>{x.l}</div>
+          );
+        })}
+        {sub && <div style={{marginTop: 34, textAlign: 'center', fontFamily: TXT, fontWeight: 600, fontSize: 48, color: V.apoio, opacity: clamp01(mola(f, fps, 0.12 + linhas.length * 0.22 + 0.1))}}>{sub}</div>}
+      </div>
+    </div>
+  );
+};
+
+// três cartões de imagem (banco de imagens) levemente inclinados, com legenda grande embaixo
+export const Mont: React.FC<{dur: number; imgs: string[]; ss?: number[]; linhas?: {l: string; c?: string}[]}> = ({dur, imgs, ss = [1, 2, 3], linhas = []}) => {
+  const {f, fps, t} = useT();
+  const pos = [{x: 40, y: 430, w: 440, h: 780, r: -4}, {x: 330, y: 380, w: 470, h: 860, r: 0}, {x: 600, y: 430, w: 440, h: 780, r: 4}];
+  return (
+    <div style={{position: 'absolute', inset: 0, opacity: sai(t, dur, 0.15)}}>
+      <div style={FUNDO} />
+      <Topo w={260} />
+      {imgs.slice(0, 3).map((s, i) => {
+        const m = mola(f, fps, 0.05 + i * 0.12, 15);
+        const p = pos[i];
+        return (
+          <div key={i} style={{position: 'absolute', left: p.x, top: p.y, width: p.w, height: p.h, borderRadius: 30, overflow: 'hidden', border: `3px solid ${i === 1 ? V.neon : V.linhaForte}`, zIndex: i === 1 ? 2 : 1,
+            transform: `translateY(${(1 - m) * 90}px) rotate(${p.r}deg) scale(${0.92 + 0.08 * m})`, opacity: clamp01(m), boxShadow: '0 14px 40px rgba(1,2,4,0.8)'}}>
+            <OffthreadVideo src={staticFile(`vix/stock/${s}.mp4`)} startFrom={Math.round((ss[i] ?? 1) * 30)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          </div>
+        );
+      })}
+      <div style={{position: 'absolute', left: 50, right: 50, top: 1330}}>
+        {linhas.map((x, i) => {
+          const m = mola(f, fps, 0.4 + i * 0.2, 14);
+          return <div key={i} style={{...GRANDE, fontSize: 96, color: x.c === 'neon' ? V.neon : V.txt, transform: `translateY(${(1 - m) * 40}px)`, opacity: clamp01(m)}}>{x.l}</div>;
+        })}
+      </div>
+    </div>
+  );
+};
+
+// janela com o nosso aplicativo (recorte da TV do c4) e título grande em cima
+export const Janela: React.FC<{dur: number; ss: number; titulo?: string[]; chips?: string[]; zoom?: number; ox?: number; oy?: number; blur?: number}> = ({dur, ss, titulo = [], chips = [], zoom = 1.9, ox = 88, oy = 62, blur}) => {
+  const {f, fps, t} = useT();
+  const m = mola(f, fps, 0.08, 15);
+  return (
+    <div style={{position: 'absolute', inset: 0, opacity: sai(t, dur, 0.15)}}>
+      <div style={FUNDO} />
+      <Topo w={260} />
+      <div style={{position: 'absolute', left: 50, right: 50, top: 400}}>
+        {titulo.map((l, i) => {
+          const mm = mola(f, fps, 0.1 + i * 0.18, 14);
+          return <div key={i} style={{...GRANDE, fontSize: 104, color: i === titulo.length - 1 ? V.neon : V.txt, transform: `translateY(${(1 - mm) * 40}px)`, opacity: clamp01(mm)}}>{l}</div>;
+        })}
+      </div>
+      <div style={{position: 'absolute', left: 60, top: 760, width: 960, height: 760, borderRadius: 34, overflow: 'hidden', border: `3px solid ${V.neon}`, boxShadow: '0 0 40px rgba(153,226,0,0.25)', transform: `translateY(${(1 - m) * 80}px) scale(${0.94 + 0.06 * m})`, opacity: clamp01(m)}}>
+        <OffthreadVideo src={staticFile('vix/c4.mp4')} startFrom={Math.round(ss * 30)} muted style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, transformOrigin: `${ox}% ${oy}%`, filter: blur ? `blur(${blur}px)` : undefined}} />
+      </div>
+      <div style={{position: 'absolute', left: 60, right: 60, top: 1580, display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center'}}>
+        {chips.map((c, i) => <Chip key={i} label={c} delay={0.5 + i * 0.2} dur={dur} destaque={i === chips.length - 1} />)}
+      </div>
     </div>
   );
 };
