@@ -74,3 +74,4 @@
 - [[editor-video-falado]]: 2026-10-29 estudio/editor = raw talking video -> edited (cuts, face, captions, 5 styles, review panel localhost:8080) + skill editar-video; product base for Jerônimo.
 
 - [[entrega-previas-video]]: thread caps at 24 attachments; deliver previews as a light Artifact player page and archive old versions on his PC (Maquina de Editar\clientes\...\previas). Keep messages short (Vítor 2026-10-31).
+- [[skill-pdf-aprovacao]]: 2026-11-06 reusable approval-PDF skill (plano.json -> PDF via headless Chrome/Edge) in skills/pdf-aprovacao + .zip; use for every approval gate.
