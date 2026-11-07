@@ -1,0 +1,8 @@
+{
+  "name": "vixplay-avo-neto",
+  "title": "VixPlay TV · A vovó e o neto",
+  "format": { "width": 1080, "height": 1920, "fps": 24, "bpm": 120, "duration": 30.0, "frames": 720 },
+  "storyFormat": "beat cuts (6 worlds, hard cuts)",
+  "style": "vixplay-papel",
+  "review": { "safe": { "top": 240, "bottom": 420, "right": 140 }, "refs": {} }
+}

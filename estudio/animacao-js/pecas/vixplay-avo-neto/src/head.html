@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VixPlay TV · A vovó e o neto</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #031409; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  CUT PAPER DEMO — 9:16, 8.0s @ 120 BPM, 24fps. Two eras joined by one shape morph (the moon becomes the sun).
+//  Replace the eras, shots, cues, acts and board with your piece's. Build: node <skill>/tools/build.mjs <this piece dir>
+//  Open index.html in a browser to preview (click to hear the score; ?t=2.5 freezes a frame).
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;   // 0.5 / 0.25 / 0.125s = 12 / 6 / 3 frames
+const DURATION = 30.0;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };          // 9:16 platform UI; keep content in x 60–940, y 250–1500
+const HAND = '"Ink Free", "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", cursive';   // local handwriting fonts: Windows, macOS, Linux
+const CX = 470;                                               // caption centre (left of the right-hand UI strip)
+
+// eras: [t0, t1, scene]. Boundaries with a BRIDGE (src/bridges.js) morph; the rest are hard cuts.
+const ERA_LIST = [[0, 2.0, () => shot(0)], [2.0, 4.0, () => shot(1)], [4.0, 5.5, () => shot(2)], [5.5, 7.5, () => shot(3)], [7.5, 9.0, () => shot(4)], [9.0, 10.5, () => shot(5)], [10.5, 12.0, () => shot(6)], [12.0, 13.5, () => shot(7)], [13.5, 15.0, () => shot(8)], [15.0, 17.0, () => shot(9)], [17.0, 18.5, () => shot(10)], [18.5, 20.5, () => shot(11)], [20.5, 22.0, () => shot(12)], [22.0, 24.0, () => shot(13)], [24.0, 25.5, () => shot(14)], [25.5, 27.0, () => shot(15)], [27.0, 30.0, () => shot(16)]];
+const SHOTS = [
+  ['vovo', 0, 0, 2.0, 'vovo'],
+  ['tv', 1, 2.0, 4.0, 'tv'],
+  ['neto-chega', 2, 4.0, 5.5, 'neto-chega'],
+  ['neto-celular', 3, 5.5, 7.5, 'neto-celular'],
+  ['tutorial', 4, 7.5, 9.0, 'tutorial'],
+  ['passo1', 5, 9.0, 10.5, 'passo1'],
+  ['passo2', 6, 10.5, 12.0, 'passo2'],
+  ['passo3', 7, 12.0, 13.5, 'passo3'],
+  ['cada-aparelho', 8, 13.5, 15.0, 'cada-aparelho'],
+  ['aparelhos', 9, 15.0, 17.0, 'aparelhos'],
+  ['duvida', 10, 17.0, 18.5, 'duvida'],
+  ['suporte', 11, 18.5, 20.5, 'suporte'],
+  ['novela', 12, 20.5, 22.0, 'novela'],
+  ['menu', 13, 22.0, 24.0, 'menu'],
+  ['preco', 14, 24.0, 25.5, 'preco'],
+  ['selos', 15, 25.5, 27.0, 'selos'],
+  ['botao', 16, 27.0, 30.0, 'botao'],
+];
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'morph-chain',   // 'F2' adds the fixed-stage checks (a year counter, a still stage); 'F4' adds the mission checks
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: [2.0, 4.0, 5.5, 7.5, 9.0, 10.5, 12.0, 13.5, 15.0, 17.0, 18.5, 20.5, 22.0, 24.0, 25.5, 27.0],              // hard cuts (seconds, on the 8th grid)
+  morphs: [],         // morph bridge centres (seconds, on the 8th grid)
+  cues: { start: 0.0 },
+  acts: [
+    { name: '1 A vovó', role: 'build', t0: 0.0, t1: 7.5 },
+    { name: '2 Passos', role: 'journey', t0: 7.5, t1: 13.5 },
+    { name: '3 Aparelho e suporte', role: 'peak', t0: 13.5, t1: 20.5 },
+    { name: '4 Novela', role: 'gift', t0: 20.5, t1: 24.0 },
+    { name: '5 Oferta', role: 'goodbye', t0: 24.0, t1: 30.0 },
+  ],
+  // the storyboard: one key frame per beat
+  board: [
+    { t: 3.0, title: 'tv', sound: 'pluck', next: '' },
+    { t: 6.5, title: 'neto-celular', sound: 'pluck', next: '' },
+    { t: 8.25, title: 'tutorial', sound: 'pluck', next: '' },
+    { t: 11.25, title: 'passo2', sound: 'pluck', next: '' },
+    { t: 16.0, title: 'aparelhos', sound: 'pluck', next: '' },
+    { t: 19.5, title: 'suporte', sound: 'pluck', next: '' },
+    { t: 23.0, title: 'menu', sound: 'pluck', next: '' },
+    { t: 24.75, title: 'preco', sound: 'pluck', next: '' },
+    { t: 26.25, title: 'selos', sound: 'pluck', next: '' },
+    { t: 28.5, title: 'botao', sound: 'pluck', next: '' },
+  ],
+  narration: [],
+};
+window.TIMELINE = TIMELINE;
