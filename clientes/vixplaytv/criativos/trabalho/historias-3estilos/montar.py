@@ -10,27 +10,27 @@ tema = json.loads((AQUI.parent / "historias-vox" / "plano.json").read_text(encod
 
 
 NETO = [
-    ("0:01", "A mãozinha escreve A VOVÓ e começa a desenhar a vovó."),
-    ("0:03", "Vovó no sofá, TV com ?; a mão escreve \"como é que liga?\" no balão."),
-    ("0:05", "A mão escreve ATÉ QUE O NETO CHEGA, com marca-texto verde."),
-    ("0:06", "A mão desenha o neto do lado da vovó, com o celular."),
-    ("0:08", "TUTORIAL: a mão desenha o celular com o passo a passo."),
-    ("0:11", "Passos 1, 2 e 3 escritos e marcados: plano, Pix, acesso."),
+    ("0:01", "A mãozinha desenha A VOVÓ e a vovó recortada em papel, sobre o fundo verde."),
+    ("0:03", "Vovó no sofá olha a TV: a mão desenha o ? na tela; balão \"Como é que liga?\"."),
+    ("0:05", "A mão escreve ATÉ QUE O NETO CHEGA, uma palavra por vez."),
+    ("0:06", "A mão desenha o celular na mão do neto, do lado da vovó."),
+    ("0:08", "TUTORIAL: a mão desenha o passo a passo no celular."),
+    ("0:11", "Passos 1, 2 e 3: a mão escreve PAGA POR PIX."),
     ("0:14", "A mão escreve PARA CADA APARELHO."),
-    ("0:16", "A mão desenha TV, box e celular."),
-    ("0:19", "DEU DÚVIDA? Balão com \"suporte humano no WhatsApp\"."),
-    ("0:21", "NOVELA! A vovó feliz; a mão desenha estrelinhas."),
-    ("0:23", "Vovó e neto no sofá; a mão pinta de verde o menu: canais, filmes, séries, novelas."),
-    ("0:25", "R$ 35 circulado em verde; a mão escreve \"no primeiro mês\"."),
-    ("0:26", "PIX, SEM CARTÃO, SEM FIDELIDADE com ✓ verde."),
-    ("0:28", "TESTE GRÁTIS DE 4 HORAS, botão ASSISTA COM A VIXPLAY TV e o logo real."),
+    ("0:16", "TV, box e celular; a mão desenha o celular."),
+    ("0:19", "Deu dúvida? A mão desenha o balão do suporte no WhatsApp."),
+    ("0:21", "NOVELA! A mão termina o ponto de exclamação."),
+    ("0:23", "Vovó e neto no sofá; a mão pinta o menu: canais, filmes, séries e novelas."),
+    ("0:25", "R$ 35; a mão escreve \"no primeiro mês\"."),
+    ("0:26", "Selos PIX e SEM CARTÃO; a mão escreve SEM FIDELIDADE."),
+    ("0:28", "Botão SAIBA MAIS; a mão escreve \"teste grátis de 4 horas\"; logo real no fim."),
 ]
 
 
 def quadros(p):
     out = []
     if p == "N":
-        return [{"id": f"N{i:02d}", "t": t, "legenda": l, "img": f"quadros/H{i:02d}.jpg"} for i, (t, l) in enumerate(NETO, 1)]
+        return [{"id": f"N{i:02d}", "t": t, "legenda": l, "img": f"quadros/M{i:02d}.jpg"} for i, (t, l) in enumerate(NETO, 1)]
     for i in range(1, 9):
         c = cells[f"{p}{i:02d}"]
         t = c["n"].split("·")[1].strip()
@@ -40,9 +40,9 @@ def quadros(p):
 
 V = [
     {
-        "etiqueta": "Desenho à mão · A vovó e o neto · 30 s · 14 quadros",
+        "etiqueta": "Animação 2D handmade · A vovó e o neto · 30 s · 14 quadros",
         "titulo": "A vovó e o neto",
-        "ideia": "Desenho à mão em tempo real: a mãozinha com o pincel desenha a história no quadro branco, traço preto e verde VixPlay. A vovó não sabe ligar, o neto chega e ensina.",
+        "ideia": "A mesma animação 2D verde, em papel recortado, agora handmade: a mãozinha com o pincel entra e desenha cada cena na hora. A vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s.",
         "jornada": [
             {"titulo": "Problema", "texto": "A vovó quer a novela e não sabe ligar."},
             {"titulo": "Ajuda", "texto": "O neto chega com o tutorial."},
@@ -107,9 +107,9 @@ plano = {
         "texto": "Gancho, cenas e edição próprios em cada vídeo. Logo real uma vez só.",
         "logo": "logo.png",
         "logo_altura_mm": 17,
-        "imagens": ["quadros/H04.jpg", "quadros/R01.jpg", "quadros/F03.jpg"],
+        "imagens": ["quadros/M04.jpg", "quadros/R01.jpg", "quadros/F03.jpg"],
         "numeros": [
-            {"n": "1", "texto": "A vovó e o neto: desenho à mão, com a mãozinha desenhando."},
+            {"n": "1", "texto": "A vovó e o neto: animação 2D handmade, com a mãozinha desenhando."},
             {"n": "2", "texto": "Domingo à noite: edição da referência, palavra por palavra."},
             {"n": "3", "texto": "A conta do mês: desenho à mão no caderno."},
             {"n": "4", "texto": "Sexta à noite: fotos reais em corte rápido."},

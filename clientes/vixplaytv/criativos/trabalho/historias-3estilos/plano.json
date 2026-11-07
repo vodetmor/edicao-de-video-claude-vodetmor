@@ -30,14 +30,14 @@
   "logo": "logo.png",
   "logo_altura_mm": 17,
   "imagens": [
-   "quadros/H04.jpg",
+   "quadros/M04.jpg",
    "quadros/R01.jpg",
    "quadros/F03.jpg"
   ],
   "numeros": [
    {
     "n": "1",
-    "texto": "A vovó e o neto: desenho à mão, com a mãozinha desenhando."
+    "texto": "A vovó e o neto: animação 2D handmade, com a mãozinha desenhando."
    },
    {
     "n": "2",
@@ -55,9 +55,9 @@
  },
  "videos": [
   {
-   "etiqueta": "Desenho à mão · A vovó e o neto · 30 s · 14 quadros",
+   "etiqueta": "Animação 2D handmade · A vovó e o neto · 30 s · 14 quadros",
    "titulo": "A vovó e o neto",
-   "ideia": "Desenho à mão em tempo real: a mãozinha com o pincel desenha a história no quadro branco, traço preto e verde VixPlay. A vovó não sabe ligar, o neto chega e ensina.",
+   "ideia": "A mesma animação 2D verde, em papel recortado, agora handmade: a mãozinha com o pincel entra e desenha cada cena na hora. A vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s.",
    "jornada": [
     {
      "titulo": "Problema",
@@ -80,86 +80,86 @@
     {
      "id": "N01",
      "t": "0:01",
-     "legenda": "A mãozinha escreve A VOVÓ e começa a desenhar a vovó.",
-     "img": "quadros/H01.jpg"
+     "legenda": "A mãozinha desenha A VOVÓ e a vovó recortada em papel, sobre o fundo verde.",
+     "img": "quadros/M01.jpg"
     },
     {
      "id": "N02",
      "t": "0:03",
-     "legenda": "Vovó no sofá, TV com ?; a mão escreve \"como é que liga?\" no balão.",
-     "img": "quadros/H02.jpg"
+     "legenda": "Vovó no sofá olha a TV: a mão desenha o ? na tela; balão \"Como é que liga?\".",
+     "img": "quadros/M02.jpg"
     },
     {
      "id": "N03",
      "t": "0:05",
-     "legenda": "A mão escreve ATÉ QUE O NETO CHEGA, com marca-texto verde.",
-     "img": "quadros/H03.jpg"
+     "legenda": "A mão escreve ATÉ QUE O NETO CHEGA, uma palavra por vez.",
+     "img": "quadros/M03.jpg"
     },
     {
      "id": "N04",
      "t": "0:06",
-     "legenda": "A mão desenha o neto do lado da vovó, com o celular.",
-     "img": "quadros/H04.jpg"
+     "legenda": "A mão desenha o celular na mão do neto, do lado da vovó.",
+     "img": "quadros/M04.jpg"
     },
     {
      "id": "N05",
      "t": "0:08",
-     "legenda": "TUTORIAL: a mão desenha o celular com o passo a passo.",
-     "img": "quadros/H05.jpg"
+     "legenda": "TUTORIAL: a mão desenha o passo a passo no celular.",
+     "img": "quadros/M05.jpg"
     },
     {
      "id": "N06",
      "t": "0:11",
-     "legenda": "Passos 1, 2 e 3 escritos e marcados: plano, Pix, acesso.",
-     "img": "quadros/H06.jpg"
+     "legenda": "Passos 1, 2 e 3: a mão escreve PAGA POR PIX.",
+     "img": "quadros/M06.jpg"
     },
     {
      "id": "N07",
      "t": "0:14",
      "legenda": "A mão escreve PARA CADA APARELHO.",
-     "img": "quadros/H07.jpg"
+     "img": "quadros/M07.jpg"
     },
     {
      "id": "N08",
      "t": "0:16",
-     "legenda": "A mão desenha TV, box e celular.",
-     "img": "quadros/H08.jpg"
+     "legenda": "TV, box e celular; a mão desenha o celular.",
+     "img": "quadros/M08.jpg"
     },
     {
      "id": "N09",
      "t": "0:19",
-     "legenda": "DEU DÚVIDA? Balão com \"suporte humano no WhatsApp\".",
-     "img": "quadros/H09.jpg"
+     "legenda": "Deu dúvida? A mão desenha o balão do suporte no WhatsApp.",
+     "img": "quadros/M09.jpg"
     },
     {
      "id": "N10",
      "t": "0:21",
-     "legenda": "NOVELA! A vovó feliz; a mão desenha estrelinhas.",
-     "img": "quadros/H10.jpg"
+     "legenda": "NOVELA! A mão termina o ponto de exclamação.",
+     "img": "quadros/M10.jpg"
     },
     {
      "id": "N11",
      "t": "0:23",
-     "legenda": "Vovó e neto no sofá; a mão pinta de verde o menu: canais, filmes, séries, novelas.",
-     "img": "quadros/H11.jpg"
+     "legenda": "Vovó e neto no sofá; a mão pinta o menu: canais, filmes, séries e novelas.",
+     "img": "quadros/M11.jpg"
     },
     {
      "id": "N12",
      "t": "0:25",
-     "legenda": "R$ 35 circulado em verde; a mão escreve \"no primeiro mês\".",
-     "img": "quadros/H12.jpg"
+     "legenda": "R$ 35; a mão escreve \"no primeiro mês\".",
+     "img": "quadros/M12.jpg"
     },
     {
      "id": "N13",
      "t": "0:26",
-     "legenda": "PIX, SEM CARTÃO, SEM FIDELIDADE com ✓ verde.",
-     "img": "quadros/H13.jpg"
+     "legenda": "Selos PIX e SEM CARTÃO; a mão escreve SEM FIDELIDADE.",
+     "img": "quadros/M13.jpg"
     },
     {
      "id": "N14",
      "t": "0:28",
-     "legenda": "TESTE GRÁTIS DE 4 HORAS, botão ASSISTA COM A VIXPLAY TV e o logo real.",
-     "img": "quadros/H14.jpg"
+     "legenda": "Botão SAIBA MAIS; a mão escreve \"teste grátis de 4 horas\"; logo real no fim.",
+     "img": "quadros/M14.jpg"
     }
    ],
    "roteiro": {
