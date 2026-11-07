@@ -1,0 +1,95 @@
+{
+  "titulo": "Aprovação · 2 criativos Rei da VSL",
+  "arquivo": "exemplo-aprovacao.pdf",
+  "rodape": "Rei da VSL · 2 criativos em motion · para aprovação",
+  "formato": "9:16",
+  "tema": {
+    "acento": "#DCB906", "acento_texto": "#9A7F00", "sobre_acento": "#0B0B0B",
+    "fundo": "#F7F5EF", "linha": "#E2DED3", "tinta": "#0B0B0B", "tinta_2": "#3A3833", "cinza": "#8A877F",
+    "escuro": "#0B0B0B", "papel": "#F7F5EF", "papel_2": "#CFCBC0",
+    "fonte_titulo": "Archivo"
+  },
+  "capa": {
+    "chamada": "Para aprovação",
+    "titulo": "2 criativos",
+    "titulo_destaque": "em motion",
+    "texto": "Vertical 9:16 para Facebook, Instagram e TikTok. Cada animação entra na palavra exata da locução.",
+    "logo": "logo.png",
+    "imagens": ["quadros/A06.jpg", "quadros/B05.jpg"],
+    "numeros": [
+      {"n": "01", "texto": "Pacote 10 por R$ 399 · 25 s"},
+      {"n": "02", "texto": "Completo por R$ 49,90 · 20 s"}
+    ]
+  },
+  "videos": [
+    {
+      "etiqueta": "Criativo 01 · 25 s · 10 cenas",
+      "titulo": "Pacote 10 por R$ 399",
+      "ideia": "<b>A ideia:</b> cada frase vira uma imagem diferente. O preço é uma etiqueta, o pacote é uma caixa, o total é um cupom.",
+      "jornada": [
+        {"titulo": "Prende", "texto": "A01 a A04: preço em movimento no 1º segundo"},
+        {"titulo": "Interessa", "texto": "A05 a A08: cada frase vira uma imagem"},
+        {"titulo": "Variedade", "texto": "A06, A10 e A13: estilos de motion"},
+        {"titulo": "Marca e clique", "texto": "A14 e A15: coroa e botão"}
+      ],
+      "quadros": [
+        {"id": "A01", "t": "0 s", "legenda": "Close no preço girando", "img": "quadros/A01.jpg"},
+        {"id": "A02", "t": "2 s", "legenda": "É uma etiqueta de preço", "img": "quadros/A02.jpg"},
+        {"id": "A04", "t": "4 s", "legenda": "\"Sim, é isso mesmo\"", "img": "quadros/A04.jpg"},
+        {"id": "A05", "t": "6 s", "legenda": "O pacote fecha", "img": "quadros/A05.jpg"},
+        {"id": "A06", "t": "7 s", "legenda": "10 criativos, 10 estilos", "img": "quadros/A06.jpg"},
+        {"id": "A08", "t": "11 s", "legenda": "Cupom: total R$ 399", "img": "quadros/A08.jpg"},
+        {"id": "A10", "t": "14 s", "legenda": "Copy sendo escrita", "img": "quadros/A10.jpg"},
+        {"id": "A13", "t": "18 s", "legenda": "Prontos no feed", "img": "quadros/A13.jpg"},
+        {"id": "A14", "t": "21 s", "legenda": "Teste A/B: coroa no vencedor", "img": "quadros/A14.jpg"},
+        {"id": "A15", "t": "23 s", "legenda": "Logo + Saiba mais", "img": "quadros/A15.jpg"}
+      ]
+    },
+    {
+      "etiqueta": "Criativo 02 · 20 s · 6 cenas",
+      "titulo": "Completo por R$ 49,90",
+      "ideia": "<b>A ideia:</b> o caos de contratar 3 pessoas vira uma conversa só, e o próprio anúncio é a prova.",
+      "jornada": [
+        {"titulo": "Prende", "texto": "B01: o preço cai na tela"},
+        {"titulo": "Dor", "texto": "B04 e B05: contratar 3 pessoas"},
+        {"titulo": "Solução", "texto": "B06 e B08: a gente faz e entrega"},
+        {"titulo": "Clique", "texto": "B10: logo, preço e botão"}
+      ],
+      "quadros": [
+        {"id": "B01", "t": "0 s", "legenda": "O preço cai e bate", "img": "quadros/B01.jpg"},
+        {"id": "B04", "t": "9 s", "legenda": "Contratar 3 pessoas?", "img": "quadros/B04.jpg"},
+        {"id": "B05", "t": "11 s", "legenda": "O caos de 3 conversas", "img": "quadros/B05.jpg"},
+        {"id": "B06", "t": "12 s", "legenda": "A gente faz tudo", "img": "quadros/B06.jpg"},
+        {"id": "B08", "t": "15 s", "legenda": "Vira anúncio no feed", "img": "quadros/B08.jpg"},
+        {"id": "B10", "t": "19 s", "legenda": "Logo + preço + Saiba mais", "img": "quadros/B10.jpg"}
+      ]
+    }
+  ],
+  "som": {
+    "titulo": "Composição audiovisual",
+    "texto": "Voz na frente. Música original, sem risco de direito autoral no anúncio pago. Cada efeito acontece no quadro exato da ação.",
+    "cartoes": [
+      {"titulo": "Música", "texto": "Batida moderna a 128 BPM, sem melodia disputando com a voz. Abaixa quando a voz fala e sobe nas pausas."},
+      {"titulo": "Voz", "texto": "A locução enviada, sem cortes, com leve tratamento de clareza."},
+      {"titulo": "Volume final", "texto": "Padrão das plataformas (−14 LUFS): nem baixo nem estourado."}
+    ],
+    "efeitos": [
+      ["Preço girando / caindo", "catraca a cada dígito e batida grave quando para"],
+      ["Etiqueta · caixa fechando", "balanço leve e fita adesiva sendo puxada"],
+      ["10 criativos em leque", "10 cliques subindo de tom, um por tela"],
+      ["Cupom R$ 399", "impressora de cupom e batida do carimbo"],
+      ["3 conversas (02)", "notificações se acumulando, depois silêncio"],
+      ["Botão Saiba mais", "clique e acorde final"]
+    ]
+  },
+  "aprovar": {
+    "titulo": "Para aprovar",
+    "itens": [
+      {"texto": "Quadros do Criativo 01 (A01 a A15)", "nota": "Para ajustar, basta citar o código. Exemplo: \"muda o A05\"."},
+      {"texto": "Quadros do Criativo 02 (B01 a B10)"},
+      {"texto": "Som: música original + efeitos acima"},
+      {"texto": "Formato 9:16", "nota": "Opcional: versão 4:5 para o feed, feita da mesma base."}
+    ],
+    "nota_final": "Os quadros mostram composição e cor. O vídeo final ganha movimento, desfoque de velocidade e acabamento."
+  }
+}
