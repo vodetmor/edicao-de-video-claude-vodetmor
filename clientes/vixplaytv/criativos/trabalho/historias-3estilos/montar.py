@@ -10,27 +10,35 @@ tema = json.loads((AQUI.parent / "historias-vox" / "plano.json").read_text(encod
 
 
 NETO = [
-    ("0:01", "A VOVÓ entra em cena, recortada em papel; palavra estala sobre o fundo verde."),
-    ("0:03", "Vovó no sofá olha a TV: \"Como é que liga?\" e um ? pulando na tela."),
-    ("0:05", "ATÉ QUE O NETO CHEGA: as palavras entram uma por vez."),
-    ("0:06", "O neto senta do lado com o celular na mão."),
-    ("0:08", "TUTORIAL: o celular sobe com o passo a passo."),
-    ("0:11", "Passos 1, 2 e 3: escolhe o plano, paga por Pix, recebe o acesso."),
-    ("0:14", "PARA CADA APARELHO."),
-    ("0:16", "TV, box e celular entram pulando."),
-    ("0:19", "Deu dúvida? Balões do suporte no WhatsApp."),
-    ("0:21", "NOVELA! A vovó comemora."),
-    ("0:23", "Vovó e neto no sofá na frente do menu: canais, filmes, séries e novelas."),
-    ("0:25", "R$ 35 no primeiro mês."),
-    ("0:26", "Selos PIX, SEM CARTÃO e SEM FIDELIDADE."),
-    ("0:28", "Botão SAIBA MAIS e teste grátis de 4 horas; logo real entra aqui, uma vez só."),
+    ("0:00", "CAPA (1º frame, vitrine do Instagram): \"Como a vovó voltou a ver novela\", vovó e neto no sofá, logo."),
+    ("0:01", "A mão escreve A VOVÓ e começa a desenhar a vovó."),
+    ("0:03", "Vovó no sofá, TV com ?; a mão escreve \"como é que liga?\" no balão."),
+    ("0:05", "A mão escreve ATÉ QUE O NETO CHEGA, com marca-texto verde."),
+    ("0:06", "A mão desenha o neto do lado da vovó, com o celular."),
+    ("0:08", "TUTORIAL: celular desenhado com as linhas do passo a passo."),
+    ("0:11", "Passos 1, 2 e 3 escritos e marcados: plano, Pix, acesso."),
+    ("0:14", "PARA CADA APARELHO: a mão desenha TV, box e celular."),
+    ("0:16", "DEU DÚVIDA? Balão com \"suporte humano no WhatsApp\"."),
+    ("0:19", "NOVELA! A vovó feliz; a mão desenha estrelinhas."),
+    ("0:21", "Vovó e neto no sofá; a mão pinta de verde o menu: canais, filmes, séries, novelas."),
+    ("0:24", "R$ 35 circulado em verde; a mão escreve \"no primeiro mês\"."),
+    ("0:26", "PIX, SEM CARTÃO, SEM FIDELIDADE com ✓ verde."),
+    ("0:28", "TESTE GRÁTIS DE 4 HORAS, botão ASSISTA COM A VIXPLAY TV e o logo real colado."),
 ]
+
+CAPAS = {
+    "R": ("0:00", "CAPA (1º frame, vitrine do Instagram): QUEM MANDA NO CONTROLE?, foto com tinta verde e logo."),
+    "D": ("0:00", "CAPA (1º frame, vitrine do Instagram): \"A conta do mês... fecha?\" no caderno, bilhete e logo."),
+    "F": ("0:00", "CAPA (1º frame, vitrine do Instagram): SEXTA À NOITE. E A TV?, adesivos e logo."),
+}
 
 
 def quadros(p):
     out = []
     if p == "N":
-        return [{"id": f"N{i:02d}", "t": t, "legenda": l, "img": f"quadros/N{i:02d}.jpg"} for i, (t, l) in enumerate(NETO, 1)]
+        return [{"id": f"W{i:02d}", "t": t, "legenda": l, "img": f"quadros/W{i:02d}.jpg"} for i, (t, l) in enumerate(NETO)]
+    t0, l0 = CAPAS[p]
+    out.append({"id": f"{p}00", "t": t0, "legenda": l0, "img": f"quadros/{p}00.jpg"})
     for i in range(1, 9):
         c = cells[f"{p}{i:02d}"]
         t = c["n"].split("·")[1].strip()
@@ -40,9 +48,9 @@ def quadros(p):
 
 V = [
     {
-        "etiqueta": "Animação 2D · A vovó e o neto · 30 s · 17 planos",
+        "etiqueta": "Whiteboard · A vovó e o neto · 30 s · 14 quadros",
         "titulo": "A vovó e o neto",
-        "ideia": "Animação 2D em papel recortado, nas cores da VixPlay: a vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s, palavra por palavra.",
+        "ideia": "Estilo whiteboard: uma mão real com pincel desenha a história em tempo real no quadro branco, traço preto e destaque em verde VixPlay. A vovó não sabe ligar, o neto chega e ensina.",
         "jornada": [
             {"titulo": "Problema", "texto": "A vovó quer a novela e não sabe ligar."},
             {"titulo": "Ajuda", "texto": "O neto chega com o tutorial."},
@@ -53,7 +61,7 @@ V = [
         "narracao": "A vovó queria ver a novela... mas como é que liga? Até que o neto chega. Tutorial: um, escolhe o plano. Dois, paga por Pix. Três, recebe o acesso. Tem tutorial pra cada aparelho: TV, box e celular. Deu dúvida? Suporte no WhatsApp. E a novela, ó! R$ 35 no primeiro mês. Pix, sem cartão e sem fidelidade. Teste grátis de quatro horas. Toque em saiba mais.",
     },
     {
-        "etiqueta": "Estilo 1 · Referência · 30 s · 8 quadros",
+        "etiqueta": "Estilo 1 · Referência · 30 s · 9 quadros",
         "titulo": "Domingo à noite",
         "ideia": "Na edição da referência: palavra por palavra com desfoque, fundo verde vivo, fotos com tinta verde, esfera de rede e cartões de chat.",
         "jornada": [
@@ -66,7 +74,7 @@ V = [
         "narracao": "Domingo à noite. Quem manda no controle? Cada um quer um programa diferente. E você, cansou de pagar várias assinaturas? Aqui é uma só mensalidade. Escolhe o plano, paga por Pix e recebe o acesso no WhatsApp. Até três telas: TV, box e celular. R$ 35 no primeiro mês, sem cartão e sem fidelidade. Renovando em dia, R$ 30. Teste grátis de quatro horas. Toque em saiba mais.",
     },
     {
-        "etiqueta": "Estilo 2 · Desenho à mão · 30 s · 8 quadros",
+        "etiqueta": "Estilo 2 · Desenho à mão · 30 s · 9 quadros",
         "titulo": "A conta do mês",
         "ideia": "Caderno de linhas: a letra se escreve na tela, as contas são riscadas de vermelho e o preço ganha círculo e marca-texto verde.",
         "jornada": [
@@ -79,7 +87,7 @@ V = [
         "narracao": "A conta do mês. Assinatura um, assinatura dois, assinatura três... o total assusta. Faz a conta de novo. E se fosse uma só? R$ 35 no primeiro mês. Paga por Pix, sem cartão, sem fidelidade. TV, celular ou box, até três telas. Teste grátis de quatro horas: é só chamar no WhatsApp.",
     },
     {
-        "etiqueta": "Estilo 3 · Fotos reais · 30 s · 8 quadros",
+        "etiqueta": "Estilo 3 · Fotos reais · 30 s · 9 quadros",
         "titulo": "Sexta à noite",
         "ideia": "Fotos reais em corte rápido, legenda grande com contorno, adesivos verdes e tela dividida.",
         "jornada": [
@@ -104,12 +112,12 @@ plano = {
         "chamada": "Para aprovação · 4 roteiros",
         "titulo": "Quatro histórias",
         "titulo_destaque": "em 4 estilos",
-        "texto": "Gancho, cenas e edição próprios em cada vídeo. Logo real uma vez só.",
+        "texto": "Gancho, cenas e edição próprios. O 1º frame de cada vídeo é a capa da vitrine do Instagram.",
         "logo": "logo.png",
         "logo_altura_mm": 17,
-        "imagens": ["quadros/N04.jpg", "quadros/R01.jpg", "quadros/F03.jpg"],
+        "imagens": ["quadros/W00.jpg", "quadros/R00.jpg", "quadros/F00.jpg"],
         "numeros": [
-            {"n": "1", "texto": "A vovó e o neto: animação 2D em papel recortado."},
+            {"n": "1", "texto": "A vovó e o neto: whiteboard, a mão desenhando."},
             {"n": "2", "texto": "Domingo à noite: edição da referência, palavra por palavra."},
             {"n": "3", "texto": "A conta do mês: desenho à mão no caderno."},
             {"n": "4", "texto": "Sexta à noite: fotos reais em corte rápido."},

@@ -161,7 +161,7 @@ const rH = (): Spec => {
   // zoom 1.4 ancorado no topo: a legenda queimada do vídeo original (76% da altura) fica fora do quadro
   const k = (t0: number, t1: number, ox: number, blur?: number): Clip => ({src: 'c4', ss: t0 + 2.6, t0, t1, zoom: 1.4, ox, oy: 0, blur});
   const clips = [k(0, 5.0, 40), k(5.0, x(25.2), 80), k(x(25.2), x(44.0), 80, 13), k(x(44.0), dur, 80)];
-  return {id: 'h', audio: 'vix/h.mp3', dur, pal, clips, ev, utm: utm(4), limpo: true, legBase: 0.30};
+  return {id: 'h', audio: 'vix/h.mp3', dur, pal, clips, ev, utm: utm(4), limpo: true, legBase: 0.30, blob: true};
 };
 
 export const SPECS: Record<string, Spec> = {r1: r1(), r2: r2(), r3: r3(), r4: r4(), h: rH()};

@@ -19,13 +19,13 @@ export const calcula: CalculateMetadataFunction<Props> = ({props}) => {
 const BLOCOS: Record<string, React.FC<any>> = {Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA, Cena, BannerC1, PopMarca, Kin, Mont, Janela};
 
 // Legenda contínua: Inter 500, base a 87% da altura, até 2 linhas, sem caixa, sem karaokê
-type Cue = {txt: string; s: number; e: number};
+type Cue = {txt: string; s: number; e: number; ws: Pal[]};
 const cues = (pal: Pal[], fim: number): Cue[] => {
   const out: Cue[] = [];
   let cur: Pal[] = [];
   const flush = () => {
     if (!cur.length) return;
-    out.push({txt: cur.map((p) => p.w).join(' '), s: cur[0].s, e: cur[cur.length - 1].e});
+    out.push({txt: cur.map((p) => p.w).join(' '), s: cur[0].s, e: cur[cur.length - 1].e, ws: cur});
     cur = [];
   };
   pal.forEach((p, i) => {
@@ -39,7 +39,7 @@ const cues = (pal: Pal[], fim: number): Cue[] => {
   return out.map((c, i) => ({...c, e: Math.min(out[i + 1] ? out[i + 1].s : fim, c.e + 0.45)}));
 };
 
-const Legenda: React.FC<{pal: Pal[]; fim: number; base?: number; mudo?: [number, number][]}> = ({pal, fim, base = 0.13, mudo = []}) => {
+const Legenda: React.FC<{pal: Pal[]; fim: number; base?: number; mudo?: [number, number][]; blob?: boolean}> = ({pal, fim, base = 0.13, mudo = [], blob}) => {
   const f = useCurrentFrame();
   const t = f / 30;
   const cs = React.useMemo(() => cues(pal, fim), [pal, fim]);
@@ -48,7 +48,16 @@ const Legenda: React.FC<{pal: Pal[]; fim: number; base?: number; mudo?: [number,
   const a = interpolate(t, [c.s - 0.05, c.s + 0.1, c.e - 0.08, c.e], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <div style={{position: 'absolute', left: 90, width: W - 180, bottom: H * base, textAlign: 'center', fontFamily: TXT, fontWeight: 500, fontSize: 54, lineHeight: 1.22, color: V.txt, opacity: a, textShadow: '0 2px 14px rgba(1,2,4,0.9)'}}>
-      {c.txt}
+      {blob ? c.ws.map((w, i) => {
+        // blob: pílula verde atrás da palavra que está sendo falada (pedido do cliente, 07/11/2026)
+        const on = t >= w.s - 0.03 && t < (c.ws[i + 1] ? c.ws[i + 1].s - 0.03 : c.e);
+        const k = on ? interpolate(t, [w.s - 0.03, w.s + 0.09], [0.6, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1;
+        return (
+          <React.Fragment key={i}>
+            <span style={{display: 'inline-block', padding: '0 12px', margin: '0 -6px', borderRadius: 18, fontWeight: on ? 800 : 600, background: on ? V.neon : 'transparent', color: on ? V.sobre : V.txt, textShadow: on ? 'none' : '0 2px 14px rgba(1,2,4,0.9)', transform: `scale(${on ? 1.06 * k + (1 - k) * 0.9 : 1})`, boxShadow: on ? '0 6px 18px rgba(1,2,4,0.45)' : 'none'}}>{w.w}</span>{' '}
+          </React.Fragment>
+        );
+      }) : c.txt}
     </div>
   );
 };
@@ -104,7 +113,7 @@ export const Vix: React.FC<Props> = ({id}) => {
           </Sequence>
         );
       })}
-      <Legenda pal={s.pal} fim={s.dur} base={s.legBase} mudo={s.limpo ? s.ev.filter((e) => e.bloco === 'PopMarca' || e.bloco === 'CTA').map((e) => [e.t0, e.t1] as [number, number]) : []} />
+      <Legenda pal={s.pal} fim={s.dur} base={s.legBase} blob={s.blob} mudo={s.limpo ? s.ev.filter((e) => e.bloco === 'PopMarca' || e.bloco === 'CTA').map((e) => [e.t0, e.t1] as [number, number]) : []} />
       <Audio src={staticFile(s.audio)} />
     </AbsoluteFill>
   );

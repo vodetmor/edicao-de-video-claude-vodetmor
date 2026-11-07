@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800;1,900&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#222}
+.arte{width:1080px;height:1440px;position:relative;overflow:hidden;background:#010204;margin-bottom:20px;font-family:Inter,sans-serif}
+.arte>*{position:absolute}
+/* faixa diagonal da marca (eco da diagonal da arte original) */
+.diag{inset:0;background:#99e200;clip-path:polygon(0 72%,0 100%,30% 100%);opacity:.9}
+.diag2{inset:0;background:#010204;clip-path:polygon(0 78%,0 100%,24% 100%)}
+.grade{inset:0;background-image:linear-gradient(rgba(153,226,0,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(153,226,0,.06) 2px,transparent 2px);background-size:60px 60px}
+.kick{left:0;right:0;top:58px;text-align:center;font:italic 900 52px Montserrat;color:#99e200;letter-spacing:6px}
+.tit{left:0;right:0;top:110px;text-align:center;font:italic 900 168px/1 Montserrat;color:#fff;letter-spacing:-4px}
+.data{left:50%;top:292px;transform:translateX(-50%);background:#99e200;color:#061000;font:italic 900 38px Montserrat;padding:10px 40px;border-radius:40px;white-space:nowrap}
+.sub{left:0;right:0;top:358px;text-align:center;font:600 24px Inter;color:#cfd8c8}
+.sub b{color:#99e200}
+.linhas{left:60px;right:60px;top:404px;display:flex;flex-direction:column;gap:12px}
+.l{height:124px;display:flex;align-items:center;gap:10px;background:#0a1a0e;border:2px solid rgba(153,226,0,.55);border-radius:22px;padding:0 10px}
+.times{width:400px;height:108px;border-radius:14px;background:#fff center/contain no-repeat}
+.hora{width:170px;height:108px;border-radius:14px;background:#06200f;display:flex;align-items:center;justify-content:center;font:italic 900 52px Montserrat;color:#99e200}
+.tv{flex:1;height:108px;border-radius:14px;background:#fff center/contain no-repeat}
+.liga{width:86px;height:108px;border-radius:14px;background:#fff center/contain no-repeat}
+.poucos .l{height:200px}.poucos .times,.poucos .hora,.poucos .tv,.poucos .liga{height:180px}.poucos .times{width:440px}.poucos .liga{width:110px}.poucos .hora{font-size:54px;width:200px}.poucos .times{width:400px}.poucos{top:470px!important;gap:40px!important}
+.rod{left:60px;right:60px;bottom:40px;height:120px;display:flex;align-items:center;gap:26px}
+.cta{flex:1;height:100px;border-radius:60px;background:#99e200;display:flex;align-items:center;justify-content:center;font:italic 900 38px Montserrat;white-space:nowrap;color:#061000;box-shadow:0 0 0 6px rgba(153,226,0,.25)}
+.rod img{height:96px}
+.rod .tx{position:absolute;left:0;right:0;top:-38px;text-align:center;font:700 24px Inter;color:#fff}
+/* UFC */
+.u{height:128px;display:flex;align-items:center;gap:12px;background:#0a1a0e;border:2px solid rgba(153,226,0,.55);border-radius:22px;padding:0 10px;position:relative}
+.u.p{height:168px;border-color:#99e200;border-width:3px}
+.luta{width:420px;height:calc(100% - 14px);border-radius:14px;background:#120a0e center/contain no-repeat}
+.ev{width:210px;text-align:center;color:#fff}
+.ev .t1{font:italic 900 19px Montserrat;color:#99e200;white-space:nowrap}
+.ev .t2{font:italic 900 46px Montserrat;color:#fff;line-height:1.05}
+.ev .t3{font:800 15px Montserrat;color:#cfd8c8;letter-spacing:1px;white-space:nowrap}
+.utv{flex:1;height:100px;border-radius:14px;background:#fff center/contain no-repeat}
+.tag{position:absolute;top:-16px;left:470px;background:#99e200;color:#061000;font:italic 900 20px Montserrat;padding:4px 14px;border-radius:12px}
+</style></head><body>
+<div id="root"></div>
+<script src="artes.js"></script>
+<script>
+const root=document.getElementById('root');
+const rod=`<div class="rod"><div class="tx">Teste grátis de 4 horas · chama no WhatsApp</div><div class="cta">ASSISTA COM A VIXPLAY TV</div><img src="logo.png"></div>`;
+for(const a of DADOS.artes){
+  const d=document.createElement('div');d.className='arte';d.id=a.id;
+  let h=`<div class="grade"></div><div class="diag"></div><div class="diag2"></div>`;
+  if(a.tipo==='fut'){
+    h+=`<div class="kick">JOGOS DO DIA</div><div class="tit">FUTEBOL</div><div class="data">${DADOS.data}</div>
+    <div class="sub">Os principais jogos estão na categoria <b>PRINCIPAIS JOGOS</b></div><div class="linhas ${a.linhas.length<=3?'poucos':''}">`+
+    a.linhas.map(l=>`<div class="l"><div class="times" style="background-image:url(${l.times})"></div><div class="hora">${l.hora}</div><div class="tv" style="background-image:url(${l.tv})"></div><div class="liga" style="background-image:url(${l.liga})"></div></div>`).join('')+`</div>`;
+  } else {
+    h+=`<div class="kick">AGENDA DO DIA</div><div class="tit">UFC</div><div class="data">${DADOS.data}</div><div class="linhas" style="top:370px;gap:14px">`+
+    a.linhas.map(l=>`<div class="u ${l.principal?'p':''}">${l.principal?'<div class="tag">EVENTO PRINCIPAL</div>':''}<div class="luta" style="background-image:url(${l.lutadores})"></div><div class="ev"><div class="t1">UFC FIGHT NIGHT</div><div class="t2">${l.hora}</div><div class="t3">${l.peso}</div></div><div class="utv" style="background-image:url(${l.tv})"></div></div>`).join('')+`</div>`;
+  }
+  d.innerHTML=h+rod;root.appendChild(d);
+}
+document.fonts.ready.then(()=>setTimeout(()=>window.PRONTO=1,500));
+</script></body></html>
