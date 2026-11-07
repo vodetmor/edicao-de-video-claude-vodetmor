@@ -477,3 +477,12 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - **Música para anúncio:** a API da Epidemic (`/v0`, Bearer) devolveu todas as faixas como `isPreviewOnly` (mp3 baixo): serve de rascunho, nunca de entrega paga sem baixar com a licença do plano. Mixagem que funcionou: música a -32 LUFS, sidechaincompress guiado pela voz, master `loudnorm` -14 LUFS/-1 dBTP (`estudio/motor/mix_vix.sh N`).
 - **Mecânica no Windows:** render 1080x1920 de 25 a 50 s leva ~5 min no CPU do PC (4 vídeos, ~25 min): rodar em segundo plano. `remotion.config.ts` só aponta o Chromium do Linux se o arquivo existir. Heredoc com JSX no Bash trava: usar a ferramenta Write. Python lido pelo Bash com `/c/...` vira `\c\...`: usar `C:/...`. JSON salvo pelo Python sem `encoding='utf8'` sai em cp1252. Envio de arquivo ao celular tem teto de 30 MiB: gerar cópia `-leve` (libx264 CRF 22 a 24).
 - **Tempo das palavras:** `ferramentas/transcrever_palavras.py` (faster-whisper small) dá as âncoras; normalizar "R$ 35", "doramas" e o nome da marca antes de usar na legenda.
+
+## VixPlay TV, críticas de 07/11/2026 (vídeo da menina H, histórias em estilos)
+- Faixa escura de 30% embaixo para cobrir legenda queimada do vídeo de terceiro = "vinheta estranha" e "tela bloqueada". Melhor: zoom ~1.4 ancorado no topo (`oy: 0`) para a legenda original sair do quadro; nossa legenda fica sobre a imagem com sombra.
+- Selo de logo fixo no canto + estouro de logo no meio do vídeo = "logo repetida". Logo uma vez só (abertura ou CTA).
+- Rótulos (Secao/chips) nunca colados na legenda: deixar ~250 px de folga acima dela.
+- Lista de canais desfocada precisa de blur ≥ 12 px (com 6 px os nomes ainda se leem).
+- Nomes de streaming/canal ditos na fala original: a fala fica (ordem do cliente), mas saem da legenda.
+- Histórias em vários vídeos: cada uma em estilo TOTALMENTE diferente (kinetic da referência, desenho à mão, fotos reais em corte rápido), com gancho e cenas próprios.
+- Animação 2D (skill animate, estilo vixplay-papel): fundos sempre em verde vivo, nunca quase-preto.

@@ -43,7 +43,7 @@ export const Chip: React.FC<{label: string; delay: number; dur: number; destaque
 };
 
 // Gancho: a imagem da TV segue visível; três pílulas "Assinatura" se juntam e viram a marca
-export const Gancho: React.FC<{dur: number; titulo: string; sub?: string; colapsa?: number}> = ({dur, titulo, sub, colapsa}) => {
+export const Gancho: React.FC<{dur: number; titulo: string; sub?: string; colapsa?: number; semLogo?: boolean}> = ({dur, titulo, sub, colapsa, semLogo}) => {
   const {f, fps, t} = useT();
   const tc = colapsa ?? dur - 1.0;
   const col = clamp01((t - tc) / 0.5);
@@ -65,7 +65,7 @@ export const Gancho: React.FC<{dur: number; titulo: string; sub?: string; colaps
           <div key={i} style={{...PAINEL, position: 'absolute', left: x, top: 790, width: 300, height: 96, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: TXT, fontWeight: 700, fontSize: 38, color: V.txt, opacity: clamp01(m) * (1 - colE), transform: `scale(${1 - 0.5 * colE})`}}>Assinatura</div>
         );
       })}
-      <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 230, top: 700, width: 620, opacity: clamp01(logo), transform: `scale(${0.8 + 0.2 * logo})`, filter: 'drop-shadow(0 4px 16px rgba(1,2,4,0.9))'}} />
+      {!semLogo && <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 230, top: 700, width: 620, opacity: clamp01(logo), transform: `scale(${0.8 + 0.2 * logo})`, filter: 'drop-shadow(0 4px 16px rgba(1,2,4,0.9))'}} />}
     </div>
   );
 };

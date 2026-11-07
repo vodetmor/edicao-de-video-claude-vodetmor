@@ -142,23 +142,26 @@ const r4 = (): Spec => {
 
 // ---------- Versão H (base c4, passeio): fala original da mulher da pia, nome trocado pelo nosso. Tempo = tempo do c4 - 2,6 s ----------
 const rH = (): Spec => {
-  const pal = tlh as Pal[]; const dur = 88.5; const x = (t: number) => Math.round((t - 2.6) * 100) / 100;
-  const sec = (titulo: string, t0: number, chips: [string, number][]) => ({titulo, chips: chips.map(([l, t], i) => ({l, t: Math.max(0.1, t - t0), d: i === chips.length - 1}))});
+  // sem nome de streaming/canal na tela (a fala original fica; risco registrado)
+  const NOMES = /^(Netflix|HBO|Disney\+|Big|Brother|Globo|Record|Premiere|Combate|Telecine|Band)[,.?!]?$/;
+  const pal = (tlh as Pal[]).filter((p) => !NOMES.test(p.w)); const dur = 88.5; const x = (t: number) => Math.round((t - 2.6) * 100) / 100;
+  const sec = (titulo: string, t0: number, chips: [string, number][]) => ({y: 200, titulo, chips: chips.map(([l, t], i) => ({l, t: Math.max(0.1, t - t0), d: i === chips.length - 1}))});
   const e = (t0: number, t1: number, bloco: string, p?: any): Ev => ({t0, t1, bloco, p});
   const ev: Ev[] = [
     e(0.9, 2.3, 'PopMarca', {}),
-    e(x(9.9), x(15.9), 'Gancho', {titulo: 'Cansado de pagar vários?', sub: 'Uma mensalidade só', colapsa: 1.8}),
-    e(x(17.1), x(23.0), 'Secao', sec('Uma mensalidade', x(17.1), [['Tudo que eu vou mostrar', x(21.3)], ['Em um só aplicativo', x(22.2)]])),
-    e(x(25.2), x(43.5), 'Secao', sec('Canais ao vivo', x(25.2), [['Canal aberto', x(33.2)], ['Canal fechado', x(33.9)], ['Esportes', x(39.0)], ['Infantil', x(40.8)], ['Documentário', x(41.3)]])),
+    e(x(9.9), x(15.9), 'Gancho', {titulo: 'Cansado de pagar vários?', sub: 'Uma mensalidade só', colapsa: 1.8, semLogo: true}),
+    e(x(17.1), x(23.0), 'Secao', sec('Uma mensalidade', x(17.1), [['Tudo em um só aplicativo', x(22.2)]])),
+    e(x(25.2), x(43.5), 'Secao', sec('Canais ao vivo', x(25.2), [['Canal aberto', x(33.2)], ['Canal fechado', x(33.9)]])),
     e(x(44.7), x(64.6), 'Secao', sec('Filmes', x(44.7), [['Lançamentos', x(46.1)], ['Filmes antigos', x(60.0)]])),
     e(x(64.8), x(72.0), 'Secao', sec('Séries', x(64.8), [['Anime', x(66.0)], ['Dorama', x(66.9)]])),
-    e(x(72.2), x(83.1), 'Secao', sec('Novelas', x(72.2), [['Das mais novas às mais antigas', x(73.9)]])),
+    e(x(72.2), x(83.1), 'Secao', sec('Novelas', x(72.2), [['Das novas às antigas', x(73.9)]])),
     e(x(83.2), x(88.0), 'Secao', sec('Uma mensalidade só', x(83.2), [['Pix, sem cartão', x(84.0)], ['Sem fidelidade', x(85.4)]])),
     e(x(88.1), dur, 'CTA', {horas: true}),
   ];
-  const k = (t0: number, t1: number, zoom: number, ox: number, oy: number, blur?: number): Clip => ({src: 'c4', ss: t0 + 2.6, t0, t1, zoom, ox, oy, blur});
-  const clips = [k(0, 5.0, 1.0, 50, 50), k(5.0, x(25.2), 1.25, 90, 70), k(x(25.2), x(44.0), 1.25, 90, 70, 9), k(x(44.0), dur, 1.25, 90, 70)];
-  return {id: 'h', audio: 'vix/h.mp3', dur, pal, clips, ev, utm: utm(4)};
+  // zoom 1.4 ancorado no topo: a legenda queimada do vídeo original (76% da altura) fica fora do quadro
+  const k = (t0: number, t1: number, ox: number, blur?: number): Clip => ({src: 'c4', ss: t0 + 2.6, t0, t1, zoom: 1.4, ox, oy: 0, blur});
+  const clips = [k(0, 5.0, 40), k(5.0, x(25.2), 80), k(x(25.2), x(44.0), 80, 13), k(x(44.0), dur, 80)];
+  return {id: 'h', audio: 'vix/h.mp3', dur, pal, clips, ev, utm: utm(4), limpo: true, legBase: 0.30};
 };
 
 export const SPECS: Record<string, Spec> = {r1: r1(), r2: r2(), r3: r3(), r4: r4(), h: rH()};

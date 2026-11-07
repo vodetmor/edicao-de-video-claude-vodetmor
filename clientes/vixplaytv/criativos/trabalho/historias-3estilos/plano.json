@@ -1,0 +1,447 @@
+{
+ "titulo": "VixPlay TV · 4 histórias em 4 estilos",
+ "arquivo": "VixPlay TV - 4 historias em 4 estilos para aprovacao.pdf",
+ "rodape": "VixPlay TV · 4 histórias em 4 estilos · Para aprovação",
+ "formato": "9:16",
+ "quadros_por_pagina": 14,
+ "tema": {
+  "acento": "#99E200",
+  "acento_texto": "#3C7A00",
+  "sobre_acento": "#061000",
+  "fundo": "#F5F6F2",
+  "cartao": "#FFFFFF",
+  "linha": "#E1E5DA",
+  "tinta": "#10140F",
+  "tinta_2": "#2E352B",
+  "cinza": "#7A8576",
+  "escuro": "#010204",
+  "papel": "#F2F7EE",
+  "papel_2": "#A7B5A2",
+  "fonte_titulo": "Archivo",
+  "titulo_caixa_alta": true,
+  "capa_escura": true,
+  "aprovar_escura": true
+ },
+ "capa": {
+  "chamada": "Para aprovação · 4 roteiros",
+  "titulo": "Quatro histórias",
+  "titulo_destaque": "em 4 estilos",
+  "texto": "Gancho, cenas e edição próprios em cada vídeo. Logo real uma vez só.",
+  "logo": "logo.png",
+  "logo_altura_mm": 17,
+  "imagens": [
+   "quadros/N04.jpg",
+   "quadros/R01.jpg",
+   "quadros/F03.jpg"
+  ],
+  "numeros": [
+   {
+    "n": "1",
+    "texto": "A vovó e o neto: animação 2D em papel recortado."
+   },
+   {
+    "n": "2",
+    "texto": "Domingo à noite: edição da referência, palavra por palavra."
+   },
+   {
+    "n": "3",
+    "texto": "A conta do mês: desenho à mão no caderno."
+   },
+   {
+    "n": "4",
+    "texto": "Sexta à noite: fotos reais em corte rápido."
+   }
+  ]
+ },
+ "videos": [
+  {
+   "etiqueta": "Animação 2D · A vovó e o neto · 30 s · 17 planos",
+   "titulo": "A vovó e o neto",
+   "ideia": "Animação 2D em papel recortado, nas cores da VixPlay: a vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s, palavra por palavra.",
+   "jornada": [
+    {
+     "titulo": "Problema",
+     "texto": "A vovó quer a novela e não sabe ligar."
+    },
+    {
+     "titulo": "Ajuda",
+     "texto": "O neto chega com o tutorial."
+    },
+    {
+     "titulo": "Passos",
+     "texto": "Plano, Pix, acesso; tutorial por aparelho."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, sem cartão, teste de 4 horas."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "N01",
+     "t": "0:01",
+     "legenda": "A VOVÓ entra em cena, recortada em papel; palavra estala sobre o fundo verde.",
+     "img": "quadros/N01.jpg"
+    },
+    {
+     "id": "N02",
+     "t": "0:03",
+     "legenda": "Vovó no sofá olha a TV: \"Como é que liga?\" e um ? pulando na tela.",
+     "img": "quadros/N02.jpg"
+    },
+    {
+     "id": "N03",
+     "t": "0:05",
+     "legenda": "ATÉ QUE O NETO CHEGA: as palavras entram uma por vez.",
+     "img": "quadros/N03.jpg"
+    },
+    {
+     "id": "N04",
+     "t": "0:06",
+     "legenda": "O neto senta do lado com o celular na mão.",
+     "img": "quadros/N04.jpg"
+    },
+    {
+     "id": "N05",
+     "t": "0:08",
+     "legenda": "TUTORIAL: o celular sobe com o passo a passo.",
+     "img": "quadros/N05.jpg"
+    },
+    {
+     "id": "N06",
+     "t": "0:11",
+     "legenda": "Passos 1, 2 e 3: escolhe o plano, paga por Pix, recebe o acesso.",
+     "img": "quadros/N06.jpg"
+    },
+    {
+     "id": "N07",
+     "t": "0:14",
+     "legenda": "PARA CADA APARELHO.",
+     "img": "quadros/N07.jpg"
+    },
+    {
+     "id": "N08",
+     "t": "0:16",
+     "legenda": "TV, box e celular entram pulando.",
+     "img": "quadros/N08.jpg"
+    },
+    {
+     "id": "N09",
+     "t": "0:19",
+     "legenda": "Deu dúvida? Balões do suporte no WhatsApp.",
+     "img": "quadros/N09.jpg"
+    },
+    {
+     "id": "N10",
+     "t": "0:21",
+     "legenda": "NOVELA! A vovó comemora.",
+     "img": "quadros/N10.jpg"
+    },
+    {
+     "id": "N11",
+     "t": "0:23",
+     "legenda": "Vovó e neto no sofá na frente do menu: canais, filmes, séries e novelas.",
+     "img": "quadros/N11.jpg"
+    },
+    {
+     "id": "N12",
+     "t": "0:25",
+     "legenda": "R$ 35 no primeiro mês.",
+     "img": "quadros/N12.jpg"
+    },
+    {
+     "id": "N13",
+     "t": "0:26",
+     "legenda": "Selos PIX, SEM CARTÃO e SEM FIDELIDADE.",
+     "img": "quadros/N13.jpg"
+    },
+    {
+     "id": "N14",
+     "t": "0:28",
+     "legenda": "Botão SAIBA MAIS e teste grátis de 4 horas; logo real entra aqui, uma vez só.",
+     "img": "quadros/N14.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "A vovó queria ver a novela... mas como é que liga? Até que o neto chega. Tutorial: um, escolhe o plano. Dois, paga por Pix. Três, recebe o acesso. Tem tutorial pra cada aparelho: TV, box e celular. Deu dúvida? Suporte no WhatsApp. E a novela, ó! R$ 35 no primeiro mês. Pix, sem cartão e sem fidelidade. Teste grátis de quatro horas. Toque em saiba mais."
+   }
+  },
+  {
+   "etiqueta": "Estilo 1 · Referência · 30 s · 8 quadros",
+   "titulo": "Domingo à noite",
+   "ideia": "Na edição da referência: palavra por palavra com desfoque, fundo verde vivo, fotos com tinta verde, esfera de rede e cartões de chat.",
+   "jornada": [
+    {
+     "titulo": "Gancho",
+     "texto": "Quem manda no controle?"
+    },
+    {
+     "titulo": "Dor",
+     "texto": "Cada um quer um; várias assinaturas."
+    },
+    {
+     "titulo": "Solução",
+     "texto": "Uma só mensalidade, 3 passos, 3 telas."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, sem cartão, teste de 4 horas."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "R01",
+     "t": "0–2 s",
+     "legenda": "Mão no controle, foto com tinta verde. \"QUEM\" \"MANDA\" \"NO CONTROLE?\" entram uma por vez, com desfoque.",
+     "img": "quadros/R01.jpg"
+    },
+    {
+     "id": "R02",
+     "t": "2–5 s",
+     "legenda": "Mosaico de 4 fotos entrando em sequência. \"CADA UM QUER UM\" na frente, \"PROGRAMA\" na batida seguinte.",
+     "img": "quadros/R02.jpg"
+    },
+    {
+     "id": "R03",
+     "t": "5–8 s",
+     "legenda": "Palavra repetida e desfocada ao fundo (a bagunça). \"PAGAR VÁRIAS?\" bate por cima, uma palavra por vez.",
+     "img": "quadros/R03.jpg"
+    },
+    {
+     "id": "R04",
+     "t": "8–11 s",
+     "legenda": "Esfera de rede luminosa girando (a assinatura única). \"UMA SÓ MENSALIDADE\" aparece palavra por palavra embaixo.",
+     "img": "quadros/R04.jpg"
+    },
+    {
+     "id": "R05",
+     "t": "11–15 s",
+     "legenda": "Cartões de chat (WhatsApp) entrando um a um, em escada. Setas ligam um ao outro.",
+     "img": "quadros/R05.jpg"
+    },
+    {
+     "id": "R06",
+     "t": "15–19 s",
+     "legenda": "Três telas em linha ligadas por traço de luz (analogia do mapa da referência). \"ATÉ 3 TELAS\".",
+     "img": "quadros/R06.jpg"
+    },
+    {
+     "id": "R07",
+     "t": "19–25 s",
+     "legenda": "Preço grande com brilho. Selos \"SEM CARTÃO\" e \"SEM FIDELIDADE\" estalam. Renovação em dia R$ 30 em letra menor.",
+     "img": "quadros/R07.jpg"
+    },
+    {
+     "id": "R08",
+     "t": "25–30 s",
+     "legenda": "Logo real revela uma única vez, com onda de luz. Botão SAIBA MAIS. Sem vinheta.",
+     "img": "quadros/R08.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Domingo à noite. Quem manda no controle? Cada um quer um programa diferente. E você, cansou de pagar várias assinaturas? Aqui é uma só mensalidade. Escolhe o plano, paga por Pix e recebe o acesso no WhatsApp. Até três telas: TV, box e celular. R$ 35 no primeiro mês, sem cartão e sem fidelidade. Renovando em dia, R$ 30. Teste grátis de quatro horas. Toque em saiba mais."
+   }
+  },
+  {
+   "etiqueta": "Estilo 2 · Desenho à mão · 30 s · 8 quadros",
+   "titulo": "A conta do mês",
+   "ideia": "Caderno de linhas: a letra se escreve na tela, as contas são riscadas de vermelho e o preço ganha círculo e marca-texto verde.",
+   "jornada": [
+    {
+     "titulo": "Gancho",
+     "texto": "A conta do mês fecha?"
+    },
+    {
+     "titulo": "Dor",
+     "texto": "Assinatura 1, 2, 3: o total assusta."
+    },
+    {
+     "titulo": "Virada",
+     "texto": "E se fosse uma só? R$ 35."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "Pix, 3 telas, teste de 4 horas."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "D01",
+     "t": "0–3 s",
+     "legenda": "Caderno abre. \"A conta do mês...\" é escrita à mão, letra por letra, com ruído de lápis.",
+     "img": "quadros/D01.jpg"
+    },
+    {
+     "id": "D02",
+     "t": "3–7 s",
+     "legenda": "Lista de contas escrita linha por linha. O total vira \"??\" e o traço de lápis treme.",
+     "img": "quadros/D02.jpg"
+    },
+    {
+     "id": "D03",
+     "t": "7–10 s",
+     "legenda": "Cada linha é riscada com caneta vermelha, uma por vez. Letra \"NÃO!\" estampada.",
+     "img": "quadros/D03.jpg"
+    },
+    {
+     "id": "D04",
+     "t": "10–14 s",
+     "legenda": "Calculadora desenhada a lápis, números dos botões piscam e o visor soma.",
+     "img": "quadros/D04.jpg"
+    },
+    {
+     "id": "D05",
+     "t": "14–18 s",
+     "legenda": "Pergunta escrita. Um círculo verde é desenhado em volta de R$ 35. O preço \"carimba\" com tremida.",
+     "img": "quadros/D05.jpg"
+    },
+    {
+     "id": "D06",
+     "t": "18–22 s",
+     "legenda": "\"PIX\" ganha marca-texto verde passando por baixo. Os dois \"sem\" aparecem com um risco de certo.",
+     "img": "quadros/D06.jpg"
+    },
+    {
+     "id": "D07",
+     "t": "22–26 s",
+     "legenda": "TV, celular e box desenhados a lápis, ligados por tracejado. \"até 3 telas\" escrito embaixo.",
+     "img": "quadros/D07.jpg"
+    },
+    {
+     "id": "D08",
+     "t": "26–30 s",
+     "legenda": "Logo real colado como adesivo uma vez só. \"teste grátis de 4 horas\" marcado em verde.",
+     "img": "quadros/D08.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "A conta do mês. Assinatura um, assinatura dois, assinatura três... o total assusta. Faz a conta de novo. E se fosse uma só? R$ 35 no primeiro mês. Paga por Pix, sem cartão, sem fidelidade. TV, celular ou box, até três telas. Teste grátis de quatro horas: é só chamar no WhatsApp."
+   }
+  },
+  {
+   "etiqueta": "Estilo 3 · Fotos reais · 30 s · 8 quadros",
+   "titulo": "Sexta à noite",
+   "ideia": "Fotos reais em corte rápido, legenda grande com contorno, adesivos verdes e tela dividida.",
+   "jornada": [
+    {
+     "titulo": "Gancho",
+     "texto": "Sexta à noite: o que assistir?"
+    },
+    {
+     "titulo": "Dor",
+     "texto": "Cada um quer uma coisa. E a conta?"
+    },
+    {
+     "titulo": "Solução",
+     "texto": "Uma mensalidade; Downloader e tutorial."
+    },
+    {
+     "titulo": "Oferta",
+     "texto": "R$ 35, Pix, teste de 4 horas."
+    }
+   ],
+   "quadros": [
+    {
+     "id": "F01",
+     "t": "0–2 s",
+     "legenda": "Foto cheia (pizza e pé no sofá). Legenda cai com batida. Adesivo \"PIZZA ✓\" cola no canto.",
+     "img": "quadros/F01.jpg"
+    },
+    {
+     "id": "F02",
+     "t": "2–4 s",
+     "legenda": "Mulher no sofá com o controle. Ponto de interrogação desenhado gira ao lado.",
+     "img": "quadros/F02.jpg"
+    },
+    {
+     "id": "F03",
+     "t": "4–7 s",
+     "legenda": "Tela dividida: dois grupos diferentes no sofá. Legenda no meio, palavra por palavra.",
+     "img": "quadros/F03.jpg"
+    },
+    {
+     "id": "F04",
+     "t": "7–10 s",
+     "legenda": "Foto de quem calcula. Etiquetas \"R$ ?\" voam pra cima da cena, uma por vez.",
+     "img": "quadros/F04.jpg"
+    },
+    {
+     "id": "F05",
+     "t": "10–14 s",
+     "legenda": "Foto da moça relaxada. Adesivos FILMES, SÉRIES, NOVELAS, CANAIS AO VIVO estalam em volta, em ordem.",
+     "img": "quadros/F05.jpg"
+    },
+    {
+     "id": "F06",
+     "t": "14–19 s",
+     "legenda": "Senhora mexendo no celular. Legenda \"INSTALA PELO DOWNLOADER\". Adesivo de tutorial.",
+     "img": "quadros/F06.jpg"
+    },
+    {
+     "id": "F07",
+     "t": "19–25 s",
+     "legenda": "Foto cheia. Preço enorme estala. Adesivos PIX, SEM CARTÃO, SEM FIDELIDADE caem em sequência.",
+     "img": "quadros/F07.jpg"
+    },
+    {
+     "id": "F08",
+     "t": "25–30 s",
+     "legenda": "Foto escurecida só para ler o logo (uma vez). Botão SAIBA MAIS.",
+     "img": "quadros/F08.jpg"
+    }
+   ],
+   "roteiro": {
+    "narracao": "Sexta à noite. O que vai assistir? Cada um quer uma coisa. E a conta? Uma só mensalidade: filmes, séries, novelas e canais ao vivo. Instala pelo Downloader, com tutorial pra cada aparelho. R$ 35 no primeiro mês. Pix, sem cartão, sem fidelidade. Teste grátis de quatro horas. Saiba mais."
+   }
+  }
+ ],
+ "som": {
+  "titulo": "Som",
+  "texto": "Voz na frente; música 18 a 22 LU abaixo, volta nas pausas. Volume final −14 LUFS.",
+  "cartoes": [
+   {
+    "titulo": "Voz",
+    "texto": "ElevenLabs, gerada por vocês a partir das locuções deste PDF."
+   },
+   {
+    "titulo": "Música",
+    "texto": "Vovó: música leve e alegre. Estilo 1: eletrônica com pulso. Estilo 2: violão leve. Estilo 3: pop com batida marcada."
+   }
+  ],
+  "efeitos": [
+   [
+    "Palavra entrando",
+    "whoosh curto"
+   ],
+   [
+    "Selo, adesivo ou preço",
+    "pop"
+   ],
+   [
+    "Lápis e risco (estilo 2)",
+    "rabisco de lápis"
+   ],
+   [
+    "Logo no fim",
+    "brilho curto"
+   ]
+  ]
+ },
+ "aprovar": {
+  "titulo": "Para aprovar",
+  "itens": [
+   {
+    "texto": "Quais estilos vão para vídeo (1, 2, 3, 4)"
+   },
+   {
+    "texto": "Locução de cada história",
+    "nota": "para gerar no ElevenLabs"
+   },
+   {
+    "texto": "Fotos do estilo 3",
+    "nota": "Pexels, licença livre"
+   }
+  ],
+  "nota_final": "Para ajustar, cite o código (ex.: muda o R03)."
+ }
+}

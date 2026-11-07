@@ -76,3 +76,4 @@
 - [[entrega-previas-video]]: thread caps at 24 attachments; deliver previews as a light Artifact player page and archive old versions on his PC (Maquina de Editar\clientes\...\previas). Keep messages short (Vítor 2026-10-31).
 
 - [[vixplay-feedback-storytelling]]: 2026-11-06 Deidson reprovou os criativos VixPlay v1/v2 (queria storytelling, 1 história por criativo); mandar PDF da skill pdf-aprovacao antes de renderizar.
+- [PDF de aprovação = modelo pdf-aprovacao](vixplay-pdf-aprovacao-modelo.md) — nunca HTML improvisado; tema da marca, quadros codificados

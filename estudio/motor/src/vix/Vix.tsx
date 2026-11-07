@@ -39,15 +39,15 @@ const cues = (pal: Pal[], fim: number): Cue[] => {
   return out.map((c, i) => ({...c, e: Math.min(out[i + 1] ? out[i + 1].s : fim, c.e + 0.45)}));
 };
 
-const Legenda: React.FC<{pal: Pal[]; fim: number}> = ({pal, fim}) => {
+const Legenda: React.FC<{pal: Pal[]; fim: number; base?: number; mudo?: [number, number][]}> = ({pal, fim, base = 0.13, mudo = []}) => {
   const f = useCurrentFrame();
   const t = f / 30;
   const cs = React.useMemo(() => cues(pal, fim), [pal, fim]);
   const c = cs.find((x) => t >= x.s - 0.05 && t < x.e);
-  if (!c) return null;
+  if (!c || mudo.some(([a0, a1]) => t >= a0 - 0.1 && t < a1)) return null;
   const a = interpolate(t, [c.s - 0.05, c.s + 0.1, c.e - 0.08, c.e], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <div style={{position: 'absolute', left: 90, width: W - 180, bottom: H * 0.13, textAlign: 'center', fontFamily: TXT, fontWeight: 500, fontSize: 54, lineHeight: 1.22, color: V.txt, opacity: a, textShadow: '0 2px 14px rgba(1,2,4,0.9)'}}>
+    <div style={{position: 'absolute', left: 90, width: W - 180, bottom: H * base, textAlign: 'center', fontFamily: TXT, fontWeight: 500, fontSize: 54, lineHeight: 1.22, color: V.txt, opacity: a, textShadow: '0 2px 14px rgba(1,2,4,0.9)'}}>
       {c.txt}
     </div>
   );
@@ -63,6 +63,11 @@ const Faixa: React.FC<{topo?: number}> = ({topo = 0.70}) => (
     <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 250, background: `linear-gradient(180deg, rgba(1,2,4,0.92) 0%, rgba(1,2,4,0.6) 50%, rgba(1,2,4,0) 100%)`}} />
     <Img src={staticFile('vix/vixplay-logo-mark.png')} style={{position: 'absolute', left: 54, top: 50, width: 230}} />
   </>
+);
+
+// Versão limpa (H): sem faixa escura e sem selo fixo; só um desfoque leve no topo para esconder o nome de outro app
+const FaixaLimpa: React.FC = () => (
+  <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 150, backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', WebkitMaskImage: 'linear-gradient(180deg, #000 40%, transparent 100%)', maskImage: 'linear-gradient(180deg, #000 40%, transparent 100%)'}} />
 );
 
 export const Vix: React.FC<Props> = ({id}) => {
@@ -88,7 +93,7 @@ export const Vix: React.FC<Props> = ({id}) => {
           </Sequence>
         );
       })}
-      <Faixa />
+      {s.limpo ? <FaixaLimpa /> : <Faixa />}
       {s.ev.map((e, i) => {
         const B = BLOCOS[e.bloco];
         const from = Math.round(e.t0 * 30);
@@ -99,7 +104,7 @@ export const Vix: React.FC<Props> = ({id}) => {
           </Sequence>
         );
       })}
-      <Legenda pal={s.pal} fim={s.dur} />
+      <Legenda pal={s.pal} fim={s.dur} base={s.legBase} mudo={s.limpo ? s.ev.filter((e) => e.bloco === 'PopMarca' || e.bloco === 'CTA').map((e) => [e.t0, e.t1] as [number, number]) : []} />
       <Audio src={staticFile(s.audio)} />
     </AbsoluteFill>
   );
