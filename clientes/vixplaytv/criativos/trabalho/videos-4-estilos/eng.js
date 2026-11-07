@@ -45,11 +45,16 @@ window.seek = function (t) {
     }
     if (s.hand) {
       // mão: segue a ponta do que está sendo escrito; parada = repousa perto do último ponto; sai de cena no fim
-      if (pen) { s.lastPen = pen; }
-      const hp = pen || s.lastPen || { x: 1180, y: 2100 };
+      if (pen) { s.lastPen = pen; s.lastPenT = t; }
+      const FORA = { x: 1250, y: 2150 };
+      let hp = pen || s.lastPen || FORA;
+      if (!pen && s.lastPen) {
+        // parada: espera 0,3 s levantada e depois sai de cena até a próxima palavra
+        const r = eo(clamp((t - s.lastPenT - 0.3) / 0.45));
+        hp = { x: s.lastPen.x + 30 + (FORA.x - s.lastPen.x) * r, y: s.lastPen.y + 40 + (FORA.y - s.lastPen.y) * r };
+      }
       const SC = 640 / 979, TIPX = 24 * SC, TIPY = 58 * SC;
-      const lift = pen ? 0 : 1;
-      s.hand.style.transform = `translate(${hp.x - TIPX + lift * 30}px, ${hp.y - TIPY + lift * 40}px)`;
+      s.hand.style.transform = `translate(${hp.x - TIPX}px, ${hp.y - TIPY}px)`;
     }
   }
 };
