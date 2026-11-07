@@ -26,18 +26,18 @@
   "chamada": "Para aprovação · 4 roteiros",
   "titulo": "Quatro histórias",
   "titulo_destaque": "em 4 estilos",
-  "texto": "Gancho, cenas e edição próprios. O 1º frame de cada vídeo é a capa da vitrine do Instagram.",
+  "texto": "Gancho, cenas e edição próprios em cada vídeo. Logo real uma vez só.",
   "logo": "logo.png",
   "logo_altura_mm": 17,
   "imagens": [
-   "quadros/W00.jpg",
-   "quadros/R00.jpg",
-   "quadros/F00.jpg"
+   "quadros/H04.jpg",
+   "quadros/R01.jpg",
+   "quadros/F03.jpg"
   ],
   "numeros": [
    {
     "n": "1",
-    "texto": "A vovó e o neto: whiteboard, a mão desenhando."
+    "texto": "A vovó e o neto: desenho à mão, com a mãozinha desenhando."
    },
    {
     "n": "2",
@@ -55,9 +55,9 @@
  },
  "videos": [
   {
-   "etiqueta": "Whiteboard · A vovó e o neto · 30 s · 14 quadros",
+   "etiqueta": "Desenho à mão · A vovó e o neto · 30 s · 14 quadros",
    "titulo": "A vovó e o neto",
-   "ideia": "Estilo whiteboard: uma mão real com pincel desenha a história em tempo real no quadro branco, traço preto e destaque em verde VixPlay. A vovó não sabe ligar, o neto chega e ensina.",
+   "ideia": "Desenho à mão em tempo real: a mãozinha com o pincel desenha a história no quadro branco, traço preto e verde VixPlay. A vovó não sabe ligar, o neto chega e ensina.",
    "jornada": [
     {
      "titulo": "Problema",
@@ -78,88 +78,88 @@
    ],
    "quadros": [
     {
-     "id": "W00",
-     "t": "0:00",
-     "legenda": "CAPA (1º frame, vitrine do Instagram): \"Como a vovó voltou a ver novela\", vovó e neto no sofá, logo.",
-     "img": "quadros/W00.jpg"
-    },
-    {
-     "id": "W01",
+     "id": "N01",
      "t": "0:01",
-     "legenda": "A mão escreve A VOVÓ e começa a desenhar a vovó.",
-     "img": "quadros/W01.jpg"
+     "legenda": "A mãozinha escreve A VOVÓ e começa a desenhar a vovó.",
+     "img": "quadros/H01.jpg"
     },
     {
-     "id": "W02",
+     "id": "N02",
      "t": "0:03",
      "legenda": "Vovó no sofá, TV com ?; a mão escreve \"como é que liga?\" no balão.",
-     "img": "quadros/W02.jpg"
+     "img": "quadros/H02.jpg"
     },
     {
-     "id": "W03",
+     "id": "N03",
      "t": "0:05",
      "legenda": "A mão escreve ATÉ QUE O NETO CHEGA, com marca-texto verde.",
-     "img": "quadros/W03.jpg"
+     "img": "quadros/H03.jpg"
     },
     {
-     "id": "W04",
+     "id": "N04",
      "t": "0:06",
      "legenda": "A mão desenha o neto do lado da vovó, com o celular.",
-     "img": "quadros/W04.jpg"
+     "img": "quadros/H04.jpg"
     },
     {
-     "id": "W05",
+     "id": "N05",
      "t": "0:08",
-     "legenda": "TUTORIAL: celular desenhado com as linhas do passo a passo.",
-     "img": "quadros/W05.jpg"
+     "legenda": "TUTORIAL: a mão desenha o celular com o passo a passo.",
+     "img": "quadros/H05.jpg"
     },
     {
-     "id": "W06",
+     "id": "N06",
      "t": "0:11",
      "legenda": "Passos 1, 2 e 3 escritos e marcados: plano, Pix, acesso.",
-     "img": "quadros/W06.jpg"
+     "img": "quadros/H06.jpg"
     },
     {
-     "id": "W07",
+     "id": "N07",
      "t": "0:14",
-     "legenda": "PARA CADA APARELHO: a mão desenha TV, box e celular.",
-     "img": "quadros/W07.jpg"
+     "legenda": "A mão escreve PARA CADA APARELHO.",
+     "img": "quadros/H07.jpg"
     },
     {
-     "id": "W08",
+     "id": "N08",
      "t": "0:16",
-     "legenda": "DEU DÚVIDA? Balão com \"suporte humano no WhatsApp\".",
-     "img": "quadros/W08.jpg"
+     "legenda": "A mão desenha TV, box e celular.",
+     "img": "quadros/H08.jpg"
     },
     {
-     "id": "W09",
+     "id": "N09",
      "t": "0:19",
-     "legenda": "NOVELA! A vovó feliz; a mão desenha estrelinhas.",
-     "img": "quadros/W09.jpg"
+     "legenda": "DEU DÚVIDA? Balão com \"suporte humano no WhatsApp\".",
+     "img": "quadros/H09.jpg"
     },
     {
-     "id": "W10",
+     "id": "N10",
      "t": "0:21",
+     "legenda": "NOVELA! A vovó feliz; a mão desenha estrelinhas.",
+     "img": "quadros/H10.jpg"
+    },
+    {
+     "id": "N11",
+     "t": "0:23",
      "legenda": "Vovó e neto no sofá; a mão pinta de verde o menu: canais, filmes, séries, novelas.",
-     "img": "quadros/W10.jpg"
+     "img": "quadros/H11.jpg"
     },
     {
-     "id": "W11",
-     "t": "0:24",
+     "id": "N12",
+     "t": "0:25",
      "legenda": "R$ 35 circulado em verde; a mão escreve \"no primeiro mês\".",
-     "img": "quadros/W11.jpg"
+     "img": "quadros/H12.jpg"
     },
     {
-     "id": "W12",
+     "id": "N13",
      "t": "0:26",
      "legenda": "PIX, SEM CARTÃO, SEM FIDELIDADE com ✓ verde.",
-     "img": "quadros/W12.jpg"
+     "img": "quadros/H13.jpg"
     },
     {
-     "id": "W13",
+     "id": "N14",
      "t": "0:28",
-     "legenda": "TESTE GRÁTIS DE 4 HORAS, botão ASSISTA COM A VIXPLAY TV e o logo real colado.",
-     "img": "quadros/W13.jpg"
+     "legenda": "TESTE GRÁTIS DE 4 HORAS, botão ASSISTA COM A VIXPLAY TV e o logo real.",
+     "img": "quadros/H14.jpg"
     }
    ],
    "roteiro": {
@@ -167,7 +167,7 @@
    }
   },
   {
-   "etiqueta": "Estilo 1 · Referência · 30 s · 9 quadros",
+   "etiqueta": "Estilo 1 · Referência · 30 s · 8 quadros",
    "titulo": "Domingo à noite",
    "ideia": "Na edição da referência: palavra por palavra com desfoque, fundo verde vivo, fotos com tinta verde, esfera de rede e cartões de chat.",
    "jornada": [
@@ -189,12 +189,6 @@
     }
    ],
    "quadros": [
-    {
-     "id": "R00",
-     "t": "0:00",
-     "legenda": "CAPA (1º frame, vitrine do Instagram): QUEM MANDA NO CONTROLE?, foto com tinta verde e logo.",
-     "img": "quadros/R00.jpg"
-    },
     {
      "id": "R01",
      "t": "0–2 s",
@@ -249,7 +243,7 @@
    }
   },
   {
-   "etiqueta": "Estilo 2 · Desenho à mão · 30 s · 9 quadros",
+   "etiqueta": "Estilo 2 · Desenho à mão · 30 s · 8 quadros",
    "titulo": "A conta do mês",
    "ideia": "Caderno de linhas: a letra se escreve na tela, as contas são riscadas de vermelho e o preço ganha círculo e marca-texto verde.",
    "jornada": [
@@ -271,12 +265,6 @@
     }
    ],
    "quadros": [
-    {
-     "id": "D00",
-     "t": "0:00",
-     "legenda": "CAPA (1º frame, vitrine do Instagram): \"A conta do mês... fecha?\" no caderno, bilhete e logo.",
-     "img": "quadros/D00.jpg"
-    },
     {
      "id": "D01",
      "t": "0–3 s",
@@ -331,7 +319,7 @@
    }
   },
   {
-   "etiqueta": "Estilo 3 · Fotos reais · 30 s · 9 quadros",
+   "etiqueta": "Estilo 3 · Fotos reais · 30 s · 8 quadros",
    "titulo": "Sexta à noite",
    "ideia": "Fotos reais em corte rápido, legenda grande com contorno, adesivos verdes e tela dividida.",
    "jornada": [
@@ -353,12 +341,6 @@
     }
    ],
    "quadros": [
-    {
-     "id": "F00",
-     "t": "0:00",
-     "legenda": "CAPA (1º frame, vitrine do Instagram): SEXTA À NOITE. E A TV?, adesivos e logo.",
-     "img": "quadros/F00.jpg"
-    },
     {
      "id": "F01",
      "t": "0–2 s",
