@@ -11,7 +11,7 @@ const { chromium } = require('playwright'); const fs = require('fs');
   const tempos = ti > 0 ? process.argv[ti + 1].split(',').map(Number) : [...Array(Math.round(+durS * 30)).keys()].map((i) => i / 30);
   let i = 0;
   for (const t of tempos) {
-    await p.evaluate((t) => window.seek(t), t);
+    await p.evaluate(async (t) => { await window.seek(t); }, t);
     await p.screenshot({ path: `${out}/${ti > 0 ? 't' + t : String(i).padStart(5, '0')}.jpg`, type: 'jpeg', quality: 92 });
     i++;
   }

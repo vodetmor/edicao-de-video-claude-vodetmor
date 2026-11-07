@@ -16,7 +16,7 @@ function prep() {
   // medir posição real dos elementos "write" (sem transformações) para a mão
   for (const s of CACHE) { s.sc.style.display = 'block'; for (const e of s.els) { if (e.a === 'write') { const r = e.el.getBoundingClientRect(); e.r = { x: r.left, y: r.top, w: r.width, h: r.height }; } } s.sc.style.display = 'none'; }
 }
-window.seek = function (t) {
+function seekSync(t) {
   if (!CACHE) prep();
   for (const s of CACHE) {
     const on = t >= s.t0 && t < s.t1;
@@ -58,4 +58,21 @@ window.seek = function (t) {
     }
   }
 };
-window.addEventListener('load', () => document.fonts.ready.then(() => setTimeout(() => { prep(); window.seek(0); window.PRONTO = 1; }, 600)));
+// vídeos dentro das cenas: tempo do vídeo = data-v0 + (t - data-t ou início da cena); espera o 'seeked' antes da captura
+window.seek = function (t) {
+  seekSync(t);
+  const ps = [];
+  for (const s of CACHE) {
+    if (s.sc.style.display === 'none') continue;
+    for (const v of s.sc.querySelectorAll('video')) {
+      const st = v.dataset.t != null ? +v.dataset.t : s.t0;
+      const tt = Math.max(0, Math.min((v.duration || 6) - 0.05, (+v.dataset.v0 || 0) + Math.max(0, t - st)));
+      if (Math.abs(v.currentTime - tt) > 0.001) { ps.push(new Promise((r) => { v.addEventListener('seeked', r, { once: true }); setTimeout(r, 3000); })); v.currentTime = tt; }
+    }
+  }
+  return Promise.all(ps);
+};
+window.addEventListener('load', () => document.fonts.ready.then(async () => {
+  await Promise.all([...document.querySelectorAll('video')].map((v) => { v.muted = true; return v.readyState >= 2 ? 0 : new Promise((r) => { v.addEventListener('loadeddata', r, { once: true }); v.load(); setTimeout(r, 8000); }); }));
+  setTimeout(async () => { prep(); await window.seek(0); window.PRONTO = 1; }, 600);
+}));

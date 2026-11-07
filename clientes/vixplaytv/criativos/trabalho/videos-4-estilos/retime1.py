@@ -17,6 +17,19 @@ for i in range(17):
         vf = f'trim=start={o0}:end={o1},setpts=(PTS-STARTPTS)*{n / od:.4f}'
     out = f'C:/tmp/vz/seg1/s{i:02d}.mp4'
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', SRC, '-vf', vf + ',fps=30', '-an', '-c:v', 'libx264', '-crf', '16', '-pix_fmt', 'yuv420p', out], check=True)
+    if i == 0:
+        # abertura: a vovó quer ver a NOVELA -> plano "NOVELA!" com duas cenas reais de novela na TV
+        base = out.replace('.mp4', '_b.mp4')
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', SRC, '-vf', f'trim=start=20.5:end=22.0,setpts=(PTS-STARTPTS)*{n / 1.5:.4f},fps=30', '-an', '-c:v', 'libx264', '-crf', '16', '-pix_fmt', 'yuv420p', base], check=True)
+        A = 'C:/tmp/vz/nov/08-pexels-a-couple-romance-in-a-stage-pl.mp4'
+        B = 'C:/tmp/vz/nov/02-pexels-a-woman-embracing-a-man-while-.mp4'
+        h = n / 2
+        fc = (f'[1:v]trim=start=2:duration={h},setpts=PTS-STARTPTS,scale=840:472:force_original_aspect_ratio=increase,crop=840:472,fps=30[a];'
+              f'[2:v]trim=start=6:duration={h + 0.1},setpts=PTS-STARTPTS,scale=840:472:force_original_aspect_ratio=increase,crop=840:472,fps=30[b];'
+              '[a][b]concat=n=2:v=1:a=0[c];'
+              '[0:v]drawbox=x=100:y=1000:w=880:h=512:color=0x04140a:t=fill,drawbox=x=505:y=1512:w=70:h=50:color=0x04140a:t=fill,'
+              'drawbox=x=400:y=1560:w=280:h=20:color=0x04140a:t=fill[bb];[bb][c]overlay=120:1020:shortest=1[v]')
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', base, '-i', A, '-i', B, '-filter_complex', fc, '-map', '[v]', '-an', '-c:v', 'libx264', '-crf', '16', '-pix_fmt', 'yuv420p', out], check=True)
     if i == 12:
         nov = 'C:/tmp/vz/nov/02-pexels-a-woman-embracing-a-man-while-.mp4'
         tmp = out.replace('.mp4', '_n.mp4')
