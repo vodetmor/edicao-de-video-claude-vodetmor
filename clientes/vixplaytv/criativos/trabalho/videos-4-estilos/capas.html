@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800;1,900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.fr{width:1080px;height:1920px;position:relative;overflow:hidden}
+.fr>*{position:absolute}
+.plate{background:#010204;border-radius:28px;padding:22px 34px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.plate img{width:100%;display:block}
+.lab{left:50%;transform:translateX(-50%) rotate(-2deg);background:#f2f7ee;color:#04140a;font:400 84px/1.05 'Permanent Marker';padding:14px 34px;border-radius:8px;box-shadow:6px 8px 0 rgba(4,20,10,.35);white-space:nowrap;text-align:center}
+.lab.g{background:#b8ff1f;transform:translateX(-50%) rotate(1.5deg)}
+.pill{left:50%;transform:translateX(-50%);background:#04140a;color:#b8ff1f;font:italic 900 31px Montserrat;padding:16px 36px;border-radius:50px;white-space:nowrap;text-transform:uppercase}
+</style></head><body>
+<!-- capa da vovó: 1º frame -->
+<div class="fr" id="capa1" style="background:url(capa1_bg.png) center/cover">
+ <div style="inset:0;background:rgba(14,90,44,.35)"></div>
+ <div class="plate" style="left:360px;top:300px;width:360px"><img src="file:///C:/dev/maquina-de-editar/clientes/vixplaytv/criativos/trabalho/historias-vox/logo.png"></div>
+ <div class="lab" style="top:470px">COMO A VOVÓ</div>
+ <div class="lab g" style="top:600px">VOLTOU A VER NOVELA</div>
+ <div class="pill" style="top:1420px">Canais, filmes, séries e novelas num só app</div>
+</div>
+<!-- logo do fim (sobreposto no último plano) -->
+<div class="fr" id="logo1" style="background:transparent">
+ <div class="plate" style="left:300px;top:380px;width:480px"><img src="file:///C:/dev/maquina-de-editar/clientes/vixplaytv/criativos/trabalho/historias-vox/logo.png"></div>
+</div>
+<script>document.fonts.ready.then(()=>setTimeout(()=>window.PRONTO=1,400));</script>
+</body></html>
