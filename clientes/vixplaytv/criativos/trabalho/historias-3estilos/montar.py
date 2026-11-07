@@ -10,39 +10,39 @@ tema = json.loads((AQUI.parent / "historias-vox" / "plano.json").read_text(encod
 
 
 NETO = [
-    ("0:01", "A mãozinha desenha A VOVÓ e a vovó recortada em papel, sobre o fundo verde."),
-    ("0:03", "Vovó no sofá olha a TV: a mão desenha o ? na tela; balão \"Como é que liga?\"."),
-    ("0:05", "A mão escreve ATÉ QUE O NETO CHEGA, uma palavra por vez."),
-    ("0:06", "A mão desenha o celular na mão do neto, do lado da vovó."),
-    ("0:08", "TUTORIAL: a mão desenha o passo a passo no celular."),
-    ("0:11", "Passos 1, 2 e 3: a mão escreve PAGA POR PIX."),
-    ("0:14", "A mão escreve PARA CADA APARELHO."),
-    ("0:16", "TV, box e celular; a mão desenha o celular."),
-    ("0:19", "Deu dúvida? A mão desenha o balão do suporte no WhatsApp."),
-    ("0:21", "NOVELA! A mão termina o ponto de exclamação."),
-    ("0:23", "Vovó e neto no sofá; a mão pinta o menu: canais, filmes, séries e novelas."),
-    ("0:25", "R$ 35; a mão escreve \"no primeiro mês\"."),
-    ("0:26", "Selos PIX e SEM CARTÃO; a mão escreve SEM FIDELIDADE."),
-    ("0:28", "Botão SAIBA MAIS; a mão escreve \"teste grátis de 4 horas\"; logo real no fim."),
+    ("0:01", "A VOVÓ entra em cena, recortada em papel; palavra estala sobre o fundo verde."),
+    ("0:03", "Vovó no sofá olha a TV: \"Como é que liga?\" e um ? pulando na tela."),
+    ("0:05", "ATÉ QUE O NETO CHEGA: as palavras entram uma por vez."),
+    ("0:06", "O neto senta do lado com o celular na mão."),
+    ("0:08", "TUTORIAL: o celular sobe com o passo a passo."),
+    ("0:11", "Passos 1, 2 e 3: escolhe o plano, paga por Pix, recebe o acesso."),
+    ("0:14", "PARA CADA APARELHO."),
+    ("0:16", "TV, box e celular entram pulando."),
+    ("0:19", "Deu dúvida? Balões do suporte no WhatsApp."),
+    ("0:21", "NOVELA! A vovó comemora."),
+    ("0:23", "Vovó e neto no sofá na frente do menu: canais, filmes, séries e novelas."),
+    ("0:25", "R$ 35 no primeiro mês."),
+    ("0:26", "Selos PIX, SEM CARTÃO e SEM FIDELIDADE."),
+    ("0:28", "Botão SAIBA MAIS e teste grátis de 4 horas; logo real entra aqui, uma vez só."),
 ]
 
 
 def quadros(p):
     out = []
     if p == "N":
-        return [{"id": f"N{i:02d}", "t": t, "legenda": l, "img": f"quadros/M{i:02d}.jpg"} for i, (t, l) in enumerate(NETO, 1)]
+        return [{"id": f"N{i:02d}", "t": t, "legenda": l, "img": f"quadros/N{i:02d}.jpg"} for i, (t, l) in enumerate(NETO, 1)]
     for i in range(1, 9):
         c = cells[f"{p}{i:02d}"]
         t = c["n"].split("·")[1].strip()
-        out.append({"id": c["code"], "t": t, "legenda": c["d"], "img": f"quadros/{c['code']}.jpg"})
+        out.append({"id": c["code"], "t": t, "legenda": c["d"], "img": f"quadros/DM{i:02d}.jpg" if p == "D" else f"quadros/{c['code']}.jpg"})
     return out
 
 
 V = [
     {
-        "etiqueta": "Animação 2D handmade · A vovó e o neto · 30 s · 14 quadros",
+        "etiqueta": "Animação 2D · A vovó e o neto · 30 s · 17 planos",
         "titulo": "A vovó e o neto",
-        "ideia": "A mesma animação 2D verde, em papel recortado, agora handmade: a mãozinha com o pincel entra e desenha cada cena na hora. A vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s.",
+        "ideia": "Animação 2D em papel recortado, nas cores da VixPlay: a vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s, palavra por palavra.",
         "jornada": [
             {"titulo": "Problema", "texto": "A vovó quer a novela e não sabe ligar."},
             {"titulo": "Ajuda", "texto": "O neto chega com o tutorial."},
@@ -107,9 +107,9 @@ plano = {
         "texto": "Gancho, cenas e edição próprios em cada vídeo. Logo real uma vez só.",
         "logo": "logo.png",
         "logo_altura_mm": 17,
-        "imagens": ["quadros/M04.jpg", "quadros/R01.jpg", "quadros/F03.jpg"],
+        "imagens": ["quadros/N04.jpg", "quadros/R01.jpg", "quadros/F03.jpg"],
         "numeros": [
-            {"n": "1", "texto": "A vovó e o neto: animação 2D handmade, com a mãozinha desenhando."},
+            {"n": "1", "texto": "A vovó e o neto: animação 2D em papel recortado."},
             {"n": "2", "texto": "Domingo à noite: edição da referência, palavra por palavra."},
             {"n": "3", "texto": "A conta do mês: desenho à mão no caderno."},
             {"n": "4", "texto": "Sexta à noite: fotos reais em corte rápido."},

@@ -30,14 +30,14 @@
   "logo": "logo.png",
   "logo_altura_mm": 17,
   "imagens": [
-   "quadros/M04.jpg",
+   "quadros/N04.jpg",
    "quadros/R01.jpg",
    "quadros/F03.jpg"
   ],
   "numeros": [
    {
     "n": "1",
-    "texto": "A vovó e o neto: animação 2D handmade, com a mãozinha desenhando."
+    "texto": "A vovó e o neto: animação 2D em papel recortado."
    },
    {
     "n": "2",
@@ -55,9 +55,9 @@
  },
  "videos": [
   {
-   "etiqueta": "Animação 2D handmade · A vovó e o neto · 30 s · 14 quadros",
+   "etiqueta": "Animação 2D · A vovó e o neto · 30 s · 17 planos",
    "titulo": "A vovó e o neto",
-   "ideia": "A mesma animação 2D verde, em papel recortado, agora handmade: a mãozinha com o pincel entra e desenha cada cena na hora. A vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s.",
+   "ideia": "Animação 2D em papel recortado, nas cores da VixPlay: a vovó não sabe ligar, o neto chega e ensina; corte a cada 1,5 a 2 s, palavra por palavra.",
    "jornada": [
     {
      "titulo": "Problema",
@@ -80,86 +80,86 @@
     {
      "id": "N01",
      "t": "0:01",
-     "legenda": "A mãozinha desenha A VOVÓ e a vovó recortada em papel, sobre o fundo verde.",
-     "img": "quadros/M01.jpg"
+     "legenda": "A VOVÓ entra em cena, recortada em papel; palavra estala sobre o fundo verde.",
+     "img": "quadros/N01.jpg"
     },
     {
      "id": "N02",
      "t": "0:03",
-     "legenda": "Vovó no sofá olha a TV: a mão desenha o ? na tela; balão \"Como é que liga?\".",
-     "img": "quadros/M02.jpg"
+     "legenda": "Vovó no sofá olha a TV: \"Como é que liga?\" e um ? pulando na tela.",
+     "img": "quadros/N02.jpg"
     },
     {
      "id": "N03",
      "t": "0:05",
-     "legenda": "A mão escreve ATÉ QUE O NETO CHEGA, uma palavra por vez.",
-     "img": "quadros/M03.jpg"
+     "legenda": "ATÉ QUE O NETO CHEGA: as palavras entram uma por vez.",
+     "img": "quadros/N03.jpg"
     },
     {
      "id": "N04",
      "t": "0:06",
-     "legenda": "A mão desenha o celular na mão do neto, do lado da vovó.",
-     "img": "quadros/M04.jpg"
+     "legenda": "O neto senta do lado com o celular na mão.",
+     "img": "quadros/N04.jpg"
     },
     {
      "id": "N05",
      "t": "0:08",
-     "legenda": "TUTORIAL: a mão desenha o passo a passo no celular.",
-     "img": "quadros/M05.jpg"
+     "legenda": "TUTORIAL: o celular sobe com o passo a passo.",
+     "img": "quadros/N05.jpg"
     },
     {
      "id": "N06",
      "t": "0:11",
-     "legenda": "Passos 1, 2 e 3: a mão escreve PAGA POR PIX.",
-     "img": "quadros/M06.jpg"
+     "legenda": "Passos 1, 2 e 3: escolhe o plano, paga por Pix, recebe o acesso.",
+     "img": "quadros/N06.jpg"
     },
     {
      "id": "N07",
      "t": "0:14",
-     "legenda": "A mão escreve PARA CADA APARELHO.",
-     "img": "quadros/M07.jpg"
+     "legenda": "PARA CADA APARELHO.",
+     "img": "quadros/N07.jpg"
     },
     {
      "id": "N08",
      "t": "0:16",
-     "legenda": "TV, box e celular; a mão desenha o celular.",
-     "img": "quadros/M08.jpg"
+     "legenda": "TV, box e celular entram pulando.",
+     "img": "quadros/N08.jpg"
     },
     {
      "id": "N09",
      "t": "0:19",
-     "legenda": "Deu dúvida? A mão desenha o balão do suporte no WhatsApp.",
-     "img": "quadros/M09.jpg"
+     "legenda": "Deu dúvida? Balões do suporte no WhatsApp.",
+     "img": "quadros/N09.jpg"
     },
     {
      "id": "N10",
      "t": "0:21",
-     "legenda": "NOVELA! A mão termina o ponto de exclamação.",
-     "img": "quadros/M10.jpg"
+     "legenda": "NOVELA! A vovó comemora.",
+     "img": "quadros/N10.jpg"
     },
     {
      "id": "N11",
      "t": "0:23",
-     "legenda": "Vovó e neto no sofá; a mão pinta o menu: canais, filmes, séries e novelas.",
-     "img": "quadros/M11.jpg"
+     "legenda": "Vovó e neto no sofá na frente do menu: canais, filmes, séries e novelas.",
+     "img": "quadros/N11.jpg"
     },
     {
      "id": "N12",
      "t": "0:25",
-     "legenda": "R$ 35; a mão escreve \"no primeiro mês\".",
-     "img": "quadros/M12.jpg"
+     "legenda": "R$ 35 no primeiro mês.",
+     "img": "quadros/N12.jpg"
     },
     {
      "id": "N13",
      "t": "0:26",
-     "legenda": "Selos PIX e SEM CARTÃO; a mão escreve SEM FIDELIDADE.",
-     "img": "quadros/M13.jpg"
+     "legenda": "Selos PIX, SEM CARTÃO e SEM FIDELIDADE.",
+     "img": "quadros/N13.jpg"
     },
     {
      "id": "N14",
      "t": "0:28",
-     "legenda": "Botão SAIBA MAIS; a mão escreve \"teste grátis de 4 horas\"; logo real no fim.",
-     "img": "quadros/M14.jpg"
+     "legenda": "Botão SAIBA MAIS e teste grátis de 4 horas; logo real entra aqui, uma vez só.",
+     "img": "quadros/N14.jpg"
     }
    ],
    "roteiro": {
@@ -269,49 +269,49 @@
      "id": "D01",
      "t": "0–3 s",
      "legenda": "Caderno abre. \"A conta do mês...\" é escrita à mão, letra por letra, com ruído de lápis.",
-     "img": "quadros/D01.jpg"
+     "img": "quadros/DM01.jpg"
     },
     {
      "id": "D02",
      "t": "3–7 s",
      "legenda": "Lista de contas escrita linha por linha. O total vira \"??\" e o traço de lápis treme.",
-     "img": "quadros/D02.jpg"
+     "img": "quadros/DM02.jpg"
     },
     {
      "id": "D03",
      "t": "7–10 s",
      "legenda": "Cada linha é riscada com caneta vermelha, uma por vez. Letra \"NÃO!\" estampada.",
-     "img": "quadros/D03.jpg"
+     "img": "quadros/DM03.jpg"
     },
     {
      "id": "D04",
      "t": "10–14 s",
      "legenda": "Calculadora desenhada a lápis, números dos botões piscam e o visor soma.",
-     "img": "quadros/D04.jpg"
+     "img": "quadros/DM04.jpg"
     },
     {
      "id": "D05",
      "t": "14–18 s",
      "legenda": "Pergunta escrita. Um círculo verde é desenhado em volta de R$ 35. O preço \"carimba\" com tremida.",
-     "img": "quadros/D05.jpg"
+     "img": "quadros/DM05.jpg"
     },
     {
      "id": "D06",
      "t": "18–22 s",
      "legenda": "\"PIX\" ganha marca-texto verde passando por baixo. Os dois \"sem\" aparecem com um risco de certo.",
-     "img": "quadros/D06.jpg"
+     "img": "quadros/DM06.jpg"
     },
     {
      "id": "D07",
      "t": "22–26 s",
      "legenda": "TV, celular e box desenhados a lápis, ligados por tracejado. \"até 3 telas\" escrito embaixo.",
-     "img": "quadros/D07.jpg"
+     "img": "quadros/DM07.jpg"
     },
     {
      "id": "D08",
      "t": "26–30 s",
      "legenda": "Logo real colado como adesivo uma vez só. \"teste grátis de 4 horas\" marcado em verde.",
-     "img": "quadros/D08.jpg"
+     "img": "quadros/DM08.jpg"
     }
    ],
    "roteiro": {
