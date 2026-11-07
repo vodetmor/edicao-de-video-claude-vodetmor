@@ -7,7 +7,7 @@
 // =====================================================================
 // =====================================================================
 const PAL = {
-  ink: '#04140a', paper: '#f2f7ee', cream: '#dcebd2', navy: '#06210f', night: '#031409',
+  ink: '#04140a', paper: '#f2f7ee', cream: '#dcebd2', navy: '#0e5a2c', night: '#17703a',
   wood: '#1f6a35', woodD: '#134a24', woodL: '#2f8f4a', tweed: '#4a5a48', lamp: '#2f9a4a', mustard: '#99e200',
   orange: '#99e200', orangeD: '#5ea000', yellow: '#b8ff1f', teal: '#0f7a52', mint: '#2f8f4a', pink: '#7ddc9a', pinkL: '#b6f0c8',
   sky: '#cfe9d6', snow: '#f6fbf4', ice: '#a9d8b8', purple: '#2e9e6a', blue: '#1b6b3c', green: '#4fd000', greenD: '#2d8a00',
