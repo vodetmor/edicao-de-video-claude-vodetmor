@@ -13,4 +13,4 @@ export const H = 1920;
 export type Pal = {w: string; s: number; e: number};
 export type Clip = {src: string; ss: number; t0: number; t1: number; zoom?: number; ox?: number; oy?: number; blur?: number};
 export type Ev = {t0: number; t1: number; bloco: string; p?: any};
-export type Spec = {id: string; audio: string; dur: number; pal: Pal[]; clips: Clip[]; ev: Ev[]; utm: string; limpo?: boolean; legBase?: number; blob?: boolean};
+export type Spec = {id: string; audio: string; dur: number; pal: Pal[]; clips: Clip[]; ev: Ev[]; utm: string; limpo?: boolean; legBase?: number; blob?: boolean; legFundo?: [number, number][]};

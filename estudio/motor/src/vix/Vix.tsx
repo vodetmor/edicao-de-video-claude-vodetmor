@@ -103,6 +103,12 @@ export const Vix: React.FC<Props> = ({id}) => {
         );
       })}
       {s.limpo ? <FaixaLimpa /> : <Faixa />}
+      {(s.legFundo ?? []).map(([a0, a1], i) => (
+        // placa da legenda: cobre a legenda queimada do vídeo original (E/c1) sem escurecer a tela inteira
+        <Sequence key={'lf' + i} from={Math.round(a0 * 30)} durationInFrames={Math.max(1, Math.round((a1 - a0) * 30))} layout="none">
+          <div style={{position: 'absolute', left: 50, width: W - 100, bottom: H * (s.legBase ?? 0.13) - 34, height: 196, borderRadius: 28, background: 'rgba(1,2,4,0.98)'}} />
+        </Sequence>
+      ))}
       {s.ev.map((e, i) => {
         const B = BLOCOS[e.bloco];
         const from = Math.round(e.t0 * 30);
@@ -113,7 +119,7 @@ export const Vix: React.FC<Props> = ({id}) => {
           </Sequence>
         );
       })}
-      <Legenda pal={s.pal} fim={s.dur} base={s.legBase} blob={s.blob} mudo={s.limpo ? s.ev.filter((e) => e.bloco === 'PopMarca' || e.bloco === 'CTA').map((e) => [e.t0, e.t1] as [number, number]) : []} />
+      <Legenda pal={s.pal} fim={s.dur} base={s.legBase} blob={s.blob} mudo={s.limpo ? s.ev.filter((e) => ['PopMarca', 'CTA', 'Preco', 'Telas', 'Suporte'].includes(e.bloco)).map((e) => [e.t0, e.t1] as [number, number]) : []} />
       <Audio src={staticFile(s.audio)} />
     </AbsoluteFill>
   );

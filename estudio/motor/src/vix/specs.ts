@@ -4,6 +4,9 @@ import tl2 from './data/tl2.json';
 import tl3 from './data/tl3.json';
 import tl4 from './data/tl4.json';
 import tlh from './data/tlh.json';
+import tle from './data/tle.json';
+import tlf from './data/tlf.json';
+import tlg from './data/tlg.json';
 
 // Âncora: início (s) da n-ésima palavra que começa com o texto (sem acento, minúscula).
 const norm = (x: string) => x.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9$ ]/g, '');
@@ -164,4 +167,77 @@ const rH = (): Spec => {
   return {id: 'h', audio: 'vix/h.mp3', dur, pal, clips, ev, utm: utm(4), limpo: true, legBase: 0.30, blob: true};
 };
 
-export const SPECS: Record<string, Spec> = {r1: r1(), r2: r2(), r3: r3(), r4: r4(), h: rH()};
+
+// ---------- Versões E, F, G (vídeos do CMD c1, c2, c3) com as regras da H aprovada (07/11/2026) ----------
+// tela cheia sem faixa escura; logo só no estalo da marca; rótulos no topo; legenda blob na área segura (30%);
+// legenda some no estalo e no CTA; nomes de streaming/canal fora da legenda; áudio montado por versoes/montar_efg.py
+const SEM_NOMES = /^(Netflix|Prime|Video|HBO|Globoplay|Disney|Plus|Big|Brother|Globo|Record|Premiere|Combate|Telecine|Band|Fire|Stick)[,.?!]?$/;
+const limpaPal = (p: Pal[]) => p.filter((w) => !SEM_NOMES.test(w.w));
+const ch = (t0: number, chips: [string, number][], titulo: string, y = 200) => ({y, titulo, chips: chips.map(([l, t], i) => ({l, t: Math.max(0.1, t - t0), d: i === chips.length - 1}))});
+const ev = (t0: number, t1: number, bloco: string, p?: any): Ev => ({t0, t1, bloco, p});
+const cl = (src: string, t0: number, t1: number, ss: number, zoom = 1.0, ox = 50, oy = 50, blur?: number): Clip => ({src, ss, t0, t1, zoom, ox, oy, blur});
+
+// E · c1, o homem no carro (≈27 s)
+const rE = (): Spec => {
+  const pal = limpaPal(tle as Pal[]); const a = mk(pal);
+  const tMarca = a('vixplay'), tTelas = a('tres'), tToque = a('toque'); const dur = 27.0;
+  const tBan = 21.15; // a faixa vermelha do original some aqui (22,6 s no original)
+  const clips = [
+    cl('c1', 0, 2.3, 1.45), cl('stock/frustrado', 2.3, 4.3, 1.0), cl('c1', 4.3, 21.0, 5.75),
+    cl('c1', 21.0, dur, 22.45),
+  ];
+  const evs: Ev[] = [
+    ev(0, 2.3, 'BannerC1'), ev(4.3, tBan, 'BannerC1'),
+    ev(tMarca, tMarca + 1.4, 'PopMarca', {top: 1430, w: 520}),
+    ev(tTelas - 0.1, tTelas + 3.3, 'Secao', ch(tTelas - 0.1, [['TV', tTelas + 0.3], ['Box', tTelas + 0.6], ['Celular', tTelas + 0.9]], 'Até 3 telas')),
+    ev(tToque, dur, 'CTA', {horas: true}),
+  ];
+  return {id: 'e', audio: 'vix/e.mp3', dur, pal, clips, ev: evs, utm: utm(5), limpo: true, legBase: 0.285, blob: true, legFundo: [[0, 2.3], [4.3, dur]]};
+};
+
+// F · c2, a apresentadora e a TV (≈55 s)
+const rF = (): Spec => {
+  const pal = limpaPal(tlf as Pal[]); const a = mk(pal); const dur = 54.8;
+  const tMarca = a('vixplay'), tFil = a('filmes'), tSer = a('series'), tNov = a('novelas'), tAni = a('animes');
+  const tPagar = a('pagar'), tMens = a('mensalidade'), tInf = a('infantil'), tAdo = a('adolescente'), tAdu = a('adulto');
+  const tSeries2 = a('series', 1), tAtu = a('atualizacoes'), tDisp = a('disponivel');
+  const c2z = (t0: number, t1: number, off: number) => cl('c2', t0, t1, t0 + off, 2.0, 100, 0);
+  const clips = [
+    cl('c2', 0, 2.6, 0), cl('stock/manha', 2.6, 5.4, 0.5), cl('c2', 5.4, 6.95, 5.4),
+    cl('c4', 6.95, 24.0, 47.0, 1.4, 80, 0), cl('c4', 24.0, 27.4, 64.05, 1.4, 80, 0),
+    c2z(27.4, 36.75, 2.6), c2z(36.75, dur, 6.8),
+  ];
+  const evs: Ev[] = [
+    ev(tMarca - 0.05, tMarca + 1.35, 'PopMarca', {}),
+    ev(tFil - 0.4, tFil + 8.5, 'Secao', ch(tFil - 0.4, [['Filmes', tFil], ['Séries', tSer], ['Novelas', tNov], ['Animes', tAni]], 'Tudo num só app')),
+    ev(tPagar - 0.5, tPagar + 4.2, 'Gancho', {titulo: 'Pagar vários streamings?', sub: 'Uma mensalidade só', colapsa: 2.2, semLogo: true}),
+    ev(tMens - 0.2, tInf - 0.5, 'Preco', {}),
+    ev(tInf - 0.5, tSeries2 - 0.3, 'Secao', ch(tInf - 0.5, [['Infantil', tInf], ['Adolescente', tAdo], ['Adulto', tAdu]], 'Para todo público')),
+    ev(tSeries2 - 0.3, tDisp - 0.4, 'Secao', ch(tSeries2 - 0.3, [['Atualizações diárias', tAtu]], 'Séries')),
+    ev(tDisp - 0.4, 51.4, 'Telas', {a: 'Até ', b: '3 telas', sub: 'Smart TV, TV box e celular'}),
+    ev(51.5, dur, 'CTA', {horas: true}),
+  ];
+  return {id: 'f', audio: 'vix/f.mp3', dur, pal, clips, ev: evs, utm: utm(6), limpo: true, legBase: 0.30, blob: true};
+};
+
+// G · c3, o desabafo na penteadeira (≈53 s)
+const rG = (): Spec => {
+  const pal = limpaPal(tlg as Pal[]); const a = mk(pal); const dur = 53.0;
+  const tMarca = a('vixplay'), tPaga2 = a('voce', 2), tDemora = a('demora'), tNav = a('navegacao'), tFil = a('filmes'), tSer = a('series'), tCan = a('canais');
+  const tSup = a('suporte', 1), tClique = a('clique');
+  const clips = [
+    cl('c3', 0, tPaga2, 0, 1.06, 50, 30), cl('stock/buffering', tPaga2, tPaga2 + 2.6, 0.5),
+    cl('c3', tPaga2 + 2.6, tDemora, tPaga2 + 2.6, 1.06, 50, 30), cl('stock/frustrado', tDemora, tDemora + 2.2, 2.0),
+    cl('c3', tDemora + 2.2, tNav - 0.4, tDemora + 2.2, 1.12, 50, 30), cl('stock/celular', tNav - 0.4, tNav + 5.4, 0.5),
+    cl('c3', tNav + 5.4, 49.15, tNav + 5.4, 1.06, 50, 30), cl('c3', 49.15, dur, 67.3, 1.06, 50, 30),
+  ];
+  const evs: Ev[] = [
+    ev(tMarca - 0.05, tMarca + 1.35, 'PopMarca', {}),
+    ev(tNav - 0.4, tNav + 5.4, 'Secao', ch(tNav - 0.4, [['Navegação simples', tNav], ['Filmes', tFil], ['Séries', tSer], ['Canais ao vivo', tCan]], 'O que ela gostou')),
+    ev(tSup - 0.3, tSup + 2.6, 'Suporte'),
+    ev(tClique - 0.1, dur, 'CTA', {horas: true}),
+  ];
+  return {id: 'g', audio: 'vix/g.mp3', dur, pal, clips, ev: evs, utm: utm(7), limpo: true, legBase: 0.30, blob: true};
+};
+
+export const SPECS: Record<string, Spec> = {r1: r1(), r2: r2(), r3: r3(), r4: r4(), h: rH(), e: rE(), f: rF(), g: rG()};
