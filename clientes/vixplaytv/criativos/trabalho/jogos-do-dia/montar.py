@@ -11,16 +11,16 @@ ENT = AQUI / "entrada"
 REC = AQUI / "recortes"
 REC.mkdir(exist_ok=True)
 
-DATA = "SÁBADO | 07 DE NOVEMBRO"
-# arquivo do CMD, horários na ordem das linhas
+DATA = "DOMINGO | 08 DE NOVEMBRO"
+# arquivo do CMD, horários na ordem das linhas (artes em ordem de horário)
 FUT = [
-    ("a1.jpg", ["09H30", "10H00", "11H00", "11H00", "11H30", "11H30"]),
-    ("a2.jpg", ["11H30", "11H30", "12H00", "12H00", "12H15", "12H30"]),
-    ("a5.jpg", ["14H00", "14H30", "14H30", "14H30", "15H00", "15H00"]),
-    ("a4.jpg", ["15H00", "16H45", "17H00", "17H05", "17H30", "17H30"]),
-    ("a3.jpg", ["17H30", "18H00", "22H00"]),
+    ("d1.jpg", ["08H30", "10H00", "11H00", "11H00", "11H00", "11H00"]),
+    ("d2.jpg", ["11H00", "11H00", "11H00", "11H30", "12H15", "12H30"]),
+    ("d3.jpg", ["12H30", "13H15", "13H15", "13H15", "13H30", "13H30"]),
+    ("d4.jpg", ["14H00", "14H30", "14H30", "15H00", "15H30", "16H45"]),
+    ("d5.jpg", ["16H45", "17H00", "17H00", "17H30", "17H30"]),
 ]
-UFC = ("a6.jpg", [(305, 485, "PESO-PESADO", True), (505, 645, "PESO-PALHA FEMININO", False), (665, 805, "PESO-GALO", False),
+UFC_07_11 = ("a6.jpg", [(305, 485, "PESO-PESADO", True), (505, 645, "PESO-PALHA FEMININO", False), (665, 805, "PESO-GALO", False),
                   (825, 965, "PESO MEIO-PESADO", False), (985, 1125, "PESO-GALO FEMININO", False), (1145, 1285, "PESO-MOSCA", False)])
 
 
@@ -42,15 +42,17 @@ for n, (arq, horas) in enumerate(FUT, 1):
         })
     artes.append({"tipo": "fut", "id": f"futebol-{n}", "linhas": linhas})
 
-arq, rows = UFC
-linhas = []
-for i, (y0, y1, peso, principal) in enumerate(rows):
-    linhas.append({
-        "lutadores": corta(arq, (176, y0 + 3, 535, y1 - 3), f"u_{i}_t.png"),
-        "tv": corta(arq, (703, y0 + (45 if principal else 25), 922, y1 - (45 if principal else 25)), f"u_{i}_tv.png"),
-        "hora": "22H00", "peso": peso, "principal": principal,
-    })
-artes.append({"tipo": "ufc", "id": "ufc", "linhas": linhas})
+UFC = None  # sem UFC neste dia
+if UFC:
+    arq, rows = UFC
+    linhas = []
+    for i, (y0, y1, peso, principal) in enumerate(rows):
+        linhas.append({
+            "lutadores": corta(arq, (176, y0 + 3, 535, y1 - 3), f"u_{i}_t.png"),
+            "tv": corta(arq, (703, y0 + (45 if principal else 25), 922, y1 - (45 if principal else 25)), f"u_{i}_tv.png"),
+            "hora": "22H00", "peso": peso, "principal": principal,
+        })
+    artes.append({"tipo": "ufc", "id": "ufc", "linhas": linhas})
 
 (AQUI / "artes.json").write_text(json.dumps({"data": DATA, "artes": artes}, ensure_ascii=False, indent=1), encoding="utf-8")
 print(len(artes), "artes")
