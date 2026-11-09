@@ -26,6 +26,3 @@ Saída: `out/<spec>/<variante>.mp4`.
 ## Próximo passo
 - Esperar o Vítor escolher a linguagem preferida dos 3 testes e o primeiro brief/anúncio escalado.
 - Depois: portar os blueprints do HyperFrames para o catálogo, testar Lottie, módulo "anúncio escalado" e kit de prompts do Flow (ver plano, seção 6).
-
-## Composição `Vix` (06/11/2026, criativos da VixPlay TV)
-Composição própria em `src/vix/` (não usa a spec genérica): `Blocos.tsx` (B1 a B6 compactos e reutilizáveis: Gancho, Secao, Telas, Preco, Passos, Suporte, Dor, Titulo, CTA), `specs.ts` (cortes por tema, eventos presos às palavras de `src/vix/data/tl*.json`), `Vix.tsx` (faixa que cobre a legenda original, selo, legenda). Tema de cores em `tema.ts` (trocar para outro cliente). Material em `public/vix/` (fora do Git). Render: `npx remotion render Vix out/x.mp4 --props='{"id":"r1"}'`; mixagem: `bash mix_vix.sh N`. Passo a passo e lições: `clientes/vixplaytv/criativos/trabalho/ESTADO.md` (seções 14 a 16) e `motion-base/LICOES-MOTION.md`.
