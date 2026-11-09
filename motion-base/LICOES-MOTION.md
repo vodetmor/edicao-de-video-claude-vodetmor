@@ -468,3 +468,21 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Nada de UI de programa "codada" (o editor.app desenhado em HTML pareceu IA): usar print/recorte real do programa (After Effects, Premiere etc.) como objeto da colagem.
 - Split-screen: o rosto não pode tampar o que o motion mostra ("vários vídeos além desse" ficou escondido). Reservar a metade do motion livre do rosto e fazer a transição entre as metades mais fluida.
 - Uma parte ficou "laranja demais": alternar o fundo entre terracota e creme por cena para não cansar.
+
+## Criativos da VixPlay TV, 4 versões em tráfego pago (05 a 06/11/2026)
+- **Sócio reprovou duas rodadas ("tudo igual", "era melhor storytelling").** Causa: os 4 criativos tinham a mesma sequência (gancho, categorias, 3 telas, preço, CTA) e a mesma voz; trocar takes e arrumar o motion não muda a estrutura. Vídeo modelado de referência de revenda precisa de HISTÓRIA própria (personagem, situação, ritmo) em cada criativo. Antes do render: PDF de quadros-chave pela skill `pdf-aprovacao`, mesmo com "já está aprovado" (quem decide é o sócio, não quem pediu pressa).
+- **Takes:** nunca os mesmos 5 ou 6 trechos nos 4 vídeos. Montar uma piscina de trechos limpos por tema (home, lista de canais, filmes, categorias, séries, novelas) e sortear por criativo (semente), com enquadramento diferente (zoom e origem). Cortes de 2,6 a 3,6 s presos ao tema que está sendo falado. Implementação: `estudio/motor/src/vix/specs.ts` (`POOL`, `ENQ`, `plan`).
+- **Motion que "tampa o vídeo" mata a vontade de comprar.** Fundo chapado, escurecer a TV e cartões gigantes escondem o produto. Regra: o app aparece o tempo todo; overlay compacto (chips no topo, faixa de 3 telas e cartão de preço na parte baixa, CTA em painel inferior), nenhum bloco ocupa mais de ~1/3 do quadro, texto sobre imagem com sombra em vez de caixa.
+- **Cobrir a legenda embutida do original:** faixa com desfoque + degradê a partir de ~70% da altura (a 76% ainda dava para ler "Netflix"); sempre conferir um quadro cru do original contra o resultado. Canto com o nome de outro app: desfoque no topo + selo nosso. Listas de canais: `blur(9px)` forte nos nomes (mostra o app sem identificar canal).
+- **Música para anúncio:** a API da Epidemic (`/v0`, Bearer) devolveu todas as faixas como `isPreviewOnly` (mp3 baixo): serve de rascunho, nunca de entrega paga sem baixar com a licença do plano. Mixagem que funcionou: música a -32 LUFS, sidechaincompress guiado pela voz, master `loudnorm` -14 LUFS/-1 dBTP (`estudio/motor/mix_vix.sh N`).
+- **Mecânica no Windows:** render 1080x1920 de 25 a 50 s leva ~5 min no CPU do PC (4 vídeos, ~25 min): rodar em segundo plano. `remotion.config.ts` só aponta o Chromium do Linux se o arquivo existir. Heredoc com JSX no Bash trava: usar a ferramenta Write. Python lido pelo Bash com `/c/...` vira `\c\...`: usar `C:/...`. JSON salvo pelo Python sem `encoding='utf8'` sai em cp1252. Envio de arquivo ao celular tem teto de 30 MiB: gerar cópia `-leve` (libx264 CRF 22 a 24).
+- **Tempo das palavras:** `ferramentas/transcrever_palavras.py` (faster-whisper small) dá as âncoras; normalizar "R$ 35", "doramas" e o nome da marca antes de usar na legenda.
+
+## VixPlay TV, críticas de 07/11/2026 (vídeo da menina H, histórias em estilos)
+- Faixa escura de 30% embaixo para cobrir legenda queimada do vídeo de terceiro = "vinheta estranha" e "tela bloqueada". Melhor: zoom ~1.4 ancorado no topo (`oy: 0`) para a legenda original sair do quadro; nossa legenda fica sobre a imagem com sombra.
+- Selo de logo fixo no canto + estouro de logo no meio do vídeo = "logo repetida". Logo uma vez só (abertura ou CTA).
+- Rótulos (Secao/chips) nunca colados na legenda: deixar ~250 px de folga acima dela.
+- Lista de canais desfocada precisa de blur ≥ 12 px (com 6 px os nomes ainda se leem).
+- Nomes de streaming/canal ditos na fala original: a fala fica (ordem do cliente), mas saem da legenda.
+- Histórias em vários vídeos: cada uma em estilo TOTALMENTE diferente (kinetic da referência, desenho à mão, fotos reais em corte rápido), com gancho e cenas próprios.
+- Animação 2D (skill animate, estilo vixplay-papel): fundos sempre em verde vivo, nunca quase-preto.
