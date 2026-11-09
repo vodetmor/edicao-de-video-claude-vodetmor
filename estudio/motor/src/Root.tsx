@@ -8,10 +8,13 @@ import {Teste} from './glsl/Teste';
 import {TesteRay} from './glsl/TesteRay';
 import {Vitrine, DURACAO} from './glsl/Vitrine';
 import {Cavalo} from './glsl/Cavalo';
+import {Vix, Quadro, calcula as calcVix} from './vix/Vix';
 
 // Uma composição genérica: a fábrica (fabrica.mjs) troca spec + variante + palavras a cada render.
 export const RemotionRoot: React.FC = () => (
   <>
+  <Composition id="Quadro" component={Quadro as any} defaultProps={{} as any} durationInFrames={300} fps={30} width={1080} height={1920} />
+  <Composition id="Vix" component={Vix} calculateMetadata={calcVix} defaultProps={{id: 'r1'}} durationInFrames={750} fps={30} width={1080} height={1920} />
   <Composition id="Cavalo" component={Cavalo} durationInFrames={120} fps={30} width={1920} height={1080} />
   <Composition id="GlslVitrine" component={Vitrine} durationInFrames={DURACAO} fps={30} width={1920} height={1080} />
   <Composition id="RayTeste" component={TesteRay} durationInFrames={30} fps={30} width={1920} height={1080} />
