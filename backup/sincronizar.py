@@ -175,7 +175,7 @@ def main():
     if puxados:
         print(f"trouxe do GitHub (mudanças do PC): {len(puxados)} arquivos")
         for d in puxados[:30]: print("  ", d)
-        itens = plano()
+        itens = {d: v for d, v in plano().items() if d not in set(puxados)}   # o GitHub já tem a versão do PC
     if SECO:
         tot = sum(s.stat().st_size for s, _ in itens.values())
         print(f"{len(itens)} arquivos, {tot/1e6:.0f} MB no total (antes do Git comprimir)")
