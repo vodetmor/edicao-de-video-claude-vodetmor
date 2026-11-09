@@ -75,3 +75,7 @@
 
 - [[entrega-previas-video]]: thread caps at 24 attachments; deliver previews as a light Artifact player page and archive old versions on his PC (Maquina de Editar\clientes\...\previas). Keep messages short (Vítor 2026-10-31).
 - [[skill-pdf-aprovacao]]: 2026-11-06 reusable approval-PDF skill (plano.json -> PDF via headless Chrome/Edge) in skills/pdf-aprovacao + .zip; use for every approval gate.
+
+- [[vixplay-feedback-storytelling]]: 2026-11-06 Deidson reprovou os criativos VixPlay v1/v2 (queria storytelling, 1 história por criativo); mandar PDF da skill pdf-aprovacao antes de renderizar.
+- [PDF de aprovação = modelo pdf-aprovacao](vixplay-pdf-aprovacao-modelo.md) — nunca HTML improvisado; tema da marca, quadros codificados
+- [Mudar só o pedido (VixPlay)](vixplay-mudar-so-o-pedido.md) — ajuste em entregável aprovado mexe só no item citado; lembrete não é mudança
