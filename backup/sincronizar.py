@@ -126,6 +126,30 @@ def aplica(itens):
             marca.write_text(json.dumps(idx_partes[d], indent=1)); mud.append(d + ".partes.json")
     return mud
 
+def puxa_do_github(itens, mem):
+    """O PC também grava direto no GitHub. Arquivo que mudou lá (commit que não é deste script)
+    depois da última edição aqui volta para o projeto antes da cópia, senão o backup desfaria o PC."""
+    log = git("log", "--format=@%ct|%s", "--name-only", "origin/main", saida=True)
+    ult = {}; t = s = None
+    for l in log.splitlines():
+        if l.startswith("@"):
+            t, s = l[1:].split("|", 1); t = int(t); continue
+        if l and l not in ult: ult[l] = (t, s)
+    puxados = []
+    for d, (src, modo) in itens.items():
+        if modo != "copia" or d not in ult: continue
+        t, s = ult[d]
+        f = R / d
+        if s.startswith("Backup automático") or t <= src.stat().st_mtime or not f.exists() or igual(src, f): continue
+        shutil.copy2(f, src); puxados.append(d)
+        if d.startswith("memoria/"): shutil.copy2(f, mem / f.name)   # a memória do projeto também
+    # memória nova criada no PC
+    for d, (t, s) in ult.items():
+        if d.startswith("memoria/") and d.endswith(".md") and not s.startswith("Backup automático") \
+                and (R / d).exists() and not (mem / Path(d).name).exists():
+            shutil.copy2(R / d, mem / Path(d).name); shutil.copy2(R / d, K / d); puxados.append(d)
+    return puxados
+
 def checa_segredos(mud):
     ruins = []
     for d in mud:
@@ -147,6 +171,11 @@ def main():
         (K / "memoria").mkdir(parents=True, exist_ok=True)
         for f in mem.glob("*.md"): shutil.copy2(f, K / "memoria" / f.name)
     itens = plano()
+    puxados = [] if SECO else puxa_do_github(itens, mem)
+    if puxados:
+        print(f"trouxe do GitHub (mudanças do PC): {len(puxados)} arquivos")
+        for d in puxados[:30]: print("  ", d)
+        itens = plano()
     if SECO:
         tot = sum(s.stat().st_size for s, _ in itens.values())
         print(f"{len(itens)} arquivos, {tot/1e6:.0f} MB no total (antes do Git comprimir)")
