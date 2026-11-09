@@ -66,3 +66,10 @@ td:first-child { font-weight: 650; white-space: nowrap }
 .ok i { flex: none; width: 6mm; height: 6mm; border: 1.4pt solid var(--acento); border-radius: 1.2mm; margin-top: .3mm }
 .ok small { display: block; font: 400 9.5pt Inter; color: var(--cinza); margin-top: .6mm }
 .nota-fim { position: absolute; left: 15mm; bottom: 16mm; width: 220mm; color: var(--cinza); font-size: 9pt }
+
+/* página de roteiro (opcional) */
+table.rot{width:100%;border-collapse:collapse;margin-top:4mm;font-size:8.4pt;line-height:1.35}
+table.rot th{text-align:left;font-weight:700;color:var(--cinza);padding:1.2mm 2mm;border-bottom:.3mm solid var(--linha);font-size:7pt;letter-spacing:.08em;text-transform:uppercase}
+table.rot td{vertical-align:top;padding:1.6mm 2mm;border-bottom:.2mm solid var(--linha)}
+table.rot td:first-child{white-space:nowrap;color:var(--cinza);width:16mm}
+table.rot td:nth-child(2){width:46%}
