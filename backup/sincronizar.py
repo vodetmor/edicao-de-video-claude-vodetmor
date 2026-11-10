@@ -136,18 +136,31 @@ def puxa_do_github(itens, mem):
             t, s = l[1:].split("|", 1); t = int(t); continue
         if l and l not in ult: ult[l] = (t, s)
     puxados = []
+    # mídia que o PC mudou e que a pasta do projeto teima em voltar para a versão antiga: o GitHub vence
+    # enquanto o arquivo lá for o mesmo (ex.: imagens da skill pdf-aprovacao, 11/2026)
+    presos_f = B / "github-vence.json"
+    presos = json.loads(presos_f.read_text()) if presos_f.exists() else {}
+    blob = {}
+    for l in git("ls-tree", "-r", "origin/main", saida=True).splitlines():
+        meta, caminho = l.split("\t", 1); blob[caminho] = meta.split()[2]
+    for d, sha in list(presos.items()):
+        if blob.get(d) == sha: puxados.append(d)
+        else: presos.pop(d)
     for d, (src, modo) in itens.items():
+        if d in puxados: continue
         if modo != "copia" or d not in ult: continue
         t, s = ult[d]
         f = R / d
         if s.startswith("Backup automático") or t <= src.stat().st_mtime or not f.exists() or igual(src, f): continue
         shutil.copy2(f, src); puxados.append(d)
+        if src.suffix.lower() in MIDIA: presos[d] = blob.get(d)
         if d.startswith("memoria/"): shutil.copy2(f, mem / f.name)   # a memória do projeto também
     # memória nova criada no PC
     for d, (t, s) in ult.items():
         if d.startswith("memoria/") and d.endswith(".md") and not s.startswith("Backup automático") \
                 and (R / d).exists() and not (mem / Path(d).name).exists():
             shutil.copy2(R / d, mem / Path(d).name); shutil.copy2(R / d, K / d); puxados.append(d)
+    if not SECO: presos_f.write_text(json.dumps(presos, indent=1, ensure_ascii=False))
     return puxados
 
 def checa_segredos(mud):
