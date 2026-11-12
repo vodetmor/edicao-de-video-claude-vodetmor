@@ -11,3 +11,4 @@
 - Exibição: aula da saudade em 25/11/2026, projetor/telão (margens seguras, texto grande); não escrever a data no vídeo. Final com folga: 22/11.
 - Fecho da final: texto emotivo sem fala (agradecer professores + o tempo passa rápido), pode citar poeta se emotivo; "La Salle Sobradinho · 2026"; ano na tela quando a época muda. Paleta atual aprovada; intro da TV fica.
 - Fecho aprovado (12/11): texto com Vinicius ("que não seja imortal...") + "A gente achava que o tempo era lento..." + agradecimento aos professores + "Nem foi tempo perdido." + "La Salle Sobradinho · 2026" e, por último, "231 e 232" fechando o vídeo.
+- Luísa (12/11): fotos e vídeos horizontais o MAIOR possível na tela (≥ 85% da largura; clipe horizontal nunca em cartão pequeno). Emoção vem de ver os rostos grandes.
