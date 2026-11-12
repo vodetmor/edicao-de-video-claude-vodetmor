@@ -10,6 +10,14 @@
 - Quadros-chave: `previa/quadros/_folha-quadros.jpg`.
 - Prévia 720p: `previa/piloto-720p-bruto.mp4` (render) → `previa/piloto-720p.mp4` (loudnorm -14 LUFS).
 
+## v2 (12/11/2026, depois do 1º piloto): feedback do Vítor aplicado
+- Todas as 45 fotos no vídeo (tira de filme em "mas tenho muito tempo" absorveu f16h, f25h, f33v, f35h); conferido por script (só f22h e f13h repetem de propósito).
+- "tempo": recorte e fundo com a mesma transformação (sem meninas duplicadas); fundo desfoca quando a palavra entra.
+- Cor: nada de P&B; filtro quente/amarelado de lembrança (sepia 0,38, saturate 1,4) → cor viva.
+- Intro: sala retrô quente (Pexels #12: TV, xadrez, videogame, vaso) no lugar da TV no escuro; câmera parte da sala inteira e entra na tela.
+- Referências PMV do Vítor (links.md) → scrapbook: papel kraft + fita + sombra de planta no mural, vazamento de luz nas trocas de cena, parede "tempo" atrás da tira, HUD REC no clipe, fecho "terceirão" com a turma dentro das letras.
+- Assets novos em `estudio/motor/public/terceirao/`: tv2.jpg, papel.jpg, planta-sombra.png, recortes PNG.
+
 ## Decisões do Vítor
 - Piloto 60–90 s com começo/meio/fim, Tempo Perdido; horizontal; sem fala; todas as fotos ficam (a do trote também); direitos da música não preocupam (exibição interna).
 - Intro "lembranças": TV de tubo real com fita VHS dentro (PLAY, timecode, chuvisco, scanlines) e a câmera entra na tela. Blender descartado (sem GPU, sem referência).

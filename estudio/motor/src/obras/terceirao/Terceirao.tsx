@@ -115,10 +115,10 @@ const Quadro: React.FC<{it: Item; bw: number; t: number; extra?: string}> = ({it
     const st: React.CSSProperties = {width: '100%', height: '100%', objectFit: 'cover', filter: filtro(bw), transformOrigin: '50% 40%'};
     return (
       <AbsoluteFill style={{background: FUNDO}}>
-        <div style={{position: 'absolute', left: 0, top: 0, width: 956, height: 1080, overflow: 'hidden'}}>
+        <div style={{position: 'absolute', left: 0, top: 0, width: '49.8%', height: '100%', overflow: 'hidden'}}>
           <Img src={P(it.dupla[0])} style={{...st, transform: `scale(${(1 + kb * t).toFixed(4)})`}} />
         </div>
-        <div style={{position: 'absolute', left: 964, top: 0, width: 956, height: 1080, overflow: 'hidden'}}>
+        <div style={{position: 'absolute', left: '50.2%', top: 0, width: '49.8%', height: '100%', overflow: 'hidden'}}>
           <Img src={P(it.dupla[1])} style={{...st, transform: `scale(${(1 + kb - kb * t).toFixed(4)})`}} />
         </div>
         <Sombra />
@@ -651,7 +651,7 @@ const Mural: React.FC = () => {
   const tinta = f < s(59.16) ? '#2b2620' : CREME;
   return (
     <AbsoluteFill style={{background: '#b89a74'}}>
-      <Img src={P('papel')} style={{position: 'absolute', left: -240, top: -135, width: 2400, height: 1350, transform: `scale(${(1 + 0.12 * (1 - cam)).toFixed(4)})`, filter: 'brightness(1.08) saturate(0.9)'}} />
+      <Img src={P('papel')} style={{position: 'absolute', left: -240, top: -135, width: 2400, height: 1350, transform: `scale(${(1 + 0.12 * (1 - cam)).toFixed(4)})`, filter: 'brightness(1.22) contrast(0.82) saturate(0.85)'}} />
       <div style={{position: 'absolute', left: 960, top: 520, width: 0, height: 0, transform: `scale(${cam.toFixed(4)}) translate(${(-deriva).toFixed(1)}px, ${(deriva * 0.4).toFixed(1)}px)`}}>
         {PECAS.map((p, i) => {
           if (f < s(p.t)) return null;
