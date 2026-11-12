@@ -53,3 +53,8 @@ Trocar a música: refazer `piloto-audio.mp3` (ffmpeg atrim/acrossfade), transcre
 - Som dos vídeos: som do vídeo na frente, música ~12 dB abaixo, volta suave; trechos de 3 a 5 s.
 - Música: Tempo Perdido inteira (5:02); passar de 5 min em 2 s não desclassifica.
 - Cronologia: quando o Luiz mandar, separar as antigas e "voltar ao passado"; haverá fotos de criança → script que estima a idade das pessoas (ex.: DeepFace/InsightFace, CPU) para ordenar e montar um memorial infância→terceirão.
+- Paleta: manter como está (cor quente de lembrança); sem rigor aqui.
+- Textos na final: "La Salle Sobradinho · 2026" no fecho (logo real em SVG se o Vítor passar); ano grande e discreto quando a época muda (ex.: 2019… 2026); nomes de pessoas só com lista dele.
+- Fecho: texto curto e MUITO emotivo, sem fala, enquanto a música termina: agradecimento aos professores + reflexão sobre o tempo passar rápido e a importância disso; pode citar poeta/cronista (Machado, Clarice...) SE tiver valor emotivo, não acadêmico. Vítor pediu que eu mande a ideia; só citação com autoria conferida.
+- Exibição: projetor/telão na AULA DA SAUDADE em 25/11/2026 (não colocar a data no vídeo). Margens seguras maiores, texto grande, contraste alto. Final pronta com folga: alvo 22/11.
+- Intro da TV na sala retrô: fica como está (trocar SP → DF).
