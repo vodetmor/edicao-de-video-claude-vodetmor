@@ -350,7 +350,7 @@ const SLIDES_TV: Item[] = [
   {src: 'f37h', t: 3.56, tipo: 'corte'},
   {dupla: ['f08v', 'f44v'], t: 4.86},
   {src: 'f02h', t: 6.16, tipo: 'corte'},
-  {dupla: ['f09v', 'f43v'], t: 7.46},
+  {src: 'f09v', t: 7.46, tipo: 'corte', oy: 30}, // f43v (cachorro da Anna Augusta) removida a pedido dela, 12/11
 ];
 const TelaVHS: React.FC = () => {
   const f = useCurrentFrame();
