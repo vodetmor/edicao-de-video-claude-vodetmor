@@ -58,3 +58,6 @@ Trocar a música: refazer `piloto-audio.mp3` (ffmpeg atrim/acrossfade), transcre
 - Fecho: texto curto e MUITO emotivo, sem fala, enquanto a música termina: agradecimento aos professores + reflexão sobre o tempo passar rápido e a importância disso; pode citar poeta/cronista (Machado, Clarice...) SE tiver valor emotivo, não acadêmico. Vítor pediu que eu mande a ideia; só citação com autoria conferida.
 - Exibição: projetor/telão na AULA DA SAUDADE em 25/11/2026 (não colocar a data no vídeo). Margens seguras maiores, texto grande, contraste alto. Final pronta com folga: alvo 22/11.
 - Intro da TV na sala retrô: fica como está (trocar SP → DF).
+- Correção do Vítor (19:10): papel kraft em si não é o problema (pode humanizar); o estranho foi COMO entrou (textura fibrosa em close, fundo fixo). Se voltar, integrado ao 3D, textura fina.
+- Fecho APROVADO: Vinicius ("que não seja imortal, posto que é chama, / mas que seja infinito enquanto dure.") → "A gente achava que o tempo era lento. / Era a gente que estava rápido demais para ver." → "Aos nossos professores: vocês não nos ensinaram só matéria. / Ensinaram a gente a ficar." → "Nem foi tempo perdido." → "La Salle Sobradinho · 2026" → por último "231 e 232" (chave de ouro).
+- STATUS: parado, esperando as fotos/vídeos da 231 (Luiz).
