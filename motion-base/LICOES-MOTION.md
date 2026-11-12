@@ -486,3 +486,13 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Nomes de streaming/canal ditos na fala original: a fala fica (ordem do cliente), mas saem da legenda.
 - Histórias em vários vídeos: cada uma em estilo TOTALMENTE diferente (kinetic da referência, desenho à mão, fotos reais em corte rápido), com gancho e cenas próprios.
 - Animação 2D (skill animate, estilo vixplay-papel): fundos sempre em verde vivo, nunca quase-preto.
+
+## Vídeo de fotos com letra de música (Meu Terceirão, piloto Tempo Perdido, 12/11/2026)
+- Letra na tela só depois de transcrever o áudio EDITADO do piloto com tempo por palavra (Groq `--palavras`): montar o áudio primeiro (ffmpeg atrim + acrossfade), transcrever depois; evita conta de tempo na mão. Confirmado.
+- Intro "lembrança" sem 3D: foto real de TV de tubo (Pexels) + conteúdo na tela renderizado a 4x e reduzido (texto fica nítido quando a câmera entra), scanlines (gradiente repetido 2/6 px), aberração cromática = duas cópias ±3 px em `screen` com matriz R e GB, chuvisco = feTurbulence 1 oitava com seed por quadro, rasgo de tracking de 3 quadros a cada corte, OSD JetBrains Mono "▶ PLAY 00:00:00". Câmera: parada respirando 6 s, depois `inQuad` até a tela encher o quadro e corte seco. Palpite (falta a nota do Vítor).
+- Tipografia por sentido, uma ideia por frase: foco (blur 16→0), passa (entra da direita com blur e sai pela esquerda), cresce (mola z 0,7, escala 0,7→1,1), encosta (duas palavras vêm dos lados com mola e um aperto `scaleX` 0,965 no "forte"), afasta (letter-spacing 0→0,5em + blur 3 px), dissolve (cada letra deriva com hash e blur 14 px, 46 quadros), extrusão 3D (14 text-shadows do creme claro ao escuro; em fundo escuro a extrusão tem que ser mais clara que o fundo, senão some). Palpite.
+- Profundidade com recorte: fundo = foto, meio = palavra gigante, frente = PNG da mesma foto recortada por `rembg` (u2net, CPU). Como as três camadas têm o mesmo tamanho, basta a mesma `objectFit: cover`; paralaxe: fundo 0, palavra -0,6 px/quadro, pessoas +0,5 px/quadro. Confirmado em still.
+- Efeito "lembrança" (pedido do Vítor): cópia do conteúdo com blur 22 px e brightness 1,5, mascarada por `radial-gradient` nas bordas, mais véu creme em `screen` 0→0,55. Sobe só nos picos; NUNCA por cima de texto (vira glow, P2). Confirmado pelo Vítor como direção.
+- Transição "empurra" com DirBlur: blur = velocidade (px/quadro) × 0,012. Com 0,05 vira mancha. Confirmado em render.
+- Mural de fotos: peças pousam escala 1,35→1 (k 0,17) uma por palavra/meia batida; câmera recua em degraus (1 → 0,62 → 0,42 → 0,3) com E.cam, deriva lenta de 0,15 px/quadro para nunca congelar.
+- Letra sobre foto clara em P&B: escurecimento do terço inferior (0→62%) em toda foto de tela cheia, inclusive duplas.

@@ -1,4 +1,32 @@
 # Meu Terceirão: ESTADO
-Feito (12/11/2026): MP3 das 2 músicas baixados; inventário da 232 (45 fotos, 15 vídeos); plano de composição do piloto em referencias/PESQUISA.md.
-Decisões: piloto ~60 s com Tempo Perdido, horizontal 16:9, sem fala, letra em tipografia + fotos/vídeos + saudade, corte na batida. Vítor só pediu o roteiro/composição; a execução será em outro modelo.
-Próximo: Vítor aprovar o storyboard; ordem/época das fotos; chegada da 231; transcrever a música para validar letra e tempos.
+
+## Feito (12/11/2026)
+- Músicas em MP3: `musica/tempo-perdido.mp3` (5:02) e `musica/pelo-tempo-que-durar.mp3` (3:20).
+- Áudio do piloto (80,6 s): `musica/piloto-audio.mp3` = Tempo Perdido 12,0→41,2 s + 122,4→154,6 s + 185,3→206,5 s, crossfades de 1 s, fade-out 76,5→81 s. Letra com tempo por palavra conferida: `musica/piloto-audio.palavras.json`.
+- Inventário da 232: 45 fotos renomeadas em `fotos/f01v..f45h` (h = horizontal, v = vertical), 15 vídeos (`videos/` tem só as miniaturas; os mp4 ficam em `232/`), folhas de contato `fotos/_folha.jpg` e `videos/_folha.jpg`. Pasta `231/` ainda vazia.
+- Recortes de pessoas (rembg u2net) em `recortes/` (f22h usado no efeito de profundidade).
+- TV de tubo real (Pexels, livre) em `referencias/tv-crt/` (licença em LICENCAS.md); usada a #8.
+- Composição Remotion: `estudio/motor/src/obras/terceirao/Terceirao.tsx` (id `Terceirao`, 1920x1080, 30 fps, 2430 quadros). Assets copiados para `estudio/motor/public/terceirao/` (fora do Git).
+- Quadros-chave: `previa/quadros/_folha-quadros.jpg`.
+- Prévia 720p: `previa/piloto-720p-bruto.mp4` (render) → `previa/piloto-720p.mp4` (loudnorm -14 LUFS).
+
+## Decisões do Vítor
+- Piloto 60–90 s com começo/meio/fim, Tempo Perdido; horizontal; sem fala; todas as fotos ficam (a do trote também); direitos da música não preocupam (exibição interna).
+- Intro "lembranças": TV de tubo real com fita VHS dentro (PLAY, timecode, chuvisco, scanlines) e a câmera entra na tela. Blender descartado (sem GPU, sem referência).
+- Uma ideia tipográfica por frase (foco, passa, cresce, profundidade com recorte, encosta, afasta, dissolve, extrusão 3D) e transições de edit (zoom, empurra com blur direcional, cruza).
+- Efeito "lembrança" (bordas clareiam e desfocam, brilho sobe) nos picos: entrada pela TV, "temos todo o tempo do mundo", "somos tão jovens". Só nas fotos, nunca no texto.
+
+## Como refazer
+```
+cd estudio/motor
+npx remotion still src/index.ts Terceirao saida.jpg --frame=800          # um quadro
+npx remotion render src/index.ts Terceirao previa.mp4 --scale=0.6667     # 720p
+npx remotion render src/index.ts Terceirao final.mp4                     # 1080p
+ffmpeg -i previa.mp4 -af loudnorm=I=-14:TP=-1:LRA=11 -c:v copy saida.mp4 # master
+```
+Trocar a música: refazer `piloto-audio.mp3` (ffmpeg atrim/acrossfade), transcrever com `groq_transcrever.py --palavras` e atualizar a tabela `T` no .tsx.
+
+## Próximo passo
+- Vítor avaliar a prévia 720p; ajustes pontuais na fonte; depois render 1080p.
+- Quando chegar a 231: entram no Mural (D) e na sequência final; nada precisa ser refeito.
+- Versão completa de 5 min: 5 atos do plano em `referencias/PESQUISA.md`.
