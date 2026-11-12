@@ -496,3 +496,7 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Transição "empurra" com DirBlur: blur = velocidade (px/quadro) × 0,012. Com 0,05 vira mancha. Confirmado em render.
 - Mural de fotos: peças pousam escala 1,35→1 (k 0,17) uma por palavra/meia batida; câmera recua em degraus (1 → 0,62 → 0,42 → 0,3) com E.cam, deriva lenta de 0,15 px/quadro para nunca congelar.
 - Letra sobre foto clara em P&B: escurecimento do terço inferior (0→62%) em toda foto de tela cheia, inclusive duplas.
+- (Meu Terceirão v2, reprovado pelo Vítor) Textura de papel kraft fibroso como fundo de mural: "branco com pelos", incomoda. Fundo de mural de fotos deve ser cenário 3D ou escuro limpo. Confirmado pelo Vítor.
+- (Meu Terceirão v2) "Lembrança" ≠ véu branco nas bordas: ele quer brilho subindo + leve desfoque (bloom) no quadro inteiro, sem máscara radial clara. Confirmado pelo Vítor.
+- (Meu Terceirão v2) Mural com câmera recuando só nas fotos (fundo fixo) não dá senso de 3D; o fundo precisa recuar junto (espaço 3D real). Confirmado pelo Vítor.
+- Vídeos caseiros num vídeo de lembrança: música abaixa e o som original do trecho toca (é a lembrança). Confirmado pelo Vítor.

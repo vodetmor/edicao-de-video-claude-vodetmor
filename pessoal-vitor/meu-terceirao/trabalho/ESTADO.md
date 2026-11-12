@@ -38,3 +38,12 @@ Trocar a música: refazer `piloto-audio.mp3` (ffmpeg atrim/acrossfade), transcre
 - Vítor avaliar a prévia 720p; ajustes pontuais na fonte; depois render 1080p.
 - Quando chegar a 231: entram no Mural (D) e na sequência final; nada precisa ser refeito.
 - Versão completa de 5 min: 5 atos do plano em `referencias/PESQUISA.md`.
+
+## Feedback do Vítor sobre a v2 (12/11/2026 18:55) — PARADO até o Luiz mandar a 231; a próxima edição é a FINAL (5 min)
+1. Fundo de papel kraft ("branco com pelos"): fora. Incomodou muito.
+2. Efeito "lembrança": não é vinheta branca. É o BRILHO subindo com leve desfoque (bloom), sem véu nas bordas.
+3. Mural sem senso de 3D (fotos diminuíram, fundo não). Fazer 3D de verdade: câmera num espaço 3D, cenário 3D, transições 3D (three/GLSL do motor liberados).
+4. Faltaram os vídeos: todos entram, trecho divertido de cada, música abaixa e o som do vídeo toca como lembrança.
+5. Faltou motion 3D de cenário e transições.
+6. Textos: "DF" (não SP), "Escola La Salle Sobradinho", 2026. Fotos de vários anos.
+7. Final: 232 + 231 misturados (grupo de amigos), nunca separado por sala. Todas as fotos e vídeos das duas turmas.
