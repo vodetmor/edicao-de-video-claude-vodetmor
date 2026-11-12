@@ -66,3 +66,15 @@ Trocar a música: refazer `piloto-audio.mp3` (ffmpeg atrim/acrossfade), transcre
 - Anna Augusta (19:36): foto do cachorro dela (f43v) REMOVIDA do vídeo. Arquivo movido para `trabalho/fotos-excluidas/`; fonte já sem ela (intro passa a mostrar só f09v naquele slide). Total de fotos da 232 em uso: 44.
 - Ordem do Vítor (19:40): quando ele avisar "chegaram fotos novas", verificar as DUAS pastas (`232/` e `231/`), não só a 231. Às 19:45 já havia material novo: 232 com 73 arquivos (eram 62 no piloto) e 231 com 37. Processar só quando ele avisar. Material novo entra pelo mesmo caminho: renomear em `trabalho/fotos/` (f46…), copiar para `estudio/motor/public/terceirao/`, atualizar folha de contato.
 - Vítor (19:50): pode haver fotos repetidas entre os envios; filtrar e excluir duplicatas. Método: hash perceptual (dHash/pHash via PIL, distância ≤ 6) entre 232/, 231/ e trabalho/fotos/; vídeos por duração + hash da miniatura. Duplicatas vão para `trabalho/fotos-excluidas/duplicatas/` com `relatorio.txt` (par a par); nunca apagar.
+
+### Mecanismos de densidade para a final (Vítor, 19:55: "muitas fotos/vídeos, todos contemplados, envolvente com a música")
+Orçamento: 302 s ≈ 465 batidas (92 BPM). Estimativa 150 fotos + 40 vídeos: vídeos 3 s = 120 s; fotos nos 180 s restantes → precisa de vários-por-momento.
+- Corte na batida (1 cheia por batida) nos trechos fortes.
+- Tira de filme (6–8 por 5 s) nos versos médios.
+- Mural 3D (15–20 por 10 s; câmera voa e entra numa foto) em "temos nosso próprio tempo" x3.
+- Grade que se enche na meia-batida (12–16 por 8 batidas) e uma célula abre para tela cheia, nos instrumentais.
+- Dupla/tripla de verticais nos versos calmos.
+- Vídeo que vira foto: toca com som 2–4 s, congela, vira polaroid e voa para o mural.
+- Mosaico de 4 vídeos mudos no instrumental longo (3:40–5:00 da música).
+- Garantia: todas as fotos num único espaço 3D; a câmera passa por cada uma ao menos uma vez; as melhores ganham close em tela cheia (horizontais sempre grandes).
+Capacidade: ~200 fotos + 50 vídeos com folga. Script de montagem deve distribuir automaticamente por mecanismo e verificar cobertura (toda foto/vídeo citado ≥ 1 vez).
