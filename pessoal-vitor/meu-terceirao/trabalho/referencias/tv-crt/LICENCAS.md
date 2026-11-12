@@ -1,5 +1,5 @@
 # Licenças — busca "old crt television retro tv screen"
-Gerado em 2026-11-12 17:54.
+Gerado em 2026-11-12 18:29.
 
 Legenda de uso: **livre** = pode usar em anúncio | **atribuir** = pode, com crédito | **nao-comercial** = NÃO usar em anúncio | **referencia** = só para estudar | **verificar** = abrir a página antes
 
@@ -16,4 +16,4 @@ Legenda de uso: **livre** = pode usar em anúncio | **atribuir** = pode, com cr�
 | 9 | pexels | livre | Aged television set with control panel and plastic case near wall in b | Anete Lusina | Licença Pexels (pexels.com/license) | https://www.pexels.com/photo/old-telly-on-rough-floor-in-house-5721908/ | — |
 | 10 | pexels | livre | Old CRT television set with a blue screen in front of a rustic brick w | Zachary Vessels | Licença Pexels (pexels.com/license) | https://www.pexels.com/photo/retro-tv-with-vhs-6794847/ | 10-pexels-old-crt-television-set-with-a-.jpeg |
 | 11 | pexels | livre | A stack of retro televisions evokes nostalgia and past technology in b | Peppe Occhipinti | Licença Pexels (pexels.com/license) | https://www.pexels.com/photo/vintage-televisions-piled-in-a-nostalgic-scene-28677646/ | — |
-| 12 | pexels | livre | Retro living room scene featuring vintage TV playing classic video gam | Beyza Kaplan | Licença Pexels (pexels.com/license) | https://www.pexels.com/photo/vintage-tv-in-living-room-10519117/ | — |
+| 12 | pexels | livre | Retro living room scene featuring vintage TV playing classic video gam | Beyza Kaplan | Licença Pexels (pexels.com/license) | https://www.pexels.com/photo/vintage-tv-in-living-room-10519117/ | 12-pexels-retro-living-room-scene-featur.jpeg |
