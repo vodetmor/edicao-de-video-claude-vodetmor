@@ -47,3 +47,9 @@ Trocar a música: refazer `piloto-audio.mp3` (ffmpeg atrim/acrossfade), transcre
 5. Faltou motion 3D de cenário e transições.
 6. Textos: "DF" (não SP), "Escola La Salle Sobradinho", 2026. Fotos de vários anos.
 7. Final: 232 + 231 misturados (grupo de amigos), nunca separado por sala. Todas as fotos e vídeos das duas turmas.
+
+### Respostas do Vítor para a FINAL (12/11/2026 19:00)
+- Espaço 3D: fotos flutuando, câmera voando entre elas (aprovado). Objetivo único: EMOÇÃO, fazer chorar de saudade. Cores que remetem a saudade, fugindo de paleta monocromática.
+- Som dos vídeos: som do vídeo na frente, música ~12 dB abaixo, volta suave; trechos de 3 a 5 s.
+- Música: Tempo Perdido inteira (5:02); passar de 5 min em 2 s não desclassifica.
+- Cronologia: quando o Luiz mandar, separar as antigas e "voltar ao passado"; haverá fotos de criança → script que estima a idade das pessoas (ex.: DeepFace/InsightFace, CPU) para ordenar e montar um memorial infância→terceirão.
