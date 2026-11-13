@@ -79,4 +79,3 @@
 - [[vixplay-feedback-storytelling]]: 2026-11-06 Deidson reprovou os criativos VixPlay v1/v2 (queria storytelling, 1 história por criativo); mandar PDF da skill pdf-aprovacao antes de renderizar.
 - [PDF de aprovação = modelo pdf-aprovacao](vixplay-pdf-aprovacao-modelo.md) — nunca HTML improvisado; tema da marca, quadros codificados
 - [Mudar só o pedido (VixPlay)](vixplay-mudar-so-o-pedido.md) — ajuste em entregável aprovado mexe só no item citado; lembrete não é mudança
-- [Meu Terceirão](meu-terceirao.md) — vídeo de formatura La Salle Sobradinho/DF 2026: união 231+232, feedback do Vítor sobre o piloto, 3D, vídeos com som, aguardar Luiz
