@@ -7,7 +7,7 @@ metadata:
 
 # Meu Terceirão · plano da FINAL (13/11/2026, antes de executar)
 
-Acervo em 13/11: 103 fotos (36 criança em `triagem/crianca/`, 67 jovem em `triagem/jovem/`) + 30 vídeos (todos jovem). Pode crescer (Luiz/231, mais envios). Música: Tempo Perdido inteira, 302 s ≈ 465 batidas (92,3 BPM, 0,65 s). Relacionado: [[meu-terceirao]].
+Acervo FECHADO em 13/11 (tarde): 188 fotos (53 criança, 135 jovem) + 64 vídeos (todos jovem), em `triagem/crianca/` e `triagem/jovem/`. Música: Tempo Perdido inteira, 302 s ≈ 465 batidas (92,3 BPM, 0,65 s). Estrutura real: intro 0-20,8 s; banda cheia 12-228 s; coda suave 234-294 s; fade 294-302. Relacionado: [[meu-terceirao]].
 
 ## Ideia-mãe
 "Voltar ao passado": o vídeo começa no presente (TV DF), mergulha na infância e volta crescendo até a turma inteira (231 + 232 misturadas). Fecha com a infância e o presente juntos. Título da música vira tese: "nem foi tempo perdido".
@@ -48,3 +48,9 @@ Infância: do mais novo ao mais velho, por aparência, em blocos de folhas de co
 
 **Why:** pedido do Vítor (13/11): incluir todas as fotos e mídias em 5 min, bem emocionante, plano antes de executar; ele troca para modelo maior na execução.
 **How to apply:** executar nesta ordem; qualquer mídia nova entra pela triagem (criança/jovem) e pelo script de cobertura.
+
+## REVISÃO (13/11 tarde): números reais e novo orçamento
+252 mídias em 302 s = ~1,2 s por mídia, então tudo que for sequencial não cabe: vira montagem rápida com várias mídias ao mesmo tempo.
+- Intro TV 0-20,8 s (antes do primeiro verso). Infância (53 fotos) 20,8-~100 s, "selvagem" (77-90 s) = rajada de uma foto por batida. Jovem: 103-228 s (abraços em 123-138; mural 3D em 139-165; "nem foi tempo perdido" ~188; "somos tão jovens" 190-204; instrumental 204-228 = rajada final).
+- Coda suave 228-294 s: 228-262 "sons da turma" (11 vídeos solo com som sobre a música baixa), 262-294 fecho (mural final infância + presente, texto aprovado, escadaria, "231 e 232"); fade 294-302.
+- Vídeos: ~24 solo com som (3 s) + ~40 em mosaico de 4 mudos (3 s por mosaico) + vários dentro do mural 3D. Fotos jovem (135): mural 3D ~60, grade ~30, tira de filme ~20, corte na batida ~25.

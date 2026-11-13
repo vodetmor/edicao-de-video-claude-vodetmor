@@ -95,3 +95,8 @@ Capacidade: ~200 fotos + 50 vídeos com folga. Script de montagem deve distribui
 - Drive via conta vitor743 (Workspace MCP reconectado; download pelo helper `C:/GoogleWorkspaceMCP` com googleapis). Pastas: raiz (98) e Criança (40): 138 arquivos. Removidos 88 (já salvos, ou cópias do Criança/raiz): 19 vídeos iguais aos chegados, 4 fotos da pasta Criança repetidas, todas as fotos da raiz já salvas. Restaram 39 fotos novas (`chegadas-2026-11-13/n01..n39`) e 11 vídeos novos (`nv01..nv11`).
 - Total único: 103 fotos e 30 vídeos. Triagem em `triagem/manifest.csv`: 35 fotos com criança até 11 anos, 1 em dúvida (n35), 67 adolescentes/jovens; vídeos sem criança.
 - Triagem em pastas (13/11, ordem do Vítor: dúvida vai para criança): `triagem/crianca/` (36 fotos) e `triagem/jovem/` (67 fotos + 30 vídeos). Pasta `chegadas-2026-11-13/` removida (vazia; vídeo WA0097 repetido apagado). Nomes: c01..c67 (menos os removidos), n01..n39, vid-WA02xx, nv01..nv11. Total: 103 fotos, 30 vídeos.
+
+## Acervo fechado (13/11/2026, tarde): pastas 232/ e 231/ processadas
+- 232/ e 231/ (material do Luiz já estava lá) processadas: duplicatas apagadas (9 fotos, 11 vídeos), a foto do cachorro (pedido da Anna) apareceu de novo em 232/ e foi apagada. Fotos movidas para `triagem/crianca/` e `triagem/jovem/` com nomes a01..a86 (pastas originais agora vazias); vídeos b01..b34 em `triagem/jovem/`.
+- TOTAL ÚNICO: 188 fotos (53 criança, 135 jovem), 64 vídeos (todos jovem). Dúvida (a62-a64, n35) = criança, ordem do Vítor.
+- Estrutura real da música (energia medida): intro 0-20,8 s; força total 12-228 s; coda mais suave 234-294 s; fade 294-302 s. Letra: tempo por palavra em `musica/tempo-perdido.palavras.json` (confere até ~204 s; depois é coda instrumental).
