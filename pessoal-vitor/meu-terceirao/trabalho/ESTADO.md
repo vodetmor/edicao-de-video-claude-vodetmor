@@ -100,3 +100,9 @@ Capacidade: ~200 fotos + 50 vídeos com folga. Script de montagem deve distribui
 - 232/ e 231/ (material do Luiz já estava lá) processadas: duplicatas apagadas (9 fotos, 11 vídeos), a foto do cachorro (pedido da Anna) apareceu de novo em 232/ e foi apagada. Fotos movidas para `triagem/crianca/` e `triagem/jovem/` com nomes a01..a86 (pastas originais agora vazias); vídeos b01..b34 em `triagem/jovem/`.
 - TOTAL ÚNICO: 188 fotos (53 criança, 135 jovem), 64 vídeos (todos jovem). Dúvida (a62-a64, n35) = criança, ordem do Vítor.
 - Estrutura real da música (energia medida): intro 0-20,8 s; força total 12-228 s; coda mais suave 234-294 s; fade 294-302 s. Letra: tempo por palavra em `musica/tempo-perdido.palavras.json` (confere até ~204 s; depois é coda instrumental).
+
+## FINAL v1 (13/11/2026): composição montada e prévia em render
+- Pipeline: `trabalho/scripts/prep_final.py` (reduz fotos, converte vídeos, mede áudio) → `estudio/motor/src/obras/terceirao/acervo.json`; `trabalho/scripts/montar_final.py` (linha do tempo na batida 0,6472 s, cobertura 100%: 188/188 fotos, 64/64 vídeos) → `plano.json`; composição `Final.tsx` (id `Final`, 9066 quadros, 1920x1080, 30 fps). Assets em `estudio/motor/public/final/` (fora do Git).
+- Efeitos novos: bloom de lembrança (brilho + desfoque leve, sem véu), mural 3D (túnel de polaroids), parede final com recuo de câmera, mosaico de 4 vídeos, grade, ponte com contador de anos 2014→2026, portal pelos polaroids, música com ducking de −12 dB sob os vídeos com som. Intro TV: "SP" virou "DF".
+- Como refazer: `python trabalho/scripts/prep_final.py && python trabalho/scripts/montar_final.py`, depois `cd estudio/motor && npx remotion render src/index.ts Final saida.mp4 --scale=0.5 --concurrency=12` (540p) ou sem `--scale` (1080p).
+- Pendente: ver a prévia inteira e ajustar; normalizar som dos vídeos; master −14 LUFS; render 1080p.

@@ -39,7 +39,7 @@ const T = {
   tao3: [75.32, 75.9],
 };
 
-const useFontes = () => {
+export const useFontes = () => {
   const [h] = React.useState(() => delayRender('fontes terceirao'));
   React.useEffect(() => {
     Promise.all([
@@ -80,24 +80,17 @@ const Grao: React.FC<{op?: number}> = ({op = 0.07}) => {
 };
 
 // "Lembrança": as bordas clareiam e desfocam, o brilho sobe (pedido do Vítor). i = 0..1
-const Lembranca: React.FC<{i: number; children: React.ReactNode}> = ({i, children}) => {
+// v3 (13/11): BLOOM. O brilho sobe e a imagem desfoca de leve; sem véu branco nas bordas.
+export const Lembranca: React.FC<{i: number; children: React.ReactNode}> = ({i, children}) => {
   const ii = clamp(i);
   return (
     <AbsoluteFill>
       {children}
       {ii > 0.01 && (
-        <AbsoluteFill
-          style={{
-            filter: `blur(${(22 * ii).toFixed(1)}px) brightness(${(1 + 0.5 * ii).toFixed(3)})`,
-            WebkitMaskImage: `radial-gradient(ellipse 70% 65% at 50% 50%, transparent ${(42 - 10 * ii).toFixed(0)}%, black 100%)`,
-            maskImage: `radial-gradient(ellipse 70% 65% at 50% 50%, transparent ${(42 - 10 * ii).toFixed(0)}%, black 100%)`,
-            opacity: ii,
-          }}
-        >
+        <AbsoluteFill style={{filter: `blur(${(7 * ii).toFixed(1)}px) brightness(${(1 + 0.45 * ii).toFixed(3)}) saturate(1.15)`, mixBlendMode: 'screen', opacity: 0.6 * ii}}>
           {children}
         </AbsoluteFill>
       )}
-      <AbsoluteFill style={{background: `radial-gradient(ellipse 70% 65% at 50% 50%, rgba(255,236,200,0) 45%, rgba(255,236,200,${(0.55 * ii).toFixed(3)}) 100%)`, mixBlendMode: 'screen'}} />
     </AbsoluteFill>
   );
 };
@@ -404,13 +397,13 @@ const TelaVHS: React.FC = () => {
           <div style={{position: 'absolute', left: 200, top: 150, opacity: Math.floor(t * 2) % 2 === 0 || t >= 2.26 ? 1 : 0.2}}>▶ PLAY</div>
           <div style={{position: 'absolute', right: 200, top: 150}}>{timecode}</div>
           <div style={{position: 'absolute', left: 200, bottom: 150, fontSize: 104, letterSpacing: '0.08em'}}>LEMBRANÇAS</div>
-          <div style={{position: 'absolute', right: 200, bottom: 150, fontSize: 104}}>SP</div>
+          <div style={{position: 'absolute', right: 200, bottom: 150, fontSize: 104}}>DF</div>
         </div>
       )}
     </div>
   );
 };
-const IntroTV: React.FC = () => {
+export const IntroTV: React.FC = () => {
   const f = useCurrentFrame();
   const t = f / FPS;
   if (f >= s(8.76)) return null;
