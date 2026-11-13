@@ -78,3 +78,20 @@ Orçamento: 302 s ≈ 465 batidas (92 BPM). Estimativa 150 fotos + 40 vídeos: v
 - Mosaico de 4 vídeos mudos no instrumental longo (3:40–5:00 da música).
 - Garantia: todas as fotos num único espaço 3D; a câmera passa por cada uma ao menos uma vez; as melhores ganham close em tela cheia (horizontais sempre grandes).
 Capacidade: ~200 fotos + 50 vídeos com folga. Script de montagem deve distribuir automaticamente por mecanismo e verificar cobertura (toda foto/vídeo citado ≥ 1 vez).
+
+## Chegadas (13/11/2026, via remote control; ainda chegando)
+- Salvas sem processar em `trabalho/chegadas-2026-11-13/`: c01 a c19 (19 fotos, pela ordem do envio; a turma de cada uma ainda não foi separada) e `VID-20261113-WA0097.mp4` (vídeo 848x478, 27,4 s, H.264 + AAC).
+- Sem dedupe, sem renomear em `fotos/`, sem editar. Vítor avisa "chegaram todas" para começar.
+- Segundo lote (13/11, mesma pasta): c20 a c39 (mais 20 fotos). Total na pasta de chegadas: 39 fotos + 1 vídeo. Ainda sem dedupe, sem separar turma.
+- Terceiro lote (13/11): c40 a c59 (20 fotos), salvas na mesma pasta. Total: 59 fotos + 1 vídeo.
+- Dedupe (dHash 9x8, distância ≤ 10, script em scratchpad): 3 pares idênticos: c37=c40, c38=c41, c39=c42. Só marcado, nada movido ainda (move para `fotos-excluidas/duplicatas/` quando Vítor avisar "chegaram todas").
+- Limite: dHash pega recorte/redimensionamento, não a mesma cena fotografada de outro ângulo. Revisão visual antes do render.
+- Drive (13/11): pasta enviada pelo Vítor tinha só cópias. Apagadas permanentemente 48 cópias baixadas (dr01 a dr48) e c40, c41, c42 (repetem c37 a c39). Restam 64 fotos únicas (c01 a c39, c43 a c67).
+
+## Triagem por mídia (13/11, Claude de modelo menor, a pedido do Vítor)
+- Pasta `triagem/manifest.csv`: uma linha por arquivo (64 fotos + 19 vídeos), com quem aparece e `crianca_ate_11`.
+- Feita por leitura visual (folhas de contato), não por modelo de idade. Só c06 tem criança clara (aparenta 7 a 10 anos). Fotos de criança aparecem penduradas na parede em c43 e c63; não são as pessoas da cena, só decoração.
+- Idade por rosto (DeepFace/InsightFace) não está instalada: exige TensorFlow ou ONNX com pesos. Não rodado. Se o Vítor quiser o script de fato, é instalação à parte.
+- Drive via conta vitor743 (Workspace MCP reconectado; download pelo helper `C:/GoogleWorkspaceMCP` com googleapis). Pastas: raiz (98) e Criança (40): 138 arquivos. Removidos 88 (já salvos, ou cópias do Criança/raiz): 19 vídeos iguais aos chegados, 4 fotos da pasta Criança repetidas, todas as fotos da raiz já salvas. Restaram 39 fotos novas (`chegadas-2026-11-13/n01..n39`) e 11 vídeos novos (`nv01..nv11`).
+- Total único: 103 fotos e 30 vídeos. Triagem em `triagem/manifest.csv`: 35 fotos com criança até 11 anos, 1 em dúvida (n35), 67 adolescentes/jovens; vídeos sem criança.
+- Triagem em pastas (13/11, ordem do Vítor: dúvida vai para criança): `triagem/crianca/` (36 fotos) e `triagem/jovem/` (67 fotos + 30 vídeos). Pasta `chegadas-2026-11-13/` removida (vazia; vídeo WA0097 repetido apagado). Nomes: c01..c67 (menos os removidos), n01..n39, vid-WA02xx, nv01..nv11. Total: 103 fotos, 30 vídeos.
