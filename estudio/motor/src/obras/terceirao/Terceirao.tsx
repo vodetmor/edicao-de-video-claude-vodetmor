@@ -414,15 +414,33 @@ export const IntroTV: React.FC = () => {
   const luz = t >= 0.8 ? 0.4 + 0.12 * hash(f, 13) : 0;
   const lemb = clamp((t - 7.0) / 1.76);
   const escuro = clamp(1 - t / 0.9);
+  // tubo de verdade: a imagem acompanha o vidro abaulado (bordas curvas, cantos largos, imagem em barril, reflexo).
+  // Quando a câmera entra na tela (6,4 s em diante) a curvatura some aos poucos, para emendar na foto cheia sem salto.
+  const curva = 1 - E.cam(clamp((t - 7.6) / 1.1)); // a imagem continua deformada com o tubo enquanto a câmera entra; só achata no fim
+  const M = 8; // a tela real é um pouco maior que o retângulo medido: as bordas abaulam para fora
+  const BW = TELA.w + 2 * M, BH = TELA.h + 2 * M;
+  const e = 14 * curva, r = 52;
+  const tubo = `path("M ${r} ${e} Q ${BW / 2} ${-e} ${BW - r} ${e} Q ${BW - e} ${e} ${BW - e} ${r} Q ${BW + e} ${BH / 2} ${BW - e} ${BH - r} Q ${BW - e} ${BH - e} ${BW - r} ${BH - e} Q ${BW / 2} ${BH + e} ${r} ${BH - e} Q ${e} ${BH - e} ${e} ${BH - r} Q ${-e} ${BH / 2} ${e} ${r} Q ${e} ${e} ${r} ${e} Z")`;
   return (
     <Lembranca i={lemb}>
       <AbsoluteFill style={{background: '#1a120c'}}>
         <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transformOrigin: `${TELA.cx}px ${TELA.cy}px`, transform: `translate(${((960 - TELA.cx) * c).toFixed(1)}px, ${((540 - TELA.cy) * c).toFixed(1)}px) scale(${z.toFixed(4)})`}}>
           <Img src={P('tv2')} style={{width: 1920, height: 1080, display: 'block', filter: filtro(0.4)}} />
-          <div style={{position: 'absolute', left: TELA.cx - TELA.w / 2, top: TELA.cy - TELA.h / 2, width: TELA.w, height: TELA.h, overflow: 'hidden', borderRadius: 14}}>
-            <div style={{transformOrigin: '0 0', transform: `scale(${(TELA.w / TW).toFixed(5)}, ${(TELA.h / TH).toFixed(5)})`}}>
-              <TelaVHS />
+          <svg width={0} height={0} style={{position: 'absolute'}}>
+            <filter id="barril" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB" primitiveUnits="userSpaceOnUse">
+              <feImage href={PNG('tv-barril')} x={0} y={0} width={TW} height={TH} preserveAspectRatio="none" result="mapa" />
+              <feDisplacementMap in="SourceGraphic" in2="mapa" scale={(230 * curva).toFixed(1)} xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+          </svg>
+          <div style={{position: 'absolute', left: TELA.cx - BW / 2, top: TELA.cy - BH / 2, width: BW, height: BH, clipPath: tubo, background: '#050505'}}>
+            <div style={{transformOrigin: '0 0', transform: `scale(${(BW / TW).toFixed(5)}, ${(BH / TH).toFixed(5)})`}}>
+              <div style={{width: TW, height: TH, filter: curva > 0.01 ? 'url(#barril)' : undefined}}>
+                <TelaVHS />
+              </div>
             </div>
+            {/* vidro: borda escurece (a imagem "afunda" nas laterais do tubo) e um reflexo suave no alto */}
+            <div style={{position: 'absolute', inset: 0, boxShadow: 'inset 0 0 60px 16px rgba(0,0,0,0.7)', opacity: curva}} />
+            <div style={{position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 62% 44% at 30% 14%, rgba(255,250,240,0.14) 0%, rgba(255,250,240,0) 70%)', opacity: curva}} />
           </div>
           {/* luz da tela espalhando pela sala */}
           <div style={{position: 'absolute', left: TELA.cx - 700, top: TELA.cy - 560, width: 1400, height: 1120, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,230,190,0.22) 0%, rgba(255,230,190,0) 60%)', opacity: luz, mixBlendMode: 'screen', pointerEvents: 'none'}} />

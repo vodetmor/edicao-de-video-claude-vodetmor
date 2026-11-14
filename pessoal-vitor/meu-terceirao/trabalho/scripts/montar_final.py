@@ -150,8 +150,12 @@ fill(vhs, 8.76, T_VERSO, tipo="vhs")
 # ================================================================ ATO 1: infância (20,7 → 103,8)
 t = T_VERSO
 t1 = nb(t, 3)
-add("portal", t, t1, id="c43")  # parede de polaroids de criança: a câmera entra
-s1, s2, s3, s4 = cr[:8], cr[8:22], cr[22:35], cr[35:53]
+# abre numa foto deitada de criança com o rosto bem visível (não uma em que o chapéu toma o quadro)
+RO = json.load(open(ACERVO.replace("acervo.json", "rostos.json"), encoding="utf8"))
+abre = next(i for i in cr if FOTOS[i]["o"] == "h" and RO[i]["n"] >= 1 and 0.3 < RO[i]["y"] < 0.6 and RO[i]["y"] - RO[i]["topo"] > 0.07)
+cr = [abre] + [i for i in cr if i != abre]
+add("foto", t, t1, id=cr[0], bloom=0.9, grupo="crianca")  # antes era o zoom na parede de polaroids (c43): o Vítor achou o foco estranho (14/11)
+s1, s2, s3, s4 = cr[1:8], cr[8:22], cr[22:35], cr[35:53]
 fill(s1, t1, snap(42.0), bloom=0.9, grupo="crianca")
 fill(s2, snap(42.0), snap(60.3), bloom=0.55, grupo="crianca")
 fill(s3, snap(60.3), snap(77.0), bloom=0.4, grupo="crianca")
@@ -173,12 +177,11 @@ for v in HUG:  # "Então me abraça forte": vídeos de abraço com o som origina
 fill(pega([ABRACO], 3), t, T_NOSSO, bloom=0.5)
 
 # ================================================================ ATO 3: "Temos nosso próprio tempo" x3 (139,6 → 190,1): mural 3D
-cortes = [T_NOSSO, snap(152.6), snap(165.5), snap(178.0)]
-for k in range(3):
-    add("mural", cortes[k], cortes[k + 1], ids=pega([BAGUNCA, outros, GRUPAO], 14), voo=k)
-T_NEM = snap(187.6)
+T_MURAL_FIM = snap(176.2)
+add("mural", T_NOSSO, T_MURAL_FIM, ids=pega([BAGUNCA, outros, GRUPAO], 45), voo=0)
+T_NEM = snap(185.8)  # "Nem foi tempo perdido" é cantado em 185,8 (medido), não em 187,6
 T_JOVENS = snap(190.1)
-mosaicos_ate(3, cortes[3], T_NEM)
+mosaicos_ate(3, T_MURAL_FIM, T_NEM)
 add("foto", T_NEM, T_JOVENS, id="c35", bloom=0.8, grupo="jovem")  # "Nem foi tempo perdido": a turma toda
 
 # ================================================================ ATO 4: "Somos tão jovens" (190,1 → 228)
@@ -198,84 +201,141 @@ for v in SOLO_CODA:
     t = nb(t, 5)
 T_FECHO = t
 
-# ================================================================ FECHO (~260 → 302,2): parede de todas as fotos + textos
-sobra = [i for i in jovem if i not in usados]
-parede = cr + sobra
-add("parede", T_FECHO, snap(282.0), ids=parede, foco="c66")
-add("final", snap(282.0), DURACAO, id="a20")
+# ================================================================ FECHO (~260 → 302,2): TODAS as mídias; a câmera recua, elas formam um "3" e depois "231 e 232"
+from PIL import Image, ImageDraw, ImageFont
+
+
+def forma(texto, n):
+    """n posições (em células 4:3) que desenham o texto: amostra a máscara do texto numa grade e fica com as n células mais cheias."""
+    fonte = ImageFont.truetype("C:/Windows/Fonts/ariblk.ttf", 400)
+    x0, y0, x1, y1 = fonte.getbbox(texto)
+    im = Image.new("L", (x1 - x0 + 40, y1 - y0 + 40), 0)
+    ImageDraw.Draw(im).text((20 - x0, 20 - y0), texto, fill=255, font=fonte)
+    W, H = im.size
+    px = im.load()
+    melhor = None
+    for g in range(8, 220):
+        cw_ = W / g
+        ch_ = cw_ * 0.75
+        linhas = int(H / ch_)
+        cel = []
+        for r in range(linhas):
+            for c in range(g):
+                xa, xb, ya, yb = int(c * cw_), int((c + 1) * cw_), int(r * ch_), int((r + 1) * ch_)
+                tot = cheio = 0
+                for yy in range(ya, yb, 2):
+                    for xx in range(xa, xb, 2):
+                        tot += 1
+                        cheio += px[xx, yy] > 127
+                cob = cheio / max(1, tot)
+                if cob >= 0.5:
+                    cel.append((cob, c, r))
+        if len(cel) >= n:
+            melhor = sorted(cel, reverse=True)[:n]
+            break
+    xs = [c for _, c, _ in melhor]
+    ys = [r for _, _, r in melhor]
+    mx, my = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
+    return [[round(c - mx, 2), round(r - my, 2)] for _, c, r in melhor]
+
+
+T_TRES = T_FECHO
+FOCO = "c66"
+jov = [i for i in jovem if i != FOCO]
+ordem_f = [FOCO]
+for k in range(max(len(jov), len(cr))):  # intercala presente e infância
+    if k < len(jov):
+        ordem_f.append(jov[k])
+    if k < len(cr):
+        ordem_f.append(cr[k])
+vids_todos = [v["id"] for v in vlist]
+tiles, fi, vi = [], 0, 0
+while fi < len(ordem_f) or vi < len(vids_todos):  # vídeos espalhados (1 a cada 4), nunca nas 25 primeiras (ficam grandes demais no começo)
+    if vi < len(vids_todos) and (fi >= len(ordem_f) or (len(tiles) >= 25 and len(tiles) % 4 == 3)):
+        tiles.append({"id": vids_todos[vi], "v": 1})
+        vi += 1
+    else:
+        tiles.append({"id": ordem_f[fi]})
+        fi += 1
+N = len(tiles)
+# formação A: parede retangular, preenchida do centro para fora
+cols = int((N * 1.9) ** 0.5) + 1
+rows_ = -(-N // cols)
+cel = sorted(((c - cols // 2, r - rows_ // 2) for r in range(rows_) for c in range(cols)), key=lambda q: (lambda d: d if d <= 2.6 else d + ((q[0] * 73856093) ^ (q[1] * 19349663)) % 1000 / 400)(abs(q[0]) + abs(q[1]) * 1.3))[:N]  # embaralha dentro do anel para os vídeos não ficarem juntos
+A = [[float(x), float(y)] for x, y in cel]
+# formação B: o "3"; o ladrilho que está mais ao centro na parede vai para o centro do 3
+B0 = sorted(forma("3", N), key=lambda q: q[0] ** 2 + (q[1] * 0.75) ** 2)
+ordA = sorted(range(N), key=lambda i: A[i][0] ** 2 + (A[i][1] * 0.75) ** 2)
+Bf = [None] * N
+for rank, i in enumerate(ordA):
+    Bf[i] = B0[rank]
+# formação C: "231 e 232"; quem está à esquerda no 3 vai para a esquerda do texto
+C0 = sorted(forma("231 e 232", N), key=lambda q: (q[0], q[1]))
+ordB = sorted(range(N), key=lambda i: (Bf[i][0], Bf[i][1]))
+Cf = [None] * N
+for rank, i in enumerate(ordB):
+    Cf[i] = C0[rank]
+usados.update(ordem_f)
+add("tres", T_TRES, DURACAO, tiles=tiles, A=A, B=Bf, C=Cf)
 
 # ---------------------------------------------------------------- letra (corrigida) com tempo por palavra
-tok = json.load(open(PALAVRAS, encoding="utf8"))
+# (fim, texto, início de cada palavra): medido em musica/tempo-perdido.palavras.json e conferido com clipes curtos (14/11).
+# As linhas digitadas à mão estavam até 5 s atrasadas em relação à voz.
 LINHAS = [
-    (20.8, 23.3, "Todos os dias quando acordo"),
-    (26.6, 29.7, "Não tenho mais o tempo que passou"),
-    (30.6, 33.8, "mas tenho muito tempo"),
-    (35.9, 40.3, "Temos todo o tempo do mundo"),
-    (42.0, 46.8, "Todos os dias antes de dormir"),
-    (47.5, 52.5, "Lembro e esqueço como foi o dia"),
-    (54.0, 57.5, "Sempre em frente"),
-    (58.0, 60.4, "Não temos tempo a perder"),
-    (61.6, 64.9, "Nosso suor sagrado"),
-    (66.6, 70.5, "É bem mais belo que esse sangue amargo"),
-    (72.0, 74.5, "E tão sério"),
-    (77.0, 81.2, "E selvagem"),
-    (82.4, 86.2, "Selvagem"),
-    (87.5, 90.4, "Selvagem"),
-    (103.8, 108.4, "Veja o sol dessa manhã tão cinza"),
-    (110.4, 116.5, "A tempestade que chega"),
-    (117.0, 122.2, "é da cor dos teus olhos castanhos"),
-    (123.3, 126.4, "Então me abraça forte"),
-    (129.2, 133.5, "Me diz mais uma vez"),
-    (134.0, 138.2, "que já estamos distantes de tudo"),
+    (23.4, "Todos os dias quando acordo", [20.8, 20.88, 21.38, 21.88, 22.46]),
+    (30.6, "Não tenho mais o tempo que passou", [26.6, 27.04, 27.62, 28.46, 29.0, 29.48, 29.94]),
+    (34.2, "mas tenho muito tempo", [30.76, 31.02, 31.68, 32.46]),
+    (40.6, "Temos todo o tempo do mundo", [35.92, 36.74, 37.68, 38.04, 38.64, 39.1]),
+    (46.6, "Todos os dias antes de dormir", [41.98, 42.92, 43.26, 43.82, 44.98, 45.52]),
+    (51.4, "Lembro e esqueço como foi o dia", [46.98, 47.64, 48.12, 48.42, 48.94, 49.5, 49.76]),
+    (56.0, "Sempre em frente", [52.4, 53.06, 53.74]),
+    (60.8, "Não temos tempo a perder", [56.75, 57.22, 58.26, 59.06, 59.44]),
+    (65.2, "Nosso suor sagrado", [61.56, 62.26, 62.98]),
+    (71.4, "É bem mais belo que esse sangue amargo", [66.6, 67.16, 67.52, 67.9, 68.34, 68.7, 69.06, 69.98]),
+    (74.9, "E tão sério", [72.04, 72.48, 72.84]),
+    (81.4, "E selvagem", [76.97, 77.43]),
+    (86.3, "Selvagem", [82.37]),
+    (90.5, "Selvagem", [87.49]),
+    (108.9, "Veja o sol dessa manhã tão cinza", [103.77, 104.41, 104.79, 105.27, 105.85, 106.61, 107.69]),
+    (113.1, "A tempestade que chega", [110.37, 110.83, 112.05, 112.53]),
+    (121.5, "é da cor dos teus olhos castanhos", [113.33, 113.65, 113.95, 114.51, 115.01, 115.41, 116.0]),
+    (126.9, "Então me abraça forte", [123.35, 123.89, 124.17, 125.21]),
+    (130.95, "Me diz mais uma vez", [129.21, 129.37, 129.89, 130.21, 130.59]),
+    (138.6, "que já estamos distantes de tudo", [131.11, 131.37, 131.79, 133.01, 135.65, 137.03]),
+    (144.3, "Temos nosso próprio tempo", [139.57, 140.45, 140.99, 142.07], 0),
+    (149.5, "Temos nosso próprio tempo", [144.91, 145.57, 146.07, 147.29], 1),
+    (154.3, "Temos nosso próprio tempo", [150.11, 150.79, 151.31, 152.5], 2),
+    (160.6, "Não tenho medo do escuro", [154.84, 155.22, 156.42, 157.44, 159.32]),
+    (171.0, "mas deixe as luzes acesas agora", [161.22, 161.82, 163.28, 164.46, 165.88, 168.34]),
+    (180.4, "O que foi escondido é o que se escondeu", [175.36, 175.72, 176.02, 176.66, 177.98, 178.26, 178.5, 178.94, 179.54]),
+    (185.5, "E o que foi prometido ninguém prometeu", [180.66, 180.9, 181.02, 181.2, 181.72, 183.0, 184.28]),
+    (189.6, "Nem foi tempo perdido", [185.8, 186.1, 186.48, 187.2], 9),
+    (195.0, "Somos tão jovens", [190.06, 191.08, 191.58], 9),
+    (199.8, "tão jovens", [196.2, 196.76], 9),
+    (205.0, "tão jovens", [201.24, 201.84], 9),
 ]
-
-
-def alinha(a, b_, texto):
-    ws = texto.split()
-    ts = [x for x in tok if a - 0.4 <= x["s"] <= b_ + 0.2]
-    if len(ts) == len(ws):
-        return [round(x["s"], 2) for x in ts]
-    n = len(ws)
-    pesos = [max(2, len(w)) for w in ws]
-    tot = sum(pesos)
-    out, acc = [], 0
-    for p in pesos:
-        out.append(round(a + (b_ - a - 0.3) * acc / tot, 2))
-        acc += p
-    return out
-
-
-letra = [{"a": a, "b": b_, "p": t_.split(), "t": alinha(a, b_, t_)} for a, b_, t_ in LINHAS]
-# "Temos nosso próprio tempo" x3 e o final (tempos por palavra do próprio áudio)
-temos = [x for x in tok if x["w"].lower() == "temos" and 139 <= x["s"] <= 190]
-prox = [(139.6, 145.6), (146.3, 152.5), (153.2, 159.3)]
-for k, (a, b_) in enumerate(prox):
-    letra.append({"a": a, "b": b_, "p": ["Temos", "nosso", "próprio", "tempo"], "t": alinha(a, b_, "Temos nosso próprio tempo"), "grande": k})
-letra += [
-    {"a": 166.0, "b": 170.5, "p": "Não tenho medo do escuro".split(), "t": alinha(166.0, 170.5, "Não tenho medo do escuro")},
-    {"a": 171.0, "b": 175.0, "p": "mas deixe as luzes acesas agora".split(), "t": alinha(171.0, 175.0, "mas deixe as luzes acesas agora")},
-    {"a": 176.0, "b": 181.5, "p": "O que foi escondido é o que se escondeu".split(), "t": alinha(176.0, 181.5, "O que foi escondido é o que se escondeu")},
-    {"a": 182.5, "b": 186.5, "p": "E o que foi prometido ninguém prometeu".split(), "t": alinha(182.5, 186.5, "E o que foi prometido ninguém prometeu")},
-    {"a": 187.6, "b": 190.0, "p": ["Nem", "foi", "tempo", "perdido"], "t": alinha(187.6, 190.0, "Nem foi tempo perdido"), "grande": 9},
-    {"a": 190.1, "b": 194.9, "p": ["Somos", "tão", "jovens"], "t": alinha(190.1, 194.9, "Somos tão jovens"), "grande": 9},
-    {"a": 196.2, "b": 199.8, "p": ["tão", "jovens"], "t": alinha(196.2, 199.8, "tão jovens"), "grande": 9},
-]
+letra = []
+for fim_, texto, ts, *g in LINHAS:
+    assert len(texto.split()) == len(ts), texto
+    d = {"a": ts[0], "b": fim_, "p": texto.split(), "t": ts}
+    if g:
+        d["grande"] = g[0]
+    letra.append(d)
 
 # ---------------------------------------------------------------- textos do fecho (aprovados pelo Vítor)
 fecho = [
     {"a": 263.0, "b": 269.2, "l": ["que não seja imortal, posto que é chama,", "mas que seja infinito enquanto dure."], "fonte": "Vinicius de Moraes"},
     {"a": 270.0, "b": 276.0, "l": ["A gente achava que o tempo era lento.", "Era a gente que estava rápido demais para ver."]},
     {"a": 276.4, "b": 281.5, "l": ["Aos nossos professores:", "vocês não nos ensinaram só matéria.", "Ensinaram a gente a ficar."]},
-    {"a": 284.0, "b": 288.0, "l": ["Nem foi tempo perdido."], "grande": True},
-    {"a": 289.0, "b": 293.2, "l": ["La Salle Sobradinho · 2026"], "pequeno": True},
-    {"a": 294.2, "b": 302.2, "l": ["231 e 232"], "grande": True, "final": True},
+    {"a": 287.4, "b": 292.6, "l": ["Nem foi tempo perdido."], "baixo": True},
+    {"a": 297.6, "b": 301.4, "l": ["La Salle Sobradinho · 2026"], "pequeno": True, "baixo": True, "final": True},
 ]
 
 def intercala(bl):
     """V2: dentro de cada trecho entre âncoras (portal, ponte, mural, parede, solos de abraço, foto da turma),
     alterna foto e vídeo. Só reordena os blocos: o trecho começa e termina no mesmo instante,
     cada bloco mantém a sua duração (são múltiplos de batida, então os cortes continuam na batida)."""
-    ANCORAS = {"intro", "vhs", "portal", "ponte", "mural", "parede", "final"}
+    ANCORAS = {"intro", "vhs", "portal", "ponte", "mural", "parede", "final", "tres"}
 
     def ancora(b):
         return b["k"] in ANCORAS or (b["k"] == "solo" and b.get("abraco")) or b.get("id") == "c35"
@@ -332,6 +392,8 @@ for b in blocos:
             (vv if b["k"] == "solo" else vf).add(b[key])
     for i in b.get("ids", []):
         (vv if b["k"] == "mosaico" else vf).add(i)
+    for tl in b.get("tiles", []):
+        (vv if tl.get("v") else vf).add(tl["id"])
 falta_f = [i for i in FOTOS if i not in vf]
 falta_v = [i for i in VIDEOS if i not in vv]
 print("blocos", len(blocos), "| fotos", len(vf), "/", len(FOTOS), "| vídeos", len(vv), "/", len(VIDEOS))

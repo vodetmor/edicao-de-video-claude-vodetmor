@@ -125,3 +125,25 @@ Capacidade: ~200 fotos + 50 vídeos com folga. Script de montagem deve distribui
 - Gerar: `python trabalho/scripts/montar_final.py --v2` (grava `estudio/motor/src/obras/terceirao/plano-v2.json`; a V1 `plano.json` não muda).
 - Render: o motor lê `plano.json` fixo, então o render da V2 troca o `plano.json` pelo `plano-v2.json` e devolve a V1 no fim (backup no scratchpad da sessão). Comando: `python scripts/render_pedacos.py --tam 300 --conc 2 --pasta pedacos-v2 --saida final-v2-bruto.mp4`, depois `python scripts/masterizar.py previa/final-v2-bruto.mp4 previa/meu-terceirao-final-v2.mp4`.
 - Limite: a infância tem fotos e os 4 mosaicos de vídeo do trecho da ponte; o trecho do mural (3 mosaicos seguidos antes da foto da turma) continua só com vídeo, porque o mural é âncora.
+
+## FINAL V3 (14/11/2026 13:19): mais mídias da 232
+- Pasta do Drive `1RMIwqYLG7U6omr3ZlUlr0z28k-uukr-N` (74 arquivos) baixada em `chegadas-2026-11-14-232/`. Repetidas fora (13 já no acervo, 7 cópias no próprio lote, 2 mesma cena). Entraram 42 fotos (`d01..d42`) e 10 vídeos (`dv01..dv10`) em `triagem/jovem/`. Acervo: 230 fotos, 74 vídeos.
+
+## FINAL V4 (14/11/2026): revisão do Vítor
+Pedidos e o que foi feito:
+- **Letra fora de sincronia:** as linhas tinham tempo digitado à mão, até 5 s atrasado. Agora `LINHAS` em `montar_final.py` usa o início de cada palavra medido (transcrição inteira + clipes curtos conferidos). "Nem foi tempo perdido" é em 185,8 s.
+- **Abertura ("Todos os dias quando acordo"):** saiu o zoom na parede de polaroids (`portal`); entra direto uma foto de criança.
+- **Rosto, não chapéu:** `scripts/rostos.py` (YuNet/OpenCV) grava `rostos.json` e miniaturas `public/final/t/`. `enquadra()` em `Final.tsx` põe o rosto a ~54% da altura sem cortar o chapéu, e o zoom caminha para o rosto.
+- **Sem corte seco entre fotos:** `usePassagem` (foto nova desliza da direita, a anterior segue devagar para a esquerda). A rajada de "selvagem" continua em corte com clarão.
+- **Mural:** um voo só (45 fotos), sem corte entre três blocos; fundo marrom trocado pela luz da própria foto desfocada.
+- **Cena final (ideia do Vítor):** bloco `tres`: todas as 304 mídias numa parede, a câmera recua, elas formam um "3" e depois "231 e 232". Vídeos mudos, vindos de um atlas (`scripts/atlas_videos.py` → `public/final/atlas.mp4` + `atlas.json`), um quadro extraído por quadro e recortado em canvas.
+- **TV da abertura:** imagem agora segue o tubo (bordas abauladas, barril por `feDisplacementMap` com `public/terceirao/tv-barril.png`, vidro); a curvatura some quando a câmera entra na tela.
+Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `montar_final.py --v2` → trocar `plano.json` pelo `plano-v2.json` → `render_pedacos.py --pasta pedacos-v4 --saida final-v4-bruto.mp4` → `masterizar.py`.
+Áudio: render do Remotion só até o início da cena `tres` (a cena deixa a passada de áudio lentíssima); o resto é a música pura emendada por ffmpeg.
+
+## FINAL V5 (14/11/2026 16:36): entrega atual
+- TV: curvatura mais forte (`feDisplacementMap` 230, bordas 14 px) e mantida enquanto a câmera entra na tela (achata só de 7,6 a 8,7 s).
+- Abertura: `montar_final.py` escolhe para o 1º verso uma foto deitada de criança com rosto visível (hoje `n16`).
+- Arquivos: `previa/meu-terceirao-final-v5.mp4` (1080p) e `-previa-480p.mp4` (Telegram msg 5857). Pedaços em `previa/pedacos-v4/`.
+- Áudio: `audio-a.wav` (Remotion, quadros 0-7830) + cauda da música por ffmpeg. O `render_pedacos.py` ainda tenta o áudio inteiro e falha nessa cena: fazer à mão como descrito acima.
+- `plano.json` do motor continua sendo o da V1; a entrega usa `plano-v2.json` (trocar antes de renderizar, devolver depois).

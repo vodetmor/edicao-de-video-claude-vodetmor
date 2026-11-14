@@ -7,6 +7,8 @@ import {approach, clamp, E, hash, lerp} from '../../kit';
 import {IntroTV, Lembranca, useFontes} from './Terceirao';
 import plano from './plano.json';
 import acervo from './acervo.json';
+import rostos from './rostos.json';
+import atlas from './atlas.json';
 
 const FPS = 30;
 export const DUR_FINAL = Math.round(plano.duracao * FPS);
@@ -24,8 +26,52 @@ type VidM = {id: string; w: number; h: number; o: 'h' | 'v'; dur: number; audio:
 const FM: Record<string, FotoM> = Object.fromEntries((acervo.fotos as FotoM[]).map((x) => [x.id, x]));
 const VM: Record<string, VidM> = Object.fromEntries((acervo.videos as VidM[]).map((x) => [x.id, x]));
 
-type Bloco = {k: string; t0: number; t1: number; id?: string; ids?: string[]; bloom?: number; flash?: boolean; voo?: number; foco?: string; abraco?: boolean};
-const BLOCOS = plano.blocos as Bloco[];
+type Tile = {id: string; v?: number};
+type Bloco = {k: string; t0: number; t1: number; id?: string; ids?: string[]; bloom?: number; flash?: boolean; voo?: number; foco?: string; abraco?: boolean; tiles?: Tile[]; A?: number[][]; B?: number[][]; C?: number[][]};
+const BLOCOS = plano.blocos as unknown as Bloco[];
+const MINI = (id: string) => staticFile(`final/t/${id}.jpg`);
+
+// ---------------------------------------------------------------- enquadramento pelo rosto (rostos.json, gerado por trabalho/scripts/rostos.py)
+// O corte automático centralizava no meio da foto e pegava o chapéu em vez do rosto.
+// Aqui o rosto vai para ~54% da altura do quadro, sem cortar o que está acima dele (chapéu), e o zoom caminha para o rosto.
+type Rosto = {x: number; y: number; topo: number; n: number};
+const RO = rostos as Record<string, Rosto>;
+const enquadra = (id: string, W: number, H: number) => {
+  const m = FM[id];
+  const r = RO[id] ?? {x: 0.5, y: 0.42, topo: 0.3, n: 0};
+  const k = Math.max(W / m.w, H / m.h);
+  const iw = m.w * k, ih = m.h * k;
+  let px = 50, py = 50, sx = r.x, sy = r.y;
+  if (ih > H + 1) {
+    const chapeu = Math.max(0, r.topo - (r.y - r.topo) * 2) * ih; // topo provável do chapéu/cabelo
+    const top = Math.max(0, Math.min(ih - H, Math.min(r.y * ih - 0.54 * H, chapeu)));
+    py = (top / (ih - H)) * 100;
+    sy = (r.y * ih - top) / H;
+  }
+  if (iw > W + 1) {
+    const left = Math.max(0, Math.min(iw - W, r.x * iw - 0.5 * W));
+    px = (left / (iw - W)) * 100;
+    sx = (r.x * iw - left) / W;
+  }
+  return {pos: `${px.toFixed(1)}% ${py.toFixed(1)}%`, origem: `${(clamp(sx) * 100).toFixed(1)}% ${(clamp(sy) * 100).toFixed(1)}%`};
+};
+
+// ---------------------------------------------------------------- passagem contínua entre fotos (no lugar do corte seco)
+// A foto nova entra deslizando pela direita enquanto a anterior segue para a esquerda mais devagar (paralaxe):
+// a sensação é de uma câmera que anda por uma fileira de fotos sem parar.
+type Passagem = {entra?: number; cauda?: number};
+const usePassagem = (dur: number, {entra = 0, cauda = 0}: Passagem): React.CSSProperties => {
+  const f = useCurrentFrame();
+  if (entra && f < entra) {
+    const k = E.cam(clamp(f / entra));
+    return {transform: `translateX(${((1 - k) * 100).toFixed(2)}%) scale(${lerp(1.05, 1, k).toFixed(4)})`, boxShadow: '-60px 0 120px rgba(0,0,0,0.55)'};
+  }
+  if (cauda && f >= dur) {
+    const k = E.cam(clamp((f - dur) / cauda));
+    return {transform: `translateX(${(-k * 34).toFixed(2)}%) scale(${lerp(1, 0.97, k).toFixed(4)})`, filter: `brightness(${lerp(1, 0.55, k).toFixed(3)})`};
+  }
+  return {};
+};
 
 // cor de lembrança: quente, amarelada (n = 0 cor viva … 1 mais quente)
 const filtro = (n: number) =>
@@ -54,23 +100,28 @@ const Clarao: React.FC<{n?: number}> = ({n = 3}) => {
 };
 
 // ---------------------------------------------------------------- uma foto em tela cheia (horizontal = cover; vertical = fundo desfocado + foto na altura toda)
-const FotoCheia: React.FC<{id: string; dur: number; bloom?: number; flash?: boolean; vhs?: boolean}> = ({id, dur, bloom = 0, flash, vhs}) => {
+const FotoCheia: React.FC<{id: string; dur: number; bloom?: number; flash?: boolean; vhs?: boolean} & Passagem> = ({id, dur, bloom = 0, flash, vhs, entra, cauda}) => {
   const f = useCurrentFrame();
   const m = FM[id];
-  const t = f / Math.max(1, dur);
-  const sc = 1 + 0.07 * t + 0.035 * (1 - clamp(f / 6));
-  const dx = (hash(id.length + id.charCodeAt(id.length - 1), 3) - 0.5) * 40 * t;
+  const total = dur + (cauda ?? 0);
+  const t = f / Math.max(1, total);
+  const pulo = entra ? 0 : 0.035 * (1 - clamp(f / 6)); // o "soco" de entrada só existe no corte seco
+  const sc = 1 + 0.09 * t + pulo;
+  const dx = -18 * t; // deriva sempre para a esquerda: mesma direção da passagem entre fotos
+  const q = enquadra(id, 1920, 1080);
+  const r = RO[id];
+  const pass = usePassagem(dur, {entra, cauda});
   const miolo =
     m.o === 'h' ? (
-      <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${sc.toFixed(4)}) translateX(${dx.toFixed(1)}px)`, filter: filtro(0.4)}} />
+      <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: q.pos, transformOrigin: q.origem, transform: `scale(${sc.toFixed(4)}) translateX(${dx.toFixed(1)}px)`, filter: filtro(0.4)}} />
     ) : (
       <AbsoluteFill style={{background: FUNDO}}>
         <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', filter: `blur(46px) brightness(0.55) ${filtro(0.4)}`, transform: 'scale(1.25)'}} />
-        <Img src={FOTO(id)} style={{position: 'absolute', left: '50%', top: 0, height: '100%', width: 'auto', transform: `translateX(-50%) scale(${sc.toFixed(4)})`, boxShadow: '0 0 80px rgba(0,0,0,0.6)', filter: filtro(0.4)}} />
+        <Img src={FOTO(id)} style={{position: 'absolute', left: '50%', top: 0, height: '100%', width: 'auto', transformOrigin: r ? `${(r.x * 100).toFixed(1)}% ${(r.y * 100).toFixed(1)}%` : undefined, transform: `translateX(-50%) scale(${sc.toFixed(4)})`, boxShadow: '0 0 80px rgba(0,0,0,0.6)', filter: filtro(0.4)}} />
       </AbsoluteFill>
     );
   return (
-    <AbsoluteFill style={{background: FUNDO}}>
+    <AbsoluteFill style={{background: FUNDO, ...pass}}>
       <Lembranca i={bloom}>{miolo}</Lembranca>
       <Sombra />
       {vhs && <Vhs />}
@@ -91,16 +142,20 @@ const Vhs: React.FC = () => {
 };
 
 // ---------------------------------------------------------------- duas verticais lado a lado
-const Dupla: React.FC<{ids: string[]; dur: number; bloom?: number}> = ({ids, dur, bloom = 0}) => {
+const Dupla: React.FC<{ids: string[]; dur: number; bloom?: number} & Passagem> = ({ids, dur, bloom = 0, entra, cauda}) => {
   const f = useCurrentFrame();
-  const t = f / Math.max(1, dur);
-  const lado = (id: string, esq: boolean) => (
-    <div style={{position: 'absolute', left: esq ? 0 : '50.2%', top: 0, width: '49.8%', height: '100%', overflow: 'hidden'}}>
-      <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${(1 + 0.06 * (esq ? t : 1 - t) + 0.03 * (1 - clamp(f / 6))).toFixed(4)})`, filter: filtro(0.4)}} />
-    </div>
-  );
+  const t = f / Math.max(1, dur + (cauda ?? 0));
+  const pass = usePassagem(dur, {entra, cauda});
+  const lado = (id: string, esq: boolean) => {
+    const q = enquadra(id, 956, 1080);
+    return (
+      <div style={{position: 'absolute', left: esq ? 0 : '50.2%', top: 0, width: '49.8%', height: '100%', overflow: 'hidden'}}>
+        <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: q.pos, transformOrigin: q.origem, transform: `scale(${(1 + 0.07 * (esq ? t : 1 - t) + (entra ? 0 : 0.03 * (1 - clamp(f / 6)))).toFixed(4)})`, filter: filtro(0.4)}} />
+      </div>
+    );
+  };
   return (
-    <AbsoluteFill style={{background: FUNDO}}>
+    <AbsoluteFill style={{background: FUNDO, ...pass}}>
       <Lembranca i={bloom}>
         <AbsoluteFill>{lado(ids[0], true)}{lado(ids[1], false)}</AbsoluteFill>
       </Lembranca>
@@ -210,7 +265,7 @@ const Grade: React.FC<{ids: string[]; dur: number}> = ({ids, dur}) => {
         const k = E.expr(clamp((f - i * passo) / 7));
         return (
           <div key={id} style={{position: 'absolute', left: (i % cols) * w, top: Math.floor(i / cols) * h, width: w - 4, height: h - 4, overflow: 'hidden', opacity: clamp(k * 3), transform: `scale(${lerp(1.25, 1, k).toFixed(4)})`}}>
-            <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', filter: filtro(0.4), transform: `scale(${(1 + (0.09 * f) / Math.max(1, dur)).toFixed(4)})`}} />
+            <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: enquadra(id, w, h).pos, transformOrigin: enquadra(id, w, h).origem, filter: filtro(0.4), transform: `scale(${(1 + (0.09 * f) / Math.max(1, dur)).toFixed(4)})`}} />
           </div>
         );
       })}
@@ -239,9 +294,20 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
   const u = clamp(f / dur);
   const prog = E.cam(u);
   const camZ = prog * (n * DZ - 150);
-  const sway = Math.sin(u * Math.PI * 2 + voo) * 90;
+  const sway = Math.sin(u * Math.PI * 2 * Math.max(1, n / 14) + voo) * 90;
+  // fundo: em vez do marrom chapado, a luz da própria foto que está passando (bem desfocada e escura), trocando em fusão
+  const pos = clamp((camZ + 500) / DZ / Math.max(1, n - 1)) * (n - 1);
+  const ia = Math.floor(pos), ib = Math.min(n - 1, ia + 1), mix = pos - ia;
+  const luz = (id: string, op: number) => (
+    <Img key={id} src={MINI(id)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(70px) brightness(0.5) saturate(1.5)', transform: `scale(${(1.35 + 0.1 * u).toFixed(3)})`, opacity: op}} />
+  );
   return (
-    <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 80% at 50% 50%, #2a2118 0%, #0e0d0b 100%)', perspective: 1100, perspectiveOrigin: '50% 50%', overflow: 'hidden'}}>
+    <AbsoluteFill style={{background: FUNDO, perspective: 1100, perspectiveOrigin: '50% 50%', overflow: 'hidden'}}>
+      <AbsoluteFill style={{overflow: 'hidden'}}>
+        {luz(ids[ia], 1)}
+        {ib !== ia && luz(ids[ib], E.cam(mix))}
+        <AbsoluteFill style={{background: 'radial-gradient(ellipse 75% 75% at 50% 50%, rgba(10,9,8,0.15) 0%, rgba(10,9,8,0.78) 100%)'}} />
+      </AbsoluteFill>
       <div style={{position: 'absolute', left: 960, top: 540, transformStyle: 'preserve-3d', transform: `translate3d(${(-sway).toFixed(1)}px, ${(Math.cos(u * 4 + voo) * 30).toFixed(1)}px, ${camZ.toFixed(1)}px) rotateY(${(sway * 0.03).toFixed(2)}deg)`}}>
         {ids.map((id, i) => {
           const z = -i * DZ - 700;
@@ -310,6 +376,77 @@ const Parede: React.FC<{ids: string[]; dur: number; foco?: string}> = ({ids, dur
   );
 };
 
+// ---------------------------------------------------------------- cena final: TODAS as mídias; a câmera recua, elas formam um "3" (terceiro ano) e depois "231 e 232"
+// Ideia do Vítor (14/11). As fotos são ladrilhos; os vídeos tocam mudos dentro dos seus ladrilhos (só o texto fala nessa parte).
+// Os 74 vídeos vêm de UM arquivo (atlas.mp4, feito por trabalho/scripts/atlas_videos.py): extrai-se um quadro por quadro
+// e cada ladrilho recorta a sua célula num canvas. 74 vídeos soltos estourariam a memória do render.
+const AT = atlas as unknown as {cols: number; rows: number; cw: number; ch: number; pos: Record<string, number[]>};
+const CW = 400, CH = 300, PX = 424, PY = 324;
+const T_RECUO = 21.5, T_M1 = [21.5, 27.0], T_M2 = [33.0, 37.4]; // s dentro da cena: recuo, parede→3, 3→"231 e 232"
+const caixa = (P: number[][]) => {
+  const xs = P.map((p) => p[0]), ys = P.map((p) => p[1]);
+  return {w: (Math.max(...xs) - Math.min(...xs) + 1) * PX, h: (Math.max(...ys) - Math.min(...ys) + 1) * PY};
+};
+const Tres: React.FC<{tiles: Tile[]; A: number[][]; B: number[][]; C: number[][]; dur: number}> = ({tiles, A, B, C, dur}) => {
+  const f = useCurrentFrame();
+  const t = f / FPS;
+  const telas = React.useRef<Record<string, HTMLCanvasElement | null>>({});
+  const desenha = React.useCallback(
+    (quadro: CanvasImageSource) => {
+      for (const tl of tiles) {
+        if (!tl.v) continue;
+        const c = telas.current[tl.id];
+        const p = AT.pos[tl.id];
+        if (!c || !p) continue;
+        c.getContext('2d')!.drawImage(quadro, p[0] * AT.cw, p[1] * AT.ch, AT.cw, AT.ch, 0, 0, AT.cw, AT.ch);
+      }
+    },
+    [tiles],
+  );
+  const esc = React.useMemo(() => {
+    const a = caixa(A), b = caixa(B), c = caixa(C);
+    return {a: Math.min(1880 / a.w, 1040 / a.h), b: Math.min(1800 / b.w, 800 / b.h), c: Math.min(1760 / c.w, 600 / c.h)};
+  }, [A, B, C]);
+  const k0 = E.cam(clamp(t / T_RECUO));
+  const k1 = E.cam(clamp((t - T_M1[0]) / (T_M1[1] - T_M1[0])));
+  const k2 = E.cam(clamp((t - T_M2[0]) / (T_M2[1] - T_M2[0])));
+  const ln = lerp(lerp(lerp(Math.log(4.9), Math.log(esc.a), k0), Math.log(esc.b), k1), Math.log(esc.c), k2);
+  const S = Math.exp(ln) * (1 - 0.0025 * Math.max(0, t - T_RECUO)); // depois do recuo a câmera continua se afastando bem devagar
+  const oy = lerp(lerp(0, -70, k1), -40, k2);
+  const fim = dur / FPS;
+  return (
+    <AbsoluteFill style={{background: '#0b0a09', overflow: 'hidden', opacity: clamp(f / 10)}}>
+      <OffthreadVideo src={staticFile('final/atlas.mp4')} muted onVideoFrame={desenha} style={{position: 'absolute', left: 0, top: 0, width: 8, height: 8, opacity: 0}} />
+      <AbsoluteFill style={{filter: filtro(0.4), overflow: 'hidden'}}>
+        {/* cada ladrilho já vai na posição e no tamanho de tela (escala por ladrilho): com a escala no contêiner, o navegador não desenhava o que ficava muito longe da origem */}
+        <div style={{position: 'absolute', left: 960, top: 540 + oy}}>
+          {tiles.map((tl, i) => {
+            const d = hash(i, 7) * 1.6;
+            const ka = E.cam(clamp((t - T_M1[0] - d) / (T_M1[1] - T_M1[0] - 1.6)));
+            const kb = E.cam(clamp((t - T_M2[0] - d * 0.8) / (T_M2[1] - T_M2[0] - 1.3)));
+            const x = lerp(lerp(A[i][0], B[i][0], ka), C[i][0], kb) * PX;
+            const y = lerp(lerp(A[i][1], B[i][1], ka), C[i][1], kb) * PY;
+            if (Math.abs(x * S) > 960 + CW * S || Math.abs(y * S + oy) > 540 + CH * S) return null; // fora do quadro
+            const giro = (hash(i, 11) - 0.5) * 50 * (Math.sin(Math.PI * ka) + Math.sin(Math.PI * kb));
+            return (
+              <div key={tl.id} style={{position: 'absolute', left: 0, top: 0, width: CW, height: CH, overflow: 'hidden', transformOrigin: '0 0', transform: `translate(${((x - CW / 2) * S).toFixed(2)}px, ${((y - CH / 2) * S).toFixed(2)}px) scale(${S.toFixed(5)}) rotate(${giro.toFixed(2)}deg)`}}>
+                {tl.v ? (
+                  <canvas ref={(el) => { telas.current[tl.id] = el; }} width={AT.cw} height={AT.ch} style={{width: '100%', height: '100%', display: 'block'}} />
+                ) : (
+                  <Img src={i < 9 ? FOTO(tl.id) : MINI(tl.id)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: i < 9 ? enquadra(tl.id, CW, CH).pos : undefined, display: 'block'}} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </AbsoluteFill>
+      <AbsoluteFill style={{background: `rgba(11,10,9,${(0.34 * (1 - k1) * clamp(t / 2.5)).toFixed(3)})`}} />
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 80% at 50% 50%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.5) 100%)', pointerEvents: 'none'}} />
+      <AbsoluteFill style={{background: '#000', opacity: clamp((t - (fim - 1.9)) / 1.7)}} />
+    </AbsoluteFill>
+  );
+};
+
 const FUSAO_FINAL = 40; // quadros de fusão da parede para a foto final
 const FinalFoto: React.FC<{id: string; dur: number}> = ({id, dur}) => {
   const f = useCurrentFrame();
@@ -359,7 +496,7 @@ const Letra: React.FC = () => {
   );
 };
 
-type Fecho = {a: number; b: number; l: string[]; fonte?: string; grande?: boolean; pequeno?: boolean; final?: boolean};
+type Fecho = {a: number; b: number; l: string[]; fonte?: string; grande?: boolean; pequeno?: boolean; final?: boolean; baixo?: boolean};
 const FECHO = plano.fecho as Fecho[];
 const TextosFecho: React.FC = () => {
   const f = useCurrentFrame();
@@ -367,7 +504,14 @@ const TextosFecho: React.FC = () => {
   const F = FECHO.find((x) => t >= x.a - 0.1 && t < x.b + 0.1);
   if (!F) return null;
   const k = Math.min(clamp((t - F.a) / 0.7), clamp((F.b - t) / (F.final ? 1.4 : 0.7)));
-  const size = F.grande ? 130 : F.pequeno ? 60 : 66;
+  const size = F.grande ? 130 : F.pequeno ? 52 : F.baixo ? 84 : 66;
+  if (F.baixo)
+    // embaixo, sem cobrir o "3" nem o "231 e 232" formados pelas mídias
+    return (
+      <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', opacity: k, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(8,7,6,0) 78%, rgba(8,7,6,0.7) 100%)'}}>
+        <div style={{fontFamily: SERIF, fontStyle: 'italic', fontSize: size, color: CREME, lineHeight: 1, textShadow: SOMBRA_TXT, marginBottom: F.pequeno ? 70 : 44, filter: `blur(${((1 - k) * 8).toFixed(1)}px)`}}>{F.l[0]}</div>
+      </AbsoluteFill>
+    );
   return (
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: k, pointerEvents: 'none', background: 'radial-gradient(ellipse 75% 45% at 50% 50%, rgba(8,7,6,0.62) 0%, rgba(8,7,6,0) 100%)'}}>
       <div style={{textAlign: 'center', fontFamily: SERIF, fontStyle: 'italic', fontSize: size, color: CREME, lineHeight: 1.18, textShadow: SOMBRA_TXT, padding: '0 140px', filter: `blur(${((1 - k) * 8).toFixed(1)}px)`}}>
@@ -394,15 +538,29 @@ const volMusica = (f: number) => {
   return v;
 };
 
-const Bloco: React.FC<{b: Bloco}> = ({b}) => {
+// passagem contínua só entre fotos com tempo para isso (a rajada de "selvagem" continua em corte seco com clarão: é o ritmo dela)
+const continua = (b?: Bloco) => !!b && (b.k === 'foto' || b.k === 'dupla') && !b.flash && s(b.t1) - s(b.t0) >= 30;
+const PASS: Passagem[] = BLOCOS.map(() => ({}));
+BLOCOS.forEach((b, i) => {
+  const ant = BLOCOS[i - 1];
+  if (i > 0 && continua(b) && continua(ant) && Math.abs(ant.t1 - b.t0) < 0.01) {
+    const T = Math.min(14, Math.floor(0.3 * Math.min(s(b.t1) - s(b.t0), s(ant.t1) - s(ant.t0))));
+    PASS[i].entra = T;
+    PASS[i - 1].cauda = T;
+  }
+});
+
+const Bloco: React.FC<{b: Bloco; pass: Passagem}> = ({b, pass}) => {
   const dur = s(b.t1) - s(b.t0);
   switch (b.k) {
     case 'foto':
-      return <FotoCheia id={b.id!} dur={dur} bloom={b.bloom} flash={b.flash} />;
+      return <FotoCheia id={b.id!} dur={dur} bloom={b.bloom} flash={b.flash} {...pass} />;
     case 'vhs':
       return <FotoCheia id={b.id!} dur={dur} bloom={0.2} vhs />;
     case 'dupla':
-      return <Dupla ids={b.ids!} dur={dur} bloom={b.bloom} />;
+      return <Dupla ids={b.ids!} dur={dur} bloom={b.bloom} {...pass} />;
+    case 'tres':
+      return <Tres tiles={b.tiles!} A={b.A!} B={b.B!} C={b.C!} dur={dur} />;
     case 'portal':
       return <Portal id={b.id!} dur={dur} />;
     case 'solo':
@@ -430,11 +588,13 @@ export const Final: React.FC = () => {
     <AbsoluteFill style={{background: FUNDO}}>
       <Audio src={staticFile('final/tempo-perdido.mp3')} volume={volMusica} />
       <IntroTV />
-      {BLOCOS.filter((b) => b.k !== 'intro').map((b, i) => (
-        <Sequence key={i} from={s(b.t0)} durationInFrames={Math.max(1, s(b.t1) - s(b.t0)) + (b.k === 'parede' ? FUSAO_FINAL : 0)} layout="none">
-          <Bloco b={b} />
-        </Sequence>
-      ))}
+      {BLOCOS.map((b, i) =>
+        b.k === 'intro' ? null : (
+          <Sequence key={i} from={s(b.t0)} durationInFrames={Math.max(1, s(b.t1) - s(b.t0)) + (b.k === 'parede' ? FUSAO_FINAL : 0) + (PASS[i].cauda ?? 0)} layout="none">
+            <Bloco b={b} pass={PASS[i]} />
+          </Sequence>
+        ),
+      )}
       <Letra />
       <TextosFecho />
       <Grao />
