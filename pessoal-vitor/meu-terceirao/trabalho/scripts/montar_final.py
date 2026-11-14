@@ -140,6 +140,8 @@ def mosaicos_ate(n, t0, t1):
 T_VERSO = bt(32)  # ~20,70 s: começa "Todos os dias quando acordo"
 add("intro", 0, 8.76)
 vhs = pega([outros, BAGUNCA], 9, ori="h")
+# pedido do Vítor (13/11): abertura alterna 232 e 231, não começa só com a 232 (a67, a71 = 231)
+vhs = [x for par in zip([i for i in vhs if i not in ("a67", "a71")], ["a67", "a71"]) for x in par] + [i for i in vhs if i not in ("a67", "a71")][2:] if {"a67", "a71"} <= set(vhs) else vhs
 fill(vhs, 8.76, T_VERSO, tipo="vhs")
 
 # ================================================================ ATO 1: infância (20,7 → 103,8)
@@ -260,14 +262,14 @@ letra += [
 fecho = [
     {"a": 263.0, "b": 269.2, "l": ["que não seja imortal, posto que é chama,", "mas que seja infinito enquanto dure."], "fonte": "Vinicius de Moraes"},
     {"a": 270.0, "b": 276.0, "l": ["A gente achava que o tempo era lento.", "Era a gente que estava rápido demais para ver."]},
-    {"a": 276.8, "b": 283.2, "l": ["Aos nossos professores:", "vocês não nos ensinaram só matéria.", "Ensinaram a gente a ficar."]},
+    {"a": 276.4, "b": 281.5, "l": ["Aos nossos professores:", "vocês não nos ensinaram só matéria.", "Ensinaram a gente a ficar."]},
     {"a": 284.0, "b": 288.0, "l": ["Nem foi tempo perdido."], "grande": True},
     {"a": 289.0, "b": 293.2, "l": ["La Salle Sobradinho · 2026"], "pequeno": True},
     {"a": 294.2, "b": 302.2, "l": ["231 e 232"], "grande": True, "final": True},
 ]
 
 # ---------------------------------------------------------------- ducking da música (janelas dos vídeos com som)
-duck = [[b["t0"], b["t1"]] for b in blocos if b["k"] == "solo"]
+duck = [[b["t0"], b["t1"], 0.25 if b["k"] == "solo" else 0.5] for b in blocos if b["k"] in ("solo", "mosaico")]  # mosaico: música baixa de leve (−6 dB)
 
 plano = {"duracao": DURACAO, "beat": B, "off": OFF, "blocos": blocos, "letra": letra, "fecho": fecho, "duck": duck}
 json.dump(plano, open(PLANO, "w", encoding="utf8"), ensure_ascii=False, indent=1)

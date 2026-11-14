@@ -135,6 +135,17 @@ const Portal: React.FC<{id: string; dur: number}> = ({id, dur}) => {
 };
 
 // ---------------------------------------------------------------- vídeo com som (solo) e mosaico mudo
+// ritmo de segurança: se o vídeo tem menos imagem do que o bloco pede, desacelera um pouco em vez de ficar preto
+const ritmo = (id: string, dur: number) => {
+  const m = VM[id];
+  const tem = m.dur - m.ini - 0.1;
+  const precisa = dur / FPS;
+  return tem >= precisa ? 1 : Math.max(0.5, tem / precisa);
+};
+const ganhoDe = (id: string, alvo: number) => {
+  const m = VM[id];
+  return m.lufs == null || m.lufs < -45 ? 0 : Math.min(1, Math.pow(10, (alvo - m.lufs) / 20));
+};
 const Solo: React.FC<{id: string; dur: number; abraco?: boolean}> = ({id, dur}) => {
   const f = useCurrentFrame();
   const m = VM[id];
@@ -142,16 +153,17 @@ const Solo: React.FC<{id: string; dur: number; abraco?: boolean}> = ({id, dur}) 
   const sai = clamp((dur - f) / 5);
   const op = Math.min(entra, sai);
   const ini = s(m.ini);
-  const alvo = -20;
-  const ganho = m.lufs == null ? 1 : Math.min(1, Math.pow(10, (alvo - m.lufs) / 20));
+  const g = ganhoDe(id, -18);
+  const pr = ritmo(id, dur);
+  const ganho = (fr: number) => g * Math.min(clamp((fr + 1) / 4), clamp((dur - fr) / 5));
   const fg: React.CSSProperties =
     m.o === 'h'
       ? {width: '100%', height: '100%', objectFit: 'cover', filter: filtro(0.35)}
       : {position: 'absolute', left: '50%', top: 0, height: '100%', width: 'auto', transform: 'translateX(-50%)', filter: filtro(0.35)};
   return (
     <AbsoluteFill style={{background: FUNDO, opacity: op}}>
-      {m.o === 'v' && <OffthreadVideo src={VID(id)} startFrom={ini} muted style={{width: '100%', height: '100%', objectFit: 'cover', filter: `blur(46px) brightness(0.5) ${filtro(0.35)}`, transform: 'scale(1.25)'}} />}
-      <OffthreadVideo src={VID(id)} startFrom={ini} volume={ganho} style={fg} />
+      {m.o === 'v' && <OffthreadVideo src={VID(id)} startFrom={ini} playbackRate={pr} muted style={{width: '100%', height: '100%', objectFit: 'cover', filter: `blur(46px) brightness(0.5) ${filtro(0.35)}`, transform: 'scale(1.25)'}} />}
+      <OffthreadVideo src={VID(id)} startFrom={ini} playbackRate={pr} volume={ganho} style={fg} />
       <Sombra />
     </AbsoluteFill>
   );
@@ -160,6 +172,8 @@ const Solo: React.FC<{id: string; dur: number; abraco?: boolean}> = ({id, dur}) 
 const Mosaico: React.FC<{ids: string[]; dur: number}> = ({ids, dur}) => {
   const f = useCurrentFrame();
   const todosV = ids.every((i) => VM[i].o === 'v');
+  // som: o vídeo mais vivo do mosaico na frente (-20 LUFS), os outros como burburinho ao fundo (-32)
+  const lider = [...ids].filter((i) => ritmo(i, dur) === 1 && (VM[i].lufs ?? -99) > -45).sort((a, b) => (VM[b].lufs ?? -99) - (VM[a].lufs ?? -99))[0];
   const lay = (i: number): React.CSSProperties =>
     ids.length === 2 ? {left: (i % 2) * 962, top: 0, width: 958, height: 1080} : todosV ? {left: i * 480, top: 0, width: 476, height: 1080} : {left: (i % 2) * 962, top: Math.floor(i / 2) * 542, width: 958, height: 538};
   return (
@@ -169,7 +183,13 @@ const Mosaico: React.FC<{ids: string[]; dur: number}> = ({ids, dur}) => {
         const sai = clamp((dur - f) / 4);
         return (
           <div key={id} style={{position: 'absolute', ...lay(i), overflow: 'hidden', opacity: Math.min(k, sai), transform: `scale(${lerp(1.08, 1, k).toFixed(4)})`}}>
-            <OffthreadVideo src={VID(id)} startFrom={s(VM[id].ini)} muted style={{width: '100%', height: '100%', objectFit: 'cover', filter: filtro(0.4)}} />
+            <OffthreadVideo
+              src={VID(id)}
+              startFrom={s(VM[id].ini)}
+              playbackRate={ritmo(id, dur)}
+              volume={(fr) => (ritmo(id, dur) === 1 ? ganhoDe(id, id === lider ? -20 : -32) : 0) * Math.min(clamp((fr + 1) / 5), clamp((dur - fr) / 6))}
+              style={{width: '100%', height: '100%', objectFit: 'cover', filter: filtro(0.4)}}
+            />
           </div>
         );
       })}
@@ -190,7 +210,7 @@ const Grade: React.FC<{ids: string[]; dur: number}> = ({ids, dur}) => {
         const k = E.expr(clamp((f - i * passo) / 7));
         return (
           <div key={id} style={{position: 'absolute', left: (i % cols) * w, top: Math.floor(i / cols) * h, width: w - 4, height: h - 4, overflow: 'hidden', opacity: clamp(k * 3), transform: `scale(${lerp(1.25, 1, k).toFixed(4)})`}}>
-            <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', filter: filtro(0.4)}} />
+            <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', filter: filtro(0.4), transform: `scale(${(1 + (0.09 * f) / Math.max(1, dur)).toFixed(4)})`}} />
           </div>
         );
       })}
@@ -247,9 +267,10 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
 };
 
 // ---------------------------------------------------------------- parede final: a câmera recua e revela todas as fotos juntas (infância + presente)
+const recuoCentro = 1;
 const Parede: React.FC<{ids: string[]; dur: number; foco?: string}> = ({ids, dur, foco}) => {
   const f = useCurrentFrame();
-  const u = clamp(f / dur);
+  const u = Math.min(1.15, Math.max(0, f / dur)); // passa de 1 durante a fusão para a câmera seguir andando
   const n = ids.length;
   const cols = Math.ceil(Math.sqrt(n * 1.9));
   const rows = Math.ceil(n / cols);
@@ -261,11 +282,16 @@ const Parede: React.FC<{ids: string[]; dur: number; foco?: string}> = ({ids, dur
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) celulas.push({x: c - cx, y: r - cy});
     celulas.sort((a, b) => Math.abs(a.x) + Math.abs(a.y) - (Math.abs(b.x) + Math.abs(b.y)));
     const ordem = foco ? [foco, ...l] : l;
-    return ordem.map((id, i) => ({id, ...celulas[i]}));
+    const usadas = ordem.map((id, i) => ({id, ...celulas[i]}));
+    // centraliza a parede no quadro (a grade nem sempre fecha simétrica)
+    const xs = usadas.map((c) => c.x), ys = usadas.map((c) => c.y);
+    const mx = (Math.min(...xs) + Math.max(...xs)) / 2, my = (Math.min(...ys) + Math.max(...ys)) / 2;
+    return usadas.map((c) => ({...c, x: c.x - mx * recuoCentro, y: c.y - my * recuoCentro}));
   }, [ids, foco, cols, rows]);
-  const recuo = E.cam(u);
-  const tz = lerp(520, -7600, recuo);
-  const rotY = lerp(0, -12, recuo);
+  // recuo com deriva contínua: a câmera nunca para (sem quadro congelado no fim)
+  const recuo = E.cam(clamp(u / 0.8));
+  const tz = lerp(520, -5600, recuo) - 700 * u;
+  const rotY = lerp(0, -9, recuo) - 3 * u;
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 80% at 50% 50%, #2a2118 0%, #0e0d0b 100%)', perspective: 1300, overflow: 'hidden'}}>
       <div style={{position: 'absolute', left: 960, top: 540, transformStyle: 'preserve-3d', transform: `translateZ(${tz.toFixed(1)}px) rotateY(${rotY.toFixed(2)}deg)`}}>
@@ -284,12 +310,13 @@ const Parede: React.FC<{ids: string[]; dur: number; foco?: string}> = ({ids, dur
   );
 };
 
+const FUSAO_FINAL = 40; // quadros de fusão da parede para a foto final
 const FinalFoto: React.FC<{id: string; dur: number}> = ({id, dur}) => {
   const f = useCurrentFrame();
   const t = f / dur;
   const apaga = clamp((f - (dur - s(3.2))) / s(3.2));
   return (
-    <AbsoluteFill style={{background: FUNDO}}>
+    <AbsoluteFill style={{background: FUNDO, opacity: clamp(f / FUSAO_FINAL)}}>
       <Lembranca i={0.5}>
         <Img src={FOTO(id)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${(1.02 + 0.05 * t).toFixed(4)})`, filter: filtro(0.4)}} />
       </Lembranca>
@@ -361,11 +388,11 @@ const DUCK = plano.duck as number[][];
 const volMusica = (f: number) => {
   const t = f / FPS;
   let v = 1;
-  for (const [a, b] of DUCK) {
+  for (const [a, b, fator = 0.25] of DUCK) {
     const entra = clamp((t - (a - 0.25)) / 0.25);
     const sai = 1 - clamp((t - b) / 0.5);
     const k = Math.min(entra, sai);
-    v = Math.min(v, 1 - 0.75 * k); // 0,25 ≈ −12 dB
+    v = Math.min(v, 1 - (1 - fator) * k); // solo 0,25 ≈ −12 dB; mosaico 0,5 ≈ −6 dB
   }
   return v;
 };
@@ -407,7 +434,7 @@ export const Final: React.FC = () => {
       <Audio src={staticFile('final/tempo-perdido.mp3')} volume={volMusica} />
       <IntroTV />
       {BLOCOS.filter((b) => b.k !== 'intro').map((b, i) => (
-        <Sequence key={i} from={s(b.t0)} durationInFrames={Math.max(1, s(b.t1) - s(b.t0))} layout="none">
+        <Sequence key={i} from={s(b.t0)} durationInFrames={Math.max(1, s(b.t1) - s(b.t0)) + (b.k === 'parede' ? FUSAO_FINAL : 0)} layout="none">
           <Bloco b={b} />
         </Sequence>
       ))}

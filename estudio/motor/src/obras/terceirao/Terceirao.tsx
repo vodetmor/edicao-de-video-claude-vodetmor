@@ -340,9 +340,9 @@ const TELA = {cx: 1091, cy: 488, w: 698, h: 522};
 const TW = 2792, TH = 2088; // conteúdo da tela renderizado a 4x (nítido quando a câmera entra)
 const SLIDES_TV: Item[] = [
   {dupla: ['f34v', 'f06v'], t: 2.26},
-  {src: 'f37h', t: 3.56, tipo: 'corte'},
+  {src: 'a74', t: 3.56, tipo: 'corte'}, // 231 (pedido do Vítor: alternar 232 e 231 na TV)
   {dupla: ['f08v', 'f44v'], t: 4.86},
-  {src: 'f02h', t: 6.16, tipo: 'corte'},
+  {src: 'a66', t: 6.16, tipo: 'corte'}, // 231
   {src: 'f09v', t: 7.46, tipo: 'corte', oy: 30}, // f43v (cachorro da Anna Augusta) removida a pedido dela, 12/11
 ];
 const TelaVHS: React.FC = () => {

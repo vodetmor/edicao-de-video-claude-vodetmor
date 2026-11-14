@@ -500,3 +500,9 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - (Meu Terceirão v2) "Lembrança" ≠ véu branco nas bordas: ele quer brilho subindo + leve desfoque (bloom) no quadro inteiro, sem máscara radial clara. Confirmado pelo Vítor.
 - (Meu Terceirão v2) Mural com câmera recuando só nas fotos (fundo fixo) não dá senso de 3D; o fundo precisa recuar junto (espaço 3D real). Confirmado pelo Vítor.
 - Vídeos caseiros num vídeo de lembrança: música abaixa e o som original do trecho toca (é a lembrança). Confirmado pelo Vítor.
+
+## Render longo no PC do Vítor e trecho de vídeo (Meu Terceirão, 13/11/2026)
+- Remotion em PC sem GPU dedicada e com pouca RAM: renderizar em pedaços de ~300 quadros (`--frames=a-b --muted`), `--concurrency=2`, `--gl=angle` (10x mais rápido que o render por software, imagem igual), áudio num render só (`saida.wav`) e juntar com `ffmpeg -f concat -c:v copy`. Pedaço pronto não é refeito; ajuste = refazer só os pedaços daquele trecho.
+- Trecho de vídeo dentro de bloco: garantir `início + duração do bloco ≤ duração do vídeo` (sobra de 0,1 s). Vídeo que acaba antes do corte vira tela preta por alguns quadros, que o olho lê como travada. Conferir com `freezedetect` e com um quadro tirado 3 quadros antes de cada corte.
+- `astats` com `reset=1` devolve um valor por quadro de áudio (~21 ms), não por janela: converter índice em tempo com `duração / quantidade de valores`.
+- Foto parada em grade lê como travamento: toda foto precisa de um movimento mínimo contínuo (zoom de 9% ao longo do bloco).

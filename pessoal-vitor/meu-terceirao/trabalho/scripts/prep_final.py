@@ -91,21 +91,44 @@ def tem_audio(p):
     return bool(r.stdout.strip())
 
 
-def janela_forte(p, dur, tam=3.0):
-    """Início da janela de `tam` s com mais energia sonora (risada/fala). Sem áudio: 0.8 s."""
-    if dur <= tam + 0.5 or not tem_audio(p):
-        return 0.0 if dur <= tam + 0.5 else 0.8
-    r = run(["ffmpeg", "-nostats", "-i", p, "-af", "astats=metadata=1:reset=1:length=0.25,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-", "-f", "null", "-"])
-    vals = [float(x) for x in re.findall(r"RMS_level=(-?\d+\.?\d*|-inf)".replace("|-inf", ""), r.stdout)]
-    if not vals:
-        return 0.8
-    n = int(tam / 0.25)
-    melhor, ini = -1e9, 0
+def janela_forte(p, dur, tam=3.5):
+    """Início da janela de `tam` s com mais energia sonora (risada/fala). Sem áudio: 0.8 s.
+
+    Correção 13/11: o astats devolve um valor por quadro de áudio (~21 ms), não por 0,25 s; o passo
+    real é dur/len(vals). Antes o início caía sempre em dur-3 e o trecho acabava antes do corte (tela preta).
+    `tam` é maior que o bloco (3,24 s) para sobrar vídeo até o fim.
+    """
+    if dur <= tam + 0.3:
+        return 0.0
+    if not tem_audio(p):
+        return round(min(0.8, dur - tam), 2)
+    r = run(["ffmpeg", "-nostats", "-i", p, "-af", "astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-", "-f", "null", "-"])
+    vals = [max(-90.0, float(x)) for x in re.findall(r"RMS_level=(-?\d+\.?\d*)", r.stdout)]
+    if len(vals) < 10:
+        return round(min(0.8, dur - tam), 2)
+    passo = dur / len(vals)
+    n = max(1, int(tam / passo))
+    pref = [0.0]
+    for v in vals:
+        pref.append(pref[-1] + v)
+    melhor, ini = -1e18, 0
     for i in range(0, max(1, len(vals) - n)):
-        s = sum(vals[i:i + n]) / n
-        if s > melhor:
-            melhor, ini = s, i
-    return round(min(ini * 0.25, dur - tam), 2)
+        sm = pref[i + n] - pref[i]
+        if sm > melhor:
+            melhor, ini = sm, i
+    return round(max(0.0, min(ini * passo, dur - tam)), 2)
+
+
+def subir_volume(dst, lufs):
+    """Vídeo baixo (entre -45 e -19 LUFS): sobe para ~-18 LUFS com limitador, sem mexer na imagem."""
+    if lufs is None or lufs > -19 or lufs < -45:
+        return lufs
+    tmp = dst[:-4] + ".tmp.mp4"
+    r = run(["ffmpeg", "-v", "error", "-y", "-i", dst, "-c:v", "copy", "-af", f"volume={-18 - lufs:.1f}dB,alimiter=limit=0.89:level=disabled", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", tmp])
+    if r.returncode == 0:
+        os.replace(tmp, dst)
+        return loudness(dst)
+    return lufs
 
 
 def prep_video(id_, src):
@@ -118,6 +141,7 @@ def prep_video(id_, src):
     w, h = dimensoes(dst)
     audio = tem_audio(dst)
     lufs = loudness(dst) if audio else None
+    lufs = subir_volume(dst, lufs)
     return {
         "id": id_, "w": w, "h": h, "o": "h" if w >= h else "v", "dur": round(dur, 2),
         "audio": audio, "lufs": lufs,
