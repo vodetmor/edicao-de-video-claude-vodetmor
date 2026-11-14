@@ -294,7 +294,20 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
   const u = clamp(f / dur);
   const prog = E.cam(u);
   const camZ = prog * (n * DZ - 150);
-  const sway = Math.sin(u * Math.PI * 2 * Math.max(1, n / 14) + voo) * 90;
+  // onde fica cada foto no túnel (a última fica no centro)
+  const lugar = (i: number) => {
+    if (i >= n - 1) return {x: 0, y: 0, lado: 0};
+    const lado = i % 2 === 0 ? -1 : 1;
+    return {x: lado * (300 + hash(i, 5 + voo) * 220), y: (hash(i, 9 + voo) - 0.5) * 300, lado};
+  };
+  // a câmera vai de foto em foto: mira a que está chegando perto, para ela passar no meio do quadro
+  // (antes a câmera só balançava no eixo e as fotos grandes passavam meio fora do quadro)
+  // fica travada na foto enquanto ela está grande; só troca para a próxima quando a atual já está se dissolvendo
+  const q = Math.max(0, Math.min(n - 1, (camZ - 600) / DZ));
+  const qa = Math.floor(q), qb = Math.min(n - 1, qa + 1), qk = E.cam(clamp((q - qa - 0.62) / 0.38));
+  const camX = lerp(lugar(qa).x, lugar(qb).x, qk) * 0.95;
+  const camY = lerp(lugar(qa).y, lugar(qb).y, qk) * 0.95;
+  const vira = (lugar(qb).x - lugar(qa).x) * Math.sin(Math.PI * qk) * 0.006; // inclina de leve na direção em que está indo
   // fundo: em vez do marrom chapado, a luz da própria foto que está passando (bem desfocada e escura), trocando em fusão
   const pos = clamp((camZ + 500) / DZ / Math.max(1, n - 1)) * (n - 1);
   const ia = Math.floor(pos), ib = Math.min(n - 1, ia + 1), mix = pos - ia;
@@ -308,20 +321,20 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
         {ib !== ia && luz(ids[ib], E.cam(mix))}
         <AbsoluteFill style={{background: 'radial-gradient(ellipse 75% 75% at 50% 50%, rgba(10,9,8,0.15) 0%, rgba(10,9,8,0.78) 100%)'}} />
       </AbsoluteFill>
-      <div style={{position: 'absolute', left: 960, top: 540, transformStyle: 'preserve-3d', transform: `translate3d(${(-sway).toFixed(1)}px, ${(Math.cos(u * 4 + voo) * 30).toFixed(1)}px, ${camZ.toFixed(1)}px) rotateY(${(sway * 0.03).toFixed(2)}deg)`}}>
+      <div style={{position: 'absolute', left: 960, top: 540, transformStyle: 'preserve-3d', transform: `rotateY(${vira.toFixed(2)}deg) translate3d(${(-camX).toFixed(1)}px, ${(-camY).toFixed(1)}px, ${camZ.toFixed(1)}px)`}}>
         {ids.map((id, i) => {
           const z = -i * DZ - 700;
           const ef = z + camZ; // posição efetiva em relação à câmera
           if (ef > 1000 || ef < -3800) return null;
           const ultimo = i === n - 1;
-          const lado = i % 2 === 0 ? -1 : 1;
-          const x = ultimo ? 0 : lado * (330 + hash(i, 5 + voo) * 260);
-          const y = ultimo ? 0 : (hash(i, 9 + voo) - 0.5) * 380;
-          const rot = ultimo ? 0 : lado * (4 + hash(i, 13) * 10) * -1;
-          const op = clamp((ef + 3800) / 900) * clamp((950 - ef) / 450);
-          const w = ultimo ? 900 : 640;
+          const {x, y, lado} = lugar(i);
+          const rot = ultimo ? 0 : lado * (3 + hash(i, 13) * 6) * -1;
+          const op = clamp((ef + 3800) / 900) * clamp((400 - ef) / 200); // cresce até ocupar boa parte do quadro e some antes de passar dele
+          const w = ultimo ? 900 : 760;
+          const mm = FM[id];
+          const pw = (mm.o === 'h' ? w : w * 0.78) + 28, ph = (mm.o === 'h' ? w : w * 0.78) * (mm.h / mm.w) + 58; // tamanho real do polaroid: centraliza de verdade
           return (
-            <div key={id} style={{position: 'absolute', left: 0, top: 0, opacity: op, transform: `translate3d(${x - w / 2}px, ${y - w * 0.37}px, ${z}px) rotateY(${rot}deg) rotateZ(${(rot * 0.25).toFixed(2)}deg)`}}>
+            <div key={id} style={{position: 'absolute', left: 0, top: 0, opacity: op, transform: `translate3d(${(x - pw / 2).toFixed(1)}px, ${(y - ph / 2).toFixed(1)}px, ${z}px) rotateY(${rot}deg) rotateZ(${(rot * 0.25).toFixed(2)}deg)`}}>
               <Polaroid id={id} w={w} />
             </div>
           );
