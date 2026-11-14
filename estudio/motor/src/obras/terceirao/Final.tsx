@@ -302,12 +302,18 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
   };
   // a câmera vai de foto em foto: mira a que está chegando perto, para ela passar no meio do quadro
   // (antes a câmera só balançava no eixo e as fotos grandes passavam meio fora do quadro)
-  // fica travada na foto enquanto ela está grande; só troca para a próxima quando a atual já está se dissolvendo
-  const q = Math.max(0, Math.min(n - 1, (camZ - 600) / DZ));
-  const qa = Math.floor(q), qb = Math.min(n - 1, qa + 1), qk = E.cam(clamp((q - qa - 0.62) / 0.38));
-  const camX = lerp(lugar(qa).x, lugar(qb).x, qk) * 0.95;
-  const camY = lerp(lugar(qa).y, lugar(qb).y, qk) * 0.95;
-  const vira = (lugar(qb).x - lugar(qa).x) * Math.sin(Math.PI * qk) * 0.006; // inclina de leve na direção em que está indo
+  // a câmera desliza por uma curva suave (Catmull-Rom) que passa pelo centro de cada foto no momento em que ela está grande:
+  // centralizada como na versão travada, mas sem parar e arrancar entre uma foto e outra
+  const q = Math.max(0, Math.min(n - 1, (camZ - 850) / DZ));
+  const qa = Math.floor(q), qt = q - qa;
+  const pt = (i: number) => lugar(Math.max(0, Math.min(n - 1, i)));
+  const curva = (k: 'x' | 'y') => {
+    const p0 = pt(qa - 1)[k], p1 = pt(qa)[k], p2 = pt(qa + 1)[k], p3 = pt(qa + 2)[k];
+    return 0.5 * (2 * p1 + (-p0 + p2) * qt + (2 * p0 - 5 * p1 + 4 * p2 - p3) * qt * qt + (-p0 + 3 * p1 - 3 * p2 + p3) * qt * qt * qt);
+  };
+  const camX = curva('x') * 0.95;
+  const camY = curva('y') * 0.95;
+  const vira = (pt(qa + 1).x - pt(qa).x) * Math.sin(Math.PI * qt) * 0.005; // inclina de leve na direção em que está indo
   // fundo: em vez do marrom chapado, a luz da própria foto que está passando (bem desfocada e escura), trocando em fusão
   const pos = clamp((camZ + 500) / DZ / Math.max(1, n - 1)) * (n - 1);
   const ia = Math.floor(pos), ib = Math.min(n - 1, ia + 1), mix = pos - ia;
@@ -329,7 +335,7 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
           const ultimo = i === n - 1;
           const {x, y, lado} = lugar(i);
           const rot = ultimo ? 0 : lado * (3 + hash(i, 13) * 6) * -1;
-          const op = clamp((ef + 3800) / 900) * clamp((400 - ef) / 200); // cresce até ocupar boa parte do quadro e some antes de passar dele
+          const op = clamp((ef + 3800) / 900) * clamp((430 - ef) / 230); // cresce até ocupar boa parte do quadro e some antes de passar dele
           const w = ultimo ? 900 : 760;
           const mm = FM[id];
           const pw = (mm.o === 'h' ? w : w * 0.78) + 28, ph = (mm.o === 'h' ? w : w * 0.78) * (mm.h / mm.w) + 58; // tamanho real do polaroid: centraliza de verdade

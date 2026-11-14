@@ -147,3 +147,9 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - Arquivos: `previa/meu-terceirao-final-v5.mp4` (1080p) e `-previa-480p.mp4` (Telegram msg 5857). Pedaços em `previa/pedacos-v4/`.
 - Áudio: `audio-a.wav` (Remotion, quadros 0-7830) + cauda da música por ffmpeg. O `render_pedacos.py` ainda tenta o áudio inteiro e falha nessa cena: fazer à mão como descrito acima.
 - `plano.json` do motor continua sendo o da V1; a entrega usa `plano-v2.json` (trocar antes de renderizar, devolver depois).
+
+## FINAL V7 (14/11/2026 17:32): entrega atual, aprovada pelo Vítor fora este último ajuste
+- V6: no mural a câmera passou a mirar cada foto (as de perto saíam do quadro). V7: a câmera segue uma curva suave (Catmull-Rom) pelo centro das fotos, contínua, sem parar e arrancar. Polaroid 760 px, some entre 200 e 430 px de profundidade.
+- Arquivos: `previa/meu-terceirao-final-v7.mp4` (1080p) e `-previa-480p.mp4` (Telegram msg 5859). Pedaços 13-17 refeitos em `previa/pedacos-v4/`.
+- Vítor (14/11): "Sincronização, fotos, emoção tudo 10/10"; disse que este era o último ajuste da parte dele.
+- Pendente: `render_pedacos.py` fazer o áudio em duas partes sozinho (hoje é manual, ver V5).
