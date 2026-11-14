@@ -164,7 +164,7 @@ add("ponte", T_PONTE, T_VEJA)  # passagem do tempo: escurece e clareia, sem anos
 # ================================================================ ATO 2: abraço (103,8 → 139,6)
 T_ABRACA = snap(123.3)
 T_NOSSO = snap(139.6)
-fim_m = mosaicos_ate(2, T_VEJA, nb(T_VEJA, 10))
+fim_m = mosaicos_ate(3, T_VEJA, nb(T_VEJA, 10))  # 3 mosaicos (era 2) para caber os vídeos novos da 232
 fill(pega([ABRACO], 12), fim_m, T_ABRACA, bloom=0.5)
 t = T_ABRACA
 for v in HUG:  # "Então me abraça forte": vídeos de abraço com o som original
@@ -184,7 +184,7 @@ add("foto", T_NEM, T_JOVENS, id="c35", bloom=0.8, grupo="jovem")  # "Nem foi tem
 # ================================================================ ATO 4: "Somos tão jovens" (190,1 → 228)
 T_CODA = snap(228.0)
 fill(pega([GRUPAO], 10), T_JOVENS, snap(204.0), bloom=0.55)
-mosaicos_ate(4, snap(204.0), snap(216.8))
+mosaicos_ate(5, snap(204.0), snap(216.8))  # 5 mosaicos (era 4) para caber os vídeos novos da 232
 for g in range(3):
     ids = pega([GRUPAO, outros, ABRACO, BAGUNCA], 12)
     a_ = snap(216.8 + g * (T_CODA - 216.8) / 3)
