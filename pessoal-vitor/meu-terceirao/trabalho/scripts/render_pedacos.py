@@ -26,10 +26,11 @@ ap.add_argument("--tam", type=int, default=600)
 ap.add_argument("--conc", type=int, default=2)
 ap.add_argument("--so", default="")
 ap.add_argument("--saida", default="final-v1-bruto.mp4")
+ap.add_argument("--pasta", default="pedacos", help="pasta dos pedaços dentro de previa/ (cada versão tem a sua)")
 ap.add_argument("--orcamento", type=int, default=0, help="segundos: depois disso não começa pedaço novo e sai com código 3 (rodar de novo continua)")
 a = ap.parse_args()
 
-PED = f"{PREVIA}/pedacos" + ("" if a.escala == 1 else f"-{a.escala}")
+PED = f"{PREVIA}/{a.pasta}" + ("" if a.escala == 1 else f"-{a.escala}")
 os.makedirs(PED, exist_ok=True)
 LOG = open(f"{PED}/render.log", "a", encoding="utf8")
 

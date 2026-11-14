@@ -115,3 +115,13 @@ Capacidade: ~200 fotos + 50 vídeos com folga. Script de montagem deve distribui
 - Entrega: só pelo Remote Control (sem Telegram, pedido do Vítor).
 - Conferido: 188/188 fotos, 64/64 vídeos, freezedetect sem travadas, áudio e vídeo com a mesma duração.
 - Próximo passo: feedback do Vítor ao assistir. Ainda não revisado por ele: densidade do mural, vídeos verticais do final (estreitos com fundo desfocado).
+
+## Ajuste: passagem do tempo sem anos (14/11/2026 00:35)
+- A ponte (90,6 → 103,5 s) não tem mais número. É só um escurecimento que sobe e desce (`Ponte` em `Final.tsx`). Motivo: os anos da escada não são a data real de cada foto.
+- p009 e p010 refeitos; `meu-terceirao-final-v1.mp4` remasterizado (−14,0 LUFS, pico −0,3 dBFS), 302,2 s, 9066 quadros, freezedetect sem travada.
+
+## FINAL V2 (14/11/2026): foto e vídeo alternados (pedido da Anna no grupo, 14/11, 00:41)
+- A Anna pediu para não deixar os vídeos todos juntos no fim. A V2 mantém a mesma música, o mesmo acervo e os mesmos limites de cada trecho; só muda a ordem dos blocos dentro de cada trecho entre âncoras (portal, ponte, murais, parede, solos de abraço, foto da turma).
+- Gerar: `python trabalho/scripts/montar_final.py --v2` (grava `estudio/motor/src/obras/terceirao/plano-v2.json`; a V1 `plano.json` não muda).
+- Render: o motor lê `plano.json` fixo, então o render da V2 troca o `plano.json` pelo `plano-v2.json` e devolve a V1 no fim (backup no scratchpad da sessão). Comando: `python scripts/render_pedacos.py --tam 300 --conc 2 --pasta pedacos-v2 --saida final-v2-bruto.mp4`, depois `python scripts/masterizar.py previa/final-v2-bruto.mp4 previa/meu-terceirao-final-v2.mp4`.
+- Limite: a infância tem fotos e os 4 mosaicos de vídeo do trecho da ponte; o trecho do mural (3 mosaicos seguidos antes da foto da turma) continua só com vídeo, porque o mural é âncora.

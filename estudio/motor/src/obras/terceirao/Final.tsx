@@ -326,17 +326,14 @@ const FinalFoto: React.FC<{id: string; dur: number}> = ({id, dur}) => {
   );
 };
 
-// ---------------------------------------------------------------- contador de anos (ponte da infância para agora)
+// ---------------------------------------------------------------- passagem do tempo (ponte da infância para agora)
+// Sem anos escritos: as fotos não têm data real, então a ponte é só a sensação de tempo passando
+// (o quadro escurece devagar e clareia de novo, sem texto).
 const Ponte: React.FC<{dur: number}> = ({dur}) => {
   const f = useCurrentFrame();
-  const u = clamp(f / (dur - 6));
-  const ano = 2014 + Math.floor(u * 12.999);
-  const subiu = (f * 0.5) % 1;
-  return (
-    <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', pointerEvents: 'none'}}>
-      <div style={{fontFamily: SERIF, fontStyle: 'italic', fontSize: 320, color: CREME, textShadow: '0 4px 40px rgba(0,0,0,0.85), 0 0 4px rgba(0,0,0,0.9)', opacity: clamp(f / 10) * clamp((dur - f) / 10), letterSpacing: '0.02em', transform: `translateY(${((1 - E.expr(clamp(subiu * 4))) * 14).toFixed(1)}px)`}}>{ano}</div>
-    </AbsoluteFill>
-  );
+  const u = clamp(f / dur);
+  const meio = 1 - Math.abs(2 * u - 1);
+  return <AbsoluteFill style={{background: `rgba(14,13,11,${(0.12 + 0.38 * E.cam(meio)).toFixed(3)})`, pointerEvents: 'none'}} />;
 };
 
 // ---------------------------------------------------------------- letra e textos

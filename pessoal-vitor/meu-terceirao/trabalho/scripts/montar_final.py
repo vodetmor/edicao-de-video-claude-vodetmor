@@ -16,6 +16,9 @@ BASE = "C:/dev/maquina-de-editar"
 ACERVO = f"{BASE}/estudio/motor/src/obras/terceirao/acervo.json"
 PLANO = f"{BASE}/estudio/motor/src/obras/terceirao/plano.json"
 PALAVRAS = f"{BASE}/pessoal-vitor/meu-terceirao/trabalho/musica/tempo-perdido.palavras.json"
+# --v2: mesma linha do tempo, mas foto e vídeo alternados dentro de cada trecho (pedido da Anna, 14/11)
+V2 = "--v2" in sys.argv
+PLANO_SAIDA = PLANO.replace("plano.json", "plano-v2.json") if V2 else PLANO
 
 B = 0.6472          # uma batida (s), medida no áudio
 OFF = -0.013        # fase
@@ -156,7 +159,7 @@ fill(s4, snap(77.0), snap(90.3), bloom=0.25, grupo="crianca", flash=True)  # raj
 T_PONTE = snap(90.3)
 T_VEJA = snap(103.8)
 mosaicos_ate(4, T_PONTE, T_VEJA)
-add("ponte", T_PONTE, T_VEJA)  # contador de anos por cima
+add("ponte", T_PONTE, T_VEJA)  # passagem do tempo: escurece e clareia, sem anos (fotos sem data real)
 
 # ================================================================ ATO 2: abraço (103,8 → 139,6)
 T_ABRACA = snap(123.3)
@@ -268,11 +271,58 @@ fecho = [
     {"a": 294.2, "b": 302.2, "l": ["231 e 232"], "grande": True, "final": True},
 ]
 
+def intercala(bl):
+    """V2: dentro de cada trecho entre âncoras (portal, ponte, mural, parede, solos de abraço, foto da turma),
+    alterna foto e vídeo. Só reordena os blocos: o trecho começa e termina no mesmo instante,
+    cada bloco mantém a sua duração (são múltiplos de batida, então os cortes continuam na batida)."""
+    ANCORAS = {"intro", "vhs", "portal", "ponte", "mural", "parede", "final"}
+
+    def ancora(b):
+        return b["k"] in ANCORAS or (b["k"] == "solo" and b.get("abraco")) or b.get("id") == "c35"
+
+    out, trecho = [], []
+
+    def fecha():
+        if not trecho:
+            return
+        fotos = [b for b in trecho if b["k"] in ("foto", "dupla", "grade")]
+        vids = [b for b in trecho if b["k"] in ("mosaico", "solo")]
+        if not fotos or not vids:
+            out.extend(trecho)
+            trecho.clear()
+            return
+        ordem, i, j = [], 0, 0
+        while i < len(fotos) or j < len(vids):  # espalha os vídeos entre as fotos (proporção de cada lado)
+            if j >= len(vids) or (i < len(fotos) and i / len(fotos) <= j / len(vids)):
+                ordem.append(fotos[i]); i += 1
+            else:
+                ordem.append(vids[j]); j += 1
+        t, fim = trecho[0]["t0"], trecho[-1]["t1"]
+        for b in ordem:
+            d = round(b["t1"] - b["t0"], 3)
+            out.append({**b, "t0": round(t, 3), "t1": round(t + d, 3)})
+            t = t + d
+        assert abs(t - fim) < 0.01, f"trecho não fecha: {t} != {fim}"
+        trecho.clear()
+
+    for b in bl:
+        if ancora(b):
+            fecha()
+            out.append(b)
+        else:
+            trecho.append(b)
+    fecha()
+    return out
+
+
+if V2:
+    blocos = intercala(blocos)
+
 # ---------------------------------------------------------------- ducking da música (janelas dos vídeos com som)
-duck = [[b["t0"], b["t1"], 0.25 if b["k"] == "solo" else 0.5] for b in blocos if b["k"] in ("solo", "mosaico")]  # mosaico: música baixa de leve (−6 dB)
+duck =[[b["t0"], b["t1"], 0.25 if b["k"] == "solo" else 0.5] for b in blocos if b["k"] in ("solo", "mosaico")]  # mosaico: música baixa de leve (−6 dB)
 
 plano = {"duracao": DURACAO, "beat": B, "off": OFF, "blocos": blocos, "letra": letra, "fecho": fecho, "duck": duck}
-json.dump(plano, open(PLANO, "w", encoding="utf8"), ensure_ascii=False, indent=1)
+json.dump(plano, open(PLANO_SAIDA, "w", encoding="utf8"), ensure_ascii=False, indent=1)
 
 # ---------------------------------------------------------------- cobertura: toda mídia aparece?
 vf, vv = set(), set()
