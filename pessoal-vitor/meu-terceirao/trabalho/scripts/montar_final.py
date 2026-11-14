@@ -178,7 +178,7 @@ fill(pega([ABRACO], 3), t, T_NOSSO, bloom=0.5)
 
 # ================================================================ ATO 3: "Temos nosso próprio tempo" x3 (139,6 → 190,1): mural 3D
 T_MURAL_FIM = snap(176.2)
-add("mural", T_NOSSO, T_MURAL_FIM, ids=pega([BAGUNCA, outros, GRUPAO], 45), voo=0)
+add("mural", T_NOSSO, T_MURAL_FIM, ids=pega([BAGUNCA, outros, GRUPAO], 22), voo=0)  # 22 fotos em 36 s (eram 45): o Vítor achou o voo rápido demais; as outras aparecem na cena final
 T_NEM = snap(185.8)  # "Nem foi tempo perdido" é cantado em 185,8 (medido), não em 187,6
 T_JOVENS = snap(190.1)
 mosaicos_ate(3, T_MURAL_FIM, T_NEM)

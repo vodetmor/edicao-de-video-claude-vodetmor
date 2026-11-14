@@ -153,3 +153,9 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - Arquivos: `previa/meu-terceirao-final-v7.mp4` (1080p) e `-previa-480p.mp4` (Telegram msg 5859). Pedaços 13-17 refeitos em `previa/pedacos-v4/`.
 - Vítor (14/11): "Sincronização, fotos, emoção tudo 10/10"; disse que este era o último ajuste da parte dele.
 - Pendente: `render_pedacos.py` fazer o áudio em duas partes sozinho (hoje é manual, ver V5).
+
+## FINAL V8 (14/11/2026 18:15): entrega atual + limpeza de disco
+- Mural mais lento: 22 fotos em 36 s (eram 45), alternando de lado perto do eixo (±230 a 280 px), câmera em curva suave a 80% do desvio, foto some entre 310 e 540 px. O Vítor achou a V7 "rápida demais, olhando para os lados".
+- **Arquivo oficial:** `previa/meu-terceirao-final-v8.mp4` (1920x1080, 30 fps, 302,2 s, −14 LUFS, 388 MB). Prévia para WhatsApp/Telegram: `previa/meu-terceirao-final-v8-previa-480p.mp4` (Telegram msg 5860). O projeto é 1080p; não existe versão 4K.
+- Limpeza (pedido do Vítor): apagadas as versões v1 a v7 (final, bruto e prévia), pilotos, `pedacos`, `pedacos-v2`, `pedacos-v3`, `atlas-tmp` e ~4,8 GB de pacotes `remotion-*` em `%TEMP%`. Liberados 13 GB. Ficaram a V8, a prévia e `pedacos-v4` (pedaços atuais, 0,5 GB, para ajuste rápido; pode apagar depois da aprovação).
+- Para refazer do zero: ordem descrita na seção da V4 (todas as mídias-fonte continuam em `triagem/` e `estudio/motor/public/final/`).

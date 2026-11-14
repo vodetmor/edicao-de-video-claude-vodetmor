@@ -298,22 +298,23 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
   const lugar = (i: number) => {
     if (i >= n - 1) return {x: 0, y: 0, lado: 0};
     const lado = i % 2 === 0 ? -1 : 1;
-    return {x: lado * (300 + hash(i, 5 + voo) * 220), y: (hash(i, 9 + voo) - 0.5) * 300, lado};
+    // alternam de lado, mas perto do eixo: a próxima foto aparece ao lado da atual (não atrás dela) e a câmera só balança de leve
+    return {x: lado * (230 + hash(i, 5 + voo) * 50), y: (hash(i, 9 + voo) - 0.5) * 120, lado};
   };
   // a câmera vai de foto em foto: mira a que está chegando perto, para ela passar no meio do quadro
   // (antes a câmera só balançava no eixo e as fotos grandes passavam meio fora do quadro)
   // a câmera desliza por uma curva suave (Catmull-Rom) que passa pelo centro de cada foto no momento em que ela está grande:
   // centralizada como na versão travada, mas sem parar e arrancar entre uma foto e outra
-  const q = Math.max(0, Math.min(n - 1, (camZ - 850) / DZ));
+  const q = Math.max(0, Math.min(n - 1, (camZ - 950) / DZ));
   const qa = Math.floor(q), qt = q - qa;
   const pt = (i: number) => lugar(Math.max(0, Math.min(n - 1, i)));
   const curva = (k: 'x' | 'y') => {
     const p0 = pt(qa - 1)[k], p1 = pt(qa)[k], p2 = pt(qa + 1)[k], p3 = pt(qa + 2)[k];
     return 0.5 * (2 * p1 + (-p0 + p2) * qt + (2 * p0 - 5 * p1 + 4 * p2 - p3) * qt * qt + (-p0 + 3 * p1 - 3 * p2 + p3) * qt * qt * qt);
   };
-  const camX = curva('x') * 0.95;
-  const camY = curva('y') * 0.95;
-  const vira = (pt(qa + 1).x - pt(qa).x) * Math.sin(Math.PI * qt) * 0.005; // inclina de leve na direção em que está indo
+  const camX = curva('x') * 0.8;
+  const camY = curva('y') * 0.8;
+  const vira = (pt(qa + 1).x - pt(qa).x) * Math.sin(Math.PI * qt) * 0.004; // inclina de leve na direção em que está indo
   // fundo: em vez do marrom chapado, a luz da própria foto que está passando (bem desfocada e escura), trocando em fusão
   const pos = clamp((camZ + 500) / DZ / Math.max(1, n - 1)) * (n - 1);
   const ia = Math.floor(pos), ib = Math.min(n - 1, ia + 1), mix = pos - ia;
@@ -334,8 +335,8 @@ const Mural: React.FC<{ids: string[]; dur: number; voo: number}> = ({ids, dur, v
           if (ef > 1000 || ef < -3800) return null;
           const ultimo = i === n - 1;
           const {x, y, lado} = lugar(i);
-          const rot = ultimo ? 0 : lado * (3 + hash(i, 13) * 6) * -1;
-          const op = clamp((ef + 3800) / 900) * clamp((430 - ef) / 230); // cresce até ocupar boa parte do quadro e some antes de passar dele
+          const rot = ultimo ? 0 : lado * (2 + hash(i, 13) * 3) * -1;
+          const op = clamp((ef + 3800) / 900) * clamp((540 - ef) / 230); // cresce até ocupar boa parte do quadro e some antes de passar dele
           const w = ultimo ? 900 : 760;
           const mm = FM[id];
           const pw = (mm.o === 'h' ? w : w * 0.78) + 28, ph = (mm.o === 'h' ? w : w * 0.78) * (mm.h / mm.w) + 58; // tamanho real do polaroid: centraliza de verdade
