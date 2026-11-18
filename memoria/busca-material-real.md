@@ -13,3 +13,5 @@ Works from cloud: Pexels API, Mixkit (HTML, occasional 429), Openverse, Wikimedi
 Blocked/useless: Pixabay web, Unsplash, Vecteezy/Videvo/Freepik, Coverr (mostly AI), Reddit, Bing images (random results for bots), DuckDuckGo, Vimeo, GDELT (5 s limit).
 
 **How to apply:** use this before generating anything with AI; real material first. See [[rede-acessos-2026-09-29]].
+
+Update 2026-11-18 (Somália media thread): from the cloud, upload.wikimedia.org returns 429 for ORIGINAL files after a few downloads, but standard thumbnail sizes (250/330/500/960/1280/1920px) and video transcodes (`/transcoded/.../X.webm.480p.vp9.webm`) pass if spaced ~20 s. Flickr direct = 403; use `https://api.openverse.org/v1/images/<id>/thumb/?full_size=true` with a non-browser User-Agent (Mozilla UA gets 403). Vítor's PC device_bash VM cannot reach Wikimedia (proxy 403). Pexels "refugee camp" results are mostly Syria/Rohingya: never present as Somalia.

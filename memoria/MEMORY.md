@@ -79,3 +79,5 @@
 - [[vixplay-feedback-storytelling]]: 2026-11-06 Deidson reprovou os criativos VixPlay v1/v2 (queria storytelling, 1 história por criativo); mandar PDF da skill pdf-aprovacao antes de renderizar.
 - [PDF de aprovação = modelo pdf-aprovacao](vixplay-pdf-aprovacao-modelo.md) — nunca HTML improvisado; tema da marca, quadros codificados
 - [Mudar só o pedido (VixPlay)](vixplay-mudar-so-o-pedido.md) — ajuste em entregável aprovado mexe só no item citado; lembrete não é mudança
+- [[roteiro-somalia]]: Somalia school video (script v4, Sade "Pearls", 8 speakers). 2026-11-18: Vítor's audio cleaned (DeepFilterNet3), Remotion map motion built, keyframes PDF K01-K14 awaiting OK; others' audio pending.
+- STORAGE 2026-11-18: Vítor authorized deleting ANY project media (it's on his PC/GitHub); freed 10->6.9 GB (Kafka mp4, transferencia-pc zips, old racismo-ambiental renders/parts, medicmais v4-v6, old backup zips).
