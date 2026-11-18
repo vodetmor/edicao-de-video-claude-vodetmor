@@ -1,0 +1,82 @@
+{
+  "titulo": "Aprovação · Somália: a África que ninguém conta",
+  "arquivo": "somalia-aprovacao-quadros.pdf",
+  "rodape": "Somália · Consciência Negra 2026 · quadros-chave para aprovação",
+  "formato": "16:9",
+  "quadros_por_pagina": 8,
+  "tema": {
+    "acento": "#4189DD", "acento_texto": "#2F6DB5", "sobre_acento": "#FFFFFF",
+    "fundo": "#F4EFE6", "linha": "#E2DACB", "tinta": "#12100D", "tinta_2": "#3A332B", "cinza": "#8A8176",
+    "escuro": "#12100D", "papel": "#EDE6DA", "papel_2": "#CFC6B6",
+    "fonte_titulo": "Inter", "capa_escura": true
+  },
+  "capa": {
+    "chamada": "Para aprovação",
+    "titulo": "Somália",
+    "titulo_destaque": "a África que ninguém conta",
+    "texto": "Vídeo da escola, 16:9, cerca de 3 min 45 s, 8 vozes e Pearls da Sade por baixo. Os mapas e números já estão construídos no motor; aqui estão os momentos-chave.",
+    "imagens": ["quadros/K05.jpg", "quadros/K06.jpg", "quadros/K09.jpg"],
+    "atos": [
+      {"titulo": "A pergunta", "texto": "A África não é um país: 54 bandeiras"},
+      {"titulo": "O povo", "texto": "Somália, o povo, a poesia, o mar"},
+      {"titulo": "A ferida", "texto": "Partilha de 1884, ditadura, guerra, Al-Shabaab, seca"},
+      {"titulo": "O olhar", "texto": "A mulher da música e o nosso racismo"}
+    ]
+  },
+  "videos": [
+    {
+      "etiqueta": "Vídeo único · 3 min 45 s · 14 momentos",
+      "titulo": "Somália: a África que ninguém conta",
+      "ideia": "<b>A ideia:</b> escuro e quente como cinema, um azul só (o da bandeira somali). A estrela da bandeira é o fio: nasce no mapa, se parte em 5 em 1884 e fica sozinha no final.",
+      "jornada": [
+        {"titulo": "Pergunta", "texto": "K01 a K05: globo, a África como um país, 54 bandeiras"},
+        {"titulo": "Somália", "texto": "K06 e K07: mergulho no Chifre e o povo"},
+        {"titulo": "História", "texto": "K08 a K12: 1884, linha do tempo, terror, seca"},
+        {"titulo": "Reflexão", "texto": "K13 e K14: a mulher da música e a estrela"}
+      ],
+      "quadros": [
+        {"id": "K01", "t": "0:02", "legenda": "Globo de satélite gira: Pense na África", "img": "quadros/K01.jpg"},
+        {"id": "K02", "t": "0:07", "legenda": "A África desenhada como se fosse um país só", "img": "quadros/K02.jpg"},
+        {"id": "K03", "t": "0:11", "legenda": "Fome e guerra batem no mapa e se desfazem", "img": "quadros/K03.jpg"},
+        {"id": "K04", "t": "0:13", "legenda": "Não é um país: a fronteira vira dúvida", "img": "quadros/K04.jpg"},
+        {"id": "K05", "t": "0:17", "legenda": "54 países: cada um recebe a sua bandeira", "img": "quadros/K05.jpg"},
+        {"id": "K06", "t": "0:24", "legenda": "Mergulho no Chifre: Somália e a estrela", "img": "quadros/K06.jpg"},
+        {"id": "K07", "t": "0:35", "legenda": "O povo: ficha entra sobre rostos reais", "img": "quadros/K07.jpg"},
+        {"id": "K08", "t": "1:00", "legenda": "O mapa real de 1884, câmera no Chifre", "img": "quadros/K08.jpg"},
+        {"id": "K09", "t": "1:08", "legenda": "A estrela se parte: 5 pedaços, 5 donos", "img": "quadros/K09.jpg"},
+        {"id": "K10", "t": "1:20", "legenda": "1960, 1969, 1991: o mapa racha", "img": "quadros/K10.jpg"},
+        {"id": "K11", "t": "1:55", "legenda": "14/10/2017: o número sobe devagar e fica", "img": "quadros/K11.jpg"},
+        {"id": "K12", "t": "2:25", "legenda": "Seca de 2011: um ponto por mil vidas", "img": "quadros/K12.jpg"},
+        {"id": "K13", "t": "2:40", "legenda": "A mulher da música, sem texto, câmera lenta", "img": "quadros/K13.jpg"},
+        {"id": "K14", "t": "3:38", "legenda": "A estrela fica sozinha. Título final", "img": "quadros/K14.jpg"}
+      ]
+    }
+  ],
+  "som": {
+    "titulo": "Som",
+    "texto": "Pearls da Sade do começo ao fim. Enquanto alguém fala, a música fica baixinha; nas pausas do roteiro ela sobe devagar.",
+    "cartoes": [
+      {"titulo": "Vozes", "texto": "Cada fala passa pelo DeepFilterNet3 (tira o ruído sem abafar) e fica no mesmo volume."},
+      {"titulo": "Música", "texto": "Cerca de 20 dB abaixo da voz durante a fala, sobe em 1 s nas pausas e desce antes da próxima voz."},
+      {"titulo": "Final", "texto": "Volume de cinema de escola: -14 LUFS, sem estourar."}
+    ],
+    "efeitos": [
+      ["K03 Fome, guerra", "batida grave seca em cada palavra"],
+      ["K05 bandeiras", "tique suave a cada bandeira, quase escondido"],
+      ["K09 carimbos", "carimbo de papel a cada parte cortada"],
+      ["K11 atentado", "silêncio de 1 s antes do número"],
+      ["Fala do Daniel", "TV antiga desliga num ponto de luz"]
+    ]
+  },
+  "aprovar": {
+    "titulo": "Para aprovar",
+    "itens": [
+      {"texto": "A estética: escuro e quente, um azul só, mapas e números assim"},
+      {"texto": "A animação da África: país só, dúvida, 54 bandeiras, mergulho", "nota": "K02 a K06"},
+      {"texto": "A partilha com a estrela se partindo em 5", "nota": "K08 e K09"},
+      {"texto": "O tom das imagens duras: escombros e números, sem corpos", "nota": "K11"},
+      {"texto": "A limpeza de voz (ouça o antes e depois que mandei)"}
+    ],
+    "nota_final": "Para ajustar, cite o código (ex.: muda o K04). Com o OK, sigo montando com as vozes que forem chegando."
+  }
+}

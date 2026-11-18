@@ -1,0 +1,20 @@
+// Gera src/data/globo.json: fronteiras (110m) e a Somália inteira (50m, com a Somalilândia) em lon/lat.
+import fs from 'fs';
+import {topology} from 'topojson-server';
+import {merge, mesh} from 'topojson-client';
+import {geoNaturalEarth1} from 'd3-geo';
+const G = process.argv[2];
+const a50 = JSON.parse(fs.readFileSync(`${G}/ne_50m_admin_0_countries.geojson`));
+const a110 = JSON.parse(fs.readFileSync(`${G}/ne_110m_admin_0_countries.geojson`));
+const r = v => Math.round(v * 100) / 100;
+const rnd = g => JSON.parse(JSON.stringify(g, (k, v) => typeof v === 'number' ? r(v) : v));
+const t50 = topology({c: {type: 'FeatureCollection', features: a50.features.filter(f => ['Somalia', 'Somaliland'].includes(f.properties.ADMIN))}}, 1e5);
+const somalia = merge(t50, t50.objects.c.geometries);
+const t110 = topology({c: a110}, 1e5);
+const fronteiras = mesh(t110, t110.objects.c, (a, b) => a !== b);
+const costas = mesh(t110, t110.objects.c, (a, b) => a === b);
+const af = JSON.parse(fs.readFileSync('src/data/africa.json'));
+const p = geoNaturalEarth1().rotate(af.proj.rotate).scale(af.proj.scale).translate(af.proj.translate);
+const so = af.countries.find(c => c.name === 'Somalia');
+fs.writeFileSync('src/data/globo.json', JSON.stringify({somalia: rnd(somalia), fronteiras: rnd(fronteiras), costas: rnd(costas), somaliaPolo: p.invert(so.label).map(r)}));
+console.log('ok', p.invert(so.label));
