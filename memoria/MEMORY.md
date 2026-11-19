@@ -5,7 +5,6 @@
 - PERSONAL vs CLIENTS (Vítor, 2026-10-04): personal channel = Vitor Machado Neves (TikTok/Instagram), work under /mnt/project-files/pessoal-vitor/; clients (VSL Play, Deidson etc.) kept separate. Repo github.com/vodetmor/edicao-de-video-claude-vodetmor in project settings; continuous backup of ALL artifacts to GitHub + his PC (thread "Backup portátil do projeto", cmsg_01257unjkPWjtnQPA28xytUS9fCxvcZaXBb3o4rA3KTDcD).
 - PERSONAL CHANNEL DIRECTION (2026-10-04): audience = ENEM students (even younger), not entrepreneurs. Focus ENEM content + AI/new tech tools for studying (students, parents). Behind-the-scenes video only ONCE. Oblique-launch post got 27k views day 1. Hook that worked: on-screen text overlay + strong visual + description. Formula per lesson: concept -> questions that actually fall on ENEM -> a secret -> close. Strategy thread "Posicionamento e próximos roteiros" (cmsg_01257unjkPWjtnQPA28xytUS9nvrnUXzgCnAkgyccRPZFX). He is in 3rd year, DF, targets UnB Eng. Computação via PAS 3 + ENEM; exam weeks, little time.
 - PERSONAL-VIDEO RULES (2026-10-04): first and last frame visually match (loop); never text on same-colored bg or with lines crossing it; audio and visual composed together, also for videos with his face; he generates ElevenLabs voice himself; horizontal master (he does vertical + top caption). For overnight batches he may pre-approve plan+render (did on 2026-10-04); otherwise keyframe gate below applies.
-- STATUS 2026-10-05 noon (summary posted in project chat): Bastidores video DONE, ready to post (thread cmsg_01257unjkPWjtnQPA28xytUSNkPgDFB79esS5N9YWQNquw). Ótica rendered with provisional voice; waiting his ElevenLabs mp3 (thread cmsg_01257unjkPWjtnQPA28xytUSJj1j5x8F5J4tWfKUTyd5WL). Strategy PDF pessoal-vitor/estrategia/rumo-do-perfil.pdf; waiting approval of bio, pick of next 2 lessons (suggested Eletrodinâmica + NotebookLM test), Sunday 11/10 recording. Backup thread blocked on his GitHub permission approval. Vinheta "Life" done (cmsg_01257unjkPWjtnQPA28xytUSKBSUPsUTjLgg23W1k63BZb).
 - HOW VÍTOR TALKS (updated 2026-10-02 21:20): he dictates long voice-transcribed messages (expect transcription errors, e.g. "Hype te" = Hypit). Do NOT echo his ideas back as a "Suas ideias, organizadas" list: he already knows them. Instead interpret them and build on them: the best considered answer, connections he didn't make, a formal well-thought proposal when formalizing. He wants top-level thinking, not repetition. Teach simply, he is a beginner.
 - PROACTIVE REFERENCES (Vítor, 2026-10-02 22:01): for every motion request, reason about what he actually wants and go find references yourself before planning (X via his PC terminal, web, Pexels/busca.py, saved prompts in motion-base/fontes/x/), then raise the bar beyond what he literally said. His own refs come on top, not instead. Keep improving the existing engine/library each time.
 - APPROVAL GATE (Vítor, 2026-10-02 22:00): for every new video, after the PDF plan, show him the storytelling + keyframes (stills of each key moment) for approval BEFORE building the full video, like the VSL Play storyboard.
@@ -13,24 +12,21 @@
 - GOLD STANDARD (Vítor, 2026-09-30): the VSL Play ad v6 (voiceover by ElevenLabs "Ana Dias", animations locked to the exact spoken feature word, music/SFX at original tempo with voice-first ducking) got 10/10: "incrível". He wants THIS level and METHOD for every edit (clients, personal, school): references -> SPEC -> architecture -> plan -> all parameters defined -> then edit. Not just copying one editing style. Round 3 asked: speed up 1.2x, smooth the abrupt A/B-test -> integrations jump, and a vertical (9:16) version.
 - LEARNINGS LIBRARY RULE (Vítor, 2026-09-29): every lesson learned (from his feedback, X/Twitter posts, sites, articles, each finished video) must be written immediately into the motion-base/ library (LICOES-MOTION.md for motion/edit/audio lessons; fontes/ for saved source material). Agent-organization material goes in organizacao/, not motion-base. Never leave learnings only in a chat or scratchpad. Every thread appends as it goes.
 - AUDIO MIX PREFERENCE (Vítor, 2026-09-29): narration louder, music lower under voice; in narration gaps the music swells back smoothly. Music/SFX keep original tempo even when visuals are slowed. Likes royalty-free instrumental music (Kevin MacLeod), any source OK.
+- VOICE RECORDINGS RULE (Vítor 2026-11-18): all received voice recordings (any project) must be denoised (DeepFilterNet3 beat Meta denoiser/Demucs) AND loudness-normalized to the same level (e.g. same LUFS), so every voice is equally audible; verify by measuring. Applies to all future audios until the video is finished. Don't re-render until final audios arrive.
 - PERSISTENCE RULE (after 2026-09-29 restart wiped the ad's scratchpad work): containers restart and scratchpad//tmp/home are ERASED. Only /mnt/project-files survives. Every thread must: (1) keep source code, raw uploads, transcripts, renders and audio stems under /mnt/project-files/&lt;project>/trabalho/ from the start, never only in scratchpad; (2) after each milestone save to it and write a short ESTADO.md there (what's done, next step, exact commands to rebuild); (3) on start/resume, read ESTADO.md first; (4) caches that can be reinstalled (node_modules, pip) may stay outside.
 - Owner: Rei da VSL - Vítor (Vitor Machado Neves). Language: Portuguese (BR). Timezone America/Sao_Paulo. Prefers free tools/services (no paid subscriptions). His PC has no NVIDIA GPU (free GPU = Kaggle). Check his PC via Remote Control terminal instead of asking him. Weekly Claude limit resets Mondays 03:00 BRT.
 - Goal: AI-assisted video editing (VSL-style), inspired by course "Máquina de Edição com IA" (edicaomia.com.br), not purchased.
-- History: earlier desktop session "Edição" (2026-09-28); summary at /mnt/project-files/edicao/resumo-conversa-edicao.md
 - Approach: EDL/JSON "timeline" + ffmpeg scripts; motion graphics in Remotion. Whisper/HF reachable in cloud now.
 - Visual taste: hates "AI slop" (gradients, background glow, glass, blue/purple). Apple-inspired direction (light bg, springs, squircles, one blue, Inter + Phosphor icons).
 - Deliver archives as .zip (can't open .gz). OK to install skills and anything freely.
 - QUALITY DIRECTIVE (Vítor, 2026-09-29): quality comes first. "Cost-efficient" means efficient process (no waste, no redundant rework), NOT cutting quality or tokens. More motion is welcome. Editing time is irrelevant.
 - ADJUSTMENT RULE: when Vítor asks for tweaks, adjust the existing source (timeline durations, re-render only changed parts); never rebuild from scratch. Keep parts he praised untouched.
-- Research 2026-09-28: tool = Claude + Higgsfield MCP; DIY pipeline via Google Flow; plan a private GitHub repo for portability. See pesquisa-pipeline-2026-09-28.md
-- [[motion-demo-benchmark]]: v5 demo Fable vs Astra; sound approved, logos/motion rejected.
 - [[design-system-video]]: formal standard motion-base/DESIGN-SYSTEM.md + 5 chosen skills in /mnt/project-files/skills; read before any edit.
 - [[motion-base-knowledge]]: knowledge base at /mnt/project-files/motion-base; read LICOES-MOTION.md before motion work; use real SVG logos.
 - [[feedback-processo-edicao]]: Vítor rated the narrated VSL Play ad 10/10 (2026-09-30); every edit (clients, personal) must follow references -> SPEC -> architecture -> plan -> parameters, not just copy a style.
 - [[anuncio-vslplay]]: VSL Play ad for Vítor's boss; work in anuncio-vslplay/trabalho/. v6 approved 10/10; round 3 in progress. ElevenLabs free plan blocks BR voices via API; Vítor generates lines on the site.
 - [[criativos-vslplay]]: ad creatives 2 and 3 for Deidson/Dhay (9:16). Delivered 2026-10-01; awaiting feedback. Work in criativos-vslplay/trabalho/ (ESTADO.md).
-- [[chatcut-avaliacao]]: ChatCut plugin blocked in cloud, desktop-only.
-- DONE 2026-10-02: school video "Consciência Negra / Racismo ambiental" (thread cmsg_01257unjkPWjtnQPA28xytUSLHEjaVGYZ4DjpAnLeCLXRv), docs in /mnt/project-files/escola-consciencia-negra/. Missing Maria Eduarda, Maria Alice audio: forward to that thread if they arrive.
+- DONE 2026-10-02: school video "Consciência Negra / Racismo ambiental" (thread cmsg_01257unjkPWjtnQPA28xytUSLHEjaVGYZ4DjpAnLeCLXRv), docs in /mnt/project-files/escola-consciencia-negra/.
 - Network: Freesound + Jamendo + Wikimedia work; keys in escola-consciencia-negra/edicao/.env. Details: [[rede-acessos-2026-09-29]].
 - Apify (free account): token posted by Vítor in the project chat 2026-09-29 09:34 UTC; fetch from timeline when needed. Not copied here.
 - [[hypit-avaliacao]], [[ecc-avaliacao]]: evaluated 2026-10-02 (notes in motion-base/fontes/ferramentas/hypit.md, organizacao/ecc.md).
@@ -43,19 +39,17 @@
 - [[acessos-proposta]]: access proposal organizacao/ACESSOS-PROPOSTA.md; edge-tts free pt-BR voice works in cloud.
 - [[feedback-quadros-chave]]: gate before any full render: storytelling + ~12 keyframes PDF, wait for OK (unless he pre-approves).
 - [[voz-clonagem-local]]: local voice cloning tested, quality bad, ON STAND-BY.
-- [[aula-lancamento-obliquo]]: physics explainer (Manim+Remotion+GLSL, ElevenLabs voice) delivered 2026-10-03 and posted. State in estudio/aula-lancamento-obliquo/ESTADO.md.
+- [[aula-lancamento-obliquo]]: physics explainer delivered 2026-10-03. State in estudio/aula-lancamento-obliquo/ESTADO.md.
 - Blender by code works in cloud (`pip install bpy`), ~8 s/frame 540x960 CPU; test estudio/teste-blender. AI-tools map "Arsenal de IAs para o motor" (https://claude.ai/code/artifact/a55e9a8b-d729-4652-9504-7138e63d933d).
-- [[aula-otica]]: optics lesson 2026-10-05 (prism 3D hook/end, fiber, loop); provisional voice, swap with fonte/troca-voz.sh. In pessoal-vitor/aula-otica/trabalho.
+- [[aula-otica]]: optics lesson 2026-10-05; provisional voice, swap with fonte/troca-voz.sh. In pessoal-vitor/aula-otica/trabalho.
 - [[feedback-tiktok-loop]]: personal TikTok rules: loop first/last frame, no text over lines, audiovisual composition.
 - [[feedback-roteiro-voz]]: write "téta" not "teta" in ElevenLabs scripts; follow his slower pace, music swells in pauses.
 - [[feedback-hashtags]]: post descriptions: max 5 hashtags, one per category (no #enem + #enem2026); long didactic format.
 - [[feedback-progressao-roteiro]]: lesson scripts (any subject): each act opens with a spoken transition + pause ("agora vamos para as perguntas que mais caem").
 - [[feedback-seguir-aulas]]: every content lesson gets the mid-video follow pill (componentes/pilula-seguir), loop intact.
-- [[questao-tangente]]: ENEM 2025 tangent question video; keyframes + voice sample sent 2026-10-05 20:40, waiting his OK before final render. pessoal-vitor/questao-tangente/
 - [[feedback-roteiro-questao]]: question scripts: summarized statement first, then step-by-step explanation with a guiding thread; not wordy, not too short; numerals OK.
 - [[perfil-estrategia-estudo]]: personal profile = ENEM/PAS visual lessons + solved questions, AI narrator, 60-90 s target (2026-10-05 metrics: oblique 40k views/1.3k saves, making-of flopped, behind-the-scenes paused). Ongoing chat in thread 'Rumo do seu perfil', not a fixed PDF.
-- [[chase-ai-animate]]: Chase AI JS-canvas video method + MIT 'animate' skill (cartoon styles) studied 2026-10-07 in motion-base/fontes/chase-ai/; not yet run (needs Vítor OK).
-- STORAGE (2026-10-08): project hit 10 GB; freed 3.7 GB by deleting re-downloadable music candidates (motion-base/musica/trabalho/candidatas; URLs in candidatas.json). Still heavy: escola-consciencia-negra 2.9 GB, root Kafka mp4 356 MB.
+- [[chase-ai-animate]]: Chase AI JS-canvas video method + MIT 'animate' skill studied 2026-10-07 in motion-base/fontes/chase-ai/; not yet run (needs Vítor OK).
 - [[extract-ds-avaliacao]]: extract-ds skill evaluated 2026-10-07 on vslplay.com; proposed per-client theme in motor, awaiting OK.
 - [[storytold-craft-apps]]: storytold 'Craft' Adobe clones in Rust are real (2026-10-08); Vítor REJECTED EffectCraft visuals ("Remotion sozinho sola"); motion stays pure Remotion; only VectorCraft .ai->SVG kept as utility.
 - [[modelo-de-pensamento]]: Vítor wants Claude as researcher/interpreter/critic/advisor (2026-10-08); protocol organizacao/MODELO-DE-PENSAMENTO.md + skill modo-orientador; anti-pendulum rule.
@@ -64,20 +58,19 @@
 - [[feedback-legibilidade-criativo]]: narrated ads: one idea per scene, readable text, 3 s hook = one strong 3D/legible object, hero 3D pieces 3+ s; up to 1 min OK (Vítor 2026-10-09).
 - [[feedback-capa-criativo]]: ad creatives: frame 0 = full cover (price complete, distinct per creative); narration direct, trim silences, pause only on look-moments (Deidson 2026-10-10).
 - [[guia-colaboracao-vslplay-app]]: 2026-10-12 guides for another AI on VSL Play: app dev (organizacao/COLABORACAO-AGENTICA-VSLPLAY.md) + site visual content (COLABORACAO-AGENTICA-VSLPLAY-CONTEUDO.md); app code never inspected yet.
-- [[estaticos-precos-rei-da-vsl]]: 6 code-made static ads (Rei da VSL price creatives) delivered 2026-10-13 in clientes/rei-da-vsl/estaticos-precos; awaiting comparison with GPT version.
-- [[video-venda-site-medicmais]]: MedicMais clinic sales video; v1 site, v2 site+GMN NFC plaque (3D) delivered 2026-10-14; v3 = v2 + proposal PDF continuation spliced 2026-10-15. clientes/medicmais-sobradinho.
+- [[estaticos-precos-rei-da-vsl]]: 6 code-made static ads delivered 2026-10-13 in clientes/rei-da-vsl/estaticos-precos; awaiting comparison with GPT version.
+- [[video-venda-site-medicmais]]: MedicMais clinic sales video; v3 = v2 + proposal PDF continuation spliced 2026-10-15. clientes/medicmais-sobradinho.
 - [[feedback-marca-real-na-tela]]: every brand named in narration shows its real logo/identity on screen (Vítor 2026-10-14).
 - [[tutorial-pinterest-x]]: 2026-10-23 organizacao/TUTORIAL-PINTEREST-E-X.md; Pinterest needs no token, X via his PC; .env reading blocked, no values written.
 - [[mentoria-ruan-lancar]]: 2026-10-27 opinion on Ruan LANÇAR site + plan to sell a mentorship to 4 CEUB marketing students (doc https://claude.ai/artifact/3srt1xT1CHF9qrARJFh1Zy).
-- [[curso-maquina-edicaoia]]: full "Máquina de Edição IA" course (videos, transcripts, ebook, 7 cp-* skills) on his PC at C:\Users\vitor\Downloads\Maquina-EdicaoIA (2026-10-29); summary outros/maquina-edicaoia/RESUMO.md.
+- [[curso-maquina-edicaoia]]: full "Máquina de Edição IA" course on his PC at C:\Users\vitor\Downloads\Maquina-EdicaoIA (2026-10-29); summary outros/maquina-edicaoia/RESUMO.md.
 - [[produto-skills-jeronimo]]: 2026-10-29 plan to sell a Claude video-editing skill pack (~R$97) with client Jerônimo; plan outros/maquina-edicaoia/PLANO-JERONIMO.md; do not repackage Tiago content.
-- [[editor-video-falado]]: 2026-10-29 estudio/editor = raw talking video -> edited (cuts, face, captions, 5 styles, review panel localhost:8080) + skill editar-video; product base for Jerônimo.
-
+- [[editor-video-falado]]: 2026-10-29 estudio/editor = raw talking video -> edited + skill editar-video; product base for Jerônimo.
 - [[entrega-previas-video]]: thread caps at 24 attachments; deliver previews as a light Artifact player page and archive old versions on his PC (Maquina de Editar\clientes\...\previas). Keep messages short (Vítor 2026-10-31).
 - [[skill-pdf-aprovacao]]: 2026-11-06 reusable approval-PDF skill (plano.json -> PDF via headless Chrome/Edge) in skills/pdf-aprovacao + .zip; use for every approval gate.
-
 - [[vixplay-feedback-storytelling]]: 2026-11-06 Deidson reprovou os criativos VixPlay v1/v2 (queria storytelling, 1 história por criativo); mandar PDF da skill pdf-aprovacao antes de renderizar.
 - [PDF de aprovação = modelo pdf-aprovacao](vixplay-pdf-aprovacao-modelo.md) — nunca HTML improvisado; tema da marca, quadros codificados
 - [Mudar só o pedido (VixPlay)](vixplay-mudar-so-o-pedido.md) — ajuste em entregável aprovado mexe só no item citado; lembrete não é mudança
-- [[roteiro-somalia]]: Somalia school video (script v4, Sade "Pearls", 8 speakers). 2026-11-18: Vítor's audio cleaned (DeepFilterNet3), Remotion map motion built, keyframes PDF K01-K14 awaiting OK; others' audio pending.
-- STORAGE 2026-11-18: Vítor authorized deleting ANY project media (it's on his PC/GitHub); freed 10->6.9 GB (Kafka mp4, transferencia-pc zips, old racismo-ambiental renders/parts, medicmais v4-v6, old backup zips).
+- [[roteiro-somalia]]: Somalia school video (script v4, Sade "Pearls", 8 speakers). 2026-11-18: full v1 (~4 min) delivered (somalia/previas/somalia-v1.mp4), credits with all 8; Maria Eduarda + Yago lines still provisional TTS.
+- STORAGE 2026-11-18: Vítor authorized deleting ANY project media (it's on his PC/GitHub); freed 10->6.9 GB.
+- [[renders-longos]]: long renders run in the cloud right away (Vítor 2026-11-19); ask again after 30 days.
