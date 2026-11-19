@@ -1,0 +1,1160 @@
+{
+ "total": 290.13,
+ "respiros": [
+  [
+   112.78,
+   117.49
+  ],
+  [
+   178.9,
+   191.0
+  ],
+  [
+   217.35,
+   222.6
+  ],
+  [
+   253.33,
+   254.53
+  ]
+ ],
+ "segmentos": [
+  {
+   "id": "intro",
+   "ini": 0.0,
+   "dur": 4.6
+  },
+  {
+   "id": "vitor-1",
+   "quem": "Vítor",
+   "ini": 4.6,
+   "voz": 5.1,
+   "arq": "editado/vitor-1.wav",
+   "a0": 0,
+   "a1": 11.4,
+   "dur": 17.26
+  },
+  {
+   "id": "maria-1",
+   "quem": "Maria Eduarda",
+   "ini": 21.86,
+   "voz": 21.86,
+   "arq": "editado/maria-1.wav",
+   "a0": 0,
+   "a1": 12.58,
+   "dur": 12.58
+  },
+  {
+   "id": "anna-1",
+   "quem": "Anna Augusta",
+   "ini": 35.24,
+   "voz": 35.24,
+   "arq": "editado/anna-1.wav",
+   "a0": 0,
+   "a1": 12.85,
+   "dur": 12.85
+  },
+  {
+   "id": "luisa-1",
+   "quem": "Luísa",
+   "ini": 50.09,
+   "voz": 50.09,
+   "arq": "editado/luisa-1.wav",
+   "a0": 0,
+   "a1": 11.15,
+   "dur": 11.15
+  },
+  {
+   "id": "urley-1",
+   "quem": "Urley",
+   "ini": 63.040000000000006,
+   "voz": 63.040000000000006,
+   "arq": "editado/urley-1.wav",
+   "a0": 0,
+   "a1": 13.1,
+   "dur": 13.1
+  },
+  {
+   "id": "yago-1",
+   "quem": "Yago",
+   "ini": 77.14,
+   "voz": 77.14,
+   "arq": "editado/yago-1.wav",
+   "a0": 0.61,
+   "a1": 17.74,
+   "dur": 17.13
+  },
+  {
+   "id": "daniel-1",
+   "quem": "Daniel",
+   "ini": 95.67,
+   "voz": 95.67,
+   "arq": "editado/daniel-1.wav",
+   "a0": 0.57,
+   "a1": 16.48,
+   "dur": 15.91
+  },
+  {
+   "id": "maria-2",
+   "quem": "Maria Eduarda",
+   "ini": 117.49000000000001,
+   "voz": 117.49000000000001,
+   "arq": "editado/maria-2.wav",
+   "a0": 0,
+   "a1": 15.01,
+   "dur": 15.01
+  },
+  {
+   "id": "anna-2",
+   "quem": "Anna Augusta (voz do Vítor)",
+   "ini": 133.5,
+   "voz": 133.5,
+   "arq": "editado/anna-2.wav",
+   "a0": 0,
+   "a1": 15.92,
+   "dur": 15.92
+  },
+  {
+   "id": "luisa-2",
+   "quem": "Luísa",
+   "ini": 150.72,
+   "voz": 150.72,
+   "arq": "editado/luisa-2.wav",
+   "a0": 0,
+   "a1": 10.46,
+   "dur": 10.46
+  },
+  {
+   "id": "urley-2",
+   "quem": "Urley",
+   "ini": 162.18,
+   "voz": 162.18,
+   "arq": "editado/urley-2.wav",
+   "a0": 0,
+   "a1": 16.12,
+   "dur": 16.12
+  },
+  {
+   "id": "yago-2",
+   "quem": "Yago",
+   "ini": 191.0,
+   "voz": 191.0,
+   "arq": "editado/yago-2.wav",
+   "a0": 1.05,
+   "a1": 10.56,
+   "dur": 9.51
+  },
+  {
+   "id": "daniel-2",
+   "quem": "Daniel",
+   "ini": 201.71,
+   "voz": 201.71,
+   "arq": "editado/daniel-2.wav",
+   "a0": 0,
+   "a1": 15.24,
+   "dur": 15.24,
+   "pausa": 5.65
+  },
+  {
+   "id": "jose-1",
+   "quem": "José",
+   "ini": 222.6,
+   "voz": 222.6,
+   "arq": "editado/jose-1.wav",
+   "a0": 0,
+   "a1": 11.36,
+   "dur": 11.36
+  },
+  {
+   "id": "vitor-2",
+   "quem": "Vítor",
+   "ini": 236.56,
+   "voz": 236.56,
+   "arq": "editado/vitor-2.wav",
+   "a0": 0,
+   "a1": 16.77,
+   "dur": 16.77
+  },
+  {
+   "id": "mlk",
+   "quem": "Martin Luther King Jr.",
+   "ini": 254.53,
+   "voz": 255.13,
+   "arq": "editado/mlk.wav",
+   "a0": 0,
+   "a1": 19.69,
+   "dur": 17.6,
+   "semDucking": true
+  },
+  {
+   "id": "frase",
+   "ini": 272.13,
+   "dur": 6.5
+  },
+  {
+   "id": "creditos",
+   "ini": 278.63,
+   "dur": 11.5
+  }
+ ],
+ "planos": [
+  {
+   "t0": 0,
+   "t1": 5.0,
+   "tipo": "bloco",
+   "src": "Globo",
+   "props": {
+    "alvo": "africa"
+   }
+  },
+  {
+   "t0": 4.6,
+   "t1": 21.86,
+   "tipo": "bloco",
+   "src": "AfricaPais",
+   "props": {
+    "comAudio": false
+   }
+  },
+  {
+   "t0": 21.86,
+   "t1": 24.74,
+   "tipo": "video",
+   "src": "midia/bonito/videos/voa-mogadiscio-vista-aerea.mp4",
+   "voa": true,
+   "vdur": 8.0
+  },
+  {
+   "t0": 24.74,
+   "t1": 28.12,
+   "tipo": "video",
+   "src": "midia/bonito/videos/praia-mogadiscio-2012-mar-a.mp4",
+   "vdur": 12.0
+  },
+  {
+   "t0": 28.12,
+   "t1": 35.24,
+   "tipo": "bloco",
+   "src": "Estrela5",
+   "props": {
+    "pontas": [
+     2.98,
+     3.3,
+     3.62,
+     3.94,
+     4.26
+    ]
+   }
+  },
+  {
+   "t0": 35.24,
+   "t1": 40.1,
+   "tipo": "foto",
+   "src": "midia/bonito/fotos/ov-berbera-girls-getting-ready-e916db.jpg",
+   "ficha": true,
+   "ax": 0.7,
+   "ay": 0.3
+  },
+  {
+   "t0": 40.1,
+   "t1": 44.97,
+   "tipo": "video",
+   "src": "midia/bonito/videos/mogadiscio-2016-mulheres-na-rua.mp4",
+   "vdur": 10.0
+  },
+  {
+   "t0": 44.97,
+   "t1": 50.09,
+   "tipo": "video",
+   "src": "midia/bonito/videos/hargeisa-mercado-de-camelos-a.mp4",
+   "vdur": 12.0
+  },
+  {
+   "t0": 50.09,
+   "t1": 52.15,
+   "tipo": "video",
+   "src": "midia/bonito/videos/laas-geel-pinturas-rupestres.mp4",
+   "inicio": 4,
+   "vdur": 20.0
+  },
+  {
+   "t0": 52.15,
+   "t1": 53.43,
+   "tipo": "video",
+   "src": "midia/bonito/videos/praia-mogadiscio-2012-mar-b.mp4",
+   "vdur": 10.0
+  },
+  {
+   "t0": 53.43,
+   "t1": 54.95,
+   "tipo": "video",
+   "src": "midia/bonito/videos/voa-mogadiscio-mercado-frutas.mp4",
+   "voa": true,
+   "vdur": 10.0
+  },
+  {
+   "t0": 54.95,
+   "t1": 59.0,
+   "tipo": "video",
+   "src": "midia/bonito/videos/px-sailboats-sailing-in-sea-at-sunset-11025496.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 59.0,
+   "t1": 63.34,
+   "tipo": "video",
+   "src": "midia/bonito/videos/puntland-por-do-sol-cidade.mp4",
+   "sepia_de": 59.940000000000005,
+   "sepia_ate": 63.040000000000006,
+   "vdur": 10.0
+  },
+  {
+   "t0": 61.84,
+   "t1": 77.34,
+   "tipo": "bloco",
+   "src": "Partilha",
+   "props": {
+    "t": {
+     "dissolve": 4.32,
+     "britanico": 6.4,
+     "italiano": 7.02,
+     "frances": 7.74,
+     "etiopia": 9.6,
+     "quenia": 10.58,
+     "pontas": 12.32,
+     "fim": 15.5
+    }
+   }
+  },
+  {
+   "t0": 77.14,
+   "t1": 95.67,
+   "tipo": "bloco",
+   "src": "Tempo",
+   "props": {
+    "t": {
+     "t1960": 0.71,
+     "t1969": 3.35,
+     "t1991": 12.67,
+     "racha": 15.77
+    }
+   }
+  },
+  {
+   "t0": 84.83,
+   "t1": 89.61,
+   "tipo": "video",
+   "src": "midia/mapas-historia/videos/px-a-group-of-military-men-marching-7467343.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 95.67,
+   "t1": 95.67,
+   "tipo": "video",
+   "src": "midia/mapas-historia/videos/voa-atentado-predios-destruidos.mp4",
+   "voa": true,
+   "lento": 0.7,
+   "vdur": 10.0
+  },
+  {
+   "t0": 95.67,
+   "t1": 98.4,
+   "tipo": "video",
+   "src": "midia/mapas-historia/videos/voa-atentado-predios-destruidos.mp4",
+   "voa": true,
+   "inicio": 5,
+   "vdur": 10.0
+  },
+  {
+   "t0": 98.4,
+   "t1": 103.04,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-fome-multidao-sentada.mp4",
+   "voa": true,
+   "vdur": 6.0
+  },
+  {
+   "t0": 103.04,
+   "t1": 112.78,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-fome-seca-entrega-aerea.mp4",
+   "voa": true,
+   "tv": 110.41,
+   "tvfade": 0.6,
+   "vdur": 8.0
+  },
+  {
+   "t0": 112.78,
+   "t1": 114.921,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-2013-08-04-afgoye-food-dist-d-jpg-cca012.jpg",
+   "ax": 0.5,
+   "ay": 0.5
+  },
+  {
+   "t0": 114.921,
+   "t1": 117.49,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-a-young-child-measured-for-malnourishment-in-07de6e.jpg",
+   "ax": 0.5,
+   "ay": 0.5
+  },
+  {
+   "t0": 117.49,
+   "t1": 119.95,
+   "tipo": "foto",
+   "src": "midia/triste/al-shabaab/alshabaabfightersinbarawe2013-jpg.jpg"
+  },
+  {
+   "t0": 119.95,
+   "t1": 123.21,
+   "tipo": "foto",
+   "src": "midia/triste/al-shabaab/al-shabaab-fighters-patrolling-afgooye-mogadishu-road-jpg.jpg"
+  },
+  {
+   "t0": 123.21,
+   "t1": 128.36,
+   "tipo": "bloco",
+   "src": "Atentado",
+   "props": {
+    "t": {
+     "data": 0.1,
+     "num": 2.8
+    }
+   }
+  },
+  {
+   "t0": 128.36,
+   "t1": 130.36,
+   "tipo": "foto",
+   "src": "midia/triste/al-shabaab/2017-10-15-vbied-8-37666124646-jpg.jpg"
+  },
+  {
+   "t0": 130.36,
+   "t1": 133.5,
+   "tipo": "video",
+   "src": "midia/bonito/videos/voa-mogadiscio-oracao-mesquita.mp4",
+   "voa": true,
+   "vdur": 12.0
+  },
+  {
+   "t0": 133.5,
+   "t1": 141.2,
+   "tipo": "video",
+   "src": "midia/bonito/videos/mogadiscio-2018-rua.mp4",
+   "vdur": 15.0
+  },
+  {
+   "t0": 141.2,
+   "t1": 145.42,
+   "tipo": "video",
+   "src": "midia/bonito/videos/px-silhouetted-fishermen-on-a-boat-at-sea-40982177.mp4",
+   "vdur": 7.0
+  },
+  {
+   "t0": 145.42,
+   "t1": 150.72,
+   "tipo": "video",
+   "src": "midia/mapas-historia/videos/piratas-somalis-2006-marinha-eua.mp4",
+   "vdur": 14.0
+  },
+  {
+   "t0": 150.72,
+   "t1": 157.54,
+   "tipo": "bloco",
+   "src": "Seca",
+   "props": {
+    "t": {
+     "ini": 1.02,
+     "cheio": 4.56,
+     "metade": 5.32
+    }
+   }
+  },
+  {
+   "t0": 157.54,
+   "t1": 159.38,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-seca-terra-com-carcacas.mp4",
+   "voa": true,
+   "vdur": 8.0
+  },
+  {
+   "t0": 159.38,
+   "t1": 161.18,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-fome-acampamento-deslocados.mp4",
+   "voa": true,
+   "vdur": 10.0
+  },
+  {
+   "t0": 161.18,
+   "t1": 162.18,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-fome-maes-e-filhos-nutricao.mp4",
+   "voa": true,
+   "lento": 0.6,
+   "vdur": 12.0
+  },
+  {
+   "t0": 162.18,
+   "t1": 164.34,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-seca-mulher-caminha-no-deserto.mp4",
+   "voa": true,
+   "vdur": 7.0
+  },
+  {
+   "t0": 164.34,
+   "t1": 166.5,
+   "tipo": "video",
+   "src": "midia/triste/videos/px-women-carrying-jerry-cans-26798382.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 166.5,
+   "t1": 167.76,
+   "tipo": "video",
+   "src": "midia/triste/videos/px-woman-with-baby-on-hands-11866426.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 167.76,
+   "t1": 171.77,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-seca-mulher-acampamento.mp4",
+   "voa": true,
+   "vdur": 10.0
+  },
+  {
+   "t0": 171.77,
+   "t1": 174.68,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-seca-mulher-close.mp4",
+   "voa": true,
+   "vdur": 8.0
+  },
+  {
+   "t0": 174.68,
+   "t1": 178.9,
+   "tipo": "video",
+   "src": "midia/triste/videos/px-young-girl-collecting-water-in-rural-setting-36044137.mp4",
+   "lento": 0.6,
+   "perolas": 2.64,
+   "vdur": 7.0
+  },
+  {
+   "t0": 178.9,
+   "t1": 180.948,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-seca-pastor-animais-mortos.mp4",
+   "voa": true,
+   "lento": 0.8,
+   "vdur": 10.0
+  },
+  {
+   "t0": 180.948,
+   "t1": 182.716,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-fome-carcaca-paisagem.mp4",
+   "voa": true,
+   "vdur": 8.0
+  },
+  {
+   "t0": 182.716,
+   "t1": 184.485,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-queuing-for-registration-in-the-heat-of-the-s-bbd112.jpg"
+  },
+  {
+   "t0": 184.485,
+   "t1": 186.532,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-fome-hospital-e-galoes-de-agua.mp4",
+   "voa": true,
+   "lento": 0.7,
+   "vdur": 12.0
+  },
+  {
+   "t0": 186.532,
+   "t1": 188.394,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-extra-food-for-every-child-under-five-a46c17.jpg",
+   "ay": 0.3
+  },
+  {
+   "t0": 188.394,
+   "t1": 191.0,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-a-young-woman-waits-to-receive-uk-funded-food-eb908f.jpg",
+   "ay": 0.25
+  },
+  {
+   "t0": 191.0,
+   "t1": 201.71,
+   "tipo": "bloco",
+   "src": "Manchetes",
+   "props": {
+    "t": {
+     "cai": 4.07
+    }
+   }
+  },
+  {
+   "t0": 201.71,
+   "t1": 206.35,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-refugiados-campo-multidao.mp4",
+   "vdur": 10.0
+  },
+  {
+   "t0": 206.35,
+   "t1": 210.01,
+   "tipo": "video",
+   "src": "midia/triste/videos/korsan-campo-deslocados-tenda.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 210.01,
+   "t1": 212.73,
+   "tipo": "video",
+   "src": "midia/triste/videos/voa-refugiados-falta-de-comida.mp4",
+   "vdur": 9.0
+  },
+  {
+   "t0": 212.73,
+   "t1": 217.35,
+   "tipo": "video",
+   "src": "midia/bonito/videos/px-children-playing-with-a-tire-in-the-dirt-19749261.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 217.35,
+   "t1": 218.941,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-children-queue-for-food-aid-in-mogadishu-soma-37ab2b.jpg"
+  },
+  {
+   "t0": 218.941,
+   "t1": 220.532,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-2012-11-18-amisom-mogadishu-h-5eec28.jpg",
+   "ay": 0.45
+  },
+  {
+   "t0": 220.532,
+   "t1": 222.6,
+   "tipo": "foto",
+   "src": "midia/triste/fotos/ov-fmsc-staff-trip-2011-somali-children-68b0fe.jpg",
+   "ay": 0.35
+  },
+  {
+   "t0": 222.6,
+   "t1": 225.5,
+   "tipo": "video",
+   "src": "midia/bonito/videos/px-friends-smiling-and-laughing-9305965.mp4",
+   "vdur": 8.0
+  },
+  {
+   "t0": 225.5,
+   "t1": 234.16,
+   "tipo": "bloco",
+   "src": "Atlantico",
+   "props": {
+    "t": {
+     "linha": 4.72,
+     "brasil": 7.64
+    }
+   }
+  },
+  {
+   "t0": 234.16,
+   "t1": 236.86,
+   "tipo": "bloco",
+   "src": "Globo",
+   "props": {
+    "alvo": "gira"
+   }
+  },
+  {
+   "t0": 236.56,
+   "t1": 250.79,
+   "tipo": "bloco",
+   "src": "AfricaPais",
+   "props": {
+    "comAudio": false,
+    "modo": "final",
+    "t": {
+     "n54": 4.82,
+     "f1": 7.62,
+     "so": 9.43,
+     "fim": 9.73
+    }
+   }
+  },
+  {
+   "t0": 250.79,
+   "t1": 290.13,
+   "tipo": "bloco",
+   "src": "Final",
+   "props": {
+    "creditos": 27.84,
+    "frase": 21.34,
+    "mlk": 3.74,
+    "total": 39.34
+   }
+  },
+  {
+   "t0": 254.53,
+   "t1": 272.43,
+   "tipo": "bloco",
+   "src": "Sonho",
+   "props": {
+    "voz": 0.6,
+    "dur": 17.900000000000002
+   }
+  }
+ ],
+ "legendas": [
+  {
+   "t0": 5.1,
+   "t1": 6.97,
+   "txt": "Quando você pensa em África,"
+  },
+  {
+   "t0": 7.04,
+   "t1": 8.49,
+   "txt": "o que vem à cabeça?"
+  },
+  {
+   "t0": 8.88,
+   "t1": 9.49,
+   "txt": "Fome?"
+  },
+  {
+   "t0": 9.56,
+   "t1": 10.29,
+   "txt": "Guerra?"
+  },
+  {
+   "t0": 10.36,
+   "t1": 12.13,
+   "txt": "A África não é um país."
+  },
+  {
+   "t0": 12.55,
+   "t1": 16.35,
+   "txt": "São 54 países com mais de mil línguas."
+  },
+  {
+   "t0": 21.86,
+   "t1": 24.669999999999998,
+   "txt": "No Chifre da África, de frente para o"
+  },
+  {
+   "t0": 24.74,
+   "t1": 26.77,
+   "txt": "oceano Índico, fica um deles,"
+  },
+  {
+   "t0": 26.84,
+   "t1": 28.05,
+   "txt": "a Somália."
+  },
+  {
+   "t0": 28.12,
+   "t1": 31.03,
+   "txt": "Na bandeira, uma estrela de cinco pontas."
+  },
+  {
+   "t0": 31.1,
+   "t1": 34.29,
+   "txt": "Cada uma é uma terra do povo somali."
+  },
+  {
+   "t0": 35.24,
+   "t1": 37.91,
+   "txt": "São 19 milhões de pessoas,"
+  },
+  {
+   "t0": 37.98,
+   "t1": 41.17,
+   "txt": "um povo negro, de véus coloridos,"
+  },
+  {
+   "t0": 41.24,
+   "t1": 44.21,
+   "txt": "uma só língua e fé muçulmana."
+  },
+  {
+   "t0": 44.97,
+   "t1": 47.94,
+   "txt": "Muitos vivem como pastores de camelo."
+  },
+  {
+   "t0": 50.09,
+   "t1": 52.08,
+   "txt": "É chamada de nação de poetas,"
+  },
+  {
+   "t0": 52.15,
+   "t1": 54.88,
+   "txt": "tem praias brancas, mercados cheios e"
+  },
+  {
+   "t0": 54.95,
+   "t1": 57.16,
+   "txt": "portos que negociam com a Arábia e a Índia"
+  },
+  {
+   "t0": 57.23,
+   "t1": 57.94,
+   "txt": "há séculos."
+  },
+  {
+   "t0": 59.0,
+   "t1": 61.09,
+   "txt": "Mas não é isso que chega até nós."
+  },
+  {
+   "t0": 63.04,
+   "t1": 65.27000000000001,
+   "txt": "No fim do século dezenove,"
+  },
+  {
+   "t0": 65.34,
+   "t1": 68.17,
+   "txt": "os europeus cortaram esse povo em pedaços."
+  },
+  {
+   "t0": 68.24,
+   "t1": 70.89,
+   "txt": "Britânico, italiano, francês e dois que"
+  },
+  {
+   "t0": 70.96,
+   "t1": 73.29,
+   "txt": "acabaram com a Etiópia e o Quênia."
+  },
+  {
+   "t0": 73.36,
+   "t1": 75.99,
+   "txt": "São as cinco pontas daquela estrela."
+  },
+  {
+   "t0": 77.29,
+   "t1": 79.92,
+   "txt": "Em 1960 veio a independência."
+  },
+  {
+   "t0": 79.99,
+   "t1": 84.30000000000001,
+   "txt": "Em 1969, o ditador Siad Barre tomou o"
+  },
+  {
+   "t0": 84.37,
+   "t1": 84.76,
+   "txt": "poder."
+  },
+  {
+   "t0": 84.83,
+   "t1": 87.42,
+   "txt": "Na Guerra Fria, soviéticos e americanos"
+  },
+  {
+   "t0": 87.49,
+   "t1": 88.78,
+   "txt": "encheram o país de armas."
+  },
+  {
+   "t0": 89.41,
+   "t1": 92.84,
+   "txt": "Em 1991, a ditadura caiu e o Estado"
+  },
+  {
+   "t0": 92.91,
+   "t1": 94.12,
+   "txt": "desmoronou junto."
+  },
+  {
+   "t0": 95.82,
+   "t1": 99.69000000000001,
+   "txt": "Clãs disputaram cada rua e a fome de 1992"
+  },
+  {
+   "t0": 99.76,
+   "t1": 102.97000000000001,
+   "txt": "matou centenas de milhares."
+  },
+  {
+   "t0": 103.04,
+   "t1": 106.01,
+   "txt": "A ONU e os americanos vieram,"
+  },
+  {
+   "t0": 106.08,
+   "t1": 110.09,
+   "txt": "mas em 1993 foram embora e o mundo"
+  },
+  {
+   "t0": 110.16,
+   "t1": 111.43,
+   "txt": "desligou a câmera."
+  },
+  {
+   "t0": 117.49,
+   "t1": 119.88000000000001,
+   "txt": "No vazio, cresceu o Al-Shabaab,"
+  },
+  {
+   "t0": 119.95,
+   "t1": 122.10000000000001,
+   "txt": "um grupo extremista que usa a religião"
+  },
+  {
+   "t0": 122.17,
+   "t1": 123.14,
+   "txt": "como uma arma."
+  },
+  {
+   "t0": 123.21,
+   "t1": 126.14,
+   "txt": "Em 2017, um caminhão-bomba matou mais de"
+  },
+  {
+   "t0": 126.21,
+   "t1": 127.98,
+   "txt": "500 pessoas na capital."
+  },
+  {
+   "t0": 128.36,
+   "t1": 130.69,
+   "txt": "As maiores vítimas são os próprios"
+  },
+  {
+   "t0": 130.76,
+   "t1": 132.35,
+   "txt": "muçulmanos somalis."
+  },
+  {
+   "t0": 133.5,
+   "t1": 137.31,
+   "txt": "Dito tudo isso, só em 2012 voltou a"
+  },
+  {
+   "t0": 137.38,
+   "t1": 139.95000000000002,
+   "txt": "existir um governo que ainda não controla"
+  },
+  {
+   "t0": 140.02,
+   "t1": 141.13,
+   "txt": "o país inteiro."
+  },
+  {
+   "t0": 141.2,
+   "t1": 144.39000000000001,
+   "txt": "No mar, barcos estrangeiros pescavam"
+  },
+  {
+   "t0": 144.46,
+   "t1": 148.21,
+   "txt": "ilegalmente e parte dos pescadores virou"
+  },
+  {
+   "t0": 148.28,
+   "t1": 149.27,
+   "txt": "pirata."
+  },
+  {
+   "t0": 150.72,
+   "t1": 151.67000000000002,
+   "txt": "E tem a seca."
+  },
+  {
+   "t0": 151.74,
+   "t1": 155.21,
+   "txt": "Em 2011, a fome matou mais de 250 mil"
+  },
+  {
+   "t0": 155.28,
+   "t1": 157.23,
+   "txt": "pessoas, metade crianças."
+  },
+  {
+   "t0": 157.54,
+   "t1": 160.33,
+   "txt": "Hoje, milhões vivem deslocados no próprio"
+  },
+  {
+   "t0": 160.4,
+   "t1": 161.03,
+   "txt": "país."
+  },
+  {
+   "t0": 162.18,
+   "t1": 164.27,
+   "txt": "Pensa numa mulher somali,"
+  },
+  {
+   "t0": 164.34,
+   "t1": 166.87,
+   "txt": "ela anda quilômetros atrás de água com o"
+  },
+  {
+   "t0": 166.94,
+   "t1": 169.39000000000001,
+   "txt": "filho no colo, enterra quem ama e,"
+  },
+  {
+   "t0": 169.46,
+   "t1": 171.27,
+   "txt": "no outro dia, recomeça."
+  },
+  {
+   "t0": 171.77,
+   "t1": 174.61,
+   "txt": "É dela que a Sade canta, uma mulher que"
+  },
+  {
+   "t0": 174.68,
+   "t1": 177.25,
+   "txt": "junta grãos na estrada como quem junta"
+  },
+  {
+   "t0": 177.32,
+   "t1": 178.15,
+   "txt": "pérolas."
+  },
+  {
+   "t0": 191.15,
+   "t1": 193.52,
+   "txt": "A gente vê imagens e conclui,"
+  },
+  {
+   "t0": 193.59,
+   "t1": 196.54000000000002,
+   "txt": "a África é assim, mas ninguém conta das"
+  },
+  {
+   "t0": 196.61,
+   "t1": 199.22,
+   "txt": "fronteiras, das armas e das câmeras que"
+  },
+  {
+   "t0": 199.29,
+   "t1": 200.36,
+   "txt": "vieram de fora."
+  },
+  {
+   "t0": 201.71,
+   "t1": 205.44,
+   "txt": "Refugiados somalis sofrem xenofobia pelo"
+  },
+  {
+   "t0": 205.51,
+   "t1": 208.32,
+   "txt": "mundo inteiro e dentro do país,"
+  },
+  {
+   "t0": 208.39,
+   "t1": 211.54000000000002,
+   "txt": "os bantu somalis, muitos descendentes de"
+  },
+  {
+   "t0": 211.61,
+   "t1": 215.92000000000002,
+   "txt": "escravizados, são discriminados a"
+  },
+  {
+   "t0": 215.99,
+   "t1": 216.8,
+   "txt": "gerações."
+  },
+  {
+   "t0": 222.6,
+   "t1": 224.75,
+   "txt": "Quando a África só aparece pela guerra e"
+  },
+  {
+   "t0": 224.82,
+   "t1": 226.81,
+   "txt": "pela fome, a gente aprende a ver pessoas"
+  },
+  {
+   "t0": 226.88,
+   "t1": 229.57,
+   "txt": "negras como problema, não como povo com"
+  },
+  {
+   "t0": 229.64,
+   "t1": 230.15,
+   "txt": "história."
+  },
+  {
+   "t0": 230.22,
+   "t1": 233.21,
+   "txt": "É o mesmo olhar que o racismo usa aqui no"
+  },
+  {
+   "t0": 233.28,
+   "t1": 233.81,
+   "txt": "Brasil."
+  },
+  {
+   "t0": 236.56,
+   "t1": 239.85,
+   "txt": "Da próxima vez que você pensar na África,"
+  },
+  {
+   "t0": 239.92,
+   "t1": 245.31,
+   "txt": "lembra, são 54 países e cada um tem nome."
+  },
+  {
+   "t0": 245.68,
+   "t1": 248.12,
+   "txt": "A Somália não é só guerra,"
+  },
+  {
+   "t0": 248.19,
+   "t1": 253.18,
+   "txt": "é gente e toda gente merece ser vista."
+  }
+ ],
+ "creditos_ini": 278.63,
+ "nomes": [
+  {
+   "nome": "Vítor",
+   "t": 5.1
+  },
+  {
+   "nome": "Maria Eduarda",
+   "t": 21.86
+  },
+  {
+   "nome": "Anna Augusta",
+   "t": 35.24
+  },
+  {
+   "nome": "Luísa",
+   "t": 50.09
+  },
+  {
+   "nome": "Urley",
+   "t": 63.04
+  },
+  {
+   "nome": "Yago",
+   "t": 77.14
+  },
+  {
+   "nome": "Daniel",
+   "t": 95.67
+  },
+  {
+   "nome": "José",
+   "t": 222.6
+  }
+ ]
+}

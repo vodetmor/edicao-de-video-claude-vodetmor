@@ -12,7 +12,16 @@ export const DUR_GLOBO = s(10);
 const W = 1920, H = 1080;
 let TEX: {d: Uint8ClampedArray; w: number; h: number} | null = null;
 
-const estado = (f: number) => {
+type Alvo = 'somalia' | 'africa' | 'gira';
+const estado = (f: number, alvo: Alvo = 'somalia') => {
+  if (alvo === 'gira') return {lon: -30 + f * 0.12, lat: 6, R: 360, cx: W / 2, cy: H / 2, mergulho: 0};
+  if (alvo === 'africa') {
+    // abertura: gira e aproxima até a África ficar do tamanho da silhueta da cena seguinte
+    const gira = prog(f, 0, s(2.8), (t) => t);
+    const m = prog(f, s(1.6), s(4.9), cam);
+    const lon = interpolate(gira, [0, 1], [-40, -12]) + m * (17 - (-12));
+    return {lon, lat: interpolate(m, [0, 1], [8, 2]), R: 330 * Math.pow(800 / 330, m), cx: W / 2, cy: interpolate(m, [0, 1], [H / 2, 520]), mergulho: m};
+  }
   const gira = prog(f, 0, s(3.2), (t) => t);            // giro inicial lento
   const mergulho = prog(f, s(2.6), s(7.4), cam);         // vira para o Chifre e desce
   const lon = interpolate(gira, [0, 1], [-38, -8]) + mergulho * (g.somaliaPolo[0] - 2 - (-8));
@@ -22,7 +31,7 @@ const estado = (f: number) => {
   return {lon, lat, R, cx, cy: H / 2, mergulho};
 };
 
-export const Globo: React.FC<{frase?: string}> = ({frase = 'Pense na África.'}) => {
+export const Globo: React.FC<{frase?: string; alvo?: Alvo}> = ({frase = 'Pense na África.', alvo = 'somalia'}) => {
   const f = useCurrentFrame();
   const ref = useRef<HTMLCanvasElement>(null);
   const [h] = useState(() => (TEX ? null : delayRender('textura')));
@@ -39,7 +48,8 @@ export const Globo: React.FC<{frase?: string}> = ({frase = 'Pense na África.'})
       if (h !== null) setTimeout(() => continueRender(h), 0);
     };
   }, []);
-  const st = estado(f);
+  const st = estado(f, alvo);
+  const soma = alvo === 'somalia';
   useLayoutEffect(() => {
     if (!TEX || !ref.current) return;
     const ctx = ref.current.getContext('2d')!;
@@ -79,16 +89,16 @@ export const Globo: React.FC<{frase?: string}> = ({frase = 'Pense na África.'})
   const proj = geoOrthographic().rotate([-st.lon, -st.lat]).scale(st.R).translate([st.cx, st.cy]).clipAngle(90);
   const path = geoPath(proj);
   const lw = 1;
-  const somIn = prog(f, s(5.2), s(6.4));
+  const somIn = soma ? prog(f, s(5.2), s(6.4)) : 0;
   const somFill = prog(f, s(6.6), s(7.4));
   const pol = proj(g.somaliaPolo as [number, number]);
   const est = f >= s(7.1) ? approach(f, s(7.1), 0, 1, 0.16) : 0;
-  const texto = prog(f, s(0.6), s(1.4)) * (1 - prog(f, s(2.4), s(3.0)));
-  const nome = prog(f, s(7.6), s(8.6));
-  const fundo = 1 - 0.55 * prog(f, s(6.4), s(7.6)); // satélite escurece quando a Somália ganha a bandeira
+  const texto = alvo === 'gira' ? 0 : prog(f, s(0.6), s(1.4)) * (1 - prog(f, s(2.4), s(3.0)));
+  const nome = soma ? prog(f, s(7.6), s(8.6)) : 0;
+  const fundo = soma ? 1 - 0.55 * prog(f, s(6.4), s(7.6)) : 1 - 0.75 * (alvo === 'africa' ? prog(f, s(4.0), s(5.0)) : 0); // satélite escurece quando a Somália ganha a bandeira
   return (
     <AbsoluteFill style={{background: T.bg}}>
-      <canvas ref={ref} width={W} height={H} style={{position: 'absolute', filter: `brightness(${fundo}) blur(${prog(f, s(6.2), s(7.6)) * 3}px)`}} />
+      <canvas ref={ref} width={W} height={H} style={{position: 'absolute', filter: `brightness(${fundo}) blur(${soma ? prog(f, s(6.2), s(7.6)) * 3 : 0}px)`}} />
       <svg width={W} height={H} style={{position: 'absolute'}}>
         <path d={path({type: 'Sphere'}) || ''} fill="none" stroke={T.papel} strokeOpacity={0.18} strokeWidth={1.2} />
         <path d={path(g.fronteiras as any) || ''} fill="none" stroke={T.papel} strokeOpacity={0.22 + 0.2 * st.mergulho} strokeWidth={lw} />

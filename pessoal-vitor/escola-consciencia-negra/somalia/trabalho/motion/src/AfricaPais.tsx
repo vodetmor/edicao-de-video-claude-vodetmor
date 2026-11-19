@@ -8,10 +8,14 @@ import {approach, prog, cam, s, hash} from './kit';
 // Tempos = início de cada palavra na transcrição do áudio limpo + OFF.
 export const OFF = 15;
 const w = (t: number) => s(t) + OFF;
-export const PAIS = {
+export const PAIS0 = {
+  // tempos da abertura (fala WA0017)
+
   fome: w(4.06), guerra: w(4.66), a: w(5.26), africa: w(5.78), pais: w(6.54),
-  sao: w(7.46), n54: w(7.76), mil: w(9.9), linguas: w(10.28), fim: w(11.1),
+  sao: w(7.46), n54: w(7.76), mil: w(9.9), linguas: w(10.28), fim: w(11.1), f1: w(9.75), so: w(10.35),
 };
+type TP = typeof PAIS;
+export const PAIS = PAIS0;
 export const DUR_PAIS = PAIS.fim + s(5.6);
 
 type C = typeof geo.countries[number];
@@ -22,9 +26,10 @@ const ordem = geo.countries
   .filter(c => c.iso && c.iso !== 'so')
   .map(c => ({c, d: Math.hypot(c.label[0] - 900, c.label[1] - 560) + hash(c.label[0]) * 60}))
   .sort((a, b) => a.d - b.d).map(o => o.c);
-const F0 = PAIS.n54, F1 = w(9.75);
-const quando = new Map<string, number>(ordem.map((c, i) => [c.iso!, F0 + Math.round((i / (ordem.length - 1)) * (F1 - F0))]));
-quando.set('so', w(10.35));
+const fazQuando = (P: TP) => {
+  const q = new Map<string, number>(ordem.map((c, i) => [c.iso!, P.n54 + Math.round((i / (ordem.length - 1)) * (P.f1 - P.n54))]));
+  q.set('so', P.so); return q;
+};
 
 // ponto da "?": na ponta do Chifre (51,3 L · 11,8 N) empurrada para o mar
 const Q = {x: 1328, y: 365};
@@ -48,11 +53,17 @@ const Palavra: React.FC<{txt: string; x: number; y: number; ini: number; fim: nu
   );
 };
 
-export const AfricaPais: React.FC<{comAudio?: boolean}> = ({comAudio = true}) => {
-  const f = useCurrentFrame();
+export const AfricaPais: React.FC<{comAudio?: boolean; modo?: 'abertura' | 'final'; t?: Partial<Record<keyof TP, number>>}> = ({comAudio = true, modo = 'abertura', t}) => {
+  const f0 = useCurrentFrame();
+  const fin = modo === 'final';
+  // modo final: tempos em segundos vindos da linha do tempo; o resto da abertura fica fora de cena
+  const PAIS: TP = fin ? {...PAIS0, fome: 1e6, guerra: 1e6, a: 1e6, africa: 1e6, pais: 1e6, sao: -40, mil: 1e6, linguas: 1e6,
+    ...Object.fromEntries(Object.entries(t || {}).map(([k, v]) => [k, s(v as number)]))} as TP : PAIS0;
+  const quando = React.useMemo(() => fazQuando(PAIS), [JSON.stringify(PAIS)]);
+  const f = f0;
   // câmera: deriva lenta (nunca congela) e depois mergulha na Somália
   const z0 = 1 + f * 0.0006;
-  const zPush = prog(f, PAIS.fim + s(1.0), PAIS.fim + s(4.2), cam);
+  const zPush = fin ? 0 : prog(f, PAIS.fim + s(1.0), PAIS.fim + s(4.2), cam);
   const [sx0, sy0, sx1, sy1] = somalia.bbox;
   const zT = 3.4;
   const cx = interpolate(zPush, [0, 1], [mx, (sx0 + sx1) / 2 - 20]);
@@ -71,7 +82,7 @@ export const AfricaPais: React.FC<{comAudio?: boolean}> = ({comAudio = true}) =>
   const contador = Math.min(54, nShown);
   const painel = prog(f, PAIS.n54 - 2, PAIS.n54 + 12) * (1 - prog(f, PAIS.fim + s(1.0), PAIS.fim + s(1.8)));
   const linguas = prog(f, PAIS.mil, PAIS.mil + 14);
-  const nome = prog(f, PAIS.fim + s(3.4), PAIS.fim + s(4.6));
+  const nome = fin ? 0 : prog(f, PAIS.fim + s(3.4), PAIS.fim + s(4.6));
   const lw = 1 / z; // linhas finas com qualquer zoom
 
   return (

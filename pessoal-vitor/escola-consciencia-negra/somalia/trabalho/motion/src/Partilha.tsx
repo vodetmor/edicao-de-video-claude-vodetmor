@@ -8,13 +8,14 @@ import {Grao} from './AfricaPais';
 // "Os europeus cortaram esse povo em pedaços": mapa real de 1884 (Ravenstein) -> terra somali inteira com a estrela
 // -> cada ponta da estrela voa para uma das 5 partes e a régua risca a fronteira.
 // Tempos provisórios (fala do Urley ainda não chegou): trocar por início de palavra quando chegar.
-export const TP = {
+export const TP0 = {
   dissolve: s(3.4), britanico: s(5.0), italiano: s(6.2), frances: s(7.3), etiopia: s(8.9), quenia: s(10.0), pontas: s(11.6), fim: s(14),
 };
-export const DUR_PARTILHA = TP.fim;
+export const TP = TP0;
+export const DUR_PARTILHA = TP0.fim;
 const P = {papel: '#E6DAC3', papelEsc: '#CDBB98', tinta: '#4A3626', tintaMeio: 'rgba(74,54,38,0.55)'};
 const R = geo.regions as Record<string, {d: string; c: number[]; bbox: number[]}>;
-const partes = [
+const partesDe = (TP: typeof TP0) => [
   {k: 'britanica', t: TP.britanico, nome: 'BRITÂNICA', ano: '1884', ang: 0, off: [60, -48]},
   {k: 'italiana', t: TP.italiano, nome: 'ITALIANA', ano: '1889', ang: 1, off: [52, 30]},
   {k: 'francesa', t: TP.frances, nome: 'FRANCESA', ano: '1883', ang: 4, off: [-70, -8]},
@@ -29,8 +30,10 @@ const ponta = (k: number, Rr: number) => {
   return [[Rr * Math.cos(a), Rr * Math.sin(a)], [r * Math.cos(b1), r * Math.sin(b1)], [r * Math.cos(b2), r * Math.sin(b2)]];
 };
 
-export const Partilha: React.FC = () => {
+export const Partilha: React.FC<{t?: Partial<Record<keyof typeof TP0, number>>}> = ({t}) => {
   const f = useCurrentFrame();
+  const TP = t ? {...TP0, ...Object.fromEntries(Object.entries(t).map(([k, v]) => [k, s(v as number)]))} as typeof TP0 : TP0;
+  const partes = partesDe(TP);
   // 1) mapa de 1884: push lento em direção ao Chifre
   const velho = 1 - prog(f, TP.dissolve, TP.dissolve + 18);
   const pv = prog(f, 0, TP.dissolve + 18, cam);

@@ -37,12 +37,13 @@ export const Ficha: React.FC = () => {
 };
 
 // Linha do tempo + mapa que racha (Yago)
-export const Tempo: React.FC = () => {
+export const Tempo: React.FC<{t?: {t1960: number; t1969: number; t1991: number; racha: number}}> = ({t = {t1960: 0.4, t1969: 2.5, t1991: 4.6, racha: 6.2}}) => {
   const f = useCurrentFrame();
   const marcos = [['1960', 'independência'], ['1969', 'Siad Barre toma o poder'], ['1991', 'o Estado desmorona']];
-  const racha = prog(f, s(6.2), s(7.4), cam);
+  const tm = [t.t1960, t.t1969, t.t1991];
+  const racha = prog(f, s(t.racha), s(t.racha + 1.2), cam);
   const [x0, y0, x1, y1] = somalia.bbox; const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2; const z = 4.4;
-  const linha = prog(f, 4, s(6.0), (t) => t);
+  const linha = prog(f, 4, s(t.t1991 + 0.6), (x) => x);
   // pedaços: o mapa é cortado por 7 linhas e cada pedaço se afasta
   const peda = Array.from({length: 7}, (_, i) => i);
   return (
@@ -60,7 +61,7 @@ export const Tempo: React.FC = () => {
       <div style={{position: 'absolute', left: 130, top: 250, width: 640}}>
         <div style={{position: 'absolute', left: 9, top: 20, width: 2, height: 520 * linha, background: T.papelMeio}} />
         {marcos.map(([a, b], i) => {
-          const t0 = s(0.4 + i * 2.1);
+          const t0 = s(tm[i]);
           const o = prog(f, t0, t0 + 10), y = approach(f, t0, 26, 0, 0.17);
           return (
             <div key={i} style={{opacity: o, transform: `translateY(${y}px)`, position: 'relative', paddingLeft: 52, marginBottom: 70}}>
@@ -77,18 +78,18 @@ export const Tempo: React.FC = () => {
 };
 
 // Atentado de 14/10/2017 (Maria Eduarda): data seca, número devagar e fica
-export const Atentado: React.FC = () => {
+export const Atentado: React.FC<{t?: {data: number; num: number}}> = ({t = {data: 0.3, num: 1.6}}) => {
   const f = useCurrentFrame();
-  const n = Math.round(interpolate(prog(f, s(1.6), s(4.2), (t) => 1 - Math.pow(1 - t, 3)), [0, 1], [0, 500]));
-  const data = f >= s(0.3);
+  const n = Math.round(interpolate(prog(f, s(t.num), s(t.num + 2.4), (x) => 1 - Math.pow(1 - x, 3)), [0, 1], [0, 500]));
+  const data = f >= s(t.data);
   return (
     <AbsoluteFill style={{background: T.bg, alignItems: 'center', justifyContent: 'center'}}>
       <div style={{textAlign: 'center', transform: `scale(${1 + f * 0.0006})`}}>
         <div style={{fontFamily: T.sans, fontWeight: 600, fontSize: 34, letterSpacing: '0.34em', color: T.papel, opacity: data ? 1 : 0}}>MOGADÍSCIO · 14/10/2017</div>
-        <div style={{fontFamily: T.serif, fontSize: 300, lineHeight: 1, color: T.papel, marginTop: 24, opacity: prog(f, s(1.4), s(1.8)), fontVariantNumeric: 'tabular-nums'}}>
+        <div style={{fontFamily: T.serif, fontSize: 300, lineHeight: 1, color: T.papel, marginTop: 24, opacity: prog(f, s(t.num - 0.2), s(t.num + 0.2)), fontVariantNumeric: 'tabular-nums'}}>
           {n}{n >= 500 ? <span style={{color: T.azul}}>+</span> : null}
         </div>
-        <div style={{fontFamily: T.serif, fontStyle: 'italic', fontSize: 50, color: T.papel, opacity: prog(f, s(4.4), s(5.2))}}>pessoas mortas por um caminhão-bomba</div>
+        <div style={{fontFamily: T.serif, fontStyle: 'italic', fontSize: 50, color: T.papel, opacity: prog(f, s(t.num + 2.6), s(t.num + 3.3))}}>pessoas mortas por um caminhão-bomba</div>
       </div>
       <Grao />
     </AbsoluteFill>
@@ -96,12 +97,12 @@ export const Atentado: React.FC = () => {
 };
 
 // Seca de 2011 (Luisa): 1 ponto = 1.000 pessoas; contador até 250.000 e metade (crianças) marcada
-export const Seca: React.FC = () => {
+export const Seca: React.FC<{t?: {ini: number; cheio: number; metade: number}}> = ({t = {ini: 0.5, cheio: 4.0, metade: 5.0}}) => {
   const f = useCurrentFrame();
   const N = 250, cols = 25;
-  const cheio = prog(f, s(0.5), s(4.0), (t) => t);
+  const cheio = prog(f, s(t.ini), s(t.cheio), (x) => x);
   const vis = Math.floor(cheio * N);
-  const metade = prog(f, s(5.0), s(6.4));
+  const metade = prog(f, s(t.metade), s(t.metade + 1.0));
   return (
     <AbsoluteFill style={{background: T.bg}}>
       <div style={{position: 'absolute', left: 130, top: 340}}>
