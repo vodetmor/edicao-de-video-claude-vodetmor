@@ -529,3 +529,11 @@ Sempre que a narração citar outra empresa ou app (Google, Instagram, WhatsApp,
 - Globo de satélite sem WebGL: inversa ortográfica pixel a pixel num `<canvas>` (textura equiretangular NASA 3840 px via thumb do Wikimedia) + fronteiras d3 `geoOrthographic` com os MESMOS rotate/scale/translate por cima. ~0,3 s/quadro em 1080p. No mergulho, a textura borra perto de 10x: escurecer e desfocar o satélite quando a forma vetorial (bandeira) assume.
 - Canvas no Remotion: desenhar em `useLayoutEffect` com dependência `[frame, pronto]` e só liberar o `delayRender` depois do `setPronto`, senão o still sai sem a textura.
 - Mapa histórico raster + vetor: push lento no mapa real (1884) até a região e dissolver para o vetor sépia na mesma área; não tentar georreferenciar o raster.
+
+### Mix: loudnorm de uma passada destrói o ducking (Somália, 2026-11-18)
+- `loudnorm` do ffmpeg em uma passada é DINÂMICO: sobe as pausas e a música da intro ficou em -12 LUFS (mais alta que a voz). Para master final use ganho linear calculado (medir I com ebur128, `volume=XdB`) + `alimiter`, ou loudnorm em duas passadas com `linear=true`.
+- Música muito dinâmica (ex.: Sade "Pearls", voz a capela forte e trechos vazios): passar antes por um nivelador lento (RMS em janela de 3 s, limite ±9 dB) para a cama ficar constante; só depois aplicar o ducking pela voz.
+
+### Vozes de várias pessoas: mesma limpeza e mesmo volume (Somália, 2026-11-19)
+- Vítor achou a voz dele "inaudível" perto da Luísa e as outras com ruído. Causa: `loudnorm` de uma passada na limpeza (sobe o ruído nas pausas) e diferenças de 1,5 a 2 dB entre falas. Padrão agora: 2ª passada DeepFilterNet3 sem limite, EQ (passa-alta 90, -2 dB em 300 Hz, +3 dB em 3,2 kHz), compressor 3:1, gate suave, ganho LINEAR até -16 LUFS e limitador. Medir antes/depois (LUFS, fala p50, ruído p8) e mostrar a tabela.
+- Música com letra: alinhar a letra com whisper large-v3 usando a letra como initial_prompt (achou os tempos de cada verso de "Pearls"). Refrões/clímax da música = momentos SEM fala, só imagens fortes ligadas ao que acabou de ser dito; a música sobe +3 dB ali. Encaixar a fala anterior para terminar logo antes do clímax (ex.: "como quem junta pérolas" -> "Hallelujah").
