@@ -43,3 +43,24 @@ K11 quatro passos · K12 capa final: foto + nome + lema.
 - Logo oficial e 3 a 5 fotos da clínica/da Dra. (Ruan); nome da clínica, se houver além do nome dela; cidade.
 - OK para citar a Central do Espeto como prova (o roteiro diz só "um restaurante em Sobradinho").
 - Quadros-chave aprovados antes do render.
+
+## Produção (20/11/2026 00:10) — ENTREGUE v1
+- Voz: `trabalho/voz/locucao-ana-dias.mp3` (ElevenLabs, 115,7 s, -19,6 LUFS) + `locucao-ana-dias.palavras.json` (Groq, tempo por palavra). Os tempos das cenas estão em segundos em `trabalho/fonte/src/Video.tsx` (`SC`) e em `audio/audio.py`.
+- Vídeo: `video-institucional-dra-aline.mp4` (1080x1920, 30 fps, 117 s, 9,4 MB, -14,0 LUFS, -1,8 dBTP). Cabe no WhatsApp; não precisa de versão separada para celular.
+- 14 cenas (K01 relógio 2h + Instagram · K02 sem resposta · K03 quem responde primeiro · K04 contador "ilustração" · K05 duas peças · K06 robô · K07 passa para a Doutora · K08 painel CRM · K09 agenda/pacientes/retornos/lembretes · K10 papel vira tela · K11 prova · K12 caminho · K13 menos/mais · K14 fecho). Identidade do site dela (creme, areia, marrom, bronze, Jost). A foto no fecho e no avatar é cortada só no rosto (o tablet da foto original mostra um procedimento).
+- Som: trilha original sintetizada em Fá maior 84 BPM (pad, marimba, baixo) + efeitos nas palavras; música ~20 dB abaixo da voz, volta nas pausas.
+
+## Refazer
+```
+# node_modules: junction para o do motor (sem npm i): powershell New-Item -ItemType Junction -Path trabalho\fonte\node_modules -Target ..\..\..\..\estudio\motor\node_modules
+cd trabalho/fonte && python audio/audio.py                       # -> trabalho/render/audio.wav (-14 LUFS)
+node node_modules/@remotion/cli/remotion-cli.js render src/index.ts Aline ../render/mudo.mp4 --codec=h264 --crf=18 --concurrency=2 --pixel-format=yuv420p
+ffmpeg -i ../render/mudo.mp4 -i ../render/audio.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart ../../video-institucional-dra-aline.mp4
+node stills.mjs ../render/s <quadros...>                          # quadros-chave; python ../render/folha.py <pasta> folha.jpg 4 faz a folha de contato
+```
+Render de 3.510 quadros leva ~4 min neste PC (concurrency 2). Fonte Jost em `public/fontes/` (baixada do fontsource), logos reais (WhatsApp, Instagram) em `public/img/`.
+
+## Pendente / ideias
+- Trocar "um restaurante em Sobradinho" pelo nome Central do Espeto se o cliente autorizar (precisa regravar essa frase).
+- Se vierem logo oficial e fotos da clínica, entram nas cenas K01/K14.
+- Aprovação do Vítor e do Ruan; crítica independente por uma sessão nova (alvo >= 8/10) ainda não feita (revisão minha dos quadros: ok).
