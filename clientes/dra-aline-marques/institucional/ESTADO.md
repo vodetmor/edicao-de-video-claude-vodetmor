@@ -23,14 +23,14 @@ Fundo creme (oklch 98,5% .012 78), areia/dourado suave (oklch 78% .06 65), marro
 Filtro de gosto: sem gradiente, sem brilho, sem vidro; squircles, molas, uma cor de destaque; logos reais (WhatsApp, Google) em SVG.
 
 ## Roteiro
-`ROTEIRO-ELEVENLABS.txt`: 1.592 caracteres, ~117 s no ritmo da Ana Dias. "CRM" está escrito "cê erre ême" para a voz ler certo (na tela aparece CRM).
-Estrutura: gancho com o lema dela -> problema (resposta rápida) -> robô -> painel/CRM -> administração no papel virando tela -> prova (já funciona) -> caminho em 4 passos -> fecho.
+`ROTEIRO-ELEVENLABS.txt`: 1666 caracteres, ~122 s no ritmo da Ana Dias. "CRM" está escrito "cê erre ême" para a voz ler certo (na tela aparece CRM).
+Estrutura: gancho com cena (2 da manhã, mensagem sem resposta; v2, 19/11, o Vítor não gostou da abertura com o lema) -> problema (resposta rápida) -> robô -> painel/CRM -> administração no papel virando tela -> prova (já funciona) -> caminho em 4 passos -> fecho com o lema dela ("Beleza com estratégia... agora também no atendimento").
 
 ## Storyboard (9:16, 1080x1920, 30 fps, cenas presas à palavra)
-K01 capa (foto + nome + lema) · K02 "muito mais gente": mensagens chegando no WhatsApp · K03 relógio 24 h (madrugada, sábado, domingo) · K04 as duas peças (dois cartões) ·
+K01 relógio 2h da manhã + mensagem "Quanto custa a avaliação?" no WhatsApp (sem resposta) · K02 de manhã: outra clínica respondeu · K03 "cada vez mais" (24 h, fim de semana) · K04 as duas peças (dois cartões) ·
 K05 conversa do robô (exemplo fictício, sem preço) · K06 "passa para a Dra. Aline" (quem manda é a clínica) · K07 painel CRM em colunas (Novo > Conversando > Avaliação marcada > Atendida > Retorno) ·
 K08 agenda e lembretes · K09 caderno e caneta virando tela (compras, estoque, contas) · K10 prova: robô real, todo dia, num restaurante em Sobradinho (sem nomes nem dados de cliente) ·
-K11 quatro passos · K12 fecho com o lema.
+K11 quatro passos · K12 capa final: foto + nome + lema.
 
 ## Como produzir (economia: copiar a base da MedicMais)
 1. Copiar `clientes/medicmais-sobradinho/trabalho/fonte/` para `institucional/trabalho/fonte/` (Remotion: `src/Video.tsx`, `kit.tsx`, `Root.tsx`, `cues.py`, `audio/audio.py`).
