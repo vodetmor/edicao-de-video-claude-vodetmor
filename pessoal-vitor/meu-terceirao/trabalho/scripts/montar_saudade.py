@@ -105,6 +105,7 @@ def secao(a, b, padrao, era):
 
 # ---- atos
 secao(6.5, 83.0, "ccCcccCcccCc", "antes")  # infância, ~6,4 s por página
+slides[0]["a"] = 8.4  # a capa 3D leva 8,4 s para abrir; a primeira foto entra depois
 secao(83.0, 102.0, "vv", "antes")  # instrumental: a cor volta
 secao(102.0, 168.0, "cvycvYcvgcy", "cresceu")
 secao(168.0, 186.0, "vvv", "cresceu")
@@ -169,7 +170,7 @@ for k, pc in enumerate(pedacos):
 
 # palavra "saudade" no refrão final (a única vez), lenta e grande
 destaques = [{"a": 224.5, "b": 233.0, "t": "saudade", "estilo": "colagem"}]
-eras = [{"a": 8.0, "t": "lá no começo"}, {"a": 84.0, "t": "e a gente foi crescendo"}, {"a": 203.0, "t": "hoje"}]
+eras = [{"a": 9.6, "t": "lá no começo"}, {"a": 84.0, "t": "e a gente foi crescendo"}, {"a": 203.0, "t": "hoje"}]
 
 plano = {"fps": 30, "duracao": DUR, "slides": slides, "letras": letras, "destaques": destaques, "eras": eras}
 json.dump(plano, open(f"{OBRA}/plano.json", "w", encoding="utf8"), ensure_ascii=False, indent=0)

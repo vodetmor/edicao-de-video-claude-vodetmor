@@ -4,6 +4,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, continueRender, delayRender, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'remotion';
 import {clamp, E, hash, lerp} from '../../kit';
 import plano from './plano.json';
+import {Album3D, ALBUM, DIST_TOPO} from './Album3D';
 
 const FPS = 30;
 export const DUR_SAUDADE = Math.round(plano.duracao * FPS);
@@ -240,28 +241,6 @@ const Letra: React.FC<{c: any; i: number; t: number; f: number}> = ({c, i, t, f}
   );
 };
 
-// ---------------------------------------------------------------- capa do álbum (abre no começo, fecha no fim)
-const Capa: React.FC<{ang: number; f: number; linhas: {t: string; size: number; ini: number}[]; sub?: string; subA?: number}> = ({ang, f, linhas, sub, subA = 0}) => (
-  <AbsoluteFill style={{perspective: 2600, perspectiveOrigin: '0% 50%', pointerEvents: 'none'}}>
-    <div style={{position: 'absolute', inset: 0, transformOrigin: '0% 50%', transform: `rotateY(${-ang}deg)`, transformStyle: 'preserve-3d'}}>
-      <div style={{position: 'absolute', inset: 0, backfaceVisibility: 'hidden', background: '#2a1b12', boxShadow: `0 0 ${60 + ang}px rgba(0,0,0,0.6)`}}>
-        <Img src={staticFile('saudade/papel/capa.jpg')} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(1.5) sepia(0.35) contrast(1.05)'}} />
-        <div style={{position: 'absolute', inset: 46, border: '4px dashed rgba(243,225,185,0.5)', borderRadius: 6}} />
-        <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: 70, background: 'linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0))'}} />
-        <div style={{position: 'absolute', left: '52%', top: 520, transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center'}}>
-          {linhas.map((l, k) => (
-            <PalavraColagem key={k} texto={l.t} seed={k + 5} size={l.size} f={f} inicio={l.ini} passo={2} />
-          ))}
-        </div>
-        {sub ? (
-          <div style={{position: 'absolute', left: '52%', top: 900, transform: 'translateX(-50%)', fontFamily: 'S_Caveat', fontSize: 52, color: '#f1e3c4', opacity: clamp((f - subA) / 24)}}>{sub}</div>
-        ) : null}
-      </div>
-      <div style={{position: 'absolute', inset: 0, backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', background: '#d9ccb0'}} />
-    </div>
-  </AbsoluteFill>
-);
-
 const Era: React.FC<{texto: string; a: number}> = ({texto, a}) => {
   const f = useCurrentFrame();
   const t = f / FPS;
@@ -274,8 +253,18 @@ const Era: React.FC<{texto: string; a: number}> = ({texto, a}) => {
 };
 
 // ---------------------------------------------------------------- composição
-const T_FECHA = 259;
-const T_FECHOU = 263.4;
+// álbum 3D: abre de 2,8 a 8,0 s (câmera desce até ficar de cima, igual à página 2D); fecha de 257 a 263 s
+const T_ABRE = 2.8;
+const T_ABERTO = 8.0;
+const T_3D_FIM = 9.3;
+const T_3D_VOLTA = 255.0;
+const T_FECHA = 257.0;
+const T_FECHOU = 263.0;
+
+const mix = (a: number, b: number, k: number) => a + (b - a) * k;
+const pose = (k: number, a: number[], b: number[]) => ({px: mix(a[0], b[0], k), py: mix(a[1], b[1], k), pz: mix(a[2], b[2], k), lx: mix(a[3], b[3], k), ly: mix(a[4], b[4], k), lz: mix(a[5], b[5], k)});
+const TOPO = [ALBUM.W / 2, ALBUM.BT + DIST_TOPO, 0, ALBUM.W / 2, ALBUM.BT, 0];
+const FECHADO = (t: number) => [1.7, 3.9 - (t < 10 ? t * 0.05 : 0), 2.7 - (t < 10 ? t * 0.03 : 0), 1.65, 0.1, 0.1];
 
 export const Saudade: React.FC = () => {
   carregaFontes();
@@ -283,12 +272,14 @@ export const Saudade: React.FC = () => {
   const t = f / FPS;
   const slides: any[] = plano.slides as any[];
 
-  // capa: abre de 2,2 a 6,0 s; fecha de 259 a 263,4 s
-  let ang = 0;
-  if (t < 7) ang = 172 * E.cam(clamp((t - 2.2) / 3.8));
-  else if (t > T_FECHA) ang = 172 * (1 - E.cam(clamp((t - T_FECHA) / (T_FECHOU - T_FECHA))));
-  else ang = 172;
-  const capaFim = t > T_FECHA;
+  // abertura
+  const angAbre = Math.PI * E.cam(clamp((t - T_ABRE) / (T_ABERTO - T_ABRE)));
+  const camAbre = pose(E.cam(clamp((t - 4.0) / 4.8)), FECHADO(t), TOPO);
+  const opAbre = t < T_3D_FIM ? 1 - clamp((t - 8.7) / 0.6) : 0;
+  // fecho
+  const angFecha = Math.PI * (1 - E.cam(clamp((t - T_FECHA) / (T_FECHOU - T_FECHA))));
+  const camFecha = pose(E.cam(clamp((t - 257.4) / 6.4)), TOPO, [1.7, 4.0, 2.6, 1.65, 0.1, 0.1]);
+  const opFecha = clamp((t - T_3D_VOLTA) / 0.8);
   const veuSaudade = clamp((t - 224.0) / 1.2) * (1 - clamp((t - 231.6) / 1.4));
   const preto = t < 0.8 ? 1 - clamp(t / 0.8) : clamp((t - 268.6) / 1.2);
 
@@ -314,12 +305,16 @@ export const Saudade: React.FC = () => {
           </div>
         ) : null,
       )}
-      {/* capa: abertura e fecho */}
-      {t < 7 ? (
-        <Capa ang={ang} f={f} linhas={[{t: 'aula da', size: 135, ini: 14}, {t: 'saudade', size: 190, ini: 40}]} />
+      {/* álbum 3D: abertura e fecho */}
+      {t < T_3D_FIM ? (
+        <AbsoluteFill style={{opacity: opAbre}}>
+          <Album3D f={f} ang={angAbre} cam={camAbre} linhas={[{t: 'aula da', size: 135, ini: 36, passo: 4}, {t: 'saudade', size: 190, ini: 78, passo: 4}]} />
+        </AbsoluteFill>
       ) : null}
-      {capaFim ? (
-        <Capa ang={ang} f={f} linhas={[{t: '231 e 232', size: 175, ini: T_FECHOU * FPS + 6}]} sub="La Salle Sobradinho · 2026" subA={(T_FECHOU + 3.6) * FPS} />
+      {t >= T_3D_VOLTA ? (
+        <AbsoluteFill style={{opacity: opFecha}}>
+          <Album3D f={f} ang={angFecha} cam={camFecha} usaUltima linhas={[{t: '231 e 232', size: 175, ini: Math.round(262.4 * FPS), passo: 4}]} sub="La Salle Sobradinho · 2026" subA={Math.round(265.4 * FPS)} />
+        </AbsoluteFill>
       ) : null}
       {/* grão de filme e vinheta sobre tudo */}
       <AbsoluteFill style={{backgroundImage: `url(${staticFile('saudade/grao.png')})`, backgroundSize: 512, backgroundPosition: `${hash(f, 1) * 512}px ${hash(f, 2) * 512}px`, mixBlendMode: 'overlay', opacity: 0.55, pointerEvents: 'none'}} />
