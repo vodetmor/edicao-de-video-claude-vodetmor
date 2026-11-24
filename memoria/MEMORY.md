@@ -74,4 +74,5 @@
 - [[roteiro-somalia]]: Somalia school video (script v4, Sade "Pearls", 8 speakers). 2026-11-18: full v1 (~4 min) delivered (somalia/previas/somalia-v1.mp4), credits with all 8; Maria Eduarda + Yago lines still provisional TTS.
 - STORAGE 2026-11-18: Vítor authorized deleting ANY project media (it's on his PC/GitHub); freed 10->6.9 GB.
 - [[renders-longos]]: long renders run in the cloud right away (Vítor 2026-11-19); ask again after 30 days.
-- [Material coerente](feedback-material-coerente.md) — textura do objeto de verdade, diversidade coesa, nada de papel amassado como capa
+- [[video-ruanda]]: Ruanda school group video (not his group), documentary style, modular segments; full v1 delivered 2026-11-24; no re-recordings, fix facts on screen.
+- [[feedback-transcricao-groq]]: ALWAYS transcribe with Groq API (instant); key in ruanda/trabalho/.env.
