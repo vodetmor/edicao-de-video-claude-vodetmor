@@ -38,7 +38,7 @@ Este projeto é a Máquina de Editar do Vítor (Vitor Machado Neves, "Rei da VSL
 ```
 
 ## Chaves para recriar (nunca ficam no backup)
-Pexels, Freesound, Jamendo, Pixabay, Apify (todas grátis), ElevenLabs (se usar API), cookies do X no PC (`setx TWITTER_AUTH_TOKEN ...` e `setx TWITTER_CT0 ...`). No projeto vão em `ferramentas/busca/chaves.env` ou `.env`; o `.gitignore` impede que subam.
+Pexels, Freesound, Jamendo, Pixabay, Apify, Groq (todas grátis), ElevenLabs (se usar API), cookies do X no PC (`setx TWITTER_AUTH_TOKEN ...` e `setx TWITTER_CT0 ...`). No projeto vão em `ferramentas/busca/chaves.env` ou `.env`; o `.gitignore` impede que subam.
 
 ## Conferir que deu certo
 Pergunte ao Claude novo: "como você deve falar comigo e qual é o nosso método?". Ele deve responder sem lista das suas ideias, citar o VSL Play v6 como padrão-ouro e o portão de quadros-chave. Se não souber, peça para ele ler `COMO-TRABALHAR-COM-O-VITOR.md`.
