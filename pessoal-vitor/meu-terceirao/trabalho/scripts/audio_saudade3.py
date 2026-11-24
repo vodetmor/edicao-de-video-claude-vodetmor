@@ -16,7 +16,7 @@ P = json.load(open(f"{MOTOR}/src/obras/saudade/plano3.json", encoding="utf8"))
 DUR = P["duracao"]
 FIM_MUSICA = P["musicaFim"]
 HOLDS = P["holds"]
-DUCK = 0.27  # a música abaixa assim enquanto o áudio do vídeo toca
+DUCK = 0.3  # a música abaixa assim enquanto o áudio do vídeo toca
 
 
 def decodifica(arq, ss=None, t=None, af=None):
@@ -71,11 +71,14 @@ for m in P["imersoes"]:
     a, b = m["a"], m["b"]
     # a música toca abaixada até a pausa (início da "hold" que fecha este vídeo)
     h = next((x for x in HOLDS if abs(x["t"] + x["d"] - b) < 0.06), None)
-    fim_duck = (h["t"] if h else b) + 0.2
+    fim_duck = (h["t"] + 0.2) if h else b + 0.8  # sem pausa: a música sobe devagar quando o vídeo termina
     i0, i1 = int((a - 0.3) * SR), int(fim_duck * SR)
     rp = int(0.45 * SR)
     seg = np.full(i1 - i0, DUCK, np.float32)
     seg[:rp] = rampa(rp, 1.0, DUCK)
+    if not h:
+        ru = min(len(seg) - rp, int(1.1 * SR))
+        seg[-ru:] = rampa(ru, DUCK, 1.0)
     duck[i0:i1] = np.minimum(duck[i0:i1], seg)
     # depois da pausa a música volta ao normal (rampa já feita no trecho); o duck não segura além do fim do vídeo
 saida *= duck[:, None]

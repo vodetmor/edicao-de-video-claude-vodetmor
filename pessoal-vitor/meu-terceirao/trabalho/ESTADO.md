@@ -199,3 +199,9 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - `montar_saudade3.py`: cada mergulho tem `E` s extras com a música em PAUSA (`holds`, tempo da música x tempo do vídeo; `S()` converte tudo), dive de 1 s antes do fade, vídeos a 1x, `EXCLUIR={"d36"}`, trechos de `triagem/videos-trecho.json` (`melhor_trecho.py`: nitidez/brilho; dv02 fixo). Duração 344 s (329 s de música + 15 s de violão com o álbum fechado).
 - `audio_saudade3.py`: música com pausas e rampas, abaixa a 27% enquanto o vídeo toca, áudio de cada vídeo (loudnorm), violão sintetizado (Karplus-Strong, tom detectado da música: si maior) + reverb, master -14 LUFS -> `previa/saudade6-audio.wav`.
 - Render: `SAUDADE_PLANO=1 python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade6-pedacos --conc 1 --orcamento 400` (repetir) e `--juntar --saida aula-da-saudade-v6`. Letra usa o tempo da música e some durante as pausas.
+
+## AULA DA SAUDADE V7: música sem pausa (24/11/2026)
+- Feedback: na V6 a música pausava e travava; o certo é a música continuar e só abaixar enquanto o áudio do vídeo toca; vídeo mais curto (~4:50); tirar o vídeo sem relevância e o repetido.
+- Fora: `b08` (só pés e chão) e `dv04` (repete a cena do `dv03`), em `VIDEOS_FORA` no `montar_saudade3.py`. Pausas (`holds`) zeradas (`extra()=0`); vídeos 4,5 s (horizontal), 5,5 s (trio), dv02 9 s; DIVE 0,8 s; hoje/cresceu e fecho reajustados. Duração 285 s (270 + 15 de violão).
+- `audio_saudade3.py`: música a 30% durante o vídeo (rampa de 0,5 s para baixo, 1,1 s para voltar), áudio do vídeo por cima, violão sintetizado no fim.
+- Render: `SAUDADE_PLANO=1 python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade7-pedacos --conc 1 --orcamento 380` (repetir) e `--juntar --saida aula-da-saudade-v7`.
