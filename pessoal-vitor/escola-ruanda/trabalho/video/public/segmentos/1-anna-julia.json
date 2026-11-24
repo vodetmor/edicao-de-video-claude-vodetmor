@@ -1,0 +1,102 @@
+{
+ "id": "anna-julia",
+ "parte": 1,
+ "total": 6,
+ "titulo": "Introdução e contexto histórico",
+ "data": "Antes de 1990",
+ "falante": "Anna Júlia",
+ "anoAtivo": 1,
+ "eventos": [
+  {
+   "tipo": "mapa",
+   "at": 0,
+   "src": "fotos/mapa-relevo.jpg",
+   "asp": 1.1404,
+   "credito": "Mapa: Wikimedia Commons, CC BY-SA 3.0",
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "foco": [
+    0.5,
+    0.5
+   ],
+   "pinos": [
+    {
+     "x": 0.573,
+     "y": 0.5,
+     "r": "Kigali, capital"
+    }
+   ]
+  },
+  {
+   "tipo": "foto",
+   "at": "A guerra foi",
+   "src": "fotos/mapa-1916-1959.jpg",
+   "credito": "Mapa colonial belga 1916–1959 · Arquivos de Ruanda, CC BY 4.0",
+   "foco": [
+    0.45,
+    0.5
+   ],
+   "zoom": [
+    1.02,
+    1.12
+   ],
+   "legendaFoto": "Ruanda foi colônia belga de 1916 a 1962"
+  },
+  {
+   "tipo": "foto",
+   "at": "De um lado",
+   "src": "fotos/habyarimana-1980.jpg",
+   "credito": "Juvénal Habyarimana, 1980 · domínio público",
+   "foco": [
+    0.62,
+    0.3
+   ],
+   "zoom": [
+    1.0,
+    1.05
+   ],
+   "legendaFoto": "Juvénal Habyarimana, presidente de 1973 a 1994",
+   "retrato": true,
+   "lado": 0.62
+  },
+  {
+   "tipo": "foto",
+   "at": "Do outro lado",
+   "src": "fotos/bandeira-fpr.png",
+   "credito": "Bandeira da FPR · domínio público",
+   "cor": true,
+   "zoom": [
+    1.0,
+    1.06
+   ]
+  },
+  {
+   "tipo": "foto",
+   "at": "liderado militarmente",
+   "src": "fotos/kagame.jpg",
+   "credito": "Paul Kagame · Wikimedia Commons, CC BY 2.0",
+   "retrato": true,
+   "lado": 0.62,
+   "foco": [
+    0.62,
+    0.3
+   ],
+   "zoom": [
+    1.0,
+    1.05
+   ],
+   "legendaFoto": "Paul Kagame, comandante da FPR (foto posterior)"
+  }
+ ],
+ "selos": [
+  {
+   "tipo": "contexto",
+   "at": "dois grandes grupos",
+   "dur": 7.5,
+   "certo": "Hutus (cerca de 85%) e tutsis (cerca de 14%). A colonização belga registrou a “etnia” na carteira de identidade a partir de 1933.",
+   "fonte": "ONU, Programa de Divulgação sobre o Genocídio em Ruanda"
+  }
+ ]
+}

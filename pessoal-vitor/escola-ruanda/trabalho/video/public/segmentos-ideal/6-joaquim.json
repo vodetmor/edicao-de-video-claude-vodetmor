@@ -1,0 +1,18 @@
+{"id":"joaquim","parte":6,"total":6,"titulo":"Consequências e conclusão","data":"1994 até hoje","falante":"Joaquim","anoAtivo":5,
+ "eventos":[
+  {"tipo":"foto","at":0,"src":"fotos/refugiados-fila.jpg","credito":"Refugiados ruandeses, 1994 · Dep. de Defesa dos EUA, domínio público","zoom":[1.02,1.12],"legendaFoto":"Refugiados ruandeses, 1994"},
+  {"tipo":"foto","at":"Milhões","src":"fotos/refugiados-goma.jpg","credito":"Campo perto de Goma, 22 ago. 1994 · Dep. de Defesa dos EUA, domínio público","zoom":[1.02,1.12],"legendaFoto":"Campo de refugiados perto de Goma (Zaire), agosto de 1994"},
+  {"tipo":"foto","at":"O Estado também","src":"fotos/refugiados-kibumba.jpg","credito":"Campo de Kibumba, Goma · Dep. de Defesa dos EUA, domínio público","zoom":[1.02,1.1]},
+  {"tipo":"foto","at":"A população precisou","src":"fotos/refugiados-familia.jpg","credito":"Família de refugiados, 1994 · Dep. de Defesa dos EUA, domínio público","zoom":[1.02,1.1]},
+  {"tipo":"doc","at":"Depois do conflito","src":"res955","fonte":"ONU · Resolução 955 · 8 nov. 1994","traducao":"[...] estabelecer um tribunal internacional com o único propósito de processar os responsáveis pelo genocídio"},
+  {"tipo":"foto","at":"Também foram desenvolvidas","src":"fotos/gacaca-1.jpg","credito":"Julgamento gacaca · Wikimedia Commons, CC BY 2.0","zoom":[1.02,1.1],"legendaFoto":"Julgamento gacaca, tribunal comunitário"},
+  {"tipo":"foto","at":"Atualmente","src":"fotos/kigali-hoje.jpg","credito":"Kigali · Faustin Nkurunziza / Pexels","cor":true,"zoom":[1.02,1.1],"legendaFoto":"Kigali hoje"},
+  {"tipo":"foto","at":"O governo investiu","src":"fotos/kigali-verde.jpg","credito":"Kigali · Faustin Nkurunziza / Pexels","cor":true,"zoom":[1.02,1.1]},
+  {"tipo":"foto","at":"memoriais","src":"fotos/memorial-kigali.jpg","credito":"Memorial do Genocídio de Kigali · CC BY-SA 3.0","cor":true,"zoom":[1.02,1.1]},
+  {"tipo":"foto","at":"Um exemplo","src":"fotos/memorial-jardim.jpg","credito":"Memorial do Genocídio de Kigali · Adam Jones, CC BY-SA 3.0","cor":true,"zoom":[1.02,1.12],"legendaFoto":"Memorial do Genocídio de Kigali"},
+  {"tipo":"foto","at":"Tudo isso","src":"fotos/kigali-colinas.jpg","credito":"Colinas de Kigali · Ana Kenk / Pexels","cor":true,"zoom":[1.02,1.14]}
+ ],
+ "selos":[
+  {"tipo":"contexto","at":"milhares","dur":6,"certo":"Cerca de 800 mil pessoas foram mortas.","fonte":"Relatório independente da ONU (S/1999/1257)"},
+  {"tipo":"contexto","at":"Milhões","dur":6,"certo":"Cerca de 2 milhões de ruandeses fugiram para países vizinhos em 1994.","fonte":"ACNUR (UNHCR)"}
+ ]}

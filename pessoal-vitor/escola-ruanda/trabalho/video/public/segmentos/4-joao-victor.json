@@ -1,0 +1,115 @@
+{
+ "id": "joao-victor",
+ "parte": 4,
+ "total": 6,
+ "titulo": "O papel da mídia e da ONU",
+ "data": "1993–1994",
+ "falante": "João Victor",
+ "anoAtivo": 4,
+ "eventos": [
+  {
+   "tipo": "foto",
+   "at": 0,
+   "src": "fotos/arquivo-ruanda-2.jpg",
+   "credito": "Arquivos de Ruanda · Wikimedia Commons, CC BY 4.0",
+   "zoom": [
+    1.02,
+    1.1
+   ],
+   "legendaFoto": "Arquivos nacionais de Ruanda"
+  },
+  {
+   "tipo": "texto",
+   "at": "Um dos principais",
+   "grande": "RTLM",
+   "pequeno": "Radio Télévision Libre des Mille Collines · 1993–1994"
+  },
+  {
+   "tipo": "doc",
+   "at": "Antes do genocídio",
+   "src": "res872b",
+   "fonte": "ONU · Resolução 872 · 5 out. 1993",
+   "traducao": "Decide estabelecer uma operação de manutenção da paz chamada Missão de Assistência das Nações Unidas para Ruanda (UNAMIR)"
+  },
+  {
+   "tipo": "doc",
+   "at": "Entretanto",
+   "src": "res912b",
+   "fonte": "ONU · Resolução 912 · 21 abr. 1994",
+   "traducao": "Decide, à luz da situação atual em Ruanda, ajustar o mandato da UNAMIR"
+  },
+  {
+   "tipo": "foto",
+   "at": "Após o assassinato",
+   "src": "fotos/belgas-memorial.jpg",
+   "credito": "Memorial dos soldados belgas, Kigali · domínio público",
+   "zoom": [
+    1.02,
+    1.1
+   ],
+   "legendaFoto": "Memorial aos 10 soldados belgas da UNAMIR mortos em 7 de abril de 1994"
+  },
+  {
+   "tipo": "doc",
+   "at": "E o número",
+   "src": "reu0422",
+   "marcas": [
+    0,
+    1
+   ],
+   "fonte": "Reuters · 22 abr. 1994",
+   "traducao": "Conselho da ONU vai reduzir a força de paz em Ruanda para 270"
+  },
+  {
+   "tipo": "doc",
+   "at": "A organização reconheceu",
+   "src": "inq1999",
+   "marcas": [
+    1
+   ],
+   "fonte": "ONU · Relatório independente · 15 dez. 1999",
+   "traducao": "[...] foi um fracasso do sistema das Nações Unidas como um todo"
+  },
+  {
+   "tipo": "texto",
+   "at": "espalhando",
+   "grande": "“Baratas”",
+   "pequeno": "era assim que a rádio chamava os tutsis"
+  },
+  {
+   "tipo": "texto",
+   "at": "A rádio chegou",
+   "grande": "Nomes e esconderijos",
+   "pequeno": "lidos no ar pela rádio"
+  },
+  {
+   "tipo": "texto",
+   "at": "Dessa forma",
+   "grande": "Mídia como arma",
+   "pequeno": "a comunicação a serviço do ódio"
+  },
+  {
+   "tipo": "texto",
+   "at": "Já a ONU",
+   "grande": "E a ONU?",
+   "pequeno": "uma atuação muito criticada"
+  }
+ ],
+ "selos": [
+  {
+   "tipo": "checagem",
+   "at": "1984",
+   "dur": 5.5,
+   "dito": "1984",
+   "certo": "1994",
+   "fonte": "o genocídio aconteceu de abril a julho de 1994"
+  },
+  {
+   "tipo": "contexto",
+   "at": "2.165",
+   "dur": 7,
+   "certo": "A força chegou a cerca de 2.500 militares. A Resolução 912 da ONU a reduziu para 270.",
+   "fonte": "ONU, Res. 912 (1994); Reuters, 22/04/1994"
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "eustaquio",
+ "parte": 5,
+ "total": 6,
+ "titulo": "O fim do conflito",
+ "data": "Julho de 1994",
+ "falante": "Eustáquio",
+ "anoAtivo": 4,
+ "eventos": [
+  {
+   "tipo": "texto",
+   "at": 0,
+   "grande": "Julho de 1994",
+   "pequeno": "a FPR toma Kigali em 4 de julho"
+  },
+  {
+   "tipo": "foto",
+   "at": "definido",
+   "src": "fotos/bandeira-fpr.png",
+   "credito": "Bandeira da FPR · domínio público",
+   "cor": true,
+   "zoom": [
+    1.0,
+    1.06
+   ]
+  },
+  {
+   "tipo": "foto",
+   "at": "liderado",
+   "src": "fotos/kagame.jpg",
+   "credito": "Paul Kagame · Wikimedia Commons, CC BY 2.0",
+   "retrato": true,
+   "lado": 0.62,
+   "foco": [
+    0.62,
+    0.3
+   ],
+   "zoom": [
+    1.0,
+    1.05
+   ],
+   "legendaFoto": "Paul Kagame, presidente de Ruanda desde 2000"
+  },
+  {
+   "tipo": "doc",
+   "at": "Essa vitória",
+   "src": "inq1999",
+   "marcas": [
+    0
+   ],
+   "fonte": "ONU · Relatório independente · 1999",
+   "traducao": "Aproximadamente 800 mil pessoas foram mortas durante o genocídio de 1994 em Ruanda"
+  }
+ ]
+}

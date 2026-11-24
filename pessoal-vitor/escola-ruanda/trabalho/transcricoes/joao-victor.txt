@@ -1,0 +1,15 @@
+[   0.0-   7.5] Durante o genocídio de Ruanda, em 1984, a mídia teve um papel muito importante na propagação do ódio e da violência.
+[   7.8-  13.5] Um dos principais exemplos foi a Rádio RTLM, conhecida como Rádio Mil Colinas,
+[  13.8-  20.4] que transmitia mensagens preconceituosas contra os tutsis, espalhando mentiras, incentivando a discriminação
+[  20.4-  24.5] e estimulando a população Hutu a participar dos assassinatos.
+[  24.5-  29.4] A rádio chegou a divulgar informações sobre onde as vítimas estavam escondidas,
+[  29.5-  33.4] facilitando a organização e a perseguição de muitas pessoas.
+[  34.3-  42.2] Nessa forma, a comunicação que deveria informar a população foi utilizada como instrumento de manipulação e incentivo à violência.
+[  42.7-  47.4] Já a ONU também teve uma atuação bastante criticada.
+[  47.9-  52.9] Antes do genocídio, a organização enviou uma missão de paz chamada UNAMIR,
+[  52.9-  58.4] com o objetivo de acompanhar o acordo de paz e ajudar a manter a estabilidade no país.
+[  59.2-  64.7] Entretanto, quando os massacres começaram, a ONU não conseguiu agir de maneira eficiente para impedir as mortes.
+[  65.0-  71.2] Após o assassinato de 10 soldados belgas que faziam parte da missão, vários países retiraram seus militares,
+[  71.2-  77.4] e o número de soldados da ONU em Ruanda caiu de aproximadamente 2.165 para apenas 270.
+[  77.9-  82.4] A organização reconheceu posteriormente que sua resposta foi insuficiente,
+[  82.9-  87.2] e que faltaram recursos e vontade política para impedir ou interromper o genocídio.

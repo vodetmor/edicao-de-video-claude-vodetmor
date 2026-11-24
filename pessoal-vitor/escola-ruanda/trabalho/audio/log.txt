@@ -1,0 +1,53 @@
+2026-11-23 22:13:24 | INFO     | DF | Running on torch 2.15.0+cpu
+2026-11-23 22:13:24 | INFO     | DF | Running on host vm
+fatal: not a git repository (or any of the parent directories): .git
+2026-11-23 22:13:24 | INFO     | DF | Loading model settings of DeepFilterNet3
+2026-11-23 22:13:24 | INFO     | DF | Initializing model `deepfilternet3`
+2026-11-23 22:13:24 | INFO     | DF | Found checkpoint /tmp/claude-0/dfm/DeepFilterNet3/checkpoints/model_120.ckpt.best with epoch 120
+2026-11-23 22:13:24 | INFO     | DF | Running on device cpu
+2026-11-23 22:13:24 | INFO     | DF | Model loaded
+2026-11-23 22:13:36 | INFO     | DF | Running on torch 2.15.0+cpu
+2026-11-23 22:13:36 | INFO     | DF | Running on host vm
+fatal: not a git repository (or any of the parent directories): .git
+2026-11-23 22:13:36 | INFO     | DF | Loading model settings of DeepFilterNet3
+2026-11-23 22:13:36 | INFO     | DF | Initializing model `deepfilternet3`
+2026-11-23 22:13:36 | INFO     | DF | Found checkpoint /tmp/claude-0/dfm/DeepFilterNet3/checkpoints/model_120.ckpt.best with epoch 120
+2026-11-23 22:13:36 | INFO     | DF | Running on device cpu
+2026-11-23 22:13:36 | INFO     | DF | Model loaded
+2026-11-23 22:13:44 | INFO     | DF | Running on torch 2.15.0+cpu
+2026-11-23 22:13:44 | INFO     | DF | Running on host vm
+fatal: not a git repository (or any of the parent directories): .git
+2026-11-23 22:13:44 | INFO     | DF | Loading model settings of DeepFilterNet3
+2026-11-23 22:13:44 | INFO     | DF | Initializing model `deepfilternet3`
+2026-11-23 22:13:44 | INFO     | DF | Found checkpoint /tmp/claude-0/dfm/DeepFilterNet3/checkpoints/model_120.ckpt.best with epoch 120
+2026-11-23 22:13:44 | INFO     | DF | Running on device cpu
+2026-11-23 22:13:44 | INFO     | DF | Model loaded
+2026-11-23 22:13:56 | INFO     | DF | Running on torch 2.15.0+cpu
+2026-11-23 22:13:56 | INFO     | DF | Running on host vm
+fatal: not a git repository (or any of the parent directories): .git
+2026-11-23 22:13:56 | INFO     | DF | Loading model settings of DeepFilterNet3
+2026-11-23 22:13:56 | INFO     | DF | Initializing model `deepfilternet3`
+2026-11-23 22:13:56 | INFO     | DF | Found checkpoint /tmp/claude-0/dfm/DeepFilterNet3/checkpoints/model_120.ckpt.best with epoch 120
+2026-11-23 22:13:56 | INFO     | DF | Running on device cpu
+2026-11-23 22:13:56 | INFO     | DF | Model loaded
+2026-11-23 22:14:07 | INFO     | DF | Running on torch 2.15.0+cpu
+2026-11-23 22:14:07 | INFO     | DF | Running on host vm
+fatal: not a git repository (or any of the parent directories): .git
+2026-11-23 22:14:07 | INFO     | DF | Loading model settings of DeepFilterNet3
+2026-11-23 22:14:07 | INFO     | DF | Initializing model `deepfilternet3`
+2026-11-23 22:14:07 | INFO     | DF | Found checkpoint /tmp/claude-0/dfm/DeepFilterNet3/checkpoints/model_120.ckpt.best with epoch 120
+2026-11-23 22:14:07 | INFO     | DF | Running on device cpu
+2026-11-23 22:14:07 | INFO     | DF | Model loaded
+2026-11-23 22:14:13 | INFO     | DF | Running on torch 2.15.0+cpu
+2026-11-23 22:14:13 | INFO     | DF | Running on host vm
+fatal: not a git repository (or any of the parent directories): .git
+2026-11-23 22:14:13 | INFO     | DF | Loading model settings of DeepFilterNet3
+2026-11-23 22:14:13 | INFO     | DF | Initializing model `deepfilternet3`
+2026-11-23 22:14:13 | INFO     | DF | Found checkpoint /tmp/claude-0/dfm/DeepFilterNet3/checkpoints/model_120.ckpt.best with epoch 120
+2026-11-23 22:14:13 | INFO     | DF | Running on device cpu
+2026-11-23 22:14:13 | INFO     | DF | Model loaded
+anna-julia.wav ok -16.0
+eustaquio.wav ok -16.0
+joao-victor.wav ok -16.2
+joaquim.wav ok -16.1
+maria-alice.wav ok -16.1

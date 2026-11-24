@@ -1,0 +1,107 @@
+{
+ "id": "ana-isabel",
+ "parte": 2,
+ "total": 6,
+ "titulo": "O início da guerra civil",
+ "data": "1990–1993",
+ "falante": "Ana Isabel",
+ "anoAtivo": 2,
+ "eventos": [
+  {
+   "tipo": "mapa",
+   "at": 0,
+   "src": "fotos/mapa-relevo.jpg",
+   "asp": 1.1404,
+   "credito": "Mapa: Wikimedia Commons, CC BY-SA 3.0",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "foco": [
+    0.7,
+    0.15
+   ],
+   "pinos": [
+    {
+     "x": 0.755,
+     "y": 0.05,
+     "r": "Fronteira com Uganda · entrada da FPR"
+    },
+    {
+     "x": 0.573,
+     "y": 0.5,
+     "r": "Kigali"
+    }
+   ]
+  },
+  {
+   "tipo": "texto",
+   "at": "dando início",
+   "grande": "1º de outubro de 1990",
+   "pequeno": "começa a guerra civil"
+  },
+  {
+   "tipo": "foto",
+   "at": "contra o governo",
+   "src": "fotos/habyarimana-1980.jpg",
+   "credito": "Juvénal Habyarimana, 1980 · domínio público",
+   "retrato": true,
+   "lado": 0.62,
+   "foco": [
+    0.62,
+    0.3
+   ],
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  },
+  {
+   "tipo": "texto",
+   "at": "Durante três",
+   "grande": "1990 → 1993",
+   "pequeno": "três anos de guerra"
+  },
+  {
+   "tipo": "texto",
+   "at": "O governo passou",
+   "grande": "“Cúmplices”",
+   "pequeno": "como o governo passou a tratar os tutsis do país"
+  },
+  {
+   "tipo": "doc",
+   "at": "Em agosto",
+   "src": "res872",
+   "fonte": "ONU · Resolução 872 · 5 out. 1993",
+   "traducao": "Saudando a assinatura do Acordo de Paz de Arusha, em 4 de agosto de 1993"
+  },
+  {
+   "tipo": "texto",
+   "at": "O tratado previa",
+   "grande": "Cessar-fogo · refugiados · poder dividido",
+   "pequeno": "o que previam os Acordos de Arusha"
+  },
+  {
+   "tipo": "texto",
+   "at": "Porém",
+   "grande": "“Hutu Power”",
+   "pequeno": "extremistas que rejeitavam o acordo"
+  },
+  {
+   "tipo": "texto",
+   "at": "Enquanto a paz",
+   "grande": "Armas e milícias",
+   "pequeno": "preparadas em segredo"
+  }
+ ],
+ "selos": [
+  {
+   "tipo": "checagem",
+   "at": "1903",
+   "dur": 6,
+   "dito": "1903",
+   "certo": "1993",
+   "fonte": "Acordo de Paz de Arusha, 4 ago. 1993 (ONU, Res. 872)"
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "id": "maria-alice",
+ "parte": 3,
+ "total": 6,
+ "titulo": "O estopim e o genocídio",
+ "data": "Abril a julho de 1994",
+ "falante": "Maria Alice",
+ "anoAtivo": 4,
+ "eventos": [
+  {
+   "tipo": "texto",
+   "at": 0,
+   "grande": "6 de abril de 1994",
+   "pequeno": "Kigali, noite"
+  },
+  {
+   "tipo": "doc",
+   "at": "quando o avião",
+   "src": "afp0406",
+   "fonte": "AFP · 6 abr. 1994",
+   "traducao": "Avião do presidente de Ruanda teria sido abatido"
+  },
+  {
+   "tipo": "doc",
+   "at": "Até hoje existe",
+   "src": "res912",
+   "fonte": "ONU · Resolução 912 · 21 abr. 1994",
+   "traducao": "Chocado com o trágico incidente que causou a morte dos presidentes de Ruanda e do Burundi em 6 de abril de 1994"
+  },
+  {
+   "tipo": "doc",
+   "at": "Naquela mesma noite",
+   "src": "reu0407b",
+   "fonte": "Reuters · 7 abr. 1994",
+   "traducao": "Tropas promovem matança em Ruanda após a morte dos presidentes"
+  },
+  {
+   "tipo": "doc",
+   "at": "O objetivo não",
+   "src": "reu0407",
+   "fonte": "Reuters · 7 abr. 1994",
+   "traducao": "Explosões sacodem a capital de Ruanda após a morte dos presidentes"
+  },
+  {
+   "tipo": "foto",
+   "at": "O que torna",
+   "src": "fotos/memorial-tumulos.jpg",
+   "credito": "Memorial do Genocídio de Kigali · Wikimedia Commons, CC BY-SA 3.0",
+   "zoom": [
+    1.02,
+    1.1
+   ],
+   "legendaFoto": "Valas comuns do Memorial do Genocídio de Kigali, hoje um jardim"
+  },
+  {
+   "tipo": "texto",
+   "at": "usando aquelas",
+   "grande": "“Hutu” · “Tutsi”",
+   "pequeno": "a etnia vinha escrita na carteira de identidade"
+  },
+  {
+   "tipo": "texto",
+   "at": "Em apenas 100",
+   "grande": "100 dias",
+   "pequeno": "de 7 de abril a meados de julho de 1994"
+  },
+  {
+   "tipo": "doc",
+   "at": "estima-se",
+   "src": "inq1999",
+   "marcas": [
+    0
+   ],
+   "fonte": "ONU · Relatório independente · 1999",
+   "traducao": "Aproximadamente 800 mil pessoas foram mortas durante o genocídio de 1994 em Ruanda"
+  }
+ ],
+ "selos": [
+  {
+   "tipo": "checagem",
+   "at": "8 mil",
+   "dur": 6.5,
+   "dito": "8 mil",
+   "certo": "800 mil",
+   "fonte": "Relatório independente da ONU (S/1999/1257)"
+  }
+ ]
+}

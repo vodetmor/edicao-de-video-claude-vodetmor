@@ -1,0 +1,475 @@
+[
+ {
+  "s": 1.5,
+  "e": 12.1,
+  "t": " Olá, hoje vamos falar sobre a Guerra Civil de Ruanda, um conflito armado que devastou um pequeno país na África e culminou em uma das maiores tragédias humanitárias do século XX.",
+  "w": [
+   [
+    1.5,
+    2.14,
+    " Olá,"
+   ],
+   [
+    2.32,
+    2.86,
+    " hoje"
+   ],
+   [
+    2.86,
+    3.18,
+    " vamos"
+   ],
+   [
+    3.18,
+    3.5,
+    " falar"
+   ],
+   [
+    3.5,
+    3.82,
+    " sobre"
+   ],
+   [
+    3.82,
+    3.94,
+    " a"
+   ],
+   [
+    3.94,
+    4.1,
+    " Guerra"
+   ],
+   [
+    4.1,
+    4.42,
+    " Civil"
+   ],
+   [
+    4.42,
+    4.64,
+    " de"
+   ],
+   [
+    4.64,
+    5.02,
+    " Ruanda,"
+   ],
+   [
+    5.12,
+    5.6,
+    " um"
+   ],
+   [
+    5.6,
+    5.98,
+    " conflito"
+   ],
+   [
+    5.98,
+    6.54,
+    " armado"
+   ],
+   [
+    6.54,
+    6.74,
+    " que"
+   ],
+   [
+    6.74,
+    7.28,
+    " devastou"
+   ],
+   [
+    7.28,
+    7.34,
+    " um"
+   ],
+   [
+    7.34,
+    7.7,
+    " pequeno"
+   ],
+   [
+    7.7,
+    8.0,
+    " país"
+   ],
+   [
+    8.0,
+    8.18,
+    " na"
+   ],
+   [
+    8.18,
+    8.5,
+    " África"
+   ],
+   [
+    8.5,
+    8.8,
+    " e"
+   ],
+   [
+    8.8,
+    9.34,
+    " culminou"
+   ],
+   [
+    9.34,
+    9.48,
+    " em"
+   ],
+   [
+    9.48,
+    9.6,
+    " uma"
+   ],
+   [
+    9.6,
+    9.78,
+    " das"
+   ],
+   [
+    9.78,
+    10.16,
+    " maiores"
+   ],
+   [
+    10.16,
+    10.7,
+    " tragédias"
+   ],
+   [
+    10.7,
+    11.28,
+    " humanitárias"
+   ],
+   [
+    11.28,
+    11.52,
+    " do"
+   ],
+   [
+    11.52,
+    11.88,
+    " século"
+   ],
+   [
+    11.88,
+    12.1,
+    " XX."
+   ]
+  ]
+ },
+ {
+  "s": 16.24,
+  "e": 21.36,
+  "t": " A guerra foi uma disputa violenta por poder político e territorial entre dois grandes grupos.",
+  "w": [
+   [
+    16.24,
+    16.88,
+    " A"
+   ],
+   [
+    16.88,
+    17.16,
+    " guerra"
+   ],
+   [
+    17.16,
+    17.42,
+    " foi"
+   ],
+   [
+    17.42,
+    17.6,
+    " uma"
+   ],
+   [
+    17.6,
+    18.02,
+    " disputa"
+   ],
+   [
+    18.02,
+    18.5,
+    " violenta"
+   ],
+   [
+    18.5,
+    18.64,
+    " por"
+   ],
+   [
+    18.64,
+    18.9,
+    " poder"
+   ],
+   [
+    18.9,
+    19.42,
+    " político"
+   ],
+   [
+    19.42,
+    19.68,
+    " e"
+   ],
+   [
+    19.68,
+    20.1,
+    " territorial"
+   ],
+   [
+    20.1,
+    20.5,
+    " entre"
+   ],
+   [
+    20.5,
+    20.7,
+    " dois"
+   ],
+   [
+    20.7,
+    21.04,
+    " grandes"
+   ],
+   [
+    21.04,
+    21.36,
+    " grupos."
+   ]
+  ]
+ },
+ {
+  "s": 21.36,
+  "e": 32.02,
+  "t": " De um lado, o governo de maioria Hutu, liderado pelo presidente juvenal Habyarimana, e apoiado pelas forças armadas ruandesas e a milícia aliada.",
+  "w": [
+   [
+    21.36,
+    22.08,
+    " De"
+   ],
+   [
+    22.08,
+    22.4,
+    " um"
+   ],
+   [
+    22.4,
+    22.78,
+    " lado,"
+   ],
+   [
+    22.84,
+    23.06,
+    " o"
+   ],
+   [
+    23.06,
+    23.36,
+    " governo"
+   ],
+   [
+    23.36,
+    23.66,
+    " de"
+   ],
+   [
+    23.66,
+    23.86,
+    " maioria"
+   ],
+   [
+    23.86,
+    24.44,
+    " Hutu,"
+   ],
+   [
+    24.52,
+    25.22,
+    " liderado"
+   ],
+   [
+    25.22,
+    25.44,
+    " pelo"
+   ],
+   [
+    25.44,
+    25.8,
+    " presidente"
+   ],
+   [
+    25.8,
+    26.54,
+    " juvenal"
+   ],
+   [
+    26.54,
+    27.26,
+    " Habyarimana,"
+   ],
+   [
+    27.46,
+    28.22,
+    " e"
+   ],
+   [
+    28.22,
+    28.88,
+    " apoiado"
+   ],
+   [
+    28.88,
+    29.3,
+    " pelas"
+   ],
+   [
+    29.3,
+    29.62,
+    " forças"
+   ],
+   [
+    29.62,
+    30.1,
+    " armadas"
+   ],
+   [
+    30.1,
+    30.74,
+    " ruandesas"
+   ],
+   [
+    30.74,
+    30.94,
+    " e"
+   ],
+   [
+    30.94,
+    31.04,
+    " a"
+   ],
+   [
+    31.04,
+    31.52,
+    " milícia"
+   ],
+   [
+    31.52,
+    32.02,
+    " aliada."
+   ]
+  ]
+ },
+ {
+  "s": 32.980000000000004,
+  "e": 42.84,
+  "t": " Do outro lado, a Frente Patriótica Ruandesa, um movimento rebelde formado majoritariamente por exilados tutsis, liderado militarmente por Paul Kagame.",
+  "w": [
+   [
+    32.62,
+    33.0,
+    " Do"
+   ],
+   [
+    33.0,
+    33.24,
+    " outro"
+   ],
+   [
+    33.24,
+    33.6,
+    " lado,"
+   ],
+   [
+    33.76,
+    34.08,
+    " a"
+   ],
+   [
+    34.08,
+    34.5,
+    " Frente"
+   ],
+   [
+    34.5,
+    35.1,
+    " Patriótica"
+   ],
+   [
+    35.1,
+    35.74,
+    " Ruandesa,"
+   ],
+   [
+    35.86,
+    36.26,
+    " um"
+   ],
+   [
+    36.26,
+    36.6,
+    " movimento"
+   ],
+   [
+    36.6,
+    37.34,
+    " rebelde"
+   ],
+   [
+    37.34,
+    37.82,
+    " formado"
+   ],
+   [
+    37.82,
+    38.64,
+    " majoritariamente"
+   ],
+   [
+    38.64,
+    38.92,
+    " por"
+   ],
+   [
+    38.92,
+    39.46,
+    " exilados"
+   ],
+   [
+    39.46,
+    40.0,
+    " tutsis,"
+   ],
+   [
+    40.2,
+    41.1,
+    " liderado"
+   ],
+   [
+    41.1,
+    41.78,
+    " militarmente"
+   ],
+   [
+    41.78,
+    42.08,
+    " por"
+   ],
+   [
+    42.08,
+    42.36,
+    " Paul"
+   ],
+   [
+    42.36,
+    42.84,
+    " Kagame."
+   ]
+  ]
+ }
+]
