@@ -291,11 +291,11 @@ const desenhaCapa = (cv: HTMLCanvasElement, f: number, fecho: boolean) => {
   ctx.fillText('SAUDADE', cx, ly + lh * 0.62);
   ctx.font = '500 32px S_Corm';
   (ctx as any).letterSpacing = '9px';
-  ctx.fillText('231 · 232 · 2026', cx, ly + lh * 0.82);
+  ctx.fillText('232 · 2026', cx, ly + lh * 0.82);
   (ctx as any).letterSpacing = '0px';
   // no fecho: "231 e 232" em recortes colados por cima, letra por letra
   if (fecho) {
-    const txt = '231 e 232';
+    const txt = '232';
     const tam = 120;
     const ini = Math.round(plano.capa.fecha[1] * FPS) - 10;
     let x = cx - (txt.length * tam * 0.86) / 2;
@@ -554,7 +554,14 @@ const Cena: React.FC<{t: number; f: number}> = ({t, f}) => {
 };
 
 // ---------------------------------------------------------------- 2D por cima: vídeo em tela cheia, letra, destaque
-const Letra: React.FC<{t: number}> = ({t}) => {
+// a música pausa nos vídeos longos: tempo da música em função do tempo do vídeo
+const HOLDS = plano.holds as {t: number; d: number}[];
+const musicaEm = (tv: number) => tv - HOLDS.reduce((a, h) => a + Math.min(Math.max(tv - h.t, 0), h.d), 0);
+const noHold = (tv: number) => HOLDS.some((h) => tv > h.t - 0.05 && tv < h.t + h.d + 0.05);
+
+const Letra: React.FC<{t: number}> = ({t: tv}) => {
+  if (noHold(tv)) return null;
+  const t = musicaEm(tv);
   const l = (plano.letras as {a: number; b: number; t: string[]; ts: number[]}[]).find((x) => t >= x.a - 0.2 && t <= x.b + 0.5);
   if (!l) return null;
   const sai = clamp((t - l.b) / 0.5);
@@ -616,7 +623,7 @@ export const Saudade3: React.FC = () => {
   useEffect(() => {
     carrega().then(() => { setOk(true); continueRender(h); });
   }, [h]);
-  const preto = t < 0.8 ? 1 - clamp(t / 0.8) : clamp((t - 268.4) / 1.4);
+  const preto = t < 0.8 ? 1 - clamp(t / 0.8) : clamp((t - (plano.duracao - 1.8)) / 1.6);
   const dest = (plano.destaques as {a: number; b: number; t: string}[])[0];
   return (
     <AbsoluteFill style={{background: '#1a120c'}}>

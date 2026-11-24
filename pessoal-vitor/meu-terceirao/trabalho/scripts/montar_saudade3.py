@@ -41,10 +41,14 @@ def turma(i):
 
 TURMA_FOTO = "a40"  # a 232 de terno, na sala: foto do fecho
 ANTES = ["k02", "k03", "k04", "k05", "k06", "k07", "k12", "k08", "k13", "k09"]  # do mais novo ao mais velho (12 e 13 por palpite de idade)
-jovem = [f["id"] for f in AC["fotos"] if f["grupo"] == "jovem" and turma(f["id"]) == "232" and f["id"] != TURMA_FOTO]
+EXCLUIR = {"d36"}  # fotos que o Vítor mandou tirar (d36: gente que não está mais na turma)
+jovem = [f["id"] for f in AC["fotos"] if f["grupo"] == "jovem" and turma(f["id"]) == "232" and f["id"] != TURMA_FOTO and f["id"] not in EXCLUIR]
 # vídeos: TODOS os da 232 (horizontais entram tela cheia; verticais em trios lado a lado)
 V232 = [v for v in AC["videos"] if turma(v["id"]) == "232"]
 VCOR = "b07"  # o mais longo, na volta da cor
+TREC = json.load(open(f"{TRAB}/triagem/videos-trecho.json"))  # melhor trecho de cada vídeo (nítido, com gente), de melhor_trecho.py
+for v in V232:
+    v["ini"] = TREC.get(v["id"], v.get("ini", 0))
 
 
 def dh(i):
@@ -74,8 +78,7 @@ clusters = sorted(grupos.values(), key=lambda g: -len(g))
 
 # 6 páginas duplas de "cresceu" + 4 de "hoje"
 NS_C, NS_H = 6, 4
-cota = [9] * NS_C + [8, 8, 8, 8]
-assert sum(cota) == len(jovem), (sum(cota), len(jovem))
+cota = [len(jovem) // 10 + (1 if i < len(jovem) % 10 else 0) for i in range(NS_C + NS_H)]
 vaos = [[] for _ in cota]
 carga = [0] * len(cota)
 for g in clusters:
@@ -104,17 +107,33 @@ rng.shuffle(hor)
 rng.shuffle(ver)
 blocos = [[v] for v in hor] + [ver[0:3], ver[3:6], ver[6:9], ver[9:12], ver[12:14], ver[14:16]]
 rng.shuffle(blocos)
-PORSPREAD = [2, 2, 2, 2, 2, 2, 2, 1, 2, 1]  # soma 18
-assert sum(PORSPREAD) == len(blocos)
-mergulhos = []
-k0 = 0
-for n in PORSPREAD:
-    mergulhos.append(blocos[k0:k0 + n])
-    k0 += n
+CF, HI = 181.0, 190.0  # fim do 'cresceu' e começo do 'hoje' (o vazio fica entre os dois)
+DIVE = 1.0  # a câmera chega na foto do vídeo ANTES do fade (sem abrir o vídeo no meio do zoom)
+DESTAQUE = "dv02"  # o vídeo da cadeira com o professor olhando: fica bem mais tempo
 
 
-def durmerg(bl):
-    return 2.5 if len(bl) == 1 else 3.6 if len(bl) == 3 else 3.2
+def durv(bl):  # tempo do vídeo na tela
+    return 7.0 if bl[0]["id"] == DESTAQUE else 3.5 if len(bl) == 1 else 4.5 if len(bl) == 3 else 4.0
+
+
+def extra(bl):  # segundos a mais na tela com a música em pausa (o vídeo toca com o próprio áudio)
+    return 3.0 if len(bl) != 3 else 3.5
+
+
+def durmerg(bl):  # duração do bloco inteiro (mergulho da câmera + vídeo)
+    return DIVE + durv(bl)
+
+
+# janelas (s) de cada página dupla densa: sobra para vídeo = janela - base; blocos grandes primeiro, sempre na página com mais folga
+JAN = [(CF - 85.0) / NS_C] * NS_C + [(247.0 - HI) / NS_H] * NS_H
+folga = [j - (2.9 + 1.1 * 4) for j in JAN]
+mergulhos = [[] for _ in JAN]
+for bl in sorted(blocos, key=lambda b: -durmerg(b)):
+    k1 = max(range(len(JAN)), key=lambda i: folga[i])
+    mergulhos[k1].append(bl)
+    folga[k1] -= durmerg(bl)
+for ml in mergulhos:
+    rng.shuffle(ml)
 
 
 # ---------------------------------------------------------------- páginas simples (infância, cor, vazio, fecho)
@@ -292,29 +311,29 @@ cc = lambda: [F(tira(crianca)), F(tira(crianca))]  # noqa: E731
 
 # a capa abre entre 3 e 8,5 s; a primeira página dupla já está lá embaixo
 # infância: 10 fotos; a primeira página da esquerda é só o título (página de abertura do álbum); o bebê k01 só aparece no fecho
-secao(6.0, 83.0, "antes", [(nada, c), (c, c), (c, c), (c, c), (c, cc)], "lá no começo")
-spread(83.0, 102.0, "cor", [F("k11")], [V(next(v for v in V232 if v["id"] == VCOR))])
+secao(6.0, 66.0, "antes", [(nada, c), (c, c), (c, c), (c, c), (c, cc)], "lá no começo")
+spread(66.0, 85.0, "cor", [F("k11")], [V(next(v for v in V232 if v["id"] == VCOR))])
 usados.add("k11")
-spread(186.0, 201.0, "vazio", [], [F("k10")])  # (será reordenado abaixo)
+spread(CF, HI, "vazio", [], [F("k10")])  # (será reordenado abaixo)
 VAZIO = spreads.pop()
 # cresceu 102-186 (6 páginas duplas densas) e hoje 201-247 (4)
 NEED = []
 for s in range(NS_C + NS_H):
-    NEED.append(2.9 + 1.25 * 4 + sum(durmerg(b) for b in mergulhos[s]))
+    NEED.append(2.9 + 1.1 * 4 + sum(durmerg(b) for b in mergulhos[s]))
 tc = sum(NEED[:NS_C])
 th = sum(NEED[NS_C:])
-a0 = 102.0
+a0 = 85.0
 for s in range(NS_C):
-    d = NEED[s] / tc * (186.0 - 102.0)
+    d = NEED[s] / tc * (CF - 85.0)
     spread_denso(a0, a0 + d, "cresceu", vaos[s], mergulhos[s], "e a gente foi crescendo" if s == 0 else None)
     a0 += d
 spreads.append(VAZIO)
-a0 = 201.0
+a0 = HI
 for s in range(NS_C, NS_C + NS_H):
-    d = NEED[s] / th * (247.0 - 201.0)
+    d = NEED[s] / th * (247.0 - HI)
     spread_denso(a0, a0 + d, "hoje", vaos[s], mergulhos[s], "hoje" if s == NS_C else None)
     a0 += d
-print("escala cresceu", round((186 - 102) / tc, 2), "| hoje", round((247 - 201) / th, 2), "(1.0 = tempo ideal)")
+print("escala cresceu", round((CF - 85) / tc, 2), "| hoje", round((247 - HI) / th, 2), "(1.0 = tempo ideal)")
 # começo x hoje: a primeira foto do álbum (o bebê) ao lado da turma de agora
 spread(247.0, 270.0, "final", [F("k01")], [F(TURMA_FOTO)])
 usados.add("k01")
@@ -326,11 +345,16 @@ imersoes = []
 
 
 def rate_de(v, d):
-    return round(max(0.35, min(0.75, (v["dur"] - v.get("ini", 0) - 0.3) / d)), 3)
+    return round(max(0.5, min(1.0, (v["dur"] - v.get("ini", 0) - 0.2) / d)), 3)
+
+
+HOLDS = []  # (m, E): em m (tempo da música) a música pausa E segundos enquanto o vídeo continua
 
 
 def mergulho(a, b, bl):
-    imersoes.append({"a": round(a, 2), "b": round(b, 2), "vs": [{"id": v["id"], "o": "h" if v["w"] > v["h"] else "v", "ini": v.get("ini", 0), "rate": rate_de(v, b - a)} for v in bl]})
+    E = extra(bl)
+    HOLDS.append((round(b, 2), E))
+    imersoes.append({"a": round(a, 2), "b": round(b, 2), "E": E, "vs": [{"id": v["id"], "o": "h" if v["w"] > v["h"] else "v", "ini": v.get("ini", 0), "rate": rate_de(v, b - a + E)} for v in bl]})
 
 
 for si, s in enumerate(spreads):
@@ -369,7 +393,7 @@ for si, s in enumerate(spreads):
                 d = durmerg(x) * esc
                 v0 = next(i for i, it in enumerate(itens) if it["k"] == "video" and it["id"] == x[0]["id"])
                 focos.append({"a": round(t, 2), "b": round(t + d, 2), "s": si, "i": v0, "zoom": 1.0})
-                mergulho(t + 0.12, t + d - 0.05, x)
+                mergulho(t + DIVE, t + d - 0.05, x)
                 t += d
         continue
     tot = fim - ini
@@ -421,8 +445,23 @@ for l in letras:
         continue
     limpo.append(l)
 
-plano = {"fps": 30, "duracao": 270.0, "W": W, "H": H, "TURN": TURN, "spreads": spreads, "focos": focos, "imersoes": imersoes, "letras": limpo,
-         "destaques": [{"a": 224.5, "b": 233.0, "t": "saudade"}], "capa": {"abre": [3.0, 8.5], "fecha": [258.6, 264.6]}}
+HOLDS.sort()
+
+
+def S(m):  # tempo da música -> tempo do vídeo (cada pausa empurra o resto)
+    return round(m + sum(e for b, e in HOLDS if b <= m), 2)
+
+
+OUTRO = 15.0  # depois da música: o álbum fechado, violão de despedida
+for f in focos + imersoes + spreads:
+    f["a"], f["b"] = S(f["a"]), S(f["b"])
+acum, holds_t = 0.0, []
+for b, e in HOLDS:
+    holds_t.append({"t": round(b + acum, 2), "d": e})
+    acum += e
+DUR = round(S(270.0) + OUTRO, 2)
+plano = {"fps": 30, "duracao": DUR, "musicaFim": S(270.0), "holds": holds_t, "W": W, "H": H, "TURN": TURN, "spreads": spreads, "focos": focos, "imersoes": imersoes, "letras": limpo,
+         "destaques": [{"a": S(224.5), "b": S(233.0), "t": "saudade"}], "capa": {"abre": [3.0, 8.5], "fecha": [S(258.6), S(264.6)]}}
 json.dump(plano, open(f"{OBRA}/plano3.json", "w", encoding="utf8"), ensure_ascii=False, indent=0)
 nf = sum(1 for s in spreads for it in s["L"] + s["R"] if it["k"] == "foto")
 nc = sum(1 for s in spreads for it in s["L"] + s["R"] if it["k"] == "foto" and FOTOS[it["id"]]["grupo"] == "crianca")

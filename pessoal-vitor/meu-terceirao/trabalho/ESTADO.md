@@ -193,3 +193,9 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - `montar_saudade3.py`: "cresceu" (6 páginas duplas) e "hoje" (4) viram páginas densas (linhas justificadas, ~11 itens por dupla, vídeos como pôster); a câmera visita as metades de cada página (`focos[].g`) e mergulha nos vídeos (`imersoes[].vs`): horizontal tela cheia, vertical em trio/dupla lado a lado.
 - Ritmo: ~0,8 s por foto nas partes densas (limite da música de 270 s).
 - Render: `python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade5-pedacos --conc 2 --orcamento 400` (repetir; 1 queda, resolvida com `--conc 1`) e `--juntar --saida aula-da-saudade-v5`. Resultado: 270 s, -13,6 LUFS, 419 MB.
+
+## AULA DA SAUDADE V6: vídeos longos com áudio, violão no fim (24/11/2026)
+- Pedidos: vídeos mais tempo de tela (com o áudio deles e a música abaixando), fade só depois do zoom na foto, trechos sem imagem trocados, fora a foto d36 (Maria Alice e João Miguel), fecho só "232" (capa e fecho), take da cadeira = dv02 (de 13,5 s, ~10 s na tela), violão de despedida depois da música.
+- `montar_saudade3.py`: cada mergulho tem `E` s extras com a música em PAUSA (`holds`, tempo da música x tempo do vídeo; `S()` converte tudo), dive de 1 s antes do fade, vídeos a 1x, `EXCLUIR={"d36"}`, trechos de `triagem/videos-trecho.json` (`melhor_trecho.py`: nitidez/brilho; dv02 fixo). Duração 344 s (329 s de música + 15 s de violão com o álbum fechado).
+- `audio_saudade3.py`: música com pausas e rampas, abaixa a 27% enquanto o vídeo toca, áudio de cada vídeo (loudnorm), violão sintetizado (Karplus-Strong, tom detectado da música: si maior) + reverb, master -14 LUFS -> `previa/saudade6-audio.wav`.
+- Render: `SAUDADE_PLANO=1 python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade6-pedacos --conc 1 --orcamento 400` (repetir) e `--juntar --saida aula-da-saudade-v6`. Letra usa o tempo da música e some durante as pausas.

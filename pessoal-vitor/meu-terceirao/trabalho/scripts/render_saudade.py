@@ -14,7 +14,8 @@ BASE = "C:/dev/maquina-de-editar"
 MOTOR = f"{BASE}/estudio/motor"
 PREV = f"{BASE}/pessoal-vitor/meu-terceirao/trabalho/previa"
 PED = f"{PREV}/saudade-pedacos"
-TOTAL = 8100
+import json
+TOTAL = round(json.load(open(f"{MOTOR}/src/obras/saudade/plano3.json", encoding="utf8"))["duracao"] * 30) if os.environ.get("SAUDADE_PLANO") else 8100
 TAM = 450
 
 ap = argparse.ArgumentParser()
@@ -38,10 +39,14 @@ if a.juntar:
             f.write(f"file 'p{i:03d}.mp4'\n")
     bruto = f"{PREV}/{a.saida}-bruto.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{PED}/lista.txt", "-c", "copy", bruto], check=True)
-    # música inteira com entrada/saída suaves, normalizada em -14 LUFS (o motor renderiza mudo)
+    # áudio já montado (música com pausas + áudio dos vídeos + violão): previa/saudade6-audio.wav (master -14 LUFS) se existir; senão a música crua
+    wav = f"{PREV}/saudade6-audio.wav"
     out = f"{PREV}/{a.saida}.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", bruto, "-i", f"{MOTOR}/public/saudade/bem.mp3", "-map", "0:v", "-map", "1:a",
-                    "-af", "afade=t=in:d=1.5,afade=t=out:st=267.5:d=2.5,loudnorm=I=-14:TP=-1:LRA=11", "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-t", "270", out], check=True)
+    if os.environ.get("SAUDADE_PLANO") and os.path.exists(wav):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", bruto, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-shortest", out], check=True)
+    else:
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", bruto, "-i", f"{MOTOR}/public/saudade/bem.mp3", "-map", "0:v", "-map", "1:a",
+                        "-af", "afade=t=in:d=1.5,afade=t=out:st=267.5:d=2.5,loudnorm=I=-14:TP=-1:LRA=11", "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-t", "270", out], check=True)
     print("PRONTO", out)
     sys.exit(0)
 
