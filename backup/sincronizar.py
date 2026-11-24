@@ -32,6 +32,7 @@ MAPA = [
     ("COMO-USAR.txt", "pc/COMO-USAR-flow.txt"),
     ("pessoal-vitor", "pessoal-vitor"),
     ("escola-consciencia-negra", "pessoal-vitor/escola-consciencia-negra"),
+    ("ruanda", "pessoal-vitor/escola-ruanda"),
     ("anuncio-vslplay", "clientes/vslplay/anuncio-vslplay"),
     ("criativos-vslplay", "clientes/vslplay/criativos-vslplay"),
     ("vinheta-life", "outros/vinheta-life"),
