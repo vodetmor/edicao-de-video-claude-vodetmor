@@ -383,10 +383,10 @@ const focoPose = (it: Item, zoom: number, video: boolean): Pose => {
 type Seg = {a: number; p: Pose; dur: number};
 const SEGS: Seg[] = (() => {
   const segs: Seg[] = [{a: 0, p: CAPA, dur: 0.01}, {a: ABRE[0] + 1.2, p: GERAL, dur: 4.6}];
-  const focos = plano.focos as {a: number; b: number; s: number; i: number; zoom: number}[];
+  const focos = plano.focos as {a: number; b: number; s: number; i?: number; g?: {x: number; z: number; w: number; h: number}; zoom: number}[];
   focos.forEach((fo, k) => {
     const s = SPREADS[fo.s];
-    const it = [...s.L, ...s.R][fo.i];
+    const it: Item = fo.g ? {k: 'grupo', id: '', rot: 0, ...fo.g} : [...s.L, ...s.R][fo.i as number];
     segs.push({a: fo.a, p: focoPose(it, fo.zoom, it.k === 'video'), dur: 1.3});
     const prox = focos[k + 1];
     if (!prox || prox.s !== fo.s || prox.a - fo.b > 0.5) segs.push({a: fo.b, p: GERAL, dur: 1.1});
@@ -584,15 +584,22 @@ const Letra: React.FC<{t: number}> = ({t}) => {
   );
 };
 
+type Mv = {id: string; o: string; ini: number; rate: number};
 const Imersao: React.FC<{t: number}> = ({t}) => (
   <>
-    {(plano.imersoes as {a: number; b: number; id: string; ini: number; rate: number}[]).map((m, i) => {
+    {(plano.imersoes as {a: number; b: number; vs: Mv[]}[]).map((m, i) => {
       if (t < m.a - 0.1 || t > m.b + 0.1) return null;
-      const op = clamp((t - m.a) / 0.45) * (1 - clamp((t - (m.b - 0.45)) / 0.45));
+      const op = clamp((t - m.a) / 0.4) * (1 - clamp((t - (m.b - 0.4)) / 0.4));
+      const so = m.vs.length === 1 && m.vs[0].o === 'h'; // horizontal sozinho: tela cheia; em pé: painéis lado a lado
+      const lar = so ? 1920 : m.vs.length === 3 ? (1920 - 16) / 3 : 640;
       return (
         <Sequence key={i} from={Math.round(m.a * FPS)} durationInFrames={Math.round((m.b - m.a) * FPS) + 3} layout="none">
-          <AbsoluteFill style={{opacity: op}}>
-            <OffthreadVideo src={staticFile(`final/v/${m.id}.mp4`)} muted startFrom={Math.round(m.ini * FPS)} playbackRate={m.rate} style={{width: '100%', height: '100%', objectFit: 'cover', filter: 'sepia(0.12) saturate(0.92) contrast(1.03)'}} />
+          <AbsoluteFill style={{opacity: op, background: so ? undefined : 'rgba(14,9,5,0.93)', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8}}>
+            {m.vs.map((v) => (
+              <div key={v.id} style={{width: lar, height: 1080, overflow: 'hidden', flex: 'none'}}>
+                <OffthreadVideo src={staticFile(`final/v/${v.id}.mp4`)} muted startFrom={Math.round(v.ini * FPS)} playbackRate={v.rate} style={{width: '100%', height: '100%', objectFit: 'cover', filter: 'sepia(0.12) saturate(0.92) contrast(1.03)'}} />
+              </div>
+            ))}
           </AbsoluteFill>
         </Sequence>
       );

@@ -186,3 +186,10 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - `montar_saudade3.py`: jovem e vídeos = só turma 232 registrada no manifest (a* 232, d*, b* 232, dv*); c*/n*/v* sem turma ficam de fora. Foto final da turma fixa `a40` (232 de terno). Quase iguais fora: a23 a37 a38 a39 d26 a02 d15.
 - Infância: 1ª página esquerda só com o título (maior, no meio; `Saudade3.tsx`), k01..k09 nas 5 páginas, k11 na volta da cor, k10 no vazio, k01 de novo no fecho ("começo x hoje").
 - Render: `python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade4-pedacos --conc 2 --orcamento 560` (repetir) e `--juntar --saida aula-da-saudade-v4`.
+
+## AULA DA SAUDADE V5: TODAS AS MÍDIAS DA 232 (24/11/2026)
+- Pedido: faltaram 2 fotos de criança (k12 menina com cachorrinho, k13 menino com morcego, em `triagem/crianca-232/` e `public/final/p/`), o bebê k01 aparecia 2x (agora só no fecho) e tinha que entrar TUDO da 232.
+- Agora entram: 86 fotos jovens da 232 + a40 no fecho, 13 de infância (cada uma 1x) e os 29 vídeos da 232. Nada de 231 nem sem turma. Quase iguais (dHash <= 42/256) ficam em páginas duplas afastadas.
+- `montar_saudade3.py`: "cresceu" (6 páginas duplas) e "hoje" (4) viram páginas densas (linhas justificadas, ~11 itens por dupla, vídeos como pôster); a câmera visita as metades de cada página (`focos[].g`) e mergulha nos vídeos (`imersoes[].vs`): horizontal tela cheia, vertical em trio/dupla lado a lado.
+- Ritmo: ~0,8 s por foto nas partes densas (limite da música de 270 s).
+- Render: `python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade5-pedacos --conc 2 --orcamento 400` (repetir; 1 queda, resolvida com `--conc 1`) e `--juntar --saida aula-da-saudade-v5`. Resultado: 270 s, -13,6 LUFS, 419 MB.
