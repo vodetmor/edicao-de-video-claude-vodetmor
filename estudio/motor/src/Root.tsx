@@ -11,12 +11,14 @@ import {Cavalo} from './glsl/Cavalo';
 import {Vix, Quadro, calcula as calcVix} from './vix/Vix';
 import {Terceirao, DUR as DUR_TERCEIRAO} from './obras/terceirao/Terceirao';
 import {Final, DUR_FINAL} from './obras/terceirao/Final';
+import {Saudade3, DUR_SAUDADE3} from './obras/saudade/Saudade3';
 import {Saudade, DUR_SAUDADE} from './obras/saudade/Saudade';
 
 // Uma composição genérica: a fábrica (fabrica.mjs) troca spec + variante + palavras a cada render.
 export const RemotionRoot: React.FC = () => (
   <>
   <Composition id="Terceirao" component={Terceirao} durationInFrames={DUR_TERCEIRAO} fps={30} width={1920} height={1080} />
+      <Composition id="Saudade3" component={Saudade3} durationInFrames={DUR_SAUDADE3} fps={30} width={1920} height={1080} />
       <Composition id="Saudade" component={Saudade} durationInFrames={DUR_SAUDADE} fps={30} width={1920} height={1080} />
       <Composition id="Final" component={Final} durationInFrames={DUR_FINAL} fps={30} width={1920} height={1080} />
   <Composition id="Quadro" component={Quadro as any} defaultProps={{} as any} durationInFrames={300} fps={30} width={1080} height={1920} />

@@ -23,7 +23,7 @@ const imgs: Record<string, HTMLImageElement> = {};
 let imgsOk = false;
 let imgsP: Promise<void> | null = null;
 let ultima: HTMLImageElement | null = null;
-const carregaImgs = (): Promise<void> => {
+export const carregaImgs = (): Promise<void> => {
   if (imgsP) return imgsP;
   const lista: [string, string][] = [...NOMES.map((n) => [n, staticFile(`saudade/papel/${n}.jpg`)] as [string, string]), ['ultima', staticFile('saudade/ultima.jpg')]];
   imgsP = Promise.all(
@@ -51,7 +51,7 @@ const cobre = (ctx: CanvasRenderingContext2D, im: HTMLImageElement | undefined, 
 
 type Linha = {t: string; size: number; ini: number; passo: number};
 
-const recorte = (ctx: CanvasRenderingContext2D, ch: string, seed: number, size: number, swap: number, cx: number, cy: number) => {
+export const recorte = (ctx: CanvasRenderingContext2D, ch: string, seed: number, size: number, swap: number, cx: number, cy: number) => {
   if (swap < 0) return;
   const v = swap < 14 ? Math.floor(swap / 3) : 99;
   const sd = seed * 7 + v * 13;

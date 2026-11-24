@@ -16,11 +16,12 @@ const FONTES: [string, string, string?][] = [
   ['S_Shrikhand', 'Shrikhand-Regular'], ['S_Rye', 'Rye-Regular'], ['S_DM', 'DMSerifDisplay-Regular'], ['S_DMi', 'DMSerifDisplay-Italic'],
   ['S_Bungee', 'Bungee-Regular'], ['S_Lobster', 'Lobster-Regular'], ['S_Play', 'PlayfairDisplay-Italic', '400 900'],
   ['S_Caveat', 'Caveat', '400 700'], ['S_Inter', 'Inter', '100 900'],
+  ['S_Corm', 'CormorantGaramond', '300 700'], ['S_CormI', 'CormorantGaramond-Italic', '300 700'],
 ];
 const RANSOM = ['S_Abril', 'S_Alfa', 'S_Bevan', 'S_Pacifico', 'S_Shrikhand', 'S_Rye', 'S_DM', 'S_DMi', 'S_Bungee', 'S_Lobster', 'S_Play'];
 let fontesPronto = false;
 let fontesH: number | null = null;
-const carregaFontes = () => {
+export const carregaFontes = () => {
   if (fontesPronto || fontesH !== null || typeof document === 'undefined') return;
   fontesH = delayRender('fontes da saudade');
   Promise.all(
@@ -73,7 +74,7 @@ const Recorte: React.FC<{ch: string; seed: number; size: number; swap: number; s
   );
 };
 
-const PalavraColagem: React.FC<{texto: string; seed: number; size: number; f: number; inicio: number; sair?: number; passo?: number}> = ({texto, seed, size, f, inicio, sair = 0, passo = 1.5}) => (
+export const PalavraColagem: React.FC<{texto: string; seed: number; size: number; f: number; inicio: number; sair?: number; passo?: number}> = ({texto, seed, size, f, inicio, sair = 0, passo = 1.5}) => (
   <div style={{whiteSpace: 'nowrap', textAlign: 'center', lineHeight: 1}}>
     {texto.split('').map((c, i) => (c === ' ' ? <span key={i} style={{display: 'inline-block', width: size * 0.8}} /> : <Recorte key={i} ch={c} seed={seed * 31 + i} size={size} swap={f - (inicio + i * passo)} sair={sair} />))}
   </div>

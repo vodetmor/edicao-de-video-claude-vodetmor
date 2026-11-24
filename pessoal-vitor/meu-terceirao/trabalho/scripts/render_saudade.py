@@ -22,7 +22,10 @@ ap.add_argument("--orcamento", type=int, default=520)
 ap.add_argument("--conc", type=int, default=2)
 ap.add_argument("--juntar", action="store_true")
 ap.add_argument("--saida", default="aula-da-saudade-v1")
+ap.add_argument("--comp", default="Saudade")
+ap.add_argument("--pedacos", default="saudade-pedacos")
 a = ap.parse_args()
+PED = f"{PREV}/{a.pedacos}"
 os.makedirs(PED, exist_ok=True)
 n = -(-TOTAL // TAM)
 
@@ -53,7 +56,7 @@ for i in range(n):
         sys.exit(3)
     ini, fim = i * TAM, min(TOTAL, (i + 1) * TAM) - 1
     tmp = dst + ".tmp.mp4"
-    r = subprocess.run(["npx", "remotion", "render", "src/index.ts", "Saudade", tmp, f"--frames={ini}-{fim}", "--gl=angle", f"--concurrency={a.conc}",
+    r = subprocess.run(["npx", "remotion", "render", "src/index.ts", a.comp, tmp, f"--frames={ini}-{fim}", "--gl=angle", f"--concurrency={a.conc}",
                         "--codec=h264", "--crf=17", "--muted", "--log=error"], cwd=MOTOR, shell=True)
     if r.returncode != 0 or not os.path.exists(tmp):
         print(f"pedaço {i} falhou (rc={r.returncode}); tente de novo com --conc 1")
