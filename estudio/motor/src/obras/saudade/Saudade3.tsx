@@ -187,13 +187,14 @@ const desenhaPagina = (cv: HTMLCanvasElement, s: Spread, lado: 'L' | 'R', si: nu
   const itens = lado === 'R' ? s.R : s.L;
   // título da época colado (recortes)
   if (lado === 'L' && s.titulo) {
-    const tam = s.titulo.length > 12 ? 74 : 96;
+    const so = itens.length === 0; // página só com o título (abertura do álbum): maior e no meio
+    const tam = so ? 118 : s.titulo.length > 12 ? 74 : 96;
     const cs = s.titulo.split('');
     const adv = (c: string) => (c === ' ' ? tam * 0.55 : tam * 0.9);
     const tot = cs.reduce((a, c) => a + adv(c), 0);
     let x = cv.width / 2 - tot / 2;
     cs.forEach((c, i) => {
-      if (c !== ' ') recorte(ctx, c, si * 53 + i, tam, 99, x + tam * 0.45, 210);
+      if (c !== ' ') recorte(ctx, c, si * 53 + i, tam, 99, x + tam * 0.45, so ? cv.height * 0.47 : 210);
       x += adv(c);
     });
   }

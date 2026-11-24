@@ -179,3 +179,10 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - Composição `Saudade3` (`estudio/motor/src/obras/saudade/Saudade3.tsx`), plano `plano3.json` gerado por `scripts/montar_saudade3.py`; materiais por `scripts/prep_saudade3.py` (kraft/preta/marfim + pôsteres dos vídeos em `public/saudade/v3/`); PBR Poly Haven CC0 em `public/saudade/pbr/` (nogueira, linho, couros); fonte Cormorant Garamond.
 - Refazer: `python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade3-pedacos --conc 2 --orcamento 99999` e depois `--juntar --saida aula-da-saudade-vN` (mesmos argumentos --comp/--pedacos). Conc 4 estourou a RAM (15,5 GB) com dpr 2; conc 2 levou ~45 min.
 - Pendências vistas na revisão: fotos parecidas do mesmo menino de chapéu de papel em 0:12/0:33/0:48; data gravada na foto final (2026/01/29 09:13:10, vem do arquivo); turmas 231=15 x 232=7; tom geral bem quente (luz do abajur amarela até nas fotos de hoje); raminho da capa da referência não entrou.
+
+## AULA DA SAUDADE V4: SÓ A 232 (24/11/2026)
+- Pedido do Vítor: nada da 231; infância = só as 11 fotos que ele mandou (eles crianças). Nenhuma estava no acervo (dHash conferido).
+- Fotos novas: originais em `triagem/crianca-232/k01..k11.jpg` (ordem do mais novo ao mais velho), lista em `triagem/crianca-232.json`, cópias em `estudio/motor/public/final/p/k*.jpg` (k06 = foto de tela, cortada a borda do monitor/barra de tarefas).
+- `montar_saudade3.py`: jovem e vídeos = só turma 232 registrada no manifest (a* 232, d*, b* 232, dv*); c*/n*/v* sem turma ficam de fora. Foto final da turma fixa `a40` (232 de terno). Quase iguais fora: a23 a37 a38 a39 d26 a02 d15.
+- Infância: 1ª página esquerda só com o título (maior, no meio; `Saudade3.tsx`), k01..k09 nas 5 páginas, k11 na volta da cor, k10 no vazio, k01 de novo no fecho ("começo x hoje").
+- Render: `python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade4-pedacos --conc 2 --orcamento 560` (repetir) e `--juntar --saida aula-da-saudade-v4`.

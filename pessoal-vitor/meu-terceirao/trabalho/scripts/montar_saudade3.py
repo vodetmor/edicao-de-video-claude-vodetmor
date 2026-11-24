@@ -19,25 +19,27 @@ TURN = 1.7  # segundos de uma página virando
 AC = json.load(open(f"{TER}/acervo.json", encoding="utf8"))
 RO = json.load(open(f"{TER}/rostos.json", encoding="utf8"))
 MAN = {r["arquivo"].rsplit(".", 1)[0]: r for r in csv.DictReader(open(f"{TRAB}/triagem/manifest.csv", encoding="utf8"))}
-FOTOS = {f["id"]: f for f in AC["fotos"]}
 VIDS = {v["id"]: v for v in AC["videos"]}
 rng = random.Random(31)
+
+# SÓ A 232 (pedido do Vítor, 24/11): infância = as 11 fotos que ele mandou (k01..k11, do mais novo ao mais velho,
+# em triagem/crianca-232/); jovem e vídeos = só o que tem turma 232 registrada no manifest (nada da 231 nem sem turma)
+KIDS = json.load(open(f"{TRAB}/triagem/crianca-232.json", encoding="utf8"))
+FOTOS = {f["id"]: f for f in AC["fotos"] + KIDS}
 
 
 def turma(i):
     q = MAN.get(i, {}).get("quem_aparece", "")
-    return "231" if "231" in q else "232" if "232" in q else None
+    return "232" if i.startswith("k") else "231" if "231" in q else "232" if "232" in q else None
 
 
-crianca = [f["id"] for f in AC["fotos"] if f["grupo"] == "crianca"]
-crianca.sort(key=lambda i: (RO[i]["n"] == 0, rng.random()))
+crianca = [f["id"] for f in KIDS]
 jovem = [f["id"] for f in AC["fotos"] if f["grupo"] == "jovem"]
-y231 = sorted([i for i in jovem if turma(i) == "231"], key=lambda i: (-RO[i]["n"], rng.random()))
-y232 = sorted([i for i in jovem if turma(i) == "232"], key=lambda i: (-RO[i]["n"], rng.random()))
-ysem = [i for i in jovem if turma(i) is None]
-rng.shuffle(ysem)
+TURMA_FOTO = "a40"  # a 232 de terno, na sala (escolhida a olho: limpa, deitada, todos de frente)
+QUASE_IGUAIS = {"a23", "a37", "a38", "a39", "d26", "a02", "d15"}  # mesma cena de a21 / a40 / d25 / a34 / a45, de outro clique
+y232 = sorted([i for i in jovem if turma(i) == "232" and i != TURMA_FOTO and i not in QUASE_IGUAIS],key=lambda i: (-RO[i]["n"], rng.random()))
 # vídeos horizontais e com tempo útil (a câmera "entra" neles); verticais ficam de fora
-videos = [v for v in AC["videos"] if v["dur"] - v.get("ini", 0) >= 6 and v["w"] > v["h"]]
+videos = [v for v in AC["videos"] if turma(v["id"]) == "232" and v["dur"] - v.get("ini", 0) >= 6 and v["w"] > v["h"]]
 rng.shuffle(videos)
 usados = set()
 alt = {"t": 0}
@@ -52,11 +54,7 @@ def tira(lista):
 
 
 def jovem_alt():
-    alt["t"] ^= 1
-    for pool in ((y231, y232, ysem) if alt["t"] else (y232, y231, ysem)):
-        if any(i not in usados for i in pool):
-            return tira(pool)
-    raise SystemExit("faltou jovem")
+    return tira(y232)
 
 
 def video():
@@ -135,24 +133,26 @@ def secao(a, b, era, montagens, titulo=None):
 
 
 c = lambda: [F(tira(crianca))]  # noqa: E731
-cc = lambda: [F(tira(crianca)), F(tira(crianca))]  # noqa: E731
 y = lambda: [F(jovem_alt())]  # noqa: E731
 yy = lambda: [F(jovem_alt()), F(jovem_alt())]  # noqa: E731
 v = lambda: [V(video())]  # noqa: E731
+nada = lambda: []  # noqa: E731
+k = lambda i: (lambda: [F(i)])  # noqa: E731
 
 # a capa abre entre 3 e 8,5 s; a primeira página dupla já está lá embaixo
-secao(6.0, 83.0, "antes", [(c, cc), (cc, c), (c, cc), (cc, cc), (c, cc)], "lá no começo")
-secao(83.0, 102.0, "cor", [(c, v)])
-secao(102.0, 168.0, "cresceu", [(cc, y), (c, v), (yy, c), (y, v)], "e a gente foi crescendo")
+# infância: 11 fotos, uma por página; a primeira página da esquerda é só o título (página de abertura do álbum)
+secao(6.0, 83.0, "antes", [(nada, c), (c, c), (c, c), (c, c), (c, c)], "lá no começo")
+secao(83.0, 102.0, "cor", [(k("k11"), v)])  # a cor volta na foto mais solar
+usados.add("k11")
+secao(102.0, 168.0, "cresceu", [(yy, y), (y, v), (yy, y), (y, v)], "e a gente foi crescendo")
 secao(168.0, 186.0, "cresceu", [(yy, v)])
-spread(186.0, 201.0, "vazio", [], [F(tira([i for i in crianca if FOTOS[i]["o"] == "h"]))])
+spread(186.0, 201.0, "vazio", [], [F("k10")])
+usados.add("k10")
 secao(201.0, 247.0, "hoje", [(yy, y), (y, yy), (yy, v)], "hoje")
-# começo x hoje: a primeira foto de turma da infância ao lado da turma de agora
-turma_foto = max([f for f in jovem if FOTOS[f]["o"] == "h" and f not in usados], key=lambda f: RO[f]["n"])
+# começo x hoje: a primeira foto do álbum (o bebê) ao lado da turma de agora
+turma_foto = TURMA_FOTO
 usados.add(turma_foto)
-inf = max([f for f in crianca if FOTOS[f]["o"] == "h" and f not in usados], key=lambda f: RO[f]["n"])
-usados.add(inf)
-spread(247.0, 270.0, "final", [F(inf)], [F(turma_foto)])
+spread(247.0, 270.0, "final", [F("k01")], [F(turma_foto)])
 
 # ---- câmera: em cada página dupla, abre geral, visita cada item, volta geral antes de virar
 focos = []
