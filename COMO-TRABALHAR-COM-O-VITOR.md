@@ -30,6 +30,7 @@ O detalhe de cada regra (com data e motivo) está em `memoria/feedback-*.md`. Se
 - **Documento de aprovação = OBJETIVO (Vítor, 09/10/2026).** PDF que vai para ele ou cliente aprovar: capa, 1 página por vídeo com os quadros-chave e uma linha de ideia em cada, 1 página de som (música + efeitos) e a lista do que aprovar. Design bonito, pouca explicação; raciocínio, medições e SPEC ficam nos arquivos internos.
 
 - Legibilidade acima do ritmo: com voz e texto na tela, uma ideia por cena, texto fica tempo para ler duas vezes, gancho de 3 s é um objeto forte e legível (não três cortes), peças 3D ficam 3 s ou mais. Corte enfeites (HUD, notas, ecos).
+- Material coerente com o objeto: textura pelo que a coisa é feita (álbum = tecido/couro/cartolina, mesa = madeira), nunca textura "real" sem sentido. Nada monocromático nem a mesma transição o vídeo inteiro: variar dentro de uma paleta e usar transições com objeto físico (página que vira, câmera que entra). Legenda em lugar fixo. Render pesado no PC dele é liberado (Aula da Saudade, 23/11/2026).
 
 ## Perfil pessoal (TikTok/Instagram)
 - Público: estudantes do ENEM (e mais novos), pais. Aulas visuais e questões resolvidas, 60–90 s, narrador por IA (ElevenLabs, que ele mesmo gera).
