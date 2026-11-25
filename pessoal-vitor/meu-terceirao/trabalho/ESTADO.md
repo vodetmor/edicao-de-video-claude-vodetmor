@@ -205,3 +205,10 @@ Ordem para refazer: `prep_final.py` → `rostos.py` → `atlas_videos.py` → `m
 - Fora: `b08` (só pés e chão) e `dv04` (repete a cena do `dv03`), em `VIDEOS_FORA` no `montar_saudade3.py`. Pausas (`holds`) zeradas (`extra()=0`); vídeos 4,5 s (horizontal), 5,5 s (trio), dv02 9 s; DIVE 0,8 s; hoje/cresceu e fecho reajustados. Duração 285 s (270 + 15 de violão).
 - `audio_saudade3.py`: música a 30% durante o vídeo (rampa de 0,5 s para baixo, 1,1 s para voltar), áudio do vídeo por cima, violão sintetizado no fim.
 - Render: `SAUDADE_PLANO=1 python -I trabalho/scripts/render_saudade.py --comp Saudade3 --pedacos saudade7-pedacos --conc 1 --orcamento 380` (repetir) e `--juntar --saida aula-da-saudade-v7`.
+
+## V8 (25/11/2026): câmera fluida nas fotos, 5:43
+- Pedido: câmera rápida demais nas fotos. Paradas nas metades de página de ~0,95 s -> 2,6 s (ESTICA em montar_saudade3.py, G_ALVO=2.6; +63 s); a música não para, termina em 4:30 e as páginas seguem sobre o violão (progressão repetida até o fim; violão também abaixa nos vídeos).
+- Câmera: chega em 1,5 s e desliza devagar pela metade da página (Saudade3.tsx, segs com drift).
+- Letra e destaque "saudade" ficam no tempo real do canto (não esticados); viradas de página deixam de cair exatamente na batida.
+- Render: pedaços em previa/saudade8-pedacos (caiu por RAM no 14/23, retomado com --conc 1). Saída previa/aula-da-saudade-v8.mp4 (343 s, 564 MB), -youtube.mp4 (crf 19, 417 MB), -previa-480p.mp4. 1080p no Drive vitor743 (id 17_RO7v_CicaaKbSYCqzUR3FMWzO5semO).
+- Refazer: python -I trabalho/scripts/montar_saudade3.py; python -I trabalho/scripts/audio_saudade3.py; SAUDADE_PLANO=1 render_saudade.py --comp Saudade3 --pedacos saudade8-pedacos --conc 1 (até PRONTO) e --juntar --saida aula-da-saudade-v8.

@@ -387,7 +387,12 @@ const SEGS: Seg[] = (() => {
   focos.forEach((fo, k) => {
     const s = SPREADS[fo.s];
     const it: Item = fo.g ? {k: 'grupo', id: '', rot: 0, ...fo.g} : [...s.L, ...s.R][fo.i as number];
-    segs.push({a: fo.a, p: focoPose(it, fo.zoom, it.k === 'video'), dur: 1.3});
+    const pf = focoPose(it, fo.zoom, it.k === 'video');
+    if (fo.g && fo.b - fo.a > 2.2) {
+      // V8: chega em 1,5 s e segue deslizando devagar pela metade da página (a câmera não tranca)
+      segs.push({a: fo.a, p: {...pf, x: pf.x - 0.035 * fo.g.w, alt: pf.alt * 1.03}, dur: 1.5});
+      segs.push({a: fo.a + 1.2, p: {...pf, x: pf.x + 0.035 * fo.g.w, alt: pf.alt * 0.95}, dur: fo.b - fo.a - 0.9});
+    } else segs.push({a: fo.a, p: pf, dur: 1.3});
     const prox = focos[k + 1];
     if (!prox || prox.s !== fo.s || prox.a - fo.b > 0.5) segs.push({a: fo.b, p: GERAL, dur: 1.1});
   });

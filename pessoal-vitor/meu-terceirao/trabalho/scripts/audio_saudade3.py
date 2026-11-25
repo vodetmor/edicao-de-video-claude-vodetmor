@@ -81,26 +81,27 @@ for m in P["imersoes"]:
         seg[-ru:] = rampa(ru, DUCK, 1.0)
     duck[i0:i1] = np.minimum(duck[i0:i1], seg)
     # depois da pausa a música volta ao normal (rampa já feita no trecho); o duck não segura além do fim do vídeo
-saida *= duck[:, None]
 
-# ---------------------------------------------------------------- áudio de cada vídeo
-for m in P["imersoes"]:
-    a, b = m["a"], m["b"]
-    dv = b - a
-    for k, v in enumerate(m["vs"]):
-        r = v["rate"]
-        af = f"atempo={r}," if r < 0.999 else ""
-        clip = decodifica(f"{MOTOR}/public/final/v/{v['id']}.mp4", ss=v["ini"], t=dv * r, af=af + "loudnorm=I=-19:TP=-2:LRA=9")
-        if len(clip) == 0:
-            continue
-        clip = clip[: int((dv - 0.25) * SR)]
-        n = len(clip)
-        fi, fo = min(n, int(0.25 * SR)), min(n, int(0.5 * SR))
-        clip[:fi] *= rampa(fi, 0, 1)[:, None]
-        clip[-fo:] *= rampa(fo, 1, 0)[:, None]
-        ganho = 1.0 if k == 0 else 0.38  # trio: o do meio/lados ficam de fundo
-        i0 = int((a + 0.15) * SR)
-        saida[i0:i0 + n] += clip[: max(0, min(n, N - i0))] * ganho
+# ---------------------------------------------------------------- áudio de cada vídeo (entra depois do violão; ver abaixo)
+def audio_videos():
+    global saida
+    for m in P["imersoes"]:
+        a, b = m["a"], m["b"]
+        dv = b - a
+        for k, v in enumerate(m["vs"]):
+            r = v["rate"]
+            af = f"atempo={r}," if r < 0.999 else ""
+            clip = decodifica(f"{MOTOR}/public/final/v/{v['id']}.mp4", ss=v["ini"], t=dv * r, af=af + "loudnorm=I=-19:TP=-2:LRA=9")
+            if len(clip) == 0:
+                continue
+            clip = clip[: int((dv - 0.25) * SR)]
+            n = len(clip)
+            fi, fo = min(n, int(0.25 * SR)), min(n, int(0.5 * SR))
+            clip[:fi] *= rampa(fi, 0, 1)[:, None]
+            clip[-fo:] *= rampa(fo, 1, 0)[:, None]
+            ganho = 1.0 if k == 0 else 0.38  # trio: o do meio/lados ficam de fundo
+            i0 = int((a + 0.15) * SR)
+            saida[i0:i0 + n] += clip[: max(0, min(n, N - i0))] * ganho
 
 # ---------------------------------------------------------------- violão de despedida (Karplus-Strong, tom da própria música)
 fin = mus[-int(40 * SR):, :].mean(axis=1)
@@ -120,7 +121,7 @@ print("tom da música: tônica", ["dó", "dó#", "ré", "ré#", "mi", "fá", "f�
 graus = [0, 9, 5, 7] if modo == 0 else [0, 8, 3, 10]  # I vi IV V  |  i VI III VII (semitons acima da tônica)
 terca = 4 if modo == 0 else 3
 acordes = []
-for gr in graus:
+for gr in graus * max(1, int((DUR - FIM_MUSICA + 4.5) // (len(graus) * 8 * 0.62)) + 1):
     r = (tom + gr) % 12
     menor = (modo == 0 and gr == 9) or (modo == 1 and gr in (0,))
     t3 = 3 if menor else 4
@@ -174,6 +175,8 @@ fio[-sai:] *= rampa(sai, 1, 0) ** 1.5
 est = np.stack([fio, np.roll(fio, 90)], axis=1) * 0.85  # leve abertura estéreo
 i0 = int(ini_g * SR)
 saida[i0:i0 + n_g] += est
+saida *= duck[:, None]  # música e violão abaixam juntos enquanto o vídeo fala
+audio_videos()
 print("violão:", round(n_g / SR, 1), "s a partir de", round(ini_g, 1), "s; vídeo total", DUR, "s")
 
 # ---------------------------------------------------------------- master

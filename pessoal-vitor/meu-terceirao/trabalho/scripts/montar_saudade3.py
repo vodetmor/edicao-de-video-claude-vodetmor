@@ -350,6 +350,8 @@ def rate_de(v, d):
     return round(max(0.5, min(1.0, (v["dur"] - v.get("ini", 0) - 0.2) / d)), 3)
 
 
+ESTICA = []  # V8: (m, e) a imagem ganha e segundos em m; a música NÃO para (as fotos ficam mais tempo, o fim passa para o violão)
+G_ALVO = 2.6  # tempo de cada parada da câmera numa metade de página
 HOLDS = []  # (m, E): em m (tempo da música) a música pausa E segundos enquanto o vídeo continua
 
 
@@ -391,6 +393,8 @@ for si, s in enumerate(spreads):
         for tipo, x in beats:
             if tipo == "g":
                 focos.append({"a": round(t, 2), "b": round(t + dg, 2), "s": si, "g": x, "zoom": 1.0})
+                if dg < G_ALVO:
+                    ESTICA.append((round(t + dg / 2, 3), round(G_ALVO - dg, 3)))
                 t += dg
             else:
                 d = durmerg(x) * esc
@@ -451,11 +455,12 @@ for l in letras:
 HOLDS.sort()
 
 
-def S(m):  # tempo da música -> tempo do vídeo (cada pausa empurra o resto)
-    return round(m + sum(e for b, e in HOLDS if b <= m), 2)
+def S(m):  # tempo da música -> tempo do vídeo (cada pausa/esticada empurra o resto)
+    return round(m + sum(e for b, e in HOLDS + ESTICA if b <= m), 2)
 
 
-OUTRO = 15.0  # depois da música: o álbum fechado, violão de despedida
+print("esticada total", round(sum(e for _, e in ESTICA), 1), "s em", len(ESTICA), "paradas")
+OUTRO = 10.0  # depois da música: o álbum fechado, violão de despedida
 for f in focos + imersoes + spreads:
     f["a"], f["b"] = S(f["a"]), S(f["b"])
 acum, holds_t = 0.0, []
@@ -463,8 +468,8 @@ for b, e in HOLDS:
     holds_t.append({"t": round(b + acum, 2), "d": e})
     acum += e
 DUR = round(S(270.0) + OUTRO, 2)
-plano = {"fps": 30, "duracao": DUR, "musicaFim": S(270.0), "holds": holds_t, "W": W, "H": H, "TURN": TURN, "spreads": spreads, "focos": focos, "imersoes": imersoes, "letras": limpo,
-         "destaques": [{"a": S(224.5), "b": S(233.0), "t": "saudade"}], "capa": {"abre": [3.0, 8.5], "fecha": [S(258.6), S(264.6)]}}
+plano = {"fps": 30, "duracao": DUR, "musicaFim": 270.0, "holds": holds_t, "W": W, "H": H, "TURN": TURN, "spreads": spreads, "focos": focos, "imersoes": imersoes, "letras": limpo,
+         "destaques": [{"a": 224.5, "b": 233.0, "t": "saudade"}], "capa": {"abre": [3.0, 8.5], "fecha": [S(258.6), S(264.6)]}}
 json.dump(plano, open(f"{OBRA}/plano3.json", "w", encoding="utf8"), ensure_ascii=False, indent=0)
 nf = sum(1 for s in spreads for it in s["L"] + s["R"] if it["k"] == "foto")
 nc = sum(1 for s in spreads for it in s["L"] + s["R"] if it["k"] == "foto" and FOTOS[it["id"]]["grupo"] == "crianca")
